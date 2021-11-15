@@ -190,19 +190,22 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/11/14/hello-world/" target="_self">
-          Hello World
+        <a href="/2021/11/15/AVX%E5%90%91%E9%87%8F%E5%8C%96%E5%AD%A6%E4%B9%A0(%E4%BA%8C)-%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90%E7%9A%84%E5%BA%94%E7%94%A8/" target="_self">
+          AVX向量化学习(二)-内存对齐的应用
         </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/11/14/hello-world/" target="_self">
+        <a href="/2021/11/15/AVX%E5%90%91%E9%87%8F%E5%8C%96%E5%AD%A6%E4%B9%A0(%E4%BA%8C)-%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90%E7%9A%84%E5%BA%94%E7%94%A8/" target="_self">
           
           
             
           
-          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick
+          AVX指令集的简单操作(内存对齐版)使用AVX指令集进行2个double型的数组相加操作
+常用的内存对齐函数因为AVX中要求mem__addr必须在32字节边界上对齐，否则可能会产生通用保护异常。  
+1.1double*	a =(double*)memalign(32,9*sizeof(double));
+
+2.1double*	a =(double*)_mm_malloc(9*sizeof(d
         </a>
       </p>
 
@@ -210,12 +213,123 @@ Quick
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2021-11-14 16:46" pubdate>
-              2021-11-14
+            <time datetime="2021-11-15 16:42" pubdate>
+              2021-11-15
             </time>
           </div>
         
         
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/HPC/">HPC</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/AVX/">AVX</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/10/24/%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90/" target="_self">
+          内存对齐
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/10/24/%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90/" target="_self">
+          
+          
+            
+          
+          内存对齐CPU读取内存的方式CPU读取内存的方式其实非常复杂，为了更进一步的了解相关的原理，需要对计算机组成原理进行深度学习。
+Memory access granularity(内存读取粒度)However, your computer’s processor does not read from and write to memory in byte-sized chunks. Instead
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-10-24 17:54" pubdate>
+              2021-10-24
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">计算机组成原理</a>
+            
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/10/23/AVX%E5%90%91%E9%87%8F%E5%8C%96%E5%AD%A6%E4%B9%A0(%E4%B8%80)/" target="_self">
+          AVX向量化学习(一)
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/10/23/AVX%E5%90%91%E9%87%8F%E5%8C%96%E5%AD%A6%E4%B9%A0(%E4%B8%80)/" target="_self">
+          
+          
+            
+          
+          AVX指令集的简单操作使用AVX指令集进行2个double型的数组相加操作
+使用到的AVX函数介绍1.1__m256 _mm256_loadu_ps (float const * mem_addr)
+
+DescriptionLoad 256-bits (composed of 8 packed single-precision (32-bit) floating-point elements) f
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-10-23 15:31" pubdate>
+              2021-10-23
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/HPC/">HPC</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/AVX/">AVX</a>
+            
+          </div>
         
       </div>
     </article>
