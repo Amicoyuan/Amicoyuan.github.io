@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>MPI学习(四)-广播、散播、收集、归约和全归约的MPI语法</title>
+    <link href="/2021/11/27/mpi004/"/>
+    <url>/2021/11/27/mpi004/</url>
+    
+    <content type="html"><![CDATA[<h1 id="MPI-广播、散播、收集、归约和全归约的MPI语法"><a href="#MPI-广播、散播、收集、归约和全归约的MPI语法" class="headerlink" title="MPI-广播、散播、收集、归约和全归约的MPI语法"></a>MPI-广播、散播、收集、归约和全归约的MPI语法</h1><h2 id="广播：MPI-Bcast"><a href="#广播：MPI-Bcast" class="headerlink" title="广播：MPI_Bcast"></a>广播：MPI_Bcast</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">MPI_Bcast</span><span class="hljs-params">(<span class="hljs-keyword">void</span> *buffer, <span class="hljs-keyword">int</span> count, MPI_Datatype datatype, <span class="hljs-keyword">int</span> root, MPI_Comm comm)</span></span><br><span class="hljs-function"><span class="hljs-comment">//int root 广播数据的根进程的标识号(整型)</span></span><br></code></pre></td></tr></table></figure><p><img src="/2021/11/27/mpi004/mpi001.png"></p><h2 id="散播：MPI-Scatter"><a href="#散播：MPI-Scatter" class="headerlink" title="散播：MPI_Scatter"></a>散播：MPI_Scatter</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">MPI_Scatter</span><span class="hljs-params">(<span class="hljs-keyword">void</span> *sendbuf, <span class="hljs-keyword">int</span> sendcount, MPI_Datatype sendtype, <span class="hljs-keyword">void</span> *recvbuf, <span class="hljs-keyword">int</span> root, MPI_Comm comm)</span></span><br><span class="hljs-function"><span class="hljs-comment">//void *sendbuf 发送消息缓冲区的起始地址(可选数据类型)</span></span><br><span class="hljs-function"><span class="hljs-comment">//void *recvbuf 接收消息缓冲区的起始地址(可选数据类型)</span></span><br><span class="hljs-function"></span><br></code></pre></td></tr></table></figure><p><img src="/2021/11/27/mpi004/mpi002.png"></p><h2 id="收集：MPI-Gather"><a href="#收集：MPI-Gather" class="headerlink" title="收集：MPI_Gather"></a>收集：MPI_Gather</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">MPI_Gather</span><span class="hljs-params">(<span class="hljs-keyword">void</span> *sendbuf, <span class="hljs-keyword">int</span> sendcount, MPI_Datatype sendtype, <span class="hljs-keyword">void</span> *recvbuf, <span class="hljs-keyword">int</span> recvcount, MPI_Datatype recvtype, <span class="hljs-keyword">int</span> root, MPI_Comm comm)</span></span><br></code></pre></td></tr></table></figure><p><img src="/2021/11/27/mpi004/mpi003.png"></p><h2 id="归约：MPI-Reduce"><a href="#归约：MPI-Reduce" class="headerlink" title="归约：MPI_Reduce"></a>归约：MPI_Reduce</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">MPI_Reduce</span><span class="hljs-params">(<span class="hljs-keyword">void</span> *sendbuf, <span class="hljs-keyword">void</span> *recvbuf, <span class="hljs-keyword">int</span> count, MPI_Datatype datatype, MPI_Op op, <span class="hljs-keyword">int</span> root,  MPI_Comm comm)</span></span><br><span class="hljs-function"><span class="hljs-comment">//MPI_Op op  归约操作符(句柄)</span></span><br></code></pre></td></tr></table></figure><p><img src="/2021/11/27/mpi004/mpi004.png"></p><p><img src="/2021/11/27/mpi004/mpi005.png"></p><h2 id="全归约：MPI-Allreduce"><a href="#全归约：MPI-Allreduce" class="headerlink" title="全归约：MPI_Allreduce"></a>全归约：MPI_Allreduce</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">MPI_Allreduce</span><span class="hljs-params">(<span class="hljs-keyword">void</span> *sendbuf, <span class="hljs-keyword">void</span> *recvbuf, <span class="hljs-keyword">int</span> count, MPI_Datatype datatype, MPI_Op op, MPI_Comm comm)</span></span><br></code></pre></td></tr></table></figure><p><img src="/2021/11/27/mpi004/mpi006.png"></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>HPC</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>MPI</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>MPI学习(三)-通过OpenmMP使用MPI</title>
     <link href="/2021/11/26/mpi003/"/>
     <url>/2021/11/26/mpi003/</url>
