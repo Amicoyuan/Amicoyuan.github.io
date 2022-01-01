@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>MPI学习(五)-环形拓扑上利用MPI进行通信</title>
+    <link href="/2022/01/01/mpi005/"/>
+    <url>/2022/01/01/mpi005/</url>
+    
+    <content type="html"><![CDATA[<h1 id="MPI学习-五-环形拓扑上利用MPI进行通信"><a href="#MPI学习-五-环形拓扑上利用MPI进行通信" class="headerlink" title="MPI学习(五)-环形拓扑上利用MPI进行通信"></a>MPI学习(五)-环形拓扑上利用MPI进行通信</h1><p>这里，我们演示了一个简单的MPI程序，它使用阻塞通信原语send和receive来进行广播操作：</p><h2 id="程序运行平台"><a href="#程序运行平台" class="headerlink" title="程序运行平台"></a>程序运行平台</h2><p>北京超级云计算中心A3分区</p><h2 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h2><p>mpi/intel/2017.5</p><h2 id="编译指令"><a href="#编译指令" class="headerlink" title="编译指令"></a>编译指令</h2><p>mpic++ mpi005.cpp -o mpi005</p><h2 id="运行指令"><a href="#运行指令" class="headerlink" title="运行指令"></a>运行指令</h2><p>srun -p amd_256 -N 1 -n  4   ./mpi005(使用SLURM任务调度系统)</p><p>1个分区，核数为4</p><h2 id="程序源代码"><a href="#程序源代码" class="headerlink" title="程序源代码"></a>程序源代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;mpi.h&gt;</span></span><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">int</span> argc,<span class="hljs-keyword">char</span> *argv[])</span></span><br><span class="hljs-function"></span>&#123;<br><span class="hljs-keyword">int</span> rank, value, size;<br>MPI_Status status;<br><span class="hljs-built_in">MPI_Init</span>(&amp;argc, &amp;argv);<br><span class="hljs-built_in">MPI_Comm_rank</span>(MPI_COMM_WORLD, &amp;rank);<br><span class="hljs-built_in">MPI_Comm_size</span>(MPI_COMM_WORLD, &amp;size);<br><br><span class="hljs-keyword">if</span>(rank == <span class="hljs-number">0</span>) &#123;<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>, &amp;value );<br><span class="hljs-comment">/*Master node sends out the value*/</span><br><span class="hljs-built_in">MPI_Send</span>(&amp;value, <span class="hljs-number">1</span>, MPI_INT, rank + <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, MPI_COMM_WORLD);&#125;<br><span class="hljs-keyword">else</span><br>&#123;<br><span class="hljs-comment">/*Slave nodes block on receive the send on the value*/</span><br><span class="hljs-built_in">MPI_Recv</span>(&amp;value, <span class="hljs-number">1</span>, MPI_INT, rank - <span class="hljs-number">1</span>, <span class="hljs-number">0</span>,MPI_COMM_WORLD, &amp;status);<br><br><span class="hljs-keyword">if</span>(rank &lt; size<span class="hljs-number">-1</span>)<br>&#123;<br><span class="hljs-built_in">MPI_Send</span>(&amp;value, <span class="hljs-number">1</span>, MPI_INT, rank + <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, MPI_COMM_WORLD);<br>&#125;<br><span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;process %d got %d\n&quot;</span>, rank, value);<br>&#125;<br><span class="hljs-built_in">MPI_Finalize</span>();<br><span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br> &#125; <br><br></code></pre></td></tr></table></figure><h2 id="程序运行结果"><a href="#程序运行结果" class="headerlink" title="程序运行结果"></a>程序运行结果</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-comment">//5 5为读入的value值</span><br>process <span class="hljs-number">1</span> got <span class="hljs-number">5</span><br>process <span class="hljs-number">2</span> got <span class="hljs-number">5</span><br>process <span class="hljs-number">3</span> got <span class="hljs-number">5</span><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>HPC</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>MPI</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>第二届超算与并行计算团队(南充)招新赛-正式赛-题解</title>
     <link href="/2021/12/31/bisai001/"/>
     <url>/2021/12/31/bisai001/</url>
