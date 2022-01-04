@@ -27,7 +27,7 @@
 <meta property="og:image" content="http://162.14.104.8/2022/01/03/Algorithm003/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0x5bm5fbWc=,size_16,color_FFFFFF,t_70.png">
 <meta property="og:image" content="http://162.14.104.8/2022/01/03/Algorithm003/134d3eff026ab567e3a337c45dda5d61.png">
 <meta property="article:published_time" content="2022-01-03T13:42:00.000Z">
-<meta property="article:modified_time" content="2022-01-04T07:25:08.185Z">
+<meta property="article:modified_time" content="2022-01-04T07:26:10.353Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="Data Structure">
 <meta name="twitter:card" content="summary_large_image">
@@ -278,7 +278,7 @@
 <h4 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例:"></a>输出样例:</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-number">2</span> <span class="hljs-number">60</span><br><span class="hljs-number">0</span> <span class="hljs-number">1</span> <span class="hljs-number">3</span>结尾无空行<br></code></pre></td></tr></table></figure>
 
 <h4 id="最短路径条数："><a href="#最短路径条数：" class="headerlink" title="最短路径条数："></a>最短路径条数：</h4><p>如果通过 <strong>index</strong> 点能把最短路径更新，那么最短路径条数就是从起点到<strong>index</strong>的最短路径条数。</p>
-<p><img src="/2022/01/03/Algorithm003/134d3eff026ab567e3a337c45dda5d61.png" srcset="/img/loading.gif" lazyload alt="在这里插入图片描述"></p>
+<p><img src="/2022/01/03/Algorithm003/134d3eff026ab567e3a337c45dda5d61.png" srcset="/img/loading.gif" lazyload></p>
 <p>例如这张图，如果<strong>index</strong>可以更新当前的最短路径，并且s通过1和2到达index点的距离都相等，那么从s到d的最短路径条数其实就是从s到index的最短路径条数，由此可以得到第一个式子</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c++">num[i]=num[index];<br></code></pre></td></tr></table></figure>
 
