@@ -16,24 +16,20 @@
   <meta name="description" content="">
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
-  <meta name="description" content="gprof、gprof2dot.py、dot使用方法简介(1)：gprof使用步骤如下，以SLIC为例：1 在编译过程中添加-pg选项，命令如下：1gcc -pg SLIC.cpp -o SLIC  2 运行程序，运行结束之后会形成文件gmon.out，命令如下:1.&#x2F;SLIC  3 使用gprof再次执行程序，并将结果重定位到prof.log中，命令如下：1gprof .&#x2F;SLIC &gt; p">
+  <meta name="description" content="AVX向量化学习(四)-INT类型转化成DOUBLE类型使用AVX指令集把INT类型转化为DOUBLE类型 使用到的AVX函数介绍1.1__m128i _mm_setr_epi32 (int e3, int e2, int e1, int e0)  Synopsis __m128i _mm_setr_epi32 (int e3, int e2, int e1, int e0)#include &amp;l">
 <meta property="og:type" content="article">
-<meta property="og:title" content="gprof、gprof2dot.py、dot使用方法简介">
-<meta property="og:url" content="http://162.14.104.8/2022/01/09/tool001/index.html">
+<meta property="og:title" content="AVX向量化学习(四)-INT类型转化成DOUBLE类型">
+<meta property="og:url" content="http://162.14.104.8/2022/01/17/AVX004/index.html">
 <meta property="og:site_name" content="计算机奇妙之旅">
-<meta property="og:description" content="gprof、gprof2dot.py、dot使用方法简介(1)：gprof使用步骤如下，以SLIC为例：1 在编译过程中添加-pg选项，命令如下：1gcc -pg SLIC.cpp -o SLIC  2 运行程序，运行结束之后会形成文件gmon.out，命令如下:1.&#x2F;SLIC  3 使用gprof再次执行程序，并将结果重定位到prof.log中，命令如下：1gprof .&#x2F;SLIC &gt; p">
+<meta property="og:description" content="AVX向量化学习(四)-INT类型转化成DOUBLE类型使用AVX指令集把INT类型转化为DOUBLE类型 使用到的AVX函数介绍1.1__m128i _mm_setr_epi32 (int e3, int e2, int e1, int e0)  Synopsis __m128i _mm_setr_epi32 (int e3, int e2, int e1, int e0)#include &amp;l">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://162.14.104.8/2022/01/09/tool001/image-20220109165659998.png">
-<meta property="og:image" content="http://162.14.104.8/2022/01/09/tool001/image-20220109170212157.png">
-<meta property="og:image" content="http://162.14.104.8/2022/01/09/tool001/image-20220109170315471.png">
-<meta property="article:published_time" content="2022-01-09T08:33:37.000Z">
-<meta property="article:modified_time" content="2022-01-09T09:16:32.125Z">
+<meta property="article:published_time" content="2022-01-17T12:41:56.000Z">
+<meta property="article:modified_time" content="2022-01-17T13:13:18.558Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="性能分析工具">
+<meta property="article:tag" content="AVX">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://162.14.104.8/2022/01/09/tool001/image-20220109165659998.png">
   
-  <title>gprof、gprof2dot.py、dot使用方法简介 - 计算机奇妙之旅</title>
+  <title>AVX向量化学习(四)-INT类型转化成DOUBLE类型 - 计算机奇妙之旅</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -179,7 +175,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="gprof、gprof2dot.py、dot使用方法简介">
+            <span class="h2" id="subtitle" title="AVX向量化学习(四)-INT类型转化成DOUBLE类型">
               
             </span>
 
@@ -189,8 +185,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-01-09 16:33" pubdate>
-        2022年1月9日 下午
+      <time datetime="2022-01-17 20:41" pubdate>
+        2022年1月17日 晚上
       </time>
     </span>
   
@@ -200,7 +196,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1k 字
+      1.4k 字
     </span>
   
 
@@ -209,7 +205,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      3 分钟
+      4 分钟
     </span>
   
 
@@ -246,26 +242,72 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">gprof、gprof2dot.py、dot使用方法简介</h1>
+            <h1 style="display: none">AVX向量化学习(四)-INT类型转化成DOUBLE类型</h1>
             
             <div class="markdown-body">
-              <h1 id="gprof、gprof2dot-py、dot使用方法简介"><a href="#gprof、gprof2dot-py、dot使用方法简介" class="headerlink" title="gprof、gprof2dot.py、dot使用方法简介"></a>gprof、gprof2dot.py、dot使用方法简介</h1><h2 id="1-：gprof使用步骤如下，以SLIC为例："><a href="#1-：gprof使用步骤如下，以SLIC为例：" class="headerlink" title="(1)：gprof使用步骤如下，以SLIC为例："></a>(1)：gprof使用步骤如下，以SLIC为例：</h2><h3 id="1-在编译过程中添加-pg选项，命令如下："><a href="#1-在编译过程中添加-pg选项，命令如下：" class="headerlink" title="1 在编译过程中添加-pg选项，命令如下："></a>1 在编译过程中添加-pg选项，命令如下：</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c++">gcc -pg SLIC.cpp -o SLIC<br></code></pre></td></tr></table></figure>
+              <h1 id="AVX向量化学习-四-INT类型转化成DOUBLE类型"><a href="#AVX向量化学习-四-INT类型转化成DOUBLE类型" class="headerlink" title="AVX向量化学习(四)-INT类型转化成DOUBLE类型"></a>AVX向量化学习(四)-INT类型转化成DOUBLE类型</h1><p>使用AVX指令集把INT类型转化为DOUBLE类型</p>
+<h2 id="使用到的AVX函数介绍"><a href="#使用到的AVX函数介绍" class="headerlink" title="使用到的AVX函数介绍"></a>使用到的AVX函数介绍</h2><h3 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c++">__m128i _mm_setr_epi32 (<span class="hljs-keyword">int</span> e3, <span class="hljs-keyword">int</span> e2, <span class="hljs-keyword">int</span> e1, <span class="hljs-keyword">int</span> e0)<br></code></pre></td></tr></table></figure>
 
-<h3 id="2-运行程序，运行结束之后会形成文件gmon-out，命令如下"><a href="#2-运行程序，运行结束之后会形成文件gmon-out，命令如下" class="headerlink" title="2 运行程序，运行结束之后会形成文件gmon.out，命令如下:"></a>2 运行程序，运行结束之后会形成文件gmon.out，命令如下:</h3><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs jboss-cli"><span class="hljs-string">./SLIC</span><br></code></pre></td></tr></table></figure>
+<p><strong>Synopsis</strong></p>
+<p>__m128i _mm_setr_epi32 (int e3, int e2, int e1, int e0)<br>#include &lt;emmintrin.h&gt;<br>Instruction: <strong>Sequence</strong><br>CPUID Flags: SSE2</p>
+<p><strong>Description</strong></p>
+<p>Set packed 32-bit integers in dst with the supplied values in reverse order.</p>
+<p><strong>Operation</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c++">dst[<span class="hljs-number">31</span>:<span class="hljs-number">0</span>] := e3 dst[<span class="hljs-number">63</span>:<span class="hljs-number">32</span>] := e2 dst[<span class="hljs-number">95</span>:<span class="hljs-number">64</span>] := e1 dst[<span class="hljs-number">127</span>:<span class="hljs-number">96</span>] := e0<br></code></pre></td></tr></table></figure>
 
-<h3 id="3-使用gprof再次执行程序，并将结果重定位到prof-log中，命令如下："><a href="#3-使用gprof再次执行程序，并将结果重定位到prof-log中，命令如下：" class="headerlink" title="3 使用gprof再次执行程序，并将结果重定位到prof.log中，命令如下："></a>3 使用gprof再次执行程序，并将结果重定位到prof.log中，命令如下：</h3><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs vim">gprof ./SLIC &gt; <span class="hljs-keyword">prof</span>.<span class="hljs-built_in">log</span><br></code></pre></td></tr></table></figure>
+<h3 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c++">__m256d _mm256_cvtepi32_pd (__m128i a)<br></code></pre></td></tr></table></figure>
 
-<p>分析prof.log就可以获得程序的调用关系、函数执行时间等信息。对gprof的分析方法见以下blog</p>
-<p><a target="_blank" rel="noopener" href="http://blog.csdn.net/macky0668/article/details/6839517">http://blog.csdn.net/macky0668/article/details/6839517</a></p>
-<h2 id="2-：配合gprof2dot-py与dot工具的使用-我是安装在了Win10平台"><a href="#2-：配合gprof2dot-py与dot工具的使用-我是安装在了Win10平台" class="headerlink" title="(2)：配合gprof2dot.py与dot工具的使用(我是安装在了Win10平台)"></a>(2)：配合<em>gprof2dot.py</em>与dot工具的使用(我是安装在了Win10平台)</h2><p>以上方法仍然存在一个问题就是分析结果不够直观，特别是函数的调用关系。因此为解决以上问题，可以配合<em>gprof2dot.py</em>与dot工具的使用。</p>
-<h3 id="1-安装gprof2dot-py与dot"><a href="#1-安装gprof2dot-py与dot" class="headerlink" title="1.安装gprof2dot.py与dot"></a>1.安装<em>gprof2dot.py</em>与dot</h3><p><a target="_blank" rel="noopener" href="https://github.com/jrfonseca/gprof2dot">GitHub - jrfonseca/gprof2dot: Converts profiling output to a dot graph.</a></p>
-<h3 id="2-通过以下地址可获得graphviz，安装graphviz后可使用dot工具"><a href="#2-通过以下地址可获得graphviz，安装graphviz后可使用dot工具" class="headerlink" title="2.通过以下地址可获得graphviz，安装graphviz后可使用dot工具"></a>2.通过以下地址可获得graphviz，安装graphviz后可使用dot工具</h3><p><a target="_blank" rel="noopener" href="https://graphviz.org/download/source/">Source Code | Graphviz</a></p>
-<p>在使用上述工具前，还需要先产生prof.log文件，prof.log文件的产生方法见上文。</p>
-<h3 id="3-首先通过命令行进入你安装gprof2dot-py的根目录："><a href="#3-首先通过命令行进入你安装gprof2dot-py的根目录：" class="headerlink" title="3.首先通过命令行进入你安装gprof2dot.py的根目录："></a>3.首先通过命令行进入你安装gprof2dot.py的根目录：</h3><p><img src="/2022/01/09/tool001/image-20220109165659998.png" srcset="/img/loading.gif" lazyload></p>
-<h3 id="4-通过以下命令即可得到函数调用图："><a href="#4-通过以下命令即可得到函数调用图：" class="headerlink" title="4.通过以下命令即可得到函数调用图："></a>4.通过以下命令即可得到函数调用图：</h3><p><img src="/2022/01/09/tool001/image-20220109170212157.png" srcset="/img/loading.gif" lazyload></p>
-<h3 id="5-结果如下："><a href="#5-结果如下：" class="headerlink" title="5.结果如下："></a>5.结果如下：</h3><p><img src="/2022/01/09/tool001/image-20220109170315471.png" srcset="/img/loading.gif" lazyload></p>
-<h2 id="3-：接上文补充几点可能无法产生gmon-out文件的情况："><a href="#3-：接上文补充几点可能无法产生gmon-out文件的情况：" class="headerlink" title="(3)：接上文补充几点可能无法产生gmon.out文件的情况："></a>(3)：接上文补充几点可能无法产生gmon.out文件的情况：</h2><p>  1.程序不是从main return或exit()退出，则可能不生成gmon.out。<br>  2.程序如果崩溃，可能不生成gmon.out。<br>  3.测试发现在虚拟机上运行，可能不生成gmon.out。<br>  4.程序忽略SIGPROF信号！一定不能捕获、忽略SIGPROF信号。man手册对SIGPROF的解释是：profiling timer expired. 如果忽略这个信号，gprof的输出则是：Each sample counts as 0.01 seconds. no time accumulated.<br>  5.如果程序运行时间非常短，则gprof可能无效</p>
-<h2 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/u012927281/article/details/51132064">(4条消息) gprof、gprof2dot.py、dot使用方法简介_Andy.Wang的博客-CSDN博客_gprof2dot</a></p>
+
+
+<p><strong>Synopsis</strong></p>
+<p>m256d _mm256_cvtepi32_pd (m128i a)<br>#include &lt;immintrin.h&gt;<br>Instruction: vcvtdq2pd ymm, xmm<br>CPUID Flags: AVX</p>
+<p><strong>Description</strong></p>
+<p>Convert packed signed 32-bit integers in a to packed double-precision (64-bit) floating-point elements, and store the results in dst.</p>
+<p><strong>Operation</strong></p>
+<p>FOR j := 0 to 3 i := j<em>32 m := j</em>64 dst[m+63:m] := Convert_Int32_To_FP64(a[i+31:i]) ENDFOR dst[MAX:256] := 0</p>
+<p><strong>Performance</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">Architecture</th>
+<th align="center">Latency</th>
+<th align="center">Throughput (CPI)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Icelake</td>
+<td align="center">7</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="left">Skylake</td>
+<td align="center">7</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="left">Broadwell</td>
+<td align="center">6</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="left">Haswell</td>
+<td align="center">6</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="left">Ivy Bridge</td>
+<td align="center">4</td>
+<td align="center">1</td>
+</tr>
+</tbody></table>
+<h2 id="程序运行平台"><a href="#程序运行平台" class="headerlink" title="程序运行平台"></a>程序运行平台</h2><p>北京超级云计算中心A3分区</p>
+<h2 id="编译指令"><a href="#编译指令" class="headerlink" title="编译指令"></a>编译指令</h2><p>g++ int_to_double.cpp -msse2 -mavx -o test01</p>
+<h2 id="运行指令"><a href="#运行指令" class="headerlink" title="运行指令"></a>运行指令</h2><p>./test01</p>
+<h2 id="程序源代码"><a href="#程序源代码" class="headerlink" title="程序源代码"></a>程序源代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;immintrin.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>	<span class="hljs-keyword">int</span> a[<span class="hljs-number">4</span>]=&#123;<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>&#125;;<br>	<span class="hljs-keyword">double</span> b[<span class="hljs-number">9</span>]=&#123;<span class="hljs-number">0</span>&#125;;<br>    __m128i x = _mm_setr_epi32(a[<span class="hljs-number">0</span>], a[<span class="hljs-number">1</span>], a[<span class="hljs-number">2</span>],a[<span class="hljs-number">3</span>]);   <span class="hljs-comment">//load</span><br> 	__m256d v5=_mm256_cvtepi32_pd(x);       <span class="hljs-comment">//convert</span><br>    _mm256_storeu_pd(b,v5);<br>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">9</span>;i++)<br>    &#123;<br>    	cout&lt;&lt;b[i]&lt;&lt;endl;<br>	&#125;<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="程序输出"><a href="#程序输出" class="headerlink" title="程序输出"></a>程序输出</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-number">1</span><br><span class="hljs-number">2</span><br><span class="hljs-number">3</span><br><span class="hljs-number">4</span><br><span class="hljs-number">0</span><br><span class="hljs-number">0</span><br><span class="hljs-number">0</span><br><span class="hljs-number">0</span><br><span class="hljs-number">0</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><p>[<a target="_blank" rel="noopener" href="https://software.intel.com/sites/landingpage/IntrinsicsGuide/]">https://software.intel.com/sites/landingpage/IntrinsicsGuide/]</a>:     “ Intel® Intrinsics Guide”</p>
 
             </div>
             <hr>
@@ -283,7 +325,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7/">性能分析工具</a>
+                      <a class="hover-with-bg" href="/tags/AVX/">AVX</a>
                     
                   </div>
                 
@@ -300,18 +342,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/01/17/AVX004/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">AVX向量化学习(四)-INT类型转化成DOUBLE类型</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/01/04/Algorithm004/">
-                        <span class="hidden-mobile">并查集</span>
+                      <a href="/2022/01/09/tool001/">
+                        <span class="hidden-mobile">gprof、gprof2dot.py、dot使用方法简介</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
