@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>单链表的定义</title>
+    <link href="/2022/03/28/Algorithm006/"/>
+    <url>/2022/03/28/Algorithm006/</url>
+    
+    <content type="html"><![CDATA[<h1 id="单链表的定义"><a href="#单链表的定义" class="headerlink" title="单链表的定义"></a>单链表的定义</h1><h2 id="1-单链表的定义"><a href="#1-单链表的定义" class="headerlink" title="1.单链表的定义"></a>1.单链表的定义</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">LNode</span>&#123;</span>      <span class="hljs-comment">//定义单链表结点类型</span><br>    ElemType data;         <span class="hljs-comment">//每个结点存放一个数据元素</span><br>    <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">LNode</span> *<span class="hljs-title">next</span>;</span>    <span class="hljs-comment">//指针指向下一个节点</span><br>&#125;LNode,*LinkList;<br></code></pre></td></tr></table></figure><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">LNode</span>&#123;</span>      <span class="hljs-comment">//定义单链表结点类型</span><br>    ElemType data;         <span class="hljs-comment">//每个结点存放一个数据元素</span><br>    <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">LNode</span> *<span class="hljs-title">next</span>;</span>    <span class="hljs-comment">//指针指向下一个节点</span><br>&#125;;<br><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">LNode</span> <span class="hljs-title">LNode</span>;</span><br><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">LNode</span> *<span class="hljs-title">LinkList</span>;</span><br></code></pre></td></tr></table></figure><p>这两种定义是一模一样的！</p><p>要表示一个单链表时，只需要声明一个头指针L，指向单链表的第一个结点。</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs c++">LNoode *L;      <span class="hljs-comment">//声明一个指向单链表第一个结点的指针</span><br><span class="hljs-comment">//或：</span><br>LinkList L;     <span class="hljs-comment">//声明一个指向单链表第一个结点的指针</span><br></code></pre></td></tr></table></figure><h2 id="样例代码"><a href="#样例代码" class="headerlink" title="样例代码"></a>样例代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs c++">LNode *L；<br><span class="hljs-comment">//和：</span><br>LinkList L;<br><span class="hljs-comment">//两者的区别就是强调不同</span><br></code></pre></td></tr></table></figure><p><img src="/2022/03/28/Algorithm006/%E6%BC%94%E7%A4%BA.png"></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Algorithm</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Data Structure</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>优先队列</title>
     <link href="/2022/03/11/Algorithm005/"/>
     <url>/2022/03/11/Algorithm005/</url>
