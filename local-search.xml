@@ -4,6 +4,56 @@
   
   
   <entry>
+    <title>二叉树的存储结构</title>
+    <link href="/2022/04/06/Algorithm012/"/>
+    <url>/2022/04/06/Algorithm012/</url>
+    
+    <content type="html"><![CDATA[<h1 id="二叉树的存储结构"><a href="#二叉树的存储结构" class="headerlink" title="二叉树的存储结构"></a>二叉树的存储结构</h1><h2 id="1-顺序存储方式"><a href="#1-顺序存储方式" class="headerlink" title="1.顺序存储方式"></a>1.顺序存储方式</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> MaxSize 100</span><br><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">TreeNode</span>&#123;</span><br>    ElemType value;<span class="hljs-comment">//结点中的数据元素</span><br>    <span class="hljs-keyword">bool</span> isEmpty;<span class="hljs-comment">//结点是否为空</span><br>&#125;;<br><br>TreeNode t[MaxSize];<br></code></pre></td></tr></table></figure><h2 id="2-链式存储结构"><a href="#2-链式存储结构" class="headerlink" title="2.链式存储结构"></a>2.链式存储结构</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">BiTNode</span>&#123;</span><br>    ElemType data;<span class="hljs-comment">//数据域</span><br>    <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">BiTNode</span> *<span class="hljs-title">lchild</span>,*<span class="hljs-title">rchild</span>;</span><span class="hljs-comment">//左右孩子指针</span><br>&#125;BiTNode,*BiTree;<br></code></pre></td></tr></table></figure><h2 id="3-三叉链表"><a href="#3-三叉链表" class="headerlink" title="3.三叉链表"></a>3.三叉链表</h2><p>三叉链表—方便找父节点</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">BiTNode</span>&#123;</span><br>    ElemType data;<span class="hljs-comment">//数据域</span><br>    <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">BiTNode</span> *<span class="hljs-title">lchild</span>,*<span class="hljs-title">rchild</span>;</span><span class="hljs-comment">//左右孩子指针</span><br>    <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">BiTNode</span> *<span class="hljs-title">parent</span>;</span><span class="hljs-comment">//父结点指针</span><br>&#125;BiTNode,*BiTree;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Algorithm</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Data Structure</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>串的存储结构</title>
+    <link href="/2022/04/06/Algorithm011/"/>
+    <url>/2022/04/06/Algorithm011/</url>
+    
+    <content type="html"><![CDATA[<h1 id="串的存储结构"><a href="#串的存储结构" class="headerlink" title="串的存储结构"></a>串的存储结构</h1><h2 id="1-定长顺序存储表示"><a href="#1-定长顺序存储表示" class="headerlink" title="1.定长顺序存储表示"></a>1.定长顺序存储表示</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> MAXLEN 255<span class="hljs-comment">//预定义最大串长</span></span><br><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span>&#123;</span><br>    <span class="hljs-keyword">char</span> ch[MAXLEN];<span class="hljs-comment">//每个分量存储一个字符</span><br>    <span class="hljs-keyword">int</span> length;<span class="hljs-comment">//串的实际长度</span><br>&#125;SSting;<br></code></pre></td></tr></table></figure><h2 id="2-堆分配存储表示"><a href="#2-堆分配存储表示" class="headerlink" title="2.堆分配存储表示"></a>2.堆分配存储表示</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span>&#123;</span><br>    <span class="hljs-keyword">char</span> *ch;<span class="hljs-comment">//按串长分配存储区，ch指向串的基地址</span><br>    <span class="hljs-keyword">int</span> length;<span class="hljs-comment">//串的长度</span><br>&#125;HString;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Algorithm</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Data Structure</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>MPI学习(六)-两个矩阵相加MPI版本</title>
     <link href="/2022/04/02/mpi006/"/>
     <url>/2022/04/02/mpi006/</url>
