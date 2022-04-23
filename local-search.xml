@@ -253,11 +253,11 @@
       
       <tag>团体程序设计天梯赛</tag>
       
+      <tag>Binary tree</tag>
+      
       <tag>邻接表</tag>
       
       <tag>Vector</tag>
-      
-      <tag>Binary tree</tag>
       
       <tag>BFS</tag>
       
@@ -350,11 +350,11 @@
       
       <tag>团体程序设计天梯赛</tag>
       
+      <tag>Binary tree</tag>
+      
       <tag>邻接表</tag>
       
       <tag>Vector</tag>
-      
-      <tag>Binary tree</tag>
       
       <tag>BFS</tag>
       
@@ -385,15 +385,15 @@
       
       <tag>C++</tag>
       
-      <tag>团体程序设计天梯赛</tag>
-      
       <tag>Set</tag>
       
-      <tag>Graph</tag>
+      <tag>团体程序设计天梯赛</tag>
       
       <tag>邻接表</tag>
       
       <tag>Vector</tag>
+      
+      <tag>Graph</tag>
       
     </tags>
     
@@ -420,9 +420,9 @@
       
       <tag>C++</tag>
       
-      <tag>LinkList</tag>
-      
       <tag>团体程序设计天梯赛</tag>
+      
+      <tag>LinkList</tag>
       
       <tag>双向链表</tag>
       
@@ -453,9 +453,9 @@
       
       <tag>C++</tag>
       
-      <tag>团体程序设计天梯赛</tag>
-      
       <tag>Set</tag>
+      
+      <tag>团体程序设计天梯赛</tag>
       
       <tag>Sort</tag>
       
