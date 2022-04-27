@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>串的模式匹配算法-KMP算法</title>
+    <link href="/2022/04/27/Algorithm034/"/>
+    <url>/2022/04/27/Algorithm034/</url>
+    
+    <content type="html"><![CDATA[<h2 id="串的模式匹配算法-KMP算法"><a href="#串的模式匹配算法-KMP算法" class="headerlink" title="串的模式匹配算法-KMP算法"></a>串的模式匹配算法-KMP算法</h2><h3 id="求next数组"><a href="#求next数组" class="headerlink" title="求next数组"></a>求next数组</h3>]]></content>
+    
+    
+    <categories>
+      
+      <category>Algorithm</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Data Structure</tag>
+      
+      <tag>String</tag>
+      
+      <tag>KMP</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>串-简单的模式匹配算法</title>
     <link href="/2022/04/27/Algorithm033/"/>
     <url>/2022/04/27/Algorithm033/</url>
