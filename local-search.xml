@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>树、森林</title>
+    <link href="/2022/05/05/Algorithm036/"/>
+    <url>/2022/05/05/Algorithm036/</url>
+    
+    <content type="html"><![CDATA[<h2 id="树、森林"><a href="#树、森林" class="headerlink" title="树、森林"></a>树、森林</h2><h3 id="树的存储结构"><a href="#树的存储结构" class="headerlink" title="树的存储结构"></a>树的存储结构</h3><h4 id="双亲表示法"><a href="#双亲表示法" class="headerlink" title="双亲表示法"></a>双亲表示法</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> MAX_TREE_SIZE 100<span class="hljs-comment">//树中最多节点数</span></span><br><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span>&#123;</span><span class="hljs-comment">//树的结点定义</span><br>    ElemType data;<span class="hljs-comment">//数据元素</span><br>    <span class="hljs-keyword">int</span> parent;<span class="hljs-comment">//双亲位置域</span><br>&#125;PTNode;<br><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span>&#123;</span><span class="hljs-comment">//树的类型定义</span><br>    PTNode nodes[MAX_TREE_SIZE];<span class="hljs-comment">//双亲表示</span><br>    <span class="hljs-keyword">int</span> n;<span class="hljs-comment">//节点数</span><br>&#125;PTree;<br></code></pre></td></tr></table></figure><h4 id="孩子兄弟法"><a href="#孩子兄弟法" class="headerlink" title="孩子兄弟法"></a>孩子兄弟法</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">CSNode</span>&#123;</span><br>    ElemType data;<span class="hljs-comment">//数据域</span><br>    <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">CSNode</span> *<span class="hljs-title">firstchild</span>,*<span class="hljs-title">nextsibling</span>;</span><span class="hljs-comment">//第一个孩子和右兄弟指针</span><br>&#125;CSNode,*CSTree;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Algorithm</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Data Structure</tag>
+      
+      <tag>Tree</tag>
+      
+      <tag>森林</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>线索二叉树</title>
     <link href="/2022/05/04/Algorithm035/"/>
     <url>/2022/05/04/Algorithm035/</url>
