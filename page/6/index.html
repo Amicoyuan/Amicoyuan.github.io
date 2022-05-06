@@ -202,6 +202,60 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
+        <a href="/2021/11/15/AVX%E5%90%91%E9%87%8F%E5%8C%96%E5%AD%A6%E4%B9%A0(%E4%BA%8C)-%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90%E7%9A%84%E5%BA%94%E7%94%A8/" target="_self">
+          AVX向量化学习(二)-内存对齐的应用
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/11/15/AVX%E5%90%91%E9%87%8F%E5%8C%96%E5%AD%A6%E4%B9%A0(%E4%BA%8C)-%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90%E7%9A%84%E5%BA%94%E7%94%A8/" target="_self">
+          
+          
+            
+          
+          AVX指令集的简单操作(内存对齐版)使用AVX指令集进行2个double型的数组相加操作
+常用的内存对齐函数因为AVX中要求mem__addr必须在32字节边界上对齐，否则可能会产生通用保护异常。  
+1.1double*	a =(double*)memalign(32,9*sizeof(double));
+
+2.1double*	a =(double*)_mm_malloc(9*sizeof(d
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-11-15 16:42" pubdate>
+              2021-11-15
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/HPC/">HPC</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/AVX/">AVX</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
         <a href="/2021/10/24/%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90/" target="_self">
           内存对齐
         </a>
