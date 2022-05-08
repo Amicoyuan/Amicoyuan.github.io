@@ -202,39 +202,21 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2022/05/08/tool004/4.8.2/bits/stl_iterator_base_types.h.func-sort-c/" target="_self">
-          
+        <a href="/2022/03/30/Algorithm009/" target="_self">
+          栈
         </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2022/05/08/tool004/4.8.2/bits/stl_iterator_base_types.h.func-sort-c/" target="_self">
+        <a href="/2022/03/30/Algorithm009/" target="_self">
           
           
             
           
-          
+          栈的顺序存储结构顺序栈的实现栈的顺序存储类型可描述为：
+12345#define MaxSize 50				//定义栈中元素的最大个数typedef struct&#123;    ElemType data[MaxSize];			//存放栈中元素    int top;						//栈顶指针&#125;SqStack;
 
-
-
-
-  
-  LCOV - SLIC.info - 4.8.2/bits/stl_iterator_base_types.h - functions
-  
-
-
-
-
-  
-    LCOV - code coverage report
-    
-
-    
-      
-        
-          
-            Current view:
-            top 
+顺序栈的基本运算初始化123void InitStack(SqSta
         </a>
       </p>
 
@@ -242,12 +224,26 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2022-05-08 10:42" pubdate>
-              2022-05-08
+            <time datetime="2022-03-30 18:04" pubdate>
+              2022-03-30
             </time>
           </div>
         
         
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/Algorithm/">Algorithm</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Data-Structure/">Data Structure</a>
+            
+          </div>
         
       </div>
     </article>
@@ -259,39 +255,21 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2022/05/08/tool004/4.8.2/bits/stl_iterator.h.gcov/" target="_self">
-          
+        <a href="/2022/03/29/Algorithm008/" target="_self">
+          双链表与静态链表
         </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2022/05/08/tool004/4.8.2/bits/stl_iterator.h.gcov/" target="_self">
+        <a href="/2022/03/29/Algorithm008/" target="_self">
           
           
             
           
-          
+          双链表定义双链表中结点类型的描述如下：
+1234typedef struct DNode&#123;					//定义双链表结点类型    ElemType data;						//数据域    struct DNode *prior,*next;			//前驱和后继指针&#125;DNode,*DLinkList;
 
-
-
-
-  
-  LCOV - SLIC.info - 4.8.2/bits/stl_iterator.h
-  
-
-
-
-
-  
-    LCOV - code coverage report
-    
-
-    
-      
-        
-          
-            Current view:
-            top level - 4.8.2/bits - st
+双链表的插入操作12345//p所指结点是s所指结点的前驱结点s-&gt;n
         </a>
       </p>
 
@@ -299,12 +277,26 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2022-05-08 10:42" pubdate>
-              2022-05-08
+            <time datetime="2022-03-29 15:48" pubdate>
+              2022-03-29
             </time>
           </div>
         
         
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/Algorithm/">Algorithm</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Data-Structure/">Data Structure</a>
+            
+          </div>
         
       </div>
     </article>
@@ -316,39 +308,21 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2022/05/08/tool004/4.8.2/bits/stl_iterator.h.func/" target="_self">
-          
+        <a href="/2022/03/28/Algorithm007/" target="_self">
+          单链表上的基本操作
         </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2022/05/08/tool004/4.8.2/bits/stl_iterator.h.func/" target="_self">
+        <a href="/2022/03/28/Algorithm007/" target="_self">
           
           
             
           
-          
+          单链表的定义单链表中结点类型的描述如下：
+1234typedef struct LNode&#123;			//定义单链表结点类型    ElemType data;				//数据域    struct LNode *next;		//指针域&#125;LNode,*LinkList;
 
-
-
-
-  
-  LCOV - SLIC.info - 4.8.2/bits/stl_iterator.h - functions
-  
-
-
-
-
-  
-    LCOV - code coverage report
-    
-
-    
-      
-        
-          
-            Current view:
-            top level - 4.8
+单链表上基本操作的实现1.采用头插法建立单链表123456789101112131415LinkList L
         </a>
       </p>
 
@@ -356,12 +330,26 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2022-05-08 10:42" pubdate>
-              2022-05-08
+            <time datetime="2022-03-28 17:40" pubdate>
+              2022-03-28
             </time>
           </div>
         
         
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/Algorithm/">Algorithm</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Data-Structure/">Data Structure</a>
+            
+          </div>
         
       </div>
     </article>
@@ -373,39 +361,20 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2022/05/08/tool004/4.8.2/bits/stl_iterator.h.func-sort-c/" target="_self">
-          
+        <a href="/2022/03/28/Algorithm006/" target="_self">
+          单链表的定义
         </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2022/05/08/tool004/4.8.2/bits/stl_iterator.h.func-sort-c/" target="_self">
+        <a href="/2022/03/28/Algorithm006/" target="_self">
           
           
             
           
-          
+          单链表的定义1.单链表的定义1234typedef struct LNode&#123;      //定义单链表结点类型    ElemType data;         //每个结点存放一个数据元素    struct LNode *next;    //指针指向下一个节点&#125;LNode,*LinkList;
 
-
-
-
-  
-  LCOV - SLIC.info - 4.8.2/bits/stl_iterator.h - functions
-  
-
-
-
-
-  
-    LCOV - code coverage report
-    
-
-    
-      
-        
-          
-            Current view:
-            top level - 4.8
+123456typedef struct LNode&#123;    
         </a>
       </p>
 
@@ -413,12 +382,26 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2022-05-08 10:42" pubdate>
-              2022-05-08
+            <time datetime="2022-03-28 16:00" pubdate>
+              2022-03-28
             </time>
           </div>
         
         
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/Algorithm/">Algorithm</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Data-Structure/">Data Structure</a>
+            
+          </div>
         
       </div>
     </article>
@@ -430,39 +413,20 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2022/05/08/tool004/4.8.2/bits/stl_construct.h.gcov/" target="_self">
-          
+        <a href="/2022/03/11/Algorithm005/" target="_self">
+          优先队列
         </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2022/05/08/tool004/4.8.2/bits/stl_construct.h.gcov/" target="_self">
+        <a href="/2022/03/11/Algorithm005/" target="_self">
           
           
             
           
-          
-
-
-
-
-  
-  LCOV - SLIC.info - 4.8.2/bits/stl_construct.h
-  
-
-
-
-
-  
-    LCOV - code coverage report
-    
-
-    
-      
-        
-          
-            Current view:
-            top level - 4.8.2/bits - s
+          优先队列定义：定义：priority_queue&lt;Type, Container, Functional&gt;
+Type 就是数据类型，Container 就是容器类型（Container必须是用数组实现的容器，比如vector,deque等等，但不能用 list。STL里面默认用的是vector），Functional 就是比较的方式。
+当需要用自定义的数据类型时才需要传入这三个参数，使
         </a>
       </p>
 
@@ -470,12 +434,26 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2022-05-08 10:42" pubdate>
-              2022-05-08
+            <time datetime="2022-03-11 11:54" pubdate>
+              2022-03-11
             </time>
           </div>
         
         
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/Algorithm/">Algorithm</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Data-Structure/">Data Structure</a>
+            
+          </div>
         
       </div>
     </article>
@@ -487,39 +465,21 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2022/05/08/tool004/4.8.2/bits/stl_construct.h.func/" target="_self">
-          
+        <a href="/2022/01/19/tool003/" target="_self">
+          perf-系统级性能分析工具
         </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2022/05/08/tool004/4.8.2/bits/stl_construct.h.func/" target="_self">
+        <a href="/2022/01/19/tool003/" target="_self">
           
           
             
           
-          
-
-
-
-
-  
-  LCOV - SLIC.info - 4.8.2/bits/stl_construct.h - functions
-  
-
-
-
-
-  
-    LCOV - code coverage report
-    
-
-    
-      
-        
-          
-            Current view:
-            top level - 4.
+          系统级性能优化通常包括两个阶段：性能剖析（performance profiling）和代码优化。
+性能剖析的目标是寻找性能瓶颈，查找引发性能问题的原因及热点代码。
+代码优化的目标是针对具体性能问题而优化代码或编译选项，以改善软件性能。
+在性能剖析阶段，需要借助于现有的profiling工具，如perf等。在代码优化阶段往往需要借助开发者的经验，编写简洁高效的代码，甚至在汇编级别合理使用各种指令，
         </a>
       </p>
 
@@ -527,12 +487,26 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2022-05-08 10:42" pubdate>
-              2022-05-08
+            <time datetime="2022-01-19 11:56" pubdate>
+              2022-01-19
             </time>
           </div>
         
         
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/HPC/">HPC</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7/">性能分析工具</a>
+            
+          </div>
         
       </div>
     </article>
@@ -544,39 +518,18 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2022/05/08/tool004/4.8.2/bits/stl_construct.h.func-sort-c/" target="_self">
-          
+        <a href="/2022/01/18/tool002/" target="_self">
+          gcov代码覆盖率测试
         </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2022/05/08/tool004/4.8.2/bits/stl_construct.h.func-sort-c/" target="_self">
+        <a href="/2022/01/18/tool002/" target="_self">
           
           
             
           
-          
-
-
-
-
-  
-  LCOV - SLIC.info - 4.8.2/bits/stl_construct.h - functions
-  
-
-
-
-
-  
-    LCOV - code coverage report
-    
-
-    
-      
-        
-          
-            Current view:
-            top level - 4.
+          gcov代码覆盖率测试gcov的简单介绍1.gcov是一个测试代码覆盖率的工具。与GCC一起使用来分析程序，以帮助创建更高效、更快的运行代码，并发现程序的未测试部分2.是一个命令行方式的控制台程序。需要结合lcov,gcovr等前端图形工具才能实现统计数据图形化3.伴随GCC发布，不需要单独下载gcov工具。配合GCC共同实现对c/c++文件的语句覆盖和分支覆盖测试4.与程序概要分析工具（prof
         </a>
       </p>
 
@@ -584,12 +537,26 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2022-05-08 10:42" pubdate>
-              2022-05-08
+            <time datetime="2022-01-18 14:35" pubdate>
+              2022-01-18
             </time>
           </div>
         
         
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/HPC/">HPC</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7/">性能分析工具</a>
+            
+          </div>
         
       </div>
     </article>
@@ -601,39 +568,22 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2022/05/08/tool004/4.8.2/bits/stl_algobase.h.gcov/" target="_self">
-          
+        <a href="/2022/01/17/AVX005/" target="_self">
+          AVX向量化学习(五)-INT型数组相加操作
         </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2022/05/08/tool004/4.8.2/bits/stl_algobase.h.gcov/" target="_self">
+        <a href="/2022/01/17/AVX005/" target="_self">
           
           
             
           
-          
+          AVX向量化学习(五)-INT型数组相加操作使用AVX指令集进行2个INT型的数组相加操作
+使用到的AVX函数介绍1.1__m256i _mm256_loadu_si256 (__m256i const * mem_addr)
 
-
-
-
-  
-  LCOV - SLIC.info - 4.8.2/bits/stl_algobase.h
-  
-
-
-
-
-  
-    LCOV - code coverage report
-    
-
-    
-      
-        
-          
-            Current view:
-            top level - 4.8.2/bits - st
+Synopsis
+m256i _mm256_loadu_si256 (m256i const * mem_addr)#include &lt;immintrin.h&gt
         </a>
       </p>
 
@@ -641,12 +591,26 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2022-05-08 10:42" pubdate>
-              2022-05-08
+            <time datetime="2022-01-17 21:28" pubdate>
+              2022-01-17
             </time>
           </div>
         
         
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/HPC/">HPC</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/AVX/">AVX</a>
+            
+          </div>
         
       </div>
     </article>
@@ -658,39 +622,22 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2022/05/08/tool004/4.8.2/bits/stl_algobase.h.func/" target="_self">
-          
+        <a href="/2022/01/17/AVX004/" target="_self">
+          AVX向量化学习(四)-INT类型转化成DOUBLE类型
         </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2022/05/08/tool004/4.8.2/bits/stl_algobase.h.func/" target="_self">
+        <a href="/2022/01/17/AVX004/" target="_self">
           
           
             
           
-          
+          AVX向量化学习(四)-INT类型转化成DOUBLE类型使用AVX指令集把INT类型转化为DOUBLE类型
+使用到的AVX函数介绍1.1__m128i _mm_setr_epi32 (int e3, int e2, int e1, int e0)
 
-
-
-
-  
-  LCOV - SLIC.info - 4.8.2/bits/stl_algobase.h - functions
-  
-
-
-
-
-  
-    LCOV - code coverage report
-    
-
-    
-      
-        
-          
-            Current view:
-            top level - 4.8
+Synopsis
+__m128i _mm_setr_epi32 (int e3, int e2, int e1, int e0)#include &l
         </a>
       </p>
 
@@ -698,12 +645,26 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2022-05-08 10:42" pubdate>
-              2022-05-08
+            <time datetime="2022-01-17 20:41" pubdate>
+              2022-01-17
             </time>
           </div>
         
         
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/HPC/">HPC</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/AVX/">AVX</a>
+            
+          </div>
         
       </div>
     </article>
@@ -715,39 +676,22 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2022/05/08/tool004/4.8.2/bits/stl_algobase.h.func-sort-c/" target="_self">
-          
+        <a href="/2022/01/09/tool001/" target="_self">
+          gprof、gprof2dot.py、dot使用方法简介
         </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2022/05/08/tool004/4.8.2/bits/stl_algobase.h.func-sort-c/" target="_self">
+        <a href="/2022/01/09/tool001/" target="_self">
           
           
             
           
-          
+          gprof、gprof2dot.py、dot使用方法简介(1)：gprof使用步骤如下，以SLIC为例：1 在编译过程中添加-pg选项，命令如下：1gcc -pg SLIC.cpp -o SLIC
 
+2 运行程序，运行结束之后会形成文件gmon.out，命令如下:1./SLIC
 
-
-
-  
-  LCOV - SLIC.info - 4.8.2/bits/stl_algobase.h - functions
-  
-
-
-
-
-  
-    LCOV - code coverage report
-    
-
-    
-      
-        
-          
-            Current view:
-            top level - 4.8
+3 使用gprof再次执行程序，并将结果重定位到prof.log中，命令如下：1gprof ./SLIC &gt; p
         </a>
       </p>
 
@@ -755,12 +699,26 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2022-05-08 10:42" pubdate>
-              2022-05-08
+            <time datetime="2022-01-09 16:33" pubdate>
+              2022-01-09
             </time>
           </div>
         
         
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/HPC/">HPC</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7/">性能分析工具</a>
+            
+          </div>
         
       </div>
     </article>
@@ -770,7 +728,7 @@
 
   <nav aria-label="navigation">
     <span class="pagination" id="pagination">
-      <a class="extend prev" rel="prev" href="/page/3/#board"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/#board">2</a><a class="page-number" href="/page/3/#board">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/#board">5</a><a class="page-number" href="/page/6/#board">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/#board">13</a><a class="extend next" rel="next" href="/page/5/#board"><i class="iconfont icon-arrowright"></i></a>
+      <a class="extend prev" rel="prev" href="/page/3/#board"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/#board">2</a><a class="page-number" href="/page/3/#board">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/#board">5</a><a class="page-number" href="/page/6/#board">6</a><a class="extend next" rel="next" href="/page/5/#board"><i class="iconfont icon-arrowright"></i></a>
     </span>
   </nav>
 
