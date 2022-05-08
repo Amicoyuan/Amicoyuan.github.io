@@ -202,39 +202,22 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2022/05/08/tool004/4.8.2/bits/locale_facets.h.func/" target="_self">
-          
+        <a href="/2022/01/09/tool001/" target="_self">
+          gprof、gprof2dot.py、dot使用方法简介
         </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2022/05/08/tool004/4.8.2/bits/locale_facets.h.func/" target="_self">
+        <a href="/2022/01/09/tool001/" target="_self">
           
           
             
           
-          
+          gprof、gprof2dot.py、dot使用方法简介(1)：gprof使用步骤如下，以SLIC为例：1 在编译过程中添加-pg选项，命令如下：1gcc -pg SLIC.cpp -o SLIC
 
+2 运行程序，运行结束之后会形成文件gmon.out，命令如下:1./SLIC
 
-
-
-  
-  LCOV - SLIC.info - 4.8.2/bits/locale_facets.h - functions
-  
-
-
-
-
-  
-    LCOV - code coverage report
-    
-
-    
-      
-        
-          
-            Current view:
-            top level - 4.
+3 使用gprof再次执行程序，并将结果重定位到prof.log中，命令如下：1gprof ./SLIC &gt; p
         </a>
       </p>
 
@@ -242,12 +225,26 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2022-05-08 10:47" pubdate>
-              2022-05-08
+            <time datetime="2022-01-09 16:33" pubdate>
+              2022-01-09
             </time>
           </div>
         
         
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/HPC/">HPC</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7/">性能分析工具</a>
+            
+          </div>
         
       </div>
     </article>
@@ -259,39 +256,24 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2022/05/08/tool004/4.8.2/bits/locale_facets.h.func-sort-c/" target="_self">
-          
+        <a href="/2022/01/04/Algorithm004/" target="_self">
+          并查集
         </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2022/05/08/tool004/4.8.2/bits/locale_facets.h.func-sort-c/" target="_self">
+        <a href="/2022/01/04/Algorithm004/" target="_self">
           
           
             
           
-          
+          并查集并查集（Disjoint Set）是一种非常精巧而实用的数据结构。用于处理不相交集合的合并问题。
+并查集用来管理元素分组情况。并查集可以高效地进行如下操作。
+1.查询元素 a和元素 b是否属于同一组。2.合并元素 a和元素 b所在的组。
 
+1.初始化我们准备 n个节点来表示 n个元素。最开始时没有边。
 
-
-
-  
-  LCOV - SLIC.info - 4.8.2/bits/locale_facets.h - functions
-  
-
-
-
-
-  
-    LCOV - code coverage report
-    
-
-    
-      
-        
-          
-            Current view:
-            top level - 4.
+2.查询为了查询两个节点是否属于同一组，我们需要沿着树向上走，来查询包含这个元素的树的根
         </a>
       </p>
 
@@ -299,12 +281,26 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2022-05-08 10:47" pubdate>
-              2022-05-08
+            <time datetime="2022-01-04 20:59" pubdate>
+              2022-01-04
             </time>
           </div>
         
         
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/Algorithm/">Algorithm</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Data-Structure/">Data Structure</a>
+            
+          </div>
         
       </div>
     </article>
@@ -316,39 +312,20 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2022/05/08/tool004/4.8.2/bits/ios_base.h.gcov/" target="_self">
-          
+        <a href="/2022/01/03/Algorithm003/" target="_self">
+          最短路径-Floyed和Dijkstra
         </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2022/05/08/tool004/4.8.2/bits/ios_base.h.gcov/" target="_self">
+        <a href="/2022/01/03/Algorithm003/" target="_self">
           
           
             
           
-          
+          最短路径-Floyed和DijkstraFloyed样题一：P1364 医院设置题目描述：设有一棵二叉树，如图：
 
-
-
-
-  
-  LCOV - SLIC.info - 4.8.2/bits/ios_base.h
-  
-
-
-
-
-  
-    LCOV - code coverage report
-    
-
-    
-      
-        
-          
-            Current view:
-            top level - 4.8.2/bits - ios_ba
+其中，圈中的数字表示结点中居民的人口。圈边上数字表示结点编号，现在要求在某个结点上建立一个医院，使所有居民所走的路程之和为最小，同时约定，相邻接点之间的距离为 11。如上图中，若医院建在1 处，则距离和 =4+12+2\times20+2\times40=136=4+12+2×20+
         </a>
       </p>
 
@@ -356,12 +333,26 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2022-05-08 10:47" pubdate>
-              2022-05-08
+            <time datetime="2022-01-03 21:42" pubdate>
+              2022-01-03
             </time>
           </div>
         
         
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/Algorithm/">Algorithm</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Data-Structure/">Data Structure</a>
+            
+          </div>
         
       </div>
     </article>
@@ -373,39 +364,22 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2022/05/08/tool004/4.8.2/bits/ios_base.h.func/" target="_self">
-          
+        <a href="/2022/01/01/mpi005/" target="_self">
+          MPI学习(五)-环形拓扑上利用MPI进行通信
         </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2022/05/08/tool004/4.8.2/bits/ios_base.h.func/" target="_self">
+        <a href="/2022/01/01/mpi005/" target="_self">
           
           
             
           
-          
-
-
-
-
-  
-  LCOV - SLIC.info - 4.8.2/bits/ios_base.h - functions
-  
-
-
-
-
-  
-    LCOV - code coverage report
-    
-
-    
-      
-        
-          
-            Current view:
-            top level - 4.8.2/b
+          MPI学习(五)-环形拓扑上利用MPI进行通信这里，我们演示了一个简单的MPI程序，它使用阻塞通信原语send和receive来进行广播操作：
+程序运行平台北京超级云计算中心A3分区
+环境变量mpi/intel/2017.5
+编译指令mpic++ mpi005.cpp -o mpi005
+运行指令srun -p amd_256 -N 1 -n  4   ./mpi005(使用SLURM任务调度系统
         </a>
       </p>
 
@@ -413,12 +387,26 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2022-05-08 10:47" pubdate>
-              2022-05-08
+            <time datetime="2022-01-01 17:01" pubdate>
+              2022-01-01
             </time>
           </div>
         
         
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/HPC/">HPC</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/MPI/">MPI</a>
+            
+          </div>
         
       </div>
     </article>
@@ -430,39 +418,19 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2022/05/08/tool004/4.8.2/bits/ios_base.h.func-sort-c/" target="_self">
-          
+        <a href="/2021/12/22/algorithm002/" target="_self">
+          Graph-Data Structure
         </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2022/05/08/tool004/4.8.2/bits/ios_base.h.func-sort-c/" target="_self">
+        <a href="/2021/12/22/algorithm002/" target="_self">
           
           
             
           
-          
-
-
-
-
-  
-  LCOV - SLIC.info - 4.8.2/bits/ios_base.h - functions
-  
-
-
-
-
-  
-    LCOV - code coverage report
-    
-
-    
-      
-        
-          
-            Current view:
-            top level - 4.8.2/b
+          Graph-Data Structure1.邻接表的应用样题一：L2-025 分而治之 (25 分)题目描述：分而治之，各个击破是兵家常用的策略之一。在战争中，我们希望首先攻下敌方的部分城市，使其剩余的城市变成孤立无援，然后再分头各个击破。为此参谋部提供了若干打击方案。本题就请你编写程序，判断每个方案的可行性。
+输入格式：输入在第一行给出两个正整数 N 和 M（均不超过10 000），分别为敌方城
         </a>
       </p>
 
@@ -470,12 +438,28 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2022-05-08 10:47" pubdate>
-              2022-05-08
+            <time datetime="2021-12-22 21:25" pubdate>
+              2021-12-22
             </time>
           </div>
         
         
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/Algorithm/">Algorithm</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Data-Structure/">Data Structure</a>
+            
+              <a href="/tags/Graph/">Graph</a>
+            
+          </div>
         
       </div>
     </article>
@@ -487,41 +471,19 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2022/05/08/tool004/4.8.2/bits/index/" target="_self">
-          
+        <a href="/2021/12/21/algorithm001/" target="_self">
+          DFS-深度优先搜索
         </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2022/05/08/tool004/4.8.2/bits/index/" target="_self">
+        <a href="/2021/12/21/algorithm001/" target="_self">
           
           
             
           
-          
-
-
-
-
-  
-  LCOV - SLIC.info - 4.8.2/bits
-  
-
-
-
-
-  
-    LCOV - code coverage report
-    
-
-    
-      
-        
-          
-            Current view:
-            top level - 4.8.2/bits
-            
-      
+          DFS-深度优先搜索样题1-全排列题目描述：输入一个数n，输出n的全排列
+程序源代码：123456789101112131415161718192021222324252627282930313233343536#include &lt;bits/stdc++.h&gt;using namespace std;int n;int a[100];int book[100];void dfs(int 
         </a>
       </p>
 
@@ -529,12 +491,26 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2022-05-08 10:47" pubdate>
-              2022-05-08
+            <time datetime="2021-12-21 21:25" pubdate>
+              2021-12-21
             </time>
           </div>
         
         
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/Algorithm/">Algorithm</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/DFS/">DFS</a>
+            
+          </div>
         
       </div>
     </article>
@@ -546,41 +522,19 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2022/05/08/tool004/4.8.2/bits/index-sort-l/" target="_self">
-          
+        <a href="/2021/12/09/tensorflow001/" target="_self">
+          Machine Learning(一) 一个神经元网络-线性函数
         </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2022/05/08/tool004/4.8.2/bits/index-sort-l/" target="_self">
+        <a href="/2021/12/09/tensorflow001/" target="_self">
           
           
             
           
-          
-
-
-
-
-  
-  LCOV - SLIC.info - 4.8.2/bits
-  
-
-
-
-
-  
-    LCOV - code coverage report
-    
-
-    
-      
-        
-          
-            Current view:
-            top level - 4.8.2/bits
-            
-      
+          一个神经元的网络(线性函数)线性函数 y = 2 * x -1 
+程序源代码12345678910from tensorflow import kerasimport numpy as np#构建模型model = keras.Sequential([keras.layers.Dense(units=1,input_shape=[1])])model.compile(optimizer=&#x27
         </a>
       </p>
 
@@ -588,12 +542,26 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2022-05-08 10:47" pubdate>
-              2022-05-08
+            <time datetime="2021-12-09 14:59" pubdate>
+              2021-12-09
             </time>
           </div>
         
         
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/Machine-Learning/">Machine Learning</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Tensorflow/">Tensorflow</a>
+            
+          </div>
         
       </div>
     </article>
@@ -605,41 +573,21 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2022/05/08/tool004/4.8.2/bits/index-sort-f/" target="_self">
-          
+        <a href="/2021/11/27/mpi004/" target="_self">
+          MPI学习(四)-广播、散播、收集、归约和全归约的MPI语法
         </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2022/05/08/tool004/4.8.2/bits/index-sort-f/" target="_self">
+        <a href="/2021/11/27/mpi004/" target="_self">
           
           
             
           
-          
+          MPI-广播、散播、收集、归约和全归约的MPI语法广播：MPI_Bcast12int MPI_Bcast(void *buffer, int count, MPI_Datatype datatype, int root, MPI_Comm comm)//int root 广播数据的根进程的标识号(整型)
 
 
-
-
-  
-  LCOV - SLIC.info - 4.8.2/bits
-  
-
-
-
-
-  
-    LCOV - code coverage report
-    
-
-    
-      
-        
-          
-            Current view:
-            top level - 4.8.2/bits
-            
-      
+散播：MPI_Scatter1234int MPI_Scatter(void *sendb
         </a>
       </p>
 
@@ -647,12 +595,26 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2022-05-08 10:47" pubdate>
-              2022-05-08
+            <time datetime="2021-11-27 16:58" pubdate>
+              2021-11-27
             </time>
           </div>
         
         
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/HPC/">HPC</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/MPI/">MPI</a>
+            
+          </div>
         
       </div>
     </article>
@@ -664,39 +626,22 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2022/05/08/tool004/4.8.2/bits/char_traits.h.gcov/" target="_self">
-          
+        <a href="/2021/11/26/mpi003/" target="_self">
+          MPI学习(三)-通过OpenmMP使用MPI
         </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2022/05/08/tool004/4.8.2/bits/char_traits.h.gcov/" target="_self">
+        <a href="/2021/11/26/mpi003/" target="_self">
           
           
             
           
-          
-
-
-
-
-  
-  LCOV - SLIC.info - 4.8.2/bits/char_traits.h
-  
-
-
-
-
-  
-    LCOV - code coverage report
-    
-
-    
-      
-        
-          
-            Current view:
-            top level - 4.8.2/bits - cha
+          MPI-通过OpenMP使用MPIOpenMP是另一种为基于共享内存的并行编程提供的应用编程接口。当人们想使用多核处理器时，通常使用OpenMP。下面是一个“Hello World”程序，使用了MPI和OpenMP的API。
+程序运行平台北京超级云计算中心A3分区
+环境变量mpi/intel/2017.5
+编译指令mpic++    -fopenmp  mpi003.cpp -o mpi003
+运
         </a>
       </p>
 
@@ -704,12 +649,26 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2022-05-08 10:47" pubdate>
-              2022-05-08
+            <time datetime="2021-11-26 22:09" pubdate>
+              2021-11-26
             </time>
           </div>
         
         
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/HPC/">HPC</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/MPI/">MPI</a>
+            
+          </div>
         
       </div>
     </article>
@@ -721,39 +680,18 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2022/05/08/tool004/4.8.2/bits/char_traits.h.func/" target="_self">
-          
+        <a href="/2021/11/26/mpi002/" target="_self">
+          MPI学习(二)-非阻塞通信程序(无缓冲)
         </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2022/05/08/tool004/4.8.2/bits/char_traits.h.func/" target="_self">
+        <a href="/2021/11/26/mpi002/" target="_self">
           
           
             
           
-          
-
-
-
-
-  
-  LCOV - SLIC.info - 4.8.2/bits/char_traits.h - functions
-  
-
-
-
-
-  
-    LCOV - code coverage report
-    
-
-    
-      
-        
-          
-            Current view:
-            top level - 4.8.
+          MPI-非阻塞通信程序(无缓冲)非阻塞通信程序(无缓冲)是由MPI中的Isend和Ireceive来表示的，即异步通信。在这种情况下，发送进程发布一条“发送授权请求”(挂起的消息)的消息，并继续其程序的执行。当接收进程发布一个“同意发送”许可指令时，数据传输就启动了。所有的这些机制都是通过操作系统的信号进行内部管理的。当数据传输完成时，检查状态并指示进程是否可以安全地进行读/写数据。       
         </a>
       </p>
 
@@ -761,12 +699,26 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2022-05-08 10:47" pubdate>
-              2022-05-08
+            <time datetime="2021-11-26 17:44" pubdate>
+              2021-11-26
             </time>
           </div>
         
         
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/HPC/">HPC</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/MPI/">MPI</a>
+            
+          </div>
         
       </div>
     </article>
@@ -776,7 +728,7 @@
 
   <nav aria-label="navigation">
     <span class="pagination" id="pagination">
-      <a class="extend prev" rel="prev" href="/page/4/#board"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/#board">3</a><a class="page-number" href="/page/4/#board">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/#board">6</a><a class="page-number" href="/page/7/#board">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/#board">13</a><a class="extend next" rel="next" href="/page/6/#board"><i class="iconfont icon-arrowright"></i></a>
+      <a class="extend prev" rel="prev" href="/page/4/#board"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/#board">3</a><a class="page-number" href="/page/4/#board">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/#board">6</a><a class="extend next" rel="next" href="/page/6/#board"><i class="iconfont icon-arrowright"></i></a>
     </span>
   </nav>
 
