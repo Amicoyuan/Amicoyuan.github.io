@@ -1,0 +1,826 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/site.jpg">
+  <link rel="icon" href="/img/site.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  <meta name="description" content="LCOV - SLIC.info - 4.8.2&#x2F;bits&#x2F;stl_vector.h - functions               LCOV - code coverage report                                                   Current view:             top level - 4.8.2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机奇妙之旅">
+<meta property="og:url" content="http://162.14.104.8/2022/05/07/tool004/result/4.8.2/bits/stl_vector.h.func/index.html">
+<meta property="og:site_name" content="计算机奇妙之旅">
+<meta property="og:description" content="LCOV - SLIC.info - 4.8.2&#x2F;bits&#x2F;stl_vector.h - functions               LCOV - code coverage report                                                   Current view:             top level - 4.8.2">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://162.14.104.8/2022/05/07/tool004/result/4.8.2/bits/glass.png">
+<meta property="og:image" content="http://162.14.104.8/2022/05/07/tool004/result/4.8.2/bits/glass.png">
+<meta property="og:image" content="http://162.14.104.8/2022/05/07/tool004/result/4.8.2/bits/glass.png">
+<meta property="og:image" content="http://162.14.104.8/2022/05/07/tool004/result/4.8.2/bits/glass.png">
+<meta property="og:image" content="http://162.14.104.8/2022/05/07/tool004/result/4.8.2/bits/updown.png">
+<meta property="og:image" content="http://162.14.104.8/2022/05/07/tool004/result/4.8.2/bits/glass.png">
+<meta property="article:published_time" content="2022-05-07T12:53:11.915Z">
+<meta property="article:modified_time" content="2022-05-07T12:53:12.110Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://162.14.104.8/2022/05/07/tool004/result/4.8.2/bits/glass.png">
+  
+  <title>计算机奇妙之旅</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"162.14.104.8","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"g10sppACiB0iwBrOiERhucmg-MdYXbMMI","app_key":"f7eskymhpDIBDrODMFqlWwQU","server_url":null,"path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Amicoyuan</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tools/">
+                <i class="iconfont icon-playstation-fill"></i>
+                工具
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-05-07 20:53" pubdate>
+        2022年5月7日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.3k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      7 分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- LeanCloud 统计文章PV -->
+      <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="leancloud-page-views"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none"></h1>
+            
+            <div class="markdown-body">
+              <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - SLIC.info - 4.8.2/bits/stl_vector.h - functions</title>
+  <link rel="stylesheet" type="text/css" href="../../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr><td class="title">LCOV - code coverage report</td></tr>
+    <tr><td class="ruler"><img src="/2022/05/07/tool004/result/4.8.2/bits/stl_vector.h.func/../glass.png" srcset="/img/loading.gif" lazyload width="3" height="3" alt></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding="1" border="0" width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../../index.html">top level</a> - <a href="index.html">4.8.2/bits</a> - stl_vector.h<span style="font-size: 80%;"> (<a href="stl_vector.h.gcov.html">source</a> / functions)</span></td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">SLIC.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">83</td>
+            <td class="headerCovTableEntry">96</td>
+            <td class="headerCovTableEntryMed">86.5 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2022-05-07 20:52:35</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">44</td>
+            <td class="headerCovTableEntry">50</td>
+            <td class="headerCovTableEntryMed">88.0 %</td>
+          </tr>
+          <tr><td><img src="/2022/05/07/tool004/result/4.8.2/bits/stl_vector.h.func/../glass.png" srcset="/img/loading.gif" lazyload width="3" height="3" alt></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="/2022/05/07/tool004/result/4.8.2/bits/stl_vector.h.func/../glass.png" srcset="/img/loading.gif" lazyload width="3" height="3" alt></td></tr>
+  </table>
+
+  <center>
+  <table width="60%" cellpadding="1" cellspacing="1" border="0">
+    <tr><td><br></td></tr>
+    <tr>
+      <td width="80%" class="tableHead">Function Name <span class="tableHeadSort"><img src="/2022/05/07/tool004/result/4.8.2/bits/stl_vector.h.func/../glass.png" srcset="/img/loading.gif" lazyload width="10" height="14" alt="Sort by function name" title="Sort by function name" border="0"></span></td>
+      <td width="20%" class="tableHead">Hit count <span class="tableHeadSort"><a href="stl_vector.h.func-sort-c.html"><img src="/2022/05/07/tool004/result/4.8.2/bits/stl_vector.h.func/../updown.png" srcset="/img/loading.gif" lazyload width="10" height="14" alt="Sort by hit count" title="Sort by hit count" border="0"></a></span></td>
+    </tr>
+    <tr>
+              <td class="coverFn"><a href="stl_vector.h.gcov.html#115">_ZNKSt12_Vector_baseIdSaIdEE19_M_get_Tp_allocatorEv</a></td>
+              <td class="coverFnHi">92</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="stl_vector.h.gcov.html#1334">_ZNKSt6vectorIdSaIdEE12_M_check_lenEmPKc</a></td>
+              <td class="coverFnHi">46</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="stl_vector.h.gcov.html#643">_ZNKSt6vectorIdSaIdEE4sizeEv</a></td>
+              <td class="coverFnHi">294</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="stl_vector.h.gcov.html#723">_ZNKSt6vectorIdSaIdEE8capacityEv</a></td>
+              <td class="coverFnHi">60</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="stl_vector.h.gcov.html#648">_ZNKSt6vectorIdSaIdEE8max_sizeEv</a></td>
+              <td class="coverFnHi">92</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="stl_vector.h.gcov.html#783">_ZNKSt6vectorIdSaIdEEixEm</a></td>
+              <td class="coverFnHi">3136</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="stl_vector.h.gcov.html#643">_ZNKSt6vectorIiSaIiEE4sizeEv</a></td>
+              <td class="coverFnHi">10</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="stl_vector.h.gcov.html#723">_ZNKSt6vectorIiSaIiEE8capacityEv</a></td>
+              <td class="coverFnHi">10</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="stl_vector.h.gcov.html#165">_ZNSt12_Vector_baseIdSaIdEE11_M_allocateEm</a></td>
+              <td class="coverFnHi">63</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="stl_vector.h.gcov.html#99">_ZNSt12_Vector_baseIdSaIdEE12_Vector_impl12_M_swap_dataERS2_</a></td>
+              <td class="coverFnLo">0</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="stl_vector.h.gcov.html#88">_ZNSt12_Vector_baseIdSaIdEE12_Vector_implC2ERKS0_</a></td>
+              <td class="coverFnHi">17</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="stl_vector.h.gcov.html#77">_ZNSt12_Vector_baseIdSaIdEE12_Vector_implD2Ev</a></td>
+              <td class="coverFnHi">17</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="stl_vector.h.gcov.html#169">_ZNSt12_Vector_baseIdSaIdEE13_M_deallocateEPdm</a></td>
+              <td class="coverFnHi">63</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="stl_vector.h.gcov.html#177">_ZNSt12_Vector_baseIdSaIdEE17_M_create_storageEm</a></td>
+              <td class="coverFnHi">17</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="stl_vector.h.gcov.html#111">_ZNSt12_Vector_baseIdSaIdEE19_M_get_Tp_allocatorEv</a></td>
+              <td class="coverFnHi">188</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="stl_vector.h.gcov.html#132">_ZNSt12_Vector_baseIdSaIdEEC2EmRKS0_</a></td>
+              <td class="coverFnHi">17</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="stl_vector.h.gcov.html#157">_ZNSt12_Vector_baseIdSaIdEED2Ev</a></td>
+              <td class="coverFnHi">17</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="stl_vector.h.gcov.html#165">_ZNSt12_Vector_baseIiSaIiEE11_M_allocateEm</a></td>
+              <td class="coverFnHi">1</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="stl_vector.h.gcov.html#99">_ZNSt12_Vector_baseIiSaIiEE12_Vector_impl12_M_swap_dataERS2_</a></td>
+              <td class="coverFnLo">0</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="stl_vector.h.gcov.html#88">_ZNSt12_Vector_baseIiSaIiEE12_Vector_implC2ERKS0_</a></td>
+              <td class="coverFnHi">1</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="stl_vector.h.gcov.html#77">_ZNSt12_Vector_baseIiSaIiEE12_Vector_implD2Ev</a></td>
+              <td class="coverFnHi">1</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="stl_vector.h.gcov.html#169">_ZNSt12_Vector_baseIiSaIiEE13_M_deallocateEPim</a></td>
+              <td class="coverFnHi">1</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="stl_vector.h.gcov.html#177">_ZNSt12_Vector_baseIiSaIiEE17_M_create_storageEm</a></td>
+              <td class="coverFnHi">1</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="stl_vector.h.gcov.html#111">_ZNSt12_Vector_baseIiSaIiEE19_M_get_Tp_allocatorEv</a></td>
+              <td class="coverFnHi">12</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="stl_vector.h.gcov.html#132">_ZNSt12_Vector_baseIiSaIiEEC2EmRKS0_</a></td>
+              <td class="coverFnHi">1</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="stl_vector.h.gcov.html#157">_ZNSt12_Vector_baseIiSaIiEED2Ev</a></td>
+              <td class="coverFnHi">1</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="stl_vector.h.gcov.html#1348">_ZNSt6vectorIdSaIdEE15_M_erase_at_endEPd</a></td>
+              <td class="coverFnHi">60</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="stl_vector.h.gcov.html#1210">_ZNSt6vectorIdSaIdEE18_M_fill_initializeEmRKd</a></td>
+              <td class="coverFnHi">11</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="stl_vector.h.gcov.html#1220">_ZNSt6vectorIdSaIdEE21_M_default_initializeEm</a></td>
+              <td class="coverFnHi">6</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="stl_vector.h.gcov.html#554">_ZNSt6vectorIdSaIdEE3endEv</a></td>
+              <td class="coverFnHi">1</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="stl_vector.h.gcov.html#1106">_ZNSt6vectorIdSaIdEE4swapERS1_</a></td>
+              <td class="coverFnLo">0</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="stl_vector.h.gcov.html#536">_ZNSt6vectorIdSaIdEE5beginEv</a></td>
+              <td class="coverFnHi">1</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="stl_vector.h.gcov.html#477">_ZNSt6vectorIdSaIdEE6assignEmRKd</a></td>
+              <td class="coverFnHi">60</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="stl_vector.h.gcov.html#1021">_ZNSt6vectorIdSaIdEE6insertEN9__gnu_cxx17__normal_iteratorIPdS1_EEmRKd</a></td>
+              <td class="coverFnHi">1</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="stl_vector.h.gcov.html#682">_ZNSt6vectorIdSaIdEE6resizeEmRKd</a></td>
+              <td class="coverFnHi">1</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="stl_vector.h.gcov.html#917">_ZNSt6vectorIdSaIdEE9push_backEOd</a></td>
+              <td class="coverFnHi">392</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="stl_vector.h.gcov.html#899">_ZNSt6vectorIdSaIdEE9push_backERKd</a></td>
+              <td class="coverFnHi">588</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="stl_vector.h.gcov.html#267">_ZNSt6vectorIdSaIdEEC2EmRKS0_</a></td>
+              <td class="coverFnHi">6</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="stl_vector.h.gcov.html#279">_ZNSt6vectorIdSaIdEEC2EmRKdRKS0_</a></td>
+              <td class="coverFnHi">11</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="stl_vector.h.gcov.html#412">_ZNSt6vectorIdSaIdEED2Ev</a></td>
+              <td class="coverFnHi">17</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="stl_vector.h.gcov.html#768">_ZNSt6vectorIdSaIdEEixEm</a></td>
+              <td class="coverFnHi">7154287182</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="stl_vector.h.gcov.html#1348">_ZNSt6vectorIiSaIiEE15_M_erase_at_endEPi</a></td>
+              <td class="coverFnHi">10</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="stl_vector.h.gcov.html#1210">_ZNSt6vectorIiSaIiEE18_M_fill_initializeEmRKi</a></td>
+              <td class="coverFnHi">1</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="stl_vector.h.gcov.html#554">_ZNSt6vectorIiSaIiEE3endEv</a></td>
+              <td class="coverFnLo">0</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="stl_vector.h.gcov.html#1106">_ZNSt6vectorIiSaIiEE4swapERS1_</a></td>
+              <td class="coverFnLo">0</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="stl_vector.h.gcov.html#536">_ZNSt6vectorIiSaIiEE5beginEv</a></td>
+              <td class="coverFnLo">0</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="stl_vector.h.gcov.html#477">_ZNSt6vectorIiSaIiEE6assignEmRKi</a></td>
+              <td class="coverFnHi">10</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="stl_vector.h.gcov.html#279">_ZNSt6vectorIiSaIiEEC2EmRKiRKS0_</a></td>
+              <td class="coverFnHi">1</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="stl_vector.h.gcov.html#412">_ZNSt6vectorIiSaIiEED2Ev</a></td>
+              <td class="coverFnHi">1</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="stl_vector.h.gcov.html#768">_ZNSt6vectorIiSaIiEEixEm</a></td>
+              <td class="coverFnHi">101312940</td>
+            </tr>
+  </table>
+  <br>
+  </center>
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr><td class="ruler"><img src="/2022/05/07/tool004/result/4.8.2/bits/stl_vector.h.func/../glass.png" srcset="/img/loading.gif" lazyload width="3" height="3" alt></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.13</a></td></tr>
+  </table>
+  <br>
+
+</body>
+</html>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/05/07/tool004/result/4.8.2/bits/stl_iterator.h.func-sort-c/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile"></span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/05/07/tool004/result/4.8.2/bits/alloc_traits.h.func-sort-c/">
+                        <span class="hidden-mobile"></span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="waline"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#waline', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/@waline/client@1/dist/Waline.min.js', function() {
+        var options = Object.assign(
+          {"serverURL":"https://amicoyuan-waline-1odo0o0t6-amicoyuan.vercel.app/","path":"window.location.pathname","placeholder":"欢迎留言~(填写邮箱可在被回复时收到邮件提醒哦)","meta":["nick","mail","link"],"requiredMeta":["nick"],"lang":"zh-CN","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"dark":"html[data-user-color-scheme=\"dark\"]","avatar":"retro","avatarCDN":"https://seccdn.libravatar.org/avatar/","avatarForce":false,"wordLimit":0,"pageSize":10,"highlight":true},
+          {
+            el: '#waline',
+            path: window.location.pathname
+          }
+        )
+        new Waline(options);
+        Fluid.utils.waitElementVisible('#waline .vcontent', () => {
+          Fluid.plugins.initFancyBox('#waline .vcontent img:not(.vemoji)');
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- LeanCloud 统计PV -->
+        <span id="leancloud-site-pv-container" style="display: none">
+            总访问量 
+            <span id="leancloud-site-pv"></span>
+             次
+          </span>
+      
+      
+        <!-- LeanCloud 统计UV -->
+        <span id="leancloud-site-uv-container" style="display: none">
+            总访客数 
+            <span id="leancloud-site-uv"></span>
+             人
+          </span>
+      
+
+    
+  </div>
+
+
+  
+  <!-- 备案信息 -->
+  <div class="beian">
+    <span>
+      <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
+        蜀ICP备2021029832号-1
+      </a>
+    </span>
+    
+      
+        <span>
+          <a
+            href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=51068202000230"
+            rel="nofollow noopener"
+            class="beian-police"
+            target="_blank"
+          >
+            
+              <span style="visibility: hidden; width: 0">|</span>
+              <img src="/img/police_beian.png" srcset="/img/loading.gif" lazyload alt="police-icon"/>
+            
+            <span>川公网安备 51068202000230号</span>
+          </a>
+        </span>
+      
+    
+  </div>
+
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+  <script defer src="/js/leancloud.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
