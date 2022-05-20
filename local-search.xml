@@ -4,6 +4,56 @@
   
   
   <entry>
+    <title>linux的jobs,fg,bg命令</title>
+    <link href="/2022/05/20/Linux002/"/>
+    <url>/2022/05/20/Linux002/</url>
+    
+    <content type="html"><![CDATA[<h3 id="linux让前台程序脱离终端运行"><a href="#linux让前台程序脱离终端运行" class="headerlink" title="linux让前台程序脱离终端运行"></a>linux让前台程序脱离终端运行</h3><p>1.首先运行你的程序</p><p><img src="/2022/05/20/Linux002/image-20220520171436032.png" alt="image-20220520171436032"></p><p>2.随后使用Ctrl + z，挂起你的进程</p><p><img src="/2022/05/20/Linux002/image-20220520171510946.png" alt="image-20220520171510946"></p><p>3.然后使用jobs查看所有的进程</p><p><img src="/2022/05/20/Linux002/image-20220520171913979.png" alt="image-20220520171913979"></p><p>4.随后使用bg+id，表示该任务为后台1号任务</p><p>bg命令用于将作业放到后台运行，使前台可以执行其他任务</p><p><img src="/2022/05/20/Linux002/image-20220520172110992.png" alt="image-20220520172110992"></p><h3 id="linux让后台程序移动到前台终端"><a href="#linux让后台程序移动到前台终端" class="headerlink" title="linux让后台程序移动到前台终端"></a>linux让后台程序移动到前台终端</h3><p>Linux常用命令fg主要用于将后台作业移动到前台终端运行</p><p><img src="/2022/05/20/Linux002/image-20220520172358345.png" alt="image-20220520172358345"></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>HPC</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Linux</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Linux常用指令</title>
+    <link href="/2022/05/20/Linux001/"/>
+    <url>/2022/05/20/Linux001/</url>
+    
+    <content type="html"><![CDATA[<h2 id="Linux常用指令"><a href="#Linux常用指令" class="headerlink" title="Linux常用指令"></a>Linux常用指令</h2><h4 id="杀死进程"><a href="#杀死进程" class="headerlink" title="杀死进程"></a>杀死进程</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c++">kill <span class="hljs-number">-9</span> id<br></code></pre></td></tr></table></figure><p><img src="/2022/05/20/Linux001/image-20220520171246860.png" alt="image-20220520171246860"></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>HPC</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Linux</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>gcov代码覆盖率测试-完整样例-SLIC</title>
     <link href="/2022/05/08/tool004/"/>
     <url>/2022/05/08/tool004/</url>

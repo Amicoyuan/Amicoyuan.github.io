@@ -16,18 +16,40 @@
   <meta name="description" content="">
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="归档">
-<meta property="og:url" content="http://162.14.104.8/archives/2021/index.html">
+  <meta name="description" content="Linux常用指令杀死进程1kill -9 id">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux常用指令">
+<meta property="og:url" content="http://162.14.104.8/2022/05/20/Linux001/index.html">
 <meta property="og:site_name" content="计算机奇妙之旅">
+<meta property="og:description" content="Linux常用指令杀死进程1kill -9 id">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://162.14.104.8/2022/05/20/Linux001/image-20220520171246860.png">
+<meta property="article:published_time" content="2022-05-20T09:08:45.000Z">
+<meta property="article:modified_time" content="2022-05-20T09:12:48.570Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://162.14.104.8/2022/05/20/Linux001/image-20220520171246860.png">
   
-  <title>归档 - 计算机奇妙之旅</title>
+  <title>Linux常用指令 - 计算机奇妙之旅</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
@@ -54,7 +76,7 @@
 
 
 <body>
-  <header style="height: 60vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
@@ -167,9 +189,51 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="归档">
+            <span class="h2" id="subtitle" title="Linux常用指令">
               
             </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-05-20 17:08" pubdate>
+        2022年5月20日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      22 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      1 分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- LeanCloud 统计文章PV -->
+      <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="leancloud-page-views"></span> 次
+      </span>
+    
+  
+</div>
 
             
           </div>
@@ -182,100 +246,126 @@
 
   <main>
     
-      <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">共计 56 篇文章</p>
-  <hr>
-  
-  
-    
       
-      <p class="h5">2021</p>
-    
-    <a href="/2021/12/22/algorithm002/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">Graph-Data Structure</span>
-      <time style="float: right;">12-22</time>
-    </a>
-  
-    
-    <a href="/2021/12/21/algorithm001/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">DFS-深度优先搜索</span>
-      <time style="float: right;">12-21</time>
-    </a>
-  
-    
-    <a href="/2021/12/09/tensorflow001/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">Machine Learning(一) 一个神经元网络-线性函数</span>
-      <time style="float: right;">12-09</time>
-    </a>
-  
-    
-    <a href="/2021/11/27/mpi004/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">MPI学习(四)-广播、散播、收集、归约和全归约的MPI语法</span>
-      <time style="float: right;">11-27</time>
-    </a>
-  
-    
-    <a href="/2021/11/26/mpi003/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">MPI学习(三)-通过OpenmMP使用MPI</span>
-      <time style="float: right;">11-26</time>
-    </a>
-  
-    
-    <a href="/2021/11/26/mpi002/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">MPI学习(二)-非阻塞通信程序(无缓冲)</span>
-      <time style="float: right;">11-26</time>
-    </a>
-  
-    
-    <a href="/2021/11/24/AVX003/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">AVX向量化学习(三)-if判断的处理</span>
-      <time style="float: right;">11-24</time>
-    </a>
-  
-    
-    <a href="/2021/11/23/MPI%E5%AD%A6%E4%B9%A0(%E4%B8%80)-%E7%AE%80%E5%8D%95%E7%9A%84%E5%8F%91%E9%80%81%E6%8E%A5%E6%94%B6/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">MPI学习(一)-简单的发送接收</span>
-      <time style="float: right;">11-23</time>
-    </a>
-  
-    
-    <a href="/2021/11/15/AVX%E5%90%91%E9%87%8F%E5%8C%96%E5%AD%A6%E4%B9%A0(%E4%BA%8C)-%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90%E7%9A%84%E5%BA%94%E7%94%A8/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">AVX向量化学习(二)-内存对齐的应用</span>
-      <time style="float: right;">11-15</time>
-    </a>
-  
-    
-    <a href="/2021/10/24/%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">内存对齐</span>
-      <time style="float: right;">10-24</time>
-    </a>
-  
-</div>
 
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Linux常用指令</h1>
+            
+            <div class="markdown-body">
+              <h2 id="Linux常用指令"><a href="#Linux常用指令" class="headerlink" title="Linux常用指令"></a>Linux常用指令</h2><h4 id="杀死进程"><a href="#杀死进程" class="headerlink" title="杀死进程"></a>杀死进程</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c++">kill <span class="hljs-number">-9</span> id<br></code></pre></td></tr></table></figure>
 
-  <nav aria-label="navigation">
-    <span class="pagination" id="pagination">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2021/page/2/#board">2</a><a class="extend next" rel="next" href="/archives/2021/page/2/#board"><i class="iconfont icon-arrowright"></i></a>
-    </span>
-  </nav>
+<p><img src="/2022/05/20/Linux001/image-20220520171246860.png" srcset="/img/loading.gif" lazyload alt="image-20220520171246860"></p>
 
-
-
-
-              </div>
             </div>
-          </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/HPC/">HPC</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Linux/">Linux</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/05/20/Linux002/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">linux的jobs,fg,bg命令</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/05/08/tool004/">
+                        <span class="hidden-mobile">gcov代码覆盖率测试-完整样例-SLIC</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="waline"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#waline', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/@waline/client@1/dist/Waline.min.js', function() {
+        var options = Object.assign(
+          {"serverURL":"https://amicoyuan-waline-1odo0o0t6-amicoyuan.vercel.app/","path":"window.location.pathname","placeholder":"欢迎留言~(填写邮箱可在被回复时收到邮件提醒哦)","meta":["nick","mail","link"],"requiredMeta":["nick"],"lang":"zh-CN","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"dark":"html[data-user-color-scheme=\"dark\"]","avatar":"retro","avatarCDN":"https://seccdn.libravatar.org/avatar/","avatarForce":false,"wordLimit":0,"pageSize":10,"highlight":true},
+          {
+            el: '#waline',
+            path: window.location.pathname
+          }
+        )
+        new Waline(options);
+        Fluid.utils.waitElementVisible('#waline .vcontent', () => {
+          Fluid.plugins.initFancyBox('#waline .vcontent img:not(.vemoji)');
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
     
 
     
@@ -410,6 +500,19 @@
   
 
 
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
 
 
 
