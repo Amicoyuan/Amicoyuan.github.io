@@ -16,12 +16,12 @@
   <meta name="description" content="">
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
-  <meta name="description" content="最短路径-Floyed和DijkstraFloyed样题一：P1364 医院设置题目描述：设有一棵二叉树，如图：  其中，圈中的数字表示结点中居民的人口。圈边上数字表示结点编号，现在要求在某个结点上建立一个医院，使所有居民所走的路程之和为最小，同时约定，相邻接点之间的距离为 11。如上图中，若医院建在1 处，则距离和 &#x3D;4+12+2\times20+2\times40&#x3D;136&#x3D;4+12+2×20+">
+  <meta name="description" content="最短路径-Floyed和DijkstraFloyed样题一：P1364 医院设置题目描述：设有一棵二叉树，如图：  其中，圈中的数字表示结点中居民的人口。圈边上数字表示结点编号，现在要求在某个结点上建立一个医院，使所有居民所走的路程之和为最小，同时约定，相邻接点之间的距离为 11。如上图中，若医院建在1 处，则距离和 &#x3D;4+12+2\times20+2\times40&#x3D;136&amp;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="最短路径-Floyed和Dijkstra">
 <meta property="og:url" content="http://162.14.104.8/2022/01/03/Algorithm003/index.html">
 <meta property="og:site_name" content="计算机奇妙之旅">
-<meta property="og:description" content="最短路径-Floyed和DijkstraFloyed样题一：P1364 医院设置题目描述：设有一棵二叉树，如图：  其中，圈中的数字表示结点中居民的人口。圈边上数字表示结点编号，现在要求在某个结点上建立一个医院，使所有居民所走的路程之和为最小，同时约定，相邻接点之间的距离为 11。如上图中，若医院建在1 处，则距离和 &#x3D;4+12+2\times20+2\times40&#x3D;136&#x3D;4+12+2×20+">
+<meta property="og:description" content="最短路径-Floyed和DijkstraFloyed样题一：P1364 医院设置题目描述：设有一棵二叉树，如图：  其中，圈中的数字表示结点中居民的人口。圈边上数字表示结点编号，现在要求在某个结点上建立一个医院，使所有居民所走的路程之和为最小，同时约定，相邻接点之间的距离为 11。如上图中，若医院建在1 处，则距离和 &#x3D;4+12+2\times20+2\times40&#x3D;136&amp;">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://162.14.104.8/2022/01/03/Algorithm003/166.png">
 <meta property="og:image" content="http://162.14.104.8/2022/01/03/Algorithm003/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0x5bm5fbWc=,size_16,color_FFFFFF,t_70.png">
@@ -212,7 +212,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      5.7k 字
+      5.8k 字
     </span>
   
 
@@ -263,7 +263,7 @@
             <div class="markdown-body">
               <h1 id="最短路径-Floyed和Dijkstra"><a href="#最短路径-Floyed和Dijkstra" class="headerlink" title="最短路径-Floyed和Dijkstra"></a>最短路径-Floyed和Dijkstra</h1><h2 id="Floyed"><a href="#Floyed" class="headerlink" title="Floyed"></a>Floyed</h2><h3 id="样题一：P1364-医院设置"><a href="#样题一：P1364-医院设置" class="headerlink" title="样题一：P1364 医院设置"></a>样题一：P1364 医院设置</h3><h4 id="题目描述："><a href="#题目描述：" class="headerlink" title="题目描述："></a>题目描述：</h4><p>设有一棵二叉树，如图：</p>
 <p><img src="/2022/01/03/Algorithm003/166.png" srcset="/img/loading.gif" lazyload></p>
-<p>其中，圈中的数字表示结点中居民的人口。圈边上数字表示结点编号，现在要求在某个结点上建立一个医院，使所有居民所走的路程之和为最小，同时约定，相邻接点之间的距离为 11。如上图中，若医院建在1 处，则距离和 =4+12+2\times20+2\times40=136=4+12+2×20+2×40=136；若医院建在 33 处，则距离和 =4\times2+13+20+40=81=4×2+13+20+40=81。</p>
+<p>其中，圈中的数字表示结点中居民的人口。圈边上数字表示结点编号，现在要求在某个结点上建立一个医院，使所有居民所走的路程之和为最小，同时约定，相邻接点之间的距离为 11。如上图中，若医院建在1 处，则距离和 &#x3D;4+12+2\times20+2\times40&#x3D;136&#x3D;4+12+2×20+2×40&#x3D;136；若医院建在 33 处，则距离和 &#x3D;4\times2+13+20+40&#x3D;81&#x3D;4×2+13+20+40&#x3D;81。</p>
 <h4 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h4><p>第一行一个整数 n<em>n</em>，表示树的结点数。</p>
 <p>接下来的 n<em>n</em> 行每行描述了一个结点的状况，包含三个整数 w, u, v<em>w</em>,<em>u</em>,<em>v</em>，其中 w<em>w</em> 为居民人口数，u<em>u</em> 为左链接（为 00 表示无链接），v<em>v</em> 为右链接（为 00 表示无链接）。</p>
 <h4 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h4><p>一个整数，表示最小距离和。</p>
@@ -301,7 +301,7 @@
 
 
 
-<h2 id="相关题目链接："><a href="#相关题目链接：" class="headerlink" title="相关题目链接："></a>相关题目链接：</h2><p>[<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2404"><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1364">P1364 医院设置 - 洛谷 | 计算机科学教育新生态 (luogu.com.cn)</a></a>]:     “ 样题一：P1364 医院设置”</p>
+<h2 id="相关题目链接："><a href="#相关题目链接：" class="headerlink" title="相关题目链接："></a>相关题目链接：</h2><p>[<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2404"><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1364">P1364 医院设置 - 洛谷 | 计算机科学教育新生态 (luogu.com.cn)</a></a>]: 	“ 样题一：P1364 医院设置”</p>
 <p><a target="_blank" rel="noopener" href="https://pintia.cn/problem-sets/994805046380707840/problems/994805073643683840">题目详情 - L2-001 紧急救援 (25 分) (pintia.cn)</a> ：样题三：L2-001 紧急救援 (25 分)</p>
 <p><a target="_blank" rel="noopener" href="https://www.freesion.com/article/8556971489/">L2-001 紧急救援 (25 分)&amp;&amp;dijkstra - 灰信网（软件开发博客聚合） (freesion.com)</a>：样题三参考资料</p>
 

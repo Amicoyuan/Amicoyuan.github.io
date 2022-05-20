@@ -16,12 +16,12 @@
   <meta name="description" content="">
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
-  <meta name="description" content="L2-023 图着色问题 (25 分)图着色问题是一个著名的NP完全问题。给定无向图G&#x3D;(V,E)，问可否用K种颜色为V中的每一个顶点分配一种颜色，使得不会有两个相邻顶点具有同一种颜色？ 但本题并不是要你解决这个着色问题，而是对给定的一种颜色分配，请你判断这是否是图着色问题的一个解。 输入格式：输入在第一行给出3个整数V（0&lt;V≤500）、E（≥0）和K（0&lt;K≤V），分别是无向图的顶">
+  <meta name="description" content="L2-023 图着色问题 (25 分)图着色问题是一个著名的NP完全问题。给定无向图G&#x3D;(V,E)，问可否用K种颜色为V中的每一个顶点分配一种颜色，使得不会有两个相邻顶点具有同一种颜色？ 但本题并不是要你解决这个着色问题，而是对给定的一种颜色分配，请你判断这是否是图着色问题的一个解。 输入格式：输入在第一行给出3个整数V（0&lt;V≤500）、E（≥0）和K（0&lt;K≤V），分别是">
 <meta property="og:type" content="article">
 <meta property="og:title" content="L2-023 图着色问题 (25 分)">
 <meta property="og:url" content="http://162.14.104.8/2022/04/12/Algorithm018/index.html">
 <meta property="og:site_name" content="计算机奇妙之旅">
-<meta property="og:description" content="L2-023 图着色问题 (25 分)图着色问题是一个著名的NP完全问题。给定无向图G&#x3D;(V,E)，问可否用K种颜色为V中的每一个顶点分配一种颜色，使得不会有两个相邻顶点具有同一种颜色？ 但本题并不是要你解决这个着色问题，而是对给定的一种颜色分配，请你判断这是否是图着色问题的一个解。 输入格式：输入在第一行给出3个整数V（0&lt;V≤500）、E（≥0）和K（0&lt;K≤V），分别是无向图的顶">
+<meta property="og:description" content="L2-023 图着色问题 (25 分)图着色问题是一个著名的NP完全问题。给定无向图G&#x3D;(V,E)，问可否用K种颜色为V中的每一个顶点分配一种颜色，使得不会有两个相邻顶点具有同一种颜色？ 但本题并不是要你解决这个着色问题，而是对给定的一种颜色分配，请你判断这是否是图着色问题的一个解。 输入格式：输入在第一行给出3个整数V（0&lt;V≤500）、E（≥0）和K（0&lt;K≤V），分别是">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://162.14.104.8/2022/04/12/Algorithm018/graph.png">
 <meta property="article:published_time" content="2022-04-12T10:59:52.000Z">
@@ -265,7 +265,7 @@
             <h1 style="display: none">L2-023 图着色问题 (25 分)</h1>
             
             <div class="markdown-body">
-              <h2 id="L2-023-图着色问题-25-分"><a href="#L2-023-图着色问题-25-分" class="headerlink" title="L2-023 图着色问题 (25 分)"></a>L2-023 图着色问题 (25 分)</h2><p>图着色问题是一个著名的NP完全问题。给定无向图<em>G</em>=(<em>V</em>,<em>E</em>)，问可否用<em>K</em>种颜色为<em>V</em>中的每一个顶点分配一种颜色，使得不会有两个相邻顶点具有同一种颜色？</p>
+              <h2 id="L2-023-图着色问题-25-分"><a href="#L2-023-图着色问题-25-分" class="headerlink" title="L2-023 图着色问题 (25 分)"></a>L2-023 图着色问题 (25 分)</h2><p>图着色问题是一个著名的NP完全问题。给定无向图<em>G</em>&#x3D;(<em>V</em>,<em>E</em>)，问可否用<em>K</em>种颜色为<em>V</em>中的每一个顶点分配一种颜色，使得不会有两个相邻顶点具有同一种颜色？</p>
 <p>但本题并不是要你解决这个着色问题，而是对给定的一种颜色分配，请你判断这是否是图着色问题的一个解。</p>
 <h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在第一行给出3个整数<em>V</em>（0&lt;<em>V</em>≤500）、<em>E</em>（≥0）和<em>K</em>（0&lt;<em>K</em>≤<em>V</em>），分别是无向图的顶点数、边数、以及颜色数。顶点和颜色都从1到<em>V</em>编号。随后<em>E</em>行，每行给出一条边的两个端点的编号。在图的信息给出之后，给出了一个正整数<em>N</em>（≤20），是待检查的颜色分配方案的个数。随后<em>N</em>行，每行顺次给出<em>V</em>个顶点的颜色（第<em>i</em>个数字表示第<em>i</em>个顶点的颜色），数字间以空格分隔。题目保证给定的无向图是合法的（即不存在自回路和重边）。</p>
 <h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>对每种颜色分配方案，如果是图着色问题的一个解则输出<code>Yes</code>，否则输出<code>No</code>，每句占一行。</p>
