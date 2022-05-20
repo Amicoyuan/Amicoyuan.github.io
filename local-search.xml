@@ -4,6 +4,60 @@
   
   
   <entry>
+    <title>Slurm</title>
+    <link href="/2022/05/20/slurm001/"/>
+    <url>/2022/05/20/slurm001/</url>
+    
+    <content type="html"><![CDATA[<h2 id="Slurm"><a href="#Slurm" class="headerlink" title="Slurm"></a>Slurm</h2><h4 id="1-sstat-查看RUNNING作业"><a href="#1-sstat-查看RUNNING作业" class="headerlink" title="1.sstat 查看RUNNING作业"></a>1.sstat 查看RUNNING作业</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sstat -e<br></code></pre></td></tr></table></figure><p><img src="/2022/05/20/slurm001/image-20220520174453969.png" alt="image-20220520174453969"></p><p><strong>使用举例：</strong></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sstat -a --format=&quot;JobId,Pids,AveCPU,AveRSS,MaxRSS&quot;  1755818<br></code></pre></td></tr></table></figure><p><img src="/2022/05/20/slurm001/image-20220520175001331.png" alt="image-20220520175001331"></p><h4 id="2-sacct-查看FINISHED作业"><a href="#2-sacct-查看FINISHED作业" class="headerlink" title="2.sacct 查看FINISHED作业"></a>2.sacct 查看FINISHED作业</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sacct -e<br></code></pre></td></tr></table></figure><p><img src="/2022/05/20/slurm001/image-20220520174622868.png" alt="image-20220520174622868"></p><p><strong>使用举例：</strong></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sacct --format=&quot;JobId,Elapsed,CPUTime,CPUTimeRAW,AveCPU,TotalCPU,UserCPU,SystemCPU,AveRSS,MaxRSS&quot; -j 1754217<br></code></pre></td></tr></table></figure><p><img src="/2022/05/20/slurm001/image-20220520174807162.png" alt="image-20220520174807162"></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>HPC</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Linux</tag>
+      
+      <tag>Slurm</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>numactl</title>
+    <link href="/2022/05/20/numactl001/"/>
+    <url>/2022/05/20/numactl001/</url>
+    
+    <content type="html"><![CDATA[<ol><li></li></ol><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">numactl --hardware<br></code></pre></td></tr></table></figure><p><img src="/2022/05/20/numactl001/image-20220520173911653.png" alt="image-20220520173911653"></p><ol start="2"><li></li></ol><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shelll">numastat<br></code></pre></td></tr></table></figure><p><img src="/2022/05/20/numactl001/image-20220520174030171.png" alt="image-20220520174030171"></p><ol start="3"><li></li></ol><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c++">numactl --show<br></code></pre></td></tr></table></figure><p><img src="/2022/05/20/numactl001/image-20220520174148487.png" alt="image-20220520174148487"></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>HPC</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Linux</tag>
+      
+      <tag>Numactl</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>linux的jobs,fg,bg命令</title>
     <link href="/2022/05/20/Linux002/"/>
     <url>/2022/05/20/Linux002/</url>

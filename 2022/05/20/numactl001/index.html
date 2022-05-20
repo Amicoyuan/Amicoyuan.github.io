@@ -16,18 +16,43 @@
   <meta name="description" content="">
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="分类">
-<meta property="og:url" content="http://162.14.104.8/categories/index.html">
+  <meta name="description" content="1numactl --hardware      1numastat      1numactl --show">
+<meta property="og:type" content="article">
+<meta property="og:title" content="numactl">
+<meta property="og:url" content="http://162.14.104.8/2022/05/20/numactl001/index.html">
 <meta property="og:site_name" content="计算机奇妙之旅">
+<meta property="og:description" content="1numactl --hardware      1numastat      1numactl --show">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://162.14.104.8/2022/05/20/numactl001/image-20220520173911653.png">
+<meta property="og:image" content="http://162.14.104.8/2022/05/20/numactl001/image-20220520174030171.png">
+<meta property="og:image" content="http://162.14.104.8/2022/05/20/numactl001/image-20220520174148487.png">
+<meta property="article:published_time" content="2022-05-20T09:35:59.000Z">
+<meta property="article:modified_time" content="2022-05-20T09:43:05.744Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="Numactl">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://162.14.104.8/2022/05/20/numactl001/image-20220520173911653.png">
   
-  <title>分类 - 计算机奇妙之旅</title>
+  <title>numactl - 计算机奇妙之旅</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
@@ -54,7 +79,7 @@
 
 
 <body>
-  <header style="height: 60vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
@@ -167,9 +192,51 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="分类">
+            <span class="h2" id="subtitle" title="numactl">
               
             </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-05-20 17:35" pubdate>
+        2022年5月20日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      41 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      1 分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- LeanCloud 统计文章PV -->
+      <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="leancloud-page-views"></span> 次
+      </span>
+    
+  
+</div>
 
             
           </div>
@@ -182,309 +249,143 @@
 
   <main>
     
-      <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
+      
 
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">numactl</h1>
+            
+            <div class="markdown-body">
+              <ol>
+<li></li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">numactl --hardware<br></code></pre></td></tr></table></figure>
 
+<p><img src="/2022/05/20/numactl001/image-20220520173911653.png" srcset="/img/loading.gif" lazyload alt="image-20220520173911653"></p>
+<ol start="2">
+<li></li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shelll">numastat<br></code></pre></td></tr></table></figure>
 
+<p><img src="/2022/05/20/numactl001/image-20220520174030171.png" srcset="/img/loading.gif" lazyload alt="image-20220520174030171"></p>
+<ol start="3">
+<li></li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c++">numactl --show<br></code></pre></td></tr></table></figure>
 
+<p><img src="/2022/05/20/numactl001/image-20220520174148487.png" srcset="/img/loading.gif" lazyload alt="image-20220520174148487"></p>
 
-<div class="category-list">
-  
-  
-  
-  
-    
-    
-    <div class="category row">
-      <a
-        class="category-item collapsed list-group-item category-item-action col-10 col-md-11"
-        id="heading-4afa80e77a07f7488ce4d1bdd8c4977a" role="tab" data-toggle="collapse" href="#collapse-4afa80e77a07f7488ce4d1bdd8c4977a"
-        aria-expanded="false"
-      >
-        Algorithm
-        <i class="iconfont icon-arrowright"></i>
-      </a>
-      <a href="/categories/Algorithm/" class="category-count col-2 col-md-1">
-        <i class="iconfont icon-articles"></i>
-        <span>36</span>
-      </a>
-      <div class="category-collapse collapse" id="collapse-4afa80e77a07f7488ce4d1bdd8c4977a" role="tabpanel" aria-labelledby="heading-4afa80e77a07f7488ce4d1bdd8c4977a">
-        
-        
-          
-  <div class="category-post-list">
-    
-    
-      
-      
-        <a href="/2022/05/06/Algorithm037/" class="list-group-item list-group-item-action">
-          <span class="category-post">图的存储</span>
-        </a>
-      
-    
-      
-      
-        <a href="/2022/05/05/Algorithm036/" class="list-group-item list-group-item-action">
-          <span class="category-post">树、森林</span>
-        </a>
-      
-    
-      
-      
-        <a href="/2022/05/04/Algorithm035/" class="list-group-item list-group-item-action">
-          <span class="category-post">线索二叉树</span>
-        </a>
-      
-    
-      
-      
-        <a href="/2022/04/27/Algorithm034/" class="list-group-item list-group-item-action">
-          <span class="category-post">串的模式匹配算法-KMP算法</span>
-        </a>
-      
-    
-      
-      
-        <a href="/2022/04/27/Algorithm033/" class="list-group-item list-group-item-action">
-          <span class="category-post">串-简单的模式匹配算法</span>
-        </a>
-      
-    
-      
-      
-        <a href="/2022/04/23/Algorithm032/" class="list-group-item list-group-item-action">
-          <span class="category-post">L2-036 网红点打卡攻略 (25 分)</span>
-        </a>
-      
-    
-      
-      
-        <a href="/2022/04/23/Algorithm031/" class="list-group-item list-group-item-action">
-          <span class="category-post">L2-039 清点代码库 (25 分)</span>
-        </a>
-      
-    
-      
-      
-        <a href="/2022/04/23/Algorithm030/" class="list-group-item list-group-item-action">
-          <span class="category-post">L2-005 集合相似度 (25 分)</span>
-        </a>
-      
-    
-      
-      
-        <a href="/2022/04/16/Algorithm029/" class="list-group-item list-group-item-action">
-          <span class="category-post">STL中map的使用</span>
-        </a>
-      
-    
-      
-      
-        <a href="/2022/04/16/Algorithm028/" class="list-group-item list-group-item-action">
-          <span class="category-post">L2-010 排座位 (25 分)</span>
-        </a>
-      
-    
-      
-      
-        <a href="/categories/Algorithm/" class="list-group-item list-group-item-action">
-          <span class="category-post">More...</span>
-        </a>
-        
-  </div>
-
-        
-      </div>
-    </div>
-  
-    
-    
-    <div class="category row">
-      <a
-        class="category-item collapsed list-group-item category-item-action col-10 col-md-11"
-        id="heading-2f569257101cf136a49d983584bfc44f" role="tab" data-toggle="collapse" href="#collapse-2f569257101cf136a49d983584bfc44f"
-        aria-expanded="false"
-      >
-        HPC
-        <i class="iconfont icon-arrowright"></i>
-      </a>
-      <a href="/categories/HPC/" class="category-count col-2 col-md-1">
-        <i class="iconfont icon-articles"></i>
-        <span>19</span>
-      </a>
-      <div class="category-collapse collapse" id="collapse-2f569257101cf136a49d983584bfc44f" role="tabpanel" aria-labelledby="heading-2f569257101cf136a49d983584bfc44f">
-        
-        
-          
-  <div class="category-post-list">
-    
-    
-      
-      
-        <a href="/2022/05/20/slurm001/" class="list-group-item list-group-item-action">
-          <span class="category-post">Slurm</span>
-        </a>
-      
-    
-      
-      
-        <a href="/2022/05/20/numactl001/" class="list-group-item list-group-item-action">
-          <span class="category-post">numactl</span>
-        </a>
-      
-    
-      
-      
-        <a href="/2022/05/20/Linux002/" class="list-group-item list-group-item-action">
-          <span class="category-post">linux的jobs,fg,bg命令</span>
-        </a>
-      
-    
-      
-      
-        <a href="/2022/05/20/Linux001/" class="list-group-item list-group-item-action">
-          <span class="category-post">Linux常用指令</span>
-        </a>
-      
-    
-      
-      
-        <a href="/2022/05/08/tool004/" class="list-group-item list-group-item-action">
-          <span class="category-post">gcov代码覆盖率测试-完整样例-SLIC</span>
-        </a>
-      
-    
-      
-      
-        <a href="/2022/04/02/mpi006/" class="list-group-item list-group-item-action">
-          <span class="category-post">MPI学习(六)-两个矩阵相加MPI版本</span>
-        </a>
-      
-    
-      
-      
-        <a href="/2022/01/19/tool003/" class="list-group-item list-group-item-action">
-          <span class="category-post">perf-系统级性能分析工具</span>
-        </a>
-      
-    
-      
-      
-        <a href="/2022/01/18/tool002/" class="list-group-item list-group-item-action">
-          <span class="category-post">gcov代码覆盖率测试</span>
-        </a>
-      
-    
-      
-      
-        <a href="/2022/01/17/AVX005/" class="list-group-item list-group-item-action">
-          <span class="category-post">AVX向量化学习(五)-INT型数组相加操作</span>
-        </a>
-      
-    
-      
-      
-        <a href="/2022/01/17/AVX004/" class="list-group-item list-group-item-action">
-          <span class="category-post">AVX向量化学习(四)-INT类型转化成DOUBLE类型</span>
-        </a>
-      
-    
-      
-      
-        <a href="/categories/HPC/" class="list-group-item list-group-item-action">
-          <span class="category-post">More...</span>
-        </a>
-        
-  </div>
-
-        
-      </div>
-    </div>
-  
-    
-    
-    <div class="category row">
-      <a
-        class="category-item collapsed list-group-item category-item-action col-10 col-md-11"
-        id="heading-091fa9121c047db1dd48c3e2ab5f3c91" role="tab" data-toggle="collapse" href="#collapse-091fa9121c047db1dd48c3e2ab5f3c91"
-        aria-expanded="false"
-      >
-        Machine Learning
-        <i class="iconfont icon-arrowright"></i>
-      </a>
-      <a href="/categories/Machine-Learning/" class="category-count col-2 col-md-1">
-        <i class="iconfont icon-articles"></i>
-        <span>1</span>
-      </a>
-      <div class="category-collapse collapse" id="collapse-091fa9121c047db1dd48c3e2ab5f3c91" role="tabpanel" aria-labelledby="heading-091fa9121c047db1dd48c3e2ab5f3c91">
-        
-        
-          
-  <div class="category-post-list">
-    
-    
-      
-      
-        <a href="/2021/12/09/tensorflow001/" class="list-group-item list-group-item-action">
-          <span class="category-post">Machine Learning(一) 一个神经元网络-线性函数</span>
-        </a>
-      
-    
-  </div>
-
-        
-      </div>
-    </div>
-  
-    
-    
-    <div class="category row">
-      <a
-        class="category-item collapsed list-group-item category-item-action col-10 col-md-11"
-        id="heading-01041972276a9a9017462775a4c40ad4" role="tab" data-toggle="collapse" href="#collapse-01041972276a9a9017462775a4c40ad4"
-        aria-expanded="false"
-      >
-        计算机组成原理
-        <i class="iconfont icon-arrowright"></i>
-      </a>
-      <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" class="category-count col-2 col-md-1">
-        <i class="iconfont icon-articles"></i>
-        <span>1</span>
-      </a>
-      <div class="category-collapse collapse" id="collapse-01041972276a9a9017462775a4c40ad4" role="tabpanel" aria-labelledby="heading-01041972276a9a9017462775a4c40ad4">
-        
-        
-          
-  <div class="category-post-list">
-    
-    
-      
-      
-        <a href="/2021/10/24/%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90/" class="list-group-item list-group-item-action">
-          <span class="category-post">内存对齐</span>
-        </a>
-      
-    
-  </div>
-
-        
-      </div>
-    </div>
-  
-</div>
-
-              </div>
             </div>
-          </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/HPC/">HPC</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Linux/">Linux</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Numactl/">Numactl</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/05/20/slurm001/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Slurm</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/05/20/Linux002/">
+                        <span class="hidden-mobile">linux的jobs,fg,bg命令</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="waline"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#waline', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/@waline/client@1/dist/Waline.min.js', function() {
+        var options = Object.assign(
+          {"serverURL":"https://amicoyuan-waline-1odo0o0t6-amicoyuan.vercel.app/","path":"window.location.pathname","placeholder":"欢迎留言~(填写邮箱可在被回复时收到邮件提醒哦)","meta":["nick","mail","link"],"requiredMeta":["nick"],"lang":"zh-CN","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"dark":"html[data-user-color-scheme=\"dark\"]","avatar":"retro","avatarCDN":"https://seccdn.libravatar.org/avatar/","avatarForce":false,"wordLimit":0,"pageSize":10,"highlight":true},
+          {
+            el: '#waline',
+            path: window.location.pathname
+          }
+        )
+        new Waline(options);
+        Fluid.utils.waitElementVisible('#waline .vcontent', () => {
+          Fluid.plugins.initFancyBox('#waline .vcontent img:not(.vemoji)');
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
     
 
     
@@ -619,6 +520,19 @@
   
 
 
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
 
 
 
