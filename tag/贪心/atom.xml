@@ -29,8 +29,8 @@
     <category term="并查集" />
     <category term="Map" />
     <category term="Pair" />
-    <category term="线索二叉树" />
     <category term="KMP" />
+    <category term="线索二叉树" />
     <category term="Tree" />
     <category term="森林" />
     <category term="Linux" />
@@ -48,14 +48,14 @@
 &lt;p&gt;注意：销售时允许取出一部分库存。样例给出的情形是这样的：假如我们有 3 种月饼，其库存量分别为 18、15、10 万吨，总售价分别为 75、72、45 亿元。如果市场的最大需求量只有 20 万吨，那么我们最大收益策略应该是卖出全部 15 万吨第 2 种月饼、以及 5 万吨第 3 种月饼，获得 72 + 45&amp;#x2F;2 &amp;#x3D; 94.5（亿元）。&lt;/p&gt;
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;每个输入包含一个测试用例。每个测试用例先给出一个不超过 1000 的正整数 &lt;em&gt;N&lt;/em&gt; 表示月饼的种类数、以及不超过 500（以万吨为单位）的正整数 &lt;em&gt;D&lt;/em&gt; 表示市场最大需求量。随后一行给出 &lt;em&gt;N&lt;/em&gt; 个正数表示每种月饼的库存量（以万吨为单位）；最后一行给出 &lt;em&gt;N&lt;/em&gt; 个正数表示每种月饼的总售价（以亿元为单位）。数字间以空格分隔。&lt;/p&gt;
 &lt;h3 id=&#34;输出格式：&#34;&gt;&lt;a href=&#34;#输出格式：&#34; class=&#34;headerlink&#34; title=&#34;输出格式：&#34;&gt;&lt;/a&gt;输出格式：&lt;/h3&gt;&lt;p&gt;对每组测试用例，在一行中输出最大收益，以亿元为单位并精确到小数点后 2 位。&lt;/p&gt;
-&lt;h3 id=&#34;输入样例：&#34;&gt;&lt;a href=&#34;#输入样例：&#34; class=&#34;headerlink&#34; title=&#34;输入样例：&#34;&gt;&lt;/a&gt;输入样例：&lt;/h3&gt;&lt;pre class=&#34; language-in&#34;&gt;&lt;code class=&#34;language-in&#34;&gt;3 20
+&lt;h3 id=&#34;输入样例：&#34;&gt;&lt;a href=&#34;#输入样例：&#34; class=&#34;headerlink&#34; title=&#34;输入样例：&#34;&gt;&lt;/a&gt;输入样例：&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-in&#34;&gt;&lt;code class=&#34;language-in&#34;&gt;3 20
 18 15 10
 75 72 45
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;输出样例：&#34;&gt;&lt;a href=&#34;#输出样例：&#34; class=&#34;headerlink&#34; title=&#34;输出样例：&#34;&gt;&lt;/a&gt;输出样例：&lt;/h3&gt;&lt;pre class=&#34; language-out&#34;&gt;&lt;code class=&#34;language-out&#34;&gt;94.50
-&lt;/code&gt;&lt;/pre&gt;
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;输出样例：&#34;&gt;&lt;a href=&#34;#输出样例：&#34; class=&#34;headerlink&#34; title=&#34;输出样例：&#34;&gt;&lt;/a&gt;输出样例：&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-out&#34;&gt;&lt;code class=&#34;language-out&#34;&gt;94.50
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;程序源代码：&#34;&gt;&lt;a href=&#34;#程序源代码：&#34; class=&#34;headerlink&#34; title=&#34;程序源代码：&#34;&gt;&lt;/a&gt;程序源代码：&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;贪心 + Sort&lt;/strong&gt;&lt;/p&gt;
-&lt;pre class=&#34; language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;#include&lt;bits/stdc++.h&gt;
+&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;#include&lt;bits/stdc++.h&gt;
 using namespace std;
 struct mooncake&amp;#123;
     double pow;
@@ -91,7 +91,7 @@ int main()
     printf(&#34;%.2f\n&#34;,price);
     return 0;
 &amp;#125;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;参考资料：&#34;&gt;&lt;a href=&#34;#参考资料：&#34; class=&#34;headerlink&#34; title=&#34;参考资料：&#34;&gt;&lt;/a&gt;参考资料：&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://pintia.cn/problem-sets/994805046380707840/problems/994805071789801472&#34;&gt;题目详情 - L2-003 月饼 (25 分) (pintia.cn)&lt;/a&gt;&lt;/p&gt;
 </content>
         <category term="C++" />

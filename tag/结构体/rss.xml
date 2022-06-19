@@ -32,8 +32,8 @@
         <category>并查集</category>
         <category>Map</category>
         <category>Pair</category>
-        <category>线索二叉树</category>
         <category>KMP</category>
+        <category>线索二叉树</category>
         <category>Tree</category>
         <category>森林</category>
         <category>Linux</category>
@@ -58,7 +58,7 @@
 &lt;p&gt;&lt;em&gt;K     N&lt;/em&gt;1 &lt;em&gt;P&lt;/em&gt;1⋯ NK PK&lt;/p&gt;
 &lt;p&gt;其中&lt;em&gt;K&lt;/em&gt;（0≤&lt;em&gt;K&lt;/em&gt;≤20）是发出去的红包个数，&lt;em&gt;N&lt;/em&gt;i&lt;em&gt;是抢到红包的人的编号，&lt;/em&gt;Pi（&amp;gt;0）是其抢到的红包金额（以分为单位）。注意：对于同一个人发出的红包，每人最多只能抢1次，不能重复抢。&lt;/p&gt;
 &lt;h3 id=&#34;输出格式：&#34;&gt;&lt;a href=&#34;#输出格式：&#34; class=&#34;headerlink&#34; title=&#34;输出格式：&#34;&gt;&lt;/a&gt;输出格式：&lt;/h3&gt;&lt;p&gt;按照收入金额从高到低的递减顺序输出每个人的编号和收入金额（以元为单位，输出小数点后2位）。每个人的信息占一行，两数字间有1个空格。如果收入金额有并列，则按抢到红包的个数递减输出；如果还有并列，则按个人编号递增输出。&lt;/p&gt;
-&lt;h3 id=&#34;输入样例：&#34;&gt;&lt;a href=&#34;#输入样例：&#34; class=&#34;headerlink&#34; title=&#34;输入样例：&#34;&gt;&lt;/a&gt;输入样例：&lt;/h3&gt;&lt;pre class=&#34; language-in&#34;&gt;&lt;code class=&#34;language-in&#34;&gt;10
+&lt;h3 id=&#34;输入样例：&#34;&gt;&lt;a href=&#34;#输入样例：&#34; class=&#34;headerlink&#34; title=&#34;输入样例：&#34;&gt;&lt;/a&gt;输入样例：&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-in&#34;&gt;&lt;code class=&#34;language-in&#34;&gt;10
 3 2 22 10 58 8 125
 5 1 345 3 211 5 233 7 13 8 101
 1 7 8800
@@ -69,8 +69,8 @@
 2 1 23 2 123
 1 8 250
 4 2 121 4 516 7 112 9 10
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;输出样例：&#34;&gt;&lt;a href=&#34;#输出样例：&#34; class=&#34;headerlink&#34; title=&#34;输出样例：&#34;&gt;&lt;/a&gt;输出样例：&lt;/h3&gt;&lt;pre class=&#34; language-out&#34;&gt;&lt;code class=&#34;language-out&#34;&gt;1 11.63
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;输出样例：&#34;&gt;&lt;a href=&#34;#输出样例：&#34; class=&#34;headerlink&#34; title=&#34;输出样例：&#34;&gt;&lt;/a&gt;输出样例：&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-out&#34;&gt;&lt;code class=&#34;language-out&#34;&gt;1 11.63
 2 3.63
 8 3.63
 3 2.11
@@ -80,11 +80,11 @@
 10 -3.26
 5 -3.26
 4 -12.32
-&lt;/code&gt;&lt;/pre&gt;
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;程序源代码：&#34;&gt;&lt;a href=&#34;#程序源代码：&#34; class=&#34;headerlink&#34; title=&#34;程序源代码：&#34;&gt;&lt;/a&gt;程序源代码：&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;结构体 + Sort&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;需要注意的就是double类型相等的比较&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;首先，浮点数在计算机中并不能精确的表示，所以在判断两个double类型的数时需要其他的手段，而不是直接 a&amp;#x3D;&amp;#x3D; b&lt;/strong&gt;&lt;/p&gt;
-&lt;pre class=&#34; language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;#include&lt;bits/stdc++.h&gt;
+&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;#include&lt;bits/stdc++.h&gt;
 using namespace std;
 struct student&amp;#123;
     int id=0;
@@ -126,7 +126,7 @@ int main()
     &amp;#125;
     return 0;
 &amp;#125;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;参考资料：&#34;&gt;&lt;a href=&#34;#参考资料：&#34; class=&#34;headerlink&#34; title=&#34;参考资料：&#34;&gt;&lt;/a&gt;参考资料：&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/dingpiao190/article/details/73512811?spm=1001.2101.3001.6661.1&amp;utm_medium=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~Rate-1.pc_relevant_default&amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~Rate-1.pc_relevant_default&amp;utm_relevant_index=1&#34;&gt;(20条消息) double类型是否相等的判断方法_dingpiao190的博客-CSDN博客_double判断相等&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/patrick_star_cowboy/article/details/82083392&#34;&gt;(20条消息) 如何判断两个double类型的数是否相等？_Patrick-Star的博客-CSDN博客_两个double怎么判断相等&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://pintia.cn/problem-sets/994805046380707840/problems/994805066890854400&#34;&gt;题目详情 - L2-009 抢红包 (25 分) (pintia.cn)&lt;/a&gt;&lt;/p&gt;
@@ -146,14 +146,14 @@ int main()
 &lt;p&gt;注意：销售时允许取出一部分库存。样例给出的情形是这样的：假如我们有 3 种月饼，其库存量分别为 18、15、10 万吨，总售价分别为 75、72、45 亿元。如果市场的最大需求量只有 20 万吨，那么我们最大收益策略应该是卖出全部 15 万吨第 2 种月饼、以及 5 万吨第 3 种月饼，获得 72 + 45&amp;#x2F;2 &amp;#x3D; 94.5（亿元）。&lt;/p&gt;
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;每个输入包含一个测试用例。每个测试用例先给出一个不超过 1000 的正整数 &lt;em&gt;N&lt;/em&gt; 表示月饼的种类数、以及不超过 500（以万吨为单位）的正整数 &lt;em&gt;D&lt;/em&gt; 表示市场最大需求量。随后一行给出 &lt;em&gt;N&lt;/em&gt; 个正数表示每种月饼的库存量（以万吨为单位）；最后一行给出 &lt;em&gt;N&lt;/em&gt; 个正数表示每种月饼的总售价（以亿元为单位）。数字间以空格分隔。&lt;/p&gt;
 &lt;h3 id=&#34;输出格式：&#34;&gt;&lt;a href=&#34;#输出格式：&#34; class=&#34;headerlink&#34; title=&#34;输出格式：&#34;&gt;&lt;/a&gt;输出格式：&lt;/h3&gt;&lt;p&gt;对每组测试用例，在一行中输出最大收益，以亿元为单位并精确到小数点后 2 位。&lt;/p&gt;
-&lt;h3 id=&#34;输入样例：&#34;&gt;&lt;a href=&#34;#输入样例：&#34; class=&#34;headerlink&#34; title=&#34;输入样例：&#34;&gt;&lt;/a&gt;输入样例：&lt;/h3&gt;&lt;pre class=&#34; language-in&#34;&gt;&lt;code class=&#34;language-in&#34;&gt;3 20
+&lt;h3 id=&#34;输入样例：&#34;&gt;&lt;a href=&#34;#输入样例：&#34; class=&#34;headerlink&#34; title=&#34;输入样例：&#34;&gt;&lt;/a&gt;输入样例：&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-in&#34;&gt;&lt;code class=&#34;language-in&#34;&gt;3 20
 18 15 10
 75 72 45
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;输出样例：&#34;&gt;&lt;a href=&#34;#输出样例：&#34; class=&#34;headerlink&#34; title=&#34;输出样例：&#34;&gt;&lt;/a&gt;输出样例：&lt;/h3&gt;&lt;pre class=&#34; language-out&#34;&gt;&lt;code class=&#34;language-out&#34;&gt;94.50
-&lt;/code&gt;&lt;/pre&gt;
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;输出样例：&#34;&gt;&lt;a href=&#34;#输出样例：&#34; class=&#34;headerlink&#34; title=&#34;输出样例：&#34;&gt;&lt;/a&gt;输出样例：&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-out&#34;&gt;&lt;code class=&#34;language-out&#34;&gt;94.50
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;程序源代码：&#34;&gt;&lt;a href=&#34;#程序源代码：&#34; class=&#34;headerlink&#34; title=&#34;程序源代码：&#34;&gt;&lt;/a&gt;程序源代码：&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;贪心 + Sort&lt;/strong&gt;&lt;/p&gt;
-&lt;pre class=&#34; language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;#include&lt;bits/stdc++.h&gt;
+&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;#include&lt;bits/stdc++.h&gt;
 using namespace std;
 struct mooncake&amp;#123;
     double pow;
@@ -189,7 +189,7 @@ int main()
     printf(&#34;%.2f\n&#34;,price);
     return 0;
 &amp;#125;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;参考资料：&#34;&gt;&lt;a href=&#34;#参考资料：&#34; class=&#34;headerlink&#34; title=&#34;参考资料：&#34;&gt;&lt;/a&gt;参考资料：&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://pintia.cn/problem-sets/994805046380707840/problems/994805071789801472&#34;&gt;题目详情 - L2-003 月饼 (25 分) (pintia.cn)&lt;/a&gt;&lt;/p&gt;
  ]]></description>
         </item>

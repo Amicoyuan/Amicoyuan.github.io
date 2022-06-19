@@ -32,8 +32,8 @@
         <category>并查集</category>
         <category>Map</category>
         <category>Pair</category>
-        <category>线索二叉树</category>
         <category>KMP</category>
+        <category>线索二叉树</category>
         <category>Tree</category>
         <category>森林</category>
         <category>Linux</category>
@@ -62,7 +62,7 @@
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;其中 &lt;code&gt;K&lt;/code&gt; 是通道的数量，其后是每扇门的编号。&lt;/p&gt;
 &lt;h3 id=&#34;输出格式：&#34;&gt;&lt;a href=&#34;#输出格式：&#34; class=&#34;headerlink&#34; title=&#34;输出格式：&#34;&gt;&lt;/a&gt;输出格式：&lt;/h3&gt;&lt;p&gt;在一行中输出距离入口最远的那扇门的编号。题目保证这样的结果是唯一的。&lt;/p&gt;
-&lt;h3 id=&#34;输入样例：&#34;&gt;&lt;a href=&#34;#输入样例：&#34; class=&#34;headerlink&#34; title=&#34;输入样例：&#34;&gt;&lt;/a&gt;输入样例：&lt;/h3&gt;&lt;pre class=&#34; language-in&#34;&gt;&lt;code class=&#34;language-in&#34;&gt;13
+&lt;h3 id=&#34;输入样例：&#34;&gt;&lt;a href=&#34;#输入样例：&#34; class=&#34;headerlink&#34; title=&#34;输入样例：&#34;&gt;&lt;/a&gt;输入样例：&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-in&#34;&gt;&lt;code class=&#34;language-in&#34;&gt;13
 3 2 3 4
 2 5 6
 1 7
@@ -76,11 +76,11 @@
 1 12
 0
 0
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;输出样例：&#34;&gt;&lt;a href=&#34;#输出样例：&#34; class=&#34;headerlink&#34; title=&#34;输出样例：&#34;&gt;&lt;/a&gt;输出样例：&lt;/h3&gt;&lt;pre class=&#34; language-out&#34;&gt;&lt;code class=&#34;language-out&#34;&gt;12
-&lt;/code&gt;&lt;/pre&gt;
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;输出样例：&#34;&gt;&lt;a href=&#34;#输出样例：&#34; class=&#34;headerlink&#34; title=&#34;输出样例：&#34;&gt;&lt;/a&gt;输出样例：&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-out&#34;&gt;&lt;code class=&#34;language-out&#34;&gt;12
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;程序源代码：&#34;&gt;&lt;a href=&#34;#程序源代码：&#34; class=&#34;headerlink&#34; title=&#34;程序源代码：&#34;&gt;&lt;/a&gt;程序源代码：&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;邻接表 + BFS&lt;/strong&gt;&lt;/p&gt;
-&lt;pre class=&#34; language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &lt;bits/stdc++.h&gt;
+&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &lt;bits/stdc++.h&gt;
 using namespace std;
 vector&lt;int&gt; v[100005];
 int book[100005];
@@ -120,7 +120,7 @@ int main()
     cout&lt;&lt;ans&lt;&lt;endl;
     return 0;
 &amp;#125;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;参考资料：&#34;&gt;&lt;a href=&#34;#参考资料：&#34; class=&#34;headerlink&#34; title=&#34;参考资料：&#34;&gt;&lt;/a&gt;参考资料：&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://pintia.cn/problem-sets/994805046380707840/problems/1111914599412858888&#34;&gt;题目详情 - L2-031 深入虎穴 (25 分) (pintia.cn)&lt;/a&gt;&lt;/p&gt;
  ]]></description>
         </item>
@@ -149,7 +149,7 @@ int main()
 &lt;p&gt;约定：所有操作或选择以及剧情点编号都从 1 号开始。存档的档位不超过 100 个，编号也从 1 开始。游戏默认从 1 号剧情点开始。总的选项数（即 ∑&lt;em&gt;K**i&lt;/em&gt;）不超过 106。&lt;/p&gt;
 &lt;h3 id=&#34;输出格式：&#34;&gt;&lt;a href=&#34;#输出格式：&#34; class=&#34;headerlink&#34; title=&#34;输出格式：&#34;&gt;&lt;/a&gt;输出格式：&lt;/h3&gt;&lt;p&gt;对于每个 1（即存档）操作，在一行中输出存档的剧情点编号。&lt;/p&gt;
 &lt;p&gt;最后一行输出哲哲最后到达的剧情点编号。&lt;/p&gt;
-&lt;h3 id=&#34;输入样例：&#34;&gt;&lt;a href=&#34;#输入样例：&#34; class=&#34;headerlink&#34; title=&#34;输入样例：&#34;&gt;&lt;/a&gt;输入样例：&lt;/h3&gt;&lt;pre class=&#34; language-in&#34;&gt;&lt;code class=&#34;language-in&#34;&gt;10 11
+&lt;h3 id=&#34;输入样例：&#34;&gt;&lt;a href=&#34;#输入样例：&#34; class=&#34;headerlink&#34; title=&#34;输入样例：&#34;&gt;&lt;/a&gt;输入样例：&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-in&#34;&gt;&lt;code class=&#34;language-in&#34;&gt;10 11
 3 2 3 4
 1 6
 3 4 7 5
@@ -171,17 +171,17 @@ int main()
 0 1
 1 1
 0 2
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;输出样例：&#34;&gt;&lt;a href=&#34;#输出样例：&#34; class=&#34;headerlink&#34; title=&#34;输出样例：&#34;&gt;&lt;/a&gt;输出样例：&lt;/h3&gt;&lt;pre class=&#34; language-out&#34;&gt;&lt;code class=&#34;language-out&#34;&gt;1
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;输出样例：&#34;&gt;&lt;a href=&#34;#输出样例：&#34; class=&#34;headerlink&#34; title=&#34;输出样例：&#34;&gt;&lt;/a&gt;输出样例：&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-out&#34;&gt;&lt;code class=&#34;language-out&#34;&gt;1
 3
 9
 10
-&lt;/code&gt;&lt;/pre&gt;
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;样例解释：&#34;&gt;&lt;a href=&#34;#样例解释：&#34; class=&#34;headerlink&#34; title=&#34;样例解释：&#34;&gt;&lt;/a&gt;样例解释：&lt;/h3&gt;&lt;p&gt;简单给出样例中经过的剧情点顺序：&lt;/p&gt;
 &lt;p&gt;1 -&amp;gt; 4 -&amp;gt; 3 -&amp;gt; 7 -&amp;gt; 8 -&amp;gt; 3 -&amp;gt; 5 -&amp;gt; 9 -&amp;gt; 10。&lt;/p&gt;
 &lt;p&gt;档位 1 开始存的是 1 号剧情点；档位 2 存的是 3 号剧情点；档位 1 后来又存了 9 号剧情点。&lt;/p&gt;
 &lt;h3 id=&#34;程序源代码：&#34;&gt;&lt;a href=&#34;#程序源代码：&#34; class=&#34;headerlink&#34; title=&#34;程序源代码：&#34;&gt;&lt;/a&gt;程序源代码：&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;邻接表 + 模拟，主要是理解题意&lt;/strong&gt;&lt;/p&gt;
-&lt;pre class=&#34; language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &lt;bits/stdc++.h&gt;
+&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &lt;bits/stdc++.h&gt;
 using namespace std;
 int main()
 &amp;#123;
@@ -216,7 +216,7 @@ int main()
     cout&lt;&lt;now&lt;&lt;endl;
     return 0;
 &amp;#125;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;参考资料：&#34;&gt;&lt;a href=&#34;#参考资料：&#34; class=&#34;headerlink&#34; title=&#34;参考资料：&#34;&gt;&lt;/a&gt;参考资料：&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://pintia.cn/problem-sets/994805046380707840/problems/1386335159927652363&#34;&gt;题目详情 - L2-040 哲哲打游戏 (25 分) (pintia.cn)&lt;/a&gt;&lt;/p&gt;
  ]]></description>
         </item>
@@ -235,14 +235,14 @@ int main()
             <description><![CDATA[ &lt;h2 id=&#34;L2-026-小字辈-25-分&#34;&gt;&lt;a href=&#34;#L2-026-小字辈-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-026 小字辈 (25 分)&#34;&gt;&lt;/a&gt;&lt;strong&gt;L2-026 小字辈 (25 分)&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;本题给定一个庞大家族的家谱，要请你给出最小一辈的名单。&lt;/p&gt;
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;输入在第一行给出家族人口总数 N（不超过 100 000 的正整数） —— 简单起见，我们把家族成员从 1 到 N 编号。随后第二行给出 N 个编号，其中第 i 个编号对应第 i 位成员的父&amp;#x2F;母。家谱中辈分最高的老祖宗对应的父&amp;#x2F;母编号为 -1。一行中的数字间以空格分隔。&lt;/p&gt;
 &lt;h3 id=&#34;输出格式：&#34;&gt;&lt;a href=&#34;#输出格式：&#34; class=&#34;headerlink&#34; title=&#34;输出格式：&#34;&gt;&lt;/a&gt;输出格式：&lt;/h3&gt;&lt;p&gt;首先输出最小的辈分（老祖宗的辈分为 1，以下逐级递增）。然后在第二行按递增顺序输出辈分最小的成员的编号。编号间以一个空格分隔，行首尾不得有多余空格。&lt;/p&gt;
-&lt;h3 id=&#34;输入样例：&#34;&gt;&lt;a href=&#34;#输入样例：&#34; class=&#34;headerlink&#34; title=&#34;输入样例：&#34;&gt;&lt;/a&gt;输入样例：&lt;/h3&gt;&lt;pre class=&#34; language-in&#34;&gt;&lt;code class=&#34;language-in&#34;&gt;9
+&lt;h3 id=&#34;输入样例：&#34;&gt;&lt;a href=&#34;#输入样例：&#34; class=&#34;headerlink&#34; title=&#34;输入样例：&#34;&gt;&lt;/a&gt;输入样例：&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-in&#34;&gt;&lt;code class=&#34;language-in&#34;&gt;9
 2 6 5 5 -1 5 6 4 7
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;输出样例：&#34;&gt;&lt;a href=&#34;#输出样例：&#34; class=&#34;headerlink&#34; title=&#34;输出样例：&#34;&gt;&lt;/a&gt;输出样例：&lt;/h3&gt;&lt;pre class=&#34; language-out&#34;&gt;&lt;code class=&#34;language-out&#34;&gt;4
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;输出样例：&#34;&gt;&lt;a href=&#34;#输出样例：&#34; class=&#34;headerlink&#34; title=&#34;输出样例：&#34;&gt;&lt;/a&gt;输出样例：&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-out&#34;&gt;&lt;code class=&#34;language-out&#34;&gt;4
 1 9
-&lt;/code&gt;&lt;/pre&gt;
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;程序源代码：&#34;&gt;&lt;a href=&#34;#程序源代码：&#34; class=&#34;headerlink&#34; title=&#34;程序源代码：&#34;&gt;&lt;/a&gt;程序源代码：&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;邻接表建树+BFS&lt;/strong&gt;&lt;/p&gt;
-&lt;pre class=&#34; language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &lt;bits/stdc++.h&gt;
+&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &lt;bits/stdc++.h&gt;
 using namespace std;
 vector&lt;int&gt; tree[100005];				//邻接表建树
 int deeptree[100005];					//记录树的深度
@@ -295,7 +295,7 @@ int main()
     &amp;#125;
     return 0;
 &amp;#125;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://pintia.cn/problem-sets/994805046380707840/problems/994805055679479808&#34;&gt;题目详情 - L2-026 小字辈 (25 分) (pintia.cn)&lt;/a&gt;&lt;/p&gt;
  ]]></description>
         </item>
@@ -317,7 +317,7 @@ int main()
 &lt;h3 id=&#34;输出格式：&#34;&gt;&lt;a href=&#34;#输出格式：&#34; class=&#34;headerlink&#34; title=&#34;输出格式：&#34;&gt;&lt;/a&gt;输出格式：&lt;/h3&gt;&lt;p&gt;对每种颜色分配方案，如果是图着色问题的一个解则输出&lt;code&gt;Yes&lt;/code&gt;，否则输出&lt;code&gt;No&lt;/code&gt;，每句占一行。&lt;/p&gt;
 &lt;h3 id=&#34;输入样例：&#34;&gt;&lt;a href=&#34;#输入样例：&#34; class=&#34;headerlink&#34; title=&#34;输入样例：&#34;&gt;&lt;/a&gt;输入样例：&lt;/h3&gt;&lt;img src=&#34;/2022/04/12/Algorithm018/graph.png&#34; alt=&#34;graph&#34; style=&#34;zoom: 67%;&#34;&gt;
 
-&lt;pre class=&#34; language-in&#34;&gt;&lt;code class=&#34;language-in&#34;&gt;6 8 3
+&lt;pre class=&#34;line-numbers language-in&#34;&gt;&lt;code class=&#34;language-in&#34;&gt;6 8 3
 2 1
 1 3
 4 6
@@ -331,14 +331,14 @@ int main()
 4 5 6 6 4 5
 1 2 3 4 5 6
 2 3 4 2 3 4
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;输出样例：&#34;&gt;&lt;a href=&#34;#输出样例：&#34; class=&#34;headerlink&#34; title=&#34;输出样例：&#34;&gt;&lt;/a&gt;输出样例：&lt;/h3&gt;&lt;pre class=&#34; language-out&#34;&gt;&lt;code class=&#34;language-out&#34;&gt;Yes
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;输出样例：&#34;&gt;&lt;a href=&#34;#输出样例：&#34; class=&#34;headerlink&#34; title=&#34;输出样例：&#34;&gt;&lt;/a&gt;输出样例：&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-out&#34;&gt;&lt;code class=&#34;language-out&#34;&gt;Yes
 Yes
 No
 No
-&lt;/code&gt;&lt;/pre&gt;
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;程序源代码&#34;&gt;&lt;a href=&#34;#程序源代码&#34; class=&#34;headerlink&#34; title=&#34;程序源代码&#34;&gt;&lt;/a&gt;程序源代码&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Set + 邻接表&lt;/strong&gt;&lt;/p&gt;
-&lt;pre class=&#34; language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &lt;bits/stdc++.h&gt;
+&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &lt;bits/stdc++.h&gt;
 using namespace std;
 int main()
 &amp;#123;
@@ -384,7 +384,7 @@ int main()
     &amp;#125;
     return 0;
 &amp;#125;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://pintia.cn/problem-sets/994805046380707840/problems/994805057298481152&#34;&gt;题目详情 - L2-023 图着色问题 (25 分) (pintia.cn)&lt;/a&gt;&lt;/p&gt;
  ]]></description>
         </item>

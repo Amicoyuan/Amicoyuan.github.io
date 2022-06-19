@@ -29,8 +29,8 @@
     <category term="并查集" />
     <category term="Map" />
     <category term="Pair" />
-    <category term="线索二叉树" />
     <category term="KMP" />
+    <category term="线索二叉树" />
     <category term="Tree" />
     <category term="森林" />
     <category term="Linux" />
@@ -54,13 +54,13 @@
 &lt;p&gt;1 int8 占用 1 Byte&lt;/p&gt;
 &lt;p&gt;1 int16 占用 2 Byte&lt;/p&gt;
 &lt;p&gt;1 int32 占用 4 Byte&lt;/p&gt;
-&lt;pre class=&#34; language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;//一个结构体的定义如下
+&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;//一个结构体的定义如下
 struct S
 &amp;#123;
     int8 a;
     int32 b;
 &amp;#125;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;

@@ -32,8 +32,8 @@
         <category>并查集</category>
         <category>Map</category>
         <category>Pair</category>
-        <category>线索二叉树</category>
         <category>KMP</category>
+        <category>线索二叉树</category>
         <category>Tree</category>
         <category>森林</category>
         <category>Linux</category>
@@ -56,7 +56,7 @@
 &lt;h2 id=&#34;环境变量&#34;&gt;&lt;a href=&#34;#环境变量&#34; class=&#34;headerlink&#34; title=&#34;环境变量&#34;&gt;&lt;/a&gt;环境变量&lt;/h2&gt;&lt;p&gt;mpi&amp;#x2F;intel&amp;#x2F;2017.5&lt;/p&gt;
 &lt;h2 id=&#34;编译指令&#34;&gt;&lt;a href=&#34;#编译指令&#34; class=&#34;headerlink&#34; title=&#34;编译指令&#34;&gt;&lt;/a&gt;编译指令&lt;/h2&gt;&lt;p&gt;mpicc  3.1.cpp -o 3.1&lt;/p&gt;
 &lt;h2 id=&#34;运行指令&#34;&gt;&lt;a href=&#34;#运行指令&#34; class=&#34;headerlink&#34; title=&#34;运行指令&#34;&gt;&lt;/a&gt;运行指令&lt;/h2&gt;&lt;p&gt;mpirun -np 4 .&amp;#x2F;3.1(本地提交,采取4个进程)&lt;/p&gt;
-&lt;h2 id=&#34;程序源代码&#34;&gt;&lt;a href=&#34;#程序源代码&#34; class=&#34;headerlink&#34; title=&#34;程序源代码&#34;&gt;&lt;/a&gt;程序源代码&lt;/h2&gt;&lt;pre class=&#34; language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &lt;stdio.h&gt;
+&lt;h2 id=&#34;程序源代码&#34;&gt;&lt;a href=&#34;#程序源代码&#34; class=&#34;headerlink&#34; title=&#34;程序源代码&#34;&gt;&lt;/a&gt;程序源代码&lt;/h2&gt;&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &lt;stdio.h&gt;
 #include &lt;string.h&gt;
 #include &lt;mpi.h&gt;   //头文件
 
@@ -94,12 +94,12 @@ int main(int argc,char **argv)
     
     return 0;
 &amp;#125;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;程序运行结果&#34;&gt;&lt;a href=&#34;#程序运行结果&#34; class=&#34;headerlink&#34; title=&#34;程序运行结果&#34;&gt;&lt;/a&gt;程序运行结果&lt;/h2&gt;&lt;pre class=&#34; language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;Greetings from process 0 of 4!
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;程序运行结果&#34;&gt;&lt;a href=&#34;#程序运行结果&#34; class=&#34;headerlink&#34; title=&#34;程序运行结果&#34;&gt;&lt;/a&gt;程序运行结果&lt;/h2&gt;&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;Greetings from process 0 of 4!
 Greetings from process 1 of 4!
 Greetings from process 2 of 4!
 Greetings from process 3 of 4!
-&lt;/code&gt;&lt;/pre&gt;
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
  ]]></description>
         </item>
         <item>
@@ -109,7 +109,7 @@ Greetings from process 3 of 4!
             <category>MPI</category>
             <pubDate>Sat, 02 Apr 2022 16:07:46 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;MPI学习-六-两个矩阵相加MPI版本&#34;&gt;&lt;a href=&#34;#MPI学习-六-两个矩阵相加MPI版本&#34; class=&#34;headerlink&#34; title=&#34;MPI学习(六)-两个矩阵相加MPI版本&#34;&gt;&lt;/a&gt;MPI学习(六)-两个矩阵相加MPI版本&lt;/h1&gt;&lt;p&gt;这里，我们演示了两个简单的程序，一个是矩阵相加串行版本，一个是矩阵相加MPI版本&lt;/p&gt;
-&lt;h2 id=&#34;串行版本&#34;&gt;&lt;a href=&#34;#串行版本&#34; class=&#34;headerlink&#34; title=&#34;串行版本&#34;&gt;&lt;/a&gt;串行版本&lt;/h2&gt;&lt;h3 id=&#34;程序源代码&#34;&gt;&lt;a href=&#34;#程序源代码&#34; class=&#34;headerlink&#34; title=&#34;程序源代码&#34;&gt;&lt;/a&gt;程序源代码&lt;/h3&gt;&lt;pre class=&#34; language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;#include&lt;stdio.h&gt;
+&lt;h2 id=&#34;串行版本&#34;&gt;&lt;a href=&#34;#串行版本&#34; class=&#34;headerlink&#34; title=&#34;串行版本&#34;&gt;&lt;/a&gt;串行版本&lt;/h2&gt;&lt;h3 id=&#34;程序源代码&#34;&gt;&lt;a href=&#34;#程序源代码&#34; class=&#34;headerlink&#34; title=&#34;程序源代码&#34;&gt;&lt;/a&gt;程序源代码&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;#include&lt;stdio.h&gt;
 #include&lt;string.h&gt;
 int main()
 &amp;#123;
@@ -140,18 +140,18 @@ int main()
     &amp;#125;
     return 0;
 &amp;#125;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;程序输出&#34;&gt;&lt;a href=&#34;#程序输出&#34; class=&#34;headerlink&#34; title=&#34;程序输出&#34;&gt;&lt;/a&gt;程序输出&lt;/h3&gt;&lt;pre class=&#34; language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;5 4 8 11
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;程序输出&#34;&gt;&lt;a href=&#34;#程序输出&#34; class=&#34;headerlink&#34; title=&#34;程序输出&#34;&gt;&lt;/a&gt;程序输出&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;5 4 8 11
 6 9 15 17
 20 22 28 17
 28 28 35 19
-&lt;/code&gt;&lt;/pre&gt;
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;MPI版本&#34;&gt;&lt;a href=&#34;#MPI版本&#34; class=&#34;headerlink&#34; title=&#34;MPI版本&#34;&gt;&lt;/a&gt;MPI版本&lt;/h2&gt;&lt;h3 id=&#34;程序运行平台&#34;&gt;&lt;a href=&#34;#程序运行平台&#34; class=&#34;headerlink&#34; title=&#34;程序运行平台&#34;&gt;&lt;/a&gt;程序运行平台&lt;/h3&gt;&lt;p&gt;北京超级云计算中心A3分区&lt;/p&gt;
 &lt;h3 id=&#34;环境变量&#34;&gt;&lt;a href=&#34;#环境变量&#34; class=&#34;headerlink&#34; title=&#34;环境变量&#34;&gt;&lt;/a&gt;环境变量&lt;/h3&gt;&lt;p&gt;mpi&amp;#x2F;intel&amp;#x2F;2017.5&lt;/p&gt;
 &lt;h3 id=&#34;编译指令&#34;&gt;&lt;a href=&#34;#编译指令&#34; class=&#34;headerlink&#34; title=&#34;编译指令&#34;&gt;&lt;/a&gt;编译指令&lt;/h3&gt;&lt;p&gt;mpicxx mpi006.c -o mpi006&lt;/p&gt;
 &lt;h3 id=&#34;运行指令&#34;&gt;&lt;a href=&#34;#运行指令&#34; class=&#34;headerlink&#34; title=&#34;运行指令&#34;&gt;&lt;/a&gt;运行指令&lt;/h3&gt;&lt;p&gt;srun -p amd_256 -N 1 -n  5  .&amp;#x2F;mpi006(使用SLURM任务调度系统)&lt;/p&gt;
 &lt;p&gt;1个分区，核数为5&lt;/p&gt;
-&lt;h3 id=&#34;程序源代码-1&#34;&gt;&lt;a href=&#34;#程序源代码-1&#34; class=&#34;headerlink&#34; title=&#34;程序源代码&#34;&gt;&lt;/a&gt;程序源代码&lt;/h3&gt;&lt;pre class=&#34; language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;#include&lt;stdio.h&gt;
+&lt;h3 id=&#34;程序源代码-1&#34;&gt;&lt;a href=&#34;#程序源代码-1&#34; class=&#34;headerlink&#34; title=&#34;程序源代码&#34;&gt;&lt;/a&gt;程序源代码&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;#include&lt;stdio.h&gt;
 #include&lt;string.h&gt;
 #include&lt;mpi.h&gt;
 int main(int argc ,char **argv)
@@ -204,12 +204,12 @@ int main(int argc ,char **argv)
     MPI_Finalize();	
     return 0;
 &amp;#125;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;程序输出-1&#34;&gt;&lt;a href=&#34;#程序输出-1&#34; class=&#34;headerlink&#34; title=&#34;程序输出&#34;&gt;&lt;/a&gt;程序输出&lt;/h3&gt;&lt;pre class=&#34; language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;5 4 8 11 
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;程序输出-1&#34;&gt;&lt;a href=&#34;#程序输出-1&#34; class=&#34;headerlink&#34; title=&#34;程序输出&#34;&gt;&lt;/a&gt;程序输出&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;5 4 8 11 
 6 9 15 17 
 20 22 28 17 
 28 28 35 19
-&lt;/code&gt;&lt;/pre&gt;
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
  ]]></description>
         </item>
         <item>
@@ -224,7 +224,7 @@ int main(int argc ,char **argv)
 &lt;h2 id=&#34;编译指令&#34;&gt;&lt;a href=&#34;#编译指令&#34; class=&#34;headerlink&#34; title=&#34;编译指令&#34;&gt;&lt;/a&gt;编译指令&lt;/h2&gt;&lt;p&gt;mpic++ mpi005.cpp -o mpi005&lt;/p&gt;
 &lt;h2 id=&#34;运行指令&#34;&gt;&lt;a href=&#34;#运行指令&#34; class=&#34;headerlink&#34; title=&#34;运行指令&#34;&gt;&lt;/a&gt;运行指令&lt;/h2&gt;&lt;p&gt;srun -p amd_256 -N 1 -n  4   .&amp;#x2F;mpi005(使用SLURM任务调度系统)&lt;/p&gt;
 &lt;p&gt;1个分区，核数为4&lt;/p&gt;
-&lt;h2 id=&#34;程序源代码&#34;&gt;&lt;a href=&#34;#程序源代码&#34; class=&#34;headerlink&#34; title=&#34;程序源代码&#34;&gt;&lt;/a&gt;程序源代码&lt;/h2&gt;&lt;pre class=&#34; language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &lt;stdio.h&gt;
+&lt;h2 id=&#34;程序源代码&#34;&gt;&lt;a href=&#34;#程序源代码&#34; class=&#34;headerlink&#34; title=&#34;程序源代码&#34;&gt;&lt;/a&gt;程序源代码&lt;/h2&gt;&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &lt;stdio.h&gt;
 #include &lt;mpi.h&gt;
 int main(int argc,char *argv[])
 &amp;#123;
@@ -253,12 +253,12 @@ int main(int argc,char *argv[])
     MPI_Finalize();
     return 0;
  &amp;#125; 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;程序运行结果&#34;&gt;&lt;a href=&#34;#程序运行结果&#34; class=&#34;headerlink&#34; title=&#34;程序运行结果&#34;&gt;&lt;/a&gt;程序运行结果&lt;/h2&gt;&lt;pre class=&#34; language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;//5 5为读入的value值
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;程序运行结果&#34;&gt;&lt;a href=&#34;#程序运行结果&#34; class=&#34;headerlink&#34; title=&#34;程序运行结果&#34;&gt;&lt;/a&gt;程序运行结果&lt;/h2&gt;&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;//5 5为读入的value值
 process 1 got 5
 process 2 got 5
 process 3 got 5
-&lt;/code&gt;&lt;/pre&gt;
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
  ]]></description>
         </item>
         <item>
@@ -267,25 +267,25 @@ process 3 got 5
             <link>http://example.com/2021/11/27/mpi004/</link>
             <category>MPI</category>
             <pubDate>Sat, 27 Nov 2021 16:58:36 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;MPI-广播、散播、收集、归约和全归约的MPI语法&#34;&gt;&lt;a href=&#34;#MPI-广播、散播、收集、归约和全归约的MPI语法&#34; class=&#34;headerlink&#34; title=&#34;MPI-广播、散播、收集、归约和全归约的MPI语法&#34;&gt;&lt;/a&gt;MPI-广播、散播、收集、归约和全归约的MPI语法&lt;/h1&gt;&lt;h2 id=&#34;广播：MPI-Bcast&#34;&gt;&lt;a href=&#34;#广播：MPI-Bcast&#34; class=&#34;headerlink&#34; title=&#34;广播：MPI_Bcast&#34;&gt;&lt;/a&gt;广播：MPI_Bcast&lt;/h2&gt;&lt;pre class=&#34; language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;int MPI_Bcast(void *buffer, int count, MPI_Datatype datatype, int root, MPI_Comm comm)
+            <description><![CDATA[ &lt;h1 id=&#34;MPI-广播、散播、收集、归约和全归约的MPI语法&#34;&gt;&lt;a href=&#34;#MPI-广播、散播、收集、归约和全归约的MPI语法&#34; class=&#34;headerlink&#34; title=&#34;MPI-广播、散播、收集、归约和全归约的MPI语法&#34;&gt;&lt;/a&gt;MPI-广播、散播、收集、归约和全归约的MPI语法&lt;/h1&gt;&lt;h2 id=&#34;广播：MPI-Bcast&#34;&gt;&lt;a href=&#34;#广播：MPI-Bcast&#34; class=&#34;headerlink&#34; title=&#34;广播：MPI_Bcast&#34;&gt;&lt;/a&gt;广播：MPI_Bcast&lt;/h2&gt;&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;int MPI_Bcast(void *buffer, int count, MPI_Datatype datatype, int root, MPI_Comm comm)
 //int root 广播数据的根进程的标识号(整型)
-&lt;/code&gt;&lt;/pre&gt;
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;/2021/11/27/mpi004/mpi001.png&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;散播：MPI-Scatter&#34;&gt;&lt;a href=&#34;#散播：MPI-Scatter&#34; class=&#34;headerlink&#34; title=&#34;散播：MPI_Scatter&#34;&gt;&lt;/a&gt;散播：MPI_Scatter&lt;/h2&gt;&lt;pre class=&#34; language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;int MPI_Scatter(void *sendbuf, int sendcount, MPI_Datatype sendtype, void *recvbuf, int root, MPI_Comm comm)
+&lt;h2 id=&#34;散播：MPI-Scatter&#34;&gt;&lt;a href=&#34;#散播：MPI-Scatter&#34; class=&#34;headerlink&#34; title=&#34;散播：MPI_Scatter&#34;&gt;&lt;/a&gt;散播：MPI_Scatter&lt;/h2&gt;&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;int MPI_Scatter(void *sendbuf, int sendcount, MPI_Datatype sendtype, void *recvbuf, int root, MPI_Comm comm)
 //void *sendbuf 发送消息缓冲区的起始地址(可选数据类型)
 //void *recvbuf 接收消息缓冲区的起始地址(可选数据类型)
-&lt;/code&gt;&lt;/pre&gt;
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;/2021/11/27/mpi004/mpi002.png&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;收集：MPI-Gather&#34;&gt;&lt;a href=&#34;#收集：MPI-Gather&#34; class=&#34;headerlink&#34; title=&#34;收集：MPI_Gather&#34;&gt;&lt;/a&gt;收集：MPI_Gather&lt;/h2&gt;&lt;pre class=&#34; language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;int MPI_Gather(void *sendbuf, int sendcount, MPI_Datatype sendtype, void *recvbuf, int recvcount, MPI_Datatype recvtype, int root, MPI_Comm comm)
-&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;收集：MPI-Gather&#34;&gt;&lt;a href=&#34;#收集：MPI-Gather&#34; class=&#34;headerlink&#34; title=&#34;收集：MPI_Gather&#34;&gt;&lt;/a&gt;收集：MPI_Gather&lt;/h2&gt;&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;int MPI_Gather(void *sendbuf, int sendcount, MPI_Datatype sendtype, void *recvbuf, int recvcount, MPI_Datatype recvtype, int root, MPI_Comm comm)
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;/2021/11/27/mpi004/mpi003.png&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;归约：MPI-Reduce&#34;&gt;&lt;a href=&#34;#归约：MPI-Reduce&#34; class=&#34;headerlink&#34; title=&#34;归约：MPI_Reduce&#34;&gt;&lt;/a&gt;归约：MPI_Reduce&lt;/h2&gt;&lt;pre class=&#34; language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;int MPI_Reduce(void *sendbuf, void *recvbuf, int count, MPI_Datatype datatype, MPI_Op op, int root,  MPI_Comm comm)
+&lt;h2 id=&#34;归约：MPI-Reduce&#34;&gt;&lt;a href=&#34;#归约：MPI-Reduce&#34; class=&#34;headerlink&#34; title=&#34;归约：MPI_Reduce&#34;&gt;&lt;/a&gt;归约：MPI_Reduce&lt;/h2&gt;&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;int MPI_Reduce(void *sendbuf, void *recvbuf, int count, MPI_Datatype datatype, MPI_Op op, int root,  MPI_Comm comm)
 //MPI_Op op  归约操作符(句柄)
-&lt;/code&gt;&lt;/pre&gt;
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;/2021/11/27/mpi004/mpi004.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/2021/11/27/mpi004/mpi005.png&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;全归约：MPI-Allreduce&#34;&gt;&lt;a href=&#34;#全归约：MPI-Allreduce&#34; class=&#34;headerlink&#34; title=&#34;全归约：MPI_Allreduce&#34;&gt;&lt;/a&gt;全归约：MPI_Allreduce&lt;/h2&gt;&lt;pre class=&#34; language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;int MPI_Allreduce(void *sendbuf, void *recvbuf, int count, MPI_Datatype datatype, MPI_Op op, MPI_Comm comm)
-&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;全归约：MPI-Allreduce&#34;&gt;&lt;a href=&#34;#全归约：MPI-Allreduce&#34; class=&#34;headerlink&#34; title=&#34;全归约：MPI_Allreduce&#34;&gt;&lt;/a&gt;全归约：MPI_Allreduce&lt;/h2&gt;&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;int MPI_Allreduce(void *sendbuf, void *recvbuf, int count, MPI_Datatype datatype, MPI_Op op, MPI_Comm comm)
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;/2021/11/27/mpi004/mpi006.png&#34;&gt;&lt;/p&gt;
  ]]></description>
         </item>
@@ -301,7 +301,7 @@ process 3 got 5
 &lt;h2 id=&#34;编译指令&#34;&gt;&lt;a href=&#34;#编译指令&#34; class=&#34;headerlink&#34; title=&#34;编译指令&#34;&gt;&lt;/a&gt;编译指令&lt;/h2&gt;&lt;p&gt;mpic++    -fopenmp  mpi003.cpp -o mpi003&lt;/p&gt;
 &lt;h2 id=&#34;运行指令&#34;&gt;&lt;a href=&#34;#运行指令&#34; class=&#34;headerlink&#34; title=&#34;运行指令&#34;&gt;&lt;/a&gt;运行指令&lt;/h2&gt;&lt;p&gt;srun -p amd_256 -N 2 -n  2   .&amp;#x2F;mpi003(使用SLURM任务调度系统)&lt;/p&gt;
 &lt;p&gt;2个分区，核数为2&lt;/p&gt;
-&lt;h2 id=&#34;程序源代码&#34;&gt;&lt;a href=&#34;#程序源代码&#34; class=&#34;headerlink&#34; title=&#34;程序源代码&#34;&gt;&lt;/a&gt;程序源代码&lt;/h2&gt;&lt;pre class=&#34; language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &lt;math.h&gt;
+&lt;h2 id=&#34;程序源代码&#34;&gt;&lt;a href=&#34;#程序源代码&#34; class=&#34;headerlink&#34; title=&#34;程序源代码&#34;&gt;&lt;/a&gt;程序源代码&lt;/h2&gt;&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &lt;math.h&gt;
 #include &lt;omp.h&gt;  //OpenMP所需要的头文件
 #include &lt;mpi.h&gt;
 int  main(int argc,char **argv)
@@ -325,8 +325,8 @@ int  main(int argc,char **argv)
         MPI_Finalize();
         return 0;
 &amp;#125;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;程序运行结果&#34;&gt;&lt;a href=&#34;#程序运行结果&#34; class=&#34;headerlink&#34; title=&#34;程序运行结果&#34;&gt;&lt;/a&gt;程序运行结果&lt;/h2&gt;&lt;pre class=&#34; language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;Thread number 0 (on 8) for the MPI process number 1 (on 2) [eb1316.para.bscc]
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;程序运行结果&#34;&gt;&lt;a href=&#34;#程序运行结果&#34; class=&#34;headerlink&#34; title=&#34;程序运行结果&#34;&gt;&lt;/a&gt;程序运行结果&lt;/h2&gt;&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;Thread number 0 (on 8) for the MPI process number 1 (on 2) [eb1316.para.bscc]
 Thread number 4 (on 8) for the MPI process number 1 (on 2) [eb1316.para.bscc]
 Thread number 3 (on 8) for the MPI process number 1 (on 2) [eb1316.para.bscc]
 Thread number 5 (on 8) for the MPI process number 1 (on 2) [eb1316.para.bscc]
@@ -342,7 +342,7 @@ Thread number 3 (on 8) for the MPI process number 0 (on 2) [eb1314.para.bscc]
 Thread number 4 (on 8) for the MPI process number 0 (on 2) [eb1314.para.bscc]
 Thread number 6 (on 8) for the MPI process number 0 (on 2) [eb1314.para.bscc]
 Thread number 7 (on 8) for the MPI process number 0 (on 2) [eb1314.para.bscc]
-&lt;/code&gt;&lt;/pre&gt;
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
  ]]></description>
         </item>
         <item>
@@ -352,18 +352,18 @@ Thread number 7 (on 8) for the MPI process number 0 (on 2) [eb1314.para.bscc]
             <category>MPI</category>
             <pubDate>Fri, 26 Nov 2021 17:44:34 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;MPI-非阻塞通信程序-无缓冲&#34;&gt;&lt;a href=&#34;#MPI-非阻塞通信程序-无缓冲&#34; class=&#34;headerlink&#34; title=&#34;MPI-非阻塞通信程序(无缓冲)&#34;&gt;&lt;/a&gt;MPI-非阻塞通信程序(无缓冲)&lt;/h1&gt;&lt;p&gt;非阻塞通信程序(无缓冲)是由MPI中的Isend和Ireceive来表示的，即异步通信。在这种情况下，发送进程发布一条“发送授权请求”(挂起的消息)的消息，并继续其程序的执行。当接收进程发布一个“同意发送”许可指令时，数据传输就启动了。所有的这些机制都是通过操作系统的信号进行内部管理的。当数据传输完成时，检查状态并指示进程是否可以安全地进行读&amp;#x2F;写数据。                                                                      需要注意的是原语MPI_Wait(&amp;amp;request,&amp;amp;status)等到数据传输完成(或中断后)，使用一个成为status的状态变量来指示数据传输是否已经成功。&lt;/p&gt;
-&lt;h2 id=&#34;相关的MPI原语&#34;&gt;&lt;a href=&#34;#相关的MPI原语&#34; class=&#34;headerlink&#34; title=&#34;相关的MPI原语&#34;&gt;&lt;/a&gt;相关的MPI原语&lt;/h2&gt;&lt;pre class=&#34; language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;int MPI_Isend(void *buf, int count, MPI_Datatype datatype, int dest, int tag, MPI_comm comm, MPI_Request *req)
+&lt;h2 id=&#34;相关的MPI原语&#34;&gt;&lt;a href=&#34;#相关的MPI原语&#34; class=&#34;headerlink&#34; title=&#34;相关的MPI原语&#34;&gt;&lt;/a&gt;相关的MPI原语&lt;/h2&gt;&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;int MPI_Isend(void *buf, int count, MPI_Datatype datatype, int dest, int tag, MPI_comm comm, MPI_Request *req)
 int MPI_Irecv(void *buf, int count, MPI_Datatype datatype, int src, int tag, MPI_Comm comm, MPI_Request *req)
-&lt;/code&gt;&lt;/pre&gt;
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;MPI_Request结构中经常使用的：当*req操作完成时返回 *flag &amp;#x3D; 1,否则返回 0。&lt;/p&gt;
 &lt;p&gt;原语MPI_Wait一直等到*req所执行的操作完成。&lt;/p&gt;
-&lt;pre class=&#34; language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;int MPI_Wait(MPI_Request *req, MPI_Status *status)
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;int MPI_Wait(MPI_Request *req, MPI_Status *status)
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;程序运行平台&#34;&gt;&lt;a href=&#34;#程序运行平台&#34; class=&#34;headerlink&#34; title=&#34;程序运行平台&#34;&gt;&lt;/a&gt;程序运行平台&lt;/h2&gt;&lt;p&gt;北京超级云计算中心A3分区&lt;/p&gt;
 &lt;h2 id=&#34;环境变量&#34;&gt;&lt;a href=&#34;#环境变量&#34; class=&#34;headerlink&#34; title=&#34;环境变量&#34;&gt;&lt;/a&gt;环境变量&lt;/h2&gt;&lt;p&gt;mpi&amp;#x2F;intel&amp;#x2F;2017.5&lt;/p&gt;
 &lt;h2 id=&#34;编译指令&#34;&gt;&lt;a href=&#34;#编译指令&#34; class=&#34;headerlink&#34; title=&#34;编译指令&#34;&gt;&lt;/a&gt;编译指令&lt;/h2&gt;&lt;p&gt;mpicc  mpi002.cpp -o mpi002&lt;/p&gt;
 &lt;h2 id=&#34;运行指令&#34;&gt;&lt;a href=&#34;#运行指令&#34; class=&#34;headerlink&#34; title=&#34;运行指令&#34;&gt;&lt;/a&gt;运行指令&lt;/h2&gt;&lt;p&gt;mpirun -np 10   .&amp;#x2F;mpi002(本地提交,采取10个进程)&lt;/p&gt;
-&lt;h2 id=&#34;程序源代码&#34;&gt;&lt;a href=&#34;#程序源代码&#34; class=&#34;headerlink&#34; title=&#34;程序源代码&#34;&gt;&lt;/a&gt;程序源代码&lt;/h2&gt;&lt;pre class=&#34; language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &lt;stdio.h&gt;
+&lt;h2 id=&#34;程序源代码&#34;&gt;&lt;a href=&#34;#程序源代码&#34; class=&#34;headerlink&#34; title=&#34;程序源代码&#34;&gt;&lt;/a&gt;程序源代码&lt;/h2&gt;&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &lt;stdio.h&gt;
 #include &lt;stdlib.h&gt;
 #include &lt;mpi.h&gt;
 #include &lt;math.h&gt;
@@ -404,8 +404,8 @@ int main(int argc,char **argv)
     MPI_Finalize();
     return 0;
 &amp;#125;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;程序输出&#34;&gt;&lt;a href=&#34;#程序输出&#34; class=&#34;headerlink&#34; title=&#34;程序输出&#34;&gt;&lt;/a&gt;程序输出&lt;/h2&gt;&lt;pre class=&#34; language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;processor 2 send 2077 to processor 0
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;程序输出&#34;&gt;&lt;a href=&#34;#程序输出&#34; class=&#34;headerlink&#34; title=&#34;程序输出&#34;&gt;&lt;/a&gt;程序输出&lt;/h2&gt;&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;processor 2 send 2077 to processor 0
 processor 3 send 2077 to processor 0
 processor 5 send 2077 to processor 0
 processor 6 send 2077 to processor 0
@@ -423,7 +423,7 @@ processor 0 received 2077 from processor 6
 processor 0 received 2077 from processor 7 
 processor 0 received 2077 from processor 8 
 processor 0 received 2077 from processor 9 
-&lt;/code&gt;&lt;/pre&gt;
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
  ]]></description>
         </item>
     </channel>

@@ -32,8 +32,8 @@
         <category>并查集</category>
         <category>Map</category>
         <category>Pair</category>
-        <category>线索二叉树</category>
         <category>KMP</category>
+        <category>线索二叉树</category>
         <category>Tree</category>
         <category>森林</category>
         <category>Linux</category>
@@ -52,18 +52,18 @@
             <category>STL</category>
             <category>C++</category>
             <pubDate>Fri, 08 Apr 2022 19:18:57 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;C-的STL中字符串string自带方法find查找&#34;&gt;&lt;a href=&#34;#C-的STL中字符串string自带方法find查找&#34; class=&#34;headerlink&#34; title=&#34;C++的STL中字符串string自带方法find查找&#34;&gt;&lt;/a&gt;C++的STL中字符串string自带方法find查找&lt;/h1&gt;&lt;h2 id=&#34;用法&#34;&gt;&lt;a href=&#34;#用法&#34; class=&#34;headerlink&#34; title=&#34;用法&#34;&gt;&lt;/a&gt;用法&lt;/h2&gt;&lt;pre class=&#34; language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;string str = &#34;abcd&#34;;
+            <description><![CDATA[ &lt;h1 id=&#34;C-的STL中字符串string自带方法find查找&#34;&gt;&lt;a href=&#34;#C-的STL中字符串string自带方法find查找&#34; class=&#34;headerlink&#34; title=&#34;C++的STL中字符串string自带方法find查找&#34;&gt;&lt;/a&gt;C++的STL中字符串string自带方法find查找&lt;/h1&gt;&lt;h2 id=&#34;用法&#34;&gt;&lt;a href=&#34;#用法&#34; class=&#34;headerlink&#34; title=&#34;用法&#34;&gt;&lt;/a&gt;用法&lt;/h2&gt;&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;string str = &#34;abcd&#34;;
     cout &lt;&lt; str.find(&#39;a&#39;);
     //返回的是下标的值而不是指针或是迭代器
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34; language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;string str = &#34;abcd&#34;
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;string str = &#34;abcd&#34;
 string sub = &#34;cd&#34;
 if(str.find(sub)!=string::npos)&amp;#123;
     cout&lt;&lt;&#34;找到了&#34;&lt;&lt;endl;
 &amp;#125;else&amp;#123;
     cout&lt;&lt;&#34;没有找到&#34;&lt;&lt;endl;
 &amp;#125;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;要是没有找到，返回的是str::npos&lt;br&gt;注意，只有string的find方法是返回的下标，因为string是顺序索引，set,map,multiset,multimap都不是顺序索引的数据结构，所以返回的是迭代器。&lt;/p&gt;
 &lt;h2 id=&#34;样例一-L1-070-吃火锅-15-分&#34;&gt;&lt;a href=&#34;#样例一-L1-070-吃火锅-15-分&#34; class=&#34;headerlink&#34; title=&#34;样例一:L1-070 吃火锅 (15 分)&#34;&gt;&lt;/a&gt;样例一:&lt;strong&gt;L1-070 吃火锅 (15 分)&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;题目链接：&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://pintia.cn/problem-sets/994805046380707840/problems/1336215880692482053&#34;&gt;https://pintia.cn/problem-sets/994805046380707840/problems/1336215880692482053&lt;/a&gt;&lt;/p&gt;
@@ -73,27 +73,27 @@ if(str.find(sub)!=string::npos)&amp;#123;
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;输入每行给出一句不超过 80 个字符的、以回车结尾的朋友信息，信息为非空字符串，仅包括字母、数字、空格、可见的半角标点符号。当读到某一行只有一个英文句点 &lt;code&gt;.&lt;/code&gt; 时，输入结束，此行不算在朋友信息里。&lt;/p&gt;
 &lt;h3 id=&#34;输出格式：&#34;&gt;&lt;a href=&#34;#输出格式：&#34; class=&#34;headerlink&#34; title=&#34;输出格式：&#34;&gt;&lt;/a&gt;输出格式：&lt;/h3&gt;&lt;p&gt;首先在一行中输出朋友信息的总条数。然后对朋友的每一行信息，检查其中是否包含 &lt;code&gt;chi1 huo3 guo1&lt;/code&gt;，并且统计这样厉害的信息有多少条。在第二行中首先输出第一次出现 &lt;code&gt;chi1 huo3 guo1&lt;/code&gt; 的信息是第几条（从 1 开始计数），然后输出这类信息的总条数，其间以一个空格分隔。题目保证输出的所有数字不超过 100。&lt;/p&gt;
 &lt;p&gt;如果朋友从头到尾都没提 &lt;code&gt;chi1 huo3 guo1&lt;/code&gt; 这个关键词，则在第二行输出一个表情 &lt;code&gt;-_-#&lt;/code&gt;。&lt;/p&gt;
-&lt;h3 id=&#34;输入样例-1：&#34;&gt;&lt;a href=&#34;#输入样例-1：&#34; class=&#34;headerlink&#34; title=&#34;输入样例 1：&#34;&gt;&lt;/a&gt;输入样例 1：&lt;/h3&gt;&lt;pre class=&#34; language-in&#34;&gt;&lt;code class=&#34;language-in&#34;&gt;Hello!
+&lt;h3 id=&#34;输入样例-1：&#34;&gt;&lt;a href=&#34;#输入样例-1：&#34; class=&#34;headerlink&#34; title=&#34;输入样例 1：&#34;&gt;&lt;/a&gt;输入样例 1：&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-in&#34;&gt;&lt;code class=&#34;language-in&#34;&gt;Hello!
 are you there?
 wantta chi1 huo3 guo1?
 that&#39;s so li hai le
 our story begins from chi1 huo3 guo1 le
 .
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;输出样例-1：&#34;&gt;&lt;a href=&#34;#输出样例-1：&#34; class=&#34;headerlink&#34; title=&#34;输出样例 1：&#34;&gt;&lt;/a&gt;输出样例 1：&lt;/h3&gt;&lt;pre class=&#34; language-out&#34;&gt;&lt;code class=&#34;language-out&#34;&gt;5
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;输出样例-1：&#34;&gt;&lt;a href=&#34;#输出样例-1：&#34; class=&#34;headerlink&#34; title=&#34;输出样例 1：&#34;&gt;&lt;/a&gt;输出样例 1：&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-out&#34;&gt;&lt;code class=&#34;language-out&#34;&gt;5
 3 2
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;输入样例-2：&#34;&gt;&lt;a href=&#34;#输入样例-2：&#34; class=&#34;headerlink&#34; title=&#34;输入样例 2：&#34;&gt;&lt;/a&gt;输入样例 2：&lt;/h3&gt;&lt;pre class=&#34; language-in&#34;&gt;&lt;code class=&#34;language-in&#34;&gt;Hello!
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;输入样例-2：&#34;&gt;&lt;a href=&#34;#输入样例-2：&#34; class=&#34;headerlink&#34; title=&#34;输入样例 2：&#34;&gt;&lt;/a&gt;输入样例 2：&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-in&#34;&gt;&lt;code class=&#34;language-in&#34;&gt;Hello!
 are you there?
 wantta qi huo3 guo1 chi1huo3guo1?
 that&#39;s so li hai le
 our story begins from ci1 huo4 guo2 le
 .
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;输出样例-2：&#34;&gt;&lt;a href=&#34;#输出样例-2：&#34; class=&#34;headerlink&#34; title=&#34;输出样例 2：&#34;&gt;&lt;/a&gt;输出样例 2：&lt;/h3&gt;&lt;pre class=&#34; language-out&#34;&gt;&lt;code class=&#34;language-out&#34;&gt;5
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;输出样例-2：&#34;&gt;&lt;a href=&#34;#输出样例-2：&#34; class=&#34;headerlink&#34; title=&#34;输出样例 2：&#34;&gt;&lt;/a&gt;输出样例 2：&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-out&#34;&gt;&lt;code class=&#34;language-out&#34;&gt;5
 -_-#
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;程序源代码&#34;&gt;&lt;a href=&#34;#程序源代码&#34; class=&#34;headerlink&#34; title=&#34;程序源代码&#34;&gt;&lt;/a&gt;程序源代码&lt;/h3&gt;&lt;pre class=&#34; language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &lt;bits/stdc++.h&gt;
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;程序源代码&#34;&gt;&lt;a href=&#34;#程序源代码&#34; class=&#34;headerlink&#34; title=&#34;程序源代码&#34;&gt;&lt;/a&gt;程序源代码&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &lt;bits/stdc++.h&gt;
 using namespace std;
 int main()
 &amp;#123;
@@ -131,7 +131,7 @@ int main()
 
     return 0;
 &amp;#125;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/qq_50675813/article/details/113313343&#34;&gt;(18条消息) c++STL中的find()函数 有两种使用方法_我们不生产代码，只是代码的搬运工的博客-CSDN博客_c++中find函数的使用方法&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://pintia.cn/problem-sets/994805046380707840/problems/1336215880692482053&#34;&gt;https://pintia.cn/problem-sets/994805046380707840/problems/1336215880692482053&lt;/a&gt;&lt;/p&gt;
  ]]></description>
