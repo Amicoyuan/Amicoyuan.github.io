@@ -44,7 +44,7 @@
         <id>http://example.com/2022/05/05/Algorithm036/</id>
         <title>树、森林</title>
         <link rel="alternate" href="http://example.com/2022/05/05/Algorithm036/"/>
-        <content type="html">&lt;h2 id=&#34;树、森林&#34;&gt;&lt;a href=&#34;#树、森林&#34; class=&#34;headerlink&#34; title=&#34;树、森林&#34;&gt;&lt;/a&gt;树、森林&lt;/h2&gt;&lt;h3 id=&#34;树的存储结构&#34;&gt;&lt;a href=&#34;#树的存储结构&#34; class=&#34;headerlink&#34; title=&#34;树的存储结构&#34;&gt;&lt;/a&gt;树的存储结构&lt;/h3&gt;&lt;h4 id=&#34;双亲表示法&#34;&gt;&lt;a href=&#34;#双亲表示法&#34; class=&#34;headerlink&#34; title=&#34;双亲表示法&#34;&gt;&lt;/a&gt;双亲表示法&lt;/h4&gt;&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;#define MAX_TREE_SIZE 100					//树中最多节点数	
+        <content type="html">&lt;h2 id=&#34;树、森林&#34;&gt;&lt;a href=&#34;#树、森林&#34; class=&#34;headerlink&#34; title=&#34;树、森林&#34;&gt;&lt;/a&gt;树、森林&lt;/h2&gt;&lt;h3 id=&#34;树的存储结构&#34;&gt;&lt;a href=&#34;#树的存储结构&#34; class=&#34;headerlink&#34; title=&#34;树的存储结构&#34;&gt;&lt;/a&gt;树的存储结构&lt;/h3&gt;&lt;h4 id=&#34;双亲表示法&#34;&gt;&lt;a href=&#34;#双亲表示法&#34; class=&#34;headerlink&#34; title=&#34;双亲表示法&#34;&gt;&lt;/a&gt;双亲表示法&lt;/h4&gt;&lt;pre&gt;&lt;code class=&#34;c++&#34;&gt;#define MAX_TREE_SIZE 100					//树中最多节点数	
 typedef struct&amp;#123;								//树的结点定义
     ElemType data;							//数据元素	
     int parent;								//双亲位置域
@@ -53,12 +53,12 @@ typedef struct&amp;#123;								//树的类型定义
     PTNode nodes[MAX_TREE_SIZE];			//双亲表示
     int n;									//节点数
 &amp;#125;PTree;
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h4 id=&#34;孩子兄弟法&#34;&gt;&lt;a href=&#34;#孩子兄弟法&#34; class=&#34;headerlink&#34; title=&#34;孩子兄弟法&#34;&gt;&lt;/a&gt;孩子兄弟法&lt;/h4&gt;&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;typedef struct CSNode&amp;#123;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;孩子兄弟法&#34;&gt;&lt;a href=&#34;#孩子兄弟法&#34; class=&#34;headerlink&#34; title=&#34;孩子兄弟法&#34;&gt;&lt;/a&gt;孩子兄弟法&lt;/h4&gt;&lt;pre&gt;&lt;code class=&#34;c++&#34;&gt;typedef struct CSNode&amp;#123;
     ElemType data;											//数据域
     struct CSNode *firstchild,*nextsibling;					//第一个孩子和右兄弟指针
 &amp;#125;CSNode,*CSTree;
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 </content>
         <category term="Data Structure" />
         <category term="Tree" />

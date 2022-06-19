@@ -44,7 +44,7 @@
         <id>http://example.com/2022/05/06/Algorithm037/</id>
         <title>图的存储</title>
         <link rel="alternate" href="http://example.com/2022/05/06/Algorithm037/"/>
-        <content type="html">&lt;h2 id=&#34;图的存储&#34;&gt;&lt;a href=&#34;#图的存储&#34; class=&#34;headerlink&#34; title=&#34;图的存储&#34;&gt;&lt;/a&gt;图的存储&lt;/h2&gt;&lt;h3 id=&#34;邻接矩阵法&#34;&gt;&lt;a href=&#34;#邻接矩阵法&#34; class=&#34;headerlink&#34; title=&#34;邻接矩阵法&#34;&gt;&lt;/a&gt;邻接矩阵法&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;#define MaxVertexNum 100									//顶点数目的最大值
+        <content type="html">&lt;h2 id=&#34;图的存储&#34;&gt;&lt;a href=&#34;#图的存储&#34; class=&#34;headerlink&#34; title=&#34;图的存储&#34;&gt;&lt;/a&gt;图的存储&lt;/h2&gt;&lt;h3 id=&#34;邻接矩阵法&#34;&gt;&lt;a href=&#34;#邻接矩阵法&#34; class=&#34;headerlink&#34; title=&#34;邻接矩阵法&#34;&gt;&lt;/a&gt;邻接矩阵法&lt;/h3&gt;&lt;pre&gt;&lt;code class=&#34;c++&#34;&gt;#define MaxVertexNum 100									//顶点数目的最大值
 typedef char VertexType;									//顶点的数据类型
 typedef int EdgeType;										//带权图中边上权值的数据类型
 typedef struct&amp;#123;
@@ -52,8 +52,8 @@ typedef struct&amp;#123;
     EdgeType Edge[MaxVertexNum][MaxVertexNum];				//邻接矩阵，边表
     int vexnum,arcnum;										//图中当前顶点数和弧数
 &amp;#125;MGraph;
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;邻接表法&#34;&gt;&lt;a href=&#34;#邻接表法&#34; class=&#34;headerlink&#34; title=&#34;邻接表法&#34;&gt;&lt;/a&gt;邻接表法&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;#define MaxVertexNum 100									//图中顶点数目的最大值
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;邻接表法&#34;&gt;&lt;a href=&#34;#邻接表法&#34; class=&#34;headerlink&#34; title=&#34;邻接表法&#34;&gt;&lt;/a&gt;邻接表法&lt;/h3&gt;&lt;pre&gt;&lt;code class=&#34;c++&#34;&gt;#define MaxVertexNum 100									//图中顶点数目的最大值
 typedef struct ArcNode&amp;#123;										//边表结点
     int adjvex;												//该弧所指向的顶点的位置
     struct ArcNode *next;									//指向下一条弧的指针
@@ -67,7 +67,7 @@ typedef struct&amp;#123;
     AdjList vertices;										//邻接表
     int vexnum,arcnum;										//图的顶点数和弧数
 &amp;#125;ALGraph;													//ALGraph是以邻接表存储的图的类型
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 </content>
         <category term="Data Structure" />
         <category term="Graph" />
@@ -77,7 +77,7 @@ typedef struct&amp;#123;
         <id>http://example.com/2022/05/05/Algorithm036/</id>
         <title>树、森林</title>
         <link rel="alternate" href="http://example.com/2022/05/05/Algorithm036/"/>
-        <content type="html">&lt;h2 id=&#34;树、森林&#34;&gt;&lt;a href=&#34;#树、森林&#34; class=&#34;headerlink&#34; title=&#34;树、森林&#34;&gt;&lt;/a&gt;树、森林&lt;/h2&gt;&lt;h3 id=&#34;树的存储结构&#34;&gt;&lt;a href=&#34;#树的存储结构&#34; class=&#34;headerlink&#34; title=&#34;树的存储结构&#34;&gt;&lt;/a&gt;树的存储结构&lt;/h3&gt;&lt;h4 id=&#34;双亲表示法&#34;&gt;&lt;a href=&#34;#双亲表示法&#34; class=&#34;headerlink&#34; title=&#34;双亲表示法&#34;&gt;&lt;/a&gt;双亲表示法&lt;/h4&gt;&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;#define MAX_TREE_SIZE 100					//树中最多节点数	
+        <content type="html">&lt;h2 id=&#34;树、森林&#34;&gt;&lt;a href=&#34;#树、森林&#34; class=&#34;headerlink&#34; title=&#34;树、森林&#34;&gt;&lt;/a&gt;树、森林&lt;/h2&gt;&lt;h3 id=&#34;树的存储结构&#34;&gt;&lt;a href=&#34;#树的存储结构&#34; class=&#34;headerlink&#34; title=&#34;树的存储结构&#34;&gt;&lt;/a&gt;树的存储结构&lt;/h3&gt;&lt;h4 id=&#34;双亲表示法&#34;&gt;&lt;a href=&#34;#双亲表示法&#34; class=&#34;headerlink&#34; title=&#34;双亲表示法&#34;&gt;&lt;/a&gt;双亲表示法&lt;/h4&gt;&lt;pre&gt;&lt;code class=&#34;c++&#34;&gt;#define MAX_TREE_SIZE 100					//树中最多节点数	
 typedef struct&amp;#123;								//树的结点定义
     ElemType data;							//数据元素	
     int parent;								//双亲位置域
@@ -86,12 +86,12 @@ typedef struct&amp;#123;								//树的类型定义
     PTNode nodes[MAX_TREE_SIZE];			//双亲表示
     int n;									//节点数
 &amp;#125;PTree;
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h4 id=&#34;孩子兄弟法&#34;&gt;&lt;a href=&#34;#孩子兄弟法&#34; class=&#34;headerlink&#34; title=&#34;孩子兄弟法&#34;&gt;&lt;/a&gt;孩子兄弟法&lt;/h4&gt;&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;typedef struct CSNode&amp;#123;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;孩子兄弟法&#34;&gt;&lt;a href=&#34;#孩子兄弟法&#34; class=&#34;headerlink&#34; title=&#34;孩子兄弟法&#34;&gt;&lt;/a&gt;孩子兄弟法&lt;/h4&gt;&lt;pre&gt;&lt;code class=&#34;c++&#34;&gt;typedef struct CSNode&amp;#123;
     ElemType data;											//数据域
     struct CSNode *firstchild,*nextsibling;					//第一个孩子和右兄弟指针
 &amp;#125;CSNode,*CSTree;
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 </content>
         <category term="Data Structure" />
         <category term="Tree" />
@@ -103,63 +103,63 @@ typedef struct&amp;#123;								//树的类型定义
         <title>线索二叉树</title>
         <link rel="alternate" href="http://example.com/2022/05/04/Algorithm035/"/>
         <content type="html">&lt;h2 id=&#34;线索二叉树&#34;&gt;&lt;a href=&#34;#线索二叉树&#34; class=&#34;headerlink&#34; title=&#34;线索二叉树&#34;&gt;&lt;/a&gt;线索二叉树&lt;/h2&gt;&lt;h3 id=&#34;线索二叉树的存储结构&#34;&gt;&lt;a href=&#34;#线索二叉树的存储结构&#34; class=&#34;headerlink&#34; title=&#34;线索二叉树的存储结构&#34;&gt;&lt;/a&gt;线索二叉树的存储结构&lt;/h3&gt;&lt;p&gt;线索二叉树的存储结构描述如下&lt;/p&gt;
-&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;ltag = 0 lchild域指示结点的左孩子
+&lt;pre&gt;&lt;code class=&#34;c++&#34;&gt;ltag = 0 lchild域指示结点的左孩子
 ltag = 1 lchild域指示结点的前驱
 //
 rtag = 0 rchild域指示结点的右孩子
 rtag = 1 rchild域指示结点的后继
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;typedef struct ThreadNode&amp;#123;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;c++&#34;&gt;typedef struct ThreadNode&amp;#123;
     ElemType data;						//数据元素
     struct ThreadNode *lchild,*rchild;				//左右孩子指针
     int ltag,rtag;									//左右线索标志
 &amp;#125;ThreadNode，*ThreadTree;
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;中序线索二叉树的构造&#34;&gt;&lt;a href=&#34;#中序线索二叉树的构造&#34; class=&#34;headerlink&#34; title=&#34;中序线索二叉树的构造&#34;&gt;&lt;/a&gt;中序线索二叉树的构造&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;void InThread(ThreadTree &amp;p,ThreadNode &amp;pre)&amp;#123;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;中序线索二叉树的构造&#34;&gt;&lt;a href=&#34;#中序线索二叉树的构造&#34; class=&#34;headerlink&#34; title=&#34;中序线索二叉树的构造&#34;&gt;&lt;/a&gt;中序线索二叉树的构造&lt;/h3&gt;&lt;pre&gt;&lt;code class=&#34;c++&#34;&gt;void InThread(ThreadTree &amp;amp;p,ThreadNode &amp;amp;pre)&amp;#123;
     if(p!=NULL)&amp;#123;
-        InThread(p-&gt;lchild,pre);			//递归，线索化左子树
+        InThread(p-&amp;gt;lchild,pre);			//递归，线索化左子树
         &amp;#123;
-            if(p-&gt;lchild==NULL)&amp;#123;			//左子树为空，建立前驱线索
-                p-&gt;lchild=pre;
-                p-&gt;ltag=1;
+            if(p-&amp;gt;lchild==NULL)&amp;#123;			//左子树为空，建立前驱线索
+                p-&amp;gt;lchild=pre;
+                p-&amp;gt;ltag=1;
             &amp;#125;
-            if(pre!=NULL&amp;&amp;pre-&gt;rchild==NULL)&amp;#123;
-                pre-&gt;rchild=p;				//建立前驱结点的后继线索
-                pre-&gt;rtag=1;
+            if(pre!=NULL&amp;amp;&amp;amp;pre-&amp;gt;rchild==NULL)&amp;#123;
+                pre-&amp;gt;rchild=p;				//建立前驱结点的后继线索
+                pre-&amp;gt;rtag=1;
             &amp;#125;
             pre=p;							//标记当前结点成为刚刚访问过的结点
-            InThread(p-&gt;rchild,pre);		//递归，线索化右子树
+            InThread(p-&amp;gt;rchild,pre);		//递归，线索化右子树
         &amp;#125;//if(p!=NULL)
     &amp;#125;
 &amp;#125;
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;void CreateInThread(ThreadTree T)&amp;#123;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;c++&#34;&gt;void CreateInThread(ThreadTree T)&amp;#123;
     ThreadTree pre = NULL;
     if(T!=NULL)&amp;#123;						//非空二叉树。线索化
         InThread(T,pre);				//线索化二叉树
-        pre-&gt;rchild=NULL;				//处理遍历的最后一个结点
-        pre-&gt;rtag=1;
+        pre-&amp;gt;rchild=NULL;				//处理遍历的最后一个结点
+        pre-&amp;gt;rtag=1;
     &amp;#125;
 &amp;#125;
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;中序线索二叉树的遍历&#34;&gt;&lt;a href=&#34;#中序线索二叉树的遍历&#34; class=&#34;headerlink&#34; title=&#34;中序线索二叉树的遍历&#34;&gt;&lt;/a&gt;中序线索二叉树的遍历&lt;/h3&gt;&lt;p&gt;1)求中序线索二叉树中中序序列下的第一个结点&lt;/p&gt;
-&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;Thread *Firstnode(ThreadNode *p)&amp;#123;
-    while(p-&gt;ltag==0) p=p-&gt;lchild;		//最左下结点（不一定是叶结点）
+&lt;pre&gt;&lt;code class=&#34;c++&#34;&gt;Thread *Firstnode(ThreadNode *p)&amp;#123;
+    while(p-&amp;gt;ltag==0) p=p-&amp;gt;lchild;		//最左下结点（不一定是叶结点）
     return p;
 &amp;#125;
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;2)求中序线索二叉树中结点p在中序序列下的后继&lt;/p&gt;
-&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;ThreadNode *Nextnode(ThreadNode *p)&amp;#123;
-    if(p-&gt;rtag==0) return Firstnode(p-&gt;rchild);
-    else return p-&gt;rchild;			//rtag==1直接返回后继线索
+&lt;pre&gt;&lt;code class=&#34;c++&#34;&gt;ThreadNode *Nextnode(ThreadNode *p)&amp;#123;
+    if(p-&amp;gt;rtag==0) return Firstnode(p-&amp;gt;rchild);
+    else return p-&amp;gt;rchild;			//rtag==1直接返回后继线索
 &amp;#125;
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;3)利用上面两个算法，可以写出不含头节点的中序线索二叉树的中序遍历算法&lt;/p&gt;
-&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;void Inorder(ThreadNode *T)&amp;#123;
+&lt;pre&gt;&lt;code class=&#34;c++&#34;&gt;void Inorder(ThreadNode *T)&amp;#123;
     for(ThreadNode *p=Firstnode;p!=NULL;p=Nextnode(p))
         visit(p);
 &amp;#125;
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 </content>
         <category term="Data Structure" />
         <category term="Binary tree" />
@@ -170,11 +170,11 @@ rtag = 1 rchild域指示结点的后继
         <id>http://example.com/2022/04/27/Algorithm034/</id>
         <title>串的模式匹配算法-KMP算法</title>
         <link rel="alternate" href="http://example.com/2022/04/27/Algorithm034/"/>
-        <content type="html">&lt;h2 id=&#34;串的模式匹配算法-KMP算法&#34;&gt;&lt;a href=&#34;#串的模式匹配算法-KMP算法&#34; class=&#34;headerlink&#34; title=&#34;串的模式匹配算法-KMP算法&#34;&gt;&lt;/a&gt;串的模式匹配算法-KMP算法&lt;/h2&gt;&lt;h3 id=&#34;求next数组&#34;&gt;&lt;a href=&#34;#求next数组&#34; class=&#34;headerlink&#34; title=&#34;求next数组&#34;&gt;&lt;/a&gt;求next数组&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;void get_next(SSting t,int next[])
+        <content type="html">&lt;h2 id=&#34;串的模式匹配算法-KMP算法&#34;&gt;&lt;a href=&#34;#串的模式匹配算法-KMP算法&#34; class=&#34;headerlink&#34; title=&#34;串的模式匹配算法-KMP算法&#34;&gt;&lt;/a&gt;串的模式匹配算法-KMP算法&lt;/h2&gt;&lt;h3 id=&#34;求next数组&#34;&gt;&lt;a href=&#34;#求next数组&#34; class=&#34;headerlink&#34; title=&#34;求next数组&#34;&gt;&lt;/a&gt;求next数组&lt;/h3&gt;&lt;pre&gt;&lt;code class=&#34;c++&#34;&gt;void get_next(SSting t,int next[])
 &amp;#123;
     int i=1,j=0;
     next[1]=0;
-    while(i&lt;t.length)
+    while(i&amp;lt;t.length)
     &amp;#123;
         if(j==0||t.ch[i]==t.ch[j])
         &amp;#123;
@@ -186,10 +186,10 @@ rtag = 1 rchild域指示结点的后继
         &amp;#125;
     &amp;#125;
 &amp;#125;
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;KMP匹配算法&#34;&gt;&lt;a href=&#34;#KMP匹配算法&#34; class=&#34;headerlink&#34; title=&#34;KMP匹配算法&#34;&gt;&lt;/a&gt;KMP匹配算法&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;int Index_KMP(SSting s,SSting t,int next[])&amp;#123;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;KMP匹配算法&#34;&gt;&lt;a href=&#34;#KMP匹配算法&#34; class=&#34;headerlink&#34; title=&#34;KMP匹配算法&#34;&gt;&lt;/a&gt;KMP匹配算法&lt;/h3&gt;&lt;pre&gt;&lt;code class=&#34;c++&#34;&gt;int Index_KMP(SSting s,SSting t,int next[])&amp;#123;
     int i=1,j=1;
-    while (i&lt;=s.length&amp;&amp;j&lt;=t.length)&amp;#123;
+    while (i&amp;lt;=s.length&amp;amp;&amp;amp;j&amp;lt;=t.length)&amp;#123;
         if(j==0||s.ch[i]==t.ch[j])
         &amp;#123;
             j++;                    //继续比较后续字符
@@ -198,15 +198,15 @@ rtag = 1 rchild域指示结点的后继
             j=next[j];              //模式串向右移动
         &amp;#125;
     &amp;#125;
-    if(j&gt;t.length)
+    if(j&amp;gt;t.length)
     &amp;#123;
         return i-t.length;          //匹配成功
     &amp;#125;else&amp;#123;
         return 0;
     &amp;#125;
 &amp;#125;
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;完整代码：&#34;&gt;&lt;a href=&#34;#完整代码：&#34; class=&#34;headerlink&#34; title=&#34;完整代码：&#34;&gt;&lt;/a&gt;完整代码：&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;#include&lt;bits/stdc++.h&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;完整代码：&#34;&gt;&lt;a href=&#34;#完整代码：&#34; class=&#34;headerlink&#34; title=&#34;完整代码：&#34;&gt;&lt;/a&gt;完整代码：&lt;/h3&gt;&lt;pre&gt;&lt;code class=&#34;c++&#34;&gt;#include&amp;lt;bits/stdc++.h&amp;gt;
 using namespace std;
 #define MAXLEN 255					//预定义最大串长
 typedef struct&amp;#123;
@@ -217,7 +217,7 @@ void get_next(SSting t,int next[])
 &amp;#123;
     int i=1,j=0;
     next[1]=0;
-    while(i&lt;t.length)
+    while(i&amp;lt;t.length)
     &amp;#123;
         if(j==0||t.ch[i]==t.ch[j])
         &amp;#123;
@@ -231,7 +231,7 @@ void get_next(SSting t,int next[])
 &amp;#125;
 int Index_KMP(SSting s,SSting t,int next[])&amp;#123;
     int i=1,j=1;
-    while (i&lt;=s.length&amp;&amp;j&lt;=t.length)&amp;#123;
+    while (i&amp;lt;=s.length&amp;amp;&amp;amp;j&amp;lt;=t.length)&amp;#123;
         if(j==0||s.ch[i]==t.ch[j])
         &amp;#123;
             j++;                    //继续比较后续字符
@@ -240,7 +240,7 @@ int Index_KMP(SSting s,SSting t,int next[])&amp;#123;
             j=next[j];              //模式串向右移动
         &amp;#125;
     &amp;#125;
-    if(j&gt;t.length)
+    if(j&amp;gt;t.length)
     &amp;#123;
         return i-t.length;          //匹配成功
     &amp;#125;else&amp;#123;
@@ -250,30 +250,30 @@ int Index_KMP(SSting s,SSting t,int next[])&amp;#123;
 int main()
 &amp;#123;
     SSting a,b;
-    string s1=&#34;ababcabcacbab&#34;;
-    string s2=&#34;abcac&#34;;
+    string s1=&amp;quot;ababcabcacbab&amp;quot;;
+    string s2=&amp;quot;abcac&amp;quot;;
     a.length=s1.size();
     b.length=s2.size();
     int next[s2.size()+1];
     get_next(b,next);
-    for (int i = 0; i &lt;s1.size(); ++i) &amp;#123;	//初始化
+    for (int i = 0; i &amp;lt;s1.size(); ++i) &amp;#123;	//初始化
         a.ch[i+1]=s1[i];
     &amp;#125;
-    for (int j = 0; j &lt;s2.size() ; ++j) &amp;#123;	//初始化
+    for (int j = 0; j &amp;lt;s2.size() ; ++j) &amp;#123;	//初始化
         b.ch[j+1]=s2[j];
     &amp;#125;
     int x=Index_KMP(a,b,next);
     if(x!=0)
     &amp;#123;
-        cout&lt;&lt;&#34;找到了位置是：&#34;&lt;&lt;x&lt;&lt;endl;
+        cout&amp;lt;&amp;lt;&amp;quot;找到了位置是：&amp;quot;&amp;lt;&amp;lt;x&amp;lt;&amp;lt;endl;
     &amp;#125;else&amp;#123;
-        cout&lt;&lt;&#34;没有找到&#34;&lt;&lt;endl;
+        cout&amp;lt;&amp;lt;&amp;quot;没有找到&amp;quot;&amp;lt;&amp;lt;endl;
     &amp;#125;
     return 0;
 &amp;#125;
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;程序输出：&#34;&gt;&lt;a href=&#34;#程序输出：&#34; class=&#34;headerlink&#34; title=&#34;程序输出：&#34;&gt;&lt;/a&gt;程序输出：&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;找到了位置是：6
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;程序输出：&#34;&gt;&lt;a href=&#34;#程序输出：&#34; class=&#34;headerlink&#34; title=&#34;程序输出：&#34;&gt;&lt;/a&gt;程序输出：&lt;/h3&gt;&lt;pre&gt;&lt;code class=&#34;c++&#34;&gt;找到了位置是：6
+&lt;/code&gt;&lt;/pre&gt;
 </content>
         <category term="Data Structure" />
         <category term="String" />
@@ -284,10 +284,10 @@ int main()
         <id>http://example.com/2022/04/27/Algorithm033/</id>
         <title>串-简单的模式匹配算法</title>
         <link rel="alternate" href="http://example.com/2022/04/27/Algorithm033/"/>
-        <content type="html">&lt;h2 id=&#34;串-简单的模式匹配算法&#34;&gt;&lt;a href=&#34;#串-简单的模式匹配算法&#34; class=&#34;headerlink&#34; title=&#34;串-简单的模式匹配算法&#34;&gt;&lt;/a&gt;串-简单的模式匹配算法&lt;/h2&gt;&lt;h3 id=&#34;简单的模式匹配算法&#34;&gt;&lt;a href=&#34;#简单的模式匹配算法&#34; class=&#34;headerlink&#34; title=&#34;简单的模式匹配算法&#34;&gt;&lt;/a&gt;简单的模式匹配算法&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;int Index(SSting s,SSting t)        //简单的模式匹配算法
+        <content type="html">&lt;h2 id=&#34;串-简单的模式匹配算法&#34;&gt;&lt;a href=&#34;#串-简单的模式匹配算法&#34; class=&#34;headerlink&#34; title=&#34;串-简单的模式匹配算法&#34;&gt;&lt;/a&gt;串-简单的模式匹配算法&lt;/h2&gt;&lt;h3 id=&#34;简单的模式匹配算法&#34;&gt;&lt;a href=&#34;#简单的模式匹配算法&#34; class=&#34;headerlink&#34; title=&#34;简单的模式匹配算法&#34;&gt;&lt;/a&gt;简单的模式匹配算法&lt;/h3&gt;&lt;pre&gt;&lt;code class=&#34;c++&#34;&gt;int Index(SSting s,SSting t)        //简单的模式匹配算法
 &amp;#123;
     int i=1,j=1;
-    while(i&lt;=s.length &amp;&amp; j&lt;= t.length)
+    while(i&amp;lt;=s.length &amp;amp;&amp;amp; j&amp;lt;= t.length)
     &amp;#123;
         if(s.ch[i]==t.ch[j])
         &amp;#123;
@@ -298,11 +298,11 @@ int main()
             j=1;
         &amp;#125;
     &amp;#125;
-    if(j&gt;t.length) return i-t.length;           //返回与模式t中第一个字符相等的字符在主串s中的序号
+    if(j&amp;gt;t.length) return i-t.length;           //返回与模式t中第一个字符相等的字符在主串s中的序号
     else return 0;
 &amp;#125;
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;完整程序源代码&#34;&gt;&lt;a href=&#34;#完整程序源代码&#34; class=&#34;headerlink&#34; title=&#34;完整程序源代码&#34;&gt;&lt;/a&gt;完整程序源代码&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;#include&lt;bits/stdc++.h&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;完整程序源代码&#34;&gt;&lt;a href=&#34;#完整程序源代码&#34; class=&#34;headerlink&#34; title=&#34;完整程序源代码&#34;&gt;&lt;/a&gt;完整程序源代码&lt;/h3&gt;&lt;pre&gt;&lt;code class=&#34;c++&#34;&gt;#include&amp;lt;bits/stdc++.h&amp;gt;
 using namespace std;
 #define MAXLEN 255					//预定义最大串长
 typedef struct&amp;#123;
@@ -312,7 +312,7 @@ typedef struct&amp;#123;
 int Index(SSting s,SSting t)        //简单的模式匹配算法
 &amp;#123;
     int i=1,j=1;
-    while(i&lt;=s.length &amp;&amp; j&lt;= t.length)
+    while(i&amp;lt;=s.length &amp;amp;&amp;amp; j&amp;lt;= t.length)
     &amp;#123;
         if(s.ch[i]==t.ch[j])
         &amp;#123;
@@ -323,34 +323,34 @@ int Index(SSting s,SSting t)        //简单的模式匹配算法
             j=1;
         &amp;#125;
     &amp;#125;
-    if(j&gt;t.length) return i-t.length;           //返回与模式t中第一个字符相等的字符在主串s中的序号
+    if(j&amp;gt;t.length) return i-t.length;           //返回与模式t中第一个字符相等的字符在主串s中的序号
     else return 0;
 &amp;#125;
 int main()
 &amp;#123;
     SSting a,b;
-    string s1=&#34;ababcabcacbab&#34;;
-    string s2=&#34;abcac&#34;;
+    string s1=&amp;quot;ababcabcacbab&amp;quot;;
+    string s2=&amp;quot;abcac&amp;quot;;
     a.length=s1.size();
     b.length=s2.size();
-    for (int i = 0; i &lt;s1.size(); ++i) &amp;#123;	//初始化
+    for (int i = 0; i &amp;lt;s1.size(); ++i) &amp;#123;	//初始化
         a.ch[i+1]=s1[i];
     &amp;#125;
-    for (int j = 0; j &lt;s2.size() ; ++j) &amp;#123;	//初始化
+    for (int j = 0; j &amp;lt;s2.size() ; ++j) &amp;#123;	//初始化
         b.ch[j+1]=s2[j];
     &amp;#125;
     int x=Index(a,b);
     if(x!=0)
     &amp;#123;
-        cout&lt;&lt;&#34;找到了位置是：&#34;&lt;&lt;x&lt;&lt;endl;
+        cout&amp;lt;&amp;lt;&amp;quot;找到了位置是：&amp;quot;&amp;lt;&amp;lt;x&amp;lt;&amp;lt;endl;
     &amp;#125;else&amp;#123;
-        cout&lt;&lt;&#34;没有找到&#34;&lt;&lt;endl;
+        cout&amp;lt;&amp;lt;&amp;quot;没有找到&amp;quot;&amp;lt;&amp;lt;endl;
     &amp;#125;
     return 0;
 &amp;#125;
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;程序输出&#34;&gt;&lt;a href=&#34;#程序输出&#34; class=&#34;headerlink&#34; title=&#34;程序输出&#34;&gt;&lt;/a&gt;程序输出&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;找到了位置是：6
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;程序输出&#34;&gt;&lt;a href=&#34;#程序输出&#34; class=&#34;headerlink&#34; title=&#34;程序输出&#34;&gt;&lt;/a&gt;程序输出&lt;/h3&gt;&lt;pre&gt;&lt;code class=&#34;c++&#34;&gt;找到了位置是：6
+&lt;/code&gt;&lt;/pre&gt;
 </content>
         <category term="Data Structure" />
         <category term="String" />
@@ -368,7 +368,7 @@ int main()
 &lt;h3 id=&#34;输出格式：&#34;&gt;&lt;a href=&#34;#输出格式：&#34; class=&#34;headerlink&#34; title=&#34;输出格式：&#34;&gt;&lt;/a&gt;输出格式：&lt;/h3&gt;&lt;p&gt;在第一行输出满足要求的攻略的个数。&lt;/p&gt;
 &lt;p&gt;在第二行中，首先输出那个能在每个网红点打卡仅一次、并且路上花费最少的攻略的序号（从 1 开始），然后输出这个攻略的总路费，其间以一个空格分隔。如果这样的攻略不唯一，则输出序号最小的那个。&lt;/p&gt;
 &lt;p&gt;题目保证至少存在一个有效攻略，并且总路费不超过 109。&lt;/p&gt;
-&lt;h3 id=&#34;输入样例：&#34;&gt;&lt;a href=&#34;#输入样例：&#34; class=&#34;headerlink&#34; title=&#34;输入样例：&#34;&gt;&lt;/a&gt;输入样例：&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-in&#34;&gt;&lt;code class=&#34;language-in&#34;&gt;6 13
+&lt;h3 id=&#34;输入样例：&#34;&gt;&lt;a href=&#34;#输入样例：&#34; class=&#34;headerlink&#34; title=&#34;输入样例：&#34;&gt;&lt;/a&gt;输入样例：&lt;/h3&gt;&lt;pre&gt;&lt;code class=&#34;in&#34;&gt;6 13
 0 5 2
 6 2 2
 6 0 1
@@ -390,15 +390,15 @@ int main()
 6 6 1 3 4 5 2
 7 6 2 1 3 4 5 2
 6 5 2 1 4 3 6
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;输出样例：&#34;&gt;&lt;a href=&#34;#输出样例：&#34; class=&#34;headerlink&#34; title=&#34;输出样例：&#34;&gt;&lt;/a&gt;输出样例：&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-out&#34;&gt;&lt;code class=&#34;language-out&#34;&gt;3
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;输出样例：&#34;&gt;&lt;a href=&#34;#输出样例：&#34; class=&#34;headerlink&#34; title=&#34;输出样例：&#34;&gt;&lt;/a&gt;输出样例：&lt;/h3&gt;&lt;pre&gt;&lt;code class=&#34;out&#34;&gt;3
 5 11
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;样例说明：&#34;&gt;&lt;a href=&#34;#样例说明：&#34; class=&#34;headerlink&#34; title=&#34;样例说明：&#34;&gt;&lt;/a&gt;样例说明：&lt;/h3&gt;&lt;p&gt;第 2、3、4、6 条都不满足攻略的基本要求，即不能做到从家里出发，在每个网红点打卡仅一次，且能回到家里。所以满足条件的攻略有 3 条。&lt;/p&gt;
 &lt;p&gt;第 1 条攻略的总路费是：(0-&amp;gt;5) 2 + (5-&amp;gt;1) 2 + (1-&amp;gt;4) 2 + (4-&amp;gt;3) 2 + (3-&amp;gt;6) 2 + (6-&amp;gt;2) 2 + (2-&amp;gt;0) 2 &amp;#x3D; 14；&lt;/p&gt;
 &lt;p&gt;第 5 条攻略的总路费同理可算得：1 + 1 + 1 + 2 + 3 + 1 + 2 &amp;#x3D; 11，是一条更省钱的攻略；&lt;/p&gt;
 &lt;p&gt;第 7 条攻略的总路费同理可算得：2 + 1 + 1 + 2 + 2 + 2 + 1 &amp;#x3D; 11，与第 5 条花费相同，但序号较大，所以不输出。&lt;/p&gt;
-&lt;h3 id=&#34;程序源代码：&#34;&gt;&lt;a href=&#34;#程序源代码：&#34; class=&#34;headerlink&#34; title=&#34;程序源代码：&#34;&gt;&lt;/a&gt;程序源代码：&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;#include&lt;bits/stdc++.h&gt;
+&lt;h3 id=&#34;程序源代码：&#34;&gt;&lt;a href=&#34;#程序源代码：&#34; class=&#34;headerlink&#34; title=&#34;程序源代码：&#34;&gt;&lt;/a&gt;程序源代码：&lt;/h3&gt;&lt;pre&gt;&lt;code class=&#34;c++&#34;&gt;#include&amp;lt;bits/stdc++.h&amp;gt;
 using namespace std;
 int n,m;
 int g[205][205];
@@ -406,33 +406,33 @@ int minsize=INT_MAX;			//初始化为INT_MAX
 int minid=0;
 int main()
 &amp;#123;
-    cin&gt;&gt;n&gt;&gt;m;
+    cin&amp;gt;&amp;gt;n&amp;gt;&amp;gt;m;
     int cnt=0;
     memset(g,0,sizeof(g));
-    for (int i = 0; i &lt;m ; ++i) &amp;#123;
+    for (int i = 0; i &amp;lt;m ; ++i) &amp;#123;
         int a,b,c;
-        cin&gt;&gt;a&gt;&gt;b&gt;&gt;c;
+        cin&amp;gt;&amp;gt;a&amp;gt;&amp;gt;b&amp;gt;&amp;gt;c;
         g[a][b]=c;
         g[b][a]=c;
     &amp;#125;
     int time;
-    cin&gt;&gt;time;
-    for (int j = 0; j &lt;time ; ++j) &amp;#123;
+    cin&amp;gt;&amp;gt;time;
+    for (int j = 0; j &amp;lt;time ; ++j) &amp;#123;
         int k;
-        cin&gt;&gt;k;
+        cin&amp;gt;&amp;gt;k;
         int roll[k+5];
         int has[k+5];
         memset(has,0,sizeof(has));
         roll[0]=roll[k+1]=0;					//起点和终点必定是家
-        for (int i = 1; i &lt;=k ; ++i) &amp;#123;
-            cin&gt;&gt;roll[i];
+        for (int i = 1; i &amp;lt;=k ; ++i) &amp;#123;
+            cin&amp;gt;&amp;gt;roll[i];
             if(has[roll[i]]) has[0]=1;			//每个打卡点仅能打卡一次
             else has[roll[i]]=1;
         &amp;#125;
         int flag=1;
         int tmpsize=0;
         if(k!=n||has[0]) continue;
-        for (int l = 1; l &lt;=k+1 ; ++l) &amp;#123;
+        for (int l = 1; l &amp;lt;=k+1 ; ++l) &amp;#123;
             if(g[roll[l-1]][roll[l]]==0)
             &amp;#123;
                 flag=0;
@@ -442,7 +442,7 @@ int main()
         &amp;#125;
         if(flag==1)
         &amp;#123;
-            if(tmpsize&lt;minsize)&amp;#123;
+            if(tmpsize&amp;lt;minsize)&amp;#123;
                 minsize=tmpsize;
                 minid=j+1;
 
@@ -450,11 +450,11 @@ int main()
             cnt++;
         &amp;#125;
     &amp;#125;
-    cout&lt;&lt;cnt&lt;&lt;endl;
-    cout&lt;&lt;minid&lt;&lt;&#34; &#34;&lt;&lt;minsize&lt;&lt;endl;
+    cout&amp;lt;&amp;lt;cnt&amp;lt;&amp;lt;endl;
+    cout&amp;lt;&amp;lt;minid&amp;lt;&amp;lt;&amp;quot; &amp;quot;&amp;lt;&amp;lt;minsize&amp;lt;&amp;lt;endl;
     return 0;
 &amp;#125;
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;参考资料：&#34;&gt;&lt;a href=&#34;#参考资料：&#34; class=&#34;headerlink&#34; title=&#34;参考资料：&#34;&gt;&lt;/a&gt;参考资料：&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://pintia.cn/problem-sets/994805046380707840/problems/1336215880692482059&#34;&gt;题目详情 - L2-036 网红点打卡攻略 (25 分) (pintia.cn)&lt;/a&gt;&lt;/p&gt;
 </content>
         <category term="Data Structure" />
@@ -475,7 +475,7 @@ int main()
 &lt;p&gt;随后 &lt;em&gt;N&lt;/em&gt; 行，每行给出一个功能模块的 &lt;em&gt;M&lt;/em&gt; 个对应输出，数字间以空格分隔。&lt;/p&gt;
 &lt;h3 id=&#34;输出格式：&#34;&gt;&lt;a href=&#34;#输出格式：&#34; class=&#34;headerlink&#34; title=&#34;输出格式：&#34;&gt;&lt;/a&gt;输出格式：&lt;/h3&gt;&lt;p&gt;首先在第一行输出不同功能的个数 &lt;em&gt;K&lt;/em&gt;。随后 &lt;em&gt;K&lt;/em&gt; 行，每行给出具有这个功能的模块的个数，以及这个功能的对应输出。数字间以 1 个空格分隔，行首尾不得有多余空格。输出首先按模块个数非递增顺序，如果有并列，则按输出序列的递增序给出。&lt;/p&gt;
 &lt;p&gt;注：所谓数列 { &lt;em&gt;A&lt;/em&gt;1, …, &lt;em&gt;A&lt;/em&gt;M } 比 { &lt;em&gt;B&lt;/em&gt;1, …, &lt;em&gt;B&lt;/em&gt;M } 大，是指存在 1≤i&amp;lt;*M*，使得 *A*1&amp;#x3D;*B*1，…，*Ai*&amp;#x3D;*Bi* 成立，且 *Ai*+1&amp;gt;&lt;em&gt;B&lt;/em&gt;+1。&lt;/p&gt;
-&lt;h3 id=&#34;输入样例：&#34;&gt;&lt;a href=&#34;#输入样例：&#34; class=&#34;headerlink&#34; title=&#34;输入样例：&#34;&gt;&lt;/a&gt;输入样例：&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-in&#34;&gt;&lt;code class=&#34;language-in&#34;&gt;7 3
+&lt;h3 id=&#34;输入样例：&#34;&gt;&lt;a href=&#34;#输入样例：&#34; class=&#34;headerlink&#34; title=&#34;输入样例：&#34;&gt;&lt;/a&gt;输入样例：&lt;/h3&gt;&lt;pre&gt;&lt;code class=&#34;in&#34;&gt;7 3
 35 28 74
 -1 -1 22
 28 74 35
@@ -483,56 +483,56 @@ int main()
 11 66 0
 35 28 74
 35 28 74
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;输出样例：&#34;&gt;&lt;a href=&#34;#输出样例：&#34; class=&#34;headerlink&#34; title=&#34;输出样例：&#34;&gt;&lt;/a&gt;输出样例：&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-out&#34;&gt;&lt;code class=&#34;language-out&#34;&gt;4
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;输出样例：&#34;&gt;&lt;a href=&#34;#输出样例：&#34; class=&#34;headerlink&#34; title=&#34;输出样例：&#34;&gt;&lt;/a&gt;输出样例：&lt;/h3&gt;&lt;pre&gt;&lt;code class=&#34;out&#34;&gt;4
 3 35 28 74
 2 -1 -1 22
 1 11 66 0
 1 28 74 35
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;程序源代码：&#34;&gt;&lt;a href=&#34;#程序源代码：&#34; class=&#34;headerlink&#34; title=&#34;程序源代码：&#34;&gt;&lt;/a&gt;程序源代码：&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;利用map的映射关系&lt;/strong&gt;&lt;/p&gt;
-&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;#include&lt;bits/stdc++.h&gt;
+&lt;pre&gt;&lt;code class=&#34;c++&#34;&gt;#include&amp;lt;bits/stdc++.h&amp;gt;
 using namespace std;
-map&lt;vector&lt;int&gt;,int&gt; mp;   //key，value
-vector&lt;int&gt; tmp;
+map&amp;lt;vector&amp;lt;int&amp;gt;,int&amp;gt; mp;   //key，value
+vector&amp;lt;int&amp;gt; tmp;
 int n,m;
-bool cmp(pair&lt;vector&lt;int&gt;,int&gt; a,pair&lt;vector&lt;int&gt;,int&gt; b)
+bool cmp(pair&amp;lt;vector&amp;lt;int&amp;gt;,int&amp;gt; a,pair&amp;lt;vector&amp;lt;int&amp;gt;,int&amp;gt; b)
 &amp;#123;
     if(a.second==b.second)
     &amp;#123;
-        return a.first&lt;b.first;
+        return a.first&amp;lt;b.first;
     &amp;#125;
-    return a.second&gt;b.second;
+    return a.second&amp;gt;b.second;
 
 &amp;#125;
 int main()
 &amp;#123;
-    cin&gt;&gt;n&gt;&gt;m;
-    for (int i = 0; i &lt;n ; ++i) &amp;#123;
-        for (int j = 0; j &lt; m; ++j) &amp;#123;
+    cin&amp;gt;&amp;gt;n&amp;gt;&amp;gt;m;
+    for (int i = 0; i &amp;lt;n ; ++i) &amp;#123;
+        for (int j = 0; j &amp;lt; m; ++j) &amp;#123;
             int num;
-            cin&gt;&gt;num;
+            cin&amp;gt;&amp;gt;num;
             tmp.push_back(num);
         &amp;#125;
         mp[tmp]++;
         tmp.clear();
     &amp;#125;
-    vector&lt;pair&lt;vector&lt;int&gt;,int&gt;&gt; v(mp.begin(),mp.end());		//把map类型转化成vector
-    cout&lt;&lt;v.size()&lt;&lt;endl;
+    vector&amp;lt;pair&amp;lt;vector&amp;lt;int&amp;gt;,int&amp;gt;&amp;gt; v(mp.begin(),mp.end());		//把map类型转化成vector
+    cout&amp;lt;&amp;lt;v.size()&amp;lt;&amp;lt;endl;
     sort(v.begin(),v.end(),cmp);								//sort排序，注意终点和起点
-    for (int k = 0; k &lt;v.size() ; ++k) &amp;#123;
-        cout&lt;&lt;v[k].second&lt;&lt;&#34; &#34;;
-        for (int i = 0; i &lt;m ; ++i) &amp;#123;
+    for (int k = 0; k &amp;lt;v.size() ; ++k) &amp;#123;
+        cout&amp;lt;&amp;lt;v[k].second&amp;lt;&amp;lt;&amp;quot; &amp;quot;;
+        for (int i = 0; i &amp;lt;m ; ++i) &amp;#123;
             if(i!=m-1)&amp;#123;
-                cout&lt;&lt;v[k].first[i]&lt;&lt;&#34; &#34;;
+                cout&amp;lt;&amp;lt;v[k].first[i]&amp;lt;&amp;lt;&amp;quot; &amp;quot;;
             &amp;#125; else&amp;#123;
-                cout&lt;&lt;v[k].first[i]&lt;&lt;endl;
+                cout&amp;lt;&amp;lt;v[k].first[i]&amp;lt;&amp;lt;endl;
             &amp;#125;
         &amp;#125;
     &amp;#125;
     return 0;
 &amp;#125;
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;参考资料：&#34;&gt;&lt;a href=&#34;#参考资料：&#34; class=&#34;headerlink&#34; title=&#34;参考资料：&#34;&gt;&lt;/a&gt;参考资料：&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://pintia.cn/problem-sets/994805046380707840/problems/1386335159927652362&#34;&gt;题目详情 - L2-039 清点代码库 (25 分) (pintia.cn)&lt;/a&gt;&lt;/p&gt;
 </content>
         <category term="Data Structure" />
@@ -552,41 +552,41 @@ int main()
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;输入第一行给出一个正整数&lt;em&gt;N&lt;/em&gt;（≤50），是集合的个数。随后&lt;em&gt;N&lt;/em&gt;行，每行对应一个集合。每个集合首先给出一个正整数&lt;em&gt;M&lt;/em&gt;（≤104），是集合中元素的个数；然后跟&lt;em&gt;M&lt;/em&gt;个[0,109]区间内的整数。&lt;/p&gt;
 &lt;p&gt;之后一行给出一个正整数&lt;em&gt;K&lt;/em&gt;（≤2000），随后&lt;em&gt;K&lt;/em&gt;行，每行对应一对需要计算相似度的集合的编号（集合从1到&lt;em&gt;N&lt;/em&gt;编号）。数字间以空格分隔。&lt;/p&gt;
 &lt;h3 id=&#34;输出格式：&#34;&gt;&lt;a href=&#34;#输出格式：&#34; class=&#34;headerlink&#34; title=&#34;输出格式：&#34;&gt;&lt;/a&gt;输出格式：&lt;/h3&gt;&lt;p&gt;对每一对需要计算的集合，在一行中输出它们的相似度，为保留小数点后2位的百分比数字。&lt;/p&gt;
-&lt;h3 id=&#34;输入样例：&#34;&gt;&lt;a href=&#34;#输入样例：&#34; class=&#34;headerlink&#34; title=&#34;输入样例：&#34;&gt;&lt;/a&gt;输入样例：&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-in&#34;&gt;&lt;code class=&#34;language-in&#34;&gt;3
+&lt;h3 id=&#34;输入样例：&#34;&gt;&lt;a href=&#34;#输入样例：&#34; class=&#34;headerlink&#34; title=&#34;输入样例：&#34;&gt;&lt;/a&gt;输入样例：&lt;/h3&gt;&lt;pre&gt;&lt;code class=&#34;in&#34;&gt;3
 3 99 87 101
 4 87 101 5 87
 7 99 101 18 5 135 18 99
 2
 1 2
 1 3
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;输出样例：&#34;&gt;&lt;a href=&#34;#输出样例：&#34; class=&#34;headerlink&#34; title=&#34;输出样例：&#34;&gt;&lt;/a&gt;输出样例：&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-out&#34;&gt;&lt;code class=&#34;language-out&#34;&gt;50.00%
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;输出样例：&#34;&gt;&lt;a href=&#34;#输出样例：&#34; class=&#34;headerlink&#34; title=&#34;输出样例：&#34;&gt;&lt;/a&gt;输出样例：&lt;/h3&gt;&lt;pre&gt;&lt;code class=&#34;out&#34;&gt;50.00%
 33.33%
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;程序源代码：&#34;&gt;&lt;a href=&#34;#程序源代码：&#34; class=&#34;headerlink&#34; title=&#34;程序源代码：&#34;&gt;&lt;/a&gt;程序源代码：&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;双set模拟&lt;/strong&gt;&lt;/p&gt;
-&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;#include&lt;bits/stdc++.h&gt;
+&lt;pre&gt;&lt;code class=&#34;c++&#34;&gt;#include&amp;lt;bits/stdc++.h&amp;gt;
 using namespace std;
 int main()
 &amp;#123;
     int n;
-    set&lt;int&gt; s[55];
-    cin&gt;&gt;n;
-    for (int i = 0; i &lt;n ; ++i) &amp;#123;
+    set&amp;lt;int&amp;gt; s[55];
+    cin&amp;gt;&amp;gt;n;
+    for (int i = 0; i &amp;lt;n ; ++i) &amp;#123;
         int time;
-        cin&gt;&gt;time;
-        for (int j = 0; j &lt;time ; ++j) &amp;#123;
+        cin&amp;gt;&amp;gt;time;
+        for (int j = 0; j &amp;lt;time ; ++j) &amp;#123;
             int num;
-            cin&gt;&gt;num;
+            cin&amp;gt;&amp;gt;num;
             s[i].insert(num);
         &amp;#125;
     &amp;#125;
     int find;
-    cin&gt;&gt;find;
-    for (int l = 0; l &lt;find ; ++l) &amp;#123;
+    cin&amp;gt;&amp;gt;find;
+    for (int l = 0; l &amp;lt;find ; ++l) &amp;#123;
         int a,b;
-        cin&gt;&gt;a&gt;&gt;b;
+        cin&amp;gt;&amp;gt;a&amp;gt;&amp;gt;b;
         int sum=0;
-        set&lt;int&gt;::iterator it;								//迭代器
+        set&amp;lt;int&amp;gt;::iterator it;								//迭代器
         int cnt=0;
         for (it=s[a-1].begin(); it!=s[a-1].end() ; it++) &amp;#123;
             if(s[b-1].find(*it)!=s[b-1].end())&amp;#123;				//找到了
@@ -595,12 +595,12 @@ int main()
         &amp;#125;
         sum=s[a-1].size()+s[b-1].size()-cnt;				//Nt=两个集合的总个数-相同个数
         double ans=double(double(cnt)/double(sum))*100.0;
-        printf(&#34;%.2lf%\n&#34;,ans);
+        printf(&amp;quot;%.2lf%\n&amp;quot;,ans);
 
     &amp;#125;
     return 0;
 &amp;#125;
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;参考资料：&#34;&gt;&lt;a href=&#34;#参考资料：&#34; class=&#34;headerlink&#34; title=&#34;参考资料：&#34;&gt;&lt;/a&gt;参考资料：&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://pintia.cn/problem-sets/994805046380707840/problems/994805070149828608&#34;&gt;题目详情 - L2-005 集合相似度 (25 分) (pintia.cn)&lt;/a&gt;&lt;/p&gt;
 </content>
         <category term="C++" />
@@ -615,69 +615,69 @@ int main()
         <link rel="alternate" href="http://example.com/2022/04/16/Algorithm029/"/>
         <content type="html">&lt;h2 id=&#34;STL中map的使用&#34;&gt;&lt;a href=&#34;#STL中map的使用&#34; class=&#34;headerlink&#34; title=&#34;STL中map的使用&#34;&gt;&lt;/a&gt;STL中map的使用&lt;/h2&gt;&lt;h3 id=&#34;简介&#34;&gt;&lt;a href=&#34;#简介&#34; class=&#34;headerlink&#34; title=&#34;简介&#34;&gt;&lt;/a&gt;简介&lt;/h3&gt;&lt;p&gt;map 是 STL 的一个关联容器，它提供一对一的数据处理能力。&lt;/p&gt;
 &lt;p&gt;map 对象是&lt;strong&gt;模板类&lt;/strong&gt;，需要&lt;strong&gt;关键字&lt;/strong&gt;和&lt;strong&gt;存储对象&lt;/strong&gt;两个模板参数：其中第一个参数称为关键字，每个关键字只能在 map 中出现一次；第二个参数称为该关键字的值。可以将关键字和存储对象理解为“{键，值}对”。&lt;/p&gt;
-&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;map&lt;int,string&gt; mp;
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;map的数据插入操作&#34;&gt;&lt;a href=&#34;#map的数据插入操作&#34; class=&#34;headerlink&#34; title=&#34;map的数据插入操作&#34;&gt;&lt;/a&gt;map的数据插入操作&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;//使用insert函数插入pair数据
-mp.insert(pair&lt;int,string&gt;(3,&#34;xingyuanjie&#34;));
+&lt;pre&gt;&lt;code class=&#34;c++&#34;&gt;map&amp;lt;int,string&amp;gt; mp;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;map的数据插入操作&#34;&gt;&lt;a href=&#34;#map的数据插入操作&#34; class=&#34;headerlink&#34; title=&#34;map的数据插入操作&#34;&gt;&lt;/a&gt;map的数据插入操作&lt;/h3&gt;&lt;pre&gt;&lt;code class=&#34;c++&#34;&gt;//使用insert函数插入pair数据
+mp.insert(pair&amp;lt;int,string&amp;gt;(3,&amp;quot;xingyuanjie&amp;quot;));
 //使用数组方式插入数据
-mp[2]=&#34;wangzhouyang&#34;;
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+mp[2]=&amp;quot;wangzhouyang&amp;quot;;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;strong&gt;说明：上面的两种方法是有区别的，用 insert 函数插入数据，涉及到集合的唯一性这个概念，即当 map 中有这个关键字时，insert 操作是不能实现数据插入的；但是数组方式能够插入数据，插入的数据会覆盖该关键字之前对应的值。&lt;/strong&gt;&lt;/p&gt;
-&lt;h3 id=&#34;map中数据的遍历&#34;&gt;&lt;a href=&#34;#map中数据的遍历&#34; class=&#34;headerlink&#34; title=&#34;map中数据的遍历&#34;&gt;&lt;/a&gt;map中数据的遍历&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;map&lt;int,string&gt;::iterator it;					//迭代器
+&lt;h3 id=&#34;map中数据的遍历&#34;&gt;&lt;a href=&#34;#map中数据的遍历&#34; class=&#34;headerlink&#34; title=&#34;map中数据的遍历&#34;&gt;&lt;/a&gt;map中数据的遍历&lt;/h3&gt;&lt;pre&gt;&lt;code class=&#34;c++&#34;&gt;map&amp;lt;int,string&amp;gt;::iterator it;					//迭代器
 for (it=mp.begin();it!=mp.end();it++) &amp;#123;
-    cout&lt;&lt;it-&gt;first&lt;&lt;&#34; &#34;&lt;&lt;it-&gt;second&lt;&lt;endl;
+    cout&amp;lt;&amp;lt;it-&amp;gt;first&amp;lt;&amp;lt;&amp;quot; &amp;quot;&amp;lt;&amp;lt;it-&amp;gt;second&amp;lt;&amp;lt;endl;
 &amp;#125;
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;map中数据的查找&#34;&gt;&lt;a href=&#34;#map中数据的查找&#34; class=&#34;headerlink&#34; title=&#34;map中数据的查找&#34;&gt;&lt;/a&gt;map中数据的查找&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;map&lt;int,string&gt;::iterator it;					//迭代器
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;map中数据的查找&#34;&gt;&lt;a href=&#34;#map中数据的查找&#34; class=&#34;headerlink&#34; title=&#34;map中数据的查找&#34;&gt;&lt;/a&gt;map中数据的查找&lt;/h3&gt;&lt;pre&gt;&lt;code class=&#34;c++&#34;&gt;map&amp;lt;int,string&amp;gt;::iterator it;					//迭代器
 it=mp.find(1);
 if(it!=mp.end())&amp;#123;
-        cout &lt;&lt; &#34;Find it, the relative value is: &#34; &lt;&lt; it-&gt;second &lt;&lt; endl;
+        cout &amp;lt;&amp;lt; &amp;quot;Find it, the relative value is: &amp;quot; &amp;lt;&amp;lt; it-&amp;gt;second &amp;lt;&amp;lt; endl;
 &amp;#125;
 else&amp;#123;
-           cout &lt;&lt; &#34;Can not find the relative value.&#34; &lt;&lt; endl;
+           cout &amp;lt;&amp;lt; &amp;quot;Can not find the relative value.&amp;quot; &amp;lt;&amp;lt; endl;
 &amp;#125;
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;map中数据的删除&#34;&gt;&lt;a href=&#34;#map中数据的删除&#34; class=&#34;headerlink&#34; title=&#34;map中数据的删除&#34;&gt;&lt;/a&gt;map中数据的删除&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;map&lt;int,string&gt;::iterator it;					//迭代器
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;map中数据的删除&#34;&gt;&lt;a href=&#34;#map中数据的删除&#34; class=&#34;headerlink&#34; title=&#34;map中数据的删除&#34;&gt;&lt;/a&gt;map中数据的删除&lt;/h3&gt;&lt;pre&gt;&lt;code class=&#34;c++&#34;&gt;map&amp;lt;int,string&amp;gt;::iterator it;					//迭代器
 it = mp.find(2);
 mp.erase(it);
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;map中数据的排序&#34;&gt;&lt;a href=&#34;#map中数据的排序&#34; class=&#34;headerlink&#34; title=&#34;map中数据的排序&#34;&gt;&lt;/a&gt;map中数据的排序&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;map 中的所有元素都会根据元素的键值，自动进行升序排序。&lt;/strong&gt;&lt;/p&gt;
-&lt;h3 id=&#34;完整操作&#34;&gt;&lt;a href=&#34;#完整操作&#34; class=&#34;headerlink&#34; title=&#34;完整操作&#34;&gt;&lt;/a&gt;完整操作&lt;/h3&gt;&lt;h4 id=&#34;程序源代码：&#34;&gt;&lt;a href=&#34;#程序源代码：&#34; class=&#34;headerlink&#34; title=&#34;程序源代码：&#34;&gt;&lt;/a&gt;程序源代码：&lt;/h4&gt;&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;#include&lt;bits/stdc++.h&gt;
+&lt;h3 id=&#34;完整操作&#34;&gt;&lt;a href=&#34;#完整操作&#34; class=&#34;headerlink&#34; title=&#34;完整操作&#34;&gt;&lt;/a&gt;完整操作&lt;/h3&gt;&lt;h4 id=&#34;程序源代码：&#34;&gt;&lt;a href=&#34;#程序源代码：&#34; class=&#34;headerlink&#34; title=&#34;程序源代码：&#34;&gt;&lt;/a&gt;程序源代码：&lt;/h4&gt;&lt;pre&gt;&lt;code class=&#34;c++&#34;&gt;#include&amp;lt;bits/stdc++.h&amp;gt;
 using namespace std;
-map&lt;int,string&gt; mp;
+map&amp;lt;int,string&amp;gt; mp;
 int main()
 &amp;#123;
     //使用insert函数插入pair数据
-    mp.insert(pair&lt;int,string&gt;(3,&#34;xingyuanjie&#34;));
-    mp.insert(pair&lt;int,string&gt;(1,&#34;shicheng&#34;));
-    mp.insert(pair&lt;int,string&gt;(4,&#34;tanghaipeng&#34;));
-    mp.insert(pair&lt;int,string&gt;(6,&#34;zhouyuhao&#34;));
-    mp.insert(pair&lt;int,string&gt;(5,&#34;heqichuan&#34;));
+    mp.insert(pair&amp;lt;int,string&amp;gt;(3,&amp;quot;xingyuanjie&amp;quot;));
+    mp.insert(pair&amp;lt;int,string&amp;gt;(1,&amp;quot;shicheng&amp;quot;));
+    mp.insert(pair&amp;lt;int,string&amp;gt;(4,&amp;quot;tanghaipeng&amp;quot;));
+    mp.insert(pair&amp;lt;int,string&amp;gt;(6,&amp;quot;zhouyuhao&amp;quot;));
+    mp.insert(pair&amp;lt;int,string&amp;gt;(5,&amp;quot;heqichuan&amp;quot;));
     //使用数组方式插入数据
-    mp[2]=&#34;wangzhouyang&#34;;
+    mp[2]=&amp;quot;wangzhouyang&amp;quot;;
     //map的遍历
-    map&lt;int,string&gt;::iterator it;
+    map&amp;lt;int,string&amp;gt;::iterator it;
     for (it=mp.begin();it!=mp.end();it++) &amp;#123;
-        cout&lt;&lt;it-&gt;first&lt;&lt;&#34; &#34;&lt;&lt;it-&gt;second&lt;&lt;endl;
+        cout&amp;lt;&amp;lt;it-&amp;gt;first&amp;lt;&amp;lt;&amp;quot; &amp;quot;&amp;lt;&amp;lt;it-&amp;gt;second&amp;lt;&amp;lt;endl;
     &amp;#125;
     //查找操作
     it=mp.find(1);
     if(it!=mp.end())&amp;#123;
-        cout &lt;&lt; &#34;Find it, the relative value is: &#34; &lt;&lt; it-&gt;second &lt;&lt; endl;
+        cout &amp;lt;&amp;lt; &amp;quot;Find it, the relative value is: &amp;quot; &amp;lt;&amp;lt; it-&amp;gt;second &amp;lt;&amp;lt; endl;
     &amp;#125;
     else &amp;#123;
-        cout &lt;&lt; &#34;Can not find the relative value.&#34; &lt;&lt; endl;
+        cout &amp;lt;&amp;lt; &amp;quot;Can not find the relative value.&amp;quot; &amp;lt;&amp;lt; endl;
     &amp;#125;
     //删除操作
     it = mp.find(2);
     mp.erase(it);
     for (it=mp.begin();it!=mp.end();it++) &amp;#123;
-        cout&lt;&lt;it-&gt;first&lt;&lt;&#34; &#34;&lt;&lt;it-&gt;second&lt;&lt;endl;
+        cout&amp;lt;&amp;lt;it-&amp;gt;first&amp;lt;&amp;lt;&amp;quot; &amp;quot;&amp;lt;&amp;lt;it-&amp;gt;second&amp;lt;&amp;lt;endl;
     &amp;#125;
     return 0;
 &amp;#125;
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h4 id=&#34;程序输出：&#34;&gt;&lt;a href=&#34;#程序输出：&#34; class=&#34;headerlink&#34; title=&#34;程序输出：&#34;&gt;&lt;/a&gt;程序输出：&lt;/h4&gt;&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;1 shicheng
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;程序输出：&#34;&gt;&lt;a href=&#34;#程序输出：&#34; class=&#34;headerlink&#34; title=&#34;程序输出：&#34;&gt;&lt;/a&gt;程序输出：&lt;/h4&gt;&lt;pre&gt;&lt;code class=&#34;c++&#34;&gt;1 shicheng
 2 wangzhouyang
 3 xingyuanjie
 4 tanghaipeng
@@ -689,7 +689,7 @@ Find it, the relative value is: shicheng
 4 tanghaipeng
 5 heqichuan
 6 zhouyuhao
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;参考资料：&#34;&gt;&lt;a href=&#34;#参考资料：&#34; class=&#34;headerlink&#34; title=&#34;参考资料：&#34;&gt;&lt;/a&gt;参考资料：&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/liitdar/article/details/80009712&#34;&gt;(20条消息) STL中map介绍_liitdar的博客-CSDN博客_stlmap&lt;/a&gt;&lt;/p&gt;
 </content>
         <category term="STL" />
@@ -704,7 +704,7 @@ Find it, the relative value is: shicheng
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;输入第一行给出3个正整数：&lt;code&gt;N&lt;/code&gt;（≤100），即前来参宴的宾客总人数，则这些人从1到&lt;code&gt;N&lt;/code&gt;编号；&lt;code&gt;M&lt;/code&gt;为已知两两宾客之间的关系数；&lt;code&gt;K&lt;/code&gt;为查询的条数。随后&lt;code&gt;M&lt;/code&gt;行，每行给出一对宾客之间的关系，格式为：&lt;code&gt;宾客1 宾客2 关系&lt;/code&gt;，其中&lt;code&gt;关系&lt;/code&gt;为1表示是朋友，-1表示是死对头。注意两个人不可能既是朋友又是敌人。最后&lt;code&gt;K&lt;/code&gt;行，每行给出一对需要查询的宾客编号。&lt;/p&gt;
 &lt;p&gt;这里假设朋友的朋友也是朋友。但敌人的敌人并不一定就是朋友，朋友的敌人也不一定是敌人。只有单纯直接的敌对关系才是绝对不能同席的。&lt;/p&gt;
 &lt;h3 id=&#34;输出格式：&#34;&gt;&lt;a href=&#34;#输出格式：&#34; class=&#34;headerlink&#34; title=&#34;输出格式：&#34;&gt;&lt;/a&gt;输出格式：&lt;/h3&gt;&lt;p&gt;对每个查询输出一行结果：如果两位宾客之间是朋友，且没有敌对关系，则输出&lt;code&gt;No problem&lt;/code&gt;；如果他们之间并不是朋友，但也不敌对，则输出&lt;code&gt;OK&lt;/code&gt;；如果他们之间有敌对，然而也有共同的朋友，则输出&lt;code&gt;OK but...&lt;/code&gt;；如果他们之间只有敌对关系，则输出&lt;code&gt;No way&lt;/code&gt;。&lt;/p&gt;
-&lt;h3 id=&#34;输入样例：&#34;&gt;&lt;a href=&#34;#输入样例：&#34; class=&#34;headerlink&#34; title=&#34;输入样例：&#34;&gt;&lt;/a&gt;输入样例：&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-in&#34;&gt;&lt;code class=&#34;language-in&#34;&gt;7 8 4
+&lt;h3 id=&#34;输入样例：&#34;&gt;&lt;a href=&#34;#输入样例：&#34; class=&#34;headerlink&#34; title=&#34;输入样例：&#34;&gt;&lt;/a&gt;输入样例：&lt;/h3&gt;&lt;pre&gt;&lt;code class=&#34;in&#34;&gt;7 8 4
 5 6 1
 2 7 -1
 1 3 1
@@ -717,22 +717,22 @@ Find it, the relative value is: shicheng
 5 7
 2 3
 7 2
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;输出样例：&#34;&gt;&lt;a href=&#34;#输出样例：&#34; class=&#34;headerlink&#34; title=&#34;输出样例：&#34;&gt;&lt;/a&gt;输出样例：&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-out&#34;&gt;&lt;code class=&#34;language-out&#34;&gt;No problem
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;输出样例：&#34;&gt;&lt;a href=&#34;#输出样例：&#34; class=&#34;headerlink&#34; title=&#34;输出样例：&#34;&gt;&lt;/a&gt;输出样例：&lt;/h3&gt;&lt;pre&gt;&lt;code class=&#34;out&#34;&gt;No problem
 OK
 OK but...
 No way
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;程序源代码：&#34;&gt;&lt;a href=&#34;#程序源代码：&#34; class=&#34;headerlink&#34; title=&#34;程序源代码：&#34;&gt;&lt;/a&gt;程序源代码：&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;邻接矩阵 + 并查集&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;并查集具体链接：&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://xingyuanjie.top/2022/01/04/Algorithm004/&#34;&gt;并查集 - 计算机奇妙之旅 (xingyuanjie.top)&lt;/a&gt;&lt;/p&gt;
-&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;#include&lt;bits/stdc++.h&gt;
+&lt;pre&gt;&lt;code class=&#34;c++&#34;&gt;#include&amp;lt;bits/stdc++.h&amp;gt;
 using namespace std;
 int pre[100];				//父节点
 int deep[100];				//深度
 int g[101][101];			//邻接矩阵建图
 void init(int n)&amp;#123;
-    for (int i = 0; i &lt;n ; ++i) &amp;#123;
+    for (int i = 0; i &amp;lt;n ; ++i) &amp;#123;
         pre[i]=i;
         deep[i]=0;
     &amp;#125;
@@ -748,7 +748,7 @@ void unit(int x,int y)&amp;#123;
     x=find(x);
     y=find(y);
     if(x==y) return;
-    if(deep[x]&lt;deep[y])&amp;#123;
+    if(deep[x]&amp;lt;deep[y])&amp;#123;
         pre[x]=y;
     &amp;#125;else&amp;#123;
         pre[y]=x;
@@ -762,24 +762,24 @@ int main()
     int n,m,k;
     init(105);
     memset(g,0,sizeof(g));
-    cin&gt;&gt;n&gt;&gt;m&gt;&gt;k;
-    for (int i = 0; i &lt;m ; ++i) &amp;#123;
+    cin&amp;gt;&amp;gt;n&amp;gt;&amp;gt;m&amp;gt;&amp;gt;k;
+    for (int i = 0; i &amp;lt;m ; ++i) &amp;#123;
         int a,b,c;
-        cin&gt;&gt;a&gt;&gt;b&gt;&gt;c;
+        cin&amp;gt;&amp;gt;a&amp;gt;&amp;gt;b&amp;gt;&amp;gt;c;
         g[a][b]=g[b][a]=c;
         if(c==1) unit(a,b);					//如果是朋友则合并
     &amp;#125;
-    for (int j = 0; j &lt;k ; ++j) &amp;#123;
+    for (int j = 0; j &amp;lt;k ; ++j) &amp;#123;
         int a,b;
-        cin&gt;&gt;a&gt;&gt;b;
-        if(g[a][b]==1&amp;&amp;g[b][a]==1) cout&lt;&lt;&#34;No problem&#34;&lt;&lt;endl;
-        else if(g[a][b]==0&amp;&amp;g[b][a]==0) cout&lt;&lt;&#34;OK&#34;&lt;&lt;endl;			//两人毫无关系
-        else if(g[a][b]==-1&amp;&amp;g[b][a]==-1&amp;&amp;find(a)==find(b)) cout&lt;&lt;&#34;OK but...&#34;&lt;&lt;endl;	//敌对且有共同朋友
-        else if(g[a][b]==-1&amp;&amp;g[b][a]==-1) cout&lt;&lt;&#34;No way&#34;&lt;&lt;endl;		//仅敌对
+        cin&amp;gt;&amp;gt;a&amp;gt;&amp;gt;b;
+        if(g[a][b]==1&amp;amp;&amp;amp;g[b][a]==1) cout&amp;lt;&amp;lt;&amp;quot;No problem&amp;quot;&amp;lt;&amp;lt;endl;
+        else if(g[a][b]==0&amp;amp;&amp;amp;g[b][a]==0) cout&amp;lt;&amp;lt;&amp;quot;OK&amp;quot;&amp;lt;&amp;lt;endl;			//两人毫无关系
+        else if(g[a][b]==-1&amp;amp;&amp;amp;g[b][a]==-1&amp;amp;&amp;amp;find(a)==find(b)) cout&amp;lt;&amp;lt;&amp;quot;OK but...&amp;quot;&amp;lt;&amp;lt;endl;	//敌对且有共同朋友
+        else if(g[a][b]==-1&amp;amp;&amp;amp;g[b][a]==-1) cout&amp;lt;&amp;lt;&amp;quot;No way&amp;quot;&amp;lt;&amp;lt;endl;		//仅敌对
     &amp;#125;
     return 0;
 &amp;#125;
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;参考资料：&#34;&gt;&lt;a href=&#34;#参考资料：&#34; class=&#34;headerlink&#34; title=&#34;参考资料：&#34;&gt;&lt;/a&gt;参考资料：&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/weixin_45260385/article/details/109752008&#34;&gt;(20条消息) 【PTA】 L2-010 排座位 (25分) 【简单并查集】_黑桃️的博客-CSDN博客&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://pintia.cn/problem-sets/994805046380707840/problems/994805066135879680&#34;&gt;题目详情 - L2-010 排座位 (25 分) (pintia.cn)&lt;/a&gt;&lt;/p&gt;
 </content>
@@ -800,7 +800,7 @@ int main()
 &lt;p&gt;&lt;em&gt;K     N&lt;/em&gt;1 &lt;em&gt;P&lt;/em&gt;1⋯ NK PK&lt;/p&gt;
 &lt;p&gt;其中&lt;em&gt;K&lt;/em&gt;（0≤&lt;em&gt;K&lt;/em&gt;≤20）是发出去的红包个数，&lt;em&gt;N&lt;/em&gt;i&lt;em&gt;是抢到红包的人的编号，&lt;/em&gt;Pi（&amp;gt;0）是其抢到的红包金额（以分为单位）。注意：对于同一个人发出的红包，每人最多只能抢1次，不能重复抢。&lt;/p&gt;
 &lt;h3 id=&#34;输出格式：&#34;&gt;&lt;a href=&#34;#输出格式：&#34; class=&#34;headerlink&#34; title=&#34;输出格式：&#34;&gt;&lt;/a&gt;输出格式：&lt;/h3&gt;&lt;p&gt;按照收入金额从高到低的递减顺序输出每个人的编号和收入金额（以元为单位，输出小数点后2位）。每个人的信息占一行，两数字间有1个空格。如果收入金额有并列，则按抢到红包的个数递减输出；如果还有并列，则按个人编号递增输出。&lt;/p&gt;
-&lt;h3 id=&#34;输入样例：&#34;&gt;&lt;a href=&#34;#输入样例：&#34; class=&#34;headerlink&#34; title=&#34;输入样例：&#34;&gt;&lt;/a&gt;输入样例：&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-in&#34;&gt;&lt;code class=&#34;language-in&#34;&gt;10
+&lt;h3 id=&#34;输入样例：&#34;&gt;&lt;a href=&#34;#输入样例：&#34; class=&#34;headerlink&#34; title=&#34;输入样例：&#34;&gt;&lt;/a&gt;输入样例：&lt;/h3&gt;&lt;pre&gt;&lt;code class=&#34;in&#34;&gt;10
 3 2 22 10 58 8 125
 5 1 345 3 211 5 233 7 13 8 101
 1 7 8800
@@ -811,8 +811,8 @@ int main()
 2 1 23 2 123
 1 8 250
 4 2 121 4 516 7 112 9 10
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;输出样例：&#34;&gt;&lt;a href=&#34;#输出样例：&#34; class=&#34;headerlink&#34; title=&#34;输出样例：&#34;&gt;&lt;/a&gt;输出样例：&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-out&#34;&gt;&lt;code class=&#34;language-out&#34;&gt;1 11.63
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;输出样例：&#34;&gt;&lt;a href=&#34;#输出样例：&#34; class=&#34;headerlink&#34; title=&#34;输出样例：&#34;&gt;&lt;/a&gt;输出样例：&lt;/h3&gt;&lt;pre&gt;&lt;code class=&#34;out&#34;&gt;1 11.63
 2 3.63
 8 3.63
 3 2.11
@@ -822,11 +822,11 @@ int main()
 10 -3.26
 5 -3.26
 4 -12.32
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;程序源代码：&#34;&gt;&lt;a href=&#34;#程序源代码：&#34; class=&#34;headerlink&#34; title=&#34;程序源代码：&#34;&gt;&lt;/a&gt;程序源代码：&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;结构体 + Sort&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;需要注意的就是double类型相等的比较&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;首先，浮点数在计算机中并不能精确的表示，所以在判断两个double类型的数时需要其他的手段，而不是直接 a&amp;#x3D;&amp;#x3D; b&lt;/strong&gt;&lt;/p&gt;
-&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;#include&lt;bits/stdc++.h&gt;
+&lt;pre&gt;&lt;code class=&#34;c++&#34;&gt;#include&amp;lt;bits/stdc++.h&amp;gt;
 using namespace std;
 struct student&amp;#123;
     int id=0;
@@ -835,40 +835,40 @@ struct student&amp;#123;
 &amp;#125;;
 double dis=1e-6;				//定义一个误差
 bool cmp(student a,student b)&amp;#123;
-    if(abs(a.money-b.money)&lt;dis)&amp;#123;				//如果两个double型相减在误差的范围内，我们认定这两个double类型相等
+    if(abs(a.money-b.money)&amp;lt;dis)&amp;#123;				//如果两个double型相减在误差的范围内，我们认定这两个double类型相等
         if(a.cnt==b.cnt)&amp;#123;
-            return a.id&lt;b.id;
+            return a.id&amp;lt;b.id;
         &amp;#125;else&amp;#123;
-            return a.cnt&gt;b.cnt;
+            return a.cnt&amp;gt;b.cnt;
         &amp;#125;
     &amp;#125;
-    return a.money&gt;b.money;
+    return a.money&amp;gt;b.money;
 &amp;#125;
 int main()
 &amp;#123;
     int n;
-    cin&gt;&gt;n;
+    cin&amp;gt;&amp;gt;n;
     student st[n+5];
-    for (int i = 0; i &lt;n ; ++i) &amp;#123;
+    for (int i = 0; i &amp;lt;n ; ++i) &amp;#123;
         int time;
-        cin&gt;&gt;time;
+        cin&amp;gt;&amp;gt;time;
         st[i].id=i+1;
-        for (int j = 0; j &lt;time ; ++j) &amp;#123;
+        for (int j = 0; j &amp;lt;time ; ++j) &amp;#123;
             int p;
             double x;
-            cin&gt;&gt;p&gt;&gt;x;
+            cin&amp;gt;&amp;gt;p&amp;gt;&amp;gt;x;
             st[p-1].money+=x/100;
             st[i].money-=x/100;
             st[p-1].cnt++;					//记录抢到的红包数
         &amp;#125;
     &amp;#125;
     sort(st,st+n,cmp);						//sort从数组下标0开始排序，左闭右开
-    for (int k = 0; k &lt;n ; ++k) &amp;#123;
-        printf(&#34;%d %.2lf\n&#34;,st[k].id,st[k].money);
+    for (int k = 0; k &amp;lt;n ; ++k) &amp;#123;
+        printf(&amp;quot;%d %.2lf\n&amp;quot;,st[k].id,st[k].money);
     &amp;#125;
     return 0;
 &amp;#125;
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;参考资料：&#34;&gt;&lt;a href=&#34;#参考资料：&#34; class=&#34;headerlink&#34; title=&#34;参考资料：&#34;&gt;&lt;/a&gt;参考资料：&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/dingpiao190/article/details/73512811?spm=1001.2101.3001.6661.1&amp;utm_medium=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~Rate-1.pc_relevant_default&amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~Rate-1.pc_relevant_default&amp;utm_relevant_index=1&#34;&gt;(20条消息) double类型是否相等的判断方法_dingpiao190的博客-CSDN博客_double判断相等&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/patrick_star_cowboy/article/details/82083392&#34;&gt;(20条消息) 如何判断两个double类型的数是否相等？_Patrick-Star的博客-CSDN博客_两个double怎么判断相等&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://pintia.cn/problem-sets/994805046380707840/problems/994805066890854400&#34;&gt;题目详情 - L2-009 抢红包 (25 分) (pintia.cn)&lt;/a&gt;&lt;/p&gt;
@@ -888,50 +888,50 @@ int main()
 &lt;p&gt;注意：销售时允许取出一部分库存。样例给出的情形是这样的：假如我们有 3 种月饼，其库存量分别为 18、15、10 万吨，总售价分别为 75、72、45 亿元。如果市场的最大需求量只有 20 万吨，那么我们最大收益策略应该是卖出全部 15 万吨第 2 种月饼、以及 5 万吨第 3 种月饼，获得 72 + 45&amp;#x2F;2 &amp;#x3D; 94.5（亿元）。&lt;/p&gt;
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;每个输入包含一个测试用例。每个测试用例先给出一个不超过 1000 的正整数 &lt;em&gt;N&lt;/em&gt; 表示月饼的种类数、以及不超过 500（以万吨为单位）的正整数 &lt;em&gt;D&lt;/em&gt; 表示市场最大需求量。随后一行给出 &lt;em&gt;N&lt;/em&gt; 个正数表示每种月饼的库存量（以万吨为单位）；最后一行给出 &lt;em&gt;N&lt;/em&gt; 个正数表示每种月饼的总售价（以亿元为单位）。数字间以空格分隔。&lt;/p&gt;
 &lt;h3 id=&#34;输出格式：&#34;&gt;&lt;a href=&#34;#输出格式：&#34; class=&#34;headerlink&#34; title=&#34;输出格式：&#34;&gt;&lt;/a&gt;输出格式：&lt;/h3&gt;&lt;p&gt;对每组测试用例，在一行中输出最大收益，以亿元为单位并精确到小数点后 2 位。&lt;/p&gt;
-&lt;h3 id=&#34;输入样例：&#34;&gt;&lt;a href=&#34;#输入样例：&#34; class=&#34;headerlink&#34; title=&#34;输入样例：&#34;&gt;&lt;/a&gt;输入样例：&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-in&#34;&gt;&lt;code class=&#34;language-in&#34;&gt;3 20
+&lt;h3 id=&#34;输入样例：&#34;&gt;&lt;a href=&#34;#输入样例：&#34; class=&#34;headerlink&#34; title=&#34;输入样例：&#34;&gt;&lt;/a&gt;输入样例：&lt;/h3&gt;&lt;pre&gt;&lt;code class=&#34;in&#34;&gt;3 20
 18 15 10
 75 72 45
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;输出样例：&#34;&gt;&lt;a href=&#34;#输出样例：&#34; class=&#34;headerlink&#34; title=&#34;输出样例：&#34;&gt;&lt;/a&gt;输出样例：&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-out&#34;&gt;&lt;code class=&#34;language-out&#34;&gt;94.50
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;输出样例：&#34;&gt;&lt;a href=&#34;#输出样例：&#34; class=&#34;headerlink&#34; title=&#34;输出样例：&#34;&gt;&lt;/a&gt;输出样例：&lt;/h3&gt;&lt;pre&gt;&lt;code class=&#34;out&#34;&gt;94.50
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;程序源代码：&#34;&gt;&lt;a href=&#34;#程序源代码：&#34; class=&#34;headerlink&#34; title=&#34;程序源代码：&#34;&gt;&lt;/a&gt;程序源代码：&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;贪心 + Sort&lt;/strong&gt;&lt;/p&gt;
-&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;#include&lt;bits/stdc++.h&gt;
+&lt;pre&gt;&lt;code class=&#34;c++&#34;&gt;#include&amp;lt;bits/stdc++.h&amp;gt;
 using namespace std;
 struct mooncake&amp;#123;
     double pow;
     double price;
 &amp;#125;;
 bool cmp(mooncake a,mooncake b)&amp;#123;
-    return a.price*1.0/a.pow&gt;b.price*1.0/b.pow;				//返回单价高的
+    return a.price*1.0/a.pow&amp;gt;b.price*1.0/b.pow;				//返回单价高的
 &amp;#125;
 int main()
 &amp;#123;
     int n;
     double d;
-    cin&gt;&gt;n&gt;&gt;d;
+    cin&amp;gt;&amp;gt;n&amp;gt;&amp;gt;d;
     mooncake m[n];
-    for (int i = 0; i &lt; n; ++i) &amp;#123;
-        cin&gt;&gt;m[i].pow;
+    for (int i = 0; i &amp;lt; n; ++i) &amp;#123;
+        cin&amp;gt;&amp;gt;m[i].pow;
     &amp;#125;
-    for (int j = 0; j &lt;n ; ++j) &amp;#123;
-        cin&gt;&gt;m[j].price;
+    for (int j = 0; j &amp;lt;n ; ++j) &amp;#123;
+        cin&amp;gt;&amp;gt;m[j].price;
     &amp;#125;
     sort(m,m+n,cmp);
     double price=0.0;
     double tmpd=d;
-    for (int k = 0; k &lt;n ; ++k) &amp;#123;						//模拟求解
-        if(m[k].pow&lt;=tmpd)&amp;#123;
+    for (int k = 0; k &amp;lt;n ; ++k) &amp;#123;						//模拟求解
+        if(m[k].pow&amp;lt;=tmpd)&amp;#123;
             tmpd-=m[k].pow;
             price+=m[k].price;
-        &amp;#125;else if(m[k].pow&gt;tmpd)&amp;#123;
+        &amp;#125;else if(m[k].pow&amp;gt;tmpd)&amp;#123;
             price+=tmpd*(m[k].price/m[k].pow);
             break;
         &amp;#125;
     &amp;#125;
-    printf(&#34;%.2f\n&#34;,price);
+    printf(&amp;quot;%.2f\n&amp;quot;,price);
     return 0;
 &amp;#125;
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;参考资料：&#34;&gt;&lt;a href=&#34;#参考资料：&#34; class=&#34;headerlink&#34; title=&#34;参考资料：&#34;&gt;&lt;/a&gt;参考资料：&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://pintia.cn/problem-sets/994805046380707840/problems/994805071789801472&#34;&gt;题目详情 - L2-003 月饼 (25 分) (pintia.cn)&lt;/a&gt;&lt;/p&gt;
 </content>
         <category term="C++" />
@@ -949,26 +949,26 @@ int main()
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;输入在第一行给出两个整数&lt;code&gt;N&lt;/code&gt;（0 &amp;lt; &lt;code&gt;N&lt;/code&gt; ≤ 500）和&lt;code&gt;M&lt;/code&gt;（≤ 5000），分别为城市个数（于是默认城市从0到&lt;code&gt;N&lt;/code&gt;-1编号）和连接两城市的通路条数。随后&lt;code&gt;M&lt;/code&gt;行，每行给出一条通路所连接的两个城市的编号，其间以1个空格分隔。在城市信息之后给出被攻占的信息，即一个正整数&lt;code&gt;K&lt;/code&gt;和随后的&lt;code&gt;K&lt;/code&gt;个被攻占的城市的编号。&lt;/p&gt;
 &lt;p&gt;注意：输入保证给出的被攻占的城市编号都是合法的且无重复，但并不保证给出的通路没有重复。&lt;/p&gt;
 &lt;h3 id=&#34;输出格式：&#34;&gt;&lt;a href=&#34;#输出格式：&#34; class=&#34;headerlink&#34; title=&#34;输出格式：&#34;&gt;&lt;/a&gt;输出格式：&lt;/h3&gt;&lt;p&gt;对每个被攻占的城市，如果它会改变整个国家的连通性，则输出&lt;code&gt;Red Alert: City k is lost!&lt;/code&gt;，其中&lt;code&gt;k&lt;/code&gt;是该城市的编号；否则只输出&lt;code&gt;City k is lost.&lt;/code&gt;即可。如果该国失去了最后一个城市，则增加一行输出&lt;code&gt;Game Over.&lt;/code&gt;。&lt;/p&gt;
-&lt;h3 id=&#34;输入样例：&#34;&gt;&lt;a href=&#34;#输入样例：&#34; class=&#34;headerlink&#34; title=&#34;输入样例：&#34;&gt;&lt;/a&gt;输入样例：&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-in&#34;&gt;&lt;code class=&#34;language-in&#34;&gt;5 4
+&lt;h3 id=&#34;输入样例：&#34;&gt;&lt;a href=&#34;#输入样例：&#34; class=&#34;headerlink&#34; title=&#34;输入样例：&#34;&gt;&lt;/a&gt;输入样例：&lt;/h3&gt;&lt;pre&gt;&lt;code class=&#34;in&#34;&gt;5 4
 0 1
 1 3
 3 0
 0 4
 5
 1 2 0 4 3
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;输出样例：&#34;&gt;&lt;a href=&#34;#输出样例：&#34; class=&#34;headerlink&#34; title=&#34;输出样例：&#34;&gt;&lt;/a&gt;输出样例：&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-out&#34;&gt;&lt;code class=&#34;language-out&#34;&gt;City 1 is lost.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;输出样例：&#34;&gt;&lt;a href=&#34;#输出样例：&#34; class=&#34;headerlink&#34; title=&#34;输出样例：&#34;&gt;&lt;/a&gt;输出样例：&lt;/h3&gt;&lt;pre&gt;&lt;code class=&#34;out&#34;&gt;City 1 is lost.
 City 2 is lost.
 Red Alert: City 0 is lost!
 City 4 is lost.
 City 3 is lost.
 Game Over.
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;程序源代码：&#34;&gt;&lt;a href=&#34;#程序源代码：&#34; class=&#34;headerlink&#34; title=&#34;程序源代码：&#34;&gt;&lt;/a&gt;程序源代码：&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;邻接矩阵建图 + DFS统计连通分量数&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;对于无向图来说，dfstrave()中dfs()或bfstrave()中bfs()的调用次数等于该图的连通分量数&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;无向图中的极大连通子图称为连通分量&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;极大连通子图必须连通，且包含尽可能多的顶点和边&lt;/strong&gt;&lt;/p&gt;
-&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;#include&lt;bits/stdc++.h&gt;
+&lt;pre&gt;&lt;code class=&#34;c++&#34;&gt;#include&amp;lt;bits/stdc++.h&amp;gt;
 using namespace std;
 int n,m;
 int g[505][505];						//邻接矩阵存图
@@ -976,9 +976,9 @@ int visit[505];							//标记访问数组
 int lost[505];							//记录被攻占的城市
 void dfs(int node)&amp;#123;						//正常的DFS
     visit[node]=1;
-    for(int i=0;i&lt;n;i++)
+    for(int i=0;i&amp;lt;n;i++)
     &amp;#123;
-        if(visit[i]==0&amp;&amp;g[node][i]==1)
+        if(visit[i]==0&amp;amp;&amp;amp;g[node][i]==1)
         &amp;#123;
             dfs(i);
         &amp;#125;
@@ -987,10 +987,10 @@ void dfs(int node)&amp;#123;						//正常的DFS
 int dfstrave()&amp;#123;
     int cnt=0;
     memset(visit,0,sizeof(visit));			//初始化访问数组
-    for(int i=0;i&lt;n;i++)&amp;#123;
+    for(int i=0;i&amp;lt;n;i++)&amp;#123;
         if(lost[i]==1) visit[i]=1;			//如果该城市被攻占，则标记他为以访问
     &amp;#125;
-    for(int i=0;i&lt;n;i++)&amp;#123;
+    for(int i=0;i&amp;lt;n;i++)&amp;#123;
         if(visit[i]==0)&amp;#123;
             dfs(i);
             cnt++;      					//统计连通分量数
@@ -1000,40 +1000,40 @@ int dfstrave()&amp;#123;
 &amp;#125;
 int main()
 &amp;#123;
-    cin&gt;&gt;n&gt;&gt;m;
+    cin&amp;gt;&amp;gt;n&amp;gt;&amp;gt;m;
     memset(lost,0,sizeof(lost));			//初始化
     memset(g,0,sizeof(g));					//初始化
-    for(int i=0;i&lt;m;i++)&amp;#123;
+    for(int i=0;i&amp;lt;m;i++)&amp;#123;
         int a,b;
-        cin&gt;&gt;a&gt;&gt;b;
+        cin&amp;gt;&amp;gt;a&amp;gt;&amp;gt;b;
         g[a][b]=g[b][a]=1;					//存储无向图
     &amp;#125;
     int cnt=dfstrave();						//获得初始的连通分量数
     int k;
-    cin&gt;&gt;k;
-    for(int w=0;w&lt;k;w++)&amp;#123;
+    cin&amp;gt;&amp;gt;k;
+    for(int w=0;w&amp;lt;k;w++)&amp;#123;
         int city;
-        cin&gt;&gt;city;
+        cin&amp;gt;&amp;gt;city;
         lost[city]=1;						//记录该城市被攻占
-        for(int i=0;i&lt;n;i++)&amp;#123;
+        for(int i=0;i&amp;lt;n;i++)&amp;#123;
             if(g[city][i]==1)&amp;#123;				
                 g[city][i]=g[i][city]=0;	//标记和他相连的城市不再相连
             &amp;#125;
         &amp;#125;
         int tempcnt=dfstrave();				//当前的连通分量
-        if(tempcnt&lt;=cnt)&amp;#123;					//如果当前的连通分量小于等于原来的连通分量，说明图的连通性没有被改变
-            printf(&#34;City %d is lost.\n&#34;, city);
+        if(tempcnt&amp;lt;=cnt)&amp;#123;					//如果当前的连通分量小于等于原来的连通分量，说明图的连通性没有被改变
+            printf(&amp;quot;City %d is lost.\n&amp;quot;, city);
         &amp;#125;else&amp;#123;								//否则，连通性被改变了
-            printf(&#34;Red Alert: City %d is lost!\n&#34;, city);
+            printf(&amp;quot;Red Alert: City %d is lost!\n&amp;quot;, city);
         &amp;#125;
         cnt=tempcnt;						//更新连通分量
         if(w==n-1)&amp;#123;							//城市已经被攻占完毕
-            printf(&#34;Game Over.\n&#34;);
+            printf(&amp;quot;Game Over.\n&amp;quot;);
         &amp;#125;
     &amp;#125;
     return 0;
 &amp;#125;
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;参考资料：&#34;&gt;&lt;a href=&#34;#参考资料：&#34; class=&#34;headerlink&#34; title=&#34;参考资料：&#34;&gt;&lt;/a&gt;参考资料：&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://pintia.cn/problem-sets/994805046380707840/problems/994805063963230208&#34;&gt;题目详情 - L2-013 红色警报 (25 分) (pintia.cn)&lt;/a&gt;&lt;/p&gt;
 </content>
         <category term="Data Structure" />
@@ -1051,17 +1051,17 @@ int main()
         <content type="html">&lt;h2 id=&#34;L2-011-玩转二叉树-25-分&#34;&gt;&lt;a href=&#34;#L2-011-玩转二叉树-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-011 玩转二叉树 (25 分)&#34;&gt;&lt;/a&gt;&lt;strong&gt;L2-011 玩转二叉树 (25 分)&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;给定一棵二叉树的中序遍历和前序遍历，请你先将树做个镜面反转，再输出反转后的层序遍历的序列。所谓镜面反转，是指将所有非叶结点的左右孩子对换。这里假设键值都是互不相等的正整数。&lt;/p&gt;
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;输入第一行给出一个正整数&lt;code&gt;N&lt;/code&gt;（≤30），是二叉树中结点的个数。第二行给出其中序遍历序列。第三行给出其前序遍历序列。数字间以空格分隔。&lt;/p&gt;
 &lt;h3 id=&#34;输出格式：&#34;&gt;&lt;a href=&#34;#输出格式：&#34; class=&#34;headerlink&#34; title=&#34;输出格式：&#34;&gt;&lt;/a&gt;输出格式：&lt;/h3&gt;&lt;p&gt;在一行中输出该树反转后的层序遍历的序列。数字间以1个空格分隔，行首尾不得有多余空格。&lt;/p&gt;
-&lt;h3 id=&#34;输入样例：&#34;&gt;&lt;a href=&#34;#输入样例：&#34; class=&#34;headerlink&#34; title=&#34;输入样例：&#34;&gt;&lt;/a&gt;输入样例：&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-in&#34;&gt;&lt;code class=&#34;language-in&#34;&gt;7
+&lt;h3 id=&#34;输入样例：&#34;&gt;&lt;a href=&#34;#输入样例：&#34; class=&#34;headerlink&#34; title=&#34;输入样例：&#34;&gt;&lt;/a&gt;输入样例：&lt;/h3&gt;&lt;pre&gt;&lt;code class=&#34;in&#34;&gt;7
 1 2 3 4 5 6 7
 4 1 3 2 6 5 7
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;输出样例：&#34;&gt;&lt;a href=&#34;#输出样例：&#34; class=&#34;headerlink&#34; title=&#34;输出样例：&#34;&gt;&lt;/a&gt;输出样例：&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-out&#34;&gt;&lt;code class=&#34;language-out&#34;&gt;4 6 1 7 5 3 2
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;输出样例：&#34;&gt;&lt;a href=&#34;#输出样例：&#34; class=&#34;headerlink&#34; title=&#34;输出样例：&#34;&gt;&lt;/a&gt;输出样例：&lt;/h3&gt;&lt;pre&gt;&lt;code class=&#34;out&#34;&gt;4 6 1 7 5 3 2
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;程序源代码：&#34;&gt;&lt;a href=&#34;#程序源代码：&#34; class=&#34;headerlink&#34; title=&#34;程序源代码：&#34;&gt;&lt;/a&gt;程序源代码：&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;镜面反转即为在层序遍历时交换左右子树的遍历顺序，左-&amp;gt;右变成右-&amp;gt;左&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;前序 + 中序 建树 + BFS&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;建树详细过程：&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://xingyuanjie.top/2022/04/07/Algorithm014/&#34;&gt;由遍历顺序构建二叉树(前序+中序;后序+中序) - 计算机奇妙之旅 (xingyuanjie.top)&lt;/a&gt;&lt;/p&gt;
-&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &lt;bits/stdc++.h&gt;
+&lt;pre&gt;&lt;code class=&#34;c++&#34;&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
 using namespace std;
 typedef struct BiTNode&amp;#123;
     int data;
@@ -1071,43 +1071,43 @@ int n;
 int in[35];
 int pre[35];
 BiTree PostCreate(int prel,int prer,int inl,int inr)&amp;#123;					//前序加中序建树
-    if(prel&gt;prer)&amp;#123;
+    if(prel&amp;gt;prer)&amp;#123;
         return NULL;
     &amp;#125;
     BiTNode *root;
     root=(BiTNode*)malloc(sizeof(BiTNode));
-    root-&gt;data=pre[prel];
+    root-&amp;gt;data=pre[prel];
     int index=0;
-    for (int i = inl; i &lt;=inr; ++i) &amp;#123;
+    for (int i = inl; i &amp;lt;=inr; ++i) &amp;#123;
         if(pre[prel]==in[i])&amp;#123;
             index=i;
             break;
         &amp;#125;
     &amp;#125;
     int numleft=index-inl;
-    root-&gt;lchild=PostCreate(prel+1,prel+numleft,inl,index-1);
-    root-&gt;rchild=PostCreate(prel+numleft+1,prer,index+1,inr);
+    root-&amp;gt;lchild=PostCreate(prel+1,prel+numleft,inl,index-1);
+    root-&amp;gt;rchild=PostCreate(prel+numleft+1,prer,index+1,inr);
     return root;
 &amp;#125;
 void LevelOrder(BiTree T)
 &amp;#123;
-    queue&lt;BiTree&gt; q;
+    queue&amp;lt;BiTree&amp;gt; q;
     q.push(T);
     int i=0;
     while (!q.empty())&amp;#123;
         BiTNode *tmp =q.front();
         q.pop();
         if(i!=n-1)&amp;#123;										//输出格式控制
-            cout&lt;&lt;tmp-&gt;data&lt;&lt;&#34; &#34;;
+            cout&amp;lt;&amp;lt;tmp-&amp;gt;data&amp;lt;&amp;lt;&amp;quot; &amp;quot;;
         &amp;#125;else&amp;#123;
-            cout&lt;&lt;tmp-&gt;data;
+            cout&amp;lt;&amp;lt;tmp-&amp;gt;data;
         &amp;#125;
         i++;
-        if(tmp-&gt;rchild!=NULL)&amp;#123;							//镜面反转，左-&gt;右变成右-&gt;左
-            q.push(tmp-&gt;rchild);
+        if(tmp-&amp;gt;rchild!=NULL)&amp;#123;							//镜面反转，左-&amp;gt;右变成右-&amp;gt;左
+            q.push(tmp-&amp;gt;rchild);
         &amp;#125;
-        if(tmp-&gt;lchild!=NULL)&amp;#123;
-            q.push(tmp-&gt;lchild);
+        if(tmp-&amp;gt;lchild!=NULL)&amp;#123;
+            q.push(tmp-&amp;gt;lchild);
         &amp;#125;
     &amp;#125;
 &amp;#125;
@@ -1115,19 +1115,19 @@ int main()
 &amp;#123;
     BiTree tree;
     tree=NULL;
-    cin&gt;&gt;n;
-    for (int i = 0; i &lt;n ; ++i) &amp;#123;
-        cin&gt;&gt;in[i];
+    cin&amp;gt;&amp;gt;n;
+    for (int i = 0; i &amp;lt;n ; ++i) &amp;#123;
+        cin&amp;gt;&amp;gt;in[i];
     &amp;#125;
-    for (int j = 0; j &lt;n ; ++j) &amp;#123;
-        cin&gt;&gt;pre[j];
+    for (int j = 0; j &amp;lt;n ; ++j) &amp;#123;
+        cin&amp;gt;&amp;gt;pre[j];
     &amp;#125;
     tree=PostCreate(0,n-1,0,n-1);
     LevelOrder(tree);
-    cout&lt;&lt;endl;
+    cout&amp;lt;&amp;lt;endl;
     return 0;
 &amp;#125;
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;参考资料：&#34;&gt;&lt;a href=&#34;#参考资料：&#34; class=&#34;headerlink&#34; title=&#34;参考资料：&#34;&gt;&lt;/a&gt;参考资料：&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://pintia.cn/problem-sets/994805046380707840/problems/994805065406070784&#34;&gt;题目详情 - L2-011 玩转二叉树 (25 分) (pintia.cn)&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://xingyuanjie.top/2022/04/07/Algorithm014/&#34;&gt;由遍历顺序构建二叉树(前序+中序;后序+中序) - 计算机奇妙之旅 (xingyuanjie.top)&lt;/a&gt;&lt;/p&gt;
 </content>
@@ -1146,40 +1146,40 @@ int main()
 &lt;p&gt;给定一棵完全二叉树的后序遍历，请你给出这棵树的层序遍历结果。&lt;/p&gt;
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;输入在第一行中给出正整数 &lt;em&gt;N&lt;/em&gt;（≤30），即树中结点个数。第二行给出后序遍历序列，为 &lt;em&gt;N&lt;/em&gt; 个不超过 100 的正整数。同一行中所有数字都以空格分隔。&lt;/p&gt;
 &lt;h3 id=&#34;输出格式：&#34;&gt;&lt;a href=&#34;#输出格式：&#34; class=&#34;headerlink&#34; title=&#34;输出格式：&#34;&gt;&lt;/a&gt;输出格式：&lt;/h3&gt;&lt;p&gt;在一行中输出该树的层序遍历序列。所有数字都以 1 个空格分隔，行首尾不得有多余空格。&lt;/p&gt;
-&lt;h3 id=&#34;输入样例：&#34;&gt;&lt;a href=&#34;#输入样例：&#34; class=&#34;headerlink&#34; title=&#34;输入样例：&#34;&gt;&lt;/a&gt;输入样例：&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-in&#34;&gt;&lt;code class=&#34;language-in&#34;&gt;8
+&lt;h3 id=&#34;输入样例：&#34;&gt;&lt;a href=&#34;#输入样例：&#34; class=&#34;headerlink&#34; title=&#34;输入样例：&#34;&gt;&lt;/a&gt;输入样例：&lt;/h3&gt;&lt;pre&gt;&lt;code class=&#34;in&#34;&gt;8
 91 71 2 34 10 15 55 18
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;输出样例：&#34;&gt;&lt;a href=&#34;#输出样例：&#34; class=&#34;headerlink&#34; title=&#34;输出样例：&#34;&gt;&lt;/a&gt;输出样例：&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-out&#34;&gt;&lt;code class=&#34;language-out&#34;&gt;18 34 55 71 2 10 15 91
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;输出样例：&#34;&gt;&lt;a href=&#34;#输出样例：&#34; class=&#34;headerlink&#34; title=&#34;输出样例：&#34;&gt;&lt;/a&gt;输出样例：&lt;/h3&gt;&lt;pre&gt;&lt;code class=&#34;out&#34;&gt;18 34 55 71 2 10 15 91
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;程序源代码：&#34;&gt;&lt;a href=&#34;#程序源代码：&#34; class=&#34;headerlink&#34; title=&#34;程序源代码：&#34;&gt;&lt;/a&gt;程序源代码：&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;后序遍历建树 + 完全二叉树性质&lt;/strong&gt;&lt;/p&gt;
-&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &lt;bits/stdc++.h&gt;
+&lt;pre&gt;&lt;code class=&#34;c++&#34;&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
 using namespace std;
 int tree[10001];
 int n;
 void post(int i)&amp;#123;		//根据后序遍历建树
-    if(2*i&lt;=n)&amp;#123;			//当2*i&lt;=n时，结点i的左孩子编号为2*i，否则无左孩子
+    if(2*i&amp;lt;=n)&amp;#123;			//当2*i&amp;lt;=n时，结点i的左孩子编号为2*i，否则无左孩子
         post(2*i);
     &amp;#125;
-    if(2*i+1&lt;=n)&amp;#123;		//当2*i+1&lt;=n时，结点i的右孩子编号为2*i+1，否则无右孩子
+    if(2*i+1&amp;lt;=n)&amp;#123;		//当2*i+1&amp;lt;=n时，结点i的右孩子编号为2*i+1，否则无右孩子
         post(2*i+1);
     &amp;#125;
-    cin&gt;&gt;tree[i];
+    cin&amp;gt;&amp;gt;tree[i];
 &amp;#125;
 int main()
 &amp;#123;
 
-    cin&gt;&gt;n;
+    cin&amp;gt;&amp;gt;n;
     post(1);           //后序遍历建树
-    for (int i = 1; i &lt;=n ; ++i) &amp;#123;						//顺序输出即为层序遍历
+    for (int i = 1; i &amp;lt;=n ; ++i) &amp;#123;						//顺序输出即为层序遍历
         if(i!=n)&amp;#123;
-            cout&lt;&lt;tree[i]&lt;&lt;&#34; &#34;;
+            cout&amp;lt;&amp;lt;tree[i]&amp;lt;&amp;lt;&amp;quot; &amp;quot;;
         &amp;#125;else&amp;#123;
-            cout&lt;&lt;tree[i];
+            cout&amp;lt;&amp;lt;tree[i];
         &amp;#125;
     &amp;#125;
     return 0;
 &amp;#125;
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;参考资料：&#34;&gt;&lt;a href=&#34;#参考资料：&#34; class=&#34;headerlink&#34; title=&#34;参考资料：&#34;&gt;&lt;/a&gt;参考资料：&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://pintia.cn/problem-sets/994805046380707840/problems/1336215880692482058&#34;&gt;https://pintia.cn/problem-sets/994805046380707840/problems/1336215880692482058&lt;/a&gt;&lt;/p&gt;
 </content>
         <category term="Data Structure" />
@@ -1199,7 +1199,7 @@ int main()
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;其中 &lt;code&gt;K&lt;/code&gt; 是通道的数量，其后是每扇门的编号。&lt;/p&gt;
 &lt;h3 id=&#34;输出格式：&#34;&gt;&lt;a href=&#34;#输出格式：&#34; class=&#34;headerlink&#34; title=&#34;输出格式：&#34;&gt;&lt;/a&gt;输出格式：&lt;/h3&gt;&lt;p&gt;在一行中输出距离入口最远的那扇门的编号。题目保证这样的结果是唯一的。&lt;/p&gt;
-&lt;h3 id=&#34;输入样例：&#34;&gt;&lt;a href=&#34;#输入样例：&#34; class=&#34;headerlink&#34; title=&#34;输入样例：&#34;&gt;&lt;/a&gt;输入样例：&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-in&#34;&gt;&lt;code class=&#34;language-in&#34;&gt;13
+&lt;h3 id=&#34;输入样例：&#34;&gt;&lt;a href=&#34;#输入样例：&#34; class=&#34;headerlink&#34; title=&#34;输入样例：&#34;&gt;&lt;/a&gt;输入样例：&lt;/h3&gt;&lt;pre&gt;&lt;code class=&#34;in&#34;&gt;13
 3 2 3 4
 2 5 6
 1 7
@@ -1213,23 +1213,23 @@ int main()
 1 12
 0
 0
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;输出样例：&#34;&gt;&lt;a href=&#34;#输出样例：&#34; class=&#34;headerlink&#34; title=&#34;输出样例：&#34;&gt;&lt;/a&gt;输出样例：&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-out&#34;&gt;&lt;code class=&#34;language-out&#34;&gt;12
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;输出样例：&#34;&gt;&lt;a href=&#34;#输出样例：&#34; class=&#34;headerlink&#34; title=&#34;输出样例：&#34;&gt;&lt;/a&gt;输出样例：&lt;/h3&gt;&lt;pre&gt;&lt;code class=&#34;out&#34;&gt;12
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;程序源代码：&#34;&gt;&lt;a href=&#34;#程序源代码：&#34; class=&#34;headerlink&#34; title=&#34;程序源代码：&#34;&gt;&lt;/a&gt;程序源代码：&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;邻接表 + BFS&lt;/strong&gt;&lt;/p&gt;
-&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &lt;bits/stdc++.h&gt;
+&lt;pre&gt;&lt;code class=&#34;c++&#34;&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
 using namespace std;
-vector&lt;int&gt; v[100005];
+vector&amp;lt;int&amp;gt; v[100005];
 int book[100005];
 int start=0;
 int bfs()&amp;#123;								//BFS
-    queue&lt;int&gt; q;
+    queue&amp;lt;int&amp;gt; q;
     q.push(start);						//根节点入队
     int x;
     while(!q.empty())&amp;#123;
         x=q.front();
         q.pop();
-        for (int i = 0; i &lt;v[x].size() ; ++i) &amp;#123;				
+        for (int i = 0; i &amp;lt;v[x].size() ; ++i) &amp;#123;				
             q.push(v[x][i]);
         &amp;#125;
     &amp;#125;									//在一行中输出距离入口最远的那扇门的编号。题目保证这样的结果是唯一的。
@@ -1238,26 +1238,26 @@ int bfs()&amp;#123;								//BFS
 int main()
 &amp;#123;
     int n;
-    cin&gt;&gt;n;
-    for (int i = 1; i &lt;=n ; ++i) &amp;#123;
+    cin&amp;gt;&amp;gt;n;
+    for (int i = 1; i &amp;lt;=n ; ++i) &amp;#123;
         int time;
-        cin&gt;&gt;time;
-        for (int j = 1; j &lt;=time ; ++j) &amp;#123;
+        cin&amp;gt;&amp;gt;time;
+        for (int j = 1; j &amp;lt;=time ; ++j) &amp;#123;
             int num;
-            cin&gt;&gt;num;
+            cin&amp;gt;&amp;gt;num;
             book[num]=1;
             v[i].push_back(num);
 
         &amp;#125;
     &amp;#125;
-    for (int k = 1; k &lt;=n ; ++k) &amp;#123;			//找入口
+    for (int k = 1; k &amp;lt;=n ; ++k) &amp;#123;			//找入口
         if(book[k]==0) start=k;				//没有门通向的门，即为入口
     &amp;#125;
     int ans=bfs();
-    cout&lt;&lt;ans&lt;&lt;endl;
+    cout&amp;lt;&amp;lt;ans&amp;lt;&amp;lt;endl;
     return 0;
 &amp;#125;
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;参考资料：&#34;&gt;&lt;a href=&#34;#参考资料：&#34; class=&#34;headerlink&#34; title=&#34;参考资料：&#34;&gt;&lt;/a&gt;参考资料：&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://pintia.cn/problem-sets/994805046380707840/problems/1111914599412858888&#34;&gt;题目详情 - L2-031 深入虎穴 (25 分) (pintia.cn)&lt;/a&gt;&lt;/p&gt;
 </content>
         <category term="Data Structure" />
@@ -1287,7 +1287,7 @@ int main()
 &lt;p&gt;约定：所有操作或选择以及剧情点编号都从 1 号开始。存档的档位不超过 100 个，编号也从 1 开始。游戏默认从 1 号剧情点开始。总的选项数（即 ∑&lt;em&gt;K**i&lt;/em&gt;）不超过 106。&lt;/p&gt;
 &lt;h3 id=&#34;输出格式：&#34;&gt;&lt;a href=&#34;#输出格式：&#34; class=&#34;headerlink&#34; title=&#34;输出格式：&#34;&gt;&lt;/a&gt;输出格式：&lt;/h3&gt;&lt;p&gt;对于每个 1（即存档）操作，在一行中输出存档的剧情点编号。&lt;/p&gt;
 &lt;p&gt;最后一行输出哲哲最后到达的剧情点编号。&lt;/p&gt;
-&lt;h3 id=&#34;输入样例：&#34;&gt;&lt;a href=&#34;#输入样例：&#34; class=&#34;headerlink&#34; title=&#34;输入样例：&#34;&gt;&lt;/a&gt;输入样例：&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-in&#34;&gt;&lt;code class=&#34;language-in&#34;&gt;10 11
+&lt;h3 id=&#34;输入样例：&#34;&gt;&lt;a href=&#34;#输入样例：&#34; class=&#34;headerlink&#34; title=&#34;输入样例：&#34;&gt;&lt;/a&gt;输入样例：&lt;/h3&gt;&lt;pre&gt;&lt;code class=&#34;in&#34;&gt;10 11
 3 2 3 4
 1 6
 3 4 7 5
@@ -1309,40 +1309,40 @@ int main()
 0 1
 1 1
 0 2
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;输出样例：&#34;&gt;&lt;a href=&#34;#输出样例：&#34; class=&#34;headerlink&#34; title=&#34;输出样例：&#34;&gt;&lt;/a&gt;输出样例：&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-out&#34;&gt;&lt;code class=&#34;language-out&#34;&gt;1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;输出样例：&#34;&gt;&lt;a href=&#34;#输出样例：&#34; class=&#34;headerlink&#34; title=&#34;输出样例：&#34;&gt;&lt;/a&gt;输出样例：&lt;/h3&gt;&lt;pre&gt;&lt;code class=&#34;out&#34;&gt;1
 3
 9
 10
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;样例解释：&#34;&gt;&lt;a href=&#34;#样例解释：&#34; class=&#34;headerlink&#34; title=&#34;样例解释：&#34;&gt;&lt;/a&gt;样例解释：&lt;/h3&gt;&lt;p&gt;简单给出样例中经过的剧情点顺序：&lt;/p&gt;
 &lt;p&gt;1 -&amp;gt; 4 -&amp;gt; 3 -&amp;gt; 7 -&amp;gt; 8 -&amp;gt; 3 -&amp;gt; 5 -&amp;gt; 9 -&amp;gt; 10。&lt;/p&gt;
 &lt;p&gt;档位 1 开始存的是 1 号剧情点；档位 2 存的是 3 号剧情点；档位 1 后来又存了 9 号剧情点。&lt;/p&gt;
 &lt;h3 id=&#34;程序源代码：&#34;&gt;&lt;a href=&#34;#程序源代码：&#34; class=&#34;headerlink&#34; title=&#34;程序源代码：&#34;&gt;&lt;/a&gt;程序源代码：&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;邻接表 + 模拟，主要是理解题意&lt;/strong&gt;&lt;/p&gt;
-&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &lt;bits/stdc++.h&gt;
+&lt;pre&gt;&lt;code class=&#34;c++&#34;&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
 using namespace std;
 int main()
 &amp;#123;
     int n,k;
-    cin&gt;&gt;n&gt;&gt;k;
-    vector&lt;int&gt; v[n+1];
+    cin&amp;gt;&amp;gt;n&amp;gt;&amp;gt;k;
+    vector&amp;lt;int&amp;gt; v[n+1];
     int save[105];							//存档点
     int now=1;								//当前剧情点
-    for (int i = 1; i &lt;=n ; ++i) &amp;#123;
+    for (int i = 1; i &amp;lt;=n ; ++i) &amp;#123;
         int num;
-        cin&gt;&gt;num;
-        for (int j = 0; j &lt;num ; ++j) &amp;#123;
+        cin&amp;gt;&amp;gt;num;
+        for (int j = 0; j &amp;lt;num ; ++j) &amp;#123;
             int x;
-            cin&gt;&gt;x;
+            cin&amp;gt;&amp;gt;x;
             v[i].push_back(x);				//邻接表存操作数
         &amp;#125;
     &amp;#125;
-    for (int l = 0; l &lt;k ; ++l) &amp;#123;			//模拟过程
+    for (int l = 0; l &amp;lt;k ; ++l) &amp;#123;			//模拟过程
         int a,b;
-        cin&gt;&gt;a&gt;&gt;b;
+        cin&amp;gt;&amp;gt;a&amp;gt;&amp;gt;b;
         if(a==1)&amp;#123;
             save[b]=now;
-            cout&lt;&lt;now&lt;&lt;endl;
+            cout&amp;lt;&amp;lt;now&amp;lt;&amp;lt;endl;
         &amp;#125;
         if(a==0)&amp;#123;
             now=v[now][b-1];
@@ -1351,10 +1351,10 @@ int main()
             now=save[b];
         &amp;#125;
     &amp;#125;
-    cout&lt;&lt;now&lt;&lt;endl;
+    cout&amp;lt;&amp;lt;now&amp;lt;&amp;lt;endl;
     return 0;
 &amp;#125;
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;参考资料：&#34;&gt;&lt;a href=&#34;#参考资料：&#34; class=&#34;headerlink&#34; title=&#34;参考资料：&#34;&gt;&lt;/a&gt;参考资料：&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://pintia.cn/problem-sets/994805046380707840/problems/1386335159927652363&#34;&gt;题目详情 - L2-040 哲哲打游戏 (25 分) (pintia.cn)&lt;/a&gt;&lt;/p&gt;
 </content>
         <category term="Data Structure" />
@@ -1372,27 +1372,27 @@ int main()
         <content type="html">&lt;h2 id=&#34;L2-026-小字辈-25-分&#34;&gt;&lt;a href=&#34;#L2-026-小字辈-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-026 小字辈 (25 分)&#34;&gt;&lt;/a&gt;&lt;strong&gt;L2-026 小字辈 (25 分)&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;本题给定一个庞大家族的家谱，要请你给出最小一辈的名单。&lt;/p&gt;
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;输入在第一行给出家族人口总数 N（不超过 100 000 的正整数） —— 简单起见，我们把家族成员从 1 到 N 编号。随后第二行给出 N 个编号，其中第 i 个编号对应第 i 位成员的父&amp;#x2F;母。家谱中辈分最高的老祖宗对应的父&amp;#x2F;母编号为 -1。一行中的数字间以空格分隔。&lt;/p&gt;
 &lt;h3 id=&#34;输出格式：&#34;&gt;&lt;a href=&#34;#输出格式：&#34; class=&#34;headerlink&#34; title=&#34;输出格式：&#34;&gt;&lt;/a&gt;输出格式：&lt;/h3&gt;&lt;p&gt;首先输出最小的辈分（老祖宗的辈分为 1，以下逐级递增）。然后在第二行按递增顺序输出辈分最小的成员的编号。编号间以一个空格分隔，行首尾不得有多余空格。&lt;/p&gt;
-&lt;h3 id=&#34;输入样例：&#34;&gt;&lt;a href=&#34;#输入样例：&#34; class=&#34;headerlink&#34; title=&#34;输入样例：&#34;&gt;&lt;/a&gt;输入样例：&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-in&#34;&gt;&lt;code class=&#34;language-in&#34;&gt;9
+&lt;h3 id=&#34;输入样例：&#34;&gt;&lt;a href=&#34;#输入样例：&#34; class=&#34;headerlink&#34; title=&#34;输入样例：&#34;&gt;&lt;/a&gt;输入样例：&lt;/h3&gt;&lt;pre&gt;&lt;code class=&#34;in&#34;&gt;9
 2 6 5 5 -1 5 6 4 7
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;输出样例：&#34;&gt;&lt;a href=&#34;#输出样例：&#34; class=&#34;headerlink&#34; title=&#34;输出样例：&#34;&gt;&lt;/a&gt;输出样例：&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-out&#34;&gt;&lt;code class=&#34;language-out&#34;&gt;4
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;输出样例：&#34;&gt;&lt;a href=&#34;#输出样例：&#34; class=&#34;headerlink&#34; title=&#34;输出样例：&#34;&gt;&lt;/a&gt;输出样例：&lt;/h3&gt;&lt;pre&gt;&lt;code class=&#34;out&#34;&gt;4
 1 9
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;程序源代码：&#34;&gt;&lt;a href=&#34;#程序源代码：&#34; class=&#34;headerlink&#34; title=&#34;程序源代码：&#34;&gt;&lt;/a&gt;程序源代码：&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;邻接表建树+BFS&lt;/strong&gt;&lt;/p&gt;
-&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &lt;bits/stdc++.h&gt;
+&lt;pre&gt;&lt;code class=&#34;c++&#34;&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
 using namespace std;
-vector&lt;int&gt; tree[100005];				//邻接表建树
+vector&amp;lt;int&amp;gt; tree[100005];				//邻接表建树
 int deeptree[100005];					//记录树的深度
 int n;
 int root;								//根节点
 int bfs()&amp;#123;								//bfs
-    queue&lt;int&gt; q;
+    queue&amp;lt;int&amp;gt; q;
     q.push(root);						//根节点入队
     int x;								
     while(!q.empty())&amp;#123;
         x=q.front();
         q.pop();
-        for (int i = 0; i &lt;tree[x].size() ; ++i) &amp;#123;
+        for (int i = 0; i &amp;lt;tree[x].size() ; ++i) &amp;#123;
             deeptree[tree[x][i]]=deeptree[x]+1;						//每一层的深度为上一层加1
             q.push(tree[x][i]);
 
@@ -1403,36 +1403,36 @@ int bfs()&amp;#123;								//bfs
 int main()
 &amp;#123;
     n;
-    cin&gt;&gt;n;
+    cin&amp;gt;&amp;gt;n;
     int a[n];
-    for (int i = 1; i &lt;=n ; ++i) &amp;#123;
-        cin&gt;&gt;a[i];
+    for (int i = 1; i &amp;lt;=n ; ++i) &amp;#123;
+        cin&amp;gt;&amp;gt;a[i];
         if(a[i]==-1)&amp;#123;
             root=i;				//找根节点
         &amp;#125;
     &amp;#125;
-    for (int j = 1; j &lt;=n ; ++j) &amp;#123;					//建树
+    for (int j = 1; j &amp;lt;=n ; ++j) &amp;#123;					//建树
         tree[a[j]].push_back(j);					//j是a[j]的孩子节点
         if(a[j]==-1) deeptree[j]=1;					//初始化根节点深度为1
     &amp;#125;
     int ans=bfs();
-    cout&lt;&lt;ans&lt;&lt;endl;
+    cout&amp;lt;&amp;lt;ans&amp;lt;&amp;lt;endl;
     int maxdeepcnt=0;								//记录最大深度的个数
     int tmp[n];										//找最大深度的id
-    for (int k = 1; k &lt;=n ; ++k) &amp;#123;					
+    for (int k = 1; k &amp;lt;=n ; ++k) &amp;#123;					
         if(ans==deeptree[k])&amp;#123;
             maxdeepcnt++;
             tmp[maxdeepcnt]=k;
         &amp;#125;
     &amp;#125;
     //输出格式控制
-    for (int l = 1; l &lt;=maxdeepcnt ; ++l) &amp;#123;
-        if(l!=maxdeepcnt) cout&lt;&lt;tmp[l]&lt;&lt;&#34; &#34;;
-        else cout&lt;&lt;tmp[l]&lt;&lt;endl;
+    for (int l = 1; l &amp;lt;=maxdeepcnt ; ++l) &amp;#123;
+        if(l!=maxdeepcnt) cout&amp;lt;&amp;lt;tmp[l]&amp;lt;&amp;lt;&amp;quot; &amp;quot;;
+        else cout&amp;lt;&amp;lt;tmp[l]&amp;lt;&amp;lt;endl;
     &amp;#125;
     return 0;
 &amp;#125;
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://pintia.cn/problem-sets/994805046380707840/problems/994805055679479808&#34;&gt;题目详情 - L2-026 小字辈 (25 分) (pintia.cn)&lt;/a&gt;&lt;/p&gt;
 </content>
         <category term="Data Structure" />
@@ -1454,7 +1454,7 @@ int main()
 &lt;h3 id=&#34;输出格式：&#34;&gt;&lt;a href=&#34;#输出格式：&#34; class=&#34;headerlink&#34; title=&#34;输出格式：&#34;&gt;&lt;/a&gt;输出格式：&lt;/h3&gt;&lt;p&gt;对每种颜色分配方案，如果是图着色问题的一个解则输出&lt;code&gt;Yes&lt;/code&gt;，否则输出&lt;code&gt;No&lt;/code&gt;，每句占一行。&lt;/p&gt;
 &lt;h3 id=&#34;输入样例：&#34;&gt;&lt;a href=&#34;#输入样例：&#34; class=&#34;headerlink&#34; title=&#34;输入样例：&#34;&gt;&lt;/a&gt;输入样例：&lt;/h3&gt;&lt;img src=&#34;/2022/04/12/Algorithm018/graph.png&#34; alt=&#34;graph&#34; style=&#34;zoom: 67%;&#34;&gt;
 
-&lt;pre class=&#34;line-numbers language-in&#34;&gt;&lt;code class=&#34;language-in&#34;&gt;6 8 3
+&lt;pre&gt;&lt;code class=&#34;in&#34;&gt;6 8 3
 2 1
 1 3
 4 6
@@ -1468,45 +1468,45 @@ int main()
 4 5 6 6 4 5
 1 2 3 4 5 6
 2 3 4 2 3 4
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;输出样例：&#34;&gt;&lt;a href=&#34;#输出样例：&#34; class=&#34;headerlink&#34; title=&#34;输出样例：&#34;&gt;&lt;/a&gt;输出样例：&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-out&#34;&gt;&lt;code class=&#34;language-out&#34;&gt;Yes
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;输出样例：&#34;&gt;&lt;a href=&#34;#输出样例：&#34; class=&#34;headerlink&#34; title=&#34;输出样例：&#34;&gt;&lt;/a&gt;输出样例：&lt;/h3&gt;&lt;pre&gt;&lt;code class=&#34;out&#34;&gt;Yes
 Yes
 No
 No
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;程序源代码&#34;&gt;&lt;a href=&#34;#程序源代码&#34; class=&#34;headerlink&#34; title=&#34;程序源代码&#34;&gt;&lt;/a&gt;程序源代码&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Set + 邻接表&lt;/strong&gt;&lt;/p&gt;
-&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &lt;bits/stdc++.h&gt;
+&lt;pre&gt;&lt;code class=&#34;c++&#34;&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
 using namespace std;
 int main()
 &amp;#123;
     int v,e,k;
-    cin&gt;&gt;v&gt;&gt;e&gt;&gt;k;
-    vector&lt;int&gt; g[505];			//邻接表
+    cin&amp;gt;&amp;gt;v&amp;gt;&amp;gt;e&amp;gt;&amp;gt;k;
+    vector&amp;lt;int&amp;gt; g[505];			//邻接表
     int color[505];				//记录颜色
-    for (int i = 0; i &lt;e ; ++i) &amp;#123;       //建立邻接表
+    for (int i = 0; i &amp;lt;e ; ++i) &amp;#123;       //建立邻接表
         int a,b;
-        cin&gt;&gt;a&gt;&gt;b;
+        cin&amp;gt;&amp;gt;a&amp;gt;&amp;gt;b;
         g[a].push_back(b);
         g[b].push_back(a);
     &amp;#125;
     int time;
-    cin&gt;&gt;time;
-    for (int j = 0; j &lt;time ; ++j) &amp;#123;
+    cin&amp;gt;&amp;gt;time;
+    for (int j = 0; j &amp;lt;time ; ++j) &amp;#123;
         int flag=1;
-        set&lt;int&gt; s;					//用来统计颜色总数
+        set&amp;lt;int&amp;gt; s;					//用来统计颜色总数
         s.clear();
-        for (int i = 1; i &lt;=v; ++i) &amp;#123;
+        for (int i = 1; i &amp;lt;=v; ++i) &amp;#123;
             int num;
-            cin&gt;&gt;num;
+            cin&amp;gt;&amp;gt;num;
             color[i]=num;
             s.insert(num);
         &amp;#125;
         if(s.size()!=k)&amp;#123;			//如果颜色数不等于k即非法
-            cout&lt;&lt;&#34;No&#34;&lt;&lt;endl;
+            cout&amp;lt;&amp;lt;&amp;quot;No&amp;quot;&amp;lt;&amp;lt;endl;
             continue;
         &amp;#125;
-        for (int l = 1; l &lt;=v ; ++l) &amp;#123;						//遍历邻接表
-            for (int i = 0; i &lt;g[l].size(); ++i) &amp;#123;
+        for (int l = 1; l &amp;lt;=v ; ++l) &amp;#123;						//遍历邻接表
+            for (int i = 0; i &amp;lt;g[l].size(); ++i) &amp;#123;
                 if(color[l]==color[g[l][i]])&amp;#123;				//如果相邻结点颜色一样则为假
                     flag=0;
                     break;
@@ -1514,14 +1514,14 @@ int main()
             &amp;#125;
         &amp;#125;
         if(flag==1)&amp;#123;
-            cout&lt;&lt;&#34;Yes&#34;&lt;&lt;endl;
+            cout&amp;lt;&amp;lt;&amp;quot;Yes&amp;quot;&amp;lt;&amp;lt;endl;
         &amp;#125;else&amp;#123;
-            cout&lt;&lt;&#34;No&#34;&lt;&lt;endl;
+            cout&amp;lt;&amp;lt;&amp;quot;No&amp;quot;&amp;lt;&amp;lt;endl;
         &amp;#125;
     &amp;#125;
     return 0;
 &amp;#125;
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://pintia.cn/problem-sets/994805046380707840/problems/994805057298481152&#34;&gt;题目详情 - L2-023 图着色问题 (25 分) (pintia.cn)&lt;/a&gt;&lt;/p&gt;
 </content>
         <category term="Data Structure" />
@@ -1544,23 +1544,23 @@ int main()
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;其中&lt;code&gt;Address&lt;/code&gt;是结点地址；&lt;code&gt;Data&lt;/code&gt;是该结点保存的数据，为不超过105的正整数；&lt;code&gt;Next&lt;/code&gt;是下一结点的地址。题目保证给出的链表上至少有两个结点。&lt;/p&gt;
 &lt;h3 id=&#34;输出格式：&#34;&gt;&lt;a href=&#34;#输出格式：&#34; class=&#34;headerlink&#34; title=&#34;输出格式：&#34;&gt;&lt;/a&gt;输出格式：&lt;/h3&gt;&lt;p&gt;对每个测试用例，顺序输出重排后的结果链表，其上每个结点占一行，格式与输入相同。&lt;/p&gt;
-&lt;h3 id=&#34;输入样例：&#34;&gt;&lt;a href=&#34;#输入样例：&#34; class=&#34;headerlink&#34; title=&#34;输入样例：&#34;&gt;&lt;/a&gt;输入样例：&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-in&#34;&gt;&lt;code class=&#34;language-in&#34;&gt;00100 6
+&lt;h3 id=&#34;输入样例：&#34;&gt;&lt;a href=&#34;#输入样例：&#34; class=&#34;headerlink&#34; title=&#34;输入样例：&#34;&gt;&lt;/a&gt;输入样例：&lt;/h3&gt;&lt;pre&gt;&lt;code class=&#34;in&#34;&gt;00100 6
 00000 4 99999
 00100 1 12309
 68237 6 -1
 33218 3 00000
 99999 5 68237
 12309 2 33218
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;输出样例：&#34;&gt;&lt;a href=&#34;#输出样例：&#34; class=&#34;headerlink&#34; title=&#34;输出样例：&#34;&gt;&lt;/a&gt;输出样例：&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-out&#34;&gt;&lt;code class=&#34;language-out&#34;&gt;68237 6 00100
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;输出样例：&#34;&gt;&lt;a href=&#34;#输出样例：&#34; class=&#34;headerlink&#34; title=&#34;输出样例：&#34;&gt;&lt;/a&gt;输出样例：&lt;/h3&gt;&lt;pre&gt;&lt;code class=&#34;out&#34;&gt;68237 6 00100
 00100 1 99999
 99999 5 12309
 12309 2 00000
 00000 4 33218
 33218 3 -1
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;程序源代码&#34;&gt;&lt;a href=&#34;#程序源代码&#34; class=&#34;headerlink&#34; title=&#34;程序源代码&#34;&gt;&lt;/a&gt;程序源代码&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;利用双向链表，头尾指针来模拟&lt;/strong&gt;&lt;/p&gt;
-&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &lt;bits/stdc++.h&gt;
+&lt;pre&gt;&lt;code class=&#34;c++&#34;&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
 using namespace std;
 struct linklist&amp;#123;
     int address=0;			//记录当前结点的地址，虽然也没用到
@@ -1573,13 +1573,13 @@ int main()
     int start,back=-1;		//头尾指针
     int tmp;				//用来遍历当前链表用于统计链表的长度
     int n;
-    cin&gt;&gt;start&gt;&gt;n;
+    cin&amp;gt;&amp;gt;start&amp;gt;&amp;gt;n;
     tmp=start;
     int address, data, next;
     l[start].pre=-1;	   //初始化第一个结点的前一个结点位置为-1
     int cnt=0;			  	//记录链表长
-    for (int i = 0; i &lt;n ; ++i) &amp;#123;
-       cin&gt;&gt;address&gt;&gt;data&gt;&gt;next;
+    for (int i = 0; i &amp;lt;n ; ++i) &amp;#123;
+       cin&amp;gt;&amp;gt;address&amp;gt;&amp;gt;data&amp;gt;&amp;gt;next;
        l[address].address=address;
        l[address].data=data;
        l[address].next=next;
@@ -1599,21 +1599,21 @@ int main()
     &amp;#125;
     int flag=0;
     //flag=0动尾指针,flag=1动头指针。我并没有改变原来链表！
-    for (int k = 0; k &lt;cnt ; ++k) &amp;#123;
+    for (int k = 0; k &amp;lt;cnt ; ++k) &amp;#123;
             if(flag==0)&amp;#123;
                 if(k==cnt-1)&amp;#123;
-                    printf(&#34;%05d %d %d\n&#34;,l[back].address,l[back].data,-1);
+                    printf(&amp;quot;%05d %d %d\n&amp;quot;,l[back].address,l[back].data,-1);
                 &amp;#125;else&amp;#123;
-                    printf(&#34;%05d %d %05d\n&#34;,l[back].address,l[back].data,start);
+                    printf(&amp;quot;%05d %d %05d\n&amp;quot;,l[back].address,l[back].data,start);
                 &amp;#125;
                 back=l[back].pre;
                 flag=1;
             &amp;#125;
             else if(flag==1)&amp;#123;
                 if(k==cnt-1)&amp;#123;
-                    printf(&#34;%05d %d %d\n&#34;,l[start].address,l[start].data,-1);
+                    printf(&amp;quot;%05d %d %d\n&amp;quot;,l[start].address,l[start].data,-1);
                 &amp;#125;else&amp;#123;
-                    printf(&#34;%05d %d %05d\n&#34;,l[start].address,l[start].data,back);
+                    printf(&amp;quot;%05d %d %05d\n&amp;quot;,l[start].address,l[start].data,back);
                 &amp;#125;
                 start=l[start].next;
                 flag=0;
@@ -1621,7 +1621,7 @@ int main()
     &amp;#125;
     return 0;
 &amp;#125;
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://pintia.cn/problem-sets/994805046380707840/problems/994805057860517888&#34;&gt;题目详情 - L2-022 重排链表 (25 分) (pintia.cn)&lt;/a&gt;&lt;/p&gt;
 </content>
         <category term="C++" />

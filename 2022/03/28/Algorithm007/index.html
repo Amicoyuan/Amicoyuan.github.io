@@ -1,0 +1,219 @@
+<!DOCTYPE html><html lang="zh-CN" data-default-color-scheme="auto"><head><meta charset="UTF-8"><link rel="apple-touch-icon" sizes="76x76" href="/img/site.jpg"><link rel="icon" href="/img/site.jpg"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5,shrink-to-fit=no"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="theme-color" content="#2f4154"><meta name="description" content=""><meta name="author" content="John Doe"><meta name="keywords" content=""><meta name="description" content="单链表的定义单链表中结点类型的描述如下： typedef struct LNode&amp;#123;			&#x2F;&#x2F;定义单链表结点类型     ElemType data;				&#x2F;&#x2F;数据域     struct LNode *next;		&#x2F;&#x2F;指针域 &amp;#125;LNode,*LinkList;  单链表上基本操作的实现1.采用头插法建立单链表LinkList List_HeadInsert(LinkLis"><meta property="og:type" content="article"><meta property="og:title" content="单链表上的基本操作"><meta property="og:url" content="http://example.com/2022/03/28/Algorithm007/index.html"><meta property="og:site_name" content="Amicoyuan"><meta property="og:description" content="单链表的定义单链表中结点类型的描述如下： typedef struct LNode&amp;#123;			&#x2F;&#x2F;定义单链表结点类型     ElemType data;				&#x2F;&#x2F;数据域     struct LNode *next;		&#x2F;&#x2F;指针域 &amp;#125;LNode,*LinkList;  单链表上基本操作的实现1.采用头插法建立单链表LinkList List_HeadInsert(LinkLis"><meta property="og:locale" content="zh_CN"><meta property="article:published_time" content="2022-03-28T09:40:19.000Z"><meta property="article:modified_time" content="2022-04-06T11:31:53.742Z"><meta property="article:author" content="John Doe"><meta property="article:tag" content="Data Structure"><meta name="twitter:card" content="summary_large_image"><title>单链表上的基本操作 - Amicoyuan</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css"><link rel="stylesheet" href="/lib/hint/hint.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css"><link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css"><link rel="stylesheet" href="/css/main.css"><script id="fluid-configs">var Fluid=window.Fluid||{},CONFIG={hostname:"example.com",root:"/",version:"1.8.12",typing:{enable:!0,typeSpeed:70,cursorChar:"_",loop:!1},anchorjs:{enable:!0,element:"h1,h2,h3,h4,h5,h6",placement:"right",visible:"hover",icon:""},progressbar:{enable:!0,height_px:3,color:"#29d",options:{showSpinner:!1,trickleSpeed:100}},copy_btn:!0,image_zoom:{enable:!0,img_url_replace:["",""]},toc:{enable:!0,headingSelector:"h1,h2,h3,h4,h5,h6",collapseDepth:0},lazyload:{enable:!0,loading_img:"/img/loading.gif",onlypost:!1,offset_factor:2},web_analytics:{enable:!0,baidu:null,google:null,gtag:null,tencent:{sid:null,cid:null},woyaola:null,cnzz:null,leancloud:{app_id:"g10sppACiB0iwBrOiERhucmg-MdYXbMMI",app_key:"f7eskymhpDIBDrODMFqlWwQU",server_url:null,path:"window.location.pathname"}},search_path:"/local-search.xml"}</script><script src="/js/utils.js"></script><script src="/js/color-schema.js"></script><meta name="generator" content="Hexo 5.4.0"><link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml"></head><body><header style="height:70vh"><nav id="navbar" class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar"><div class="container"><a class="navbar-brand" href="/"><strong>Amicoyuan</strong> </a><button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><div class="animated-icon"><span></span><span></span><span></span></div></button><div class="collapse navbar-collapse" id="navbarSupportedContent"><ul class="navbar-nav ml-auto text-center"><li class="nav-item"><a class="nav-link" href="/"><i class="iconfont icon-home-fill"></i> 首页</a></li><li class="nav-item"><a class="nav-link" href="/archives/"><i class="iconfont icon-archive-fill"></i> 归档</a></li><li class="nav-item"><a class="nav-link" href="/categories/"><i class="iconfont icon-category-fill"></i> 分类</a></li><li class="nav-item"><a class="nav-link" href="/tags/"><i class="iconfont icon-tags-fill"></i> 标签</a></li><li class="nav-item"><a class="nav-link" href="/tools/"><i class="iconfont icon-playstation-fill"></i> 工具</a></li><li class="nav-item"><a class="nav-link" href="/about/"><i class="iconfont icon-user-fill"></i> 关于</a></li><li class="nav-item" id="search-btn"><a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">&nbsp;<i class="iconfont icon-search"></i>&nbsp;</a></li><li class="nav-item" id="color-toggle-btn"><a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a></li></ul></div></div></nav><div class="banner" id="banner" parallax="true" style="background:url(/img/default.png) no-repeat center center;background-size:cover"><div class="full-bg-img"><div class="mask flex-center" style="background-color:rgba(0,0,0,.3)"><div class="page-header text-center fade-in-up"><span class="h2" id="subtitle" title="单链表上的基本操作"></span><div class="mt-3"><span class="post-meta"><i class="iconfont icon-date-fill" aria-hidden="true"></i> <time datetime="2022-03-28 17:40" pubdate>2022年3月28日 下午</time></span></div><div class="mt-1"><span class="post-meta mr-2"><i class="iconfont icon-chart"></i> 4.8k 字 </span><span class="post-meta mr-2"><i class="iconfont icon-clock-fill"></i> 15 分钟 </span><span id="leancloud-page-views-container" class="post-meta" style="display:none"><i class="iconfont icon-eye" aria-hidden="true"></i> <span id="leancloud-page-views"></span> 次</span></div></div></div></div></div></header><main><div class="container-fluid nopadding-x"><div class="row nomargin-x"><div class="d-none d-lg-block col-lg-2"></div><div class="col-lg-8 nopadding-x-md"><div class="container nopadding-x-md" id="board-ctn"><div class="py-5" id="board"><article class="post-content mx-auto"><h1 style="display:none">单链表上的基本操作</h1><div class="markdown-body"><h2 id="单链表的定义"><a href="#单链表的定义" class="headerlink" title="单链表的定义"></a>单链表的定义</h2><p>单链表中结点类型的描述如下：</p><pre><code class="c++">typedef struct LNode&#123;			//定义单链表结点类型
+    ElemType data;				//数据域
+    struct LNode *next;		//指针域
+&#125;LNode,*LinkList;
+</code></pre><h2 id="单链表上基本操作的实现"><a href="#单链表上基本操作的实现" class="headerlink" title="单链表上基本操作的实现"></a>单链表上基本操作的实现</h2><h3 id="1-采用头插法建立单链表"><a href="#1-采用头插法建立单链表" class="headerlink" title="1.采用头插法建立单链表"></a>1.采用头插法建立单链表</h3><pre><code class="c++">LinkList List_HeadInsert(LinkList &amp;L)&#123;				//逆向建立单链表
+    LNode *s;
+    int x;
+    L=(LinkList)malloc(sizeof(LNode));				//创建头结点
+    L-&gt;next = NULL;									//初始化为空链表
+    scanf(&quot;%d&quot;,&amp;x);									//输入结点的值
+    while(x!=9999)&#123;									//输入9999表示结束
+        s = (LNode*)malloc(sizeof(LNode));			//建立新结点
+        s-&gt;data = x;
+        s-&gt;next = L-&gt;next;
+        L-&gt;next = s;								//将新结点插入表中，L为头指针
+        scanf(&quot;%d&quot;,&amp;x);
+    &#125;
+    return L;
+&#125;			
+</code></pre><h3 id="2-采用尾插法建立单链表"><a href="#2-采用尾插法建立单链表" class="headerlink" title="2.采用尾插法建立单链表"></a>2.采用尾插法建立单链表</h3><pre><code class="c++">LinkList List_TailInsert(LinkList &amp;L)&#123;				//正向建立单链表
+    int x;											//设置元素类型为整型
+    L=(LinkList)malloc(sizeof(LNode));				
+    LNode *s,*r=L;									//r为表尾指针
+    scanf(&quot;%d&quot;,&amp;x);
+    while(x!=9999)&#123;
+        s = (LNode*)malloc(sizeof(LNode));
+        s-&gt;data=x;
+        r-&gt;next = s;
+        r = s;										//r指向新的表尾结点
+        scanf(&quot;%d&quot;,&amp;x);
+        
+    &#125;
+    r-&gt;next = NULL;
+    return L;
+&#125;
+</code></pre><h3 id="3-按序号查找结点值"><a href="#3-按序号查找结点值" class="headerlink" title="3.按序号查找结点值"></a>3.按序号查找结点值</h3><pre><code class="c++">LNode *GetElem(LinkList L,int i)&#123;
+    int j=1;							//计数，初始为1
+    LNode *p = L-&gt;next;					//第1个结点指针赋给p
+    if(i==0)
+        return L;						//若i等于0，则返回头结点
+    if(i&lt;1)
+        return NULL;					//若i无效，则返回NULL
+    while(p&amp;&amp;j&lt;i)						//从第一个结点开始找，查找第i个结点
+    &#123;
+        p=p-&gt;next;
+        j++;
+    &#125;
+    return p;							//返回第i个结点的指针，若i大于表长，则返回NULL
+&#125;
+</code></pre><h3 id="4-按值查找表结点"><a href="#4-按值查找表结点" class="headerlink" title="4.按值查找表结点"></a>4.按值查找表结点</h3><pre><code class="c++">LNode *LocateElem(LinkList L,ElemType e)&#123;
+    LNode *p = L-&gt;next;
+    while(p!=NULL&amp;&amp;p-&gt;data!=e)			//从第i个结点开始查找data域为e的结点
+    &#123;
+        p=p-&gt;next;
+    &#125;
+    return p;							//找到后返回该结点指针，否则返回NULL
+&#125;
+</code></pre><h3 id="5-插入结点操作"><a href="#5-插入结点操作" class="headerlink" title="5.插入结点操作"></a>5.插入结点操作</h3><pre><code class="c++">//p所指结点是s所指结点的前驱结点
+void Insert(LinkList &amp;L,int i,int x)&#123;
+    LNode *p;
+    LNode *s=(LNode*)malloc(sizeof(LNode));				//一定要分配空间！！！！！
+    s-&gt;data=x;
+    s-&gt;next=NULL; 
+    p=GetElem(L,i-1);
+    if(p!=NULL)&#123;
+        s-&gt;next =p-&gt;next;
+        p-&gt;next=s;
+    &#125;else&#123;
+        cout&lt;&lt;&quot;插入值非法&quot;&lt;&lt;endl;
+        return ; 
+    &#125;
+    
+&#125;
+</code></pre><p>对某一结点进行前插操作</p><pre><code class="c++">//注意与插入结点相对比!!!!!!!!
+void Delect(LinkList &amp;L,int i)&#123;
+    //p所指结点是q所指结点的前驱结点
+    LNode *p;
+    LNode *q=(LNode*)malloc(sizeof(LNode));			   //申请空间 
+    p=GetElem(L,i-1);				    //查找删除位置的前驱结点
+    if(p==NULL||p-&gt;next==NULL)          //p==NULL是i值不合法的情况 
+    &#123;								    //p-&gt;next==NUll是i-1号结点后已无其他结点 
+        cout&lt;&lt;&quot;删除值非法&quot;&lt;&lt;endl;
+        free(q);
+        return ;
+    &#125;
+    q=p-&gt;next;					//令q指向被删除的结点
+    p-&gt;next=q-&gt;next;			//将*q结点从链中“断开”
+    free(q);
+                                
+&#125;	
+</code></pre><h3 id="6-删除结点操作"><a href="#6-删除结点操作" class="headerlink" title="6.删除结点操作"></a>6.删除结点操作</h3><pre><code class="c++">//p所指结点是q所指结点的前驱结点
+p=GetElem(L,i-1)			//查找删除位置的前驱结点
+q=p-&gt;next;					//令q指向被删除的结点
+p-&gt;next=q-&gt;next;			//将*q结点从链中“断开”
+free(q);					//释放结点的储存空间
+</code></pre><p>拓展:删除结点*p</p><pre><code class="c++">q=p-&gt;next;					//令q指向*p的后继节点
+p-&gt;data = p-&gt;next-&gt;data		//和后继结点交换数据域
+p-&gt;next = q-&gt;next;			//将*q结点从链中“断开”
+free(q);					//释放后继结点的储存空间
+</code></pre><h2 id="单链表上基本操作的完整实现"><a href="#单链表上基本操作的完整实现" class="headerlink" title="单链表上基本操作的完整实现"></a>单链表上基本操作的完整实现</h2><h3 id="程序源代码"><a href="#程序源代码" class="headerlink" title="程序源代码"></a>程序源代码</h3><pre><code class="c++">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+typedef int ElemType;
+typedef struct LNode&#123;			//定义单链表结点类型
+    ElemType data;				//数据域
+    struct LNode *next;		//指针域
+&#125;LNode,*LinkList;
+LinkList List_HeadInsert(LinkList &amp;L)&#123;				//逆向建立单链表
+    LNode *s;
+    int x;
+    L=(LinkList)malloc(sizeof(LNode));				//创建头结点
+    L-&gt;next = NULL;									//初始化为空链表
+    scanf(&quot;%d&quot;,&amp;x);									//输入结点的值
+    while(x!=9999)&#123;									//输入9999表示结束
+        s = (LNode*)malloc(sizeof(LNode));			//建立新结点
+        s-&gt;data = x;
+        s-&gt;next = L-&gt;next;
+        L-&gt;next = s;								//将新结点插入表中，L为头指针
+        scanf(&quot;%d&quot;,&amp;x);
+    &#125;
+    return L;
+&#125;
+LNode *GetElem(LinkList L,int i)&#123;
+    int j=1;							//计数，初始为1
+    LNode *p = L-&gt;next;					//第1个结点指针赋给p
+    if(i==0)
+        return L;						//若i等于0，则返回头结点
+    if(i&lt;1)
+        return NULL;					//若i无效，则返回NULL
+    while(p&amp;&amp;j&lt;i)						//从第一个结点开始找，查找第i个结点
+    &#123;
+        p=p-&gt;next;
+        j++;
+    &#125;
+    return p;							//返回第i个结点的指针，若i大于表长，则返回NULL
+&#125;	
+LNode *LocateElem(LinkList L,ElemType e)&#123;
+    LNode *p = L-&gt;next;
+    while(p!=NULL&amp;&amp;p-&gt;data!=e)			//从第i个结点开始查找data域为e的结点
+    &#123;
+        p=p-&gt;next;
+    &#125;
+    return p;							//找到后返回该结点指针，否则返回NULL
+&#125;
+void PrintLinkList(LinkList L)&#123;        //这段代码根据链表表尾结点的 next 指针指向 NULL 来遍历整个链表。
+    LNode *tmp = L-&gt;next;
+    if(tmp==NULL)
+    &#123;
+        cout&lt;&lt;&quot;链表为空&quot;&lt;&lt;endl;
+        return ; 
+    &#125;
+    while(tmp!=NULL)&#123;
+        cout&lt;&lt;tmp-&gt;data&lt;&lt;&quot; &quot;;
+        tmp=tmp-&gt;next;
+    &#125;
+    cout&lt;&lt;endl; 
+&#125;	
+void Insert(LinkList &amp;L,int i,int x)&#123;
+    LNode *p;
+    LNode *s=(LNode*)malloc(sizeof(LNode));				//申请空间 
+    s-&gt;data=x;
+    s-&gt;next=NULL; 
+    p=GetElem(L,i-1);
+    if(p!=NULL)&#123;
+        s-&gt;next =p-&gt;next;
+        p-&gt;next=s;
+    &#125;else&#123;
+        cout&lt;&lt;&quot;插入值非法&quot;&lt;&lt;endl;
+        return ; 
+    &#125;
+    
+&#125;
+//注意与插入结点相对比!!!!!!!!
+void Delect(LinkList &amp;L,int i)&#123;
+    //p所指结点是q所指结点的前驱结点
+    LNode *p;
+    LNode *q=(LNode*)malloc(sizeof(LNode));			   //申请空间 
+    p=GetElem(L,i-1);				    //查找删除位置的前驱结点
+    if(p==NULL||p-&gt;next==NULL)          //p==NULL是i值不合法的情况 
+    &#123;								    //p-&gt;next==NUll是i-1号结点后已无其他结点 
+        cout&lt;&lt;&quot;删除值非法&quot;&lt;&lt;endl;
+        free(q);
+        return ;
+    &#125;
+    q=p-&gt;next;					//令q指向被删除的结点
+    p-&gt;next=q-&gt;next;			//将*q结点从链中“断开”
+    free(q);
+                                
+&#125;	
+int main()&#123;
+    LinkList L;						//声明一个单链表 
+    List_HeadInsert(L);				//使用头插法插入4个元素，分别是1,2,3,4 
+    PrintLinkList(L);				//遍历这个单链表
+    LNode *tmp;
+    tmp=GetElem(L,2);				//找到位置为2的元素 
+    if(tmp!=NULL)&#123;
+        cout&lt;&lt;&quot;位置为2的元素是：&quot;&lt;&lt;tmp-&gt;data&lt;&lt;endl;
+    &#125;else&#123;
+        cout&lt;&lt;&quot;非法的位置&quot;&lt;&lt;endl;
+    &#125;
+    tmp=LocateElem(L,1);			//找到值为1的元素
+    if(tmp!=NULL)&#123;
+        cout&lt;&lt;&quot;存在值为1的元素：&quot;&lt;&lt;tmp-&gt;data&lt;&lt;endl;
+    &#125;else&#123;
+        cout&lt;&lt;&quot;没有找到该值&quot;&lt;&lt;endl;
+    &#125;
+    PrintLinkList(L);				//遍历这个单链表
+    Insert(L,5,110);				//在5这个位置插入元素110
+    PrintLinkList(L);				//遍历这个单链表
+    Delect(L,2);        			//删除位序为2的元素
+    PrintLinkList(L);				//遍历这个单链表
+    return 0;
+&#125; 
+</code></pre><h3 id="程序输出"><a href="#程序输出" class="headerlink" title="程序输出"></a>程序输出</h3><pre><code class="c++">4 3 2 1
+位置为2的元素是：3
+存在值为1的元素：1
+4 3 2 1
+4 3 2 1 110
+4 2 1 110
+</code></pre></div><hr><div><div class="post-metas mb-3"><div class="post-meta mr-3"><i class="iconfont icon-category"></i> <a class="hover-with-bg" href="/categories/Algorithm/">Algorithm</a></div><div class="post-meta"><i class="iconfont icon-tags"></i> <a class="hover-with-bg" href="/tags/Data-Structure/">Data Structure</a></div></div><p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p><div class="post-prevnext"><article class="post-prev col-6"><a href="/2022/03/29/Algorithm008/"><i class="iconfont icon-arrowleft"></i> <span class="hidden-mobile">双链表与静态链表</span> <span class="visible-mobile">上一篇</span></a></article><article class="post-next col-6"><a href="/2022/03/28/Algorithm006/"><span class="hidden-mobile">单链表的定义</span> <span class="visible-mobile">下一篇</span> <i class="iconfont icon-arrowright"></i></a></article></div></div><article class="comments" id="comments" lazyload><div id="waline"></div><script type="text/javascript">Fluid.utils.loadComments("#waline",(function(){Fluid.utils.createScript("https://cdn.jsdelivr.net/npm/@waline/client@1/dist/Waline.min.js",(function(){var a=Object.assign({serverURL:"https://amicoyuan-waline-1odo0o0t6-amicoyuan.vercel.app/",path:"window.location.pathname",placeholder:"欢迎留言~(填写邮箱可在被回复时收到邮件提醒哦)",meta:["nick","mail","link"],requiredMeta:["nick"],lang:"zh-CN",emoji:["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],dark:'html[data-user-color-scheme="dark"]',avatar:"retro",avatarCDN:"https://seccdn.libravatar.org/avatar/",avatarForce:!1,wordLimit:0,pageSize:10,highlight:!0},{el:"#waline",path:window.location.pathname});new Waline(a),Fluid.utils.waitElementVisible("#waline .vcontent",()=>{Fluid.plugins.initFancyBox("#waline .vcontent img:not(.vemoji)")})}))}))</script><noscript>Please enable JavaScript to view the comments</noscript></article></article></div></div></div><div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn"><div id="toc"><p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p><div class="toc-body" id="toc-body"></div></div></div></div></div><a id="scroll-top-button" aria-label="TOP" href="#" role="button"><i class="iconfont icon-arrowup" aria-hidden="true"></i></a><div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable modal-lg" role="document"><div class="modal-content"><div class="modal-header text-center"><h4 class="modal-title w-100 font-weight-bold">搜索</h4><button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><div class="modal-body mx-3"><div class="md-form mb-5"><input type="text" id="local-search-input" class="form-control validate"> <label data-error="x" data-success="v" for="local-search-input">关键词</label></div><div class="list-group" id="local-search-result"></div></div></div></div></div></main><footer class="text-center mt-5 py-3"><div class="footer-content"><a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a></div><div class="statistics"><span id="leancloud-site-pv-container" style="display:none">总访问量 <span id="leancloud-site-pv"></span> 次 </span><span id="leancloud-site-uv-container" style="display:none">总访客数 <span id="leancloud-site-uv"></span> 人</span></div></footer><script src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css"><script>NProgress.configure({showSpinner:!1,trickleSpeed:100}),NProgress.start(),window.addEventListener("load",(function(){NProgress.done()}))</script><script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js"></script><script src="/js/events.js"></script><script src="/js/plugins.js"></script><script src="/js/local-search.js"></script><script src="/js/img-lazyload.js"></script><script src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js"></script><script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script><script defer src="/js/leancloud.js"></script><script src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js"></script><script>!function(t,i){(0,Fluid.plugins.typing)(i.getElementById("subtitle").title)}(window,document)</script><script src="/js/boot.js"></script></body></html>

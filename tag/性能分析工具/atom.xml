@@ -139,20 +139,20 @@
 &lt;li&gt;-fprofile-arcs：在运行编译过的程序的时候，会产生.gcda文件，它包含了弧跳变的次数等信息。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;以下我们以test.c这个程序为例子，源码如下：&lt;/p&gt;
-&lt;pre class=&#34;line-numbers language-c&#34;&gt;&lt;code class=&#34;language-c&#34;&gt;&lt;span class=&#34;token macro property&#34;&gt;#&lt;span class=&#34;token directive keyword&#34;&gt;include&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&amp;lt;stdio.h&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
-&lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt;#&lt;span class=&#34;token number&#34;&gt;123&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; n&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; i&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;i&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;i&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;n&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;i&lt;span class=&#34;token operator&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
-    &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt;#&lt;span class=&#34;token number&#34;&gt;123&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-       &lt;span class=&#34;token function&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;Hello World!\n&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt;#&lt;span class=&#34;token number&#34;&gt;125&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; a &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;20220118&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;token function&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;%d\n&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;a&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-&lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt;#&lt;span class=&#34;token number&#34;&gt;125&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;c&#34;&gt;#include&amp;lt;stdio.h&amp;gt;
+int main()
+&amp;#123;
+    int n=4;
+    int i=0;
+    for(i=0;i&amp;lt;n;i++)
+    &amp;#123;
+       printf(&amp;quot;Hello World!\n&amp;quot;);
+    &amp;#125;
+    int a =20220118;
+    printf(&amp;quot;%d\n&amp;quot;,a);
+    return 0;
+&amp;#125;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;strong&gt;编译阶段：&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/2022/01/18/tool002/image-20220118145007919.png&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;2-gcov收集代码运行信息&#34;&gt;&lt;a href=&#34;#2-gcov收集代码运行信息&#34; class=&#34;headerlink&#34; title=&#34;2. gcov收集代码运行信息&#34;&gt;&lt;/a&gt;2. gcov收集代码运行信息&lt;/h3&gt;&lt;ul&gt;
@@ -170,28 +170,28 @@
 &lt;li&gt;每行前面的数字表示行运行的次数&lt;/li&gt;
 &lt;li&gt;—代表不必执行&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre class=&#34;line-numbers language-c&#34;&gt;&lt;code class=&#34;language-c&#34;&gt;        &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;    &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;Source&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;test&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;c
-        &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;    &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;Graph&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;test&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;gcno
-        &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;    &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;Data&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;test&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;gcda
-        &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;    &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;Runs&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;
-        &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;    &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;Programs&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;
-        &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;    &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;#include&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;stdio&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;h&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;
-        &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;    &lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
-        &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;    &lt;span class=&#34;token number&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt;#&lt;span class=&#34;token number&#34;&gt;123&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-        &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;    &lt;span class=&#34;token number&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;        &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; n&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-        &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;    &lt;span class=&#34;token number&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;        &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; i&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-        &lt;span class=&#34;token number&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;    &lt;span class=&#34;token number&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;        &lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;i&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;i&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;n&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;i&lt;span class=&#34;token operator&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
-        &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;    &lt;span class=&#34;token number&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;        &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt;#&lt;span class=&#34;token number&#34;&gt;123&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-        &lt;span class=&#34;token number&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;    &lt;span class=&#34;token number&#34;&gt;8&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;           &lt;span class=&#34;token function&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;Hello World!\n&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-        &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;    &lt;span class=&#34;token number&#34;&gt;9&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;        &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt;#&lt;span class=&#34;token number&#34;&gt;125&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-        &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;   &lt;span class=&#34;token number&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;        &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; a &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;20220118&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-        &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;   &lt;span class=&#34;token number&#34;&gt;11&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;        &lt;span class=&#34;token function&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;%d\n&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;a&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-        &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;   &lt;span class=&#34;token number&#34;&gt;12&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;        &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-        &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;   &lt;span class=&#34;token number&#34;&gt;13&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt;#&lt;span class=&#34;token number&#34;&gt;125&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;c&#34;&gt;        -:    0:Source:test.c
+        -:    0:Graph:test.gcno
+        -:    0:Data:test.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:#include&amp;lt;stdio.h&amp;gt;
+        1:    2:int main()
+        -:    3:&amp;#123;
+        1:    4:        int n=4;
+        1:    5:        int i=0;
+        5:    6:        for(i=0;i&amp;lt;n;i++)
+        -:    7:        &amp;#123;
+        4:    8:           printf(&amp;quot;Hello World!\n&amp;quot;);
+        -:    9:        &amp;#125;
+        1:   10:        int a =20220118;
+        1:   11:        printf(&amp;quot;%d\n&amp;quot;,a);
+        1:   12:        return 0;
+        -:   13:&amp;#125;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;配合lcov使用，图形化显示&#34;&gt;&lt;a href=&#34;#配合lcov使用，图形化显示&#34; class=&#34;headerlink&#34; title=&#34;配合lcov使用，图形化显示&#34;&gt;&lt;/a&gt;配合lcov使用，图形化显示&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;1.centos安装lcov:&lt;/strong&gt;&lt;/p&gt;
-&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;yum install lcov
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;c++&#34;&gt;yum install lcov
+&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;strong&gt;2.运行lcov，生成相应信息&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/2022/01/18/tool002/image-20220118151526665.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;运行结果：&lt;/p&gt;
@@ -228,8 +228,8 @@
         <id>http://example.com/2022/01/09/tool001/</id>
         <title>gprof、gprof2dot.py、dot使用方法简介</title>
         <link rel="alternate" href="http://example.com/2022/01/09/tool001/"/>
-        <content type="html">&lt;h1 id=&#34;gprof、gprof2dot-py、dot使用方法简介&#34;&gt;&lt;a href=&#34;#gprof、gprof2dot-py、dot使用方法简介&#34; class=&#34;headerlink&#34; title=&#34;gprof、gprof2dot.py、dot使用方法简介&#34;&gt;&lt;/a&gt;gprof、gprof2dot.py、dot使用方法简介&lt;/h1&gt;&lt;h2 id=&#34;1-：gprof使用步骤如下，以SLIC为例：&#34;&gt;&lt;a href=&#34;#1-：gprof使用步骤如下，以SLIC为例：&#34; class=&#34;headerlink&#34; title=&#34;(1)：gprof使用步骤如下，以SLIC为例：&#34;&gt;&lt;/a&gt;(1)：gprof使用步骤如下，以SLIC为例：&lt;/h2&gt;&lt;h3 id=&#34;1-在编译过程中添加-pg选项，命令如下：&#34;&gt;&lt;a href=&#34;#1-在编译过程中添加-pg选项，命令如下：&#34; class=&#34;headerlink&#34; title=&#34;1 在编译过程中添加-pg选项，命令如下：&#34;&gt;&lt;/a&gt;1 在编译过程中添加-pg选项，命令如下：&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;gcc -pg SLIC.cpp -o SLIC
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+        <content type="html">&lt;h1 id=&#34;gprof、gprof2dot-py、dot使用方法简介&#34;&gt;&lt;a href=&#34;#gprof、gprof2dot-py、dot使用方法简介&#34; class=&#34;headerlink&#34; title=&#34;gprof、gprof2dot.py、dot使用方法简介&#34;&gt;&lt;/a&gt;gprof、gprof2dot.py、dot使用方法简介&lt;/h1&gt;&lt;h2 id=&#34;1-：gprof使用步骤如下，以SLIC为例：&#34;&gt;&lt;a href=&#34;#1-：gprof使用步骤如下，以SLIC为例：&#34; class=&#34;headerlink&#34; title=&#34;(1)：gprof使用步骤如下，以SLIC为例：&#34;&gt;&lt;/a&gt;(1)：gprof使用步骤如下，以SLIC为例：&lt;/h2&gt;&lt;h3 id=&#34;1-在编译过程中添加-pg选项，命令如下：&#34;&gt;&lt;a href=&#34;#1-在编译过程中添加-pg选项，命令如下：&#34; class=&#34;headerlink&#34; title=&#34;1 在编译过程中添加-pg选项，命令如下：&#34;&gt;&lt;/a&gt;1 在编译过程中添加-pg选项，命令如下：&lt;/h3&gt;&lt;pre&gt;&lt;code class=&#34;c++&#34;&gt;gcc -pg SLIC.cpp -o SLIC
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;2-运行程序，运行结束之后会形成文件gmon-out，命令如下&#34;&gt;&lt;a href=&#34;#2-运行程序，运行结束之后会形成文件gmon-out，命令如下&#34; class=&#34;headerlink&#34; title=&#34;2 运行程序，运行结束之后会形成文件gmon.out，命令如下:&#34;&gt;&lt;/a&gt;2 运行程序，运行结束之后会形成文件gmon.out，命令如下:&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;./SLIC
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;3-使用gprof再次执行程序，并将结果重定位到prof-log中，命令如下：&#34;&gt;&lt;a href=&#34;#3-使用gprof再次执行程序，并将结果重定位到prof-log中，命令如下：&#34; class=&#34;headerlink&#34; title=&#34;3 使用gprof再次执行程序，并将结果重定位到prof.log中，命令如下：&#34;&gt;&lt;/a&gt;3 使用gprof再次执行程序，并将结果重定位到prof.log中，命令如下：&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;gprof ./SLIC &amp;gt; prof.log

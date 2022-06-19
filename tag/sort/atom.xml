@@ -51,7 +51,7 @@
 &lt;p&gt;随后 &lt;em&gt;N&lt;/em&gt; 行，每行给出一个功能模块的 &lt;em&gt;M&lt;/em&gt; 个对应输出，数字间以空格分隔。&lt;/p&gt;
 &lt;h3 id=&#34;输出格式：&#34;&gt;&lt;a href=&#34;#输出格式：&#34; class=&#34;headerlink&#34; title=&#34;输出格式：&#34;&gt;&lt;/a&gt;输出格式：&lt;/h3&gt;&lt;p&gt;首先在第一行输出不同功能的个数 &lt;em&gt;K&lt;/em&gt;。随后 &lt;em&gt;K&lt;/em&gt; 行，每行给出具有这个功能的模块的个数，以及这个功能的对应输出。数字间以 1 个空格分隔，行首尾不得有多余空格。输出首先按模块个数非递增顺序，如果有并列，则按输出序列的递增序给出。&lt;/p&gt;
 &lt;p&gt;注：所谓数列 { &lt;em&gt;A&lt;/em&gt;1, …, &lt;em&gt;A&lt;/em&gt;M } 比 { &lt;em&gt;B&lt;/em&gt;1, …, &lt;em&gt;B&lt;/em&gt;M } 大，是指存在 1≤i&amp;lt;*M*，使得 *A*1&amp;#x3D;*B*1，…，*Ai*&amp;#x3D;*Bi* 成立，且 *Ai*+1&amp;gt;&lt;em&gt;B&lt;/em&gt;+1。&lt;/p&gt;
-&lt;h3 id=&#34;输入样例：&#34;&gt;&lt;a href=&#34;#输入样例：&#34; class=&#34;headerlink&#34; title=&#34;输入样例：&#34;&gt;&lt;/a&gt;输入样例：&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-in&#34;&gt;&lt;code class=&#34;language-in&#34;&gt;7 3
+&lt;h3 id=&#34;输入样例：&#34;&gt;&lt;a href=&#34;#输入样例：&#34; class=&#34;headerlink&#34; title=&#34;输入样例：&#34;&gt;&lt;/a&gt;输入样例：&lt;/h3&gt;&lt;pre&gt;&lt;code class=&#34;in&#34;&gt;7 3
 35 28 74
 -1 -1 22
 28 74 35
@@ -59,56 +59,56 @@
 11 66 0
 35 28 74
 35 28 74
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;输出样例：&#34;&gt;&lt;a href=&#34;#输出样例：&#34; class=&#34;headerlink&#34; title=&#34;输出样例：&#34;&gt;&lt;/a&gt;输出样例：&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-out&#34;&gt;&lt;code class=&#34;language-out&#34;&gt;4
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;输出样例：&#34;&gt;&lt;a href=&#34;#输出样例：&#34; class=&#34;headerlink&#34; title=&#34;输出样例：&#34;&gt;&lt;/a&gt;输出样例：&lt;/h3&gt;&lt;pre&gt;&lt;code class=&#34;out&#34;&gt;4
 3 35 28 74
 2 -1 -1 22
 1 11 66 0
 1 28 74 35
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;程序源代码：&#34;&gt;&lt;a href=&#34;#程序源代码：&#34; class=&#34;headerlink&#34; title=&#34;程序源代码：&#34;&gt;&lt;/a&gt;程序源代码：&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;利用map的映射关系&lt;/strong&gt;&lt;/p&gt;
-&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;#include&lt;bits/stdc++.h&gt;
+&lt;pre&gt;&lt;code class=&#34;c++&#34;&gt;#include&amp;lt;bits/stdc++.h&amp;gt;
 using namespace std;
-map&lt;vector&lt;int&gt;,int&gt; mp;   //key，value
-vector&lt;int&gt; tmp;
+map&amp;lt;vector&amp;lt;int&amp;gt;,int&amp;gt; mp;   //key，value
+vector&amp;lt;int&amp;gt; tmp;
 int n,m;
-bool cmp(pair&lt;vector&lt;int&gt;,int&gt; a,pair&lt;vector&lt;int&gt;,int&gt; b)
+bool cmp(pair&amp;lt;vector&amp;lt;int&amp;gt;,int&amp;gt; a,pair&amp;lt;vector&amp;lt;int&amp;gt;,int&amp;gt; b)
 &amp;#123;
     if(a.second==b.second)
     &amp;#123;
-        return a.first&lt;b.first;
+        return a.first&amp;lt;b.first;
     &amp;#125;
-    return a.second&gt;b.second;
+    return a.second&amp;gt;b.second;
 
 &amp;#125;
 int main()
 &amp;#123;
-    cin&gt;&gt;n&gt;&gt;m;
-    for (int i = 0; i &lt;n ; ++i) &amp;#123;
-        for (int j = 0; j &lt; m; ++j) &amp;#123;
+    cin&amp;gt;&amp;gt;n&amp;gt;&amp;gt;m;
+    for (int i = 0; i &amp;lt;n ; ++i) &amp;#123;
+        for (int j = 0; j &amp;lt; m; ++j) &amp;#123;
             int num;
-            cin&gt;&gt;num;
+            cin&amp;gt;&amp;gt;num;
             tmp.push_back(num);
         &amp;#125;
         mp[tmp]++;
         tmp.clear();
     &amp;#125;
-    vector&lt;pair&lt;vector&lt;int&gt;,int&gt;&gt; v(mp.begin(),mp.end());		//把map类型转化成vector
-    cout&lt;&lt;v.size()&lt;&lt;endl;
+    vector&amp;lt;pair&amp;lt;vector&amp;lt;int&amp;gt;,int&amp;gt;&amp;gt; v(mp.begin(),mp.end());		//把map类型转化成vector
+    cout&amp;lt;&amp;lt;v.size()&amp;lt;&amp;lt;endl;
     sort(v.begin(),v.end(),cmp);								//sort排序，注意终点和起点
-    for (int k = 0; k &lt;v.size() ; ++k) &amp;#123;
-        cout&lt;&lt;v[k].second&lt;&lt;&#34; &#34;;
-        for (int i = 0; i &lt;m ; ++i) &amp;#123;
+    for (int k = 0; k &amp;lt;v.size() ; ++k) &amp;#123;
+        cout&amp;lt;&amp;lt;v[k].second&amp;lt;&amp;lt;&amp;quot; &amp;quot;;
+        for (int i = 0; i &amp;lt;m ; ++i) &amp;#123;
             if(i!=m-1)&amp;#123;
-                cout&lt;&lt;v[k].first[i]&lt;&lt;&#34; &#34;;
+                cout&amp;lt;&amp;lt;v[k].first[i]&amp;lt;&amp;lt;&amp;quot; &amp;quot;;
             &amp;#125; else&amp;#123;
-                cout&lt;&lt;v[k].first[i]&lt;&lt;endl;
+                cout&amp;lt;&amp;lt;v[k].first[i]&amp;lt;&amp;lt;endl;
             &amp;#125;
         &amp;#125;
     &amp;#125;
     return 0;
 &amp;#125;
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;参考资料：&#34;&gt;&lt;a href=&#34;#参考资料：&#34; class=&#34;headerlink&#34; title=&#34;参考资料：&#34;&gt;&lt;/a&gt;参考资料：&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://pintia.cn/problem-sets/994805046380707840/problems/1386335159927652362&#34;&gt;题目详情 - L2-039 清点代码库 (25 分) (pintia.cn)&lt;/a&gt;&lt;/p&gt;
 </content>
         <category term="Data Structure" />
@@ -129,7 +129,7 @@ int main()
 &lt;p&gt;&lt;em&gt;K     N&lt;/em&gt;1 &lt;em&gt;P&lt;/em&gt;1⋯ NK PK&lt;/p&gt;
 &lt;p&gt;其中&lt;em&gt;K&lt;/em&gt;（0≤&lt;em&gt;K&lt;/em&gt;≤20）是发出去的红包个数，&lt;em&gt;N&lt;/em&gt;i&lt;em&gt;是抢到红包的人的编号，&lt;/em&gt;Pi（&amp;gt;0）是其抢到的红包金额（以分为单位）。注意：对于同一个人发出的红包，每人最多只能抢1次，不能重复抢。&lt;/p&gt;
 &lt;h3 id=&#34;输出格式：&#34;&gt;&lt;a href=&#34;#输出格式：&#34; class=&#34;headerlink&#34; title=&#34;输出格式：&#34;&gt;&lt;/a&gt;输出格式：&lt;/h3&gt;&lt;p&gt;按照收入金额从高到低的递减顺序输出每个人的编号和收入金额（以元为单位，输出小数点后2位）。每个人的信息占一行，两数字间有1个空格。如果收入金额有并列，则按抢到红包的个数递减输出；如果还有并列，则按个人编号递增输出。&lt;/p&gt;
-&lt;h3 id=&#34;输入样例：&#34;&gt;&lt;a href=&#34;#输入样例：&#34; class=&#34;headerlink&#34; title=&#34;输入样例：&#34;&gt;&lt;/a&gt;输入样例：&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-in&#34;&gt;&lt;code class=&#34;language-in&#34;&gt;10
+&lt;h3 id=&#34;输入样例：&#34;&gt;&lt;a href=&#34;#输入样例：&#34; class=&#34;headerlink&#34; title=&#34;输入样例：&#34;&gt;&lt;/a&gt;输入样例：&lt;/h3&gt;&lt;pre&gt;&lt;code class=&#34;in&#34;&gt;10
 3 2 22 10 58 8 125
 5 1 345 3 211 5 233 7 13 8 101
 1 7 8800
@@ -140,8 +140,8 @@ int main()
 2 1 23 2 123
 1 8 250
 4 2 121 4 516 7 112 9 10
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;输出样例：&#34;&gt;&lt;a href=&#34;#输出样例：&#34; class=&#34;headerlink&#34; title=&#34;输出样例：&#34;&gt;&lt;/a&gt;输出样例：&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-out&#34;&gt;&lt;code class=&#34;language-out&#34;&gt;1 11.63
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;输出样例：&#34;&gt;&lt;a href=&#34;#输出样例：&#34; class=&#34;headerlink&#34; title=&#34;输出样例：&#34;&gt;&lt;/a&gt;输出样例：&lt;/h3&gt;&lt;pre&gt;&lt;code class=&#34;out&#34;&gt;1 11.63
 2 3.63
 8 3.63
 3 2.11
@@ -151,11 +151,11 @@ int main()
 10 -3.26
 5 -3.26
 4 -12.32
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;程序源代码：&#34;&gt;&lt;a href=&#34;#程序源代码：&#34; class=&#34;headerlink&#34; title=&#34;程序源代码：&#34;&gt;&lt;/a&gt;程序源代码：&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;结构体 + Sort&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;需要注意的就是double类型相等的比较&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;首先，浮点数在计算机中并不能精确的表示，所以在判断两个double类型的数时需要其他的手段，而不是直接 a&amp;#x3D;&amp;#x3D; b&lt;/strong&gt;&lt;/p&gt;
-&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;#include&lt;bits/stdc++.h&gt;
+&lt;pre&gt;&lt;code class=&#34;c++&#34;&gt;#include&amp;lt;bits/stdc++.h&amp;gt;
 using namespace std;
 struct student&amp;#123;
     int id=0;
@@ -164,40 +164,40 @@ struct student&amp;#123;
 &amp;#125;;
 double dis=1e-6;				//定义一个误差
 bool cmp(student a,student b)&amp;#123;
-    if(abs(a.money-b.money)&lt;dis)&amp;#123;				//如果两个double型相减在误差的范围内，我们认定这两个double类型相等
+    if(abs(a.money-b.money)&amp;lt;dis)&amp;#123;				//如果两个double型相减在误差的范围内，我们认定这两个double类型相等
         if(a.cnt==b.cnt)&amp;#123;
-            return a.id&lt;b.id;
+            return a.id&amp;lt;b.id;
         &amp;#125;else&amp;#123;
-            return a.cnt&gt;b.cnt;
+            return a.cnt&amp;gt;b.cnt;
         &amp;#125;
     &amp;#125;
-    return a.money&gt;b.money;
+    return a.money&amp;gt;b.money;
 &amp;#125;
 int main()
 &amp;#123;
     int n;
-    cin&gt;&gt;n;
+    cin&amp;gt;&amp;gt;n;
     student st[n+5];
-    for (int i = 0; i &lt;n ; ++i) &amp;#123;
+    for (int i = 0; i &amp;lt;n ; ++i) &amp;#123;
         int time;
-        cin&gt;&gt;time;
+        cin&amp;gt;&amp;gt;time;
         st[i].id=i+1;
-        for (int j = 0; j &lt;time ; ++j) &amp;#123;
+        for (int j = 0; j &amp;lt;time ; ++j) &amp;#123;
             int p;
             double x;
-            cin&gt;&gt;p&gt;&gt;x;
+            cin&amp;gt;&amp;gt;p&amp;gt;&amp;gt;x;
             st[p-1].money+=x/100;
             st[i].money-=x/100;
             st[p-1].cnt++;					//记录抢到的红包数
         &amp;#125;
     &amp;#125;
     sort(st,st+n,cmp);						//sort从数组下标0开始排序，左闭右开
-    for (int k = 0; k &lt;n ; ++k) &amp;#123;
-        printf(&#34;%d %.2lf\n&#34;,st[k].id,st[k].money);
+    for (int k = 0; k &amp;lt;n ; ++k) &amp;#123;
+        printf(&amp;quot;%d %.2lf\n&amp;quot;,st[k].id,st[k].money);
     &amp;#125;
     return 0;
 &amp;#125;
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;参考资料：&#34;&gt;&lt;a href=&#34;#参考资料：&#34; class=&#34;headerlink&#34; title=&#34;参考资料：&#34;&gt;&lt;/a&gt;参考资料：&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/dingpiao190/article/details/73512811?spm=1001.2101.3001.6661.1&amp;utm_medium=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~Rate-1.pc_relevant_default&amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~Rate-1.pc_relevant_default&amp;utm_relevant_index=1&#34;&gt;(20条消息) double类型是否相等的判断方法_dingpiao190的博客-CSDN博客_double判断相等&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/patrick_star_cowboy/article/details/82083392&#34;&gt;(20条消息) 如何判断两个double类型的数是否相等？_Patrick-Star的博客-CSDN博客_两个double怎么判断相等&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://pintia.cn/problem-sets/994805046380707840/problems/994805066890854400&#34;&gt;题目详情 - L2-009 抢红包 (25 分) (pintia.cn)&lt;/a&gt;&lt;/p&gt;
@@ -217,50 +217,50 @@ int main()
 &lt;p&gt;注意：销售时允许取出一部分库存。样例给出的情形是这样的：假如我们有 3 种月饼，其库存量分别为 18、15、10 万吨，总售价分别为 75、72、45 亿元。如果市场的最大需求量只有 20 万吨，那么我们最大收益策略应该是卖出全部 15 万吨第 2 种月饼、以及 5 万吨第 3 种月饼，获得 72 + 45&amp;#x2F;2 &amp;#x3D; 94.5（亿元）。&lt;/p&gt;
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;每个输入包含一个测试用例。每个测试用例先给出一个不超过 1000 的正整数 &lt;em&gt;N&lt;/em&gt; 表示月饼的种类数、以及不超过 500（以万吨为单位）的正整数 &lt;em&gt;D&lt;/em&gt; 表示市场最大需求量。随后一行给出 &lt;em&gt;N&lt;/em&gt; 个正数表示每种月饼的库存量（以万吨为单位）；最后一行给出 &lt;em&gt;N&lt;/em&gt; 个正数表示每种月饼的总售价（以亿元为单位）。数字间以空格分隔。&lt;/p&gt;
 &lt;h3 id=&#34;输出格式：&#34;&gt;&lt;a href=&#34;#输出格式：&#34; class=&#34;headerlink&#34; title=&#34;输出格式：&#34;&gt;&lt;/a&gt;输出格式：&lt;/h3&gt;&lt;p&gt;对每组测试用例，在一行中输出最大收益，以亿元为单位并精确到小数点后 2 位。&lt;/p&gt;
-&lt;h3 id=&#34;输入样例：&#34;&gt;&lt;a href=&#34;#输入样例：&#34; class=&#34;headerlink&#34; title=&#34;输入样例：&#34;&gt;&lt;/a&gt;输入样例：&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-in&#34;&gt;&lt;code class=&#34;language-in&#34;&gt;3 20
+&lt;h3 id=&#34;输入样例：&#34;&gt;&lt;a href=&#34;#输入样例：&#34; class=&#34;headerlink&#34; title=&#34;输入样例：&#34;&gt;&lt;/a&gt;输入样例：&lt;/h3&gt;&lt;pre&gt;&lt;code class=&#34;in&#34;&gt;3 20
 18 15 10
 75 72 45
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;输出样例：&#34;&gt;&lt;a href=&#34;#输出样例：&#34; class=&#34;headerlink&#34; title=&#34;输出样例：&#34;&gt;&lt;/a&gt;输出样例：&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-out&#34;&gt;&lt;code class=&#34;language-out&#34;&gt;94.50
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;输出样例：&#34;&gt;&lt;a href=&#34;#输出样例：&#34; class=&#34;headerlink&#34; title=&#34;输出样例：&#34;&gt;&lt;/a&gt;输出样例：&lt;/h3&gt;&lt;pre&gt;&lt;code class=&#34;out&#34;&gt;94.50
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;程序源代码：&#34;&gt;&lt;a href=&#34;#程序源代码：&#34; class=&#34;headerlink&#34; title=&#34;程序源代码：&#34;&gt;&lt;/a&gt;程序源代码：&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;贪心 + Sort&lt;/strong&gt;&lt;/p&gt;
-&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;#include&lt;bits/stdc++.h&gt;
+&lt;pre&gt;&lt;code class=&#34;c++&#34;&gt;#include&amp;lt;bits/stdc++.h&amp;gt;
 using namespace std;
 struct mooncake&amp;#123;
     double pow;
     double price;
 &amp;#125;;
 bool cmp(mooncake a,mooncake b)&amp;#123;
-    return a.price*1.0/a.pow&gt;b.price*1.0/b.pow;				//返回单价高的
+    return a.price*1.0/a.pow&amp;gt;b.price*1.0/b.pow;				//返回单价高的
 &amp;#125;
 int main()
 &amp;#123;
     int n;
     double d;
-    cin&gt;&gt;n&gt;&gt;d;
+    cin&amp;gt;&amp;gt;n&amp;gt;&amp;gt;d;
     mooncake m[n];
-    for (int i = 0; i &lt; n; ++i) &amp;#123;
-        cin&gt;&gt;m[i].pow;
+    for (int i = 0; i &amp;lt; n; ++i) &amp;#123;
+        cin&amp;gt;&amp;gt;m[i].pow;
     &amp;#125;
-    for (int j = 0; j &lt;n ; ++j) &amp;#123;
-        cin&gt;&gt;m[j].price;
+    for (int j = 0; j &amp;lt;n ; ++j) &amp;#123;
+        cin&amp;gt;&amp;gt;m[j].price;
     &amp;#125;
     sort(m,m+n,cmp);
     double price=0.0;
     double tmpd=d;
-    for (int k = 0; k &lt;n ; ++k) &amp;#123;						//模拟求解
-        if(m[k].pow&lt;=tmpd)&amp;#123;
+    for (int k = 0; k &amp;lt;n ; ++k) &amp;#123;						//模拟求解
+        if(m[k].pow&amp;lt;=tmpd)&amp;#123;
             tmpd-=m[k].pow;
             price+=m[k].price;
-        &amp;#125;else if(m[k].pow&gt;tmpd)&amp;#123;
+        &amp;#125;else if(m[k].pow&amp;gt;tmpd)&amp;#123;
             price+=tmpd*(m[k].price/m[k].pow);
             break;
         &amp;#125;
     &amp;#125;
-    printf(&#34;%.2f\n&#34;,price);
+    printf(&amp;quot;%.2f\n&amp;quot;,price);
     return 0;
 &amp;#125;
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;参考资料：&#34;&gt;&lt;a href=&#34;#参考资料：&#34; class=&#34;headerlink&#34; title=&#34;参考资料：&#34;&gt;&lt;/a&gt;参考资料：&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://pintia.cn/problem-sets/994805046380707840/problems/994805071789801472&#34;&gt;题目详情 - L2-003 月饼 (25 分) (pintia.cn)&lt;/a&gt;&lt;/p&gt;
 </content>
         <category term="C++" />
@@ -277,7 +277,7 @@ int main()
         <content type="html">&lt;h2 id=&#34;L2-027-名人堂与代金券-25-分&#34;&gt;&lt;a href=&#34;#L2-027-名人堂与代金券-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-027 名人堂与代金券 (25 分)&#34;&gt;&lt;/a&gt;L2-027 名人堂与代金券 (25 分)&lt;/h2&gt;&lt;p&gt;对于在中国大学MOOC（&lt;a href=&#34;http://www.icourse163.org/&#34;&gt;http://www.icourse163.org/&lt;/a&gt; ）学习“数据结构”课程的学生，想要获得一张合格证书，总评成绩必须达到 60 分及以上，并且有另加福利：总评分在 [G, 100] 区间内者，可以得到 50 元 PAT 代金券；在 [60, G) 区间内者，可以得到 20 元PAT代金券。全国考点通用，一年有效。同时任课老师还会把总评成绩前 K 名的学生列入课程“名人堂”。本题就请你编写程序，帮助老师列出名人堂的学生，并统计一共发出了面值多少元的 PAT 代金券。&lt;/p&gt;
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;输入在第一行给出 3 个整数，分别是 N（不超过 10 000 的正整数，为学生总数）、G（在 (60,100) 区间内的整数，为题面中描述的代金券等级分界线）、K（不超过 100 且不超过 N 的正整数，为进入名人堂的最低名次）。接下来 N 行，每行给出一位学生的账号（长度不超过15位、不带空格的字符串）和总评成绩（区间 [0, 100] 内的整数），其间以空格分隔。题目保证没有重复的账号。&lt;/p&gt;
 &lt;h3 id=&#34;输出格式：&#34;&gt;&lt;a href=&#34;#输出格式：&#34; class=&#34;headerlink&#34; title=&#34;输出格式：&#34;&gt;&lt;/a&gt;输出格式：&lt;/h3&gt;&lt;p&gt;首先在一行中输出发出的 PAT 代金券的总面值。然后按总评成绩非升序输出进入名人堂的学生的名次、账号和成绩，其间以 1 个空格分隔。需要注意的是：成绩相同的学生享有并列的排名，排名并列时，按账号的字母序升序输出。&lt;/p&gt;
-&lt;h3 id=&#34;输入样例：&#34;&gt;&lt;a href=&#34;#输入样例：&#34; class=&#34;headerlink&#34; title=&#34;输入样例：&#34;&gt;&lt;/a&gt;输入样例：&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-in&#34;&gt;&lt;code class=&#34;language-in&#34;&gt;10 80 5
+&lt;h3 id=&#34;输入样例：&#34;&gt;&lt;a href=&#34;#输入样例：&#34; class=&#34;headerlink&#34; title=&#34;输入样例：&#34;&gt;&lt;/a&gt;输入样例：&lt;/h3&gt;&lt;pre&gt;&lt;code class=&#34;in&#34;&gt;10 80 5
 cy@zju.edu.cn 78
 cy@pat-edu.com 87
 1001@qq.com 65
@@ -288,43 +288,43 @@ zoe@mit.edu 80
 jack@ucla.edu 88
 bob@cmu.edu 80
 ken@163.com 70
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;输出样例：&#34;&gt;&lt;a href=&#34;#输出样例：&#34; class=&#34;headerlink&#34; title=&#34;输出样例：&#34;&gt;&lt;/a&gt;输出样例：&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-out&#34;&gt;&lt;code class=&#34;language-out&#34;&gt;360
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;输出样例：&#34;&gt;&lt;a href=&#34;#输出样例：&#34; class=&#34;headerlink&#34; title=&#34;输出样例：&#34;&gt;&lt;/a&gt;输出样例：&lt;/h3&gt;&lt;pre&gt;&lt;code class=&#34;out&#34;&gt;360
 1 uh-oh@163.com 96
 2 jack@ucla.edu 88
 3 anyone@qq.com 87
 3 cy@pat-edu.com 87
 5 bob@cmu.edu 80
 5 zoe@mit.edu 80
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;程序源代码：&#34;&gt;&lt;a href=&#34;#程序源代码：&#34; class=&#34;headerlink&#34; title=&#34;程序源代码：&#34;&gt;&lt;/a&gt;程序源代码：&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;结构体数组+sort排序，需要注意输出格式控制&lt;/strong&gt;&lt;/p&gt;
-&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &lt;bits/stdc++.h&gt;
+&lt;pre&gt;&lt;code class=&#34;c++&#34;&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
 using namespace std;
 struct student&amp;#123;
     int score=0;
     string email;
 &amp;#125;;
 bool cmp(student a,student b)&amp;#123;
-    if(a.score==b.score) return a.email&lt;b.email;		//如果分数相同返回字典序小的
-    return a.score&gt;b.score;				//返回分数最大的
+    if(a.score==b.score) return a.email&amp;lt;b.email;		//如果分数相同返回字典序小的
+    return a.score&amp;gt;b.score;				//返回分数最大的
 &amp;#125;
 int main()
 &amp;#123;
     int n,g,k;
-    cin&gt;&gt;n&gt;&gt;g&gt;&gt;k;
+    cin&amp;gt;&amp;gt;n&amp;gt;&amp;gt;g&amp;gt;&amp;gt;k;
     student st[n];
     int money=0;
-    for (int i = 0; i &lt;n ; ++i) &amp;#123;					//输入加存钱
-        cin&gt;&gt;st[i].email&gt;&gt;st[i].score;
-        if(g&lt;=st[i].score&amp;&amp;st[i].score&lt;=100)&amp;#123;
+    for (int i = 0; i &amp;lt;n ; ++i) &amp;#123;					//输入加存钱
+        cin&amp;gt;&amp;gt;st[i].email&amp;gt;&amp;gt;st[i].score;
+        if(g&amp;lt;=st[i].score&amp;amp;&amp;amp;st[i].score&amp;lt;=100)&amp;#123;
             money+=50;
         &amp;#125;
-        if(60&lt;=st[i].score&amp;&amp;st[i].score&lt;g)&amp;#123;
+        if(60&amp;lt;=st[i].score&amp;amp;&amp;amp;st[i].score&amp;lt;g)&amp;#123;
             money+=20;
         &amp;#125;
     &amp;#125;
     sort(st,st+n,cmp);								//排序
-    cout&lt;&lt;money&lt;&lt;endl;
+    cout&amp;lt;&amp;lt;money&amp;lt;&amp;lt;endl;
     int cnt =1;										//用来判断用否超过名人堂个数
     int i=0;										//遍历st结构体数组
     int same=1;										//分数相同的个数
@@ -333,14 +333,14 @@ int main()
     while(true) &amp;#123;
 
         if(fscore==st[i].score)&amp;#123;
-            cout&lt;&lt;cnt&lt;&lt;&#34; &#34;&lt;&lt;st[i].email&lt;&lt;&#34; &#34;&lt;&lt;st[i].score&lt;&lt;endl;	//相同即输出
+            cout&amp;lt;&amp;lt;cnt&amp;lt;&amp;lt;&amp;quot; &amp;quot;&amp;lt;&amp;lt;st[i].email&amp;lt;&amp;lt;&amp;quot; &amp;quot;&amp;lt;&amp;lt;st[i].score&amp;lt;&amp;lt;endl;	//相同即输出
             if(i!=0) same++;		//不为0号，则same++。
         &amp;#125;
-        if(fscore&gt;st[i].score)&amp;#123;
+        if(fscore&amp;gt;st[i].score)&amp;#123;
             cnt=cnt+same;			//不等，更新cnt值
             same=1;					//更新same值
-            if(cnt&gt;k)&amp;#123; break;&amp;#125;		//大于名人堂个数结束
-            cout&lt;&lt;cnt&lt;&lt;&#34; &#34;&lt;&lt;st[i].email&lt;&lt;&#34; &#34;&lt;&lt;st[i].score&lt;&lt;endl;
+            if(cnt&amp;gt;k)&amp;#123; break;&amp;#125;		//大于名人堂个数结束
+            cout&amp;lt;&amp;lt;cnt&amp;lt;&amp;lt;&amp;quot; &amp;quot;&amp;lt;&amp;lt;st[i].email&amp;lt;&amp;lt;&amp;quot; &amp;quot;&amp;lt;&amp;lt;st[i].score&amp;lt;&amp;lt;endl;
             fscore=st[i].score;		//更新用来判断分数是否相同的fscore
 
         &amp;#125;
@@ -349,7 +349,7 @@ int main()
     &amp;#125;
     return 0;
 &amp;#125;
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;参考资料：&#34;&gt;&lt;a href=&#34;#参考资料：&#34; class=&#34;headerlink&#34; title=&#34;参考资料：&#34;&gt;&lt;/a&gt;参考资料：&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://pintia.cn/problem-sets/994805046380707840/problems/994805055176163328&#34;&gt;题目详情 - L2-027 名人堂与代金券 (25 分) (pintia.cn)&lt;/a&gt;&lt;/p&gt;
 </content>
         <category term="Data Structure" />
@@ -365,54 +365,54 @@ int main()
         <content type="html">&lt;h1 id=&#34;L2-021-点赞狂魔-25-分&#34;&gt;&lt;a href=&#34;#L2-021-点赞狂魔-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-021 点赞狂魔 (25 分)&#34;&gt;&lt;/a&gt;L2-021 点赞狂魔 (25 分)&lt;/h1&gt;&lt;p&gt;微博上有个“点赞”功能，你可以为你喜欢的博文点个赞表示支持。每篇博文都有一些刻画其特性的标签，而你点赞的博文的类型，也间接刻画了你的特性。然而有这么一种人，他们会通过给自己看到的一切内容点赞来狂刷存在感，这种人就被称为“点赞狂魔”。他们点赞的标签非常分散，无法体现出明显的特性。本题就要求你写个程序，通过统计每个人点赞的不同标签的数量，找出前3名点赞狂魔。&lt;/p&gt;
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;输入在第一行给出一个正整数&lt;em&gt;N&lt;/em&gt;（≤100），是待统计的用户数。随后&lt;em&gt;N&lt;/em&gt;行，每行列出一位用户的点赞标签。格式为“&lt;code&gt;Name&lt;/code&gt; &lt;em&gt;K&lt;/em&gt; &lt;em&gt;F&lt;/em&gt;1⋯&lt;em&gt;F**K&lt;/em&gt;”，其中&lt;code&gt;Name&lt;/code&gt;是不超过8个英文小写字母的非空用户名，1≤&lt;em&gt;K&lt;/em&gt;≤1000，&lt;em&gt;F**i&lt;/em&gt;（&lt;em&gt;i&lt;/em&gt;&amp;#x3D;1,⋯,&lt;em&gt;K&lt;/em&gt;）是特性标签的编号，我们将所有特性标签从 1 到 107 编号。数字间以空格分隔。&lt;/p&gt;
 &lt;h3 id=&#34;输出格式：&#34;&gt;&lt;a href=&#34;#输出格式：&#34; class=&#34;headerlink&#34; title=&#34;输出格式：&#34;&gt;&lt;/a&gt;输出格式：&lt;/h3&gt;&lt;p&gt;统计每个人点赞的不同标签的数量，找出数量最大的前3名，在一行中顺序输出他们的用户名,其间以1个空格分隔,且行末不得有多余空格。如果有并列，则输出标签出现次数平均值最小的那个，题目保证这样的用户没有并列。若不足3人，则用&lt;code&gt;-&lt;/code&gt;补齐缺失，例如&lt;code&gt;mike jenny -&lt;/code&gt;就表示只有2人。&lt;/p&gt;
-&lt;h3 id=&#34;输入样例：&#34;&gt;&lt;a href=&#34;#输入样例：&#34; class=&#34;headerlink&#34; title=&#34;输入样例：&#34;&gt;&lt;/a&gt;输入样例：&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-in&#34;&gt;&lt;code class=&#34;language-in&#34;&gt;5
+&lt;h3 id=&#34;输入样例：&#34;&gt;&lt;a href=&#34;#输入样例：&#34; class=&#34;headerlink&#34; title=&#34;输入样例：&#34;&gt;&lt;/a&gt;输入样例：&lt;/h3&gt;&lt;pre&gt;&lt;code class=&#34;in&#34;&gt;5
 bob 11 101 102 103 104 105 106 107 108 108 107 107
 peter 8 1 2 3 4 3 2 5 1
 chris 12 1 2 3 4 5 6 7 8 9 1 2 3
 john 10 8 7 6 5 4 3 2 1 7 5
 jack 9 6 7 8 9 10 11 12 13 14
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;输出样例：&#34;&gt;&lt;a href=&#34;#输出样例：&#34; class=&#34;headerlink&#34; title=&#34;输出样例：&#34;&gt;&lt;/a&gt;输出样例：&lt;/h3&gt;&lt;pre class=&#34;line-numbers language-out&#34;&gt;&lt;code class=&#34;language-out&#34;&gt;jack chris john
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;输出样例：&#34;&gt;&lt;a href=&#34;#输出样例：&#34; class=&#34;headerlink&#34; title=&#34;输出样例：&#34;&gt;&lt;/a&gt;输出样例：&lt;/h3&gt;&lt;pre&gt;&lt;code class=&#34;out&#34;&gt;jack chris john
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;程序源代码&#34;&gt;&lt;a href=&#34;#程序源代码&#34; class=&#34;headerlink&#34; title=&#34;程序源代码&#34;&gt;&lt;/a&gt;程序源代码&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;结构体数组 + sort排序&lt;/strong&gt;&lt;/p&gt;
-&lt;pre class=&#34;line-numbers language-c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &lt;bits/stdc++.h&gt;
+&lt;pre&gt;&lt;code class=&#34;c++&#34;&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
 using namespace std;
 struct person&amp;#123;
     char name[10];
-    set&lt;int&gt; s;				//set容器中的每个元素值唯一
+    set&amp;lt;int&amp;gt; s;				//set容器中的每个元素值唯一
     int all=0;				//记录点赞次数
 &amp;#125;;
 bool cmp(person a,person b)&amp;#123;
-    if(a.s.size()==b.s.size()) return a.all&lt;b.all;			//如果有并列，则输出标签出现次数平均值最小的那个
-    return a.s.size()&gt;b.s.size();							//点赞的不同标签的数量最多的
+    if(a.s.size()==b.s.size()) return a.all&amp;lt;b.all;			//如果有并列，则输出标签出现次数平均值最小的那个
+    return a.s.size()&amp;gt;b.s.size();							//点赞的不同标签的数量最多的
 &amp;#125;
 int main()
 &amp;#123;
     int n;
-    cin&gt;&gt;n;
+    cin&amp;gt;&amp;gt;n;
     person p[n];
-    for (int i = 0; i &lt;n ; ++i) &amp;#123;
-        cin&gt;&gt;p[i].name;
+    for (int i = 0; i &amp;lt;n ; ++i) &amp;#123;
+        cin&amp;gt;&amp;gt;p[i].name;
         int time;
-        cin&gt;&gt;time;
+        cin&amp;gt;&amp;gt;time;
         p[i].all=time;										//记录点赞次数
-        for (int j = 0; j &lt; time; ++j) &amp;#123;
+        for (int j = 0; j &amp;lt; time; ++j) &amp;#123;
             int tmp;
-            cin&gt;&gt;tmp;
+            cin&amp;gt;&amp;gt;tmp;
             p[i].s.insert(tmp);								//插入set容器
         &amp;#125;
     &amp;#125;
     sort(p,p+n,cmp);										//排序
-    if(n&gt;=3)&amp;#123;
-        cout&lt;&lt;p[0].name&lt;&lt;&#34; &#34;&lt;&lt;p[1].name&lt;&lt;&#34; &#34;&lt;&lt;p[2].name&lt;&lt;endl;
+    if(n&amp;gt;=3)&amp;#123;
+        cout&amp;lt;&amp;lt;p[0].name&amp;lt;&amp;lt;&amp;quot; &amp;quot;&amp;lt;&amp;lt;p[1].name&amp;lt;&amp;lt;&amp;quot; &amp;quot;&amp;lt;&amp;lt;p[2].name&amp;lt;&amp;lt;endl;
     &amp;#125; else if(n==2)&amp;#123;
-        cout&lt;&lt;p[0].name&lt;&lt;&#34; &#34;&lt;&lt;p[1].name&lt;&lt;&#34; &#34;&lt;&lt;&#34;-&#34;&lt;&lt;endl;
+        cout&amp;lt;&amp;lt;p[0].name&amp;lt;&amp;lt;&amp;quot; &amp;quot;&amp;lt;&amp;lt;p[1].name&amp;lt;&amp;lt;&amp;quot; &amp;quot;&amp;lt;&amp;lt;&amp;quot;-&amp;quot;&amp;lt;&amp;lt;endl;
     &amp;#125;else if(n==1)&amp;#123;
-        cout&lt;&lt;p[0].name&lt;&lt;&#34; &#34;&lt;&lt;&#34;-&#34;&lt;&lt;&#34; &#34;&lt;&lt;&#34;-&#34;&lt;&lt;endl;
+        cout&amp;lt;&amp;lt;p[0].name&amp;lt;&amp;lt;&amp;quot; &amp;quot;&amp;lt;&amp;lt;&amp;quot;-&amp;quot;&amp;lt;&amp;lt;&amp;quot; &amp;quot;&amp;lt;&amp;lt;&amp;quot;-&amp;quot;&amp;lt;&amp;lt;endl;
     &amp;#125;
     return 0;
 &amp;#125;
-&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://pintia.cn/problem-sets/994805046380707840/problems/994805058485469184&#34;&gt;题目详情 - L2-021 点赞狂魔 (25 分) (pintia.cn)&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/changjiale110/article/details/79108447&#34;&gt;(19条消息) STL中的set使用方法详细！！！！_知足–常乐的博客-CSDN博客_set stl&lt;/a&gt;&lt;/p&gt;
 </content>
