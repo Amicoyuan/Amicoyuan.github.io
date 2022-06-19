@@ -1,0 +1,227 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>计算机奇妙之旅 • Posts by &#34;性能分析工具&#34; tag</title>
+        <link>http://example.com</link>
+        <description></description>
+        <language>zh-CN</language>
+        <pubDate>Sun, 08 May 2022 10:34:59 +0800</pubDate>
+        <lastBuildDate>Sun, 08 May 2022 10:34:59 +0800</lastBuildDate>
+        <category>AVX</category>
+        <category>Data Structure</category>
+        <category>String</category>
+        <category>Find</category>
+        <category>STL</category>
+        <category>C++</category>
+        <category>Set</category>
+        <category>团体程序设计天梯赛</category>
+        <category>Sort</category>
+        <category>LinkList</category>
+        <category>双向链表</category>
+        <category>Graph</category>
+        <category>邻接表</category>
+        <category>Vector</category>
+        <category>Binary tree</category>
+        <category>BFS</category>
+        <category>模拟</category>
+        <category>邻接矩阵</category>
+        <category>DFS</category>
+        <category>结构体</category>
+        <category>贪心</category>
+        <category>Double类型相等比较</category>
+        <category>并查集</category>
+        <category>Map</category>
+        <category>Pair</category>
+        <category>KMP</category>
+        <category>线索二叉树</category>
+        <category>Tree</category>
+        <category>森林</category>
+        <category>Linux</category>
+        <category>MPI</category>
+        <category>Slurm</category>
+        <category>Numactl</category>
+        <category>Tensorflow</category>
+        <category>性能分析工具</category>
+        <category>gcov</category>
+        <item>
+            <guid isPermalink="true">http://example.com/2022/05/08/tool004/</guid>
+            <title>gcov代码覆盖率测试-完整样例-SLIC</title>
+            <link>http://example.com/2022/05/08/tool004/</link>
+            <category>性能分析工具</category>
+            <category>gcov</category>
+            <pubDate>Sun, 08 May 2022 10:34:59 +0800</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;gcov代码覆盖率测试-完整样例-SLIC&#34;&gt;&lt;a href=&#34;#gcov代码覆盖率测试-完整样例-SLIC&#34; class=&#34;headerlink&#34; title=&#34;gcov代码覆盖率测试-完整样例-SLIC&#34;&gt;&lt;/a&gt;gcov代码覆盖率测试-完整样例-SLIC&lt;/h2&gt;&lt;h3 id=&#34;gcov代码覆盖率测试介绍：&#34;&gt;&lt;a href=&#34;#gcov代码覆盖率测试介绍：&#34; class=&#34;headerlink&#34; title=&#34;gcov代码覆盖率测试介绍：&#34;&gt;&lt;/a&gt;gcov代码覆盖率测试介绍：&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://xingyuanjie.top/2022/01/18/tool002/&#34;&gt;gcov代码覆盖率测试 - 计算机奇妙之旅 (xingyuanjie.top)&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;完整样例-SLIC：&#34;&gt;&lt;a href=&#34;#完整样例-SLIC：&#34; class=&#34;headerlink&#34; title=&#34;完整样例-SLIC：&#34;&gt;&lt;/a&gt;完整样例-SLIC：&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://xingyuanjie.top/2022/05/08/tool004/result.zip&#34;&gt;https://xingyuanjie.top/2022/05/08/tool004/result.zip&lt;/a&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://example.com/2022/01/19/tool003/</guid>
+            <title>perf-系统级性能分析工具</title>
+            <link>http://example.com/2022/01/19/tool003/</link>
+            <category>性能分析工具</category>
+            <pubDate>Wed, 19 Jan 2022 11:56:40 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;系统级性能优化通常包括两个阶段：性能剖析（performance profiling）和代码优化。&lt;/p&gt;
+&lt;p&gt;性能剖析的目标是寻找性能瓶颈，查找引发性能问题的原因及热点代码。&lt;/p&gt;
+&lt;p&gt;代码优化的目标是针对具体性能问题而优化代码或编译选项，以改善软件性能。&lt;/p&gt;
+&lt;p&gt;在性能剖析阶段，需要借助于现有的profiling工具，如perf等。在代码优化阶段往往需要借助开发者的经验，编写简洁高效的代码，甚至在汇编级别合理使用各种指令，合理安排各种指令的执行顺序。&lt;/p&gt;
+&lt;p&gt;perf是一款Linux性能分析工具。Linux性能计数器是一个新的基于内核的子系统，它提供一个性能分析框架，比如硬件（CPU、PMU(Performance Monitoring Unit)）功能和软件(软件计数器、tracepoint)功能。&lt;br&gt;通过perf，应用程序可以利用PMU、tracepoint和内核中的计数器来进行性能统计。它不但可以分析制定应用程序的性能问题（per thread），也可以用来分析内核的性能问题，当然也可以同时分析应用程序和内核，从而全面理解应用程序中的性能瓶颈。&lt;/p&gt;
+&lt;p&gt;使用perf，可以分析程序运行期间发生的硬件事件，比如instructions retired、processor clock cycles等；也可以分析软件时间，比如page fault和进程切换。&lt;/p&gt;
+&lt;p&gt;perf是一款综合性分析工具，大到系统全局性性能，再小到进程线程级别，甚至到函数及汇编级别。&lt;/p&gt;
+&lt;p&gt;perf提供了十八般武器，可以拿大刀大卸八块，也可以拿起手术刀细致分析。&lt;/p&gt;
+&lt;h1 id=&#34;1-背景知识&#34;&gt;&lt;a href=&#34;#1-背景知识&#34; class=&#34;headerlink&#34; title=&#34;1. 背景知识&#34;&gt;&lt;/a&gt;1. 背景知识&lt;/h1&gt;&lt;h2 id=&#34;1-1-tracepoints&#34;&gt;&lt;a href=&#34;#1-1-tracepoints&#34; class=&#34;headerlink&#34; title=&#34;1.1 tracepoints&#34;&gt;&lt;/a&gt;1.1 tracepoints&lt;/h2&gt;&lt;p&gt;tracepoints是散落在内核源码中的一些hook，它们可以在特定的代码被执行到时触发，这一特定可以被各种trace&amp;#x2F;debug工具所使用。&lt;/p&gt;
+&lt;p&gt;perf将tracepoint产生的时间记录下来，生成报告，通过分析这些报告，便可以了解程序运行期间内核的各种细节，对性能症状做出准确的诊断。&lt;/p&gt;
+&lt;p&gt;这些tracepint的对应的sysfs节点在&amp;#x2F;sys&amp;#x2F;kernel&amp;#x2F;debug&amp;#x2F;tracing&amp;#x2F;events目录下。&lt;/p&gt;
+&lt;h2 id=&#34;1-2-硬件特性之cache&#34;&gt;&lt;a href=&#34;#1-2-硬件特性之cache&#34; class=&#34;headerlink&#34; title=&#34;1.2 硬件特性之cache&#34;&gt;&lt;/a&gt;1.2 硬件特性之cache&lt;/h2&gt;&lt;p&gt;内存读写是很快的，但是还是无法和处理器指令执行速度相比。为了从内存中读取指令和数据，处理器需要等待，用处理器时间来衡量，这种等待非常漫长。cache是一种SRAM，读写速度非常快，能和处理器相匹配。因此将常用的数据保存在cache中，处理器便无需等待，从而提高性能。cache的尺寸一般都很小，充分利用cache是软件调优非常重要部分。&lt;/p&gt;
+&lt;h1 id=&#34;2-主要关注点&#34;&gt;&lt;a href=&#34;#2-主要关注点&#34; class=&#34;headerlink&#34; title=&#34;2. 主要关注点&#34;&gt;&lt;/a&gt;2. 主要关注点&lt;/h1&gt;&lt;p&gt;基于性能分析，可以进行算法优化（空间复杂度和时间复杂度权衡）、代码优化（提高执行速度、减少内存占用）。&lt;/p&gt;
+&lt;p&gt;评估程序对硬件资源的使用情况，例如各级cache的访问次数、各级cache的丢失次数、流水线停顿周期、前端总线访问次数等。&lt;/p&gt;
+&lt;p&gt;评估程序对操作系统资源的使用情况，系统调用次数、上下文切换次数、任务迁移次数。&lt;/p&gt;
+&lt;p&gt;事件可以分为三种：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Hardware Event由PMU部件产生，在特定的条件下探测性能事件是否发生以及发生的次数。比如cache命中。&lt;/li&gt;
+&lt;li&gt;Software Event是内核产生的事件，分布在各个功能模块中，统计和操作系统相关性能事件。比如进程切换，tick数等。&lt;/li&gt;
+&lt;li&gt;Tracepoint Event是内核中静态tracepoint所触发的事件，这些tracepoint用来判断程序运行期间内核的行为细节，比如slab分配器的分配次数等。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;3-perf的使用&#34;&gt;&lt;a href=&#34;#3-perf的使用&#34; class=&#34;headerlink&#34; title=&#34;3. perf的使用&#34;&gt;&lt;/a&gt;3. perf的使用&lt;/h1&gt;&lt;p&gt;perf –help后可以看到perf的二级命令&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2022/01/19/tool003/image-20220119120817508.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;3-1perf-list&#34;&gt;&lt;a href=&#34;#3-1perf-list&#34; class=&#34;headerlink&#34; title=&#34;3.1perf list&#34;&gt;&lt;/a&gt;3.1perf list&lt;/h2&gt;&lt;p&gt;perf list查看支持的事件类型&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2022/01/19/tool003/image-20220119121131231.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;3-2perf-top&#34;&gt;&lt;a href=&#34;#3-2perf-top&#34; class=&#34;headerlink&#34; title=&#34;3.2perf top&#34;&gt;&lt;/a&gt;3.2perf top&lt;/h2&gt;&lt;p&gt;即可以正常显示perf top如下：&lt;/p&gt;
+&lt;p&gt;第一列：符号引发的性能事件的比例，指占用的cpu周期比例。&lt;/p&gt;
+&lt;p&gt;第二列：符号所在的DSO(Dynamic Shared Object)，可以是应用程序、内核、动态链接库、模块。&lt;/p&gt;
+&lt;p&gt;第三列：DSO的类型。[.]表示此符号属于用户态的ELF文件，包括可执行文件与动态链接库；[k]表述此符号属于内核或模块。&lt;/p&gt;
+&lt;p&gt;第四列：符号名。有些符号不能解析为函数名，只能用地址表示。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2022/01/19/tool003/image-20220119121453395.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;3-3-perf-stat&#34;&gt;&lt;a href=&#34;#3-3-perf-stat&#34; class=&#34;headerlink&#34; title=&#34;3.3 perf stat&#34;&gt;&lt;/a&gt;3.3 perf stat&lt;/h2&gt;&lt;p&gt;perf stat用于运行指令，并分析其统计结果。虽然perf top也可以指定pid，但是必须先启动应用才能查看信息。&lt;/p&gt;
+&lt;p&gt;perf stat能完整统计应用整个生命周期的信息。&lt;/p&gt;
+&lt;p&gt;命令格式为：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;perf stat [-e &lt;EVENT&gt; | –event&amp;#x3D;EVENT] [-a] &lt;command&gt;&lt;br&gt;perf stat [-e &lt;EVENT&gt; | –event&amp;#x3D;EVENT] [-a] — &lt;command&gt; [&lt;options&gt;]&lt;/options&gt;&lt;/EVENT&gt;&lt;/EVENT&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;/2022/01/19/tool003/image-20220119122351095.png&#34; alt=&#34;image-20220119122351095&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2022/01/19/tool003/C2DDB2280E83453D6D8FE0D11A4380C3.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;cpu-clock：任务真正占用的处理器时间，单位为ms。CPUs utilized &amp;#x3D; task-clock &amp;#x2F; time elapsed，CPU的占用率。&lt;/p&gt;
+&lt;p&gt;context-switches：程序在运行过程中上下文的切换次数。&lt;/p&gt;
+&lt;p&gt;CPU-migrations：程序在运行过程中发生的处理器迁移次数。Linux为了维持多个处理器的负载均衡，在特定条件下会将某个任务从一个CPU迁移到另一个CPU。&lt;/p&gt;
+&lt;p&gt;CPU迁移和上下文切换：发生上下文切换不一定会发生CPU迁移，而发生CPU迁移时肯定会发生上下文切换。发生上下文切换有可能只是把上下文从当前CPU中换出，下一次调度器还是将进程安排在这个CPU上执行。&lt;/p&gt;
+&lt;p&gt;page-faults：缺页异常的次数。当应用程序请求的页面尚未建立、请求的页面不在内存中，或者请求的页面虽然在内存中，但物理地址和虚拟地址的映射关系尚未建立时，都会触发一次缺页异常。另外TLB不命中，页面访问权限不匹配等情况也会触发缺页异常。&lt;/p&gt;
+&lt;p&gt;cycles：消耗的处理器周期数。如果把被ls使用的cpu cycles看成是一个处理器的，那么它的主频为2.486GHz。可以用cycles &amp;#x2F; task-clock算出。&lt;/p&gt;
+&lt;p&gt;stalled-cycles-frontend：指令读取或解码的质量步骤，未能按理想状态发挥并行左右，发生停滞的时钟周期。&lt;/p&gt;
+&lt;p&gt;stalled-cycles-backend：指令执行步骤，发生停滞的时钟周期。&lt;/p&gt;
+&lt;p&gt;instructions：执行了多少条指令。IPC为平均每个cpu cycle执行了多少条指令。&lt;/p&gt;
+&lt;p&gt;branches：遇到的分支指令数。branch-misses是预测错误的分支指令数。&lt;/p&gt;
+&lt;h2 id=&#34;3-4-perf-record-amp-report&#34;&gt;&lt;a href=&#34;#3-4-perf-record-amp-report&#34; class=&#34;headerlink&#34; title=&#34;3.4 perf record &amp;amp; report&#34;&gt;&lt;/a&gt;3.4 perf record &amp;amp; report&lt;/h2&gt;&lt;p&gt;运行一个命令，并将其数据保存到perf.data中。随后，可以使用perf report进行分析。&lt;/p&gt;
+&lt;p&gt;perf record和perf report可以更精确的分析一个应用，perf record可以精确到函数级别。并且在函数里面混合显示汇编语言和代码。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2022/01/19/tool003/image-20220119123152290.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;1.编译程序(这里以test.c为例子)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2022/01/19/tool003/image-20220119124049654.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;2.perf record&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2022/01/19/tool003/image-20220119124217563.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;3.perf report&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2022/01/19/tool003/image-20220119124149337.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2022/01/19/tool003/image-20220119124013315.png&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h1&gt;&lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/arnoldlu/p/6241297.html&#34;&gt;系统级性能分析工具perf的介绍与使用 - ArnoldLu - 博客园 (cnblogs.com)&lt;/a&gt;-系统性能分析工具perf的介绍与使用&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.bilibili.com/video/BV1MK4y1m7Uj?from=search&amp;seid=11304698501320722134&amp;spm_id_from=333.337.0.0&#34;&gt;如何使用gcov和perf工具抓热点代码 - 陈小欧 - 20210331 - PLCT实验室_哔哩哔哩_bilibili&lt;/a&gt;-如何使用gcov和perf工具抓热点代码 - 陈小欧 - 20210331 - PLCT实验室&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://example.com/2022/01/18/tool002/</guid>
+            <title>gcov代码覆盖率测试</title>
+            <link>http://example.com/2022/01/18/tool002/</link>
+            <category>性能分析工具</category>
+            <pubDate>Tue, 18 Jan 2022 14:35:05 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;gcov代码覆盖率测试&#34;&gt;&lt;a href=&#34;#gcov代码覆盖率测试&#34; class=&#34;headerlink&#34; title=&#34;gcov代码覆盖率测试&#34;&gt;&lt;/a&gt;gcov代码覆盖率测试&lt;/h1&gt;&lt;h2 id=&#34;gcov的简单介绍&#34;&gt;&lt;a href=&#34;#gcov的简单介绍&#34; class=&#34;headerlink&#34; title=&#34;gcov的简单介绍&#34;&gt;&lt;/a&gt;gcov的简单介绍&lt;/h2&gt;&lt;p&gt;1.gcov是一个测试代码覆盖率的工具。与GCC一起使用来分析程序，以帮助创建更高效、更快的运行代码，并发现程序的未测试部分&lt;br&gt;2.是一个命令行方式的控制台程序。需要结合lcov,gcovr等前端图形工具才能实现统计数据图形化&lt;br&gt;3.伴随GCC发布，不需要单独下载gcov工具。配合GCC共同实现对c&amp;#x2F;c++文件的语句覆盖和分支覆盖测试&lt;br&gt;4.与程序概要分析工具（profiling tool，例如gprof）一起工作，可以估计程序中哪段代码最耗时&lt;/p&gt;
+&lt;h2 id=&#34;gcov能做什么&#34;&gt;&lt;a href=&#34;#gcov能做什么&#34; class=&#34;headerlink&#34; title=&#34;gcov能做什么&#34;&gt;&lt;/a&gt;gcov能做什么&lt;/h2&gt;&lt;p&gt;使用像gcov或gprof这样的分析器，您可以找到一些基本的性能统计数据：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;每一行代码执行的频率是多少&lt;/li&gt;
+&lt;li&gt;实际执行了哪些行代码，配合测试用例达到满意的覆盖率和预期工作&lt;/li&gt;
+&lt;li&gt;每段代码使用了多少计算时间，从而找到热点优化代码&lt;/li&gt;
+&lt;li&gt;gcov创建一个sourcefile.gcov的日志文件，此文件标识源文件sourcefile.c每一行执行的次数,您可以与gprof一起使用这些日志文件来帮助优化程序的性能。gprof提供了您可以使用的时间信息以及从gcov获得的信息。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;注意事项&#34;&gt;&lt;a href=&#34;#注意事项&#34; class=&#34;headerlink&#34; title=&#34;注意事项&#34;&gt;&lt;/a&gt;注意事项&lt;/h2&gt;&lt;p&gt;1.通过将一些代码行合并到一个函数中，可能不会提供足够的信息来查找代码使用大量计算机时间的“热点”。同样地，由于gcov按行(在最低的分辨率下)积累统计数据，它最适合于只在每行上放置一个语句的编程风格。如果您使用扩展到循环或其他控制结构的复杂宏，那么统计信息就没有那么有用了——它们只报告出现宏调用的行。如果您的复杂宏的行为类似于函数，那么您可以用inline fu替换它们。&lt;br&gt;2.gcov只在使用GCC编译的代码上工作。它与任何其他概要或测试覆盖机制不兼容。&lt;/p&gt;
+&lt;h2 id=&#34;使用gcov的3个阶段&#34;&gt;&lt;a href=&#34;#使用gcov的3个阶段&#34; class=&#34;headerlink&#34; title=&#34;使用gcov的3个阶段&#34;&gt;&lt;/a&gt;使用gcov的3个阶段&lt;/h2&gt;&lt;h3 id=&#34;1-编译阶段&#34;&gt;&lt;a href=&#34;#1-编译阶段&#34; class=&#34;headerlink&#34; title=&#34;1.编译阶段&#34;&gt;&lt;/a&gt;1.编译阶段&lt;/h3&gt;&lt;p&gt;要开启gcov功能，需要在源码编译参数中加入-fprofile-arcs -ftest-coverage&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;-ftest-coverage：在编译的时候产生.gcno文件，它包含了重建基本块图和相应的块的源码的行号的信息。&lt;/li&gt;
+&lt;li&gt;-fprofile-arcs：在运行编译过的程序的时候，会产生.gcda文件，它包含了弧跳变的次数等信息。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;以下我们以test.c这个程序为例子，源码如下：&lt;/p&gt;
+&lt;figure class=&#34;highlight c&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c&#34;&gt;&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;include&lt;/span&gt;&lt;span class=&#34;hljs-meta-string&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;()&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;/span&gt;&amp;#123;&lt;br&gt;	&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; n=&lt;span class=&#34;hljs-number&#34;&gt;4&lt;/span&gt;;&lt;br&gt;	&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;&lt;br&gt;	&lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;(i=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;i&amp;lt;n;i++)&lt;br&gt;	&amp;#123;&lt;br&gt;	   &lt;span class=&#34;hljs-built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;Hello World!\n&amp;quot;&lt;/span&gt;);&lt;br&gt;	&amp;#125;&lt;br&gt;	&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; a =&lt;span class=&#34;hljs-number&#34;&gt;20220118&lt;/span&gt;;&lt;br&gt;	&lt;span class=&#34;hljs-built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;%d\n&amp;quot;&lt;/span&gt;,a);&lt;br&gt;	&lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;编译阶段：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2022/01/18/tool002/image-20220118145007919.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;2-gcov收集代码运行信息&#34;&gt;&lt;a href=&#34;#2-gcov收集代码运行信息&#34; class=&#34;headerlink&#34; title=&#34;2. gcov收集代码运行信息&#34;&gt;&lt;/a&gt;2. gcov收集代码运行信息&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;运行&lt;code&gt;./test&lt;/code&gt;产生&lt;code&gt;test.gcda&lt;/code&gt;文件，其中包含了代码基本块和狐跳变次数统计信息&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;/2022/01/18/tool002/image-20220118145103922.png&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;3-生成gcov代码覆盖率报告&#34;&gt;&lt;a href=&#34;#3-生成gcov代码覆盖率报告&#34; class=&#34;headerlink&#34; title=&#34;3. 生成gcov代码覆盖率报告&#34;&gt;&lt;/a&gt;3. 生成gcov代码覆盖率报告&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;再次运行&lt;code&gt;gcov test.c&lt;/code&gt;产生的&lt;code&gt;test.c.gcov&lt;/code&gt;中包含了代码覆盖率数据,其数据的来源为&lt;code&gt;test.gcda&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;/2022/01/18/tool002/image-20220118145303290.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;4-查看生成gcov代码覆盖率报告&#34;&gt;&lt;a href=&#34;#4-查看生成gcov代码覆盖率报告&#34; class=&#34;headerlink&#34; title=&#34;4.查看生成gcov代码覆盖率报告&#34;&gt;&lt;/a&gt;4.查看生成gcov代码覆盖率报告&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;/2022/01/18/tool002/image-20220118145514099.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;可以看到以下结果：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;其中&lt;code&gt;#####&lt;/code&gt;表示未运行的行&lt;/li&gt;
+&lt;li&gt;每行前面的数字表示行运行的次数&lt;/li&gt;
+&lt;li&gt;—代表不必执行&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight c&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c&#34;&gt;-:    &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;:Source:test.c&lt;br&gt;-:    &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;:Graph:test.gcno&lt;br&gt;-:    &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;:Data:test.gcda&lt;br&gt;-:    &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;:Runs:&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;&lt;br&gt;-:    &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;:Programs:&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;&lt;br&gt;-:    &lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;:&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;include&lt;/span&gt;&lt;span class=&#34;hljs-meta-string&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;:    &lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt;:&lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;()&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;-:    3:&lt;/span&gt;&amp;#123;&lt;br&gt;&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;:    &lt;span class=&#34;hljs-number&#34;&gt;4&lt;/span&gt;:        &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; n=&lt;span class=&#34;hljs-number&#34;&gt;4&lt;/span&gt;;&lt;br&gt;&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;:    &lt;span class=&#34;hljs-number&#34;&gt;5&lt;/span&gt;:        &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;&lt;br&gt;&lt;span class=&#34;hljs-number&#34;&gt;5&lt;/span&gt;:    &lt;span class=&#34;hljs-number&#34;&gt;6&lt;/span&gt;:        &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;(i=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;i&amp;lt;n;i++)&lt;br&gt;-:    &lt;span class=&#34;hljs-number&#34;&gt;7&lt;/span&gt;:        &amp;#123;&lt;br&gt;&lt;span class=&#34;hljs-number&#34;&gt;4&lt;/span&gt;:    &lt;span class=&#34;hljs-number&#34;&gt;8&lt;/span&gt;:           &lt;span class=&#34;hljs-built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;Hello World!\n&amp;quot;&lt;/span&gt;);&lt;br&gt;-:    &lt;span class=&#34;hljs-number&#34;&gt;9&lt;/span&gt;:        &amp;#125;&lt;br&gt;&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;:   &lt;span class=&#34;hljs-number&#34;&gt;10&lt;/span&gt;:        &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; a =&lt;span class=&#34;hljs-number&#34;&gt;20220118&lt;/span&gt;;&lt;br&gt;&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;:   &lt;span class=&#34;hljs-number&#34;&gt;11&lt;/span&gt;:        &lt;span class=&#34;hljs-built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;%d\n&amp;quot;&lt;/span&gt;,a);&lt;br&gt;&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;:   &lt;span class=&#34;hljs-number&#34;&gt;12&lt;/span&gt;:        &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;&lt;br&gt;-:   &lt;span class=&#34;hljs-number&#34;&gt;13&lt;/span&gt;:&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h2 id=&#34;配合lcov使用，图形化显示&#34;&gt;&lt;a href=&#34;#配合lcov使用，图形化显示&#34; class=&#34;headerlink&#34; title=&#34;配合lcov使用，图形化显示&#34;&gt;&lt;/a&gt;配合lcov使用，图形化显示&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;1.centos安装lcov:&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;yum install lcov&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;2.运行lcov，生成相应信息&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2022/01/18/tool002/image-20220118151526665.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;运行结果：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2022/01/18/tool002/image-20220118151553801.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3.生成web可视化信息&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2022/01/18/tool002/image-20220118151821325.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;运行结果：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2022/01/18/tool002/image-20220118151853477.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;4.打包result文件&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2022/01/18/tool002/image-20220118152629648.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;5.从服务器下载到本地&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2022/01/18/tool002/image-20220118152705023.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;6.查看web&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;​					1）查看index.html：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2022/01/18/tool002/image-20220118152825105.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;​						2）详细信息：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2022/01/18/tool002/image-20220118152908078.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;上述界面包含：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;函数覆盖率（执行率）&lt;/li&gt;
+&lt;li&gt;代码行数覆盖率（执行率）&lt;/li&gt;
+&lt;li&gt;语句执行次数&lt;/li&gt;
+&lt;li&gt;源码级的详细信息&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/yanxiangyfg/article/details/80989680&#34;&gt;(6条消息) gcov代码覆盖率测试-原理和实践总结_yanxiangyfg的专栏-CSDN博客_gcov代码覆盖率&lt;/a&gt;-gcov代码覆盖率测试-原理和实践总结&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/u012247418/article/details/90137291&#34;&gt;(6条消息) 代码覆盖率测试工具：gcov和lcov的使用_ARM-Linux-CSDN博客&lt;/a&gt;-代码覆盖率测试工具：gcov和lcov的使用&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/haoshine/p/5777735.html&#34;&gt;linux文件夹打包命令 - 小作一个 - 博客园 (cnblogs.com)&lt;/a&gt;-Linux文件打包命令&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.bilibili.com/video/BV1MK4y1m7Uj?from=search&amp;seid=16561916178807634748&amp;spm_id_from=333.337.0.0&#34;&gt;如何使用gcov和perf工具抓热点代码 - 陈小欧 - 20210331 - PLCT实验室_哔哩哔哩_bilibili&lt;/a&gt;-如何使用gcov和perf工具抓热点代码 - 陈小欧 - 20210331 - PLCT实验室&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://example.com/2022/01/09/tool001/</guid>
+            <title>gprof、gprof2dot.py、dot使用方法简介</title>
+            <link>http://example.com/2022/01/09/tool001/</link>
+            <category>性能分析工具</category>
+            <pubDate>Sun, 09 Jan 2022 16:33:37 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;gprof、gprof2dot-py、dot使用方法简介&#34;&gt;&lt;a href=&#34;#gprof、gprof2dot-py、dot使用方法简介&#34; class=&#34;headerlink&#34; title=&#34;gprof、gprof2dot.py、dot使用方法简介&#34;&gt;&lt;/a&gt;gprof、gprof2dot.py、dot使用方法简介&lt;/h1&gt;&lt;h2 id=&#34;1-：gprof使用步骤如下，以SLIC为例：&#34;&gt;&lt;a href=&#34;#1-：gprof使用步骤如下，以SLIC为例：&#34; class=&#34;headerlink&#34; title=&#34;(1)：gprof使用步骤如下，以SLIC为例：&#34;&gt;&lt;/a&gt;(1)：gprof使用步骤如下，以SLIC为例：&lt;/h2&gt;&lt;h3 id=&#34;1-在编译过程中添加-pg选项，命令如下：&#34;&gt;&lt;a href=&#34;#1-在编译过程中添加-pg选项，命令如下：&#34; class=&#34;headerlink&#34; title=&#34;1 在编译过程中添加-pg选项，命令如下：&#34;&gt;&lt;/a&gt;1 在编译过程中添加-pg选项，命令如下：&lt;/h3&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;gcc -pg SLIC.cpp -o SLIC&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h3 id=&#34;2-运行程序，运行结束之后会形成文件gmon-out，命令如下&#34;&gt;&lt;a href=&#34;#2-运行程序，运行结束之后会形成文件gmon-out，命令如下&#34; class=&#34;headerlink&#34; title=&#34;2 运行程序，运行结束之后会形成文件gmon.out，命令如下:&#34;&gt;&lt;/a&gt;2 运行程序，运行结束之后会形成文件gmon.out，命令如下:&lt;/h3&gt;&lt;figure class=&#34;highlight jboss-cli&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs jboss-cli&#34;&gt;&lt;span class=&#34;hljs-string&#34;&gt;./SLIC&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h3 id=&#34;3-使用gprof再次执行程序，并将结果重定位到prof-log中，命令如下：&#34;&gt;&lt;a href=&#34;#3-使用gprof再次执行程序，并将结果重定位到prof-log中，命令如下：&#34; class=&#34;headerlink&#34; title=&#34;3 使用gprof再次执行程序，并将结果重定位到prof.log中，命令如下：&#34;&gt;&lt;/a&gt;3 使用gprof再次执行程序，并将结果重定位到prof.log中，命令如下：&lt;/h3&gt;&lt;figure class=&#34;highlight vim&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs vim&#34;&gt;gprof ./SLIC &amp;gt; &lt;span class=&#34;hljs-keyword&#34;&gt;prof&lt;/span&gt;.&lt;span class=&#34;hljs-built_in&#34;&gt;log&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;分析prof.log就可以获得程序的调用关系、函数执行时间等信息。对gprof的分析方法见以下blog&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://blog.csdn.net/macky0668/article/details/6839517&#34;&gt;http://blog.csdn.net/macky0668/article/details/6839517&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;2-：配合gprof2dot-py与dot工具的使用-我是安装在了Win10平台&#34;&gt;&lt;a href=&#34;#2-：配合gprof2dot-py与dot工具的使用-我是安装在了Win10平台&#34; class=&#34;headerlink&#34; title=&#34;(2)：配合gprof2dot.py与dot工具的使用(我是安装在了Win10平台)&#34;&gt;&lt;/a&gt;(2)：配合&lt;em&gt;gprof2dot.py&lt;/em&gt;与dot工具的使用(我是安装在了Win10平台)&lt;/h2&gt;&lt;p&gt;以上方法仍然存在一个问题就是分析结果不够直观，特别是函数的调用关系。因此为解决以上问题，可以配合&lt;em&gt;gprof2dot.py&lt;/em&gt;与dot工具的使用。&lt;/p&gt;
+&lt;h3 id=&#34;1-安装gprof2dot-py与dot&#34;&gt;&lt;a href=&#34;#1-安装gprof2dot-py与dot&#34; class=&#34;headerlink&#34; title=&#34;1.安装gprof2dot.py与dot&#34;&gt;&lt;/a&gt;1.安装&lt;em&gt;gprof2dot.py&lt;/em&gt;与dot&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/jrfonseca/gprof2dot&#34;&gt;GitHub - jrfonseca&amp;#x2F;gprof2dot: Converts profiling output to a dot graph.&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;2-通过以下地址可获得graphviz，安装graphviz后可使用dot工具&#34;&gt;&lt;a href=&#34;#2-通过以下地址可获得graphviz，安装graphviz后可使用dot工具&#34; class=&#34;headerlink&#34; title=&#34;2.通过以下地址可获得graphviz，安装graphviz后可使用dot工具&#34;&gt;&lt;/a&gt;2.通过以下地址可获得graphviz，安装graphviz后可使用dot工具&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://graphviz.org/download/source/&#34;&gt;Source Code | Graphviz&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在使用上述工具前，还需要先产生prof.log文件，prof.log文件的产生方法见上文。&lt;/p&gt;
+&lt;h3 id=&#34;3-首先通过命令行进入你安装gprof2dot-py的根目录：&#34;&gt;&lt;a href=&#34;#3-首先通过命令行进入你安装gprof2dot-py的根目录：&#34; class=&#34;headerlink&#34; title=&#34;3.首先通过命令行进入你安装gprof2dot.py的根目录：&#34;&gt;&lt;/a&gt;3.首先通过命令行进入你安装gprof2dot.py的根目录：&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;/2022/01/09/tool001/image-20220109165659998.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;4-通过以下命令即可得到函数调用图：&#34;&gt;&lt;a href=&#34;#4-通过以下命令即可得到函数调用图：&#34; class=&#34;headerlink&#34; title=&#34;4.通过以下命令即可得到函数调用图：&#34;&gt;&lt;/a&gt;4.通过以下命令即可得到函数调用图：&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;/2022/01/09/tool001/image-20220109170212157.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;5-结果如下：&#34;&gt;&lt;a href=&#34;#5-结果如下：&#34; class=&#34;headerlink&#34; title=&#34;5.结果如下：&#34;&gt;&lt;/a&gt;5.结果如下：&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;/2022/01/09/tool001/image-20220109170315471.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;3-：接上文补充几点可能无法产生gmon-out文件的情况：&#34;&gt;&lt;a href=&#34;#3-：接上文补充几点可能无法产生gmon-out文件的情况：&#34; class=&#34;headerlink&#34; title=&#34;(3)：接上文补充几点可能无法产生gmon.out文件的情况：&#34;&gt;&lt;/a&gt;(3)：接上文补充几点可能无法产生gmon.out文件的情况：&lt;/h2&gt;&lt;p&gt;  1.程序不是从main return或exit()退出，则可能不生成gmon.out。&lt;br&gt;  2.程序如果崩溃，可能不生成gmon.out。&lt;br&gt;  3.测试发现在虚拟机上运行，可能不生成gmon.out。&lt;br&gt;  4.程序忽略SIGPROF信号！一定不能捕获、忽略SIGPROF信号。man手册对SIGPROF的解释是：profiling timer expired. 如果忽略这个信号，gprof的输出则是：Each sample counts as 0.01 seconds. no time accumulated.&lt;br&gt;  5.如果程序运行时间非常短，则gprof可能无效&lt;/p&gt;
+&lt;h2 id=&#34;参考文献：&#34;&gt;&lt;a href=&#34;#参考文献：&#34; class=&#34;headerlink&#34; title=&#34;参考文献：&#34;&gt;&lt;/a&gt;参考文献：&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/u012927281/article/details/51132064&#34;&gt;(4条消息) gprof、gprof2dot.py、dot使用方法简介_Andy.Wang的博客-CSDN博客_gprof2dot&lt;/a&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

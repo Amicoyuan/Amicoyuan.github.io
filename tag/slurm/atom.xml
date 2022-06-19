@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>http://example.com</id>
+    <title>计算机奇妙之旅 • Posts by &#34;slurm&#34; tag</title>
+    <link href="http://example.com" />
+    <updated>2022-05-20T09:43:02.000Z</updated>
+    <category term="AVX" />
+    <category term="Data Structure" />
+    <category term="String" />
+    <category term="Find" />
+    <category term="STL" />
+    <category term="C++" />
+    <category term="Set" />
+    <category term="团体程序设计天梯赛" />
+    <category term="Sort" />
+    <category term="LinkList" />
+    <category term="双向链表" />
+    <category term="Graph" />
+    <category term="邻接表" />
+    <category term="Vector" />
+    <category term="Binary tree" />
+    <category term="BFS" />
+    <category term="模拟" />
+    <category term="邻接矩阵" />
+    <category term="DFS" />
+    <category term="结构体" />
+    <category term="贪心" />
+    <category term="Double类型相等比较" />
+    <category term="并查集" />
+    <category term="Map" />
+    <category term="Pair" />
+    <category term="KMP" />
+    <category term="线索二叉树" />
+    <category term="Tree" />
+    <category term="森林" />
+    <category term="Linux" />
+    <category term="MPI" />
+    <category term="Slurm" />
+    <category term="Numactl" />
+    <category term="Tensorflow" />
+    <category term="性能分析工具" />
+    <category term="gcov" />
+    <entry>
+        <id>http://example.com/2022/05/20/slurm001/</id>
+        <title>Slurm</title>
+        <link rel="alternate" href="http://example.com/2022/05/20/slurm001/"/>
+        <content type="html">&lt;h2 id=&#34;Slurm&#34;&gt;&lt;a href=&#34;#Slurm&#34; class=&#34;headerlink&#34; title=&#34;Slurm&#34;&gt;&lt;/a&gt;Slurm&lt;/h2&gt;&lt;h4 id=&#34;1-sstat-查看RUNNING作业&#34;&gt;&lt;a href=&#34;#1-sstat-查看RUNNING作业&#34; class=&#34;headerlink&#34; title=&#34;1.sstat 查看RUNNING作业&#34;&gt;&lt;/a&gt;1.sstat 查看RUNNING作业&lt;/h4&gt;&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs shell&#34;&gt;sstat -e&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;img src=&#34;/2022/05/20/slurm001/image-20220520174453969.png&#34; alt=&#34;image-20220520174453969&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;使用举例：&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs shell&#34;&gt;sstat -a --format=&amp;quot;JobId,Pids,AveCPU,AveRSS,MaxRSS&amp;quot;  1755818&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;img src=&#34;/2022/05/20/slurm001/image-20220520175001331.png&#34; alt=&#34;image-20220520175001331&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;2-sacct-查看FINISHED作业&#34;&gt;&lt;a href=&#34;#2-sacct-查看FINISHED作业&#34; class=&#34;headerlink&#34; title=&#34;2.sacct 查看FINISHED作业&#34;&gt;&lt;/a&gt;2.sacct 查看FINISHED作业&lt;/h4&gt;&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs shell&#34;&gt;sacct -e&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;img src=&#34;/2022/05/20/slurm001/image-20220520174622868.png&#34; alt=&#34;image-20220520174622868&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;使用举例：&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs shell&#34;&gt;sacct --format=&amp;quot;JobId,Elapsed,CPUTime,CPUTimeRAW,AveCPU,TotalCPU,UserCPU,SystemCPU,AveRSS,MaxRSS&amp;quot; -j 1754217&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;img src=&#34;/2022/05/20/slurm001/image-20220520174807162.png&#34; alt=&#34;image-20220520174807162&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;参考资料：&#34;&gt;&lt;a href=&#34;#参考资料：&#34; class=&#34;headerlink&#34; title=&#34;参考资料：&#34;&gt;&lt;/a&gt;参考资料：&lt;/h4&gt;&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/kongxx/article/details/52556943&#34;&gt;(28条消息) Slurm查看作业CPU和MEM_kongxx的博客-CSDN博客_slurm 查看节点&lt;/a&gt;&lt;/p&gt;
+</content>
+        <category term="Linux" />
+        <category term="Slurm" />
+        <updated>2022-05-20T09:43:02.000Z</updated>
+    </entry>
+</feed>
