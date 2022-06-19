@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://example.com</id>
-    <title>计算机奇妙之旅 • Posts by &#34;linux&#34; tag</title>
+    <title>Amicoyuan • Posts by &#34;linux&#34; tag</title>
     <link href="http://example.com" />
     <updated>2022-05-20T09:43:02.000Z</updated>
     <category term="AVX" />
@@ -21,10 +21,10 @@
     <category term="Binary tree" />
     <category term="BFS" />
     <category term="模拟" />
-    <category term="邻接矩阵" />
-    <category term="DFS" />
     <category term="结构体" />
     <category term="贪心" />
+    <category term="邻接矩阵" />
+    <category term="DFS" />
     <category term="Double类型相等比较" />
     <category term="并查集" />
     <category term="Map" />

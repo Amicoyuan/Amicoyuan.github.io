@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <rss version="2.0">
     <channel>
-        <title>计算机奇妙之旅 • Posts by &#34;gcov&#34; tag</title>
+        <title>Amicoyuan • Posts by &#34;gcov&#34; tag</title>
         <link>http://example.com</link>
         <description></description>
         <language>zh-CN</language>
@@ -24,10 +24,10 @@
         <category>Binary tree</category>
         <category>BFS</category>
         <category>模拟</category>
-        <category>邻接矩阵</category>
-        <category>DFS</category>
         <category>结构体</category>
         <category>贪心</category>
+        <category>邻接矩阵</category>
+        <category>DFS</category>
         <category>Double类型相等比较</category>
         <category>并查集</category>
         <category>Map</category>
