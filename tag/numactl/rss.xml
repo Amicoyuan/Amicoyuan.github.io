@@ -53,20 +53,20 @@
             <description><![CDATA[ &lt;ol&gt;
 &lt;li&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;pre&gt;&lt;code class=&#34;shell&#34;&gt;numactl --hardware
-&lt;/code&gt;&lt;/pre&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs shell&#34;&gt;numactl --hardware&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
 &lt;p&gt;&lt;img src=&#34;/2022/05/20/numactl001/image-20220520173911653.png&#34; alt=&#34;image-20220520173911653&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;pre&gt;&lt;code class=&#34;shelll&#34;&gt;numastat
-&lt;/code&gt;&lt;/pre&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs shelll&#34;&gt;numastat&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
 &lt;p&gt;&lt;img src=&#34;/2022/05/20/numactl001/image-20220520174030171.png&#34; alt=&#34;image-20220520174030171&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;3&#34;&gt;
 &lt;li&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;pre&gt;&lt;code class=&#34;c++&#34;&gt;numactl --show
-&lt;/code&gt;&lt;/pre&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;numactl --show&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
 &lt;p&gt;&lt;img src=&#34;/2022/05/20/numactl001/image-20220520174148487.png&#34; alt=&#34;image-20220520174148487&#34;&gt;&lt;/p&gt;
 &lt;h5 id=&#34;参考资料：&#34;&gt;&lt;a href=&#34;#参考资料：&#34; class=&#34;headerlink&#34; title=&#34;参考资料：&#34;&gt;&lt;/a&gt;参考资料：&lt;/h5&gt;&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/qccz123456/article/details/81979819&#34;&gt;(28条消息) Linux工具之numactl_qccz123456的博客-CSDN博客_numactl&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://baijiahao.baidu.com/s?id=1699088343604813491&amp;wfr=spider&amp;for=pc&amp;searchword=numactl&#34;&gt;宋宝华：为什么numactl内存绑定对代码段不起作用 (baidu.com)&lt;/a&gt;&lt;/p&gt;

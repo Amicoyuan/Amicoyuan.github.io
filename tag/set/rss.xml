@@ -56,55 +56,13 @@
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;输入第一行给出一个正整数&lt;em&gt;N&lt;/em&gt;（≤50），是集合的个数。随后&lt;em&gt;N&lt;/em&gt;行，每行对应一个集合。每个集合首先给出一个正整数&lt;em&gt;M&lt;/em&gt;（≤104），是集合中元素的个数；然后跟&lt;em&gt;M&lt;/em&gt;个[0,109]区间内的整数。&lt;/p&gt;
 &lt;p&gt;之后一行给出一个正整数&lt;em&gt;K&lt;/em&gt;（≤2000），随后&lt;em&gt;K&lt;/em&gt;行，每行对应一对需要计算相似度的集合的编号（集合从1到&lt;em&gt;N&lt;/em&gt;编号）。数字间以空格分隔。&lt;/p&gt;
 &lt;h3 id=&#34;输出格式：&#34;&gt;&lt;a href=&#34;#输出格式：&#34; class=&#34;headerlink&#34; title=&#34;输出格式：&#34;&gt;&lt;/a&gt;输出格式：&lt;/h3&gt;&lt;p&gt;对每一对需要计算的集合，在一行中输出它们的相似度，为保留小数点后2位的百分比数字。&lt;/p&gt;
-&lt;h3 id=&#34;输入样例：&#34;&gt;&lt;a href=&#34;#输入样例：&#34; class=&#34;headerlink&#34; title=&#34;输入样例：&#34;&gt;&lt;/a&gt;输入样例：&lt;/h3&gt;&lt;pre&gt;&lt;code class=&#34;in&#34;&gt;3
-3 99 87 101
-4 87 101 5 87
-7 99 101 18 5 135 18 99
-2
-1 2
-1 3
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;输出样例：&#34;&gt;&lt;a href=&#34;#输出样例：&#34; class=&#34;headerlink&#34; title=&#34;输出样例：&#34;&gt;&lt;/a&gt;输出样例：&lt;/h3&gt;&lt;pre&gt;&lt;code class=&#34;out&#34;&gt;50.00%
-33.33%
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;程序源代码：&#34;&gt;&lt;a href=&#34;#程序源代码：&#34; class=&#34;headerlink&#34; title=&#34;程序源代码：&#34;&gt;&lt;/a&gt;程序源代码：&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;双set模拟&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;c++&#34;&gt;#include&amp;lt;bits/stdc++.h&amp;gt;
-using namespace std;
-int main()
-&amp;#123;
-    int n;
-    set&amp;lt;int&amp;gt; s[55];
-    cin&amp;gt;&amp;gt;n;
-    for (int i = 0; i &amp;lt;n ; ++i) &amp;#123;
-        int time;
-        cin&amp;gt;&amp;gt;time;
-        for (int j = 0; j &amp;lt;time ; ++j) &amp;#123;
-            int num;
-            cin&amp;gt;&amp;gt;num;
-            s[i].insert(num);
-        &amp;#125;
-    &amp;#125;
-    int find;
-    cin&amp;gt;&amp;gt;find;
-    for (int l = 0; l &amp;lt;find ; ++l) &amp;#123;
-        int a,b;
-        cin&amp;gt;&amp;gt;a&amp;gt;&amp;gt;b;
-        int sum=0;
-        set&amp;lt;int&amp;gt;::iterator it;								//迭代器
-        int cnt=0;
-        for (it=s[a-1].begin(); it!=s[a-1].end() ; it++) &amp;#123;
-            if(s[b-1].find(*it)!=s[b-1].end())&amp;#123;				//找到了
-                cnt++;										//Nc
-            &amp;#125;
-        &amp;#125;
-        sum=s[a-1].size()+s[b-1].size()-cnt;				//Nt=两个集合的总个数-相同个数
-        double ans=double(double(cnt)/double(sum))*100.0;
-        printf(&amp;quot;%.2lf%\n&amp;quot;,ans);
+&lt;h3 id=&#34;输入样例：&#34;&gt;&lt;a href=&#34;#输入样例：&#34; class=&#34;headerlink&#34; title=&#34;输入样例：&#34;&gt;&lt;/a&gt;输入样例：&lt;/h3&gt;&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs in&#34;&gt;3&lt;br&gt;3 99 87 101&lt;br&gt;4 87 101 5 87&lt;br&gt;7 99 101 18 5 135 18 99&lt;br&gt;2&lt;br&gt;1 2&lt;br&gt;1 3&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
-    &amp;#125;
-    return 0;
-&amp;#125;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;输出样例：&#34;&gt;&lt;a href=&#34;#输出样例：&#34; class=&#34;headerlink&#34; title=&#34;输出样例：&#34;&gt;&lt;/a&gt;输出样例：&lt;/h3&gt;&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs out&#34;&gt;50.00%&lt;br&gt;33.33%&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h3 id=&#34;程序源代码：&#34;&gt;&lt;a href=&#34;#程序源代码：&#34; class=&#34;headerlink&#34; title=&#34;程序源代码：&#34;&gt;&lt;/a&gt;程序源代码：&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;双set模拟&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;36&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;include&lt;/span&gt;&lt;span class=&#34;hljs-meta-string&#34;&gt;&amp;lt;bits/stdc++.h&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;using&lt;/span&gt; &lt;span class=&#34;hljs-keyword&#34;&gt;namespace&lt;/span&gt; std;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;()&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;/span&gt;&amp;#123;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; n;&lt;br&gt;    set&amp;lt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;&amp;gt; s[&lt;span class=&#34;hljs-number&#34;&gt;55&lt;/span&gt;];&lt;br&gt;    cin&amp;gt;&amp;gt;n;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; (&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i = &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;; i &amp;lt;n ; ++i) &amp;#123;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; time;&lt;br&gt;        cin&amp;gt;&amp;gt;time;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; (&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; j = &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;; j &amp;lt;time ; ++j) &amp;#123;&lt;br&gt;            &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; num;&lt;br&gt;            cin&amp;gt;&amp;gt;num;&lt;br&gt;            s[i].&lt;span class=&#34;hljs-built_in&#34;&gt;insert&lt;/span&gt;(num);&lt;br&gt;        &amp;#125;&lt;br&gt;    &amp;#125;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; find;&lt;br&gt;    cin&amp;gt;&amp;gt;find;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; (&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; l = &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;; l &amp;lt;find ; ++l) &amp;#123;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; a,b;&lt;br&gt;        cin&amp;gt;&amp;gt;a&amp;gt;&amp;gt;b;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; sum=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;&lt;br&gt;        set&amp;lt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;&amp;gt;::iterator it;								&lt;span class=&#34;hljs-comment&#34;&gt;//迭代器&lt;/span&gt;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; cnt=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; (it=s[a&lt;span class=&#34;hljs-number&#34;&gt;-1&lt;/span&gt;].&lt;span class=&#34;hljs-built_in&#34;&gt;begin&lt;/span&gt;(); it!=s[a&lt;span class=&#34;hljs-number&#34;&gt;-1&lt;/span&gt;].&lt;span class=&#34;hljs-built_in&#34;&gt;end&lt;/span&gt;() ; it++) &amp;#123;&lt;br&gt;            &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(s[b&lt;span class=&#34;hljs-number&#34;&gt;-1&lt;/span&gt;].&lt;span class=&#34;hljs-built_in&#34;&gt;find&lt;/span&gt;(*it)!=s[b&lt;span class=&#34;hljs-number&#34;&gt;-1&lt;/span&gt;].&lt;span class=&#34;hljs-built_in&#34;&gt;end&lt;/span&gt;())&amp;#123;				&lt;span class=&#34;hljs-comment&#34;&gt;//找到了&lt;/span&gt;&lt;br&gt;                cnt++;										&lt;span class=&#34;hljs-comment&#34;&gt;//Nc&lt;/span&gt;&lt;br&gt;            &amp;#125;&lt;br&gt;        &amp;#125;&lt;br&gt;        sum=s[a&lt;span class=&#34;hljs-number&#34;&gt;-1&lt;/span&gt;].&lt;span class=&#34;hljs-built_in&#34;&gt;size&lt;/span&gt;()+s[b&lt;span class=&#34;hljs-number&#34;&gt;-1&lt;/span&gt;].&lt;span class=&#34;hljs-built_in&#34;&gt;size&lt;/span&gt;()-cnt;				&lt;span class=&#34;hljs-comment&#34;&gt;//Nt=两个集合的总个数-相同个数&lt;/span&gt;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;double&lt;/span&gt; ans=&lt;span class=&#34;hljs-built_in&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;double&lt;/span&gt;&lt;/span&gt;(&lt;span class=&#34;hljs-built_in&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;double&lt;/span&gt;&lt;/span&gt;(cnt)/&lt;span class=&#34;hljs-built_in&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;double&lt;/span&gt;&lt;/span&gt;(sum))*&lt;span class=&#34;hljs-number&#34;&gt;100.0&lt;/span&gt;;&lt;br&gt;        &lt;span class=&#34;hljs-built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;%.2lf%\n&amp;quot;&lt;/span&gt;,ans);&lt;br&gt;&lt;br&gt;    &amp;#125;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
 &lt;h3 id=&#34;参考资料：&#34;&gt;&lt;a href=&#34;#参考资料：&#34; class=&#34;headerlink&#34; title=&#34;参考资料：&#34;&gt;&lt;/a&gt;参考资料：&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://pintia.cn/problem-sets/994805046380707840/problems/994805070149828608&#34;&gt;题目详情 - L2-005 集合相似度 (25 分) (pintia.cn)&lt;/a&gt;&lt;/p&gt;
  ]]></description>
         </item>
@@ -126,74 +84,13 @@ int main()
 &lt;h3 id=&#34;输出格式：&#34;&gt;&lt;a href=&#34;#输出格式：&#34; class=&#34;headerlink&#34; title=&#34;输出格式：&#34;&gt;&lt;/a&gt;输出格式：&lt;/h3&gt;&lt;p&gt;对每种颜色分配方案，如果是图着色问题的一个解则输出&lt;code&gt;Yes&lt;/code&gt;，否则输出&lt;code&gt;No&lt;/code&gt;，每句占一行。&lt;/p&gt;
 &lt;h3 id=&#34;输入样例：&#34;&gt;&lt;a href=&#34;#输入样例：&#34; class=&#34;headerlink&#34; title=&#34;输入样例：&#34;&gt;&lt;/a&gt;输入样例：&lt;/h3&gt;&lt;img src=&#34;/2022/04/12/Algorithm018/graph.png&#34; alt=&#34;graph&#34; style=&#34;zoom: 67%;&#34;&gt;
 
-&lt;pre&gt;&lt;code class=&#34;in&#34;&gt;6 8 3
-2 1
-1 3
-4 6
-2 5
-2 4
-5 4
-5 6
-3 6
-4
-1 2 3 3 1 2
-4 5 6 6 4 5
-1 2 3 4 5 6
-2 3 4 2 3 4
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;输出样例：&#34;&gt;&lt;a href=&#34;#输出样例：&#34; class=&#34;headerlink&#34; title=&#34;输出样例：&#34;&gt;&lt;/a&gt;输出样例：&lt;/h3&gt;&lt;pre&gt;&lt;code class=&#34;out&#34;&gt;Yes
-Yes
-No
-No
-&lt;/code&gt;&lt;/pre&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs in&#34;&gt;6 8 3&lt;br&gt;2 1&lt;br&gt;1 3&lt;br&gt;4 6&lt;br&gt;2 5&lt;br&gt;2 4&lt;br&gt;5 4&lt;br&gt;5 6&lt;br&gt;3 6&lt;br&gt;4&lt;br&gt;1 2 3 3 1 2&lt;br&gt;4 5 6 6 4 5&lt;br&gt;1 2 3 4 5 6&lt;br&gt;2 3 4 2 3 4&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h3 id=&#34;输出样例：&#34;&gt;&lt;a href=&#34;#输出样例：&#34; class=&#34;headerlink&#34; title=&#34;输出样例：&#34;&gt;&lt;/a&gt;输出样例：&lt;/h3&gt;&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs out&#34;&gt;Yes&lt;br&gt;Yes&lt;br&gt;No&lt;br&gt;No&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
 &lt;h3 id=&#34;程序源代码&#34;&gt;&lt;a href=&#34;#程序源代码&#34; class=&#34;headerlink&#34; title=&#34;程序源代码&#34;&gt;&lt;/a&gt;程序源代码&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Set + 邻接表&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;c++&#34;&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
-using namespace std;
-int main()
-&amp;#123;
-    int v,e,k;
-    cin&amp;gt;&amp;gt;v&amp;gt;&amp;gt;e&amp;gt;&amp;gt;k;
-    vector&amp;lt;int&amp;gt; g[505];			//邻接表
-    int color[505];				//记录颜色
-    for (int i = 0; i &amp;lt;e ; ++i) &amp;#123;       //建立邻接表
-        int a,b;
-        cin&amp;gt;&amp;gt;a&amp;gt;&amp;gt;b;
-        g[a].push_back(b);
-        g[b].push_back(a);
-    &amp;#125;
-    int time;
-    cin&amp;gt;&amp;gt;time;
-    for (int j = 0; j &amp;lt;time ; ++j) &amp;#123;
-        int flag=1;
-        set&amp;lt;int&amp;gt; s;					//用来统计颜色总数
-        s.clear();
-        for (int i = 1; i &amp;lt;=v; ++i) &amp;#123;
-            int num;
-            cin&amp;gt;&amp;gt;num;
-            color[i]=num;
-            s.insert(num);
-        &amp;#125;
-        if(s.size()!=k)&amp;#123;			//如果颜色数不等于k即非法
-            cout&amp;lt;&amp;lt;&amp;quot;No&amp;quot;&amp;lt;&amp;lt;endl;
-            continue;
-        &amp;#125;
-        for (int l = 1; l &amp;lt;=v ; ++l) &amp;#123;						//遍历邻接表
-            for (int i = 0; i &amp;lt;g[l].size(); ++i) &amp;#123;
-                if(color[l]==color[g[l][i]])&amp;#123;				//如果相邻结点颜色一样则为假
-                    flag=0;
-                    break;
-                &amp;#125;
-            &amp;#125;
-        &amp;#125;
-        if(flag==1)&amp;#123;
-            cout&amp;lt;&amp;lt;&amp;quot;Yes&amp;quot;&amp;lt;&amp;lt;endl;
-        &amp;#125;else&amp;#123;
-            cout&amp;lt;&amp;lt;&amp;quot;No&amp;quot;&amp;lt;&amp;lt;endl;
-        &amp;#125;
-    &amp;#125;
-    return 0;
-&amp;#125;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;45&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;46&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;hljs-meta-string&#34;&gt;&amp;lt;bits/stdc++.h&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;using&lt;/span&gt; &lt;span class=&#34;hljs-keyword&#34;&gt;namespace&lt;/span&gt; std;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;()&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;/span&gt;&amp;#123;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; v,e,k;&lt;br&gt;    cin&amp;gt;&amp;gt;v&amp;gt;&amp;gt;e&amp;gt;&amp;gt;k;&lt;br&gt;    vector&amp;lt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;&amp;gt; g[&lt;span class=&#34;hljs-number&#34;&gt;505&lt;/span&gt;];			&lt;span class=&#34;hljs-comment&#34;&gt;//邻接表&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; color[&lt;span class=&#34;hljs-number&#34;&gt;505&lt;/span&gt;];				&lt;span class=&#34;hljs-comment&#34;&gt;//记录颜色&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; (&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i = &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;; i &amp;lt;e ; ++i) &amp;#123;       &lt;span class=&#34;hljs-comment&#34;&gt;//建立邻接表&lt;/span&gt;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; a,b;&lt;br&gt;        cin&amp;gt;&amp;gt;a&amp;gt;&amp;gt;b;&lt;br&gt;        g[a].&lt;span class=&#34;hljs-built_in&#34;&gt;push_back&lt;/span&gt;(b);&lt;br&gt;        g[b].&lt;span class=&#34;hljs-built_in&#34;&gt;push_back&lt;/span&gt;(a);&lt;br&gt;    &amp;#125;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; time;&lt;br&gt;    cin&amp;gt;&amp;gt;time;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; (&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; j = &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;; j &amp;lt;time ; ++j) &amp;#123;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; flag=&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;;&lt;br&gt;        set&amp;lt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;&amp;gt; s;					&lt;span class=&#34;hljs-comment&#34;&gt;//用来统计颜色总数&lt;/span&gt;&lt;br&gt;        s.&lt;span class=&#34;hljs-built_in&#34;&gt;clear&lt;/span&gt;();&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; (&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i = &lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;; i &amp;lt;=v; ++i) &amp;#123;&lt;br&gt;            &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; num;&lt;br&gt;            cin&amp;gt;&amp;gt;num;&lt;br&gt;            color[i]=num;&lt;br&gt;            s.&lt;span class=&#34;hljs-built_in&#34;&gt;insert&lt;/span&gt;(num);&lt;br&gt;        &amp;#125;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(s.&lt;span class=&#34;hljs-built_in&#34;&gt;size&lt;/span&gt;()!=k)&amp;#123;			&lt;span class=&#34;hljs-comment&#34;&gt;//如果颜色数不等于k即非法&lt;/span&gt;&lt;br&gt;            cout&amp;lt;&amp;lt;&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;No&amp;quot;&lt;/span&gt;&amp;lt;&amp;lt;endl;&lt;br&gt;            &lt;span class=&#34;hljs-keyword&#34;&gt;continue&lt;/span&gt;;&lt;br&gt;        &amp;#125;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; (&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; l = &lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;; l &amp;lt;=v ; ++l) &amp;#123;						&lt;span class=&#34;hljs-comment&#34;&gt;//遍历邻接表&lt;/span&gt;&lt;br&gt;            &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; (&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i = &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;; i &amp;lt;g[l].&lt;span class=&#34;hljs-built_in&#34;&gt;size&lt;/span&gt;(); ++i) &amp;#123;&lt;br&gt;                &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(color[l]==color[g[l][i]])&amp;#123;				&lt;span class=&#34;hljs-comment&#34;&gt;//如果相邻结点颜色一样则为假&lt;/span&gt;&lt;br&gt;                    flag=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;&lt;br&gt;                    &lt;span class=&#34;hljs-keyword&#34;&gt;break&lt;/span&gt;;&lt;br&gt;                &amp;#125;&lt;br&gt;            &amp;#125;&lt;br&gt;        &amp;#125;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(flag==&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;)&amp;#123;&lt;br&gt;            cout&amp;lt;&amp;lt;&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;Yes&amp;quot;&lt;/span&gt;&amp;lt;&amp;lt;endl;&lt;br&gt;        &amp;#125;&lt;span class=&#34;hljs-keyword&#34;&gt;else&lt;/span&gt;&amp;#123;&lt;br&gt;            cout&amp;lt;&amp;lt;&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;No&amp;quot;&lt;/span&gt;&amp;lt;&amp;lt;endl;&lt;br&gt;        &amp;#125;&lt;br&gt;    &amp;#125;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
 &lt;h3 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://pintia.cn/problem-sets/994805046380707840/problems/994805057298481152&#34;&gt;题目详情 - L2-023 图着色问题 (25 分) (pintia.cn)&lt;/a&gt;&lt;/p&gt;
  ]]></description>
         </item>
@@ -210,54 +107,13 @@ int main()
             <description><![CDATA[ &lt;h1 id=&#34;L2-021-点赞狂魔-25-分&#34;&gt;&lt;a href=&#34;#L2-021-点赞狂魔-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-021 点赞狂魔 (25 分)&#34;&gt;&lt;/a&gt;L2-021 点赞狂魔 (25 分)&lt;/h1&gt;&lt;p&gt;微博上有个“点赞”功能，你可以为你喜欢的博文点个赞表示支持。每篇博文都有一些刻画其特性的标签，而你点赞的博文的类型，也间接刻画了你的特性。然而有这么一种人，他们会通过给自己看到的一切内容点赞来狂刷存在感，这种人就被称为“点赞狂魔”。他们点赞的标签非常分散，无法体现出明显的特性。本题就要求你写个程序，通过统计每个人点赞的不同标签的数量，找出前3名点赞狂魔。&lt;/p&gt;
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;输入在第一行给出一个正整数&lt;em&gt;N&lt;/em&gt;（≤100），是待统计的用户数。随后&lt;em&gt;N&lt;/em&gt;行，每行列出一位用户的点赞标签。格式为“&lt;code&gt;Name&lt;/code&gt; &lt;em&gt;K&lt;/em&gt; &lt;em&gt;F&lt;/em&gt;1⋯&lt;em&gt;F**K&lt;/em&gt;”，其中&lt;code&gt;Name&lt;/code&gt;是不超过8个英文小写字母的非空用户名，1≤&lt;em&gt;K&lt;/em&gt;≤1000，&lt;em&gt;F**i&lt;/em&gt;（&lt;em&gt;i&lt;/em&gt;&amp;#x3D;1,⋯,&lt;em&gt;K&lt;/em&gt;）是特性标签的编号，我们将所有特性标签从 1 到 107 编号。数字间以空格分隔。&lt;/p&gt;
 &lt;h3 id=&#34;输出格式：&#34;&gt;&lt;a href=&#34;#输出格式：&#34; class=&#34;headerlink&#34; title=&#34;输出格式：&#34;&gt;&lt;/a&gt;输出格式：&lt;/h3&gt;&lt;p&gt;统计每个人点赞的不同标签的数量，找出数量最大的前3名，在一行中顺序输出他们的用户名,其间以1个空格分隔,且行末不得有多余空格。如果有并列，则输出标签出现次数平均值最小的那个，题目保证这样的用户没有并列。若不足3人，则用&lt;code&gt;-&lt;/code&gt;补齐缺失，例如&lt;code&gt;mike jenny -&lt;/code&gt;就表示只有2人。&lt;/p&gt;
-&lt;h3 id=&#34;输入样例：&#34;&gt;&lt;a href=&#34;#输入样例：&#34; class=&#34;headerlink&#34; title=&#34;输入样例：&#34;&gt;&lt;/a&gt;输入样例：&lt;/h3&gt;&lt;pre&gt;&lt;code class=&#34;in&#34;&gt;5
-bob 11 101 102 103 104 105 106 107 108 108 107 107
-peter 8 1 2 3 4 3 2 5 1
-chris 12 1 2 3 4 5 6 7 8 9 1 2 3
-john 10 8 7 6 5 4 3 2 1 7 5
-jack 9 6 7 8 9 10 11 12 13 14
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;输出样例：&#34;&gt;&lt;a href=&#34;#输出样例：&#34; class=&#34;headerlink&#34; title=&#34;输出样例：&#34;&gt;&lt;/a&gt;输出样例：&lt;/h3&gt;&lt;pre&gt;&lt;code class=&#34;out&#34;&gt;jack chris john
-&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;输入样例：&#34;&gt;&lt;a href=&#34;#输入样例：&#34; class=&#34;headerlink&#34; title=&#34;输入样例：&#34;&gt;&lt;/a&gt;输入样例：&lt;/h3&gt;&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs in&#34;&gt;5&lt;br&gt;bob 11 101 102 103 104 105 106 107 108 108 107 107&lt;br&gt;peter 8 1 2 3 4 3 2 5 1&lt;br&gt;chris 12 1 2 3 4 5 6 7 8 9 1 2 3&lt;br&gt;john 10 8 7 6 5 4 3 2 1 7 5&lt;br&gt;jack 9 6 7 8 9 10 11 12 13 14&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h3 id=&#34;输出样例：&#34;&gt;&lt;a href=&#34;#输出样例：&#34; class=&#34;headerlink&#34; title=&#34;输出样例：&#34;&gt;&lt;/a&gt;输出样例：&lt;/h3&gt;&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs out&#34;&gt;jack chris john&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
 &lt;h3 id=&#34;程序源代码&#34;&gt;&lt;a href=&#34;#程序源代码&#34; class=&#34;headerlink&#34; title=&#34;程序源代码&#34;&gt;&lt;/a&gt;程序源代码&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;结构体数组 + sort排序&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;c++&#34;&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
-using namespace std;
-struct person&amp;#123;
-    char name[10];
-    set&amp;lt;int&amp;gt; s;				//set容器中的每个元素值唯一
-    int all=0;				//记录点赞次数
-&amp;#125;;
-bool cmp(person a,person b)&amp;#123;
-    if(a.s.size()==b.s.size()) return a.all&amp;lt;b.all;			//如果有并列，则输出标签出现次数平均值最小的那个
-    return a.s.size()&amp;gt;b.s.size();							//点赞的不同标签的数量最多的
-&amp;#125;
-int main()
-&amp;#123;
-    int n;
-    cin&amp;gt;&amp;gt;n;
-    person p[n];
-    for (int i = 0; i &amp;lt;n ; ++i) &amp;#123;
-        cin&amp;gt;&amp;gt;p[i].name;
-        int time;
-        cin&amp;gt;&amp;gt;time;
-        p[i].all=time;										//记录点赞次数
-        for (int j = 0; j &amp;lt; time; ++j) &amp;#123;
-            int tmp;
-            cin&amp;gt;&amp;gt;tmp;
-            p[i].s.insert(tmp);								//插入set容器
-        &amp;#125;
-    &amp;#125;
-    sort(p,p+n,cmp);										//排序
-    if(n&amp;gt;=3)&amp;#123;
-        cout&amp;lt;&amp;lt;p[0].name&amp;lt;&amp;lt;&amp;quot; &amp;quot;&amp;lt;&amp;lt;p[1].name&amp;lt;&amp;lt;&amp;quot; &amp;quot;&amp;lt;&amp;lt;p[2].name&amp;lt;&amp;lt;endl;
-    &amp;#125; else if(n==2)&amp;#123;
-        cout&amp;lt;&amp;lt;p[0].name&amp;lt;&amp;lt;&amp;quot; &amp;quot;&amp;lt;&amp;lt;p[1].name&amp;lt;&amp;lt;&amp;quot; &amp;quot;&amp;lt;&amp;lt;&amp;quot;-&amp;quot;&amp;lt;&amp;lt;endl;
-    &amp;#125;else if(n==1)&amp;#123;
-        cout&amp;lt;&amp;lt;p[0].name&amp;lt;&amp;lt;&amp;quot; &amp;quot;&amp;lt;&amp;lt;&amp;quot;-&amp;quot;&amp;lt;&amp;lt;&amp;quot; &amp;quot;&amp;lt;&amp;lt;&amp;quot;-&amp;quot;&amp;lt;&amp;lt;endl;
-    &amp;#125;
-    return 0;
-&amp;#125;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;37&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;hljs-meta-string&#34;&gt;&amp;lt;bits/stdc++.h&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;using&lt;/span&gt; &lt;span class=&#34;hljs-keyword&#34;&gt;namespace&lt;/span&gt; std;&lt;br&gt;&lt;span class=&#34;hljs-class&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;person&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;char&lt;/span&gt; name[&lt;span class=&#34;hljs-number&#34;&gt;10&lt;/span&gt;];&lt;br&gt;    set&amp;lt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;&amp;gt; s;				&lt;span class=&#34;hljs-comment&#34;&gt;//set容器中的每个元素值唯一&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; all=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;				&lt;span class=&#34;hljs-comment&#34;&gt;//记录点赞次数&lt;/span&gt;&lt;br&gt;&amp;#125;;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;bool&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;cmp&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(person a,person b)&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(a.s.&lt;span class=&#34;hljs-built_in&#34;&gt;size&lt;/span&gt;()==b.s.&lt;span class=&#34;hljs-built_in&#34;&gt;size&lt;/span&gt;()) &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; a.all&amp;lt;b.all;			&lt;span class=&#34;hljs-comment&#34;&gt;//如果有并列，则输出标签出现次数平均值最小的那个&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; a.s.&lt;span class=&#34;hljs-built_in&#34;&gt;size&lt;/span&gt;()&amp;gt;b.s.&lt;span class=&#34;hljs-built_in&#34;&gt;size&lt;/span&gt;();							&lt;span class=&#34;hljs-comment&#34;&gt;//点赞的不同标签的数量最多的&lt;/span&gt;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;()&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;/span&gt;&amp;#123;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; n;&lt;br&gt;    cin&amp;gt;&amp;gt;n;&lt;br&gt;    person p[n];&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; (&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i = &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;; i &amp;lt;n ; ++i) &amp;#123;&lt;br&gt;        cin&amp;gt;&amp;gt;p[i].name;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; time;&lt;br&gt;        cin&amp;gt;&amp;gt;time;&lt;br&gt;        p[i].all=time;										&lt;span class=&#34;hljs-comment&#34;&gt;//记录点赞次数&lt;/span&gt;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; (&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; j = &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;; j &amp;lt; time; ++j) &amp;#123;&lt;br&gt;            &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; tmp;&lt;br&gt;            cin&amp;gt;&amp;gt;tmp;&lt;br&gt;            p[i].s.&lt;span class=&#34;hljs-built_in&#34;&gt;insert&lt;/span&gt;(tmp);								&lt;span class=&#34;hljs-comment&#34;&gt;//插入set容器&lt;/span&gt;&lt;br&gt;        &amp;#125;&lt;br&gt;    &amp;#125;&lt;br&gt;    &lt;span class=&#34;hljs-built_in&#34;&gt;sort&lt;/span&gt;(p,p+n,cmp);										&lt;span class=&#34;hljs-comment&#34;&gt;//排序&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(n&amp;gt;=&lt;span class=&#34;hljs-number&#34;&gt;3&lt;/span&gt;)&amp;#123;&lt;br&gt;        cout&amp;lt;&amp;lt;p[&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;].name&amp;lt;&amp;lt;&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot; &amp;quot;&lt;/span&gt;&amp;lt;&amp;lt;p[&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;].name&amp;lt;&amp;lt;&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot; &amp;quot;&lt;/span&gt;&amp;lt;&amp;lt;p[&lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt;].name&amp;lt;&amp;lt;endl;&lt;br&gt;    &amp;#125; &lt;span class=&#34;hljs-keyword&#34;&gt;else&lt;/span&gt; &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(n==&lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt;)&amp;#123;&lt;br&gt;        cout&amp;lt;&amp;lt;p[&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;].name&amp;lt;&amp;lt;&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot; &amp;quot;&lt;/span&gt;&amp;lt;&amp;lt;p[&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;].name&amp;lt;&amp;lt;&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot; &amp;quot;&lt;/span&gt;&amp;lt;&amp;lt;&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;-&amp;quot;&lt;/span&gt;&amp;lt;&amp;lt;endl;&lt;br&gt;    &amp;#125;&lt;span class=&#34;hljs-keyword&#34;&gt;else&lt;/span&gt; &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(n==&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;)&amp;#123;&lt;br&gt;        cout&amp;lt;&amp;lt;p[&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;].name&amp;lt;&amp;lt;&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot; &amp;quot;&lt;/span&gt;&amp;lt;&amp;lt;&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;-&amp;quot;&lt;/span&gt;&amp;lt;&amp;lt;&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot; &amp;quot;&lt;/span&gt;&amp;lt;&amp;lt;&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;-&amp;quot;&lt;/span&gt;&amp;lt;&amp;lt;endl;&lt;br&gt;    &amp;#125;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
 &lt;h3 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://pintia.cn/problem-sets/994805046380707840/problems/994805058485469184&#34;&gt;题目详情 - L2-021 点赞狂魔 (25 分) (pintia.cn)&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/changjiale110/article/details/79108447&#34;&gt;(19条消息) STL中的set使用方法详细！！！！_知足–常乐的博客-CSDN博客_set stl&lt;/a&gt;&lt;/p&gt;
  ]]></description>
