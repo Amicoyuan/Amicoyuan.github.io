@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>国内常用镜像源</title>
+    <link href="/2022/06/22/mirror001/"/>
+    <url>/2022/06/22/mirror001/</url>
+    
+    <content type="html"><![CDATA[<h2 id="国内常用镜像源"><a href="#国内常用镜像源" class="headerlink" title="国内常用镜像源"></a>国内常用镜像源</h2><figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++">清华大学： https:<span class="hljs-comment">//pypi.tuna.tsinghua.edu.cn/simple/</span><br>阿里云： https:<span class="hljs-comment">//mirrors.aliyun.com/pypi/simple/</span><br>豆瓣： http:<span class="hljs-comment">//pypi.douban.com/simple/</span><br>中国科学技术大学： http:<span class="hljs-comment">//pypi.mirrors.ustc.edu.cn/simple/</span><br>华中科技大学：http:<span class="hljs-comment">//pypi.hustunique.com/simple/</span><br>山东理工大学：http:<span class="hljs-comment">//pypi.sdutlinux.org/simple/</span><br></code></pre></div></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Machine Learning</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Mirror</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>内存对齐</title>
     <link href="/2022/06/12/%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90/"/>
     <url>/2022/06/12/%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90/</url>

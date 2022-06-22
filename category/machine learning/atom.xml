@@ -3,7 +3,7 @@
     <id>http://example.com</id>
     <title>Amicoyuan • Posts by &#34;machine learning&#34; category</title>
     <link href="http://example.com" />
-    <updated>2021-12-09T06:59:11.000Z</updated>
+    <updated>2022-06-22T12:13:38.000Z</updated>
     <category term="AVX" />
     <category term="Data Structure" />
     <category term="String" />
@@ -30,16 +30,27 @@
     <category term="Map" />
     <category term="Pair" />
     <category term="KMP" />
-    <category term="Linux" />
     <category term="线索二叉树" />
     <category term="Tree" />
     <category term="森林" />
+    <category term="Linux" />
     <category term="MPI" />
-    <category term="Numactl" />
     <category term="Slurm" />
+    <category term="Mirror" />
+    <category term="Numactl" />
     <category term="Tensorflow" />
     <category term="性能分析工具" />
     <category term="gcov" />
+    <entry>
+        <id>http://example.com/2022/06/22/mirror001/</id>
+        <title>国内常用镜像源</title>
+        <link rel="alternate" href="http://example.com/2022/06/22/mirror001/"/>
+        <content type="html">&lt;h2 id=&#34;国内常用镜像源&#34;&gt;&lt;a href=&#34;#国内常用镜像源&#34; class=&#34;headerlink&#34; title=&#34;国内常用镜像源&#34;&gt;&lt;/a&gt;国内常用镜像源&lt;/h2&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;清华大学： https:&lt;span class=&#34;hljs-comment&#34;&gt;//pypi.tuna.tsinghua.edu.cn/simple/&lt;/span&gt;&lt;br&gt;阿里云： https:&lt;span class=&#34;hljs-comment&#34;&gt;//mirrors.aliyun.com/pypi/simple/&lt;/span&gt;&lt;br&gt;豆瓣： http:&lt;span class=&#34;hljs-comment&#34;&gt;//pypi.douban.com/simple/&lt;/span&gt;&lt;br&gt;中国科学技术大学： http:&lt;span class=&#34;hljs-comment&#34;&gt;//pypi.mirrors.ustc.edu.cn/simple/&lt;/span&gt;&lt;br&gt;华中科技大学：http:&lt;span class=&#34;hljs-comment&#34;&gt;//pypi.hustunique.com/simple/&lt;/span&gt;&lt;br&gt;山东理工大学：http:&lt;span class=&#34;hljs-comment&#34;&gt;//pypi.sdutlinux.org/simple/&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+</content>
+        <category term="Mirror" />
+        <updated>2022-06-22T12:13:38.000Z</updated>
+    </entry>
     <entry>
         <id>http://example.com/2021/12/09/tensorflow001/</id>
         <title>Machine Learning(一) 一个神经元网络-线性函数</title>

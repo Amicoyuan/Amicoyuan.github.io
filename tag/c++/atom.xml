@@ -30,13 +30,14 @@
     <category term="Map" />
     <category term="Pair" />
     <category term="KMP" />
-    <category term="Linux" />
     <category term="线索二叉树" />
     <category term="Tree" />
     <category term="森林" />
+    <category term="Linux" />
     <category term="MPI" />
-    <category term="Numactl" />
     <category term="Slurm" />
+    <category term="Mirror" />
+    <category term="Numactl" />
     <category term="Tensorflow" />
     <category term="性能分析工具" />
     <category term="gcov" />
