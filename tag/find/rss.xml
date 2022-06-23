@@ -16,11 +16,11 @@
         <category>Set</category>
         <category>团体程序设计天梯赛</category>
         <category>Sort</category>
-        <category>LinkList</category>
-        <category>双向链表</category>
         <category>Graph</category>
         <category>邻接表</category>
         <category>Vector</category>
+        <category>LinkList</category>
+        <category>双向链表</category>
         <category>Binary tree</category>
         <category>BFS</category>
         <category>模拟</category>
@@ -38,9 +38,9 @@
         <category>森林</category>
         <category>Linux</category>
         <category>MPI</category>
-        <category>Slurm</category>
         <category>Mirror</category>
         <category>Numactl</category>
+        <category>Slurm</category>
         <category>Tensorflow</category>
         <category>性能分析工具</category>
         <category>gcov</category>
