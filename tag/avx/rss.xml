@@ -16,26 +16,26 @@
         <category>Set</category>
         <category>团体程序设计天梯赛</category>
         <category>Sort</category>
+        <category>LinkList</category>
+        <category>双向链表</category>
         <category>Graph</category>
         <category>邻接表</category>
         <category>Vector</category>
-        <category>LinkList</category>
-        <category>双向链表</category>
         <category>Binary tree</category>
         <category>BFS</category>
         <category>模拟</category>
-        <category>邻接矩阵</category>
-        <category>DFS</category>
         <category>结构体</category>
         <category>贪心</category>
         <category>Double类型相等比较</category>
-        <category>并查集</category>
+        <category>邻接矩阵</category>
+        <category>DFS</category>
         <category>Map</category>
+        <category>并查集</category>
         <category>Pair</category>
         <category>KMP</category>
-        <category>线索二叉树</category>
         <category>Tree</category>
         <category>森林</category>
+        <category>线索二叉树</category>
         <category>Linux</category>
         <category>MPI</category>
         <category>Mirror</category>
