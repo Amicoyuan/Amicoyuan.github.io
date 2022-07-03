@@ -36,8 +36,8 @@
     <category term="Linux" />
     <category term="MPI" />
     <category term="Mirror" />
-    <category term="Numactl" />
     <category term="Slurm" />
+    <category term="Numactl" />
     <category term="Tensorflow" />
     <category term="性能分析工具" />
     <category term="gcov" />
