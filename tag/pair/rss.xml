@@ -36,11 +36,12 @@
         <category>线索二叉树</category>
         <category>Tree</category>
         <category>森林</category>
+        <category>QuickSort</category>
         <category>Linux</category>
         <category>MPI</category>
         <category>Mirror</category>
-        <category>Slurm</category>
         <category>Numactl</category>
+        <category>Slurm</category>
         <category>Tensorflow</category>
         <category>性能分析工具</category>
         <category>gcov</category>

@@ -33,11 +33,12 @@
     <category term="线索二叉树" />
     <category term="Tree" />
     <category term="森林" />
+    <category term="QuickSort" />
     <category term="Linux" />
     <category term="MPI" />
     <category term="Mirror" />
-    <category term="Slurm" />
     <category term="Numactl" />
+    <category term="Slurm" />
     <category term="Tensorflow" />
     <category term="性能分析工具" />
     <category term="gcov" />

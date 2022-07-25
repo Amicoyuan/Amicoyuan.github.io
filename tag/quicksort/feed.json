@@ -1,0 +1,19 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Amicoyuan • All posts by \"quicksort\" tag",
+    "description": "",
+    "home_page_url": "http://example.com",
+    "items": [
+        {
+            "id": "http://example.com/2022/07/25/DS002/",
+            "url": "http://example.com/2022/07/25/DS002/",
+            "title": "快速排序",
+            "date_published": "2022-07-25T08:54:55.000Z",
+            "content_html": "<h2 id=\"快速排序\"><a href=\"#快速排序\" class=\"headerlink\" title=\"快速排序\"></a>快速排序</h2><figure class=\"highlight c++\"><table><tr><td class=\"gutter hljs\"><div class=\"hljs code-wrapper\"><pre><span class=\"line\">1</span><br><span class=\"line\">2</span><br><span class=\"line\">3</span><br><span class=\"line\">4</span><br><span class=\"line\">5</span><br><span class=\"line\">6</span><br><span class=\"line\">7</span><br><span class=\"line\">8</span><br></pre></div></td><td class=\"code\"><div class=\"hljs code-wrapper\"><pre><code class=\"hljs c++\"><span class=\"hljs-function\"><span class=\"hljs-keyword\">void</span> <span class=\"hljs-title\">QuickSort</span><span class=\"hljs-params\">(ElemType A[],<span class=\"hljs-keyword\">int</span> low,<span class=\"hljs-keyword\">int</span> high)</span></span>&#123;<br>    <span class=\"hljs-keyword\">if</span>(low&lt;high)&#123;\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"hljs-comment\">//递归跳出的条件</span><br>        <span class=\"hljs-comment\">//Partition()就是划分操作，将表A[low...high]划分为满足上述条件的两个子表</span><br>        \t\t\t<span class=\"hljs-keyword\">int</span> pivotpos = <span class=\"hljs-built_in\">Partition</span>(A,low,high);\t\t\t<span class=\"hljs-comment\">//划分</span><br>        \t\t\t<span class=\"hljs-built_in\">QuickSort</span>(A,low,pivotpos<span class=\"hljs-number\">-1</span>);\t\t\t\t\t<span class=\"hljs-comment\">//依次对两个子表进行递归排序</span><br>        \t\t\t<span class=\"hljs-built_in\">QuickSort</span>(A,pivotpos+<span class=\"hljs-number\">1</span>,high);\t\t\t\t\t<br>    &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>\n\n<figure class=\"highlight c++\"><table><tr><td class=\"gutter hljs\"><div class=\"hljs code-wrapper\"><pre><span class=\"line\">1</span><br><span class=\"line\">2</span><br><span class=\"line\">3</span><br><span class=\"line\">4</span><br><span class=\"line\">5</span><br><span class=\"line\">6</span><br><span class=\"line\">7</span><br><span class=\"line\">8</span><br><span class=\"line\">9</span><br><span class=\"line\">10</span><br><span class=\"line\">11</span><br></pre></div></td><td class=\"code\"><div class=\"hljs code-wrapper\"><pre><code class=\"hljs c++\"><span class=\"hljs-function\"><span class=\"hljs-keyword\">int</span> <span class=\"hljs-title\">Partition</span><span class=\"hljs-params\">(ElemType A[],<span class=\"hljs-keyword\">int</span> low,<span class=\"hljs-keyword\">int</span> high)</span></span>&#123;\t\t\t<span class=\"hljs-comment\">//一趟划分</span><br>\t\tElemType pivot = A[low];\t\t\t<span class=\"hljs-comment\">//将当前表中第一个元素设为枢轴，对表进行划分</span><br>    \t<span class=\"hljs-keyword\">while</span>(low&lt;high)&#123;\t\t\t\t\t<span class=\"hljs-comment\">//循环跳出条件</span><br>            <span class=\"hljs-keyword\">while</span>(low&lt;high&amp;&amp;A[high]&gt;=pivot)     --high;<br>           \tA[low]=A[high];\t\t\t\t\t<span class=\"hljs-comment\">//将比枢轴小的元素移动到左侧</span><br>            <span class=\"hljs-keyword\">while</span>(low&lt;high&amp;&amp;A[low]&lt;=pivot)  ++low;<br>            A[high]=A[low];\t\t\t\t\t<span class=\"hljs-comment\">//将比枢轴大的元素移动到右侧</span><br>        &#125;<br>    \tA[low]=pivot;\t\t\t\t\t\t<span class=\"hljs-comment\">//枢轴元素存放到最终位置</span><br>    \t<span class=\"hljs-keyword\">return</span> low;\t\t\t\t\t\t\t<span class=\"hljs-comment\">//返回存放枢轴的最终位置</span><br>&#125;<br></code></pre></div></td></tr></table></figure>\n\n",
+            "tags": [
+                "Data Structure",
+                "QuickSort"
+            ]
+        }
+    ]
+}
