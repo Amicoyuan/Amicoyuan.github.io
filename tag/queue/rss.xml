@@ -16,11 +16,11 @@
         <category>Set</category>
         <category>团体程序设计天梯赛</category>
         <category>Sort</category>
+        <category>LinkList</category>
+        <category>双向链表</category>
         <category>Graph</category>
         <category>邻接表</category>
         <category>Vector</category>
-        <category>LinkList</category>
-        <category>双向链表</category>
         <category>Binary tree</category>
         <category>BFS</category>
         <category>模拟</category>
@@ -39,6 +39,7 @@
         <category>QuickSort</category>
         <category>Stack</category>
         <category>Queue</category>
+        <category>Array</category>
         <category>Linux</category>
         <category>MPI</category>
         <category>Mirror</category>
@@ -58,7 +59,7 @@
 &lt;p&gt;&lt;img src=&#34;/2022/07/30/DS004/image-20220730143027917.png&#34; alt=&#34;image-20220730143027917&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;队列的顺序储存类型描述&#34;&gt;&lt;a href=&#34;#队列的顺序储存类型描述&#34; class=&#34;headerlink&#34; title=&#34;队列的顺序储存类型描述&#34;&gt;&lt;/a&gt;队列的顺序储存类型描述&lt;/h3&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;define&lt;/span&gt; MaxSize 100								&lt;span class=&#34;hljs-comment&#34;&gt;//定义队列中元素的最大个数&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;hljs-class&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;struct&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; data[MaxSize];							&lt;span class=&#34;hljs-comment&#34;&gt;//存放队列指针&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; rear,front;								&lt;span class=&#34;hljs-comment&#34;&gt;//对头元素和队尾指针&lt;/span&gt;&lt;br&gt;&amp;#125;SqQueue; &lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
-&lt;h2 id=&#34;2-循环队列&#34;&gt;&lt;a href=&#34;#2-循环队列&#34; class=&#34;headerlink&#34; title=&#34;2.循环队列&#34;&gt;&lt;/a&gt;2.循环队列&lt;/h2&gt;&lt;h3 id=&#34;1-图像描述&#34;&gt;&lt;a href=&#34;#1-图像描述&#34; class=&#34;headerlink&#34; title=&#34;1.图像描述&#34;&gt;&lt;/a&gt;1.图像描述&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;特别提醒：方案一的本质就是牺牲掉一个储存单位来区分是对空还是队满！&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;2-循环队列&#34;&gt;&lt;a href=&#34;#2-循环队列&#34; class=&#34;headerlink&#34; title=&#34;2.循环队列&#34;&gt;&lt;/a&gt;2.循环队列&lt;/h2&gt;&lt;h3 id=&#34;1-图像描述&#34;&gt;&lt;a href=&#34;#1-图像描述&#34; class=&#34;headerlink&#34; title=&#34;1.图像描述&#34;&gt;&lt;/a&gt;1.图像描述&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;特别提醒：方案一的本质就是牺牲掉一个储存单位来区分是队空还是队满！&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/2022/07/30/DS004/image-20220730143502062.png&#34; alt=&#34;image-20220730143502062&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;2-初始化&#34;&gt;&lt;a href=&#34;#2-初始化&#34; class=&#34;headerlink&#34; title=&#34;2.初始化&#34;&gt;&lt;/a&gt;2.初始化&lt;/h3&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;InitQueue&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(SqQueue &amp;amp;Q)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;/span&gt;&amp;#123;&lt;br&gt;    Q.front=Q.rear=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;							&lt;span class=&#34;hljs-comment&#34;&gt;//初始化队首、队尾指针&lt;/span&gt;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 

@@ -1,0 +1,19 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Amicoyuan • All posts by \"array\" tag",
+    "description": "",
+    "home_page_url": "http://example.com",
+    "items": [
+        {
+            "id": "http://example.com/2022/07/31/DS005/",
+            "url": "http://example.com/2022/07/31/DS005/",
+            "title": "数组的应用题",
+            "date_published": "2022-07-31T07:55:24.000Z",
+            "content_html": "<h1 id=\"数组的应用题\"><a href=\"#数组的应用题\" class=\"headerlink\" title=\"数组的应用题\"></a>数组的应用题</h1><p><strong>特别提醒：理解对称矩阵，三角矩阵，三对角矩阵的图形和区域的划分，需会手推这三种矩阵的一位数组的公式！</strong></p>\n<p><strong>特别提醒：注意题目中数组的开始起始下标是0还是1！</strong></p>\n<h2 id=\"1-对称矩阵\"><a href=\"#1-对称矩阵\" class=\"headerlink\" title=\"1.对称矩阵\"></a>1.对称矩阵</h2><p><img src=\"/2022/07/31/DS005/image-20220731155906163.png\" alt=\"image-20220731155906163\"></p>\n<p><img src=\"/2022/07/31/DS005/image-20220731155922230.png\" alt=\"image-20220731155922230\"></p>\n<h2 id=\"2-三角矩阵\"><a href=\"#2-三角矩阵\" class=\"headerlink\" title=\"2.三角矩阵\"></a>2.三角矩阵</h2><p><img src=\"/2022/07/31/DS005/image-20220731155953294.png\" alt=\"image-20220731155953294\"></p>\n<p><img src=\"/2022/07/31/DS005/image-20220731160009059.png\" alt=\"image-20220731160009059\"></p>\n<h2 id=\"3-三角矩阵\"><a href=\"#3-三角矩阵\" class=\"headerlink\" title=\"3.三角矩阵\"></a>3.三角矩阵</h2><p><img src=\"/2022/07/31/DS005/image-20220731160030225.png\" alt=\"image-20220731160030225\"></p>\n<h2 id=\"4-稀疏矩阵\"><a href=\"#4-稀疏矩阵\" class=\"headerlink\" title=\"4.稀疏矩阵\"></a>4.稀疏矩阵</h2><p><strong>特别提醒：稀疏矩阵压缩储存后便失去了随机出去特性！</strong></p>\n<p><img src=\"/2022/07/31/DS005/image-20220731160115967.png\" alt=\"image-20220731160115967\"></p>\n",
+            "tags": [
+                "Data Structure",
+                "Array"
+            ]
+        }
+    ]
+}
