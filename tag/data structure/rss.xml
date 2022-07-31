@@ -36,8 +36,8 @@
         <category>线索二叉树</category>
         <category>Tree</category>
         <category>森林</category>
-        <category>QuickSort</category>
         <category>Stack</category>
+        <category>QuickSort</category>
         <category>Queue</category>
         <category>Array</category>
         <category>Linux</category>
@@ -56,13 +56,13 @@
             <category>Array</category>
             <pubDate>Sun, 31 Jul 2022 15:55:24 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;数组的应用题&#34;&gt;&lt;a href=&#34;#数组的应用题&#34; class=&#34;headerlink&#34; title=&#34;数组的应用题&#34;&gt;&lt;/a&gt;数组的应用题&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;特别提醒：理解对称矩阵，三角矩阵，三对角矩阵的图形和区域的划分，需会手推这三种矩阵的一位数组的公式！&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;特别提醒：注意题目中数组的开始起始下标是0还是1！&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;特别提醒：注意题目中数组的起始下标是0还是1！&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&#34;1-对称矩阵&#34;&gt;&lt;a href=&#34;#1-对称矩阵&#34; class=&#34;headerlink&#34; title=&#34;1.对称矩阵&#34;&gt;&lt;/a&gt;1.对称矩阵&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;/2022/07/31/DS005/image-20220731155906163.png&#34; alt=&#34;image-20220731155906163&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/2022/07/31/DS005/image-20220731155922230.png&#34; alt=&#34;image-20220731155922230&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;2-三角矩阵&#34;&gt;&lt;a href=&#34;#2-三角矩阵&#34; class=&#34;headerlink&#34; title=&#34;2.三角矩阵&#34;&gt;&lt;/a&gt;2.三角矩阵&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;/2022/07/31/DS005/image-20220731155953294.png&#34; alt=&#34;image-20220731155953294&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/2022/07/31/DS005/image-20220731160009059.png&#34; alt=&#34;image-20220731160009059&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;3-三角矩阵&#34;&gt;&lt;a href=&#34;#3-三角矩阵&#34; class=&#34;headerlink&#34; title=&#34;3.三角矩阵&#34;&gt;&lt;/a&gt;3.三角矩阵&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;/2022/07/31/DS005/image-20220731160030225.png&#34; alt=&#34;image-20220731160030225&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;4-稀疏矩阵&#34;&gt;&lt;a href=&#34;#4-稀疏矩阵&#34; class=&#34;headerlink&#34; title=&#34;4.稀疏矩阵&#34;&gt;&lt;/a&gt;4.稀疏矩阵&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;特别提醒：稀疏矩阵压缩储存后便失去了随机出去特性！&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;4-稀疏矩阵&#34;&gt;&lt;a href=&#34;#4-稀疏矩阵&#34; class=&#34;headerlink&#34; title=&#34;4.稀疏矩阵&#34;&gt;&lt;/a&gt;4.稀疏矩阵&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;特别提醒：稀疏矩阵压缩储存后便失去了随机存取特性！&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/2022/07/31/DS005/image-20220731160115967.png&#34; alt=&#34;image-20220731160115967&#34;&gt;&lt;/p&gt;
  ]]></description>
         </item>
