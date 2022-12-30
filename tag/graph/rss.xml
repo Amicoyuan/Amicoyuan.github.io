@@ -5,8 +5,8 @@
         <link>http://example.com</link>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Fri, 06 May 2022 16:38:38 +0800</pubDate>
-        <lastBuildDate>Fri, 06 May 2022 16:38:38 +0800</lastBuildDate>
+        <pubDate>Sat, 23 Apr 2022 21:50:27 +0800</pubDate>
+        <lastBuildDate>Sat, 23 Apr 2022 21:50:27 +0800</lastBuildDate>
         <category>AVX</category>
         <category>Data Structure</category>
         <category>String</category>
@@ -32,14 +32,6 @@
         <category>并查集</category>
         <category>Map</category>
         <category>Pair</category>
-        <category>KMP</category>
-        <category>线索二叉树</category>
-        <category>Tree</category>
-        <category>森林</category>
-        <category>Stack</category>
-        <category>QuickSort</category>
-        <category>Queue</category>
-        <category>Array</category>
         <category>Linux</category>
         <category>MPI</category>
         <category>Mirror</category>
@@ -48,19 +40,6 @@
         <category>Tensorflow</category>
         <category>性能分析工具</category>
         <category>gcov</category>
-        <item>
-            <guid isPermalink="true">http://example.com/2022/05/06/Algorithm037/</guid>
-            <title>图的存储</title>
-            <link>http://example.com/2022/05/06/Algorithm037/</link>
-            <category>Data Structure</category>
-            <category>Graph</category>
-            <pubDate>Fri, 06 May 2022 16:38:38 +0800</pubDate>
-            <description><![CDATA[ &lt;h2 id=&#34;图的存储&#34;&gt;&lt;a href=&#34;#图的存储&#34; class=&#34;headerlink&#34; title=&#34;图的存储&#34;&gt;&lt;/a&gt;图的存储&lt;/h2&gt;&lt;h3 id=&#34;邻接矩阵法&#34;&gt;&lt;a href=&#34;#邻接矩阵法&#34; class=&#34;headerlink&#34; title=&#34;邻接矩阵法&#34;&gt;&lt;/a&gt;邻接矩阵法&lt;/h3&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;define&lt;/span&gt; MaxVertexNum 100									&lt;span class=&#34;hljs-comment&#34;&gt;//顶点数目的最大值&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;hljs-keyword&#34;&gt;char&lt;/span&gt; VertexType;									&lt;span class=&#34;hljs-comment&#34;&gt;//顶点的数据类型&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; EdgeType;										&lt;span class=&#34;hljs-comment&#34;&gt;//带权图中边上权值的数据类型&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;hljs-class&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;struct&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;    VertexType Vex[MaxVertexNum];							&lt;span class=&#34;hljs-comment&#34;&gt;//顶点表&lt;/span&gt;&lt;br&gt;    EdgeType Edge[MaxVertexNum][MaxVertexNum];				&lt;span class=&#34;hljs-comment&#34;&gt;//邻接矩阵，边表&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; vexnum,arcnum;										&lt;span class=&#34;hljs-comment&#34;&gt;//图中当前顶点数和弧数&lt;/span&gt;&lt;br&gt;&amp;#125;MGraph;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h3 id=&#34;邻接表法&#34;&gt;&lt;a href=&#34;#邻接表法&#34; class=&#34;headerlink&#34; title=&#34;邻接表法&#34;&gt;&lt;/a&gt;邻接表法&lt;/h3&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;define&lt;/span&gt; MaxVertexNum 100									&lt;span class=&#34;hljs-comment&#34;&gt;//图中顶点数目的最大值&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;hljs-class&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;ArcNode&lt;/span&gt;&amp;#123;&lt;/span&gt;										&lt;span class=&#34;hljs-comment&#34;&gt;//边表结点&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; adjvex;												&lt;span class=&#34;hljs-comment&#34;&gt;//该弧所指向的顶点的位置&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-class&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;ArcNode&lt;/span&gt; *&lt;span class=&#34;hljs-title&#34;&gt;next&lt;/span&gt;;&lt;/span&gt;									&lt;span class=&#34;hljs-comment&#34;&gt;//指向下一条弧的指针&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-comment&#34;&gt;//InfoType infp;										//网的边权值&lt;/span&gt;&lt;br&gt;&amp;#125;ArcNode;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;hljs-class&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;VNode&lt;/span&gt;&amp;#123;&lt;/span&gt;										&lt;span class=&#34;hljs-comment&#34;&gt;//顶点表结点&lt;/span&gt;&lt;br&gt;    VertexType data;										&lt;span class=&#34;hljs-comment&#34;&gt;//顶点信息&lt;/span&gt;&lt;br&gt;    ArcNode *first;											&lt;span class=&#34;hljs-comment&#34;&gt;//指向第一条依附该顶点的弧的指针&lt;/span&gt;&lt;br&gt;&amp;#125;VNode,AdjList[MaxVertexNum];&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;hljs-class&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;struct&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;    AdjList vertices;										&lt;span class=&#34;hljs-comment&#34;&gt;//邻接表&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; vexnum,arcnum;										&lt;span class=&#34;hljs-comment&#34;&gt;//图的顶点数和弧数&lt;/span&gt;&lt;br&gt;&amp;#125;ALGraph;													&lt;span class=&#34;hljs-comment&#34;&gt;//ALGraph是以邻接表存储的图的类型&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
- ]]></description>
-        </item>
         <item>
             <guid isPermalink="true">http://example.com/2022/04/23/Algorithm032/</guid>
             <title>L2-036 网红点打卡攻略 (25 分)</title>
