@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <rss version="2.0">
     <channel>
-        <title>Amicoyuan • Posts by &#34;计算机组成原理&#34; category</title>
+        <title>Amicoyuan • Posts by &#34;computer organization&#34; category</title>
         <link>http://example.com</link>
         <description></description>
         <language>zh-CN</language>
@@ -29,8 +29,8 @@
         <category>结构体</category>
         <category>贪心</category>
         <category>Double类型相等比较</category>
-        <category>并查集</category>
         <category>Map</category>
+        <category>并查集</category>
         <category>Pair</category>
         <category>Linux</category>
         <category>MPI</category>
