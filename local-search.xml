@@ -33,7 +33,7 @@
     <link href="/2023/01/03/openmp001/"/>
     <url>/2023/01/03/openmp001/</url>
     
-    <content type="html"><![CDATA[<h2 id="OpenMP梯度积分法"><a href="#OpenMP梯度积分法" class="headerlink" title="OpenMP梯度积分法"></a>OpenMP梯度积分法</h2><h3 id="1-梯度积分法"><a href="#1-梯度积分法" class="headerlink" title="1.梯度积分法"></a>1.梯度积分法</h3><p><img src="/2023/01/03/openmp001/image-20230106165434252.png" alt="001"></p><p><img src="/2023/01/03/openmp001/image-20230106165507737.png" alt="image-20230106165507737"></p><h3 id="2-识别两类任务"><a href="#2-识别两类任务" class="headerlink" title="2.识别两类任务"></a>2.识别两类任务</h3><p><img src="/2023/01/03/openmp001/image-20230106164847677.png" alt="image-20230106164847677"></p><ol><li>单个梯形的面积计算</li><li>梯形面积求和</li></ol><p>在1.1的任务中，没有任务间的通信，但这一组任务中的每一组任务都与1.2的任务通信</p><h3 id="3-累加线程结果"><a href="#3-累加线程结果" class="headerlink" title="3.累加线程结果"></a>3.累加线程结果</h3><p>​使用一个共享变量作为所有线程的和 ，每个线程可以将它计算的部分结果累加到共享变量中，让每个线程执行类似下面的语句：</p><figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">pragma</span> omp critical</span><br>global_result += myresult;                <span class="hljs-comment">//需要互斥访问</span><br></code></pre></div></td></tr></table></figure><p>竞争条件，使用临界区解决。保证每次只有一个线程执行这段结构性代码。</p><h3 id="4-程序完整代码"><a href="#4-程序完整代码" class="headerlink" title="4.程序完整代码"></a>4.程序完整代码</h3><figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdlib.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;omp.h&gt;</span></span><br><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Trap</span><span class="hljs-params">(<span class="hljs-keyword">double</span> a,<span class="hljs-keyword">double</span> b,<span class="hljs-keyword">int</span> n,<span class="hljs-keyword">double</span> *global_result_p)</span></span>;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">int</span> argc, <span class="hljs-keyword">char</span> *argv[])</span></span>&#123;<br><span class="hljs-keyword">double</span> global_result = <span class="hljs-number">0.0</span>;<br><span class="hljs-keyword">double</span> a,b;<span class="hljs-comment">//为了区分local_a,local_b</span><br><span class="hljs-keyword">int</span> n;<br><span class="hljs-keyword">int</span> thread_count;<br><br>thread_count = <span class="hljs-number">8</span>;                                      <span class="hljs-comment">//指定你的线程数</span><br><span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Enter a,b, and n\n&quot;</span>);<br><span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%lf %lf %d&quot;</span>,&amp;a,&amp;b,&amp;n);<br>    <br>    <span class="hljs-comment">//并行区开始</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">pragma</span> omp parallel num_threads(thread_count)<span class="hljs-comment">//指定Trap函数由thread_count个线程执行</span></span><br><span class="hljs-built_in">Trap</span>(a,b,n,&amp;global_result);<br><span class="hljs-comment">//并行区结束</span><br>    <br><span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;With n = %d trapezoids, our estimate\n&quot;</span>,n);<br><span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;of the integral from %f to %f = %.4lf\n&quot;</span>,a,b,global_result);<br><br><span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Trap</span><span class="hljs-params">(<span class="hljs-keyword">double</span> a,<span class="hljs-keyword">double</span> b,<span class="hljs-keyword">int</span> n,<span class="hljs-keyword">double</span> *global_result_p)</span></span><br><span class="hljs-function"></span>&#123;<br><span class="hljs-keyword">double</span> h,x,my_result;<br><span class="hljs-keyword">double</span> local_a,local_b;<br><span class="hljs-keyword">int</span> i,local_n;<span class="hljs-comment">//local_n代表本进程被分配了多少个任务</span><br><span class="hljs-keyword">int</span> my_rank = <span class="hljs-built_in">omp_get_thread_num</span>();<br><span class="hljs-keyword">int</span> thread_count = <span class="hljs-built_in">omp_get_num_threads</span>();<br><br>h = (b-a)/n;<span class="hljs-comment">//梯形底的长度</span><br>local_n = n/thread_count;<span class="hljs-comment">//每个线程分配的梯形数，保证能整除</span><br>local_a = a + my_rank*local_n*h;<span class="hljs-comment">//区间的左端点</span><br>local_b = local_a + local_n*h;<span class="hljs-comment">//区间的右端点</span><br><span class="hljs-comment">//对global_result共享部分和</span><br>    my_result = (<span class="hljs-built_in">f</span>(local_a) + <span class="hljs-built_in">f</span>(local_b))/<span class="hljs-number">2.0</span>;<span class="hljs-comment">//f(x)是目标函数</span><br><span class="hljs-keyword">for</span>(i = <span class="hljs-number">1</span> ; i&lt;=local_n<span class="hljs-number">-1</span>; i++)&#123;<br>x = local_a + i*h;<br>my_result += <span class="hljs-built_in">f</span>(x);<br>&#125;<br>my_result = my_result*h;<br>    <span class="hljs-comment">//</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">pragma</span> omp critical<span class="hljs-comment">//临界区，这里可以直接使用OpenMP提供的reduction</span></span><br>*global_result_p += my_result;<span class="hljs-comment">//线程将部分和结果累加到共享变量</span><br>&#125;<br></code></pre></div></td></tr></table></figure><h3 id="5-总结"><a href="#5-总结" class="headerlink" title="5.总结"></a>5.总结</h3><ol><li>核心是拆分任务区域，把子任务分配到个个线程</li><li>共享变量的选取决定了可并行度</li><li>通过共享变量实现了归约的操作(这里使用到了临界区)</li></ol>]]></content>
+    <content type="html"><![CDATA[<h2 id="OpenMP梯度积分法"><a href="#OpenMP梯度积分法" class="headerlink" title="OpenMP梯度积分法"></a>OpenMP梯度积分法</h2><h3 id="1-梯度积分法"><a href="#1-梯度积分法" class="headerlink" title="1.梯度积分法"></a>1.梯度积分法</h3><p><img src="/2023/01/03/openmp001/image-20230106165434252.png" alt="001"></p><p><img src="/2023/01/03/openmp001/image-20230106165507737.png" alt="image-20230106165507737"></p><h3 id="2-识别两类任务"><a href="#2-识别两类任务" class="headerlink" title="2.识别两类任务"></a>2.识别两类任务</h3><p><img src="/2023/01/03/openmp001/image-20230106164847677.png" alt="image-20230106164847677"></p><ol><li>单个梯形的面积计算</li><li>梯形面积求和</li></ol><p>在2.1的任务中，没有任务间的通信，但这一组任务中的每一组任务都与2.2的任务通信</p><h3 id="3-累加线程结果"><a href="#3-累加线程结果" class="headerlink" title="3.累加线程结果"></a>3.累加线程结果</h3><p>​使用一个共享变量作为所有线程的和 ，每个线程可以将它计算的部分结果累加到共享变量中，让每个线程执行类似下面的语句：</p><figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">pragma</span> omp critical</span><br>global_result += myresult;                <span class="hljs-comment">//需要互斥访问</span><br></code></pre></div></td></tr></table></figure><p>竞争条件，使用临界区解决。保证每次只有一个线程执行这段结构性代码。</p><h3 id="4-程序完整代码"><a href="#4-程序完整代码" class="headerlink" title="4.程序完整代码"></a>4.程序完整代码</h3><figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdlib.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;omp.h&gt;</span></span><br><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Trap</span><span class="hljs-params">(<span class="hljs-keyword">double</span> a,<span class="hljs-keyword">double</span> b,<span class="hljs-keyword">int</span> n,<span class="hljs-keyword">double</span> *global_result_p)</span></span>;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">int</span> argc, <span class="hljs-keyword">char</span> *argv[])</span></span>&#123;<br><span class="hljs-keyword">double</span> global_result = <span class="hljs-number">0.0</span>;<br><span class="hljs-keyword">double</span> a,b;<span class="hljs-comment">//为了区分local_a,local_b</span><br><span class="hljs-keyword">int</span> n;<br><span class="hljs-keyword">int</span> thread_count;<br><br>thread_count = <span class="hljs-number">8</span>;                                      <span class="hljs-comment">//指定你的线程数</span><br><span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Enter a,b, and n\n&quot;</span>);<br><span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%lf %lf %d&quot;</span>,&amp;a,&amp;b,&amp;n);<br>    <br>    <span class="hljs-comment">//并行区开始</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">pragma</span> omp parallel num_threads(thread_count)<span class="hljs-comment">//指定Trap函数由thread_count个线程执行</span></span><br><span class="hljs-built_in">Trap</span>(a,b,n,&amp;global_result);<br><span class="hljs-comment">//并行区结束</span><br>    <br><span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;With n = %d trapezoids, our estimate\n&quot;</span>,n);<br><span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;of the integral from %f to %f = %.4lf\n&quot;</span>,a,b,global_result);<br><br><span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Trap</span><span class="hljs-params">(<span class="hljs-keyword">double</span> a,<span class="hljs-keyword">double</span> b,<span class="hljs-keyword">int</span> n,<span class="hljs-keyword">double</span> *global_result_p)</span></span><br><span class="hljs-function"></span>&#123;<br><span class="hljs-keyword">double</span> h,x,my_result;<br><span class="hljs-keyword">double</span> local_a,local_b;<br><span class="hljs-keyword">int</span> i,local_n;<span class="hljs-comment">//local_n代表本进程被分配了多少个任务</span><br><span class="hljs-keyword">int</span> my_rank = <span class="hljs-built_in">omp_get_thread_num</span>();<br><span class="hljs-keyword">int</span> thread_count = <span class="hljs-built_in">omp_get_num_threads</span>();<br><br>h = (b-a)/n;<span class="hljs-comment">//梯形底的长度</span><br>local_n = n/thread_count;<span class="hljs-comment">//每个线程分配的梯形数，保证能整除</span><br>local_a = a + my_rank*local_n*h;<span class="hljs-comment">//区间的左端点</span><br>local_b = local_a + local_n*h;<span class="hljs-comment">//区间的右端点</span><br><span class="hljs-comment">//对global_result共享部分和</span><br>    my_result = (<span class="hljs-built_in">f</span>(local_a) + <span class="hljs-built_in">f</span>(local_b))/<span class="hljs-number">2.0</span>;<span class="hljs-comment">//f(x)是目标函数</span><br><span class="hljs-keyword">for</span>(i = <span class="hljs-number">1</span> ; i&lt;=local_n<span class="hljs-number">-1</span>; i++)&#123;<br>x = local_a + i*h;<br>my_result += <span class="hljs-built_in">f</span>(x);<br>&#125;<br>my_result = my_result*h;<br>    <span class="hljs-comment">//</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">pragma</span> omp critical<span class="hljs-comment">//临界区，这里可以直接使用OpenMP提供的reduction</span></span><br>*global_result_p += my_result;<span class="hljs-comment">//线程将部分和结果累加到共享变量</span><br>&#125;<br></code></pre></div></td></tr></table></figure><h3 id="5-总结"><a href="#5-总结" class="headerlink" title="5.总结"></a>5.总结</h3><ol><li>核心是拆分任务区域，把子任务分配到个个线程</li><li>共享变量的选取决定了可并行度</li><li>通过共享变量实现了归约的操作(这里使用到了临界区)</li></ol>]]></content>
     
     
     <categories>
@@ -322,9 +322,9 @@
       
       <tag>Data Structure</tag>
       
-      <tag>C++</tag>
-      
       <tag>团体程序设计天梯赛</tag>
+      
+      <tag>C++</tag>
       
       <tag>Graph</tag>
       
@@ -355,9 +355,9 @@
       
       <tag>Data Structure</tag>
       
-      <tag>C++</tag>
-      
       <tag>团体程序设计天梯赛</tag>
+      
+      <tag>C++</tag>
       
       <tag>Sort</tag>
       
@@ -390,11 +390,11 @@
     
     <tags>
       
-      <tag>C++</tag>
-      
       <tag>Set</tag>
       
       <tag>团体程序设计天梯赛</tag>
+      
+      <tag>C++</tag>
       
       <tag>模拟</tag>
       
@@ -450,9 +450,9 @@
       
       <tag>Data Structure</tag>
       
-      <tag>C++</tag>
-      
       <tag>团体程序设计天梯赛</tag>
+      
+      <tag>C++</tag>
       
       <tag>Graph</tag>
       
@@ -483,9 +483,9 @@
     
     <tags>
       
-      <tag>C++</tag>
-      
       <tag>团体程序设计天梯赛</tag>
+      
+      <tag>C++</tag>
       
       <tag>Sort</tag>
       
@@ -516,9 +516,9 @@
     
     <tags>
       
-      <tag>C++</tag>
-      
       <tag>团体程序设计天梯赛</tag>
+      
+      <tag>C++</tag>
       
       <tag>Sort</tag>
       
@@ -551,9 +551,9 @@
       
       <tag>Data Structure</tag>
       
-      <tag>C++</tag>
-      
       <tag>团体程序设计天梯赛</tag>
+      
+      <tag>C++</tag>
       
       <tag>Graph</tag>
       
@@ -586,9 +586,9 @@
       
       <tag>Data Structure</tag>
       
-      <tag>C++</tag>
-      
       <tag>团体程序设计天梯赛</tag>
+      
+      <tag>C++</tag>
       
       <tag>Binary tree</tag>
       
@@ -619,9 +619,9 @@
       
       <tag>Data Structure</tag>
       
-      <tag>C++</tag>
-      
       <tag>团体程序设计天梯赛</tag>
+      
+      <tag>C++</tag>
       
       <tag>Binary tree</tag>
       
@@ -650,9 +650,9 @@
       
       <tag>Data Structure</tag>
       
-      <tag>C++</tag>
-      
       <tag>团体程序设计天梯赛</tag>
+      
+      <tag>C++</tag>
       
       <tag>邻接表</tag>
       
@@ -687,9 +687,9 @@
       
       <tag>Data Structure</tag>
       
-      <tag>C++</tag>
-      
       <tag>团体程序设计天梯赛</tag>
+      
+      <tag>C++</tag>
       
       <tag>邻接表</tag>
       
@@ -716,9 +716,9 @@
       
       <tag>Data Structure</tag>
       
-      <tag>C++</tag>
-      
       <tag>团体程序设计天梯赛</tag>
+      
+      <tag>C++</tag>
       
       <tag>Sort</tag>
       
@@ -747,9 +747,9 @@
       
       <tag>Data Structure</tag>
       
-      <tag>C++</tag>
-      
       <tag>团体程序设计天梯赛</tag>
+      
+      <tag>C++</tag>
       
       <tag>邻接表</tag>
       
@@ -784,11 +784,11 @@
       
       <tag>Data Structure</tag>
       
-      <tag>C++</tag>
-      
       <tag>Set</tag>
       
       <tag>团体程序设计天梯赛</tag>
+      
+      <tag>C++</tag>
       
       <tag>Graph</tag>
       
@@ -819,9 +819,9 @@
     
     <tags>
       
-      <tag>C++</tag>
-      
       <tag>团体程序设计天梯赛</tag>
+      
+      <tag>C++</tag>
       
       <tag>LinkList</tag>
       
@@ -850,13 +850,13 @@
     
     <tags>
       
-      <tag>STL</tag>
-      
-      <tag>C++</tag>
-      
       <tag>Set</tag>
       
       <tag>团体程序设计天梯赛</tag>
+      
+      <tag>STL</tag>
+      
+      <tag>C++</tag>
       
       <tag>Sort</tag>
       
@@ -883,13 +883,13 @@
     
     <tags>
       
-      <tag>String</tag>
-      
-      <tag>Find</tag>
-      
       <tag>STL</tag>
       
       <tag>C++</tag>
+      
+      <tag>String</tag>
+      
+      <tag>Find</tag>
       
     </tags>
     

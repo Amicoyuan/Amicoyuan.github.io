@@ -9,13 +9,13 @@
         <lastBuildDate>Fri, 06 Jan 2023 17:15:48 +0800</lastBuildDate>
         <category>AVX</category>
         <category>Data Structure</category>
-        <category>String</category>
-        <category>Find</category>
-        <category>STL</category>
-        <category>C++</category>
         <category>Set</category>
         <category>团体程序设计天梯赛</category>
+        <category>STL</category>
+        <category>C++</category>
         <category>Sort</category>
+        <category>String</category>
+        <category>Find</category>
         <category>LinkList</category>
         <category>双向链表</category>
         <category>Graph</category>
@@ -74,7 +74,7 @@
 &lt;li&gt;单个梯形的面积计算&lt;/li&gt;
 &lt;li&gt;梯形面积求和&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;在1.1的任务中，没有任务间的通信，但这一组任务中的每一组任务都与1.2的任务通信&lt;/p&gt;
+&lt;p&gt;在2.1的任务中，没有任务间的通信，但这一组任务中的每一组任务都与2.2的任务通信&lt;/p&gt;
 &lt;h3 id=&#34;3-累加线程结果&#34;&gt;&lt;a href=&#34;#3-累加线程结果&#34; class=&#34;headerlink&#34; title=&#34;3.累加线程结果&#34;&gt;&lt;/a&gt;3.累加线程结果&lt;/h3&gt;&lt;p&gt;​	使用一个共享变量作为所有线程的和 ，每个线程可以将它计算的部分结果累加到共享变量中，让每个线程执行类似下面的语句：&lt;/p&gt;
 &lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;pragma&lt;/span&gt; omp critical&lt;/span&gt;&lt;br&gt;global_result += myresult;                &lt;span class=&#34;hljs-comment&#34;&gt;//需要互斥访问&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
