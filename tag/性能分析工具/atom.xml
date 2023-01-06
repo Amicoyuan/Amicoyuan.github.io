@@ -33,6 +33,7 @@
     <category term="MPI" />
     <category term="Mirror" />
     <category term="Numactl" />
+    <category term="OpenMP" />
     <category term="Slurm" />
     <category term="Tensorflow" />
     <category term="性能分析工具" />

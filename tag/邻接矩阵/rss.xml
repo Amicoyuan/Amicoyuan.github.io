@@ -36,6 +36,7 @@
         <category>MPI</category>
         <category>Mirror</category>
         <category>Numactl</category>
+        <category>OpenMP</category>
         <category>Slurm</category>
         <category>Tensorflow</category>
         <category>性能分析工具</category>
