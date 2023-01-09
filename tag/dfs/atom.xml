@@ -6,13 +6,13 @@
     <updated>2022-04-15T13:09:30.000Z</updated>
     <category term="AVX" />
     <category term="Data Structure" />
-    <category term="Set" />
-    <category term="团体程序设计天梯赛" />
-    <category term="STL" />
-    <category term="C++" />
-    <category term="Sort" />
     <category term="String" />
     <category term="Find" />
+    <category term="STL" />
+    <category term="C++" />
+    <category term="Set" />
+    <category term="团体程序设计天梯赛" />
+    <category term="Sort" />
     <category term="LinkList" />
     <category term="双向链表" />
     <category term="Graph" />
@@ -59,8 +59,8 @@
 &lt;h3 id=&#34;参考资料：&#34;&gt;&lt;a href=&#34;#参考资料：&#34; class=&#34;headerlink&#34; title=&#34;参考资料：&#34;&gt;&lt;/a&gt;参考资料：&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://pintia.cn/problem-sets/994805046380707840/problems/994805063963230208&#34;&gt;题目详情 - L2-013 红色警报 (25 分) (pintia.cn)&lt;/a&gt;&lt;/p&gt;
 </content>
         <category term="Data Structure" />
-        <category term="团体程序设计天梯赛" />
         <category term="C++" />
+        <category term="团体程序设计天梯赛" />
         <category term="Graph" />
         <category term="邻接矩阵" />
         <category term="DFS" />
