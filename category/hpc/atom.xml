@@ -3,7 +3,7 @@
     <id>http://example.com</id>
     <title>Amicoyuan • Posts by &#34;hpc&#34; category</title>
     <link href="http://example.com" />
-    <updated>2023-01-14T05:04:25.000Z</updated>
+    <updated>2023-01-14T14:30:05.000Z</updated>
     <category term="AVX" />
     <category term="Data Structure" />
     <category term="String" />
@@ -13,21 +13,21 @@
     <category term="Set" />
     <category term="团体程序设计天梯赛" />
     <category term="Sort" />
+    <category term="Binary tree" />
+    <category term="邻接表" />
+    <category term="Vector" />
+    <category term="BFS" />
     <category term="LinkList" />
     <category term="双向链表" />
     <category term="Graph" />
-    <category term="邻接表" />
-    <category term="Vector" />
-    <category term="Binary tree" />
-    <category term="BFS" />
     <category term="模拟" />
     <category term="邻接矩阵" />
     <category term="DFS" />
     <category term="结构体" />
     <category term="贪心" />
     <category term="Double类型相等比较" />
-    <category term="Map" />
     <category term="并查集" />
+    <category term="Map" />
     <category term="Pair" />
     <category term="Linux" />
     <category term="MPI" />
@@ -38,6 +38,19 @@
     <category term="Tensorflow" />
     <category term="性能分析工具" />
     <category term="gcov" />
+    <entry>
+        <id>http://example.com/2023/01/14/openmp006/</id>
+        <title>OpenMP生产者消费者问题</title>
+        <link rel="alternate" href="http://example.com/2023/01/14/openmp006/"/>
+        <content type="html">&lt;h2 id=&#34;OpenMP生产者消费者问题&#34;&gt;&lt;a href=&#34;#OpenMP生产者消费者问题&#34; class=&#34;headerlink&#34; title=&#34;OpenMP生产者消费者问题&#34;&gt;&lt;/a&gt;OpenMP生产者消费者问题&lt;/h2&gt;&lt;p&gt;本节将讨论一个不适合用parallel for指令或者for指令来并行化的问题。&lt;/p&gt;
+&lt;h3 id=&#34;1-队列&#34;&gt;&lt;a href=&#34;#1-队列&#34; class=&#34;headerlink&#34; title=&#34;1.队列&#34;&gt;&lt;/a&gt;1.队列&lt;/h3&gt;&lt;p&gt;队列是一种抽象的数据结构，插入元素时将元素插入到队列“尾部”，而读取元素时，队列“头部”的元素被返回并从队列中被移除。队列可以看做是在超市中等待付款的消费者的抽象，队列中的元素是消费者。新的消费者到达时排在等待队列的尾部，下一个付款离开等待队列的是排在队列头部的消费者。&lt;/p&gt;
+&lt;p&gt;当一个新的元素插入到队列的尾部时，通常称这个新的元素“入队”了；当一个元素从队列的头部被移除时，通常称这个元素“出队”了。&lt;/p&gt;
+&lt;p&gt;队列在计算机科学中随处可见。例如，如果有多个进程，每个进程都试图向硬盘写入数据，为了确保每次只有一个进程在写硬盘，一种自然而然的方法是将进程组织为队列。换句话说，排在队列第一个的进程在当前进程结束对硬盘的使用后，第一个获得硬盘的访问权限；排在队列第二个的进程在排在队列第一个的进程使用完硬盘后获得硬盘的访问权限，依此类推。&lt;/p&gt;
+&lt;p&gt;队列也是在多线程应用程序中经常使用到的数据结构。例如，我们有几个“生产者”线程和几个“消费者”线程。生产者线程“产生”对服务器数据的请求———例如当前股票的价格，而消费者线程通过发现和生成数据（例如，当前股票的价格）来“消费”请求。生产者线程将请求入队，而消费者线程将请求从队列中移除。在这个例子中，只有当消费者线程将请求的数据发送给生产者线程时，进程才会结束。&lt;/p&gt;
+</content>
+        <category term="OpenMP" />
+        <updated>2023-01-14T14:30:05.000Z</updated>
+    </entry>
     <entry>
         <id>http://example.com/2023/01/14/openmp005/</id>
         <title>OpenMP循环调度</title>
@@ -93,11 +106,20 @@
 &lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs shell&#34;&gt;&lt;span class=&#34;hljs-meta&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;bash&#34;&gt;&lt;span class=&#34;hljs-built_in&#34;&gt;export&lt;/span&gt; OMP_SCHEDULE=&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;static,1&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;p&gt;现在，当开始执行程序时，系统将调度for循环的迭代，就如同使用子句schedule（static，1）修改了parallel for指令那样。&lt;/p&gt;
-&lt;h3 id=&#34;6-总结&#34;&gt;&lt;a href=&#34;#6-总结&#34; class=&#34;headerlink&#34; title=&#34;6.总结&#34;&gt;&lt;/a&gt;6.总结&lt;/h3&gt;&lt;ol&gt;
+&lt;h3 id=&#34;6-调度选择&#34;&gt;&lt;a href=&#34;#6-调度选择&#34; class=&#34;headerlink&#34; title=&#34;6.调度选择&#34;&gt;&lt;/a&gt;6.调度选择&lt;/h3&gt;&lt;p&gt;如果需要并行化一个for循环，那么我们如何决定使用哪一种电镀和chuncksize的大小？实际上，每一中schedule子句有不同的系统开销。dynamic调度的系统开销要大于static调度，而guided调度的系统开销是三种方式中最大的。因此，如果不使用schedule子句就已经达到了令人满意的性能，就不需要进行多余的工作。但是，如果我们怀疑调度的性能可以提升，那么我们可以对各种调度进行试验。&lt;/p&gt;
+&lt;p&gt;在本节开始提供的例子中，在程序使用两个线程的情况下，使用schedule（static，1）代替默认调度时，加速比从1.33提升到1.99。因为在两个线程的条件下，加速比几乎不可能比1.99更好，所以我们可以不用再尝试其他的调度方式，至少在只用两个线程并且迭代数为10000的情况下是这样。如果做更多的试验，改变线程的个数和迭代的次数，我们可能会发现：最优的调度方式是由线程的个数和迭代的次数共同决定的。&lt;/p&gt;
+&lt;p&gt;如果我们断定默认的调度方式性能低下，那么我们会做大量的实验来寻找最优的调度方式和迭代次数。在进行了大量的工作以后，我们可能发现，这些循环没有得到很好的并行化，没有哪一种调度可以带来比较显著的性能提升。编程作业5.4就是这样一个例子。&lt;/p&gt;
+&lt;p&gt;但在某些情况下，应该优先考虑有些调度：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;如果循环的每次迭代需要几乎相同的计算量，那么可能默认的调度方式能提供最好的性能&lt;/li&gt;
+&lt;li&gt;如果随着循环的进行，迭代的计算量线性猛增（或递减），那么采用比较小的chuncksize的static调度可能会提供最好的性能&lt;/li&gt;
+&lt;li&gt;如果每次迭代的开销事先不能确定，那么就可能需要尝试使用多种不同的调度策略。在这种情况下，应当使用schedule（runtime）子句，通过富裕环境变量OMP_SCHEDULE不同的值来比较不同调度策略下程序的性能&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;7-总结&#34;&gt;&lt;a href=&#34;#7-总结&#34; class=&#34;headerlink&#34; title=&#34;7.总结&#34;&gt;&lt;/a&gt;7.总结&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;调度方式对加速效果的重要性&lt;/li&gt;
 &lt;li&gt;合理分析任务特性，选择最适合的调度方式&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;7-参考资料&#34;&gt;&lt;a href=&#34;#7-参考资料&#34; class=&#34;headerlink&#34; title=&#34;7.参考资料&#34;&gt;&lt;/a&gt;7.参考资料&lt;/h3&gt;&lt;p&gt;并行程序导论 （美）Peter S.Pacheco&lt;/p&gt;
+&lt;h3 id=&#34;8-参考资料&#34;&gt;&lt;a href=&#34;#8-参考资料&#34; class=&#34;headerlink&#34; title=&#34;8.参考资料&#34;&gt;&lt;/a&gt;8.参考资料&lt;/h3&gt;&lt;p&gt;并行程序导论 （美）Peter S.Pacheco&lt;/p&gt;
 </content>
         <category term="OpenMP" />
         <updated>2023-01-14T05:04:25.000Z</updated>
@@ -798,22 +820,5 @@
 </content>
         <category term="MPI" />
         <updated>2021-11-27T08:58:36.000Z</updated>
-    </entry>
-    <entry>
-        <id>http://example.com/2021/11/26/mpi003/</id>
-        <title>MPI学习(三)-通过OpenmMP使用MPI</title>
-        <link rel="alternate" href="http://example.com/2021/11/26/mpi003/"/>
-        <content type="html">&lt;h1 id=&#34;MPI-通过OpenMP使用MPI&#34;&gt;&lt;a href=&#34;#MPI-通过OpenMP使用MPI&#34; class=&#34;headerlink&#34; title=&#34;MPI-通过OpenMP使用MPI&#34;&gt;&lt;/a&gt;MPI-通过OpenMP使用MPI&lt;/h1&gt;&lt;p&gt;OpenMP是另一种为基于共享内存的并行编程提供的应用编程接口。当人们想使用多核处理器时，通常使用OpenMP。下面是一个“Hello World”程序，使用了MPI和OpenMP的API。&lt;/p&gt;
-&lt;h2 id=&#34;程序运行平台&#34;&gt;&lt;a href=&#34;#程序运行平台&#34; class=&#34;headerlink&#34; title=&#34;程序运行平台&#34;&gt;&lt;/a&gt;程序运行平台&lt;/h2&gt;&lt;p&gt;北京超级云计算中心A3分区&lt;/p&gt;
-&lt;h2 id=&#34;环境变量&#34;&gt;&lt;a href=&#34;#环境变量&#34; class=&#34;headerlink&#34; title=&#34;环境变量&#34;&gt;&lt;/a&gt;环境变量&lt;/h2&gt;&lt;p&gt;mpi&amp;#x2F;intel&amp;#x2F;2017.5&lt;/p&gt;
-&lt;h2 id=&#34;编译指令&#34;&gt;&lt;a href=&#34;#编译指令&#34; class=&#34;headerlink&#34; title=&#34;编译指令&#34;&gt;&lt;/a&gt;编译指令&lt;/h2&gt;&lt;p&gt;mpic++    -fopenmp  mpi003.cpp -o mpi003&lt;/p&gt;
-&lt;h2 id=&#34;运行指令&#34;&gt;&lt;a href=&#34;#运行指令&#34; class=&#34;headerlink&#34; title=&#34;运行指令&#34;&gt;&lt;/a&gt;运行指令&lt;/h2&gt;&lt;p&gt;srun -p amd_256 -N 2 -n  2   .&amp;#x2F;mpi003(使用SLURM任务调度系统)&lt;/p&gt;
-&lt;p&gt;2个分区，核数为2&lt;/p&gt;
-&lt;h2 id=&#34;程序源代码&#34;&gt;&lt;a href=&#34;#程序源代码&#34; class=&#34;headerlink&#34; title=&#34;程序源代码&#34;&gt;&lt;/a&gt;程序源代码&lt;/h2&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;hljs-meta-string&#34;&gt;&amp;lt;math.h&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;hljs-meta-string&#34;&gt;&amp;lt;omp.h&amp;gt;&lt;/span&gt;  &lt;span class=&#34;hljs-comment&#34;&gt;//OpenMP所需要的头文件&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;hljs-meta-string&#34;&gt;&amp;lt;mpi.h&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;  &lt;span class=&#34;hljs-title&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; argc,&lt;span class=&#34;hljs-keyword&#34;&gt;char&lt;/span&gt; **argv)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;/span&gt;&amp;#123;&lt;br&gt;		&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; myid, numprocs;&lt;br&gt;		&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; namelen;&lt;br&gt;		&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; thread_id , nthreads;&lt;br&gt;		&lt;span class=&#34;hljs-keyword&#34;&gt;char&lt;/span&gt; processor_name[MPI_MAX_PROCESSOR_NAME];&lt;br&gt;		&lt;span class=&#34;hljs-built_in&#34;&gt;MPI_Init&lt;/span&gt;(&amp;amp;argc, &amp;amp;argv);&lt;br&gt;		&lt;span class=&#34;hljs-built_in&#34;&gt;MPI_Comm_rank&lt;/span&gt;(MPI_COMM_WORLD, &amp;amp;myid);&lt;br&gt;		&lt;span class=&#34;hljs-built_in&#34;&gt;MPI_Comm_size&lt;/span&gt;(MPI_COMM_WORLD, &amp;amp;numprocs);&lt;br&gt;		&lt;span class=&#34;hljs-built_in&#34;&gt;MPI_Get_processor_name&lt;/span&gt;(processor_name, &amp;amp;namelen);&lt;br&gt;    	&lt;span class=&#34;hljs-comment&#34;&gt;//构造并行区&lt;/span&gt;&lt;br&gt;		&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;pragma&lt;/span&gt; omp parallel private(thread_id, nthreads) num_threads(8) &lt;span class=&#34;hljs-comment&#34;&gt;//设置线程数为8&lt;/span&gt;&lt;/span&gt;&lt;br&gt;		&amp;#123;&lt;br&gt;			thread_id = &lt;span class=&#34;hljs-built_in&#34;&gt;omp_get_thread_num&lt;/span&gt;();  &lt;span class=&#34;hljs-comment&#34;&gt;//获得当前线程的id&lt;/span&gt;&lt;br&gt;			nthreads = &lt;span class=&#34;hljs-built_in&#34;&gt;omp_get_num_threads&lt;/span&gt;();  &lt;span class=&#34;hljs-comment&#34;&gt;//获得总的线程数&lt;/span&gt;&lt;br&gt;			&lt;span class=&#34;hljs-built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;Thread number %d (on %d) for the MPI process number %d (on %d) [%s]\n&amp;quot;&lt;/span&gt;,&lt;br&gt;			thread_id, nthreads, myid, numprocs, processor_name);	&lt;br&gt;		&amp;#125; 		&lt;br&gt;		&lt;span class=&#34;hljs-built_in&#34;&gt;MPI_Finalize&lt;/span&gt;();&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h2 id=&#34;程序运行结果&#34;&gt;&lt;a href=&#34;#程序运行结果&#34; class=&#34;headerlink&#34; title=&#34;程序运行结果&#34;&gt;&lt;/a&gt;程序运行结果&lt;/h2&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;Thread number &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt; (on &lt;span class=&#34;hljs-number&#34;&gt;8&lt;/span&gt;) &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; the MPI process number &lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt; (on &lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt;) [eb1316.para.bscc]&lt;br&gt;Thread number &lt;span class=&#34;hljs-number&#34;&gt;4&lt;/span&gt; (on &lt;span class=&#34;hljs-number&#34;&gt;8&lt;/span&gt;) &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; the MPI process number &lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt; (on &lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt;) [eb1316.para.bscc]&lt;br&gt;Thread number &lt;span class=&#34;hljs-number&#34;&gt;3&lt;/span&gt; (on &lt;span class=&#34;hljs-number&#34;&gt;8&lt;/span&gt;) &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; the MPI process number &lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt; (on &lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt;) [eb1316.para.bscc]&lt;br&gt;Thread number &lt;span class=&#34;hljs-number&#34;&gt;5&lt;/span&gt; (on &lt;span class=&#34;hljs-number&#34;&gt;8&lt;/span&gt;) &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; the MPI process number &lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt; (on &lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt;) [eb1316.para.bscc]&lt;br&gt;Thread number &lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt; (on &lt;span class=&#34;hljs-number&#34;&gt;8&lt;/span&gt;) &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; the MPI process number &lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt; (on &lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt;) [eb1316.para.bscc]&lt;br&gt;Thread number &lt;span class=&#34;hljs-number&#34;&gt;6&lt;/span&gt; (on &lt;span class=&#34;hljs-number&#34;&gt;8&lt;/span&gt;) &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; the MPI process number &lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt; (on &lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt;) [eb1316.para.bscc]&lt;br&gt;Thread number &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt; (on &lt;span class=&#34;hljs-number&#34;&gt;8&lt;/span&gt;) &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; the MPI process number &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt; (on &lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt;) [eb1314.para.bscc]&lt;br&gt;Thread number &lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt; (on &lt;span class=&#34;hljs-number&#34;&gt;8&lt;/span&gt;) &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; the MPI process number &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt; (on &lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt;) [eb1314.para.bscc]&lt;br&gt;Thread number &lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt; (on &lt;span class=&#34;hljs-number&#34;&gt;8&lt;/span&gt;) &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; the MPI process number &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt; (on &lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt;) [eb1314.para.bscc]&lt;br&gt;Thread number &lt;span class=&#34;hljs-number&#34;&gt;5&lt;/span&gt; (on &lt;span class=&#34;hljs-number&#34;&gt;8&lt;/span&gt;) &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; the MPI process number &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt; (on &lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt;) [eb1314.para.bscc]&lt;br&gt;Thread number &lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt; (on &lt;span class=&#34;hljs-number&#34;&gt;8&lt;/span&gt;) &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; the MPI process number &lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt; (on &lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt;) [eb1316.para.bscc]&lt;br&gt;Thread number &lt;span class=&#34;hljs-number&#34;&gt;7&lt;/span&gt; (on &lt;span class=&#34;hljs-number&#34;&gt;8&lt;/span&gt;) &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; the MPI process number &lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt; (on &lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt;) [eb1316.para.bscc]&lt;br&gt;Thread number &lt;span class=&#34;hljs-number&#34;&gt;3&lt;/span&gt; (on &lt;span class=&#34;hljs-number&#34;&gt;8&lt;/span&gt;) &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; the MPI process number &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt; (on &lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt;) [eb1314.para.bscc]&lt;br&gt;Thread number &lt;span class=&#34;hljs-number&#34;&gt;4&lt;/span&gt; (on &lt;span class=&#34;hljs-number&#34;&gt;8&lt;/span&gt;) &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; the MPI process number &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt; (on &lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt;) [eb1314.para.bscc]&lt;br&gt;Thread number &lt;span class=&#34;hljs-number&#34;&gt;6&lt;/span&gt; (on &lt;span class=&#34;hljs-number&#34;&gt;8&lt;/span&gt;) &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; the MPI process number &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt; (on &lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt;) [eb1314.para.bscc]&lt;br&gt;Thread number &lt;span class=&#34;hljs-number&#34;&gt;7&lt;/span&gt; (on &lt;span class=&#34;hljs-number&#34;&gt;8&lt;/span&gt;) &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; the MPI process number &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt; (on &lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt;) [eb1314.para.bscc]&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-</content>
-        <category term="MPI" />
-        <updated>2021-11-26T14:09:37.000Z</updated>
     </entry>
 </feed>
