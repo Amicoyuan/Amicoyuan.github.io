@@ -13,16 +13,16 @@
         <category>Find</category>
         <category>STL</category>
         <category>C++</category>
-        <category>Set</category>
+        <category>LinkList</category>
         <category>团体程序设计天梯赛</category>
+        <category>双向链表</category>
+        <category>Set</category>
         <category>Sort</category>
-        <category>Binary tree</category>
+        <category>Graph</category>
         <category>邻接表</category>
         <category>Vector</category>
+        <category>Binary tree</category>
         <category>BFS</category>
-        <category>LinkList</category>
-        <category>双向链表</category>
-        <category>Graph</category>
         <category>模拟</category>
         <category>邻接矩阵</category>
         <category>DFS</category>
