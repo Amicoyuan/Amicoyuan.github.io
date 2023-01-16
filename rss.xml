@@ -13,11 +13,11 @@
         <category>Find</category>
         <category>STL</category>
         <category>C++</category>
-        <category>LinkList</category>
-        <category>团体程序设计天梯赛</category>
-        <category>双向链表</category>
         <category>Set</category>
+        <category>团体程序设计天梯赛</category>
         <category>Sort</category>
+        <category>LinkList</category>
+        <category>双向链表</category>
         <category>Graph</category>
         <category>邻接表</category>
         <category>Vector</category>
@@ -34,6 +34,7 @@
         <category>Pair</category>
         <category>Linux</category>
         <category>MPI</category>
+        <category>CUDA</category>
         <category>Mirror</category>
         <category>Numactl</category>
         <category>OpenMP</category>
@@ -43,10 +44,62 @@
         <category>gcov</category>
         <item>
             <guid isPermalink="true">http://example.com/2023/01/16/cuda001/</guid>
-            <title>cuda001</title>
+            <title>CUDA用GPU输出Hello World</title>
             <link>http://example.com/2023/01/16/cuda001/</link>
+            <category>CUDA</category>
             <pubDate>Mon, 16 Jan 2023 16:58:39 +0800</pubDate>
-            <description><![CDATA[  ]]></description>
+            <description><![CDATA[ &lt;h2 id=&#34;用GPU输出Hello-World&#34;&gt;&lt;a href=&#34;#用GPU输出Hello-World&#34; class=&#34;headerlink&#34; title=&#34;用GPU输出Hello World&#34;&gt;&lt;/a&gt;用GPU输出Hello World&lt;/h2&gt;&lt;h3 id=&#34;1-检查环境&#34;&gt;&lt;a href=&#34;#1-检查环境&#34; class=&#34;headerlink&#34; title=&#34;1.检查环境&#34;&gt;&lt;/a&gt;1.检查环境&lt;/h3&gt;&lt;p&gt;学习一个新编程语言的最好方式就是使用这种语言来编写程序。在本节，你将开始编写在GPU上运行的第一个内核代码。像其他任何编程语言一样编写GPU上的第一个程序是输出字符串“Hello World”。&lt;/p&gt;
+&lt;p&gt;如果这是你第一次使用CUDA,在Linux系统中，你可以想使用以下命令来检查CUDA编译器是否正确安装：&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs shell&#34;&gt;which nvcc&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;通常的结果可能是&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs shell&#34;&gt;/usr/local/cuda/bin/nvcc&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;你还需要检查你的机器上是否安装了GPU加速卡。对吃你可以在Linux系统上使用以下命令：&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs shell&#34;&gt;ls -l /dev/nv*&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;通常的结果是：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/01/16/cuda001/image-20230116170920773.png&#34; alt=&#34;image-20230116170920773&#34;&gt;&lt;/p&gt;
+&lt;p&gt;在这个例子中，你发现了两个GPU卡（不同的用户配置可能有所不同，因此显示结果会有所差异）。&lt;/p&gt;
+&lt;h3 id=&#34;2-第一个CUDA-C程序&#34;&gt;&lt;a href=&#34;#2-第一个CUDA-C程序&#34; class=&#34;headerlink&#34; title=&#34;2.第一个CUDA C程序&#34;&gt;&lt;/a&gt;2.第一个CUDA C程序&lt;/h3&gt;&lt;p&gt;现在你要准备好写你的第一个CUDA C程序。写一个CUDA C程序，你需要以下几个步骤：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;用专用扩展名.cu来创建一个源文件。&lt;/li&gt;
+&lt;li&gt;使用CUDA nvcc编译器来编译程序。&lt;/li&gt;
+&lt;li&gt;从命令行运行可执行文件，这个文件有可在GPU上运行的内核代码。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;首先，我们编写一个C语言程序来输出“Hello World”,如下所示：&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;hljs-meta-string&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;()&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;br&gt;    &lt;span class=&#34;hljs-built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;Hello World from CPU!\n&amp;quot;&lt;/span&gt;);&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;把代码保存到hello.cu中，然后使用nvcc编译器来编译。CUDA nvcc编译器和gcc编译器及其他编译器有相似的语义&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs shell&#34;&gt;nvcc hello.cu -o hello&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;如果你运行可执行文件hello，将会输出：&lt;/p&gt;
+&lt;figure class=&#34;highlight angelscript&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs angelscript&#34;&gt;Hello World &lt;span class=&#34;hljs-keyword&#34;&gt;from&lt;/span&gt; CPU!&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;接下来，编写一个内核函数，命名为helloFromGPU，用它来输出字符串“Hello World from GPU!”。&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-function&#34;&gt;__global__ &lt;span class=&#34;hljs-keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;helloFromGPU&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;void&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;br&gt;    &lt;span class=&#34;hljs-built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;Hello World from GPU!\n&amp;quot;&lt;/span&gt;);&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;修饰符__global__告诉编译器这个函数将会从CPU中调用，然后在GPU上执行。用下面代码启用内核函数。&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;helloFromGPU&amp;lt;&amp;lt;&amp;lt;&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;10&lt;/span&gt;&amp;gt;&amp;gt;&amp;gt;();&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;三重尖括号意味着从主线程到设备端代码的调用。一个内核函数通过一组线程来执行，所有线程执行相同的代码。三重尖括号里面的参数是执行配置，用来说明使用多少线程来执行内核函数。在这个例子中，有10个GPU线程被调用。综上所述，得到代码清单1-1所示的程序。&lt;/p&gt;
+&lt;h3 id=&#34;3-代码清单1-1Hello-World-from-GPU-hello-cu&#34;&gt;&lt;a href=&#34;#3-代码清单1-1Hello-World-from-GPU-hello-cu&#34; class=&#34;headerlink&#34; title=&#34;3.代码清单1-1Hello World from GPU! (hello.cu)&#34;&gt;&lt;/a&gt;3.代码清单1-1Hello World from GPU! (hello.cu)&lt;/h3&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;hljs-meta-string&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;__global__ &lt;span class=&#34;hljs-keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;helloFromGPU&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;void&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;br&gt;    &lt;span class=&#34;hljs-built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;Hello World from GPU!\n&amp;quot;&lt;/span&gt;);&lt;br&gt;&amp;#125;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;()&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;br&gt;    &lt;span class=&#34;hljs-comment&#34;&gt;//hello from cpu&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;Hello World from CPU!\n&amp;quot;&lt;/span&gt;);&lt;br&gt;    &lt;br&gt;    &lt;br&gt;    helloFromGPU&amp;lt;&amp;lt;&amp;lt;&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;10&lt;/span&gt;&amp;gt;&amp;gt;&amp;gt;();&lt;br&gt;    &lt;span class=&#34;hljs-built_in&#34;&gt;cudaDeviceReset&lt;/span&gt;();&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;函数cudaDeviceRest（）用来显式地释放和清空当前进程中与当前设别有关的所有资源。如下所示，在nvcc命令行中使用-arch sm_20进行编译：&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs shell&#34;&gt;nvcc -arch sm_20 hello.cu -o hello&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;开关语句-arch sm_20使编译器为Fermi架构生成设备代码。运行这个可执行文件，它将输出10条字符串“Hello World from CPU!”，每个线程输出一条。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/01/16/cuda001/image-20230116173446169.png&#34; alt=&#34;image-20230116173446169&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;4-一个典型的CUDA编程结构包括5个主要步骤&#34;&gt;&lt;a href=&#34;#4-一个典型的CUDA编程结构包括5个主要步骤&#34; class=&#34;headerlink&#34; title=&#34;4.一个典型的CUDA编程结构包括5个主要步骤&#34;&gt;&lt;/a&gt;4.一个典型的CUDA编程结构包括5个主要步骤&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;分配GPU内存&lt;/li&gt;
+&lt;li&gt;从CPU内存中拷贝数据到GPU内存&lt;/li&gt;
+&lt;li&gt;调用CUDA内核函数来完成程序指定的运算&lt;/li&gt;
+&lt;li&gt;将数据从GPU拷回CPU内存&lt;/li&gt;
+&lt;li&gt;释放GPU内存空间&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;在hello.cu中，你只看到了第三步：调用内核。&lt;/p&gt;
+&lt;h3 id=&#34;5-参考资料&#34;&gt;&lt;a href=&#34;#5-参考资料&#34; class=&#34;headerlink&#34; title=&#34;5.参考资料&#34;&gt;&lt;/a&gt;5.参考资料&lt;/h3&gt;&lt;p&gt;CUDA C编程权威指南 程润伟，Max Grossman(美)，Ty Mckercher &lt;/p&gt;
+ ]]></description>
         </item>
         <item>
             <guid isPermalink="true">http://example.com/2023/01/14/openmp006/</guid>
@@ -718,8 +771,8 @@
             <title>L2-005 集合相似度 (25 分)</title>
             <link>http://example.com/2022/04/23/Algorithm030/</link>
             <category>C++</category>
-            <category>团体程序设计天梯赛</category>
             <category>Set</category>
+            <category>团体程序设计天梯赛</category>
             <category>模拟</category>
             <pubDate>Sat, 23 Apr 2022 21:39:53 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;L2-005-集合相似度-25-分&#34;&gt;&lt;a href=&#34;#L2-005-集合相似度-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-005 集合相似度 (25 分)&#34;&gt;&lt;/a&gt;L2-005 集合相似度 (25 分)&lt;/h2&gt;&lt;p&gt;给定两个整数集合，它们的相似度定义为：Nc&amp;#x2F;Nt×100%。其中Nc是两个集合都有的不相等整数的个数，Nt是两个集合一共有的不相等整数的个数。你的任务就是计算任意一对给定集合的相似度。&lt;/p&gt;
