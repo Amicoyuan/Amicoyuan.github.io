@@ -5,8 +5,8 @@
         <link>http://example.com</link>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Mon, 16 Jan 2023 16:58:39 +0800</pubDate>
-        <lastBuildDate>Mon, 16 Jan 2023 16:58:39 +0800</lastBuildDate>
+        <pubDate>Mon, 16 Jan 2023 17:46:48 +0800</pubDate>
+        <lastBuildDate>Mon, 16 Jan 2023 17:46:48 +0800</lastBuildDate>
         <category>AVX</category>
         <category>Data Structure</category>
         <category>String</category>
@@ -39,9 +39,38 @@
         <category>Numactl</category>
         <category>OpenMP</category>
         <category>Slurm</category>
-        <category>Tensorflow</category>
         <category>性能分析工具</category>
+        <category>Tensorflow</category>
         <category>gcov</category>
+        <item>
+            <guid isPermalink="true">http://example.com/2023/01/16/cuda002/</guid>
+            <title>CUDA:一种异构计算平台</title>
+            <link>http://example.com/2023/01/16/cuda002/</link>
+            <category>CUDA</category>
+            <pubDate>Mon, 16 Jan 2023 17:46:48 +0800</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;CUDA-一种异构计算平台&#34;&gt;&lt;a href=&#34;#CUDA-一种异构计算平台&#34; class=&#34;headerlink&#34; title=&#34;CUDA:一种异构计算平台&#34;&gt;&lt;/a&gt;CUDA:一种异构计算平台&lt;/h2&gt;&lt;h3 id=&#34;1-CUDA的简单介绍&#34;&gt;&lt;a href=&#34;#1-CUDA的简单介绍&#34; class=&#34;headerlink&#34; title=&#34;1.CUDA的简单介绍&#34;&gt;&lt;/a&gt;1.CUDA的简单介绍&lt;/h3&gt;&lt;p&gt;CUDA是一种通用的并行计算平台和编程模型，它利用NVIDIA GPU中的并行计算引擎能够有效地解决复杂的计算问题。通过使用CUDA，你可以像在CPU上，通过GPU来进行计算。&lt;/p&gt;
+&lt;p&gt;CUDA平台可以通过CUDA加速库，编译器指令，应用编程接口以及行业标准程序语言的扩展（包括C,C++,Fortran，Python，如图1-12所示）来使用。&lt;/p&gt;
+&lt;p&gt;CUDA C是标准ANSI C语言的一个扩展，它带有的少数语言扩展功能使异构编程成为可能，同时也能通过API来管理设备，内存和其他任务。CUDA还是一个可扩展的编程模型，它使程序能对有不同数量核的GPU明显地扩展其并行性，同时对熟悉C编程语言的程序员来说也比较容易上手。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/01/16/cuda002/image-20230116175503342.png&#34; alt=&#34;image-20230116175503342&#34;&gt;&lt;/p&gt;
+&lt;p&gt;CUDA提供了两层API来管理GPU设备和组织线程，如图1-13所示。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/01/16/cuda002/image-20230116175610403.png&#34; alt=&#34;image-20230116175610403&#34;&gt;&lt;/p&gt;
+&lt;p&gt;-CUDA驱动API&lt;/p&gt;
+&lt;p&gt;-CUDA运行时API&lt;/p&gt;
+&lt;p&gt;驱动API是一种低级API，它相对来说较难编程，但是它对于在GPU设备使用上提供了更多的控制。运行时API是一个高级API，他在驱动API的上层实现。每个运行时API函数都被分解为更多传给驱动API的基本运算。&lt;/p&gt;
+&lt;h3 id=&#34;2-运行时API与驱动API&#34;&gt;&lt;a href=&#34;#2-运行时API与驱动API&#34; class=&#34;headerlink&#34; title=&#34;2.运行时API与驱动API&#34;&gt;&lt;/a&gt;2.运行时API与驱动API&lt;/h3&gt;&lt;p&gt;运行时API和驱动API之间没有明显的性能差异。在设备端，内核是如何使用内存以及你是如何组织线程的，对性能有更显著的影响。&lt;/p&gt;
+&lt;p&gt;这两种API是相互排斥的，你必须使用两者之一，从两者中混合函数调用是不可能的。本书中所有例子都使用运行时API。&lt;/p&gt;
+&lt;p&gt;一个CUDA程序包含了以下两个部分的混合。&lt;/p&gt;
+&lt;p&gt;-在CPU上运行的主机代码&lt;/p&gt;
+&lt;p&gt;-在GPU上运行的设备代码&lt;/p&gt;
+&lt;p&gt;NVIDIA的CUDA nvcc编译器在编译过程中将设备代码从主机代码中分离出来。如图1-14所示，主机代码是标准的C代码，使用C编译器进行编译。设备代码，也就是核函数，是用扩展的带有标记数据并行函数关键字的CUDA C语言编写的。设备代码通过nvcc进行编译。在链接阶段，在内核程序调用和显示GPU设备操作中添加CUDA运行时库。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/01/16/cuda002/image-20230116180725596.png&#34; alt=&#34;image-20230116180725596&#34;&gt;&lt;/p&gt;
+&lt;p&gt;CUDA nvcc编译器是以广泛使用LLVM开源编译系统为基础的。在GPU加速器的支持下，通过使用CUDA编译器SDK，你可以创建或扩展编程语言，如图1-15所示。&lt;/p&gt;
+&lt;p&gt;CUDA平台也是支持多样化并行计算生态系统的基础，如图1-26所示。现在，随着越来越多的公司可以提供全球性的工具，服务和解决方案，CUDA生态系统迅速成长。如果你想在GPU上建立你的应用程序，强化GPU性能最简单方式是使用CUDA工具包（cuda-toolkit），它为C和C++开发人员提供了一个综合的开发环境。CUDA工具包包括编译器，数学库，以及调式和优化应用程序性能的工具。同时提供了代码样例，编程指南，用户手册，API参考文档和其他帮助你入门的文档。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/01/16/cuda002/image-20230116181439404.png&#34; alt=&#34;image-20230116181439404&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/01/16/cuda002/image-20230116181447616.png&#34; alt=&#34;image-20230116181447616&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;3-参考资料&#34;&gt;&lt;a href=&#34;#3-参考资料&#34; class=&#34;headerlink&#34; title=&#34;3.参考资料&#34;&gt;&lt;/a&gt;3.参考资料&lt;/h3&gt;&lt;p&gt;CUDA C编程权威指南 程润伟，Max Grossman(美)，Ty Mckercher &lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">http://example.com/2023/01/16/cuda001/</guid>
             <title>CUDA用GPU输出Hello World</title>
