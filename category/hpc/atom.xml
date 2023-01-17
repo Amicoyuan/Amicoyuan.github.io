@@ -3,7 +3,7 @@
     <id>http://example.com</id>
     <title>Amicoyuan • Posts by &#34;hpc&#34; category</title>
     <link href="http://example.com" />
-    <updated>2023-01-17T13:36:04.000Z</updated>
+    <updated>2023-01-17T14:03:10.000Z</updated>
     <category term="AVX" />
     <category term="Data Structure" />
     <category term="String" />
@@ -40,6 +40,42 @@
     <category term="性能分析工具" />
     <category term="gcov" />
     <entry>
+        <id>http://example.com/2023/01/17/cuda005/</id>
+        <title>CUDA内存管理</title>
+        <link rel="alternate" href="http://example.com/2023/01/17/cuda005/"/>
+        <content type="html">&lt;h3 id=&#34;1-内存管理&#34;&gt;&lt;a href=&#34;#1-内存管理&#34; class=&#34;headerlink&#34; title=&#34;1.内存管理&#34;&gt;&lt;/a&gt;1.内存管理&lt;/h3&gt;&lt;p&gt;CUDA编程模型假设系统是由一个主机和一个设备组成的，而且各自拥有独立的内存。核函数是在设备上运行的。为使你拥有充分的控制权并使系统达到最佳性能，CUDA运行时负责分配与释放设备内存，并且在主机内存和设备内存之间传输数据。表2-1列出了标准的C函数以及相应地针对内存操作的CUDA C函数。&lt;/p&gt;
+&lt;p&gt;用于执行GPU内存分配的是cudaMalloc函数，其函数原型为：&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-function&#34;&gt;cudaError_t &lt;span class=&#34;hljs-title&#34;&gt;cudaMalloc&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;void&lt;/span&gt;** devPtr, &lt;span class=&#34;hljs-keyword&#34;&gt;size_t&lt;/span&gt; size)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;img src=&#34;/2023/01/17/cuda005/image-20230117223254853.png&#34; alt=&#34;image-20230117223254853&#34;&gt;&lt;/p&gt;
+&lt;p&gt;该函数负责向设备分配一定字节的线性内存，并以devPtr的形式返回指向所分配内存的指针。cudaMalloc与标准C语言中的malloc函数几乎一样，只是此函数在GPU的内存里分配内存。通过充分保持与标准C语言运行库中的接口一致性，可以实现CUDA应用程序的轻松接入。&lt;/p&gt;
+&lt;p&gt;cudaMemcpy函数负责主机和设备之间的数据传输，其函数原型为：&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-function&#34;&gt;cudaError_t &lt;span class=&#34;hljs-title&#34;&gt;cudaMencpy&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;( &lt;span class=&#34;hljs-keyword&#34;&gt;void&lt;/span&gt;* dst, &lt;span class=&#34;hljs-keyword&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;hljs-keyword&#34;&gt;void&lt;/span&gt;* src, &lt;span class=&#34;hljs-keyword&#34;&gt;size_t&lt;/span&gt; count, cudaMemcpyKind kind)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;此函数从src指向的源存储区复制一定数量的字节到dst指向的目标存储区。复制方向由kind指定，其中的kind有以下几种。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;cudaMemcpyHostToHost&lt;/li&gt;
+&lt;li&gt;cudaMemcpyHostToDevice&lt;/li&gt;
+&lt;li&gt;cudaMemcpyDeviceToHost&lt;/li&gt;
+&lt;li&gt;cudaMemcpyDeviceToDevice&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;这个函数以同步方式执行，因为在cudaMemcpy函数返回以及传输操作完成之前主机应用程序是阻塞的。除了内核启动之外的CUDA调用都会返回一个错误的枚举类型cudaError_t。如果GPU内存分配成功，函数返回：&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;cudaSuccess&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;否则返回：&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;cudaErrorMemoryAllocation&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;可以使用以下CUDA运行时函数将错误代码转化为可读的错误消息：&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;char&lt;/span&gt;* &lt;span class=&#34;hljs-title&#34;&gt;cudaGetErroeString&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(cudaError_t error)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;cudaGetErrorString函数和C语言中的strerror函数类似。&lt;/p&gt;
+&lt;p&gt;CUDA编程模型从GPU架构中抽象出一个内存层次结构，图2-3所示的是一个简化的GPU内存结构，它主要包含两部分：全局内存和共享内存。&lt;/p&gt;
+&lt;h3 id=&#34;2-内存层次结构&#34;&gt;&lt;a href=&#34;#2-内存层次结构&#34; class=&#34;headerlink&#34; title=&#34;2.内存层次结构&#34;&gt;&lt;/a&gt;2.内存层次结构&lt;/h3&gt;&lt;h3 id=&#34;3-不同的存储空间&#34;&gt;&lt;a href=&#34;#3-不同的存储空间&#34; class=&#34;headerlink&#34; title=&#34;3.不同的存储空间&#34;&gt;&lt;/a&gt;3.不同的存储空间&lt;/h3&gt;&lt;h3 id=&#34;4-参考资料&#34;&gt;&lt;a href=&#34;#4-参考资料&#34; class=&#34;headerlink&#34; title=&#34;4.参考资料&#34;&gt;&lt;/a&gt;4.参考资料&lt;/h3&gt;&lt;p&gt;CUDA C编程权威指南 程润伟，Max Grossman(美)，Ty Mckercher &lt;/p&gt;
+</content>
+        <category term="CUDA" />
+        <updated>2023-01-17T14:03:10.000Z</updated>
+    </entry>
+    <entry>
         <id>http://example.com/2023/01/17/cuda004/</id>
         <title>CUDA编程结构</title>
         <link rel="alternate" href="http://example.com/2023/01/17/cuda004/"/>
@@ -61,6 +97,7 @@
 &lt;/ol&gt;
 &lt;p&gt;首先，你要学习的是内存管理及主机和设备之间的数据传输。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/2023/01/17/cuda004/image-20230117220146068.png&#34; alt=&#34;image-20230117220146068&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;p&gt;CUDA C编程权威指南 程润伟，Max Grossman(美)，Ty Mckercher &lt;/p&gt;
 </content>
         <category term="CUDA" />
         <updated>2023-01-17T13:36:04.000Z</updated>
@@ -83,6 +120,7 @@
 &lt;li&gt;硬件层&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;在编程与算法设计的过程中，你最关心的应是在领域层如何解析数据和函数，以便在并行环境中能正确，高效地解决问题。当进入编程阶段，你的关注点应转向如何组织并发线程。在这个阶段，你需要从逻辑层面来思考，以确保你的线程和计算能正确地解决问题。在C语言并行编程中，需要使用pthreads或OpenMP技术来显式地管理线程。CUDA提出了一个线程层次结构抽象的概念，以允许控制线程行为。&lt;/p&gt;
+&lt;h2 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;p&gt;CUDA C编程权威指南 程润伟，Max Grossman(美)，Ty Mckercher &lt;/p&gt;
 </content>
         <category term="CUDA" />
         <updated>2023-01-17T12:29:01.000Z</updated>
@@ -793,102 +831,5 @@
 </content>
         <category term="性能分析工具" />
         <updated>2022-01-18T06:35:05.000Z</updated>
-    </entry>
-    <entry>
-        <id>http://example.com/2022/01/17/AVX005/</id>
-        <title>AVX向量化学习(五)-INT型数组相加操作</title>
-        <link rel="alternate" href="http://example.com/2022/01/17/AVX005/"/>
-        <content type="html">&lt;h1 id=&#34;AVX向量化学习-五-INT型数组相加操作&#34;&gt;&lt;a href=&#34;#AVX向量化学习-五-INT型数组相加操作&#34; class=&#34;headerlink&#34; title=&#34;AVX向量化学习(五)-INT型数组相加操作&#34;&gt;&lt;/a&gt;AVX向量化学习(五)-INT型数组相加操作&lt;/h1&gt;&lt;p&gt;使用AVX指令集进行2个INT型的数组相加操作&lt;/p&gt;
-&lt;h2 id=&#34;使用到的AVX函数介绍&#34;&gt;&lt;a href=&#34;#使用到的AVX函数介绍&#34; class=&#34;headerlink&#34; title=&#34;使用到的AVX函数介绍&#34;&gt;&lt;/a&gt;使用到的AVX函数介绍&lt;/h2&gt;&lt;h3 id=&#34;1&#34;&gt;&lt;a href=&#34;#1&#34; class=&#34;headerlink&#34; title=&#34;1.&#34;&gt;&lt;/a&gt;1.&lt;/h3&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;__m256i _mm256_loadu_si256 (__m256i &lt;span class=&#34;hljs-keyword&#34;&gt;const&lt;/span&gt; * mem_addr)&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;&lt;strong&gt;Synopsis&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;m256i _mm256_loadu_si256 (m256i const * mem_addr)&lt;br&gt;#include &amp;lt;immintrin.h&amp;gt;&lt;br&gt;Instruction: vmovdqu ymm, m256&lt;br&gt;CPUID Flags: AVX&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Load 256-bits of integer data from memory into dst. mem_addr does not need to be aligned on any particular boundary.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Operation&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;dst[&lt;span class=&#34;hljs-number&#34;&gt;255&lt;/span&gt;:&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;] := MEM[mem_addr+&lt;span class=&#34;hljs-number&#34;&gt;255&lt;/span&gt;:mem_addr] &lt;br&gt;dst[MAX:&lt;span class=&#34;hljs-number&#34;&gt;256&lt;/span&gt;] := &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;&lt;strong&gt;Performance&lt;/strong&gt;&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&#34;left&#34;&gt;Architecture&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;Latency&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;Throughput (CPI)&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Icelake&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;7&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;0.5&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Skylake&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;7&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;0.5&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Broadwell&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;0.25&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Haswell&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;0.25&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Ivy Bridge&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;0.5&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;h3 id=&#34;2&#34;&gt;&lt;a href=&#34;#2&#34; class=&#34;headerlink&#34; title=&#34;2.&#34;&gt;&lt;/a&gt;2.&lt;/h3&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;__m256i _mm256_add_epi32 (__m256i a, __m256i b)&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;&lt;strong&gt;Synopsis&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;m256i _mm256_add_epi32 (m256i a, __m256i b)&lt;br&gt;#include &amp;lt;immintrin.h&amp;gt;&lt;br&gt;Instruction: vpaddd ymm, ymm, ymm&lt;br&gt;CPUID Flags: AVX2&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Add packed 32-bit integers in a and b, and store the results in dst.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Operation&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&#34;highlight apache&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs apache&#34;&gt;&lt;span class=&#34;hljs-attribute&#34;&gt;FOR&lt;/span&gt; j := &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt; to &lt;span class=&#34;hljs-number&#34;&gt;7&lt;/span&gt; &lt;br&gt;	     &lt;span class=&#34;hljs-attribute&#34;&gt;i&lt;/span&gt; := j*&lt;span class=&#34;hljs-number&#34;&gt;32&lt;/span&gt; &lt;br&gt;	     &lt;span class=&#34;hljs-attribute&#34;&gt;dst&lt;/span&gt;[i+&lt;span class=&#34;hljs-number&#34;&gt;31&lt;/span&gt;:i] := a[i+&lt;span class=&#34;hljs-number&#34;&gt;31&lt;/span&gt;:i] + b[i+&lt;span class=&#34;hljs-number&#34;&gt;31&lt;/span&gt;:i] &lt;br&gt;&lt;span class=&#34;hljs-attribute&#34;&gt;ENDFOR&lt;/span&gt; &lt;br&gt;&lt;span class=&#34;hljs-attribute&#34;&gt;dst&lt;/span&gt;[MAX:&lt;span class=&#34;hljs-number&#34;&gt;256&lt;/span&gt;] := &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;&lt;strong&gt;Performance&lt;/strong&gt;&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&#34;left&#34;&gt;Architecture&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;Latency&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;Throughput (CPI)&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Icelake&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;0.33&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Skylake&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;0.33&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Broadwell&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;0.5&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Haswell&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;0.5&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;h2 id=&#34;程序源代码&#34;&gt;&lt;a href=&#34;#程序源代码&#34; class=&#34;headerlink&#34; title=&#34;程序源代码&#34;&gt;&lt;/a&gt;程序源代码&lt;/h2&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;45&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;46&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;include&lt;/span&gt;&lt;span class=&#34;hljs-meta-string&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;hljs-meta-string&#34;&gt;&amp;lt;immintrin.h&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;()&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;/span&gt;&amp;#123;&lt;br&gt;	&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; a[&lt;span class=&#34;hljs-number&#34;&gt;40&lt;/span&gt;];&lt;br&gt;	&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; b[&lt;span class=&#34;hljs-number&#34;&gt;40&lt;/span&gt;];&lt;br&gt;	&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;&lt;br&gt;	&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; ans1[&lt;span class=&#34;hljs-number&#34;&gt;40&lt;/span&gt;];    &lt;span class=&#34;hljs-comment&#34;&gt;//记录串行结果 &lt;/span&gt;&lt;br&gt;	&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; ans2[&lt;span class=&#34;hljs-number&#34;&gt;40&lt;/span&gt;];	 &lt;span class=&#34;hljs-comment&#34;&gt;//记录AVX向量化后的结果&lt;/span&gt;&lt;br&gt;	&lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; (i=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;i&amp;lt;&lt;span class=&#34;hljs-number&#34;&gt;40&lt;/span&gt;;i++)&lt;br&gt;	&amp;#123;&lt;br&gt;		a[i]=i;&lt;br&gt;		b[i]=&lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt;*i;&lt;br&gt;	&amp;#125;&lt;br&gt;	&lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; (i=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;i&amp;lt;&lt;span class=&#34;hljs-number&#34;&gt;40&lt;/span&gt;;i++)&lt;br&gt;	&amp;#123;&lt;br&gt;		ans1[i]=a[i]+b[i];&lt;br&gt;	&amp;#125;&lt;br&gt;	&lt;span class=&#34;hljs-built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;串行计算结果：\n&amp;quot;&lt;/span&gt;);&lt;br&gt;	&lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; (i=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;i&amp;lt;&lt;span class=&#34;hljs-number&#34;&gt;40&lt;/span&gt;;i++)&lt;br&gt;	&amp;#123;&lt;br&gt;		&lt;span class=&#34;hljs-built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;%d &amp;quot;&lt;/span&gt;,ans1[i]);&lt;br&gt;	&amp;#125;&lt;br&gt;	&lt;span class=&#34;hljs-built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;\n&amp;quot;&lt;/span&gt;);&lt;br&gt;	__m256i v0;&lt;br&gt;	__m256i v1;&lt;br&gt;	__m256i v2;&lt;br&gt;	&lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; (i=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;i&amp;lt;&lt;span class=&#34;hljs-number&#34;&gt;40&lt;/span&gt;&lt;span class=&#34;hljs-number&#34;&gt;-8&lt;/span&gt;;i+=&lt;span class=&#34;hljs-number&#34;&gt;8&lt;/span&gt;)&lt;br&gt;	&amp;#123;	&lt;br&gt;		v0 = _mm256_loadu_si256((&lt;span class=&#34;hljs-keyword&#34;&gt;const&lt;/span&gt; __m256i*)(a+i));	 &lt;span class=&#34;hljs-comment&#34;&gt;//强制类型转换&lt;/span&gt;&lt;br&gt;		v1 = _mm256_loadu_si256((&lt;span class=&#34;hljs-keyword&#34;&gt;const&lt;/span&gt; __m256i*)(b+i));	 &lt;span class=&#34;hljs-comment&#34;&gt;//强制类型转化&lt;/span&gt;&lt;br&gt;		v2 = _mm256_add_epi32(v0,v1);     &lt;span class=&#34;hljs-comment&#34;&gt;//v0+v1&lt;/span&gt;&lt;br&gt;		_mm256_storeu_si256((__m256i*)(ans2+i),v2);&lt;br&gt;		&lt;br&gt;	&amp;#125;&lt;span class=&#34;hljs-comment&#34;&gt;//边界处理&lt;/span&gt;&lt;br&gt;	&lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; (;i&amp;lt;&lt;span class=&#34;hljs-number&#34;&gt;40&lt;/span&gt;;i++)&lt;br&gt;	&amp;#123;&lt;br&gt;		ans2[i]=a[i]+b[i];&lt;br&gt;	&amp;#125;&lt;br&gt;	&lt;span class=&#34;hljs-built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;并行计算结果：\n&amp;quot;&lt;/span&gt;);&lt;br&gt;	&lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; (i=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;i&amp;lt;&lt;span class=&#34;hljs-number&#34;&gt;40&lt;/span&gt;;i++)&lt;br&gt;	&amp;#123;&lt;br&gt;		&lt;span class=&#34;hljs-built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;%d &amp;quot;&lt;/span&gt;,ans2[i]);&lt;br&gt;	&amp;#125;&lt;br&gt;	&lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;; &lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h2 id=&#34;程序输出&#34;&gt;&lt;a href=&#34;#程序输出&#34; class=&#34;headerlink&#34; title=&#34;程序输出&#34;&gt;&lt;/a&gt;程序输出&lt;/h2&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;串行计算结果：&lt;br&gt;&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;3&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;6&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;9&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;12&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;15&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;18&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;21&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;24&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;27&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;30&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;33&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;36&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;39&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;42&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;45&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;48&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;51&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;54&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;57&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;60&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;63&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;66&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;69&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;72&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;75&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;78&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;81&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;84&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;87&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;90&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;93&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;96&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;99&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;102&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;105&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;108&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;111&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;114&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;117&lt;/span&gt;&lt;br&gt;并行计算结果：&lt;br&gt;&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;3&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;6&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;9&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;12&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;15&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;18&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;21&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;24&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;27&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;30&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;33&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;36&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;39&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;42&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;45&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;48&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;51&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;54&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;57&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;60&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;63&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;66&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;69&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;72&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;75&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;78&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;81&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;84&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;87&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;90&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;93&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;96&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;99&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;102&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;105&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;108&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;111&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;114&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;117&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h2 id=&#34;相关链接&#34;&gt;&lt;a href=&#34;#相关链接&#34; class=&#34;headerlink&#34; title=&#34;相关链接&#34;&gt;&lt;/a&gt;相关链接&lt;/h2&gt;&lt;p&gt;[&lt;a href=&#34;https://software.intel.com/sites/landingpage/IntrinsicsGuide/]&#34;&gt;https://software.intel.com/sites/landingpage/IntrinsicsGuide/]&lt;/a&gt;: 	“ Intel® Intrinsics Guide”&lt;/p&gt;
-</content>
-        <category term="AVX" />
-        <updated>2022-01-17T13:28:22.000Z</updated>
     </entry>
 </feed>
