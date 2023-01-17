@@ -5,8 +5,8 @@
         <link>http://example.com</link>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Mon, 16 Jan 2023 17:46:48 +0800</pubDate>
-        <lastBuildDate>Mon, 16 Jan 2023 17:46:48 +0800</lastBuildDate>
+        <pubDate>Tue, 17 Jan 2023 21:36:04 +0800</pubDate>
+        <lastBuildDate>Tue, 17 Jan 2023 21:36:04 +0800</lastBuildDate>
         <category>AVX</category>
         <category>Data Structure</category>
         <category>String</category>
@@ -39,9 +39,57 @@
         <category>Numactl</category>
         <category>OpenMP</category>
         <category>Slurm</category>
-        <category>性能分析工具</category>
         <category>Tensorflow</category>
+        <category>性能分析工具</category>
         <category>gcov</category>
+        <item>
+            <guid isPermalink="true">http://example.com/2023/01/17/cuda004/</guid>
+            <title>CUDA编程结构</title>
+            <link>http://example.com/2023/01/17/cuda004/</link>
+            <category>CUDA</category>
+            <pubDate>Tue, 17 Jan 2023 21:36:04 +0800</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;CUDA编程结构&#34;&gt;&lt;a href=&#34;#CUDA编程结构&#34; class=&#34;headerlink&#34; title=&#34;CUDA编程结构&#34;&gt;&lt;/a&gt;CUDA编程结构&lt;/h2&gt;&lt;p&gt;CUDA编程模型使用由C语言扩展生成的注释代码在异构计算系统中执行应用程序。&lt;/p&gt;
+&lt;p&gt;在一个异构环境中包含多个CPU和GPU，每个GPU和CPU的内存都由一条PCI-Express总线分隔开。因此，需要注意区别以下内容。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;主机：CPU及其内存（主机内存）&lt;/li&gt;
+&lt;li&gt;设备：GPU及其内存（设备内存）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;为了清楚地指明不同的内存空间，在本书的示例代码中，主机内存中的变量名以h__为前缀，设备内存中的变量名以d__为前缀。&lt;/p&gt;
+&lt;p&gt;从CUDA6.0开始，NVDIA提出了名为“统一寻址”（Unified Memory）的编程模型的改进，它连接了主机内存和设备内存空间，可使用单个指针访问CPU和GPU内存，无须彼此之间手动拷贝数据。现在，重要的是应学会如何为主机和设备分配内存空间以及如何在CPU和GPU之间拷贝共享数据。这种程序员管理模式控制下的内存和数据可以优化应用程序并实现硬件系统利用率的最大化。&lt;/p&gt;
+&lt;p&gt;内核（kernel）是CUDA编程模型的一个重要组成部分，其代码在GPU上运行。作为一个开发人员，你可以串行的执行核函数。在此背景下，CUDA的调度管理程序员在GPU线程上编写核函数。在主机上，基于应用程序数据以及GPU的性能定义如何让设备实现算法功能。这样做的目的是使你专注于算法的逻辑（通过编写串行代码），且在创建和管理大量的GPU线程时不必拘泥于细节。&lt;/p&gt;
+&lt;p&gt;多数情况下，主机可以独立地对设备进行操作。内核一旦被启动，端粒权立刻返回给主机，释放CPU来执行由设备上运行的并行代码实现的额外的任务。CUDA编程模型主要是异步的，因此在GPU上进行的运算可以与主机-设备通信重叠。一个典型的CUDA程序包括由并行代码互补的串行代码。如图2-2所示，串行代码（及任务并行代码）在主机CPU上执行，而并行代码在GPU上执行。主机代码按照ANSI C标准进行编写，而设备代码使用CUDA C进行编写。你可以将所有的代码统一放在一个源文件中，也可以使用多个源文件来构建应用程序和库。NVIDIA的C编译器(nvcc)为主机和设备生成可执行代码。&lt;/p&gt;
+&lt;p&gt;一个典型的CUDA程序实现流程遵循以下模式&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;把数据从CPU内存拷贝到GPU内存&lt;/li&gt;
+&lt;li&gt;调用核函数对存储在GPU内存中的数据进行操作&lt;/li&gt;
+&lt;li&gt;将数据从GPU内存传送回到CPU内存&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;首先，你要学习的是内存管理及主机和设备之间的数据传输。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/01/17/cuda004/image-20230117220146068.png&#34; alt=&#34;image-20230117220146068&#34;&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://example.com/2023/01/17/cuda003/</guid>
+            <title>CUDA编程模型概述</title>
+            <link>http://example.com/2023/01/17/cuda003/</link>
+            <category>CUDA</category>
+            <pubDate>Tue, 17 Jan 2023 20:29:01 +0800</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;CUDA编程模型概述&#34;&gt;&lt;a href=&#34;#CUDA编程模型概述&#34; class=&#34;headerlink&#34; title=&#34;CUDA编程模型概述&#34;&gt;&lt;/a&gt;CUDA编程模型概述&lt;/h2&gt;&lt;p&gt;CUDA编程模型提供了一个计算机架构抽象作为应用程序和其可用硬件之间的桥梁。图2-1说明了程序和编程模型实现之间的抽象结构的重要。通信抽象是程序与编程模型实现之间的分界线，它通过专业的硬件原语和操作系统的编译器或库来实现。利用编程模型所编写的程序指定了程序的各组成部分是如何共享信息及相互协作的。编程模型从逻辑上提供了一个特定的计算机架构，通常它体现在编程语言或编程环境中。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/01/17/cuda003/image-20230117203406633.png&#34; alt=&#34;image-20230117203406633&#34;&gt;&lt;/p&gt;
+&lt;p&gt;除了与其他并行编程模型共有的抽象外，CUDA编程模型还利用GPU架构的计算能力提供了以下几个特有功能。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;一种通过层次结构在GPU中组织线程的方法&lt;/li&gt;
+&lt;li&gt;一种通过层次结构在GPU中访问内存的方法&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;以程序员的角度可以从以下几个不同的层面来看待并行计算。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;领域层&lt;/li&gt;
+&lt;li&gt;逻辑层&lt;/li&gt;
+&lt;li&gt;硬件层&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;在编程与算法设计的过程中，你最关心的应是在领域层如何解析数据和函数，以便在并行环境中能正确，高效地解决问题。当进入编程阶段，你的关注点应转向如何组织并发线程。在这个阶段，你需要从逻辑层面来思考，以确保你的线程和计算能正确地解决问题。在C语言并行编程中，需要使用pthreads或OpenMP技术来显式地管理线程。CUDA提出了一个线程层次结构抽象的概念，以允许控制线程行为。&lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">http://example.com/2023/01/16/cuda002/</guid>
             <title>CUDA:一种异构计算平台</title>
@@ -844,103 +892,6 @@
 &lt;h2 id=&#34;程序输出&#34;&gt;&lt;a href=&#34;#程序输出&#34; class=&#34;headerlink&#34; title=&#34;程序输出&#34;&gt;&lt;/a&gt;程序输出&lt;/h2&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;串行计算结果：&lt;br&gt;&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;3&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;6&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;9&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;12&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;15&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;18&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;21&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;24&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;27&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;30&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;33&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;36&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;39&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;42&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;45&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;48&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;51&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;54&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;57&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;60&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;63&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;66&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;69&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;72&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;75&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;78&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;81&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;84&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;87&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;90&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;93&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;96&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;99&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;102&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;105&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;108&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;111&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;114&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;117&lt;/span&gt;&lt;br&gt;并行计算结果：&lt;br&gt;&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;3&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;6&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;9&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;12&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;15&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;18&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;21&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;24&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;27&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;30&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;33&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;36&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;39&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;42&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;45&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;48&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;51&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;54&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;57&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;60&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;63&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;66&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;69&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;72&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;75&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;78&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;81&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;84&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;87&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;90&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;93&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;96&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;99&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;102&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;105&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;108&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;111&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;114&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;117&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;h2 id=&#34;相关链接&#34;&gt;&lt;a href=&#34;#相关链接&#34; class=&#34;headerlink&#34; title=&#34;相关链接&#34;&gt;&lt;/a&gt;相关链接&lt;/h2&gt;&lt;p&gt;[&lt;a href=&#34;https://software.intel.com/sites/landingpage/IntrinsicsGuide/]&#34;&gt;https://software.intel.com/sites/landingpage/IntrinsicsGuide/]&lt;/a&gt;: 	“ Intel® Intrinsics Guide”&lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://example.com/2022/01/17/AVX004/</guid>
-            <title>AVX向量化学习(四)-INT类型转化成DOUBLE类型</title>
-            <link>http://example.com/2022/01/17/AVX004/</link>
-            <category>AVX</category>
-            <pubDate>Mon, 17 Jan 2022 20:41:56 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;AVX向量化学习-四-INT类型转化成DOUBLE类型&#34;&gt;&lt;a href=&#34;#AVX向量化学习-四-INT类型转化成DOUBLE类型&#34; class=&#34;headerlink&#34; title=&#34;AVX向量化学习(四)-INT类型转化成DOUBLE类型&#34;&gt;&lt;/a&gt;AVX向量化学习(四)-INT类型转化成DOUBLE类型&lt;/h1&gt;&lt;p&gt;使用AVX指令集把INT类型转化为DOUBLE类型&lt;/p&gt;
-&lt;h2 id=&#34;使用到的AVX函数介绍&#34;&gt;&lt;a href=&#34;#使用到的AVX函数介绍&#34; class=&#34;headerlink&#34; title=&#34;使用到的AVX函数介绍&#34;&gt;&lt;/a&gt;使用到的AVX函数介绍&lt;/h2&gt;&lt;h3 id=&#34;1&#34;&gt;&lt;a href=&#34;#1&#34; class=&#34;headerlink&#34; title=&#34;1.&#34;&gt;&lt;/a&gt;1.&lt;/h3&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;__m128i _mm_setr_epi32 (&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; e3, &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; e2, &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; e1, &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; e0)&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;&lt;strong&gt;Synopsis&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;__m128i _mm_setr_epi32 (int e3, int e2, int e1, int e0)&lt;br&gt;#include &amp;lt;emmintrin.h&amp;gt;&lt;br&gt;Instruction: &lt;strong&gt;Sequence&lt;/strong&gt;&lt;br&gt;CPUID Flags: SSE2&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Set packed 32-bit integers in dst with the supplied values in reverse order.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Operation&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;dst[&lt;span class=&#34;hljs-number&#34;&gt;31&lt;/span&gt;:&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;] := e3 &lt;br&gt;dst[&lt;span class=&#34;hljs-number&#34;&gt;63&lt;/span&gt;:&lt;span class=&#34;hljs-number&#34;&gt;32&lt;/span&gt;] := e2 &lt;br&gt;dst[&lt;span class=&#34;hljs-number&#34;&gt;95&lt;/span&gt;:&lt;span class=&#34;hljs-number&#34;&gt;64&lt;/span&gt;] := e1 &lt;br&gt;dst[&lt;span class=&#34;hljs-number&#34;&gt;127&lt;/span&gt;:&lt;span class=&#34;hljs-number&#34;&gt;96&lt;/span&gt;] := e0&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h3 id=&#34;2&#34;&gt;&lt;a href=&#34;#2&#34; class=&#34;headerlink&#34; title=&#34;2.&#34;&gt;&lt;/a&gt;2.&lt;/h3&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;__m256d _mm256_cvtepi32_pd (__m128i a)&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-
-
-&lt;p&gt;&lt;strong&gt;Synopsis&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;m256d _mm256_cvtepi32_pd (m128i a)&lt;br&gt;#include &amp;lt;immintrin.h&amp;gt;&lt;br&gt;Instruction: vcvtdq2pd ymm, xmm&lt;br&gt;CPUID Flags: AVX&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Convert packed signed 32-bit integers in a to packed double-precision (64-bit) floating-point elements, and store the results in dst.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Operation&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;FOR j := &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt; to &lt;span class=&#34;hljs-number&#34;&gt;3&lt;/span&gt; &lt;br&gt;    i := j*&lt;span class=&#34;hljs-number&#34;&gt;32&lt;/span&gt; &lt;br&gt;    m := j*&lt;span class=&#34;hljs-number&#34;&gt;64&lt;/span&gt; &lt;br&gt;    dst[m+&lt;span class=&#34;hljs-number&#34;&gt;63&lt;/span&gt;:m] := &lt;span class=&#34;hljs-built_in&#34;&gt;Convert_Int32_To_FP64&lt;/span&gt;(a[i+&lt;span class=&#34;hljs-number&#34;&gt;31&lt;/span&gt;:i]) &lt;br&gt;ENDFOR &lt;br&gt;dst[MAX:&lt;span class=&#34;hljs-number&#34;&gt;256&lt;/span&gt;] := &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;&lt;strong&gt;Performance&lt;/strong&gt;&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&#34;left&#34;&gt;Architecture&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;Latency&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;Throughput (CPI)&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Icelake&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;7&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Skylake&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;7&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Broadwell&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;6&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Haswell&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;6&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Ivy Bridge&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;4&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;h2 id=&#34;程序运行平台&#34;&gt;&lt;a href=&#34;#程序运行平台&#34; class=&#34;headerlink&#34; title=&#34;程序运行平台&#34;&gt;&lt;/a&gt;程序运行平台&lt;/h2&gt;&lt;p&gt;北京超级云计算中心A3分区&lt;/p&gt;
-&lt;h2 id=&#34;编译指令&#34;&gt;&lt;a href=&#34;#编译指令&#34; class=&#34;headerlink&#34; title=&#34;编译指令&#34;&gt;&lt;/a&gt;编译指令&lt;/h2&gt;&lt;p&gt;g++ int_to_double.cpp -msse2 -mavx -o test01&lt;/p&gt;
-&lt;h2 id=&#34;运行指令&#34;&gt;&lt;a href=&#34;#运行指令&#34; class=&#34;headerlink&#34; title=&#34;运行指令&#34;&gt;&lt;/a&gt;运行指令&lt;/h2&gt;&lt;p&gt;.&amp;#x2F;test01&lt;/p&gt;
-&lt;h2 id=&#34;程序源代码&#34;&gt;&lt;a href=&#34;#程序源代码&#34; class=&#34;headerlink&#34; title=&#34;程序源代码&#34;&gt;&lt;/a&gt;程序源代码&lt;/h2&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;hljs-meta-string&#34;&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;hljs-meta-string&#34;&gt;&amp;lt;immintrin.h&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;using&lt;/span&gt; &lt;span class=&#34;hljs-keyword&#34;&gt;namespace&lt;/span&gt; std;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;()&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;/span&gt;&amp;#123;&lt;br&gt;	&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; a[&lt;span class=&#34;hljs-number&#34;&gt;4&lt;/span&gt;]=&amp;#123;&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;3&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;4&lt;/span&gt;&amp;#125;;&lt;br&gt;	&lt;span class=&#34;hljs-keyword&#34;&gt;double&lt;/span&gt; b[&lt;span class=&#34;hljs-number&#34;&gt;9&lt;/span&gt;]=&amp;#123;&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;&amp;#125;;&lt;br&gt;    __m128i x = _mm_setr_epi32(a[&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;], a[&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;], a[&lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt;],a[&lt;span class=&#34;hljs-number&#34;&gt;3&lt;/span&gt;]);   &lt;span class=&#34;hljs-comment&#34;&gt;//load&lt;/span&gt;&lt;br&gt; 	__m256d v5=_mm256_cvtepi32_pd(x);       &lt;span class=&#34;hljs-comment&#34;&gt;//convert&lt;/span&gt;&lt;br&gt;    _mm256_storeu_pd(b,v5);&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;i&amp;lt;&lt;span class=&#34;hljs-number&#34;&gt;9&lt;/span&gt;;i++)&lt;br&gt;    &amp;#123;&lt;br&gt;    	cout&amp;lt;&amp;lt;b[i]&amp;lt;&amp;lt;endl;&lt;br&gt;	&amp;#125;&lt;br&gt;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h2 id=&#34;程序输出&#34;&gt;&lt;a href=&#34;#程序输出&#34; class=&#34;headerlink&#34; title=&#34;程序输出&#34;&gt;&lt;/a&gt;程序输出&lt;/h2&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-number&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-number&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h2 id=&#34;相关链接&#34;&gt;&lt;a href=&#34;#相关链接&#34; class=&#34;headerlink&#34; title=&#34;相关链接&#34;&gt;&lt;/a&gt;相关链接&lt;/h2&gt;&lt;p&gt;[&lt;a href=&#34;https://software.intel.com/sites/landingpage/IntrinsicsGuide/]&#34;&gt;https://software.intel.com/sites/landingpage/IntrinsicsGuide/]&lt;/a&gt;: 	“ Intel® Intrinsics Guide”&lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://example.com/2022/01/09/tool001/</guid>
-            <title>gprof、gprof2dot.py、dot使用方法简介</title>
-            <link>http://example.com/2022/01/09/tool001/</link>
-            <category>性能分析工具</category>
-            <pubDate>Sun, 09 Jan 2022 16:33:37 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;gprof、gprof2dot-py、dot使用方法简介&#34;&gt;&lt;a href=&#34;#gprof、gprof2dot-py、dot使用方法简介&#34; class=&#34;headerlink&#34; title=&#34;gprof、gprof2dot.py、dot使用方法简介&#34;&gt;&lt;/a&gt;gprof、gprof2dot.py、dot使用方法简介&lt;/h1&gt;&lt;h2 id=&#34;1-：gprof使用步骤如下，以SLIC为例：&#34;&gt;&lt;a href=&#34;#1-：gprof使用步骤如下，以SLIC为例：&#34; class=&#34;headerlink&#34; title=&#34;(1)：gprof使用步骤如下，以SLIC为例：&#34;&gt;&lt;/a&gt;(1)：gprof使用步骤如下，以SLIC为例：&lt;/h2&gt;&lt;h3 id=&#34;1-在编译过程中添加-pg选项，命令如下：&#34;&gt;&lt;a href=&#34;#1-在编译过程中添加-pg选项，命令如下：&#34; class=&#34;headerlink&#34; title=&#34;1 在编译过程中添加-pg选项，命令如下：&#34;&gt;&lt;/a&gt;1 在编译过程中添加-pg选项，命令如下：&lt;/h3&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;gcc -pg SLIC.cpp -o SLIC&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h3 id=&#34;2-运行程序，运行结束之后会形成文件gmon-out，命令如下&#34;&gt;&lt;a href=&#34;#2-运行程序，运行结束之后会形成文件gmon-out，命令如下&#34; class=&#34;headerlink&#34; title=&#34;2 运行程序，运行结束之后会形成文件gmon.out，命令如下:&#34;&gt;&lt;/a&gt;2 运行程序，运行结束之后会形成文件gmon.out，命令如下:&lt;/h3&gt;&lt;figure class=&#34;highlight jboss-cli&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs jboss-cli&#34;&gt;&lt;span class=&#34;hljs-string&#34;&gt;./SLIC&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h3 id=&#34;3-使用gprof再次执行程序，并将结果重定位到prof-log中，命令如下：&#34;&gt;&lt;a href=&#34;#3-使用gprof再次执行程序，并将结果重定位到prof-log中，命令如下：&#34; class=&#34;headerlink&#34; title=&#34;3 使用gprof再次执行程序，并将结果重定位到prof.log中，命令如下：&#34;&gt;&lt;/a&gt;3 使用gprof再次执行程序，并将结果重定位到prof.log中，命令如下：&lt;/h3&gt;&lt;figure class=&#34;highlight vim&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs vim&#34;&gt;gprof ./SLIC &amp;gt; &lt;span class=&#34;hljs-keyword&#34;&gt;prof&lt;/span&gt;.&lt;span class=&#34;hljs-built_in&#34;&gt;log&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;分析prof.log就可以获得程序的调用关系、函数执行时间等信息。对gprof的分析方法见以下blog&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;http://blog.csdn.net/macky0668/article/details/6839517&#34;&gt;http://blog.csdn.net/macky0668/article/details/6839517&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;2-：配合gprof2dot-py与dot工具的使用-我是安装在了Win10平台&#34;&gt;&lt;a href=&#34;#2-：配合gprof2dot-py与dot工具的使用-我是安装在了Win10平台&#34; class=&#34;headerlink&#34; title=&#34;(2)：配合gprof2dot.py与dot工具的使用(我是安装在了Win10平台)&#34;&gt;&lt;/a&gt;(2)：配合&lt;em&gt;gprof2dot.py&lt;/em&gt;与dot工具的使用(我是安装在了Win10平台)&lt;/h2&gt;&lt;p&gt;以上方法仍然存在一个问题就是分析结果不够直观，特别是函数的调用关系。因此为解决以上问题，可以配合&lt;em&gt;gprof2dot.py&lt;/em&gt;与dot工具的使用。&lt;/p&gt;
-&lt;h3 id=&#34;1-安装gprof2dot-py与dot&#34;&gt;&lt;a href=&#34;#1-安装gprof2dot-py与dot&#34; class=&#34;headerlink&#34; title=&#34;1.安装gprof2dot.py与dot&#34;&gt;&lt;/a&gt;1.安装&lt;em&gt;gprof2dot.py&lt;/em&gt;与dot&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/jrfonseca/gprof2dot&#34;&gt;GitHub - jrfonseca&amp;#x2F;gprof2dot: Converts profiling output to a dot graph.&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;2-通过以下地址可获得graphviz，安装graphviz后可使用dot工具&#34;&gt;&lt;a href=&#34;#2-通过以下地址可获得graphviz，安装graphviz后可使用dot工具&#34; class=&#34;headerlink&#34; title=&#34;2.通过以下地址可获得graphviz，安装graphviz后可使用dot工具&#34;&gt;&lt;/a&gt;2.通过以下地址可获得graphviz，安装graphviz后可使用dot工具&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://graphviz.org/download/source/&#34;&gt;Source Code | Graphviz&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;在使用上述工具前，还需要先产生prof.log文件，prof.log文件的产生方法见上文。&lt;/p&gt;
-&lt;h3 id=&#34;3-首先通过命令行进入你安装gprof2dot-py的根目录：&#34;&gt;&lt;a href=&#34;#3-首先通过命令行进入你安装gprof2dot-py的根目录：&#34; class=&#34;headerlink&#34; title=&#34;3.首先通过命令行进入你安装gprof2dot.py的根目录：&#34;&gt;&lt;/a&gt;3.首先通过命令行进入你安装gprof2dot.py的根目录：&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;/2022/01/09/tool001/image-20220109165659998.png&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;4-通过以下命令即可得到函数调用图：&#34;&gt;&lt;a href=&#34;#4-通过以下命令即可得到函数调用图：&#34; class=&#34;headerlink&#34; title=&#34;4.通过以下命令即可得到函数调用图：&#34;&gt;&lt;/a&gt;4.通过以下命令即可得到函数调用图：&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;/2022/01/09/tool001/image-20220109170212157.png&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;5-结果如下：&#34;&gt;&lt;a href=&#34;#5-结果如下：&#34; class=&#34;headerlink&#34; title=&#34;5.结果如下：&#34;&gt;&lt;/a&gt;5.结果如下：&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;/2022/01/09/tool001/image-20220109170315471.png&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;3-：接上文补充几点可能无法产生gmon-out文件的情况：&#34;&gt;&lt;a href=&#34;#3-：接上文补充几点可能无法产生gmon-out文件的情况：&#34; class=&#34;headerlink&#34; title=&#34;(3)：接上文补充几点可能无法产生gmon.out文件的情况：&#34;&gt;&lt;/a&gt;(3)：接上文补充几点可能无法产生gmon.out文件的情况：&lt;/h2&gt;&lt;p&gt;  1.程序不是从main return或exit()退出，则可能不生成gmon.out。&lt;br&gt;  2.程序如果崩溃，可能不生成gmon.out。&lt;br&gt;  3.测试发现在虚拟机上运行，可能不生成gmon.out。&lt;br&gt;  4.程序忽略SIGPROF信号！一定不能捕获、忽略SIGPROF信号。man手册对SIGPROF的解释是：profiling timer expired. 如果忽略这个信号，gprof的输出则是：Each sample counts as 0.01 seconds. no time accumulated.&lt;br&gt;  5.如果程序运行时间非常短，则gprof可能无效&lt;/p&gt;
-&lt;h2 id=&#34;参考文献：&#34;&gt;&lt;a href=&#34;#参考文献：&#34; class=&#34;headerlink&#34; title=&#34;参考文献：&#34;&gt;&lt;/a&gt;参考文献：&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/u012927281/article/details/51132064&#34;&gt;(4条消息) gprof、gprof2dot.py、dot使用方法简介_Andy.Wang的博客-CSDN博客_gprof2dot&lt;/a&gt;&lt;/p&gt;
  ]]></description>
         </item>
     </channel>

@@ -39,8 +39,8 @@
         <category>Numactl</category>
         <category>OpenMP</category>
         <category>Slurm</category>
-        <category>性能分析工具</category>
         <category>Tensorflow</category>
+        <category>性能分析工具</category>
         <category>gcov</category>
         <item>
             <guid isPermalink="true">http://example.com/2022/06/12/AVX%E5%90%91%E9%87%8F%E5%8C%96%E5%AD%A6%E4%B9%A0(%E4%BA%8C)-%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90%E7%9A%84%E5%BA%94%E7%94%A8/</guid>
