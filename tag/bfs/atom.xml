@@ -15,17 +15,17 @@
     <category term="Sort" />
     <category term="LinkList" />
     <category term="双向链表" />
-    <category term="Graph" />
+    <category term="Binary tree" />
     <category term="邻接表" />
     <category term="Vector" />
-    <category term="Binary tree" />
     <category term="BFS" />
+    <category term="Graph" />
     <category term="模拟" />
     <category term="邻接矩阵" />
     <category term="DFS" />
     <category term="结构体" />
-    <category term="贪心" />
     <category term="Double类型相等比较" />
+    <category term="贪心" />
     <category term="并查集" />
     <category term="Map" />
     <category term="Pair" />
@@ -36,13 +36,13 @@
     <category term="Numactl" />
     <category term="OpenMP" />
     <category term="Slurm" />
-    <category term="性能分析工具" />
     <category term="Tensorflow" />
+    <category term="性能分析工具" />
     <category term="gcov" />
     <entry>
-        <id>http://example.com/posts/e6b4ff6a.html</id>
+        <id>http://example.com/2022/04/14/Algorithm024/</id>
         <title>L2-011 玩转二叉树 (25 分)</title>
-        <link rel="alternate" href="http://example.com/posts/e6b4ff6a.html"/>
+        <link rel="alternate" href="http://example.com/2022/04/14/Algorithm024/"/>
         <content type="html">&lt;h2 id=&#34;L2-011-玩转二叉树-25-分&#34;&gt;&lt;a href=&#34;#L2-011-玩转二叉树-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-011 玩转二叉树 (25 分)&#34;&gt;&lt;/a&gt;&lt;strong&gt;L2-011 玩转二叉树 (25 分)&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;给定一棵二叉树的中序遍历和前序遍历，请你先将树做个镜面反转，再输出反转后的层序遍历的序列。所谓镜面反转，是指将所有非叶结点的左右孩子对换。这里假设键值都是互不相等的正整数。&lt;/p&gt;
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;输入第一行给出一个正整数&lt;code&gt;N&lt;/code&gt;（≤30），是二叉树中结点的个数。第二行给出其中序遍历序列。第三行给出其前序遍历序列。数字间以空格分隔。&lt;/p&gt;
 &lt;h3 id=&#34;输出格式：&#34;&gt;&lt;a href=&#34;#输出格式：&#34; class=&#34;headerlink&#34; title=&#34;输出格式：&#34;&gt;&lt;/a&gt;输出格式：&lt;/h3&gt;&lt;p&gt;在一行中输出该树反转后的层序遍历的序列。数字间以1个空格分隔，行首尾不得有多余空格。&lt;/p&gt;
@@ -67,9 +67,9 @@
         <updated>2022-04-14T06:01:10.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/posts/5297b1f9.html</id>
+        <id>http://example.com/2022/04/13/Algorithm022/</id>
         <title>L2-031 深入虎穴 (25 分)</title>
-        <link rel="alternate" href="http://example.com/posts/5297b1f9.html"/>
+        <link rel="alternate" href="http://example.com/2022/04/13/Algorithm022/"/>
         <content type="html">&lt;p&gt;著名的王牌间谍 007 需要执行一次任务，获取敌方的机密情报。已知情报藏在一个地下迷宫里，迷宫只有一个入口，里面有很多条通路，每条路通向一扇门。每一扇门背后或者是一个房间，或者又有很多条路，同样是每条路通向一扇门…… 他的手里有一张表格，是其他间谍帮他收集到的情报，他们记下了每扇门的编号，以及这扇门背后的每一条通路所到达的门的编号。007 发现不存在两条路通向同一扇门。&lt;/p&gt;
 &lt;p&gt;内线告诉他，情报就藏在迷宫的最深处。但是这个迷宫太大了，他需要你的帮助 —— 请编程帮他找出距离入口最远的那扇门。&lt;/p&gt;
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;输入首先在一行中给出正整数 &lt;em&gt;N&lt;/em&gt;（&amp;lt;105），是门的数量。最后 &lt;em&gt;N&lt;/em&gt; 行，第 &lt;em&gt;i&lt;/em&gt; 行（1≤&lt;em&gt;i&lt;/em&gt;≤&lt;em&gt;N&lt;/em&gt;）按以下格式描述编号为 &lt;em&gt;i&lt;/em&gt; 的那扇门背后能通向的门：&lt;/p&gt;
@@ -89,16 +89,16 @@
         <category term="Data Structure" />
         <category term="C++" />
         <category term="团体程序设计天梯赛" />
+        <category term="Binary tree" />
         <category term="邻接表" />
         <category term="Vector" />
-        <category term="Binary tree" />
         <category term="BFS" />
         <updated>2022-04-13T11:09:46.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/posts/c3f0f4cb.html</id>
+        <id>http://example.com/2022/04/13/Algorithm019/</id>
         <title>L2-026 小字辈 (25 分)</title>
-        <link rel="alternate" href="http://example.com/posts/c3f0f4cb.html"/>
+        <link rel="alternate" href="http://example.com/2022/04/13/Algorithm019/"/>
         <content type="html">&lt;h2 id=&#34;L2-026-小字辈-25-分&#34;&gt;&lt;a href=&#34;#L2-026-小字辈-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-026 小字辈 (25 分)&#34;&gt;&lt;/a&gt;&lt;strong&gt;L2-026 小字辈 (25 分)&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;本题给定一个庞大家族的家谱，要请你给出最小一辈的名单。&lt;/p&gt;
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;输入在第一行给出家族人口总数 N（不超过 100 000 的正整数） —— 简单起见，我们把家族成员从 1 到 N 编号。随后第二行给出 N 个编号，其中第 i 个编号对应第 i 位成员的父&amp;#x2F;母。家谱中辈分最高的老祖宗对应的父&amp;#x2F;母编号为 -1。一行中的数字间以空格分隔。&lt;/p&gt;
 &lt;h3 id=&#34;输出格式：&#34;&gt;&lt;a href=&#34;#输出格式：&#34; class=&#34;headerlink&#34; title=&#34;输出格式：&#34;&gt;&lt;/a&gt;输出格式：&lt;/h3&gt;&lt;p&gt;首先输出最小的辈分（老祖宗的辈分为 1，以下逐级递增）。然后在第二行按递增顺序输出辈分最小的成员的编号。编号间以一个空格分隔，行首尾不得有多余空格。&lt;/p&gt;
@@ -114,9 +114,9 @@
         <category term="Data Structure" />
         <category term="C++" />
         <category term="团体程序设计天梯赛" />
+        <category term="Binary tree" />
         <category term="邻接表" />
         <category term="Vector" />
-        <category term="Binary tree" />
         <category term="BFS" />
         <updated>2022-04-13T01:45:49.000Z</updated>
     </entry>

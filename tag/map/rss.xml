@@ -18,17 +18,17 @@
         <category>Sort</category>
         <category>LinkList</category>
         <category>双向链表</category>
-        <category>Graph</category>
+        <category>Binary tree</category>
         <category>邻接表</category>
         <category>Vector</category>
-        <category>Binary tree</category>
         <category>BFS</category>
+        <category>Graph</category>
         <category>模拟</category>
         <category>邻接矩阵</category>
         <category>DFS</category>
         <category>结构体</category>
-        <category>贪心</category>
         <category>Double类型相等比较</category>
+        <category>贪心</category>
         <category>并查集</category>
         <category>Map</category>
         <category>Pair</category>
@@ -39,13 +39,13 @@
         <category>Numactl</category>
         <category>OpenMP</category>
         <category>Slurm</category>
-        <category>性能分析工具</category>
         <category>Tensorflow</category>
+        <category>性能分析工具</category>
         <category>gcov</category>
         <item>
-            <guid isPermalink="true">http://example.com/posts/c3cc0bdb.html</guid>
+            <guid isPermalink="true">http://example.com/2022/04/23/Algorithm031/</guid>
             <title>L2-039 清点代码库 (25 分)</title>
-            <link>http://example.com/posts/c3cc0bdb.html</link>
+            <link>http://example.com/2022/04/23/Algorithm031/</link>
             <category>Data Structure</category>
             <category>C++</category>
             <category>团体程序设计天梯赛</category>
@@ -54,7 +54,7 @@
             <category>Map</category>
             <category>Pair</category>
             <pubDate>Sat, 23 Apr 2022 21:44:47 +0800</pubDate>
-            <description><![CDATA[ &lt;h2 id=&#34;L2-039-清点代码库-25-分&#34;&gt;&lt;a href=&#34;#L2-039-清点代码库-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-039 清点代码库 (25 分)&#34;&gt;&lt;/a&gt;L2-039 清点代码库 (25 分)&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;/posts/c3cc0bdb.htm/58e6a034-993d-4049-8deb-23d769c8597e.jpg&#34; alt=&#34;code.jpg&#34;&gt;&lt;/p&gt;
+            <description><![CDATA[ &lt;h2 id=&#34;L2-039-清点代码库-25-分&#34;&gt;&lt;a href=&#34;#L2-039-清点代码库-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-039 清点代码库 (25 分)&#34;&gt;&lt;/a&gt;L2-039 清点代码库 (25 分)&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;/2022/04/23/Algorithm031/58e6a034-993d-4049-8deb-23d769c8597e.jpg&#34; alt=&#34;code.jpg&#34;&gt;&lt;/p&gt;
 &lt;p&gt;上图转自新浪微博：“阿里代码库有几亿行代码，但其中有很多功能重复的代码，比如单单快排就被重写了几百遍。请设计一个程序，能够将代码库中所有功能重复的代码找出。各位大佬有啥想法，我当时就懵了，然后就挂了。。。”&lt;/p&gt;
 &lt;p&gt;这里我们把问题简化一下：首先假设两个功能模块如果接受同样的输入，总是给出同样的输出，则它们就是功能重复的；其次我们把每个模块的输出都简化为一个整数（在 &lt;strong&gt;int&lt;/strong&gt; 范围内）。于是我们可以设计一系列输入，检查所有功能模块的对应输出，从而查出功能重复的代码。你的任务就是设计并实现这个简化问题的解决方案。&lt;/p&gt;
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;输入在第一行中给出 2 个正整数，依次为 &lt;em&gt;N&lt;/em&gt;（≤104）和 &lt;em&gt;M&lt;/em&gt;（≤102），对应功能模块的个数和系列测试输入的个数。&lt;/p&gt;
@@ -72,9 +72,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/posts/6c4fe984.html</guid>
+            <guid isPermalink="true">http://example.com/2022/04/16/Algorithm029/</guid>
             <title>STL中map的使用</title>
-            <link>http://example.com/posts/6c4fe984.html</link>
+            <link>http://example.com/2022/04/16/Algorithm029/</link>
             <category>STL</category>
             <category>Map</category>
             <pubDate>Sat, 16 Apr 2022 16:26:03 +0800</pubDate>

@@ -15,17 +15,17 @@
     <category term="Sort" />
     <category term="LinkList" />
     <category term="双向链表" />
-    <category term="Graph" />
+    <category term="Binary tree" />
     <category term="邻接表" />
     <category term="Vector" />
-    <category term="Binary tree" />
     <category term="BFS" />
+    <category term="Graph" />
     <category term="模拟" />
     <category term="邻接矩阵" />
     <category term="DFS" />
     <category term="结构体" />
-    <category term="贪心" />
     <category term="Double类型相等比较" />
+    <category term="贪心" />
     <category term="并查集" />
     <category term="Map" />
     <category term="Pair" />
@@ -36,18 +36,18 @@
     <category term="Numactl" />
     <category term="OpenMP" />
     <category term="Slurm" />
-    <category term="性能分析工具" />
     <category term="Tensorflow" />
+    <category term="性能分析工具" />
     <category term="gcov" />
     <entry>
-        <id>http://example.com/posts/542b3a64.html</id>
+        <id>http://example.com/2023/01/17/cuda005/</id>
         <title>CUDA内存管理</title>
-        <link rel="alternate" href="http://example.com/posts/542b3a64.html"/>
+        <link rel="alternate" href="http://example.com/2023/01/17/cuda005/"/>
         <content type="html">&lt;h3 id=&#34;1-内存管理&#34;&gt;&lt;a href=&#34;#1-内存管理&#34; class=&#34;headerlink&#34; title=&#34;1.内存管理&#34;&gt;&lt;/a&gt;1.内存管理&lt;/h3&gt;&lt;p&gt;CUDA编程模型假设系统是由一个主机和一个设备组成的，而且各自拥有独立的内存。核函数是在设备上运行的。为使你拥有充分的控制权并使系统达到最佳性能，CUDA运行时负责分配与释放设备内存，并且在主机内存和设备内存之间传输数据。表2-1列出了标准的C函数以及相应地针对内存操作的CUDA C函数。&lt;/p&gt;
 &lt;p&gt;用于执行GPU内存分配的是cudaMalloc函数，其函数原型为：&lt;/p&gt;
 &lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-function&#34;&gt;cudaError_t &lt;span class=&#34;hljs-title&#34;&gt;cudaMalloc&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;void&lt;/span&gt;** devPtr, &lt;span class=&#34;hljs-keyword&#34;&gt;size_t&lt;/span&gt; size)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
-&lt;p&gt;&lt;img src=&#34;/posts/542b3a64.htm/image-20230117223254853.png&#34; alt=&#34;image-20230117223254853&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/01/17/cuda005/image-20230117223254853.png&#34; alt=&#34;image-20230117223254853&#34;&gt;&lt;/p&gt;
 &lt;p&gt;该函数负责向设备分配一定字节的线性内存，并以devPtr的形式返回指向所分配内存的指针。cudaMalloc与标准C语言中的malloc函数几乎一样，只是此函数在GPU的内存里分配内存。通过充分保持与标准C语言运行库中的接口一致性，可以实现CUDA应用程序的轻松接入。&lt;/p&gt;
 &lt;p&gt;cudaMemcpy函数负责主机和设备之间的数据传输，其函数原型为：&lt;/p&gt;
 &lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-function&#34;&gt;cudaError_t &lt;span class=&#34;hljs-title&#34;&gt;cudaMencpy&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;( &lt;span class=&#34;hljs-keyword&#34;&gt;void&lt;/span&gt;* dst, &lt;span class=&#34;hljs-keyword&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;hljs-keyword&#34;&gt;void&lt;/span&gt;* src, &lt;span class=&#34;hljs-keyword&#34;&gt;size_t&lt;/span&gt; count, cudaMemcpyKind kind)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -76,9 +76,9 @@
         <updated>2023-01-17T14:03:10.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/posts/d012374.html</id>
+        <id>http://example.com/2023/01/17/cuda004/</id>
         <title>CUDA编程结构</title>
-        <link rel="alternate" href="http://example.com/posts/d012374.html"/>
+        <link rel="alternate" href="http://example.com/2023/01/17/cuda004/"/>
         <content type="html">&lt;h2 id=&#34;CUDA编程结构&#34;&gt;&lt;a href=&#34;#CUDA编程结构&#34; class=&#34;headerlink&#34; title=&#34;CUDA编程结构&#34;&gt;&lt;/a&gt;CUDA编程结构&lt;/h2&gt;&lt;p&gt;CUDA编程模型使用由C语言扩展生成的注释代码在异构计算系统中执行应用程序。&lt;/p&gt;
 &lt;p&gt;在一个异构环境中包含多个CPU和GPU，每个GPU和CPU的内存都由一条PCI-Express总线分隔开。因此，需要注意区别以下内容。&lt;/p&gt;
 &lt;ol&gt;
@@ -96,18 +96,18 @@
 &lt;li&gt;将数据从GPU内存传送回到CPU内存&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;首先，你要学习的是内存管理及主机和设备之间的数据传输。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/d012374.htm/image-20230117220146068.png&#34; alt=&#34;image-20230117220146068&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/01/17/cuda004/image-20230117220146068.png&#34; alt=&#34;image-20230117220146068&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;p&gt;CUDA C编程权威指南 程润伟，Max Grossman(美)，Ty Mckercher &lt;/p&gt;
 </content>
         <category term="CUDA" />
         <updated>2023-01-17T13:36:04.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/posts/6fe1d3e0.html</id>
+        <id>http://example.com/2023/01/17/cuda003/</id>
         <title>CUDA编程模型概述</title>
-        <link rel="alternate" href="http://example.com/posts/6fe1d3e0.html"/>
+        <link rel="alternate" href="http://example.com/2023/01/17/cuda003/"/>
         <content type="html">&lt;h2 id=&#34;CUDA编程模型概述&#34;&gt;&lt;a href=&#34;#CUDA编程模型概述&#34; class=&#34;headerlink&#34; title=&#34;CUDA编程模型概述&#34;&gt;&lt;/a&gt;CUDA编程模型概述&lt;/h2&gt;&lt;p&gt;CUDA编程模型提供了一个计算机架构抽象作为应用程序和其可用硬件之间的桥梁。图2-1说明了程序和编程模型实现之间的抽象结构的重要。通信抽象是程序与编程模型实现之间的分界线，它通过专业的硬件原语和操作系统的编译器或库来实现。利用编程模型所编写的程序指定了程序的各组成部分是如何共享信息及相互协作的。编程模型从逻辑上提供了一个特定的计算机架构，通常它体现在编程语言或编程环境中。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/6fe1d3e0.htm/image-20230117203406633.png&#34; alt=&#34;image-20230117203406633&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/01/17/cuda003/image-20230117203406633.png&#34; alt=&#34;image-20230117203406633&#34;&gt;&lt;/p&gt;
 &lt;p&gt;除了与其他并行编程模型共有的抽象外，CUDA编程模型还利用GPU架构的计算能力提供了以下几个特有功能。&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;一种通过层次结构在GPU中组织线程的方法&lt;/li&gt;
@@ -126,15 +126,15 @@
         <updated>2023-01-17T12:29:01.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/posts/4fa45d36.html</id>
+        <id>http://example.com/2023/01/16/cuda002/</id>
         <title>CUDA:一种异构计算平台</title>
-        <link rel="alternate" href="http://example.com/posts/4fa45d36.html"/>
+        <link rel="alternate" href="http://example.com/2023/01/16/cuda002/"/>
         <content type="html">&lt;h2 id=&#34;CUDA-一种异构计算平台&#34;&gt;&lt;a href=&#34;#CUDA-一种异构计算平台&#34; class=&#34;headerlink&#34; title=&#34;CUDA:一种异构计算平台&#34;&gt;&lt;/a&gt;CUDA:一种异构计算平台&lt;/h2&gt;&lt;h3 id=&#34;1-CUDA的简单介绍&#34;&gt;&lt;a href=&#34;#1-CUDA的简单介绍&#34; class=&#34;headerlink&#34; title=&#34;1.CUDA的简单介绍&#34;&gt;&lt;/a&gt;1.CUDA的简单介绍&lt;/h3&gt;&lt;p&gt;CUDA是一种通用的并行计算平台和编程模型，它利用NVIDIA GPU中的并行计算引擎能够有效地解决复杂的计算问题。通过使用CUDA，你可以像在CPU上，通过GPU来进行计算。&lt;/p&gt;
 &lt;p&gt;CUDA平台可以通过CUDA加速库，编译器指令，应用编程接口以及行业标准程序语言的扩展（包括C,C++,Fortran，Python，如图1-12所示）来使用。&lt;/p&gt;
 &lt;p&gt;CUDA C是标准ANSI C语言的一个扩展，它带有的少数语言扩展功能使异构编程成为可能，同时也能通过API来管理设备，内存和其他任务。CUDA还是一个可扩展的编程模型，它使程序能对有不同数量核的GPU明显地扩展其并行性，同时对熟悉C编程语言的程序员来说也比较容易上手。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/4fa45d36.htm/image-20230116175503342.png&#34; alt=&#34;image-20230116175503342&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/01/16/cuda002/image-20230116175503342.png&#34; alt=&#34;image-20230116175503342&#34;&gt;&lt;/p&gt;
 &lt;p&gt;CUDA提供了两层API来管理GPU设备和组织线程，如图1-13所示。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/4fa45d36.htm/image-20230116175610403.png&#34; alt=&#34;image-20230116175610403&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/01/16/cuda002/image-20230116175610403.png&#34; alt=&#34;image-20230116175610403&#34;&gt;&lt;/p&gt;
 &lt;p&gt;-CUDA驱动API&lt;/p&gt;
 &lt;p&gt;-CUDA运行时API&lt;/p&gt;
 &lt;p&gt;驱动API是一种低级API，它相对来说较难编程，但是它对于在GPU设备使用上提供了更多的控制。运行时API是一个高级API，他在驱动API的上层实现。每个运行时API函数都被分解为更多传给驱动API的基本运算。&lt;/p&gt;
@@ -144,20 +144,20 @@
 &lt;p&gt;-在CPU上运行的主机代码&lt;/p&gt;
 &lt;p&gt;-在GPU上运行的设备代码&lt;/p&gt;
 &lt;p&gt;NVIDIA的CUDA nvcc编译器在编译过程中将设备代码从主机代码中分离出来。如图1-14所示，主机代码是标准的C代码，使用C编译器进行编译。设备代码，也就是核函数，是用扩展的带有标记数据并行函数关键字的CUDA C语言编写的。设备代码通过nvcc进行编译。在链接阶段，在内核程序调用和显示GPU设备操作中添加CUDA运行时库。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/4fa45d36.htm/image-20230116180725596.png&#34; alt=&#34;image-20230116180725596&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/01/16/cuda002/image-20230116180725596.png&#34; alt=&#34;image-20230116180725596&#34;&gt;&lt;/p&gt;
 &lt;p&gt;CUDA nvcc编译器是以广泛使用LLVM开源编译系统为基础的。在GPU加速器的支持下，通过使用CUDA编译器SDK，你可以创建或扩展编程语言，如图1-15所示。&lt;/p&gt;
 &lt;p&gt;CUDA平台也是支持多样化并行计算生态系统的基础，如图1-26所示。现在，随着越来越多的公司可以提供全球性的工具，服务和解决方案，CUDA生态系统迅速成长。如果你想在GPU上建立你的应用程序，强化GPU性能最简单方式是使用CUDA工具包（cuda-toolkit），它为C和C++开发人员提供了一个综合的开发环境。CUDA工具包包括编译器，数学库，以及调式和优化应用程序性能的工具。同时提供了代码样例，编程指南，用户手册，API参考文档和其他帮助你入门的文档。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/4fa45d36.htm/image-20230116181439404.png&#34; alt=&#34;image-20230116181439404&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/4fa45d36.htm/image-20230116181447616.png&#34; alt=&#34;image-20230116181447616&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/01/16/cuda002/image-20230116181439404.png&#34; alt=&#34;image-20230116181439404&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/01/16/cuda002/image-20230116181447616.png&#34; alt=&#34;image-20230116181447616&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;3-参考资料&#34;&gt;&lt;a href=&#34;#3-参考资料&#34; class=&#34;headerlink&#34; title=&#34;3.参考资料&#34;&gt;&lt;/a&gt;3.参考资料&lt;/h3&gt;&lt;p&gt;CUDA C编程权威指南 程润伟，Max Grossman(美)，Ty Mckercher &lt;/p&gt;
 </content>
         <category term="CUDA" />
         <updated>2023-01-16T09:46:48.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/posts/a5ec88a5.html</id>
+        <id>http://example.com/2023/01/16/cuda001/</id>
         <title>CUDA用GPU输出Hello World</title>
-        <link rel="alternate" href="http://example.com/posts/a5ec88a5.html"/>
+        <link rel="alternate" href="http://example.com/2023/01/16/cuda001/"/>
         <content type="html">&lt;h2 id=&#34;用GPU输出Hello-World&#34;&gt;&lt;a href=&#34;#用GPU输出Hello-World&#34; class=&#34;headerlink&#34; title=&#34;用GPU输出Hello World&#34;&gt;&lt;/a&gt;用GPU输出Hello World&lt;/h2&gt;&lt;h3 id=&#34;1-检查环境&#34;&gt;&lt;a href=&#34;#1-检查环境&#34; class=&#34;headerlink&#34; title=&#34;1.检查环境&#34;&gt;&lt;/a&gt;1.检查环境&lt;/h3&gt;&lt;p&gt;学习一个新编程语言的最好方式就是使用这种语言来编写程序。在本节，你将开始编写在GPU上运行的第一个内核代码。像其他任何编程语言一样编写GPU上的第一个程序是输出字符串“Hello World”。&lt;/p&gt;
 &lt;p&gt;如果这是你第一次使用CUDA,在Linux系统中，你可以想使用以下命令来检查CUDA编译器是否正确安装：&lt;/p&gt;
 &lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs shell&#34;&gt;which nvcc&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -169,7 +169,7 @@
 &lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs shell&#34;&gt;ls -l /dev/nv*&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;p&gt;通常的结果是：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/a5ec88a5.htm/image-20230116170920773.png&#34; alt=&#34;image-20230116170920773&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/01/16/cuda001/image-20230116170920773.png&#34; alt=&#34;image-20230116170920773&#34;&gt;&lt;/p&gt;
 &lt;p&gt;在这个例子中，你发现了两个GPU卡（不同的用户配置可能有所不同，因此显示结果会有所差异）。&lt;/p&gt;
 &lt;h3 id=&#34;2-第一个CUDA-C程序&#34;&gt;&lt;a href=&#34;#2-第一个CUDA-C程序&#34; class=&#34;headerlink&#34; title=&#34;2.第一个CUDA C程序&#34;&gt;&lt;/a&gt;2.第一个CUDA C程序&lt;/h3&gt;&lt;p&gt;现在你要准备好写你的第一个CUDA C程序。写一个CUDA C程序，你需要以下几个步骤：&lt;/p&gt;
 &lt;ol&gt;
@@ -199,7 +199,7 @@
 &lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs shell&#34;&gt;nvcc -arch sm_20 hello.cu -o hello&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;p&gt;开关语句-arch sm_20使编译器为Fermi架构生成设备代码。运行这个可执行文件，它将输出10条字符串“Hello World from CPU!”，每个线程输出一条。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/a5ec88a5.htm/image-20230116173446169.png&#34; alt=&#34;image-20230116173446169&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/01/16/cuda001/image-20230116173446169.png&#34; alt=&#34;image-20230116173446169&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;4-一个典型的CUDA编程结构包括5个主要步骤&#34;&gt;&lt;a href=&#34;#4-一个典型的CUDA编程结构包括5个主要步骤&#34; class=&#34;headerlink&#34; title=&#34;4.一个典型的CUDA编程结构包括5个主要步骤&#34;&gt;&lt;/a&gt;4.一个典型的CUDA编程结构包括5个主要步骤&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;分配GPU内存&lt;/li&gt;
 &lt;li&gt;从CPU内存中拷贝数据到GPU内存&lt;/li&gt;
@@ -214,9 +214,9 @@
         <updated>2023-01-16T08:58:39.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/posts/f1b4c4f6.html</id>
+        <id>http://example.com/2023/01/14/openmp006/</id>
         <title>OpenMP生产者消费者问题</title>
-        <link rel="alternate" href="http://example.com/posts/f1b4c4f6.html"/>
+        <link rel="alternate" href="http://example.com/2023/01/14/openmp006/"/>
         <content type="html">&lt;h2 id=&#34;OpenMP生产者消费者问题&#34;&gt;&lt;a href=&#34;#OpenMP生产者消费者问题&#34; class=&#34;headerlink&#34; title=&#34;OpenMP生产者消费者问题&#34;&gt;&lt;/a&gt;OpenMP生产者消费者问题&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;本节将讨论一个不适合用parallel for指令或者for指令来并行化的问题。&lt;/strong&gt;&lt;/p&gt;
 &lt;h3 id=&#34;1-队列&#34;&gt;&lt;a href=&#34;#1-队列&#34; class=&#34;headerlink&#34; title=&#34;1.队列&#34;&gt;&lt;/a&gt;1.队列&lt;/h3&gt;&lt;p&gt;队列是一种抽象的数据结构，插入元素时将元素插入到队列“尾部”，而读取元素时，队列“头部”的元素被返回并从队列中被移除。队列可以看做是在超市中等待付款的消费者的抽象，队列中的元素是消费者。新的消费者到达时排在等待队列的尾部，下一个付款离开等待队列的是排在队列头部的消费者。&lt;/p&gt;
 &lt;p&gt;当一个新的元素插入到队列的尾部时，通常称这个新的元素“入队”了；当一个元素从队列的头部被移除时，通常称这个元素“出队”了。&lt;/p&gt;
@@ -292,21 +292,21 @@
 &lt;p&gt;在一个线程进入临界区前，它尝试通过调用锁函数来上锁（set）。如果没有其他的线程正在执行临界区代码，那么它将获得锁并进入临界区。当该线程执行完临界区代码后，它调用解锁函数释放（relinquish或者unset）锁，以便其他线程可以获得锁。&lt;/p&gt;
 &lt;p&gt;当一个线程拥有锁时，其他线程都不能进入该临界区。其他线程尝试通过调用锁函数进入该临界区时会阻塞。如果有多个线程被锁函数阻塞，则当临界区的线程释放锁时，这些线程中的某个线程会获得锁，而其他线程仍被阻塞。&lt;/p&gt;
 &lt;p&gt;OpenMP有两种锁：简单（simple）锁和嵌套（nested）锁。简单锁在被释放前只能获得一次，而一个嵌套锁在被释放前可以被同一个线程获得多次。OpenMP简单锁的类型是omp_lock_t，定义简单锁的函数包括：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/f1b4c4f6.htm/image-20230116165204803.png&#34; alt=&#34;image-20230116165204803&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/01/14/openmp006/image-20230116165204803.png&#34; alt=&#34;image-20230116165204803&#34;&gt;&lt;/p&gt;
 &lt;p&gt;相关的类型和函数在头文件omp.h中声明。第一个函数的作为是初始化锁，所以此时锁处于解锁状态，换句话说，此时没有线程拥有这个锁。第二个函数尝试获得锁，如果成功，调用该函数的线程可以继续执行；如果失败，调用该函数的线程将被阻塞，直到锁被其他线程释放。第三个函数释放锁，以便其他线程可以获得该锁。第四个函数销毁锁。&lt;/p&gt;
 </content>
         <category term="OpenMP" />
         <updated>2023-01-14T14:30:05.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/posts/dffd148.html</id>
+        <id>http://example.com/2023/01/14/openmp005/</id>
         <title>OpenMP循环调度</title>
-        <link rel="alternate" href="http://example.com/posts/dffd148.html"/>
+        <link rel="alternate" href="http://example.com/2023/01/14/openmp005/"/>
         <content type="html">&lt;h2 id=&#34;OpenMP循环调度&#34;&gt;&lt;a href=&#34;#OpenMP循环调度&#34; class=&#34;headerlink&#34; title=&#34;OpenMP循环调度&#34;&gt;&lt;/a&gt;OpenMP循环调度&lt;/h2&gt;&lt;h3 id=&#34;1-循环调度&#34;&gt;&lt;a href=&#34;#1-循环调度&#34; class=&#34;headerlink&#34; title=&#34;1.循环调度&#34;&gt;&lt;/a&gt;1.循环调度&lt;/h3&gt;&lt;p&gt;当第一次遇到parallel for指令时，我们看到将各次循环分配给线程的操作是由系统完成的。然而，大部分OpenMP实现只是粗略地使用块分割：如果在串行循环中有n次迭代，那么在并行循环中，前n&amp;#x2F;thread_count个迭代分配给线程0，接下来的n&amp;#x2F;thread_count个迭代分配给线程1，依此类推。不难想到，这种分配方式肯定不是最优的。例如，假如我们想要并行化循环：&lt;/p&gt;
 &lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;sum = &lt;span class=&#34;hljs-number&#34;&gt;0.0&lt;/span&gt;;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;(i=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;i&amp;lt;=n;i++)&lt;br&gt;    sum+=&lt;span class=&#34;hljs-built_in&#34;&gt;f&lt;/span&gt;(i);&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;p&gt;同时，假设对f函数调用所需要的时间与参数i的大小成正比，那么与分配给线程0的工作相比，分配给线程thread_count-1的工作量相对较大。一个更好的分配方案是轮流分配线程的工作（循环划分）。在循环划分中，各次迭代被“轮流”地一次一个地分配给线程。假如 t&amp;#x3D;thread_count。那么一个循环划分将如下分配各次迭代：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/dffd148.htm/image-20230114132246596.png&#34; alt=&#34;image-20230114132246596&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/01/14/openmp005/image-20230114132246596.png&#34; alt=&#34;image-20230114132246596&#34;&gt;&lt;/p&gt;
 &lt;p&gt;为了了解这样分配是如何影响性能的，我们编写了如下程序。&lt;/p&gt;
 &lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;double&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i)&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; j,start=i*(i+&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;)/&lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt;,finish=start+i;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;double&lt;/span&gt; return_val = &lt;span class=&#34;hljs-number&#34;&gt;0.0&lt;/span&gt;;&lt;br&gt;    &lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;(j = start; j&amp;lt;=finish; j++)&amp;#123;&lt;br&gt;        return_val += &lt;span class=&#34;hljs-built_in&#34;&gt;sin&lt;/span&gt;(j);&lt;br&gt;    &amp;#125;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; return_val;&lt;br&gt;    &lt;span class=&#34;hljs-comment&#34;&gt;/* f */&lt;/span&gt;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
@@ -330,16 +330,16 @@
 &lt;/ol&gt;
 &lt;p&gt;chunksize是一个正整数。在OpenMP中，迭代块是在顺序循环中连续执行的一块迭代语句，块中的迭代次数是chunksize。只有static，dynamic和guided调度有chunksize。这虽然决定了调度的细节，但准确的解释还是依赖于type。&lt;/p&gt;
 &lt;h3 id=&#34;3-stastic调度类型&#34;&gt;&lt;a href=&#34;#3-stastic调度类型&#34; class=&#34;headerlink&#34; title=&#34;3.stastic调度类型&#34;&gt;&lt;/a&gt;3.stastic调度类型&lt;/h3&gt;&lt;p&gt;对于static调度，系统以轮转的方式分配chunksize块个迭代给每个线程。例如，假如有12个迭代，0，1，—，11和3个线程，如果在parallel for或for指令中使用schedule（static，1）迭代将如下分配：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/dffd148.htm/image-20230114141741424.png&#34; alt=&#34;image-20230114141741424&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/01/14/openmp005/image-20230114141741424.png&#34; alt=&#34;image-20230114141741424&#34;&gt;&lt;/p&gt;
 &lt;p&gt;如果使用schedule（static，2），迭代将如下进行分配：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/dffd148.htm/image-20230114141830866.png&#34; alt=&#34;image-20230114141830866&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/01/14/openmp005/image-20230114141830866.png&#34; alt=&#34;image-20230114141830866&#34;&gt;&lt;/p&gt;
 &lt;p&gt;如果使用schedule（static，4），迭代将如下分配：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/dffd148.htm/image-20230114141909092.png&#34; alt=&#34;image-20230114141909092&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/01/14/openmp005/image-20230114141909092.png&#34; alt=&#34;image-20230114141909092&#34;&gt;&lt;/p&gt;
 &lt;p&gt;因此，子句schedule（static,total_iterations&amp;#x2F;thread_count）就相当于被大部分OpenMP实现所使用的缺省调度。&lt;/p&gt;
 &lt;p&gt;这里，chunksize可以被忽略。如果他被忽略了，chunksize就近似等于total_iterations&amp;#x2F;thread_count。&lt;/p&gt;
 &lt;h3 id=&#34;4-dynamic和guided调度类型&#34;&gt;&lt;a href=&#34;#4-dynamic和guided调度类型&#34; class=&#34;headerlink&#34; title=&#34;4.dynamic和guided调度类型&#34;&gt;&lt;/a&gt;4.dynamic和guided调度类型&lt;/h3&gt;&lt;p&gt;在dynamic调度中，迭代也被分成chunksize个连续迭代的块。每个线程执行一块，并且当一个线程完成一块时，它将从运行时系统请求另一块，直到所有的迭代完成。chunksize可以被忽略。当它被忽略时，chunksize为1。&lt;/p&gt;
 &lt;p&gt;在guided调度中，每个线程也执行一块，并且当一个线程完成一块时，将请求另一块。然而，在guided调度中，当块完成后，新块的大小会变小。例如，在我们的系统中，如果用parallel for指令和schedule（guided）子句来运行梯形积分法程序，那么当n&amp;#x3D;10000并且thread_count&amp;#x3D;2时。迭代将如表5-3那样分配。块的大小近似等于剩下的迭代数除以线程数。第一个块的大小9999&amp;#x2F;2≈5000，因为有9999个迭代未被分配的迭代。第二个块的大小为4999&amp;#x2F;2≈2500，一次类推。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/dffd148.htm/image-20230114143233692.png&#34; alt=&#34;image-20230114143233692&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/01/14/openmp005/image-20230114143233692.png&#34; alt=&#34;image-20230114143233692&#34;&gt;&lt;/p&gt;
 &lt;p&gt;在guided调度中，如果没有指定chunksize，那么块的大小为1；如果指定了chunksize，那么块的大小就是chunksize，除了最后一块的大小可以比chunksize小。&lt;/p&gt;
 &lt;h3 id=&#34;5-runtime调度类型&#34;&gt;&lt;a href=&#34;#5-runtime调度类型&#34; class=&#34;headerlink&#34; title=&#34;5.runtime调度类型&#34;&gt;&lt;/a&gt;5.runtime调度类型&lt;/h3&gt;&lt;p&gt;为了理解schedule（runtime），我们需要离题一会儿，讨论一下环境变量。正如名字所暗示的，环境变量是能够被运行时系统所访问的命名值，即它们在程序的环境中是可得的。一些经常被使用的环境变量是PATH,HOME和SHELL。PATH变量明确了当寻找一个可执行文件时shell应该搜索哪些目录。它通常在UNIX和Windows系统中定义。HOME变量指定用户主目录的位置，而SHELL变量指定用户shell的可执行位置。这样通常在UNIX系统中。在类UNIX系统（例如Linux和Mac OS X）和Windows，环境变量能够在命令行中检查和指定。在类UNIX系统中，能使用shell命令行；在windows中，能使用集成开发环境的命令行。&lt;/p&gt;
 &lt;p&gt;例如，如果我们正使用bash shell，要检查一个环境变量的值只需要输入&lt;/p&gt;
@@ -372,9 +372,9 @@
         <updated>2023-01-14T05:04:25.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/posts/e0a4021f.html</id>
+        <id>http://example.com/2023/01/13/openmp004/</id>
         <title>OpenMP排序</title>
-        <link rel="alternate" href="http://example.com/posts/e0a4021f.html"/>
+        <link rel="alternate" href="http://example.com/2023/01/13/openmp004/"/>
         <content type="html">&lt;h2 id=&#34;OpenMP排序&#34;&gt;&lt;a href=&#34;#OpenMP排序&#34; class=&#34;headerlink&#34; title=&#34;OpenMP排序&#34;&gt;&lt;/a&gt;OpenMP排序&lt;/h2&gt;&lt;h3 id=&#34;1-冒泡排序&#34;&gt;&lt;a href=&#34;#1-冒泡排序&#34; class=&#34;headerlink&#34; title=&#34;1.冒泡排序&#34;&gt;&lt;/a&gt;1.冒泡排序&lt;/h3&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;(list_length = n; list.length &amp;gt;= &lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt;; list_length--)				&lt;span class=&#34;hljs-comment&#34;&gt;//升序排列&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;(i = &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;i &amp;lt; list_length&lt;span class=&#34;hljs-number&#34;&gt;-1&lt;/span&gt;; i++)&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(a[i] &amp;gt; a[i+&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;])&amp;#123;&lt;br&gt;            tmp = a[i];&lt;br&gt;            a[i] = a[i+&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;];&lt;br&gt;            a[i+&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;] = tmp;&lt;br&gt;        &amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;p&gt;​		显然，在外部循环中有一个循环依赖，在外部循环的任何一次迭代中，当前列表的内容依赖于外部循环的前一次迭代。例如，如果在算法开始时，a&amp;#x3D;3,4,1,2，那么外部循环的第二次迭代将对列表3，1，2进行操作，因为4在第一次迭代中应该已经被移动到列表的最后了。但如果前两次迭代同时执行，则可能第二次迭代的有效列表包含4。	&lt;/p&gt;
@@ -385,14 +385,14 @@
 
 &lt;p&gt;列表a存储n个整数，算法对他们进行升序排列。在一个“偶阶段”（phase %2 &amp;#x3D;&amp;#x3D;0 ）里，每个偶下标元素a[i]与它左边的元素a[i-1]相比较。如果他们是没有排好序的，就交换它们。在一个“奇阶段”里，每个奇下标元素与它右边的元素相比较。如果他们是没有排好序的，则交换他们。有定理证明：在n个阶段后，列表可以完成排序。&lt;/p&gt;
 &lt;p&gt;​		作为一个简单的例子，假设a&amp;#x3D;{9,7,8,6}。表5-1显示了各个阶段的情况。在这个例子中，最后的阶段不是必要的，但算法并不在执行每个阶段前检查列表是否已经有序。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/e0a4021f.htm/image-20230113174202896.png&#34; alt=&#34;image-20230113174202896&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/01/13/openmp004/image-20230113174202896.png&#34; alt=&#34;image-20230113174202896&#34;&gt;&lt;/p&gt;
 &lt;p&gt;​		不难看到外部循环有一个循环依赖。例如在a &amp;#x3D; {9，7，8，6}之前。在阶段0中，内部循环将比较（9，7）和（8，6）这两对中的元素，这两对都会被交换。因此对于阶段1，列表将是{7，9，6，8}，并在阶段1中（9，6）中的元素被比较并交换。然而，如果阶段0和阶段1同时执行，则在阶段1中被检查可能是（7，8），是有序的。此外，我们尚不清楚如何消除这个循环依赖，因此并行化外部for循环不是一个好的选择。&lt;/p&gt;
 &lt;p&gt;​		但是，内部for循环并没有任何循环依赖。例如，在偶阶段循环中，变量i是奇数，所以对于两个不同的i值，例如，i&amp;#x3D;j和i&amp;#x3D;k，{j-1,j}和{k-1,k}将是不同的。（a[j-1],a[j]）和（a[k-1],a[k]）所产生的比较和可能的交换能够同时进行。&lt;/p&gt;
 &lt;p&gt;​		所以，我们试图使用程序5-4的代码并行化奇偶变化排序，但还是会有一些潜在的问题，首先，尽管任何一个偶阶段迭代并不依赖任何这个阶段的其他迭代，但是还需要注意，对p阶段和p+1阶段却并不是这样的。我们需要确定在任何一个线程开始p+1阶段之前，所有的线程必须先完成p阶段。然而，像parallel指令那样，parallel for指令在循环结束处有一个隐式的路障，因此，在所有的线程完成当前阶段（即阶段P之前），没有线程能够进入下一阶段，即p+1阶段。【这里需要注意在MPI中并没有隐式的路障来实现这个功能，需要程序员手动设置路障点】&lt;/p&gt;
 &lt;p&gt;​		其次，是创建和合并线程的开销。OpenMP实现可能会在每一遍外部循环都创建和合并thread__count个线程。表5-2的第一行显示了当输入列表包含20000个元素时，在我们系统上运行1，2，3，4个线程的运行时间。&lt;/p&gt;
 &lt;h3 id=&#34;3-程序5-4奇偶排序的第一个OpenMP实现&#34;&gt;&lt;a href=&#34;#3-程序5-4奇偶排序的第一个OpenMP实现&#34; class=&#34;headerlink&#34; title=&#34;3.程序5-4	奇偶排序的第一个OpenMP实现&#34;&gt;&lt;/a&gt;3.程序5-4	奇偶排序的第一个OpenMP实现&lt;/h3&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;(phase = &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;phase &amp;lt; n; phase++)&amp;#123;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(phase %&lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt; ==&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;)&lt;br&gt;    	&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;pragma&lt;/span&gt; omp parallel for num_threads(thread_count) default(none) shared(a,n) private(i,tmp)&lt;/span&gt;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;(i=&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;;i&amp;lt;n;i+=&lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt;)&amp;#123;&lt;br&gt;            &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(a[i&lt;span class=&#34;hljs-number&#34;&gt;-1&lt;/span&gt;]&amp;gt;a[i])&amp;#123;&lt;br&gt;                tmp = a[i&lt;span class=&#34;hljs-number&#34;&gt;-1&lt;/span&gt;];&lt;br&gt;                a[i&lt;span class=&#34;hljs-number&#34;&gt;-1&lt;/span&gt;] = a[i];&lt;br&gt;                a[i] =tmp;&lt;br&gt;            &amp;#125;&lt;br&gt;        &amp;#125;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;else&lt;/span&gt;&lt;br&gt;        &lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;pragma&lt;/span&gt; omp parallel for num_threads(thread_count) default(none) shared(a,n) private(i,tmp)&lt;/span&gt;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;(i=&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;;i&amp;lt;n&lt;span class=&#34;hljs-number&#34;&gt;-1&lt;/span&gt;;i+=&lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt;)&amp;#123;&lt;br&gt;            &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(a[i] &amp;gt; a[i+&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;])&amp;#123;&lt;br&gt;                tmp = a[i+&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;];&lt;br&gt;                a[i+&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;] = a[i];&lt;br&gt;                a[i] = tmp;&lt;br&gt;            &amp;#125;&lt;br&gt;        &amp;#125;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
-&lt;p&gt;&lt;img src=&#34;/posts/e0a4021f.htm/image-20230113225724364.png&#34; alt=&#34;image-20230113225724364&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/01/13/openmp004/image-20230113225724364.png&#34; alt=&#34;image-20230113225724364&#34;&gt;&lt;/p&gt;
 &lt;p&gt;​		这些时间耗费并不非常糟糕，但是我们想看看是否能做得更好。每次执行内部循环时，使用同样数量的线程。因此只创建一次线程，并在每次内部循环的执行中重用它们，这样做可能更好。幸运的是，OpenMP提供了允许这样做的指令。用parallel指令在外部循环前创建thread__count个线程的集合。然后，我们不在每次内部循环执行时创建一组新的线程，而是使用一个for指令，告诉OpenMP用已有的线程组来并行化for循环，对原有OpenMP实现的改动显示在程序5-5中。&lt;/p&gt;
 &lt;h3 id=&#34;4-程序5-5奇偶排序的第二个OpenMP实现&#34;&gt;&lt;a href=&#34;#4-程序5-5奇偶排序的第二个OpenMP实现&#34; class=&#34;headerlink&#34; title=&#34;4.程序5-5	奇偶排序的第二个OpenMP实现&#34;&gt;&lt;/a&gt;4.程序5-5	奇偶排序的第二个OpenMP实现&lt;/h3&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;pragma&lt;/span&gt; omp parallel for num_threads(thread_count) default(none) shared(a,n) private(i,tmp,phase)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;(phase = &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;phase &amp;lt; n; phase++)&amp;#123;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(phase %&lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt; ==&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;)&lt;br&gt;		&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;pragma&lt;/span&gt; omp for&lt;/span&gt;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;(i=&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;;i&amp;lt;n;i+=&lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt;)&amp;#123;&lt;br&gt;            &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(a[i&lt;span class=&#34;hljs-number&#34;&gt;-1&lt;/span&gt;]&amp;gt;a[i])&amp;#123;&lt;br&gt;                tmp = a[i&lt;span class=&#34;hljs-number&#34;&gt;-1&lt;/span&gt;];&lt;br&gt;                a[i&lt;span class=&#34;hljs-number&#34;&gt;-1&lt;/span&gt;] = a[i];&lt;br&gt;                a[i] =tmp;&lt;br&gt;            &amp;#125;&lt;br&gt;        &amp;#125;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;else&lt;/span&gt;&lt;br&gt;		&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;pragma&lt;/span&gt; omp for&lt;/span&gt;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;(i=&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;;i&amp;lt;n&lt;span class=&#34;hljs-number&#34;&gt;-1&lt;/span&gt;;i+=&lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt;)&amp;#123;&lt;br&gt;            &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(a[i] &amp;gt; a[i+&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;])&amp;#123;&lt;br&gt;                tmp = a[i+&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;];&lt;br&gt;                a[i+&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;] = a[i];&lt;br&gt;                a[i] = tmp;&lt;br&gt;            &amp;#125;&lt;br&gt;        &amp;#125;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
@@ -408,10 +408,10 @@
         <updated>2023-01-13T08:26:51.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/posts/27df7715.html</id>
+        <id>http://example.com/2023/01/09/openmp003/</id>
         <title>OpenMP π值估计</title>
-        <link rel="alternate" href="http://example.com/posts/27df7715.html"/>
-        <content type="html">&lt;h2 id=&#34;π值估计&#34;&gt;&lt;a href=&#34;#π值估计&#34; class=&#34;headerlink&#34; title=&#34;π值估计&#34;&gt;&lt;/a&gt;π值估计&lt;/h2&gt;&lt;h3 id=&#34;1-数学背景&#34;&gt;&lt;a href=&#34;#1-数学背景&#34; class=&#34;headerlink&#34; title=&#34;1.数学背景&#34;&gt;&lt;/a&gt;1.数学背景&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;/posts/27df7715.htm/image-20230109150836877.png&#34; alt=&#34;image-20230109150836877&#34;&gt;&lt;/p&gt;
+        <link rel="alternate" href="http://example.com/2023/01/09/openmp003/"/>
+        <content type="html">&lt;h2 id=&#34;π值估计&#34;&gt;&lt;a href=&#34;#π值估计&#34; class=&#34;headerlink&#34; title=&#34;π值估计&#34;&gt;&lt;/a&gt;π值估计&lt;/h2&gt;&lt;h3 id=&#34;1-数学背景&#34;&gt;&lt;a href=&#34;#1-数学背景&#34; class=&#34;headerlink&#34; title=&#34;1.数学背景&#34;&gt;&lt;/a&gt;1.数学背景&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;/2023/01/09/openmp003/image-20230109150836877.png&#34; alt=&#34;image-20230109150836877&#34;&gt;&lt;/p&gt;
 &lt;p&gt;我们能够在串行代码下实行这个公式：&lt;/p&gt;
 &lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;double&lt;/span&gt; factor = &lt;span class=&#34;hljs-number&#34;&gt;1.0&lt;/span&gt;;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;double&lt;/span&gt; sum = &lt;span class=&#34;hljs-number&#34;&gt;0.0&lt;/span&gt;;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;(k=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt; ; k &amp;lt; n; k++)&amp;#123;&lt;br&gt;    sum += factor /(&lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt;*k+&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;);&lt;br&gt;    factor = - factor;&lt;br&gt;&amp;#125;&lt;br&gt;pi_approx = &lt;span class=&#34;hljs-number&#34;&gt;4.0&lt;/span&gt;*sum;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
@@ -420,8 +420,8 @@
 
 &lt;p&gt;然而，第k次迭代中对第6行的factor的更新和接下来的第k + 1次迭代中对第5行的sum的累加是一个循环依赖（数据依赖）。如果第k次迭代被分配·到一个线程，而第k + 1次迭代被分配给另一个线程，则我们不能保证第6行中factor的值是正确的。&lt;/p&gt;
 &lt;p&gt;在这种情况下我们能通过检查系数来解决这个问题：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/27df7715.htm/image-20230109161031989.png&#34; alt=&#34;image-20230109161031989&#34;&gt;&lt;/p&gt;
-&lt;p&gt;可以看到：在第k次迭代，factor的值应该是&lt;img src=&#34;/posts/27df7715.htm/image-20230109161206995.png&#34; alt=&#34;image-20230109161206995&#34;&gt;。如果k是偶数，那么值是+1；如果k是奇数，值是-1。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/01/09/openmp003/image-20230109161031989.png&#34; alt=&#34;image-20230109161031989&#34;&gt;&lt;/p&gt;
+&lt;p&gt;可以看到：在第k次迭代，factor的值应该是&lt;img src=&#34;/2023/01/09/openmp003/image-20230109161206995.png&#34; alt=&#34;image-20230109161206995&#34;&gt;。如果k是偶数，那么值是+1；如果k是奇数，值是-1。&lt;/p&gt;
 &lt;h3 id=&#34;3-消除循环依赖（数据依赖）&#34;&gt;&lt;a href=&#34;#3-消除循环依赖（数据依赖）&#34; class=&#34;headerlink&#34; title=&#34;3.消除循环依赖（数据依赖）&#34;&gt;&lt;/a&gt;3.消除循环依赖（数据依赖）&lt;/h3&gt;&lt;p&gt;因此，如果将下述代码：&lt;/p&gt;
 &lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;sum += factor /(&lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt;*k+&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;);&lt;br&gt;factor = - factor;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
@@ -430,9 +430,9 @@
 
 &lt;p&gt;这样就消除了循环依赖（数据依赖）。&lt;/p&gt;
 &lt;h3 id=&#34;4-作用域&#34;&gt;&lt;a href=&#34;#4-作用域&#34; class=&#34;headerlink&#34; title=&#34;4.作用域&#34;&gt;&lt;/a&gt;4.作用域&lt;/h3&gt;&lt;p&gt;​	然而，事情仍然不是完全正确的。如果在我们的系统上使用两个线程运行程序，并设n&amp;#x3D;1000，那么结果仍然是错误的。例如，&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/27df7715.htm/image-20230109164120205.png&#34; alt=&#34;image-20230109164120205&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/01/09/openmp003/image-20230109164120205.png&#34; alt=&#34;image-20230109164120205&#34;&gt;&lt;/p&gt;
 &lt;p&gt;另一方面，如果只有一个线程运行程序，我们总是得到：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/27df7715.htm/image-20230109164204808.png&#34; alt=&#34;image-20230109164204808&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/01/09/openmp003/image-20230109164204808.png&#34; alt=&#34;image-20230109164204808&#34;&gt;&lt;/p&gt;
 &lt;p&gt;为什么会有这种错误。在一个已经被parallel for指令并行化的块中，缺省情况下任何在循环前声明的变量（唯一的例外是循环变量）在线程间都是共享的。因此factor被共享（被所有线程所共享）。例如，线程0可能会给他赋值1，但在它能用这个值更新sum前，线程1可能又给他赋值为-1了。因此，除了消除计算factor时的循环依赖（数据依赖）外，我们还需要保证每个线程有它自己的factor副本，就是说，为了使代码正确，我们需要保证factor有私有作用域（简单来说就是保证当前线程的factor的值不能被其他线程修改，也只有当前线程能更新和使用factor）。通过添加一个private子句到parallel指令中来实现这一目标。&lt;/p&gt;
 &lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt; &lt;span class=&#34;hljs-keyword&#34;&gt;double&lt;/span&gt; factor = &lt;span class=&#34;hljs-number&#34;&gt;1.0&lt;/span&gt;;&lt;br&gt; &lt;span class=&#34;hljs-keyword&#34;&gt;double&lt;/span&gt; sum = &lt;span class=&#34;hljs-number&#34;&gt;0.0&lt;/span&gt;;&lt;br&gt;&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;pragma&lt;/span&gt; omp parallel for num_threads(thread_count) reduction(+:sum) private(factor)  &lt;span class=&#34;hljs-comment&#34;&gt;//对sum进行求和归约&lt;/span&gt;&lt;/span&gt;&lt;br&gt; &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;(k=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt; ; k &amp;lt; n; k++)&amp;#123;&lt;br&gt;     &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(k % &lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt; ==&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;)			&lt;span class=&#34;hljs-comment&#34;&gt;//通过奇偶性，来独立factor消除循环依赖（数据依赖）&lt;/span&gt;&lt;br&gt;    	factor = &lt;span class=&#34;hljs-number&#34;&gt;1.0&lt;/span&gt;;&lt;br&gt;	&lt;span class=&#34;hljs-keyword&#34;&gt;else&lt;/span&gt;&lt;br&gt;    	factor = &lt;span class=&#34;hljs-number&#34;&gt;-1.0&lt;/span&gt;;&lt;br&gt;     sum += factor /(&lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt;*k+&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;);&lt;br&gt; &amp;#125;&lt;br&gt; pi_approx = &lt;span class=&#34;hljs-number&#34;&gt;4.0&lt;/span&gt;*sum;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
@@ -458,9 +458,9 @@
         <updated>2023-01-09T07:06:18.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/posts/d2c11083.html</id>
+        <id>http://example.com/2023/01/06/openmp002/</id>
         <title>OpenMP寻找循环依赖</title>
-        <link rel="alternate" href="http://example.com/posts/d2c11083.html"/>
+        <link rel="alternate" href="http://example.com/2023/01/06/openmp002/"/>
         <content type="html">&lt;h3 id=&#34;1-OpenMP寻找循环依赖&#34;&gt;&lt;a href=&#34;#1-OpenMP寻找循环依赖&#34; class=&#34;headerlink&#34; title=&#34;1.OpenMP寻找循环依赖&#34;&gt;&lt;/a&gt;1.OpenMP寻找循环依赖&lt;/h3&gt;&lt;p&gt;​		当我们试图使用一个parallel for指令时，首先应该注意的是：要小心发现循环依赖。我们不需要担心一般的数据依赖。例如，在下面循环中：&lt;/p&gt;
 &lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;(i=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;i&amp;lt;n;i++)&amp;#123;&lt;br&gt;    x[i] = a + i*h;			&lt;span class=&#34;hljs-comment&#34;&gt;//2&lt;/span&gt;&lt;br&gt;    y[i] = &lt;span class=&#34;hljs-built_in&#34;&gt;exp&lt;/span&gt;(x[i]);		&lt;span class=&#34;hljs-comment&#34;&gt;//3&lt;/span&gt;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
@@ -479,12 +479,12 @@
         <updated>2023-01-06T09:15:48.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/posts/c48a3125.html</id>
+        <id>http://example.com/2023/01/03/openmp001/</id>
         <title>OpenMP梯度积分法</title>
-        <link rel="alternate" href="http://example.com/posts/c48a3125.html"/>
-        <content type="html">&lt;h2 id=&#34;OpenMP梯度积分法&#34;&gt;&lt;a href=&#34;#OpenMP梯度积分法&#34; class=&#34;headerlink&#34; title=&#34;OpenMP梯度积分法&#34;&gt;&lt;/a&gt;OpenMP梯度积分法&lt;/h2&gt;&lt;h3 id=&#34;1-梯度积分法&#34;&gt;&lt;a href=&#34;#1-梯度积分法&#34; class=&#34;headerlink&#34; title=&#34;1.梯度积分法&#34;&gt;&lt;/a&gt;1.梯度积分法&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;/posts/c48a3125.htm/image-20230106165434252.png&#34; alt=&#34;001&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/c48a3125.htm/image-20230106165507737.png&#34; alt=&#34;image-20230106165507737&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;2-识别两类任务&#34;&gt;&lt;a href=&#34;#2-识别两类任务&#34; class=&#34;headerlink&#34; title=&#34;2.识别两类任务&#34;&gt;&lt;/a&gt;2.识别两类任务&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;/posts/c48a3125.htm/image-20230106164847677.png&#34; alt=&#34;image-20230106164847677&#34;&gt;&lt;/p&gt;
+        <link rel="alternate" href="http://example.com/2023/01/03/openmp001/"/>
+        <content type="html">&lt;h2 id=&#34;OpenMP梯度积分法&#34;&gt;&lt;a href=&#34;#OpenMP梯度积分法&#34; class=&#34;headerlink&#34; title=&#34;OpenMP梯度积分法&#34;&gt;&lt;/a&gt;OpenMP梯度积分法&lt;/h2&gt;&lt;h3 id=&#34;1-梯度积分法&#34;&gt;&lt;a href=&#34;#1-梯度积分法&#34; class=&#34;headerlink&#34; title=&#34;1.梯度积分法&#34;&gt;&lt;/a&gt;1.梯度积分法&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;/2023/01/03/openmp001/image-20230106165434252.png&#34; alt=&#34;001&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/01/03/openmp001/image-20230106165507737.png&#34; alt=&#34;image-20230106165507737&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;2-识别两类任务&#34;&gt;&lt;a href=&#34;#2-识别两类任务&#34; class=&#34;headerlink&#34; title=&#34;2.识别两类任务&#34;&gt;&lt;/a&gt;2.识别两类任务&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;/2023/01/03/openmp001/image-20230106164847677.png&#34; alt=&#34;image-20230106164847677&#34;&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;单个梯形的面积计算&lt;/li&gt;
 &lt;li&gt;梯形面积求和&lt;/li&gt;
@@ -507,12 +507,12 @@
         <updated>2023-01-03T09:19:45.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/posts/fdd885d9.html</id>
+        <id>http://example.com/2022/06/12/MPI%E5%AD%A6%E4%B9%A0(%E4%B8%80)-%E7%AE%80%E5%8D%95%E7%9A%84%E5%8F%91%E9%80%81%E6%8E%A5%E6%94%B6/</id>
         <title>MPI学习(一)-简单的发送接收</title>
-        <link rel="alternate" href="http://example.com/posts/fdd885d9.html"/>
+        <link rel="alternate" href="http://example.com/2022/06/12/MPI%E5%AD%A6%E4%B9%A0(%E4%B8%80)-%E7%AE%80%E5%8D%95%E7%9A%84%E5%8F%91%E9%80%81%E6%8E%A5%E6%94%B6/"/>
         <content type="html">&lt;h1 id=&#34;MPI-简单的发送接收&#34;&gt;&lt;a href=&#34;#MPI-简单的发送接收&#34; class=&#34;headerlink&#34; title=&#34;MPI-简单的发送接收&#34;&gt;&lt;/a&gt;MPI-简单的发送接收&lt;/h1&gt;&lt;p&gt;打印来自进程问候语句的MPI程序&lt;/p&gt;
-&lt;h2 id=&#34;所使用的MPI原语&#34;&gt;&lt;a href=&#34;#所使用的MPI原语&#34; class=&#34;headerlink&#34; title=&#34;所使用的MPI原语&#34;&gt;&lt;/a&gt;所使用的MPI原语&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;/posts/fdd885d9.htm/mpi001.png&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/fdd885d9.htm/mpi002.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;所使用的MPI原语&#34;&gt;&lt;a href=&#34;#所使用的MPI原语&#34; class=&#34;headerlink&#34; title=&#34;所使用的MPI原语&#34;&gt;&lt;/a&gt;所使用的MPI原语&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;/2022/06/12/MPI%E5%AD%A6%E4%B9%A0(%E4%B8%80)-%E7%AE%80%E5%8D%95%E7%9A%84%E5%8F%91%E9%80%81%E6%8E%A5%E6%94%B6/mpi001.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2022/06/12/MPI%E5%AD%A6%E4%B9%A0(%E4%B8%80)-%E7%AE%80%E5%8D%95%E7%9A%84%E5%8F%91%E9%80%81%E6%8E%A5%E6%94%B6/mpi002.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;程序运行平台&#34;&gt;&lt;a href=&#34;#程序运行平台&#34; class=&#34;headerlink&#34; title=&#34;程序运行平台&#34;&gt;&lt;/a&gt;程序运行平台&lt;/h2&gt;&lt;p&gt;北京超级云计算中心A3分区&lt;/p&gt;
 &lt;h2 id=&#34;环境变量&#34;&gt;&lt;a href=&#34;#环境变量&#34; class=&#34;headerlink&#34; title=&#34;环境变量&#34;&gt;&lt;/a&gt;环境变量&lt;/h2&gt;&lt;p&gt;mpi&amp;#x2F;intel&amp;#x2F;2017.5&lt;/p&gt;
 &lt;h2 id=&#34;编译指令&#34;&gt;&lt;a href=&#34;#编译指令&#34; class=&#34;headerlink&#34; title=&#34;编译指令&#34;&gt;&lt;/a&gt;编译指令&lt;/h2&gt;&lt;p&gt;mpicc  3.1.cpp -o 3.1&lt;/p&gt;
@@ -526,9 +526,9 @@
         <updated>2022-06-12T07:11:29.651Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/posts/ba7262eb.html</id>
+        <id>http://example.com/2022/06/12/AVX%E5%90%91%E9%87%8F%E5%8C%96%E5%AD%A6%E4%B9%A0(%E4%BA%8C)-%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90%E7%9A%84%E5%BA%94%E7%94%A8/</id>
         <title>AVX向量化学习(二)-内存对齐的应用</title>
-        <link rel="alternate" href="http://example.com/posts/ba7262eb.html"/>
+        <link rel="alternate" href="http://example.com/2022/06/12/AVX%E5%90%91%E9%87%8F%E5%8C%96%E5%AD%A6%E4%B9%A0(%E4%BA%8C)-%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90%E7%9A%84%E5%BA%94%E7%94%A8/"/>
         <content type="html">&lt;h1 id=&#34;AVX指令集的简单操作-内存对齐版&#34;&gt;&lt;a href=&#34;#AVX指令集的简单操作-内存对齐版&#34; class=&#34;headerlink&#34; title=&#34;AVX指令集的简单操作(内存对齐版)&#34;&gt;&lt;/a&gt;AVX指令集的简单操作(内存对齐版)&lt;/h1&gt;&lt;p&gt;使用AVX指令集进行2个double型的数组相加操作&lt;/p&gt;
 &lt;h2 id=&#34;常用的内存对齐函数&#34;&gt;&lt;a href=&#34;#常用的内存对齐函数&#34; class=&#34;headerlink&#34; title=&#34;常用的内存对齐函数&#34;&gt;&lt;/a&gt;常用的内存对齐函数&lt;/h2&gt;&lt;p&gt;因为AVX中要求mem__addr必须在32字节边界上对齐，否则可能会产生通用保护异常。  &lt;/p&gt;
 &lt;h3 id=&#34;1&#34;&gt;&lt;a href=&#34;#1&#34; class=&#34;headerlink&#34; title=&#34;1.&#34;&gt;&lt;/a&gt;1.&lt;/h3&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;double&lt;/span&gt;*	a =(&lt;span class=&#34;hljs-keyword&#34;&gt;double&lt;/span&gt;*)&lt;span class=&#34;hljs-built_in&#34;&gt;memalign&lt;/span&gt;(&lt;span class=&#34;hljs-number&#34;&gt;32&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;9&lt;/span&gt;*&lt;span class=&#34;hljs-built_in&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;sizeof&lt;/span&gt;&lt;/span&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;double&lt;/span&gt;));&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -570,9 +570,9 @@
         <updated>2022-06-12T07:11:29.549Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/posts/e33aee2a.html</id>
+        <id>http://example.com/2022/06/12/AVX%E5%90%91%E9%87%8F%E5%8C%96%E5%AD%A6%E4%B9%A0(%E4%B8%80)/</id>
         <title>AVX向量化学习(一)</title>
-        <link rel="alternate" href="http://example.com/posts/e33aee2a.html"/>
+        <link rel="alternate" href="http://example.com/2022/06/12/AVX%E5%90%91%E9%87%8F%E5%8C%96%E5%AD%A6%E4%B9%A0(%E4%B8%80)/"/>
         <content type="html">&lt;h1 id=&#34;AVX指令集的简单操作&#34;&gt;&lt;a href=&#34;#AVX指令集的简单操作&#34; class=&#34;headerlink&#34; title=&#34;AVX指令集的简单操作&#34;&gt;&lt;/a&gt;AVX指令集的简单操作&lt;/h1&gt;&lt;p&gt;使用AVX指令集进行2个double型的数组相加操作&lt;/p&gt;
 &lt;h2 id=&#34;使用到的AVX函数介绍&#34;&gt;&lt;a href=&#34;#使用到的AVX函数介绍&#34; class=&#34;headerlink&#34; title=&#34;使用到的AVX函数介绍&#34;&gt;&lt;/a&gt;使用到的AVX函数介绍&lt;/h2&gt;&lt;h3 id=&#34;1&#34;&gt;&lt;a href=&#34;#1&#34; class=&#34;headerlink&#34; title=&#34;1.&#34;&gt;&lt;/a&gt;1.&lt;/h3&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;__m256 _mm256_loadu_ps (&lt;span class=&#34;hljs-keyword&#34;&gt;float&lt;/span&gt; &lt;span class=&#34;hljs-keyword&#34;&gt;const&lt;/span&gt; * mem_addr)&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
@@ -603,23 +603,23 @@
         <updated>2022-06-12T07:11:29.538Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/posts/b451a697.html</id>
+        <id>http://example.com/2022/05/20/slurm001/</id>
         <title>Slurm</title>
-        <link rel="alternate" href="http://example.com/posts/b451a697.html"/>
+        <link rel="alternate" href="http://example.com/2022/05/20/slurm001/"/>
         <content type="html">&lt;h2 id=&#34;Slurm&#34;&gt;&lt;a href=&#34;#Slurm&#34; class=&#34;headerlink&#34; title=&#34;Slurm&#34;&gt;&lt;/a&gt;Slurm&lt;/h2&gt;&lt;h4 id=&#34;1-sstat-查看RUNNING作业&#34;&gt;&lt;a href=&#34;#1-sstat-查看RUNNING作业&#34; class=&#34;headerlink&#34; title=&#34;1.sstat 查看RUNNING作业&#34;&gt;&lt;/a&gt;1.sstat 查看RUNNING作业&lt;/h4&gt;&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs shell&#34;&gt;sstat -e&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
-&lt;p&gt;&lt;img src=&#34;/posts/b451a697.htm/image-20220520174453969.png&#34; alt=&#34;image-20220520174453969&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2022/05/20/slurm001/image-20220520174453969.png&#34; alt=&#34;image-20220520174453969&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;使用举例：&lt;/strong&gt;&lt;/p&gt;
 &lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs shell&#34;&gt;sstat -a --format=&amp;quot;JobId,Pids,AveCPU,AveRSS,MaxRSS&amp;quot;  1755818&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
-&lt;p&gt;&lt;img src=&#34;/posts/b451a697.htm/image-20220520175001331.png&#34; alt=&#34;image-20220520175001331&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2022/05/20/slurm001/image-20220520175001331.png&#34; alt=&#34;image-20220520175001331&#34;&gt;&lt;/p&gt;
 &lt;h4 id=&#34;2-sacct-查看FINISHED作业&#34;&gt;&lt;a href=&#34;#2-sacct-查看FINISHED作业&#34; class=&#34;headerlink&#34; title=&#34;2.sacct 查看FINISHED作业&#34;&gt;&lt;/a&gt;2.sacct 查看FINISHED作业&lt;/h4&gt;&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs shell&#34;&gt;sacct -e&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
-&lt;p&gt;&lt;img src=&#34;/posts/b451a697.htm/image-20220520174622868.png&#34; alt=&#34;image-20220520174622868&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2022/05/20/slurm001/image-20220520174622868.png&#34; alt=&#34;image-20220520174622868&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;使用举例：&lt;/strong&gt;&lt;/p&gt;
 &lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs shell&#34;&gt;sacct --format=&amp;quot;JobId,Elapsed,CPUTime,CPUTimeRAW,AveCPU,TotalCPU,UserCPU,SystemCPU,AveRSS,MaxRSS&amp;quot; -j 1754217&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
-&lt;p&gt;&lt;img src=&#34;/posts/b451a697.htm/image-20220520174807162.png&#34; alt=&#34;image-20220520174807162&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2022/05/20/slurm001/image-20220520174807162.png&#34; alt=&#34;image-20220520174807162&#34;&gt;&lt;/p&gt;
 &lt;h4 id=&#34;参考资料：&#34;&gt;&lt;a href=&#34;#参考资料：&#34; class=&#34;headerlink&#34; title=&#34;参考资料：&#34;&gt;&lt;/a&gt;参考资料：&lt;/h4&gt;&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/kongxx/article/details/52556943&#34;&gt;(28条消息) Slurm查看作业CPU和MEM_kongxx的博客-CSDN博客_slurm 查看节点&lt;/a&gt;&lt;/p&gt;
 </content>
         <category term="Linux" />
@@ -627,27 +627,27 @@
         <updated>2022-05-20T09:43:02.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/posts/baf4b3d6.html</id>
+        <id>http://example.com/2022/05/20/numactl001/</id>
         <title>numactl</title>
-        <link rel="alternate" href="http://example.com/posts/baf4b3d6.html"/>
+        <link rel="alternate" href="http://example.com/2022/05/20/numactl001/"/>
         <content type="html">&lt;ol&gt;
 &lt;li&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs shell&#34;&gt;numactl --hardware&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
-&lt;p&gt;&lt;img src=&#34;/posts/baf4b3d6.htm/image-20220520173911653.png&#34; alt=&#34;image-20220520173911653&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2022/05/20/numactl001/image-20220520173911653.png&#34; alt=&#34;image-20220520173911653&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs shelll&#34;&gt;numastat&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
-&lt;p&gt;&lt;img src=&#34;/posts/baf4b3d6.htm/image-20220520174030171.png&#34; alt=&#34;image-20220520174030171&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2022/05/20/numactl001/image-20220520174030171.png&#34; alt=&#34;image-20220520174030171&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;3&#34;&gt;
 &lt;li&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;numactl --show&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
-&lt;p&gt;&lt;img src=&#34;/posts/baf4b3d6.htm/image-20220520174148487.png&#34; alt=&#34;image-20220520174148487&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2022/05/20/numactl001/image-20220520174148487.png&#34; alt=&#34;image-20220520174148487&#34;&gt;&lt;/p&gt;
 &lt;h5 id=&#34;参考资料：&#34;&gt;&lt;a href=&#34;#参考资料：&#34; class=&#34;headerlink&#34; title=&#34;参考资料：&#34;&gt;&lt;/a&gt;参考资料：&lt;/h5&gt;&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/qccz123456/article/details/81979819&#34;&gt;(28条消息) Linux工具之numactl_qccz123456的博客-CSDN博客_numactl&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://baijiahao.baidu.com/s?id=1699088343604813491&amp;wfr=spider&amp;for=pc&amp;searchword=numactl&#34;&gt;宋宝华：为什么numactl内存绑定对代码段不起作用 (baidu.com)&lt;/a&gt;&lt;/p&gt;
 </content>
@@ -656,9 +656,9 @@
         <updated>2022-05-20T09:35:59.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/posts/e1c9d847.html</id>
+        <id>http://example.com/2022/05/08/tool004/</id>
         <title>gcov代码覆盖率测试-完整样例-SLIC</title>
-        <link rel="alternate" href="http://example.com/posts/e1c9d847.html"/>
+        <link rel="alternate" href="http://example.com/2022/05/08/tool004/"/>
         <content type="html">&lt;h2 id=&#34;gcov代码覆盖率测试-完整样例-SLIC&#34;&gt;&lt;a href=&#34;#gcov代码覆盖率测试-完整样例-SLIC&#34; class=&#34;headerlink&#34; title=&#34;gcov代码覆盖率测试-完整样例-SLIC&#34;&gt;&lt;/a&gt;gcov代码覆盖率测试-完整样例-SLIC&lt;/h2&gt;&lt;h3 id=&#34;gcov代码覆盖率测试介绍：&#34;&gt;&lt;a href=&#34;#gcov代码覆盖率测试介绍：&#34; class=&#34;headerlink&#34; title=&#34;gcov代码覆盖率测试介绍：&#34;&gt;&lt;/a&gt;gcov代码覆盖率测试介绍：&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://xingyuanjie.top/2022/01/18/tool002/&#34;&gt;gcov代码覆盖率测试 - 计算机奇妙之旅 (xingyuanjie.top)&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;完整样例-SLIC：&#34;&gt;&lt;a href=&#34;#完整样例-SLIC：&#34; class=&#34;headerlink&#34; title=&#34;完整样例-SLIC：&#34;&gt;&lt;/a&gt;完整样例-SLIC：&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://xingyuanjie.top/2022/05/08/tool004/result.zip&#34;&gt;https://xingyuanjie.top/2022/05/08/tool004/result.zip&lt;/a&gt;&lt;/p&gt;
 </content>
@@ -667,9 +667,9 @@
         <updated>2022-05-08T02:34:59.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/posts/e92f0812.html</id>
+        <id>http://example.com/2022/04/02/mpi006/</id>
         <title>MPI学习(六)-两个矩阵相加MPI版本</title>
-        <link rel="alternate" href="http://example.com/posts/e92f0812.html"/>
+        <link rel="alternate" href="http://example.com/2022/04/02/mpi006/"/>
         <content type="html">&lt;h1 id=&#34;MPI学习-六-两个矩阵相加MPI版本&#34;&gt;&lt;a href=&#34;#MPI学习-六-两个矩阵相加MPI版本&#34; class=&#34;headerlink&#34; title=&#34;MPI学习(六)-两个矩阵相加MPI版本&#34;&gt;&lt;/a&gt;MPI学习(六)-两个矩阵相加MPI版本&lt;/h1&gt;&lt;p&gt;这里，我们演示了两个简单的程序，一个是矩阵相加串行版本，一个是矩阵相加MPI版本&lt;/p&gt;
 &lt;h2 id=&#34;串行版本&#34;&gt;&lt;a href=&#34;#串行版本&#34; class=&#34;headerlink&#34; title=&#34;串行版本&#34;&gt;&lt;/a&gt;串行版本&lt;/h2&gt;&lt;h3 id=&#34;程序源代码&#34;&gt;&lt;a href=&#34;#程序源代码&#34; class=&#34;headerlink&#34; title=&#34;程序源代码&#34;&gt;&lt;/a&gt;程序源代码&lt;/h3&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;31&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;include&lt;/span&gt;&lt;span class=&#34;hljs-meta-string&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;include&lt;/span&gt;&lt;span class=&#34;hljs-meta-string&#34;&gt;&amp;lt;string.h&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;()&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;/span&gt;&amp;#123;&lt;br&gt;	&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; a[&lt;span class=&#34;hljs-number&#34;&gt;4&lt;/span&gt;][&lt;span class=&#34;hljs-number&#34;&gt;4&lt;/span&gt;]=&amp;#123;&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;3&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;4&lt;/span&gt;,&lt;br&gt;				&lt;span class=&#34;hljs-number&#34;&gt;5&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;6&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;7&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;8&lt;/span&gt;,&lt;br&gt;				&lt;span class=&#34;hljs-number&#34;&gt;9&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;10&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;11&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;12&lt;/span&gt;,&lt;br&gt;				&lt;span class=&#34;hljs-number&#34;&gt;13&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;14&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;15&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;16&lt;/span&gt;&amp;#125;;&lt;br&gt;	&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; b[&lt;span class=&#34;hljs-number&#34;&gt;4&lt;/span&gt;][&lt;span class=&#34;hljs-number&#34;&gt;4&lt;/span&gt;]=&amp;#123;&lt;span class=&#34;hljs-number&#34;&gt;4&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;5&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;7&lt;/span&gt;,&lt;br&gt;				&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;3&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;8&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;9&lt;/span&gt;,&lt;br&gt;				&lt;span class=&#34;hljs-number&#34;&gt;11&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;12&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;17&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;5&lt;/span&gt;,&lt;br&gt;				&lt;span class=&#34;hljs-number&#34;&gt;15&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;14&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;20&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;3&lt;/span&gt;&amp;#125;;&lt;br&gt;	&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; c[&lt;span class=&#34;hljs-number&#34;&gt;4&lt;/span&gt;][&lt;span class=&#34;hljs-number&#34;&gt;4&lt;/span&gt;];&lt;br&gt;	&lt;span class=&#34;hljs-built_in&#34;&gt;memset&lt;/span&gt;(c,&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;,&lt;span class=&#34;hljs-built_in&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;sizeof&lt;/span&gt;&lt;/span&gt;(c)); &lt;br&gt;	&lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;i&amp;lt;&lt;span class=&#34;hljs-number&#34;&gt;4&lt;/span&gt;;i++)&lt;br&gt;	&amp;#123;&lt;br&gt;		&lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; j=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;j&amp;lt;&lt;span class=&#34;hljs-number&#34;&gt;4&lt;/span&gt;;j++)&lt;br&gt;		&amp;#123;&lt;br&gt;			c[i][j]=a[i][j]+b[i][j];&lt;br&gt;		&amp;#125;&lt;br&gt;	&amp;#125;&lt;br&gt;	&lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;i&amp;lt;&lt;span class=&#34;hljs-number&#34;&gt;4&lt;/span&gt;;i++)&lt;br&gt;	&amp;#123;&lt;br&gt;		&lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; j=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;j&amp;lt;&lt;span class=&#34;hljs-number&#34;&gt;4&lt;/span&gt;;j++)&lt;br&gt;		&amp;#123;&lt;br&gt;			&lt;span class=&#34;hljs-built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;%d &amp;quot;&lt;/span&gt;,c[i][j]);&lt;br&gt;		&amp;#125;&lt;br&gt;		&lt;span class=&#34;hljs-built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;\n&amp;quot;&lt;/span&gt;);&lt;br&gt;	&amp;#125;&lt;br&gt;	&lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
@@ -689,9 +689,9 @@
         <updated>2022-04-02T08:07:46.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/posts/36bfc6de.html</id>
+        <id>http://example.com/2022/01/19/tool003/</id>
         <title>perf-系统级性能分析工具</title>
-        <link rel="alternate" href="http://example.com/posts/36bfc6de.html"/>
+        <link rel="alternate" href="http://example.com/2022/01/19/tool003/"/>
         <content type="html">&lt;p&gt;系统级性能优化通常包括两个阶段：性能剖析（performance profiling）和代码优化。&lt;/p&gt;
 &lt;p&gt;性能剖析的目标是寻找性能瓶颈，查找引发性能问题的原因及热点代码。&lt;/p&gt;
 &lt;p&gt;代码优化的目标是针对具体性能问题而优化代码或编译选项，以改善软件性能。&lt;/p&gt;
@@ -714,23 +714,23 @@
 &lt;li&gt;Tracepoint Event是内核中静态tracepoint所触发的事件，这些tracepoint用来判断程序运行期间内核的行为细节，比如slab分配器的分配次数等。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h1 id=&#34;3-perf的使用&#34;&gt;&lt;a href=&#34;#3-perf的使用&#34; class=&#34;headerlink&#34; title=&#34;3. perf的使用&#34;&gt;&lt;/a&gt;3. perf的使用&lt;/h1&gt;&lt;p&gt;perf –help后可以看到perf的二级命令&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/36bfc6de.htm/image-20220119120817508.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2022/01/19/tool003/image-20220119120817508.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;3-1perf-list&#34;&gt;&lt;a href=&#34;#3-1perf-list&#34; class=&#34;headerlink&#34; title=&#34;3.1perf list&#34;&gt;&lt;/a&gt;3.1perf list&lt;/h2&gt;&lt;p&gt;perf list查看支持的事件类型&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/36bfc6de.htm/image-20220119121131231.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2022/01/19/tool003/image-20220119121131231.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;3-2perf-top&#34;&gt;&lt;a href=&#34;#3-2perf-top&#34; class=&#34;headerlink&#34; title=&#34;3.2perf top&#34;&gt;&lt;/a&gt;3.2perf top&lt;/h2&gt;&lt;p&gt;即可以正常显示perf top如下：&lt;/p&gt;
 &lt;p&gt;第一列：符号引发的性能事件的比例，指占用的cpu周期比例。&lt;/p&gt;
 &lt;p&gt;第二列：符号所在的DSO(Dynamic Shared Object)，可以是应用程序、内核、动态链接库、模块。&lt;/p&gt;
 &lt;p&gt;第三列：DSO的类型。[.]表示此符号属于用户态的ELF文件，包括可执行文件与动态链接库；[k]表述此符号属于内核或模块。&lt;/p&gt;
 &lt;p&gt;第四列：符号名。有些符号不能解析为函数名，只能用地址表示。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/36bfc6de.htm/image-20220119121453395.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2022/01/19/tool003/image-20220119121453395.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;3-3-perf-stat&#34;&gt;&lt;a href=&#34;#3-3-perf-stat&#34; class=&#34;headerlink&#34; title=&#34;3.3 perf stat&#34;&gt;&lt;/a&gt;3.3 perf stat&lt;/h2&gt;&lt;p&gt;perf stat用于运行指令，并分析其统计结果。虽然perf top也可以指定pid，但是必须先启动应用才能查看信息。&lt;/p&gt;
 &lt;p&gt;perf stat能完整统计应用整个生命周期的信息。&lt;/p&gt;
 &lt;p&gt;命令格式为：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;perf stat [-e &lt;EVENT&gt; | –event&amp;#x3D;EVENT] [-a] &lt;command&gt;&lt;br&gt;perf stat [-e &lt;EVENT&gt; | –event&amp;#x3D;EVENT] [-a] — &lt;command&gt; [&lt;options&gt;]&lt;/options&gt;&lt;/EVENT&gt;&lt;/EVENT&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/36bfc6de.htm/image-20220119122351095.png&#34; alt=&#34;image-20220119122351095&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/36bfc6de.htm/C2DDB2280E83453D6D8FE0D11A4380C3.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2022/01/19/tool003/image-20220119122351095.png&#34; alt=&#34;image-20220119122351095&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2022/01/19/tool003/C2DDB2280E83453D6D8FE0D11A4380C3.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;cpu-clock：任务真正占用的处理器时间，单位为ms。CPUs utilized &amp;#x3D; task-clock &amp;#x2F; time elapsed，CPU的占用率。&lt;/p&gt;
 &lt;p&gt;context-switches：程序在运行过程中上下文的切换次数。&lt;/p&gt;
 &lt;p&gt;CPU-migrations：程序在运行过程中发生的处理器迁移次数。Linux为了维持多个处理器的负载均衡，在特定条件下会将某个任务从一个CPU迁移到另一个CPU。&lt;/p&gt;
@@ -743,14 +743,14 @@
 &lt;p&gt;branches：遇到的分支指令数。branch-misses是预测错误的分支指令数。&lt;/p&gt;
 &lt;h2 id=&#34;3-4-perf-record-amp-report&#34;&gt;&lt;a href=&#34;#3-4-perf-record-amp-report&#34; class=&#34;headerlink&#34; title=&#34;3.4 perf record &amp;amp; report&#34;&gt;&lt;/a&gt;3.4 perf record &amp;amp; report&lt;/h2&gt;&lt;p&gt;运行一个命令，并将其数据保存到perf.data中。随后，可以使用perf report进行分析。&lt;/p&gt;
 &lt;p&gt;perf record和perf report可以更精确的分析一个应用，perf record可以精确到函数级别。并且在函数里面混合显示汇编语言和代码。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/36bfc6de.htm/image-20220119123152290.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2022/01/19/tool003/image-20220119123152290.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;1.编译程序(这里以test.c为例子)&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/36bfc6de.htm/image-20220119124049654.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2022/01/19/tool003/image-20220119124049654.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;2.perf record&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/36bfc6de.htm/image-20220119124217563.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2022/01/19/tool003/image-20220119124217563.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;3.perf report&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/36bfc6de.htm/image-20220119124149337.png&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/36bfc6de.htm/image-20220119124013315.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2022/01/19/tool003/image-20220119124149337.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2022/01/19/tool003/image-20220119124013315.png&#34;&gt;&lt;/p&gt;
 &lt;h1 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h1&gt;&lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/arnoldlu/p/6241297.html&#34;&gt;系统级性能分析工具perf的介绍与使用 - ArnoldLu - 博客园 (cnblogs.com)&lt;/a&gt;-系统性能分析工具perf的介绍与使用&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.bilibili.com/video/BV1MK4y1m7Uj?from=search&amp;seid=11304698501320722134&amp;spm_id_from=333.337.0.0&#34;&gt;如何使用gcov和perf工具抓热点代码 - 陈小欧 - 20210331 - PLCT实验室_哔哩哔哩_bilibili&lt;/a&gt;-如何使用gcov和perf工具抓热点代码 - 陈小欧 - 20210331 - PLCT实验室&lt;/p&gt;
 </content>
@@ -758,9 +758,9 @@
         <updated>2022-01-19T03:56:40.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/posts/738721a6.html</id>
+        <id>http://example.com/2022/01/18/tool002/</id>
         <title>gcov代码覆盖率测试</title>
-        <link rel="alternate" href="http://example.com/posts/738721a6.html"/>
+        <link rel="alternate" href="http://example.com/2022/01/18/tool002/"/>
         <content type="html">&lt;h1 id=&#34;gcov代码覆盖率测试&#34;&gt;&lt;a href=&#34;#gcov代码覆盖率测试&#34; class=&#34;headerlink&#34; title=&#34;gcov代码覆盖率测试&#34;&gt;&lt;/a&gt;gcov代码覆盖率测试&lt;/h1&gt;&lt;h2 id=&#34;gcov的简单介绍&#34;&gt;&lt;a href=&#34;#gcov的简单介绍&#34; class=&#34;headerlink&#34; title=&#34;gcov的简单介绍&#34;&gt;&lt;/a&gt;gcov的简单介绍&lt;/h2&gt;&lt;p&gt;1.gcov是一个测试代码覆盖率的工具。与GCC一起使用来分析程序，以帮助创建更高效、更快的运行代码，并发现程序的未测试部分&lt;br&gt;2.是一个命令行方式的控制台程序。需要结合lcov,gcovr等前端图形工具才能实现统计数据图形化&lt;br&gt;3.伴随GCC发布，不需要单独下载gcov工具。配合GCC共同实现对c&amp;#x2F;c++文件的语句覆盖和分支覆盖测试&lt;br&gt;4.与程序概要分析工具（profiling tool，例如gprof）一起工作，可以估计程序中哪段代码最耗时&lt;/p&gt;
 &lt;h2 id=&#34;gcov能做什么&#34;&gt;&lt;a href=&#34;#gcov能做什么&#34; class=&#34;headerlink&#34; title=&#34;gcov能做什么&#34;&gt;&lt;/a&gt;gcov能做什么&lt;/h2&gt;&lt;p&gt;使用像gcov或gprof这样的分析器，您可以找到一些基本的性能统计数据：&lt;/p&gt;
 &lt;ul&gt;
@@ -779,16 +779,16 @@
 &lt;figure class=&#34;highlight c&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c&#34;&gt;&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;include&lt;/span&gt;&lt;span class=&#34;hljs-meta-string&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;()&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;/span&gt;&amp;#123;&lt;br&gt;	&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; n=&lt;span class=&#34;hljs-number&#34;&gt;4&lt;/span&gt;;&lt;br&gt;	&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;&lt;br&gt;	&lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;(i=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;i&amp;lt;n;i++)&lt;br&gt;	&amp;#123;&lt;br&gt;	   &lt;span class=&#34;hljs-built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;Hello World!\n&amp;quot;&lt;/span&gt;);&lt;br&gt;	&amp;#125;&lt;br&gt;	&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; a =&lt;span class=&#34;hljs-number&#34;&gt;20220118&lt;/span&gt;;&lt;br&gt;	&lt;span class=&#34;hljs-built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;%d\n&amp;quot;&lt;/span&gt;,a);&lt;br&gt;	&lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;p&gt;&lt;strong&gt;编译阶段：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/738721a6.htm/image-20220118145007919.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2022/01/18/tool002/image-20220118145007919.png&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;2-gcov收集代码运行信息&#34;&gt;&lt;a href=&#34;#2-gcov收集代码运行信息&#34; class=&#34;headerlink&#34; title=&#34;2. gcov收集代码运行信息&#34;&gt;&lt;/a&gt;2. gcov收集代码运行信息&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;运行&lt;code&gt;./test&lt;/code&gt;产生&lt;code&gt;test.gcda&lt;/code&gt;文件，其中包含了代码基本块和狐跳变次数统计信息&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/738721a6.htm/image-20220118145103922.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2022/01/18/tool002/image-20220118145103922.png&#34;&gt;&lt;/p&gt;
 &lt;h4 id=&#34;3-生成gcov代码覆盖率报告&#34;&gt;&lt;a href=&#34;#3-生成gcov代码覆盖率报告&#34; class=&#34;headerlink&#34; title=&#34;3. 生成gcov代码覆盖率报告&#34;&gt;&lt;/a&gt;3. 生成gcov代码覆盖率报告&lt;/h4&gt;&lt;ul&gt;
 &lt;li&gt;再次运行&lt;code&gt;gcov test.c&lt;/code&gt;产生的&lt;code&gt;test.c.gcov&lt;/code&gt;中包含了代码覆盖率数据,其数据的来源为&lt;code&gt;test.gcda&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/738721a6.htm/image-20220118145303290.png&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;4-查看生成gcov代码覆盖率报告&#34;&gt;&lt;a href=&#34;#4-查看生成gcov代码覆盖率报告&#34; class=&#34;headerlink&#34; title=&#34;4.查看生成gcov代码覆盖率报告&#34;&gt;&lt;/a&gt;4.查看生成gcov代码覆盖率报告&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;/posts/738721a6.htm/image-20220118145514099.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2022/01/18/tool002/image-20220118145303290.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;4-查看生成gcov代码覆盖率报告&#34;&gt;&lt;a href=&#34;#4-查看生成gcov代码覆盖率报告&#34; class=&#34;headerlink&#34; title=&#34;4.查看生成gcov代码覆盖率报告&#34;&gt;&lt;/a&gt;4.查看生成gcov代码覆盖率报告&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;/2022/01/18/tool002/image-20220118145514099.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;可以看到以下结果：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;其中&lt;code&gt;#####&lt;/code&gt;表示未运行的行&lt;/li&gt;
@@ -801,22 +801,22 @@
 &lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;yum install lcov&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;p&gt;&lt;strong&gt;2.运行lcov，生成相应信息&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/738721a6.htm/image-20220118151526665.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2022/01/18/tool002/image-20220118151526665.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;运行结果：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/738721a6.htm/image-20220118151553801.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2022/01/18/tool002/image-20220118151553801.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;3.生成web可视化信息&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/738721a6.htm/image-20220118151821325.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2022/01/18/tool002/image-20220118151821325.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;运行结果：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/738721a6.htm/image-20220118151853477.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2022/01/18/tool002/image-20220118151853477.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;4.打包result文件&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/738721a6.htm/image-20220118152629648.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2022/01/18/tool002/image-20220118152629648.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;5.从服务器下载到本地&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/738721a6.htm/image-20220118152705023.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2022/01/18/tool002/image-20220118152705023.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;6.查看web&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;​					1）查看index.html：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/738721a6.htm/image-20220118152825105.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2022/01/18/tool002/image-20220118152825105.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;​						2）详细信息：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/738721a6.htm/image-20220118152908078.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2022/01/18/tool002/image-20220118152908078.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;上述界面包含：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;函数覆盖率（执行率）&lt;/li&gt;

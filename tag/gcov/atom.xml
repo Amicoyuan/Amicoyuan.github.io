@@ -15,17 +15,17 @@
     <category term="Sort" />
     <category term="LinkList" />
     <category term="双向链表" />
-    <category term="Graph" />
+    <category term="Binary tree" />
     <category term="邻接表" />
     <category term="Vector" />
-    <category term="Binary tree" />
     <category term="BFS" />
+    <category term="Graph" />
     <category term="模拟" />
     <category term="邻接矩阵" />
     <category term="DFS" />
     <category term="结构体" />
-    <category term="贪心" />
     <category term="Double类型相等比较" />
+    <category term="贪心" />
     <category term="并查集" />
     <category term="Map" />
     <category term="Pair" />
@@ -36,13 +36,13 @@
     <category term="Numactl" />
     <category term="OpenMP" />
     <category term="Slurm" />
-    <category term="性能分析工具" />
     <category term="Tensorflow" />
+    <category term="性能分析工具" />
     <category term="gcov" />
     <entry>
-        <id>http://example.com/posts/e1c9d847.html</id>
+        <id>http://example.com/2022/05/08/tool004/</id>
         <title>gcov代码覆盖率测试-完整样例-SLIC</title>
-        <link rel="alternate" href="http://example.com/posts/e1c9d847.html"/>
+        <link rel="alternate" href="http://example.com/2022/05/08/tool004/"/>
         <content type="html">&lt;h2 id=&#34;gcov代码覆盖率测试-完整样例-SLIC&#34;&gt;&lt;a href=&#34;#gcov代码覆盖率测试-完整样例-SLIC&#34; class=&#34;headerlink&#34; title=&#34;gcov代码覆盖率测试-完整样例-SLIC&#34;&gt;&lt;/a&gt;gcov代码覆盖率测试-完整样例-SLIC&lt;/h2&gt;&lt;h3 id=&#34;gcov代码覆盖率测试介绍：&#34;&gt;&lt;a href=&#34;#gcov代码覆盖率测试介绍：&#34; class=&#34;headerlink&#34; title=&#34;gcov代码覆盖率测试介绍：&#34;&gt;&lt;/a&gt;gcov代码覆盖率测试介绍：&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://xingyuanjie.top/2022/01/18/tool002/&#34;&gt;gcov代码覆盖率测试 - 计算机奇妙之旅 (xingyuanjie.top)&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;完整样例-SLIC：&#34;&gt;&lt;a href=&#34;#完整样例-SLIC：&#34; class=&#34;headerlink&#34; title=&#34;完整样例-SLIC：&#34;&gt;&lt;/a&gt;完整样例-SLIC：&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://xingyuanjie.top/2022/05/08/tool004/result.zip&#34;&gt;https://xingyuanjie.top/2022/05/08/tool004/result.zip&lt;/a&gt;&lt;/p&gt;
 </content>

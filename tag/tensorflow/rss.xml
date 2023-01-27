@@ -18,17 +18,17 @@
         <category>Sort</category>
         <category>LinkList</category>
         <category>双向链表</category>
-        <category>Graph</category>
+        <category>Binary tree</category>
         <category>邻接表</category>
         <category>Vector</category>
-        <category>Binary tree</category>
         <category>BFS</category>
+        <category>Graph</category>
         <category>模拟</category>
         <category>邻接矩阵</category>
         <category>DFS</category>
         <category>结构体</category>
-        <category>贪心</category>
         <category>Double类型相等比较</category>
+        <category>贪心</category>
         <category>并查集</category>
         <category>Map</category>
         <category>Pair</category>
@@ -39,13 +39,13 @@
         <category>Numactl</category>
         <category>OpenMP</category>
         <category>Slurm</category>
-        <category>性能分析工具</category>
         <category>Tensorflow</category>
+        <category>性能分析工具</category>
         <category>gcov</category>
         <item>
-            <guid isPermalink="true">http://example.com/posts/ae13c0f6.html</guid>
+            <guid isPermalink="true">http://example.com/2021/12/09/tensorflow001/</guid>
             <title>Machine Learning(一) 一个神经元网络-线性函数</title>
-            <link>http://example.com/posts/ae13c0f6.html</link>
+            <link>http://example.com/2021/12/09/tensorflow001/</link>
             <category>Tensorflow</category>
             <pubDate>Thu, 09 Dec 2021 14:59:11 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;一个神经元的网络-线性函数&#34;&gt;&lt;a href=&#34;#一个神经元的网络-线性函数&#34; class=&#34;headerlink&#34; title=&#34;一个神经元的网络(线性函数)&#34;&gt;&lt;/a&gt;一个神经元的网络(线性函数)&lt;/h1&gt;&lt;p&gt;线性函数 y &amp;#x3D; 2 * x -1 &lt;/p&gt;

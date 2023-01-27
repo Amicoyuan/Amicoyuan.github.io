@@ -15,17 +15,17 @@
     <category term="Sort" />
     <category term="LinkList" />
     <category term="双向链表" />
-    <category term="Graph" />
+    <category term="Binary tree" />
     <category term="邻接表" />
     <category term="Vector" />
-    <category term="Binary tree" />
     <category term="BFS" />
+    <category term="Graph" />
     <category term="模拟" />
     <category term="邻接矩阵" />
     <category term="DFS" />
     <category term="结构体" />
-    <category term="贪心" />
     <category term="Double类型相等比较" />
+    <category term="贪心" />
     <category term="并查集" />
     <category term="Map" />
     <category term="Pair" />
@@ -36,13 +36,13 @@
     <category term="Numactl" />
     <category term="OpenMP" />
     <category term="Slurm" />
-    <category term="性能分析工具" />
     <category term="Tensorflow" />
+    <category term="性能分析工具" />
     <category term="gcov" />
     <entry>
-        <id>http://example.com/posts/f1b4c4f6.html</id>
+        <id>http://example.com/2023/01/14/openmp006/</id>
         <title>OpenMP生产者消费者问题</title>
-        <link rel="alternate" href="http://example.com/posts/f1b4c4f6.html"/>
+        <link rel="alternate" href="http://example.com/2023/01/14/openmp006/"/>
         <content type="html">&lt;h2 id=&#34;OpenMP生产者消费者问题&#34;&gt;&lt;a href=&#34;#OpenMP生产者消费者问题&#34; class=&#34;headerlink&#34; title=&#34;OpenMP生产者消费者问题&#34;&gt;&lt;/a&gt;OpenMP生产者消费者问题&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;本节将讨论一个不适合用parallel for指令或者for指令来并行化的问题。&lt;/strong&gt;&lt;/p&gt;
 &lt;h3 id=&#34;1-队列&#34;&gt;&lt;a href=&#34;#1-队列&#34; class=&#34;headerlink&#34; title=&#34;1.队列&#34;&gt;&lt;/a&gt;1.队列&lt;/h3&gt;&lt;p&gt;队列是一种抽象的数据结构，插入元素时将元素插入到队列“尾部”，而读取元素时，队列“头部”的元素被返回并从队列中被移除。队列可以看做是在超市中等待付款的消费者的抽象，队列中的元素是消费者。新的消费者到达时排在等待队列的尾部，下一个付款离开等待队列的是排在队列头部的消费者。&lt;/p&gt;
 &lt;p&gt;当一个新的元素插入到队列的尾部时，通常称这个新的元素“入队”了；当一个元素从队列的头部被移除时，通常称这个元素“出队”了。&lt;/p&gt;
@@ -118,21 +118,21 @@
 &lt;p&gt;在一个线程进入临界区前，它尝试通过调用锁函数来上锁（set）。如果没有其他的线程正在执行临界区代码，那么它将获得锁并进入临界区。当该线程执行完临界区代码后，它调用解锁函数释放（relinquish或者unset）锁，以便其他线程可以获得锁。&lt;/p&gt;
 &lt;p&gt;当一个线程拥有锁时，其他线程都不能进入该临界区。其他线程尝试通过调用锁函数进入该临界区时会阻塞。如果有多个线程被锁函数阻塞，则当临界区的线程释放锁时，这些线程中的某个线程会获得锁，而其他线程仍被阻塞。&lt;/p&gt;
 &lt;p&gt;OpenMP有两种锁：简单（simple）锁和嵌套（nested）锁。简单锁在被释放前只能获得一次，而一个嵌套锁在被释放前可以被同一个线程获得多次。OpenMP简单锁的类型是omp_lock_t，定义简单锁的函数包括：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/f1b4c4f6.htm/image-20230116165204803.png&#34; alt=&#34;image-20230116165204803&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/01/14/openmp006/image-20230116165204803.png&#34; alt=&#34;image-20230116165204803&#34;&gt;&lt;/p&gt;
 &lt;p&gt;相关的类型和函数在头文件omp.h中声明。第一个函数的作为是初始化锁，所以此时锁处于解锁状态，换句话说，此时没有线程拥有这个锁。第二个函数尝试获得锁，如果成功，调用该函数的线程可以继续执行；如果失败，调用该函数的线程将被阻塞，直到锁被其他线程释放。第三个函数释放锁，以便其他线程可以获得该锁。第四个函数销毁锁。&lt;/p&gt;
 </content>
         <category term="OpenMP" />
         <updated>2023-01-14T14:30:05.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/posts/dffd148.html</id>
+        <id>http://example.com/2023/01/14/openmp005/</id>
         <title>OpenMP循环调度</title>
-        <link rel="alternate" href="http://example.com/posts/dffd148.html"/>
+        <link rel="alternate" href="http://example.com/2023/01/14/openmp005/"/>
         <content type="html">&lt;h2 id=&#34;OpenMP循环调度&#34;&gt;&lt;a href=&#34;#OpenMP循环调度&#34; class=&#34;headerlink&#34; title=&#34;OpenMP循环调度&#34;&gt;&lt;/a&gt;OpenMP循环调度&lt;/h2&gt;&lt;h3 id=&#34;1-循环调度&#34;&gt;&lt;a href=&#34;#1-循环调度&#34; class=&#34;headerlink&#34; title=&#34;1.循环调度&#34;&gt;&lt;/a&gt;1.循环调度&lt;/h3&gt;&lt;p&gt;当第一次遇到parallel for指令时，我们看到将各次循环分配给线程的操作是由系统完成的。然而，大部分OpenMP实现只是粗略地使用块分割：如果在串行循环中有n次迭代，那么在并行循环中，前n&amp;#x2F;thread_count个迭代分配给线程0，接下来的n&amp;#x2F;thread_count个迭代分配给线程1，依此类推。不难想到，这种分配方式肯定不是最优的。例如，假如我们想要并行化循环：&lt;/p&gt;
 &lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;sum = &lt;span class=&#34;hljs-number&#34;&gt;0.0&lt;/span&gt;;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;(i=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;i&amp;lt;=n;i++)&lt;br&gt;    sum+=&lt;span class=&#34;hljs-built_in&#34;&gt;f&lt;/span&gt;(i);&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;p&gt;同时，假设对f函数调用所需要的时间与参数i的大小成正比，那么与分配给线程0的工作相比，分配给线程thread_count-1的工作量相对较大。一个更好的分配方案是轮流分配线程的工作（循环划分）。在循环划分中，各次迭代被“轮流”地一次一个地分配给线程。假如 t&amp;#x3D;thread_count。那么一个循环划分将如下分配各次迭代：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/dffd148.htm/image-20230114132246596.png&#34; alt=&#34;image-20230114132246596&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/01/14/openmp005/image-20230114132246596.png&#34; alt=&#34;image-20230114132246596&#34;&gt;&lt;/p&gt;
 &lt;p&gt;为了了解这样分配是如何影响性能的，我们编写了如下程序。&lt;/p&gt;
 &lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;double&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i)&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; j,start=i*(i+&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;)/&lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt;,finish=start+i;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;double&lt;/span&gt; return_val = &lt;span class=&#34;hljs-number&#34;&gt;0.0&lt;/span&gt;;&lt;br&gt;    &lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;(j = start; j&amp;lt;=finish; j++)&amp;#123;&lt;br&gt;        return_val += &lt;span class=&#34;hljs-built_in&#34;&gt;sin&lt;/span&gt;(j);&lt;br&gt;    &amp;#125;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; return_val;&lt;br&gt;    &lt;span class=&#34;hljs-comment&#34;&gt;/* f */&lt;/span&gt;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
@@ -156,16 +156,16 @@
 &lt;/ol&gt;
 &lt;p&gt;chunksize是一个正整数。在OpenMP中，迭代块是在顺序循环中连续执行的一块迭代语句，块中的迭代次数是chunksize。只有static，dynamic和guided调度有chunksize。这虽然决定了调度的细节，但准确的解释还是依赖于type。&lt;/p&gt;
 &lt;h3 id=&#34;3-stastic调度类型&#34;&gt;&lt;a href=&#34;#3-stastic调度类型&#34; class=&#34;headerlink&#34; title=&#34;3.stastic调度类型&#34;&gt;&lt;/a&gt;3.stastic调度类型&lt;/h3&gt;&lt;p&gt;对于static调度，系统以轮转的方式分配chunksize块个迭代给每个线程。例如，假如有12个迭代，0，1，—，11和3个线程，如果在parallel for或for指令中使用schedule（static，1）迭代将如下分配：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/dffd148.htm/image-20230114141741424.png&#34; alt=&#34;image-20230114141741424&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/01/14/openmp005/image-20230114141741424.png&#34; alt=&#34;image-20230114141741424&#34;&gt;&lt;/p&gt;
 &lt;p&gt;如果使用schedule（static，2），迭代将如下进行分配：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/dffd148.htm/image-20230114141830866.png&#34; alt=&#34;image-20230114141830866&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/01/14/openmp005/image-20230114141830866.png&#34; alt=&#34;image-20230114141830866&#34;&gt;&lt;/p&gt;
 &lt;p&gt;如果使用schedule（static，4），迭代将如下分配：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/dffd148.htm/image-20230114141909092.png&#34; alt=&#34;image-20230114141909092&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/01/14/openmp005/image-20230114141909092.png&#34; alt=&#34;image-20230114141909092&#34;&gt;&lt;/p&gt;
 &lt;p&gt;因此，子句schedule（static,total_iterations&amp;#x2F;thread_count）就相当于被大部分OpenMP实现所使用的缺省调度。&lt;/p&gt;
 &lt;p&gt;这里，chunksize可以被忽略。如果他被忽略了，chunksize就近似等于total_iterations&amp;#x2F;thread_count。&lt;/p&gt;
 &lt;h3 id=&#34;4-dynamic和guided调度类型&#34;&gt;&lt;a href=&#34;#4-dynamic和guided调度类型&#34; class=&#34;headerlink&#34; title=&#34;4.dynamic和guided调度类型&#34;&gt;&lt;/a&gt;4.dynamic和guided调度类型&lt;/h3&gt;&lt;p&gt;在dynamic调度中，迭代也被分成chunksize个连续迭代的块。每个线程执行一块，并且当一个线程完成一块时，它将从运行时系统请求另一块，直到所有的迭代完成。chunksize可以被忽略。当它被忽略时，chunksize为1。&lt;/p&gt;
 &lt;p&gt;在guided调度中，每个线程也执行一块，并且当一个线程完成一块时，将请求另一块。然而，在guided调度中，当块完成后，新块的大小会变小。例如，在我们的系统中，如果用parallel for指令和schedule（guided）子句来运行梯形积分法程序，那么当n&amp;#x3D;10000并且thread_count&amp;#x3D;2时。迭代将如表5-3那样分配。块的大小近似等于剩下的迭代数除以线程数。第一个块的大小9999&amp;#x2F;2≈5000，因为有9999个迭代未被分配的迭代。第二个块的大小为4999&amp;#x2F;2≈2500，一次类推。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/dffd148.htm/image-20230114143233692.png&#34; alt=&#34;image-20230114143233692&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/01/14/openmp005/image-20230114143233692.png&#34; alt=&#34;image-20230114143233692&#34;&gt;&lt;/p&gt;
 &lt;p&gt;在guided调度中，如果没有指定chunksize，那么块的大小为1；如果指定了chunksize，那么块的大小就是chunksize，除了最后一块的大小可以比chunksize小。&lt;/p&gt;
 &lt;h3 id=&#34;5-runtime调度类型&#34;&gt;&lt;a href=&#34;#5-runtime调度类型&#34; class=&#34;headerlink&#34; title=&#34;5.runtime调度类型&#34;&gt;&lt;/a&gt;5.runtime调度类型&lt;/h3&gt;&lt;p&gt;为了理解schedule（runtime），我们需要离题一会儿，讨论一下环境变量。正如名字所暗示的，环境变量是能够被运行时系统所访问的命名值，即它们在程序的环境中是可得的。一些经常被使用的环境变量是PATH,HOME和SHELL。PATH变量明确了当寻找一个可执行文件时shell应该搜索哪些目录。它通常在UNIX和Windows系统中定义。HOME变量指定用户主目录的位置，而SHELL变量指定用户shell的可执行位置。这样通常在UNIX系统中。在类UNIX系统（例如Linux和Mac OS X）和Windows，环境变量能够在命令行中检查和指定。在类UNIX系统中，能使用shell命令行；在windows中，能使用集成开发环境的命令行。&lt;/p&gt;
 &lt;p&gt;例如，如果我们正使用bash shell，要检查一个环境变量的值只需要输入&lt;/p&gt;
@@ -198,9 +198,9 @@
         <updated>2023-01-14T05:04:25.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/posts/e0a4021f.html</id>
+        <id>http://example.com/2023/01/13/openmp004/</id>
         <title>OpenMP排序</title>
-        <link rel="alternate" href="http://example.com/posts/e0a4021f.html"/>
+        <link rel="alternate" href="http://example.com/2023/01/13/openmp004/"/>
         <content type="html">&lt;h2 id=&#34;OpenMP排序&#34;&gt;&lt;a href=&#34;#OpenMP排序&#34; class=&#34;headerlink&#34; title=&#34;OpenMP排序&#34;&gt;&lt;/a&gt;OpenMP排序&lt;/h2&gt;&lt;h3 id=&#34;1-冒泡排序&#34;&gt;&lt;a href=&#34;#1-冒泡排序&#34; class=&#34;headerlink&#34; title=&#34;1.冒泡排序&#34;&gt;&lt;/a&gt;1.冒泡排序&lt;/h3&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;(list_length = n; list.length &amp;gt;= &lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt;; list_length--)				&lt;span class=&#34;hljs-comment&#34;&gt;//升序排列&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;(i = &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;i &amp;lt; list_length&lt;span class=&#34;hljs-number&#34;&gt;-1&lt;/span&gt;; i++)&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(a[i] &amp;gt; a[i+&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;])&amp;#123;&lt;br&gt;            tmp = a[i];&lt;br&gt;            a[i] = a[i+&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;];&lt;br&gt;            a[i+&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;] = tmp;&lt;br&gt;        &amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;p&gt;​		显然，在外部循环中有一个循环依赖，在外部循环的任何一次迭代中，当前列表的内容依赖于外部循环的前一次迭代。例如，如果在算法开始时，a&amp;#x3D;3,4,1,2，那么外部循环的第二次迭代将对列表3，1，2进行操作，因为4在第一次迭代中应该已经被移动到列表的最后了。但如果前两次迭代同时执行，则可能第二次迭代的有效列表包含4。	&lt;/p&gt;
@@ -211,14 +211,14 @@
 
 &lt;p&gt;列表a存储n个整数，算法对他们进行升序排列。在一个“偶阶段”（phase %2 &amp;#x3D;&amp;#x3D;0 ）里，每个偶下标元素a[i]与它左边的元素a[i-1]相比较。如果他们是没有排好序的，就交换它们。在一个“奇阶段”里，每个奇下标元素与它右边的元素相比较。如果他们是没有排好序的，则交换他们。有定理证明：在n个阶段后，列表可以完成排序。&lt;/p&gt;
 &lt;p&gt;​		作为一个简单的例子，假设a&amp;#x3D;{9,7,8,6}。表5-1显示了各个阶段的情况。在这个例子中，最后的阶段不是必要的，但算法并不在执行每个阶段前检查列表是否已经有序。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/e0a4021f.htm/image-20230113174202896.png&#34; alt=&#34;image-20230113174202896&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/01/13/openmp004/image-20230113174202896.png&#34; alt=&#34;image-20230113174202896&#34;&gt;&lt;/p&gt;
 &lt;p&gt;​		不难看到外部循环有一个循环依赖。例如在a &amp;#x3D; {9，7，8，6}之前。在阶段0中，内部循环将比较（9，7）和（8，6）这两对中的元素，这两对都会被交换。因此对于阶段1，列表将是{7，9，6，8}，并在阶段1中（9，6）中的元素被比较并交换。然而，如果阶段0和阶段1同时执行，则在阶段1中被检查可能是（7，8），是有序的。此外，我们尚不清楚如何消除这个循环依赖，因此并行化外部for循环不是一个好的选择。&lt;/p&gt;
 &lt;p&gt;​		但是，内部for循环并没有任何循环依赖。例如，在偶阶段循环中，变量i是奇数，所以对于两个不同的i值，例如，i&amp;#x3D;j和i&amp;#x3D;k，{j-1,j}和{k-1,k}将是不同的。（a[j-1],a[j]）和（a[k-1],a[k]）所产生的比较和可能的交换能够同时进行。&lt;/p&gt;
 &lt;p&gt;​		所以，我们试图使用程序5-4的代码并行化奇偶变化排序，但还是会有一些潜在的问题，首先，尽管任何一个偶阶段迭代并不依赖任何这个阶段的其他迭代，但是还需要注意，对p阶段和p+1阶段却并不是这样的。我们需要确定在任何一个线程开始p+1阶段之前，所有的线程必须先完成p阶段。然而，像parallel指令那样，parallel for指令在循环结束处有一个隐式的路障，因此，在所有的线程完成当前阶段（即阶段P之前），没有线程能够进入下一阶段，即p+1阶段。【这里需要注意在MPI中并没有隐式的路障来实现这个功能，需要程序员手动设置路障点】&lt;/p&gt;
 &lt;p&gt;​		其次，是创建和合并线程的开销。OpenMP实现可能会在每一遍外部循环都创建和合并thread__count个线程。表5-2的第一行显示了当输入列表包含20000个元素时，在我们系统上运行1，2，3，4个线程的运行时间。&lt;/p&gt;
 &lt;h3 id=&#34;3-程序5-4奇偶排序的第一个OpenMP实现&#34;&gt;&lt;a href=&#34;#3-程序5-4奇偶排序的第一个OpenMP实现&#34; class=&#34;headerlink&#34; title=&#34;3.程序5-4	奇偶排序的第一个OpenMP实现&#34;&gt;&lt;/a&gt;3.程序5-4	奇偶排序的第一个OpenMP实现&lt;/h3&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;(phase = &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;phase &amp;lt; n; phase++)&amp;#123;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(phase %&lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt; ==&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;)&lt;br&gt;    	&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;pragma&lt;/span&gt; omp parallel for num_threads(thread_count) default(none) shared(a,n) private(i,tmp)&lt;/span&gt;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;(i=&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;;i&amp;lt;n;i+=&lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt;)&amp;#123;&lt;br&gt;            &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(a[i&lt;span class=&#34;hljs-number&#34;&gt;-1&lt;/span&gt;]&amp;gt;a[i])&amp;#123;&lt;br&gt;                tmp = a[i&lt;span class=&#34;hljs-number&#34;&gt;-1&lt;/span&gt;];&lt;br&gt;                a[i&lt;span class=&#34;hljs-number&#34;&gt;-1&lt;/span&gt;] = a[i];&lt;br&gt;                a[i] =tmp;&lt;br&gt;            &amp;#125;&lt;br&gt;        &amp;#125;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;else&lt;/span&gt;&lt;br&gt;        &lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;pragma&lt;/span&gt; omp parallel for num_threads(thread_count) default(none) shared(a,n) private(i,tmp)&lt;/span&gt;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;(i=&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;;i&amp;lt;n&lt;span class=&#34;hljs-number&#34;&gt;-1&lt;/span&gt;;i+=&lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt;)&amp;#123;&lt;br&gt;            &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(a[i] &amp;gt; a[i+&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;])&amp;#123;&lt;br&gt;                tmp = a[i+&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;];&lt;br&gt;                a[i+&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;] = a[i];&lt;br&gt;                a[i] = tmp;&lt;br&gt;            &amp;#125;&lt;br&gt;        &amp;#125;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
-&lt;p&gt;&lt;img src=&#34;/posts/e0a4021f.htm/image-20230113225724364.png&#34; alt=&#34;image-20230113225724364&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/01/13/openmp004/image-20230113225724364.png&#34; alt=&#34;image-20230113225724364&#34;&gt;&lt;/p&gt;
 &lt;p&gt;​		这些时间耗费并不非常糟糕，但是我们想看看是否能做得更好。每次执行内部循环时，使用同样数量的线程。因此只创建一次线程，并在每次内部循环的执行中重用它们，这样做可能更好。幸运的是，OpenMP提供了允许这样做的指令。用parallel指令在外部循环前创建thread__count个线程的集合。然后，我们不在每次内部循环执行时创建一组新的线程，而是使用一个for指令，告诉OpenMP用已有的线程组来并行化for循环，对原有OpenMP实现的改动显示在程序5-5中。&lt;/p&gt;
 &lt;h3 id=&#34;4-程序5-5奇偶排序的第二个OpenMP实现&#34;&gt;&lt;a href=&#34;#4-程序5-5奇偶排序的第二个OpenMP实现&#34; class=&#34;headerlink&#34; title=&#34;4.程序5-5	奇偶排序的第二个OpenMP实现&#34;&gt;&lt;/a&gt;4.程序5-5	奇偶排序的第二个OpenMP实现&lt;/h3&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;pragma&lt;/span&gt; omp parallel for num_threads(thread_count) default(none) shared(a,n) private(i,tmp,phase)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;(phase = &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;phase &amp;lt; n; phase++)&amp;#123;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(phase %&lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt; ==&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;)&lt;br&gt;		&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;pragma&lt;/span&gt; omp for&lt;/span&gt;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;(i=&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;;i&amp;lt;n;i+=&lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt;)&amp;#123;&lt;br&gt;            &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(a[i&lt;span class=&#34;hljs-number&#34;&gt;-1&lt;/span&gt;]&amp;gt;a[i])&amp;#123;&lt;br&gt;                tmp = a[i&lt;span class=&#34;hljs-number&#34;&gt;-1&lt;/span&gt;];&lt;br&gt;                a[i&lt;span class=&#34;hljs-number&#34;&gt;-1&lt;/span&gt;] = a[i];&lt;br&gt;                a[i] =tmp;&lt;br&gt;            &amp;#125;&lt;br&gt;        &amp;#125;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;else&lt;/span&gt;&lt;br&gt;		&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;pragma&lt;/span&gt; omp for&lt;/span&gt;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;(i=&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;;i&amp;lt;n&lt;span class=&#34;hljs-number&#34;&gt;-1&lt;/span&gt;;i+=&lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt;)&amp;#123;&lt;br&gt;            &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(a[i] &amp;gt; a[i+&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;])&amp;#123;&lt;br&gt;                tmp = a[i+&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;];&lt;br&gt;                a[i+&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;] = a[i];&lt;br&gt;                a[i] = tmp;&lt;br&gt;            &amp;#125;&lt;br&gt;        &amp;#125;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
@@ -234,10 +234,10 @@
         <updated>2023-01-13T08:26:51.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/posts/27df7715.html</id>
+        <id>http://example.com/2023/01/09/openmp003/</id>
         <title>OpenMP π值估计</title>
-        <link rel="alternate" href="http://example.com/posts/27df7715.html"/>
-        <content type="html">&lt;h2 id=&#34;π值估计&#34;&gt;&lt;a href=&#34;#π值估计&#34; class=&#34;headerlink&#34; title=&#34;π值估计&#34;&gt;&lt;/a&gt;π值估计&lt;/h2&gt;&lt;h3 id=&#34;1-数学背景&#34;&gt;&lt;a href=&#34;#1-数学背景&#34; class=&#34;headerlink&#34; title=&#34;1.数学背景&#34;&gt;&lt;/a&gt;1.数学背景&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;/posts/27df7715.htm/image-20230109150836877.png&#34; alt=&#34;image-20230109150836877&#34;&gt;&lt;/p&gt;
+        <link rel="alternate" href="http://example.com/2023/01/09/openmp003/"/>
+        <content type="html">&lt;h2 id=&#34;π值估计&#34;&gt;&lt;a href=&#34;#π值估计&#34; class=&#34;headerlink&#34; title=&#34;π值估计&#34;&gt;&lt;/a&gt;π值估计&lt;/h2&gt;&lt;h3 id=&#34;1-数学背景&#34;&gt;&lt;a href=&#34;#1-数学背景&#34; class=&#34;headerlink&#34; title=&#34;1.数学背景&#34;&gt;&lt;/a&gt;1.数学背景&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;/2023/01/09/openmp003/image-20230109150836877.png&#34; alt=&#34;image-20230109150836877&#34;&gt;&lt;/p&gt;
 &lt;p&gt;我们能够在串行代码下实行这个公式：&lt;/p&gt;
 &lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;double&lt;/span&gt; factor = &lt;span class=&#34;hljs-number&#34;&gt;1.0&lt;/span&gt;;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;double&lt;/span&gt; sum = &lt;span class=&#34;hljs-number&#34;&gt;0.0&lt;/span&gt;;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;(k=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt; ; k &amp;lt; n; k++)&amp;#123;&lt;br&gt;    sum += factor /(&lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt;*k+&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;);&lt;br&gt;    factor = - factor;&lt;br&gt;&amp;#125;&lt;br&gt;pi_approx = &lt;span class=&#34;hljs-number&#34;&gt;4.0&lt;/span&gt;*sum;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
@@ -246,8 +246,8 @@
 
 &lt;p&gt;然而，第k次迭代中对第6行的factor的更新和接下来的第k + 1次迭代中对第5行的sum的累加是一个循环依赖（数据依赖）。如果第k次迭代被分配·到一个线程，而第k + 1次迭代被分配给另一个线程，则我们不能保证第6行中factor的值是正确的。&lt;/p&gt;
 &lt;p&gt;在这种情况下我们能通过检查系数来解决这个问题：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/27df7715.htm/image-20230109161031989.png&#34; alt=&#34;image-20230109161031989&#34;&gt;&lt;/p&gt;
-&lt;p&gt;可以看到：在第k次迭代，factor的值应该是&lt;img src=&#34;/posts/27df7715.htm/image-20230109161206995.png&#34; alt=&#34;image-20230109161206995&#34;&gt;。如果k是偶数，那么值是+1；如果k是奇数，值是-1。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/01/09/openmp003/image-20230109161031989.png&#34; alt=&#34;image-20230109161031989&#34;&gt;&lt;/p&gt;
+&lt;p&gt;可以看到：在第k次迭代，factor的值应该是&lt;img src=&#34;/2023/01/09/openmp003/image-20230109161206995.png&#34; alt=&#34;image-20230109161206995&#34;&gt;。如果k是偶数，那么值是+1；如果k是奇数，值是-1。&lt;/p&gt;
 &lt;h3 id=&#34;3-消除循环依赖（数据依赖）&#34;&gt;&lt;a href=&#34;#3-消除循环依赖（数据依赖）&#34; class=&#34;headerlink&#34; title=&#34;3.消除循环依赖（数据依赖）&#34;&gt;&lt;/a&gt;3.消除循环依赖（数据依赖）&lt;/h3&gt;&lt;p&gt;因此，如果将下述代码：&lt;/p&gt;
 &lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;sum += factor /(&lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt;*k+&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;);&lt;br&gt;factor = - factor;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
@@ -256,9 +256,9 @@
 
 &lt;p&gt;这样就消除了循环依赖（数据依赖）。&lt;/p&gt;
 &lt;h3 id=&#34;4-作用域&#34;&gt;&lt;a href=&#34;#4-作用域&#34; class=&#34;headerlink&#34; title=&#34;4.作用域&#34;&gt;&lt;/a&gt;4.作用域&lt;/h3&gt;&lt;p&gt;​	然而，事情仍然不是完全正确的。如果在我们的系统上使用两个线程运行程序，并设n&amp;#x3D;1000，那么结果仍然是错误的。例如，&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/27df7715.htm/image-20230109164120205.png&#34; alt=&#34;image-20230109164120205&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/01/09/openmp003/image-20230109164120205.png&#34; alt=&#34;image-20230109164120205&#34;&gt;&lt;/p&gt;
 &lt;p&gt;另一方面，如果只有一个线程运行程序，我们总是得到：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/27df7715.htm/image-20230109164204808.png&#34; alt=&#34;image-20230109164204808&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/01/09/openmp003/image-20230109164204808.png&#34; alt=&#34;image-20230109164204808&#34;&gt;&lt;/p&gt;
 &lt;p&gt;为什么会有这种错误。在一个已经被parallel for指令并行化的块中，缺省情况下任何在循环前声明的变量（唯一的例外是循环变量）在线程间都是共享的。因此factor被共享（被所有线程所共享）。例如，线程0可能会给他赋值1，但在它能用这个值更新sum前，线程1可能又给他赋值为-1了。因此，除了消除计算factor时的循环依赖（数据依赖）外，我们还需要保证每个线程有它自己的factor副本，就是说，为了使代码正确，我们需要保证factor有私有作用域（简单来说就是保证当前线程的factor的值不能被其他线程修改，也只有当前线程能更新和使用factor）。通过添加一个private子句到parallel指令中来实现这一目标。&lt;/p&gt;
 &lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt; &lt;span class=&#34;hljs-keyword&#34;&gt;double&lt;/span&gt; factor = &lt;span class=&#34;hljs-number&#34;&gt;1.0&lt;/span&gt;;&lt;br&gt; &lt;span class=&#34;hljs-keyword&#34;&gt;double&lt;/span&gt; sum = &lt;span class=&#34;hljs-number&#34;&gt;0.0&lt;/span&gt;;&lt;br&gt;&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;pragma&lt;/span&gt; omp parallel for num_threads(thread_count) reduction(+:sum) private(factor)  &lt;span class=&#34;hljs-comment&#34;&gt;//对sum进行求和归约&lt;/span&gt;&lt;/span&gt;&lt;br&gt; &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;(k=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt; ; k &amp;lt; n; k++)&amp;#123;&lt;br&gt;     &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(k % &lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt; ==&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;)			&lt;span class=&#34;hljs-comment&#34;&gt;//通过奇偶性，来独立factor消除循环依赖（数据依赖）&lt;/span&gt;&lt;br&gt;    	factor = &lt;span class=&#34;hljs-number&#34;&gt;1.0&lt;/span&gt;;&lt;br&gt;	&lt;span class=&#34;hljs-keyword&#34;&gt;else&lt;/span&gt;&lt;br&gt;    	factor = &lt;span class=&#34;hljs-number&#34;&gt;-1.0&lt;/span&gt;;&lt;br&gt;     sum += factor /(&lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt;*k+&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;);&lt;br&gt; &amp;#125;&lt;br&gt; pi_approx = &lt;span class=&#34;hljs-number&#34;&gt;4.0&lt;/span&gt;*sum;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
@@ -284,9 +284,9 @@
         <updated>2023-01-09T07:06:18.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/posts/d2c11083.html</id>
+        <id>http://example.com/2023/01/06/openmp002/</id>
         <title>OpenMP寻找循环依赖</title>
-        <link rel="alternate" href="http://example.com/posts/d2c11083.html"/>
+        <link rel="alternate" href="http://example.com/2023/01/06/openmp002/"/>
         <content type="html">&lt;h3 id=&#34;1-OpenMP寻找循环依赖&#34;&gt;&lt;a href=&#34;#1-OpenMP寻找循环依赖&#34; class=&#34;headerlink&#34; title=&#34;1.OpenMP寻找循环依赖&#34;&gt;&lt;/a&gt;1.OpenMP寻找循环依赖&lt;/h3&gt;&lt;p&gt;​		当我们试图使用一个parallel for指令时，首先应该注意的是：要小心发现循环依赖。我们不需要担心一般的数据依赖。例如，在下面循环中：&lt;/p&gt;
 &lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;(i=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;i&amp;lt;n;i++)&amp;#123;&lt;br&gt;    x[i] = a + i*h;			&lt;span class=&#34;hljs-comment&#34;&gt;//2&lt;/span&gt;&lt;br&gt;    y[i] = &lt;span class=&#34;hljs-built_in&#34;&gt;exp&lt;/span&gt;(x[i]);		&lt;span class=&#34;hljs-comment&#34;&gt;//3&lt;/span&gt;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
@@ -305,12 +305,12 @@
         <updated>2023-01-06T09:15:48.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/posts/c48a3125.html</id>
+        <id>http://example.com/2023/01/03/openmp001/</id>
         <title>OpenMP梯度积分法</title>
-        <link rel="alternate" href="http://example.com/posts/c48a3125.html"/>
-        <content type="html">&lt;h2 id=&#34;OpenMP梯度积分法&#34;&gt;&lt;a href=&#34;#OpenMP梯度积分法&#34; class=&#34;headerlink&#34; title=&#34;OpenMP梯度积分法&#34;&gt;&lt;/a&gt;OpenMP梯度积分法&lt;/h2&gt;&lt;h3 id=&#34;1-梯度积分法&#34;&gt;&lt;a href=&#34;#1-梯度积分法&#34; class=&#34;headerlink&#34; title=&#34;1.梯度积分法&#34;&gt;&lt;/a&gt;1.梯度积分法&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;/posts/c48a3125.htm/image-20230106165434252.png&#34; alt=&#34;001&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/c48a3125.htm/image-20230106165507737.png&#34; alt=&#34;image-20230106165507737&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;2-识别两类任务&#34;&gt;&lt;a href=&#34;#2-识别两类任务&#34; class=&#34;headerlink&#34; title=&#34;2.识别两类任务&#34;&gt;&lt;/a&gt;2.识别两类任务&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;/posts/c48a3125.htm/image-20230106164847677.png&#34; alt=&#34;image-20230106164847677&#34;&gt;&lt;/p&gt;
+        <link rel="alternate" href="http://example.com/2023/01/03/openmp001/"/>
+        <content type="html">&lt;h2 id=&#34;OpenMP梯度积分法&#34;&gt;&lt;a href=&#34;#OpenMP梯度积分法&#34; class=&#34;headerlink&#34; title=&#34;OpenMP梯度积分法&#34;&gt;&lt;/a&gt;OpenMP梯度积分法&lt;/h2&gt;&lt;h3 id=&#34;1-梯度积分法&#34;&gt;&lt;a href=&#34;#1-梯度积分法&#34; class=&#34;headerlink&#34; title=&#34;1.梯度积分法&#34;&gt;&lt;/a&gt;1.梯度积分法&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;/2023/01/03/openmp001/image-20230106165434252.png&#34; alt=&#34;001&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/01/03/openmp001/image-20230106165507737.png&#34; alt=&#34;image-20230106165507737&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;2-识别两类任务&#34;&gt;&lt;a href=&#34;#2-识别两类任务&#34; class=&#34;headerlink&#34; title=&#34;2.识别两类任务&#34;&gt;&lt;/a&gt;2.识别两类任务&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;/2023/01/03/openmp001/image-20230106164847677.png&#34; alt=&#34;image-20230106164847677&#34;&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;单个梯形的面积计算&lt;/li&gt;
 &lt;li&gt;梯形面积求和&lt;/li&gt;

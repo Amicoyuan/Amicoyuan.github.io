@@ -18,17 +18,17 @@
         <category>Sort</category>
         <category>LinkList</category>
         <category>双向链表</category>
-        <category>Graph</category>
+        <category>Binary tree</category>
         <category>邻接表</category>
         <category>Vector</category>
-        <category>Binary tree</category>
         <category>BFS</category>
+        <category>Graph</category>
         <category>模拟</category>
         <category>邻接矩阵</category>
         <category>DFS</category>
         <category>结构体</category>
-        <category>贪心</category>
         <category>Double类型相等比较</category>
+        <category>贪心</category>
         <category>并查集</category>
         <category>Map</category>
         <category>Pair</category>
@@ -39,13 +39,13 @@
         <category>Numactl</category>
         <category>OpenMP</category>
         <category>Slurm</category>
-        <category>性能分析工具</category>
         <category>Tensorflow</category>
+        <category>性能分析工具</category>
         <category>gcov</category>
         <item>
-            <guid isPermalink="true">http://example.com/posts/9578eb86.html</guid>
+            <guid isPermalink="true">http://example.com/2022/04/15/Algorithm025/</guid>
             <title>L2-013 红色警报 (25 分)</title>
-            <link>http://example.com/posts/9578eb86.html</link>
+            <link>http://example.com/2022/04/15/Algorithm025/</link>
             <category>Data Structure</category>
             <category>C++</category>
             <category>团体程序设计天梯赛</category>
@@ -71,9 +71,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/posts/286e8c9a.html</guid>
+            <guid isPermalink="true">http://example.com/2021/12/21/algorithm001/</guid>
             <title>DFS-深度优先搜索</title>
-            <link>http://example.com/posts/286e8c9a.html</link>
+            <link>http://example.com/2021/12/21/algorithm001/</link>
             <category>DFS</category>
             <pubDate>Tue, 21 Dec 2021 21:25:36 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;DFS-深度优先搜索&#34;&gt;&lt;a href=&#34;#DFS-深度优先搜索&#34; class=&#34;headerlink&#34; title=&#34;DFS-深度优先搜索&#34;&gt;&lt;/a&gt;DFS-深度优先搜索&lt;/h1&gt;&lt;h2 id=&#34;样题1-全排列&#34;&gt;&lt;a href=&#34;#样题1-全排列&#34; class=&#34;headerlink&#34; title=&#34;样题1-全排列&#34;&gt;&lt;/a&gt;样题1-全排列&lt;/h2&gt;&lt;h3 id=&#34;题目描述：&#34;&gt;&lt;a href=&#34;#题目描述：&#34; class=&#34;headerlink&#34; title=&#34;题目描述：&#34;&gt;&lt;/a&gt;题目描述：&lt;/h3&gt;&lt;p&gt;输入一个数n，输出n的全排列&lt;/p&gt;

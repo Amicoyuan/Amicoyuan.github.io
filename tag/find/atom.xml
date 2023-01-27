@@ -15,17 +15,17 @@
     <category term="Sort" />
     <category term="LinkList" />
     <category term="双向链表" />
-    <category term="Graph" />
+    <category term="Binary tree" />
     <category term="邻接表" />
     <category term="Vector" />
-    <category term="Binary tree" />
     <category term="BFS" />
+    <category term="Graph" />
     <category term="模拟" />
     <category term="邻接矩阵" />
     <category term="DFS" />
     <category term="结构体" />
-    <category term="贪心" />
     <category term="Double类型相等比较" />
+    <category term="贪心" />
     <category term="并查集" />
     <category term="Map" />
     <category term="Pair" />
@@ -36,13 +36,13 @@
     <category term="Numactl" />
     <category term="OpenMP" />
     <category term="Slurm" />
-    <category term="性能分析工具" />
     <category term="Tensorflow" />
+    <category term="性能分析工具" />
     <category term="gcov" />
     <entry>
-        <id>http://example.com/posts/f801da6b.html</id>
+        <id>http://example.com/2022/04/08/Algorithm015/</id>
         <title>C++的STL中字符串string自带方法find查找</title>
-        <link rel="alternate" href="http://example.com/posts/f801da6b.html"/>
+        <link rel="alternate" href="http://example.com/2022/04/08/Algorithm015/"/>
         <content type="html">&lt;h1 id=&#34;C-的STL中字符串string自带方法find查找&#34;&gt;&lt;a href=&#34;#C-的STL中字符串string自带方法find查找&#34; class=&#34;headerlink&#34; title=&#34;C++的STL中字符串string自带方法find查找&#34;&gt;&lt;/a&gt;C++的STL中字符串string自带方法find查找&lt;/h1&gt;&lt;h2 id=&#34;用法&#34;&gt;&lt;a href=&#34;#用法&#34; class=&#34;headerlink&#34; title=&#34;用法&#34;&gt;&lt;/a&gt;用法&lt;/h2&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;string str = &lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;abcd&amp;quot;&lt;/span&gt;;&lt;br&gt;	cout &amp;lt;&amp;lt; str.&lt;span class=&#34;hljs-built_in&#34;&gt;find&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;#x27;a&amp;#x27;&lt;/span&gt;);&lt;br&gt;	&lt;span class=&#34;hljs-comment&#34;&gt;//返回的是下标的值而不是指针或是迭代器&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;string str = &lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;abcd&amp;quot;&lt;/span&gt;&lt;br&gt;string sub = &lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;cd&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(str.&lt;span class=&#34;hljs-built_in&#34;&gt;find&lt;/span&gt;(sub)!=string::npos)&amp;#123;&lt;br&gt;    cout&amp;lt;&amp;lt;&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;找到了&amp;quot;&lt;/span&gt;&amp;lt;&amp;lt;endl;&lt;br&gt;&amp;#125;&lt;span class=&#34;hljs-keyword&#34;&gt;else&lt;/span&gt;&amp;#123;&lt;br&gt;    cout&amp;lt;&amp;lt;&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;没有找到&amp;quot;&lt;/span&gt;&amp;lt;&amp;lt;endl;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -50,7 +50,7 @@
 &lt;p&gt;要是没有找到，返回的是str::npos&lt;br&gt;注意，只有string的find方法是返回的下标，因为string是顺序索引，set,map,multiset,multimap都不是顺序索引的数据结构，所以返回的是迭代器。&lt;/p&gt;
 &lt;h2 id=&#34;样例一-L1-070-吃火锅-15-分&#34;&gt;&lt;a href=&#34;#样例一-L1-070-吃火锅-15-分&#34; class=&#34;headerlink&#34; title=&#34;样例一:L1-070 吃火锅 (15 分)&#34;&gt;&lt;/a&gt;样例一:&lt;strong&gt;L1-070 吃火锅 (15 分)&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;题目链接：&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://pintia.cn/problem-sets/994805046380707840/problems/1336215880692482053&#34;&gt;https://pintia.cn/problem-sets/994805046380707840/problems/1336215880692482053&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/f801da6b.htm/68518b64-f2f7-4694-aaeb-d32afe657f7b.jpg&#34; alt=&#34;chg.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2022/04/08/Algorithm015/68518b64-f2f7-4694-aaeb-d32afe657f7b.jpg&#34; alt=&#34;chg.jpg&#34;&gt;&lt;/p&gt;
 &lt;p&gt;以上图片来自微信朋友圈：这种天气你有什么破事打电话给我基本没用。但是如果你说“吃火锅”，那就厉害了，我们的故事就开始了。&lt;/p&gt;
 &lt;p&gt;本题要求你实现一个程序，自动检查你朋友给你发来的信息里有没有 &lt;code&gt;chi1 huo3 guo1&lt;/code&gt;。&lt;/p&gt;
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;输入每行给出一句不超过 80 个字符的、以回车结尾的朋友信息，信息为非空字符串，仅包括字母、数字、空格、可见的半角标点符号。当读到某一行只有一个英文句点 &lt;code&gt;.&lt;/code&gt; 时，输入结束，此行不算在朋友信息里。&lt;/p&gt;

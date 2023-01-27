@@ -15,17 +15,17 @@
     <category term="Sort" />
     <category term="LinkList" />
     <category term="双向链表" />
-    <category term="Graph" />
+    <category term="Binary tree" />
     <category term="邻接表" />
     <category term="Vector" />
-    <category term="Binary tree" />
     <category term="BFS" />
+    <category term="Graph" />
     <category term="模拟" />
     <category term="邻接矩阵" />
     <category term="DFS" />
     <category term="结构体" />
-    <category term="贪心" />
     <category term="Double类型相等比较" />
+    <category term="贪心" />
     <category term="并查集" />
     <category term="Map" />
     <category term="Pair" />
@@ -36,13 +36,13 @@
     <category term="Numactl" />
     <category term="OpenMP" />
     <category term="Slurm" />
-    <category term="性能分析工具" />
     <category term="Tensorflow" />
+    <category term="性能分析工具" />
     <category term="gcov" />
     <entry>
-        <id>http://example.com/posts/660ce66a.html</id>
+        <id>http://example.com/2022/04/23/Algorithm030/</id>
         <title>L2-005 集合相似度 (25 分)</title>
-        <link rel="alternate" href="http://example.com/posts/660ce66a.html"/>
+        <link rel="alternate" href="http://example.com/2022/04/23/Algorithm030/"/>
         <content type="html">&lt;h2 id=&#34;L2-005-集合相似度-25-分&#34;&gt;&lt;a href=&#34;#L2-005-集合相似度-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-005 集合相似度 (25 分)&#34;&gt;&lt;/a&gt;L2-005 集合相似度 (25 分)&lt;/h2&gt;&lt;p&gt;给定两个整数集合，它们的相似度定义为：Nc&amp;#x2F;Nt×100%。其中Nc是两个集合都有的不相等整数的个数，Nt是两个集合一共有的不相等整数的个数。你的任务就是计算任意一对给定集合的相似度。&lt;/p&gt;
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;输入第一行给出一个正整数&lt;em&gt;N&lt;/em&gt;（≤50），是集合的个数。随后&lt;em&gt;N&lt;/em&gt;行，每行对应一个集合。每个集合首先给出一个正整数&lt;em&gt;M&lt;/em&gt;（≤104），是集合中元素的个数；然后跟&lt;em&gt;M&lt;/em&gt;个[0,109]区间内的整数。&lt;/p&gt;
 &lt;p&gt;之后一行给出一个正整数&lt;em&gt;K&lt;/em&gt;（≤2000），随后&lt;em&gt;K&lt;/em&gt;行，每行对应一对需要计算相似度的集合的编号（集合从1到&lt;em&gt;N&lt;/em&gt;编号）。数字间以空格分隔。&lt;/p&gt;
@@ -63,9 +63,9 @@
         <updated>2022-04-23T13:39:53.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/posts/4f5dbf33.html</id>
+        <id>http://example.com/2022/04/13/Algorithm021/</id>
         <title>L2-040 哲哲打游戏 (25 分)</title>
-        <link rel="alternate" href="http://example.com/posts/4f5dbf33.html"/>
+        <link rel="alternate" href="http://example.com/2022/04/13/Algorithm021/"/>
         <content type="html">&lt;h2 id=&#34;L2-040-哲哲打游戏-25-分&#34;&gt;&lt;a href=&#34;#L2-040-哲哲打游戏-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-040 哲哲打游戏 (25 分)&#34;&gt;&lt;/a&gt;&lt;strong&gt;L2-040 哲哲打游戏 (25 分)&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;哲哲是一位硬核游戏玩家。最近一款名叫《达诺达诺》的新游戏刚刚上市，哲哲自然要快速攻略游戏，守护硬核游戏玩家的一切！&lt;/p&gt;
 &lt;p&gt;为简化模型，我们不妨假设游戏有 &lt;em&gt;N&lt;/em&gt; 个剧情点，通过游戏里不同的操作或选择可以从某个剧情点去往另外一个剧情点。此外，游戏还设置了一些&lt;strong&gt;存档&lt;/strong&gt;，在某个剧情点可以将玩家的游戏进度保存在一个档位上，读取存档后可以回到剧情点，重新进行操作或者选择，到达不同的剧情点。&lt;/p&gt;
 &lt;p&gt;为了追踪硬核游戏玩家哲哲的攻略进度，你打算写一个程序来完成这个工作。假设你已经知道了游戏的全部剧情点和流程，以及哲哲的游戏操作，请你输出哲哲的游戏进度。&lt;/p&gt;

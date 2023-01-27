@@ -18,17 +18,17 @@
         <category>Sort</category>
         <category>LinkList</category>
         <category>双向链表</category>
-        <category>Graph</category>
+        <category>Binary tree</category>
         <category>邻接表</category>
         <category>Vector</category>
-        <category>Binary tree</category>
         <category>BFS</category>
+        <category>Graph</category>
         <category>模拟</category>
         <category>邻接矩阵</category>
         <category>DFS</category>
         <category>结构体</category>
-        <category>贪心</category>
         <category>Double类型相等比较</category>
+        <category>贪心</category>
         <category>并查集</category>
         <category>Map</category>
         <category>Pair</category>
@@ -39,20 +39,20 @@
         <category>Numactl</category>
         <category>OpenMP</category>
         <category>Slurm</category>
-        <category>性能分析工具</category>
         <category>Tensorflow</category>
+        <category>性能分析工具</category>
         <category>gcov</category>
         <item>
-            <guid isPermalink="true">http://example.com/posts/542b3a64.html</guid>
+            <guid isPermalink="true">http://example.com/2023/01/17/cuda005/</guid>
             <title>CUDA内存管理</title>
-            <link>http://example.com/posts/542b3a64.html</link>
+            <link>http://example.com/2023/01/17/cuda005/</link>
             <category>CUDA</category>
             <pubDate>Tue, 17 Jan 2023 22:03:10 +0800</pubDate>
             <description><![CDATA[ &lt;h3 id=&#34;1-内存管理&#34;&gt;&lt;a href=&#34;#1-内存管理&#34; class=&#34;headerlink&#34; title=&#34;1.内存管理&#34;&gt;&lt;/a&gt;1.内存管理&lt;/h3&gt;&lt;p&gt;CUDA编程模型假设系统是由一个主机和一个设备组成的，而且各自拥有独立的内存。核函数是在设备上运行的。为使你拥有充分的控制权并使系统达到最佳性能，CUDA运行时负责分配与释放设备内存，并且在主机内存和设备内存之间传输数据。表2-1列出了标准的C函数以及相应地针对内存操作的CUDA C函数。&lt;/p&gt;
 &lt;p&gt;用于执行GPU内存分配的是cudaMalloc函数，其函数原型为：&lt;/p&gt;
 &lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-function&#34;&gt;cudaError_t &lt;span class=&#34;hljs-title&#34;&gt;cudaMalloc&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;void&lt;/span&gt;** devPtr, &lt;span class=&#34;hljs-keyword&#34;&gt;size_t&lt;/span&gt; size)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
-&lt;p&gt;&lt;img src=&#34;/posts/542b3a64.htm/image-20230117223254853.png&#34; alt=&#34;image-20230117223254853&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/01/17/cuda005/image-20230117223254853.png&#34; alt=&#34;image-20230117223254853&#34;&gt;&lt;/p&gt;
 &lt;p&gt;该函数负责向设备分配一定字节的线性内存，并以devPtr的形式返回指向所分配内存的指针。cudaMalloc与标准C语言中的malloc函数几乎一样，只是此函数在GPU的内存里分配内存。通过充分保持与标准C语言运行库中的接口一致性，可以实现CUDA应用程序的轻松接入。&lt;/p&gt;
 &lt;p&gt;cudaMemcpy函数负责主机和设备之间的数据传输，其函数原型为：&lt;/p&gt;
 &lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-function&#34;&gt;cudaError_t &lt;span class=&#34;hljs-title&#34;&gt;cudaMencpy&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;( &lt;span class=&#34;hljs-keyword&#34;&gt;void&lt;/span&gt;* dst, &lt;span class=&#34;hljs-keyword&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;hljs-keyword&#34;&gt;void&lt;/span&gt;* src, &lt;span class=&#34;hljs-keyword&#34;&gt;size_t&lt;/span&gt; count, cudaMemcpyKind kind)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -79,9 +79,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/posts/d012374.html</guid>
+            <guid isPermalink="true">http://example.com/2023/01/17/cuda004/</guid>
             <title>CUDA编程结构</title>
-            <link>http://example.com/posts/d012374.html</link>
+            <link>http://example.com/2023/01/17/cuda004/</link>
             <category>CUDA</category>
             <pubDate>Tue, 17 Jan 2023 21:36:04 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;CUDA编程结构&#34;&gt;&lt;a href=&#34;#CUDA编程结构&#34; class=&#34;headerlink&#34; title=&#34;CUDA编程结构&#34;&gt;&lt;/a&gt;CUDA编程结构&lt;/h2&gt;&lt;p&gt;CUDA编程模型使用由C语言扩展生成的注释代码在异构计算系统中执行应用程序。&lt;/p&gt;
@@ -101,18 +101,18 @@
 &lt;li&gt;将数据从GPU内存传送回到CPU内存&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;首先，你要学习的是内存管理及主机和设备之间的数据传输。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/d012374.htm/image-20230117220146068.png&#34; alt=&#34;image-20230117220146068&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/01/17/cuda004/image-20230117220146068.png&#34; alt=&#34;image-20230117220146068&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;p&gt;CUDA C编程权威指南 程润伟，Max Grossman(美)，Ty Mckercher &lt;/p&gt;
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/posts/6fe1d3e0.html</guid>
+            <guid isPermalink="true">http://example.com/2023/01/17/cuda003/</guid>
             <title>CUDA编程模型概述</title>
-            <link>http://example.com/posts/6fe1d3e0.html</link>
+            <link>http://example.com/2023/01/17/cuda003/</link>
             <category>CUDA</category>
             <pubDate>Tue, 17 Jan 2023 20:29:01 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;CUDA编程模型概述&#34;&gt;&lt;a href=&#34;#CUDA编程模型概述&#34; class=&#34;headerlink&#34; title=&#34;CUDA编程模型概述&#34;&gt;&lt;/a&gt;CUDA编程模型概述&lt;/h2&gt;&lt;p&gt;CUDA编程模型提供了一个计算机架构抽象作为应用程序和其可用硬件之间的桥梁。图2-1说明了程序和编程模型实现之间的抽象结构的重要。通信抽象是程序与编程模型实现之间的分界线，它通过专业的硬件原语和操作系统的编译器或库来实现。利用编程模型所编写的程序指定了程序的各组成部分是如何共享信息及相互协作的。编程模型从逻辑上提供了一个特定的计算机架构，通常它体现在编程语言或编程环境中。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/6fe1d3e0.htm/image-20230117203406633.png&#34; alt=&#34;image-20230117203406633&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/01/17/cuda003/image-20230117203406633.png&#34; alt=&#34;image-20230117203406633&#34;&gt;&lt;/p&gt;
 &lt;p&gt;除了与其他并行编程模型共有的抽象外，CUDA编程模型还利用GPU架构的计算能力提供了以下几个特有功能。&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;一种通过层次结构在GPU中组织线程的方法&lt;/li&gt;
@@ -129,17 +129,17 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/posts/4fa45d36.html</guid>
+            <guid isPermalink="true">http://example.com/2023/01/16/cuda002/</guid>
             <title>CUDA:一种异构计算平台</title>
-            <link>http://example.com/posts/4fa45d36.html</link>
+            <link>http://example.com/2023/01/16/cuda002/</link>
             <category>CUDA</category>
             <pubDate>Mon, 16 Jan 2023 17:46:48 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;CUDA-一种异构计算平台&#34;&gt;&lt;a href=&#34;#CUDA-一种异构计算平台&#34; class=&#34;headerlink&#34; title=&#34;CUDA:一种异构计算平台&#34;&gt;&lt;/a&gt;CUDA:一种异构计算平台&lt;/h2&gt;&lt;h3 id=&#34;1-CUDA的简单介绍&#34;&gt;&lt;a href=&#34;#1-CUDA的简单介绍&#34; class=&#34;headerlink&#34; title=&#34;1.CUDA的简单介绍&#34;&gt;&lt;/a&gt;1.CUDA的简单介绍&lt;/h3&gt;&lt;p&gt;CUDA是一种通用的并行计算平台和编程模型，它利用NVIDIA GPU中的并行计算引擎能够有效地解决复杂的计算问题。通过使用CUDA，你可以像在CPU上，通过GPU来进行计算。&lt;/p&gt;
 &lt;p&gt;CUDA平台可以通过CUDA加速库，编译器指令，应用编程接口以及行业标准程序语言的扩展（包括C,C++,Fortran，Python，如图1-12所示）来使用。&lt;/p&gt;
 &lt;p&gt;CUDA C是标准ANSI C语言的一个扩展，它带有的少数语言扩展功能使异构编程成为可能，同时也能通过API来管理设备，内存和其他任务。CUDA还是一个可扩展的编程模型，它使程序能对有不同数量核的GPU明显地扩展其并行性，同时对熟悉C编程语言的程序员来说也比较容易上手。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/4fa45d36.htm/image-20230116175503342.png&#34; alt=&#34;image-20230116175503342&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/01/16/cuda002/image-20230116175503342.png&#34; alt=&#34;image-20230116175503342&#34;&gt;&lt;/p&gt;
 &lt;p&gt;CUDA提供了两层API来管理GPU设备和组织线程，如图1-13所示。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/4fa45d36.htm/image-20230116175610403.png&#34; alt=&#34;image-20230116175610403&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/01/16/cuda002/image-20230116175610403.png&#34; alt=&#34;image-20230116175610403&#34;&gt;&lt;/p&gt;
 &lt;p&gt;-CUDA驱动API&lt;/p&gt;
 &lt;p&gt;-CUDA运行时API&lt;/p&gt;
 &lt;p&gt;驱动API是一种低级API，它相对来说较难编程，但是它对于在GPU设备使用上提供了更多的控制。运行时API是一个高级API，他在驱动API的上层实现。每个运行时API函数都被分解为更多传给驱动API的基本运算。&lt;/p&gt;
@@ -149,18 +149,18 @@
 &lt;p&gt;-在CPU上运行的主机代码&lt;/p&gt;
 &lt;p&gt;-在GPU上运行的设备代码&lt;/p&gt;
 &lt;p&gt;NVIDIA的CUDA nvcc编译器在编译过程中将设备代码从主机代码中分离出来。如图1-14所示，主机代码是标准的C代码，使用C编译器进行编译。设备代码，也就是核函数，是用扩展的带有标记数据并行函数关键字的CUDA C语言编写的。设备代码通过nvcc进行编译。在链接阶段，在内核程序调用和显示GPU设备操作中添加CUDA运行时库。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/4fa45d36.htm/image-20230116180725596.png&#34; alt=&#34;image-20230116180725596&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/01/16/cuda002/image-20230116180725596.png&#34; alt=&#34;image-20230116180725596&#34;&gt;&lt;/p&gt;
 &lt;p&gt;CUDA nvcc编译器是以广泛使用LLVM开源编译系统为基础的。在GPU加速器的支持下，通过使用CUDA编译器SDK，你可以创建或扩展编程语言，如图1-15所示。&lt;/p&gt;
 &lt;p&gt;CUDA平台也是支持多样化并行计算生态系统的基础，如图1-26所示。现在，随着越来越多的公司可以提供全球性的工具，服务和解决方案，CUDA生态系统迅速成长。如果你想在GPU上建立你的应用程序，强化GPU性能最简单方式是使用CUDA工具包（cuda-toolkit），它为C和C++开发人员提供了一个综合的开发环境。CUDA工具包包括编译器，数学库，以及调式和优化应用程序性能的工具。同时提供了代码样例，编程指南，用户手册，API参考文档和其他帮助你入门的文档。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/4fa45d36.htm/image-20230116181439404.png&#34; alt=&#34;image-20230116181439404&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/4fa45d36.htm/image-20230116181447616.png&#34; alt=&#34;image-20230116181447616&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/01/16/cuda002/image-20230116181439404.png&#34; alt=&#34;image-20230116181439404&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/01/16/cuda002/image-20230116181447616.png&#34; alt=&#34;image-20230116181447616&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;3-参考资料&#34;&gt;&lt;a href=&#34;#3-参考资料&#34; class=&#34;headerlink&#34; title=&#34;3.参考资料&#34;&gt;&lt;/a&gt;3.参考资料&lt;/h3&gt;&lt;p&gt;CUDA C编程权威指南 程润伟，Max Grossman(美)，Ty Mckercher &lt;/p&gt;
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/posts/a5ec88a5.html</guid>
+            <guid isPermalink="true">http://example.com/2023/01/16/cuda001/</guid>
             <title>CUDA用GPU输出Hello World</title>
-            <link>http://example.com/posts/a5ec88a5.html</link>
+            <link>http://example.com/2023/01/16/cuda001/</link>
             <category>CUDA</category>
             <pubDate>Mon, 16 Jan 2023 16:58:39 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;用GPU输出Hello-World&#34;&gt;&lt;a href=&#34;#用GPU输出Hello-World&#34; class=&#34;headerlink&#34; title=&#34;用GPU输出Hello World&#34;&gt;&lt;/a&gt;用GPU输出Hello World&lt;/h2&gt;&lt;h3 id=&#34;1-检查环境&#34;&gt;&lt;a href=&#34;#1-检查环境&#34; class=&#34;headerlink&#34; title=&#34;1.检查环境&#34;&gt;&lt;/a&gt;1.检查环境&lt;/h3&gt;&lt;p&gt;学习一个新编程语言的最好方式就是使用这种语言来编写程序。在本节，你将开始编写在GPU上运行的第一个内核代码。像其他任何编程语言一样编写GPU上的第一个程序是输出字符串“Hello World”。&lt;/p&gt;
@@ -174,7 +174,7 @@
 &lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs shell&#34;&gt;ls -l /dev/nv*&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;p&gt;通常的结果是：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/a5ec88a5.htm/image-20230116170920773.png&#34; alt=&#34;image-20230116170920773&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/01/16/cuda001/image-20230116170920773.png&#34; alt=&#34;image-20230116170920773&#34;&gt;&lt;/p&gt;
 &lt;p&gt;在这个例子中，你发现了两个GPU卡（不同的用户配置可能有所不同，因此显示结果会有所差异）。&lt;/p&gt;
 &lt;h3 id=&#34;2-第一个CUDA-C程序&#34;&gt;&lt;a href=&#34;#2-第一个CUDA-C程序&#34; class=&#34;headerlink&#34; title=&#34;2.第一个CUDA C程序&#34;&gt;&lt;/a&gt;2.第一个CUDA C程序&lt;/h3&gt;&lt;p&gt;现在你要准备好写你的第一个CUDA C程序。写一个CUDA C程序，你需要以下几个步骤：&lt;/p&gt;
 &lt;ol&gt;
@@ -204,7 +204,7 @@
 &lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs shell&#34;&gt;nvcc -arch sm_20 hello.cu -o hello&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;p&gt;开关语句-arch sm_20使编译器为Fermi架构生成设备代码。运行这个可执行文件，它将输出10条字符串“Hello World from CPU!”，每个线程输出一条。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/a5ec88a5.htm/image-20230116173446169.png&#34; alt=&#34;image-20230116173446169&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/01/16/cuda001/image-20230116173446169.png&#34; alt=&#34;image-20230116173446169&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;4-一个典型的CUDA编程结构包括5个主要步骤&#34;&gt;&lt;a href=&#34;#4-一个典型的CUDA编程结构包括5个主要步骤&#34; class=&#34;headerlink&#34; title=&#34;4.一个典型的CUDA编程结构包括5个主要步骤&#34;&gt;&lt;/a&gt;4.一个典型的CUDA编程结构包括5个主要步骤&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;分配GPU内存&lt;/li&gt;
 &lt;li&gt;从CPU内存中拷贝数据到GPU内存&lt;/li&gt;

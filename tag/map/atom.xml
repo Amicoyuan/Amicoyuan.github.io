@@ -15,17 +15,17 @@
     <category term="Sort" />
     <category term="LinkList" />
     <category term="双向链表" />
-    <category term="Graph" />
+    <category term="Binary tree" />
     <category term="邻接表" />
     <category term="Vector" />
-    <category term="Binary tree" />
     <category term="BFS" />
+    <category term="Graph" />
     <category term="模拟" />
     <category term="邻接矩阵" />
     <category term="DFS" />
     <category term="结构体" />
-    <category term="贪心" />
     <category term="Double类型相等比较" />
+    <category term="贪心" />
     <category term="并查集" />
     <category term="Map" />
     <category term="Pair" />
@@ -36,14 +36,14 @@
     <category term="Numactl" />
     <category term="OpenMP" />
     <category term="Slurm" />
-    <category term="性能分析工具" />
     <category term="Tensorflow" />
+    <category term="性能分析工具" />
     <category term="gcov" />
     <entry>
-        <id>http://example.com/posts/c3cc0bdb.html</id>
+        <id>http://example.com/2022/04/23/Algorithm031/</id>
         <title>L2-039 清点代码库 (25 分)</title>
-        <link rel="alternate" href="http://example.com/posts/c3cc0bdb.html"/>
-        <content type="html">&lt;h2 id=&#34;L2-039-清点代码库-25-分&#34;&gt;&lt;a href=&#34;#L2-039-清点代码库-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-039 清点代码库 (25 分)&#34;&gt;&lt;/a&gt;L2-039 清点代码库 (25 分)&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;/posts/c3cc0bdb.htm/58e6a034-993d-4049-8deb-23d769c8597e.jpg&#34; alt=&#34;code.jpg&#34;&gt;&lt;/p&gt;
+        <link rel="alternate" href="http://example.com/2022/04/23/Algorithm031/"/>
+        <content type="html">&lt;h2 id=&#34;L2-039-清点代码库-25-分&#34;&gt;&lt;a href=&#34;#L2-039-清点代码库-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-039 清点代码库 (25 分)&#34;&gt;&lt;/a&gt;L2-039 清点代码库 (25 分)&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;/2022/04/23/Algorithm031/58e6a034-993d-4049-8deb-23d769c8597e.jpg&#34; alt=&#34;code.jpg&#34;&gt;&lt;/p&gt;
 &lt;p&gt;上图转自新浪微博：“阿里代码库有几亿行代码，但其中有很多功能重复的代码，比如单单快排就被重写了几百遍。请设计一个程序，能够将代码库中所有功能重复的代码找出。各位大佬有啥想法，我当时就懵了，然后就挂了。。。”&lt;/p&gt;
 &lt;p&gt;这里我们把问题简化一下：首先假设两个功能模块如果接受同样的输入，总是给出同样的输出，则它们就是功能重复的；其次我们把每个模块的输出都简化为一个整数（在 &lt;strong&gt;int&lt;/strong&gt; 范围内）。于是我们可以设计一系列输入，检查所有功能模块的对应输出，从而查出功能重复的代码。你的任务就是设计并实现这个简化问题的解决方案。&lt;/p&gt;
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;输入在第一行中给出 2 个正整数，依次为 &lt;em&gt;N&lt;/em&gt;（≤104）和 &lt;em&gt;M&lt;/em&gt;（≤102），对应功能模块的个数和系列测试输入的个数。&lt;/p&gt;
@@ -69,9 +69,9 @@
         <updated>2022-04-23T13:44:47.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/posts/6c4fe984.html</id>
+        <id>http://example.com/2022/04/16/Algorithm029/</id>
         <title>STL中map的使用</title>
-        <link rel="alternate" href="http://example.com/posts/6c4fe984.html"/>
+        <link rel="alternate" href="http://example.com/2022/04/16/Algorithm029/"/>
         <content type="html">&lt;h2 id=&#34;STL中map的使用&#34;&gt;&lt;a href=&#34;#STL中map的使用&#34; class=&#34;headerlink&#34; title=&#34;STL中map的使用&#34;&gt;&lt;/a&gt;STL中map的使用&lt;/h2&gt;&lt;h3 id=&#34;简介&#34;&gt;&lt;a href=&#34;#简介&#34; class=&#34;headerlink&#34; title=&#34;简介&#34;&gt;&lt;/a&gt;简介&lt;/h3&gt;&lt;p&gt;map 是 STL 的一个关联容器，它提供一对一的数据处理能力。&lt;/p&gt;
 &lt;p&gt;map 对象是&lt;strong&gt;模板类&lt;/strong&gt;，需要&lt;strong&gt;关键字&lt;/strong&gt;和&lt;strong&gt;存储对象&lt;/strong&gt;两个模板参数：其中第一个参数称为关键字，每个关键字只能在 map 中出现一次；第二个参数称为该关键字的值。可以将关键字和存储对象理解为“{键，值}对”。&lt;/p&gt;
 &lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;map&amp;lt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;,string&amp;gt; mp;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;

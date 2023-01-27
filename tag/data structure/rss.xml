@@ -18,17 +18,17 @@
         <category>Sort</category>
         <category>LinkList</category>
         <category>双向链表</category>
-        <category>Graph</category>
+        <category>Binary tree</category>
         <category>邻接表</category>
         <category>Vector</category>
-        <category>Binary tree</category>
         <category>BFS</category>
+        <category>Graph</category>
         <category>模拟</category>
         <category>邻接矩阵</category>
         <category>DFS</category>
         <category>结构体</category>
-        <category>贪心</category>
         <category>Double类型相等比较</category>
+        <category>贪心</category>
         <category>并查集</category>
         <category>Map</category>
         <category>Pair</category>
@@ -39,13 +39,13 @@
         <category>Numactl</category>
         <category>OpenMP</category>
         <category>Slurm</category>
-        <category>性能分析工具</category>
         <category>Tensorflow</category>
+        <category>性能分析工具</category>
         <category>gcov</category>
         <item>
-            <guid isPermalink="true">http://example.com/posts/57e5cdd2.html</guid>
+            <guid isPermalink="true">http://example.com/2022/04/23/Algorithm032/</guid>
             <title>L2-036 网红点打卡攻略 (25 分)</title>
-            <link>http://example.com/posts/57e5cdd2.html</link>
+            <link>http://example.com/2022/04/23/Algorithm032/</link>
             <category>Data Structure</category>
             <category>C++</category>
             <category>团体程序设计天梯赛</category>
@@ -74,9 +74,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/posts/c3cc0bdb.html</guid>
+            <guid isPermalink="true">http://example.com/2022/04/23/Algorithm031/</guid>
             <title>L2-039 清点代码库 (25 分)</title>
-            <link>http://example.com/posts/c3cc0bdb.html</link>
+            <link>http://example.com/2022/04/23/Algorithm031/</link>
             <category>Data Structure</category>
             <category>C++</category>
             <category>团体程序设计天梯赛</category>
@@ -85,7 +85,7 @@
             <category>Map</category>
             <category>Pair</category>
             <pubDate>Sat, 23 Apr 2022 21:44:47 +0800</pubDate>
-            <description><![CDATA[ &lt;h2 id=&#34;L2-039-清点代码库-25-分&#34;&gt;&lt;a href=&#34;#L2-039-清点代码库-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-039 清点代码库 (25 分)&#34;&gt;&lt;/a&gt;L2-039 清点代码库 (25 分)&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;/posts/c3cc0bdb.htm/58e6a034-993d-4049-8deb-23d769c8597e.jpg&#34; alt=&#34;code.jpg&#34;&gt;&lt;/p&gt;
+            <description><![CDATA[ &lt;h2 id=&#34;L2-039-清点代码库-25-分&#34;&gt;&lt;a href=&#34;#L2-039-清点代码库-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-039 清点代码库 (25 分)&#34;&gt;&lt;/a&gt;L2-039 清点代码库 (25 分)&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;/2022/04/23/Algorithm031/58e6a034-993d-4049-8deb-23d769c8597e.jpg&#34; alt=&#34;code.jpg&#34;&gt;&lt;/p&gt;
 &lt;p&gt;上图转自新浪微博：“阿里代码库有几亿行代码，但其中有很多功能重复的代码，比如单单快排就被重写了几百遍。请设计一个程序，能够将代码库中所有功能重复的代码找出。各位大佬有啥想法，我当时就懵了，然后就挂了。。。”&lt;/p&gt;
 &lt;p&gt;这里我们把问题简化一下：首先假设两个功能模块如果接受同样的输入，总是给出同样的输出，则它们就是功能重复的；其次我们把每个模块的输出都简化为一个整数（在 &lt;strong&gt;int&lt;/strong&gt; 范围内）。于是我们可以设计一系列输入，检查所有功能模块的对应输出，从而查出功能重复的代码。你的任务就是设计并实现这个简化问题的解决方案。&lt;/p&gt;
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;输入在第一行中给出 2 个正整数，依次为 &lt;em&gt;N&lt;/em&gt;（≤104）和 &lt;em&gt;M&lt;/em&gt;（≤102），对应功能模块的个数和系列测试输入的个数。&lt;/p&gt;
@@ -103,9 +103,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/posts/3f37820e.html</guid>
+            <guid isPermalink="true">http://example.com/2022/04/16/Algorithm028/</guid>
             <title>L2-010 排座位 (25 分)</title>
-            <link>http://example.com/posts/3f37820e.html</link>
+            <link>http://example.com/2022/04/16/Algorithm028/</link>
             <category>Data Structure</category>
             <category>C++</category>
             <category>团体程序设计天梯赛</category>
@@ -131,9 +131,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/posts/9578eb86.html</guid>
+            <guid isPermalink="true">http://example.com/2022/04/15/Algorithm025/</guid>
             <title>L2-013 红色警报 (25 分)</title>
-            <link>http://example.com/posts/9578eb86.html</link>
+            <link>http://example.com/2022/04/15/Algorithm025/</link>
             <category>Data Structure</category>
             <category>C++</category>
             <category>团体程序设计天梯赛</category>
@@ -159,9 +159,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/posts/e6b4ff6a.html</guid>
+            <guid isPermalink="true">http://example.com/2022/04/14/Algorithm024/</guid>
             <title>L2-011 玩转二叉树 (25 分)</title>
-            <link>http://example.com/posts/e6b4ff6a.html</link>
+            <link>http://example.com/2022/04/14/Algorithm024/</link>
             <category>Data Structure</category>
             <category>C++</category>
             <category>团体程序设计天梯赛</category>
@@ -186,9 +186,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/posts/2f9775a0.html</guid>
+            <guid isPermalink="true">http://example.com/2022/04/14/Algorithm023/</guid>
             <title>L2-035 完全二叉树的层序遍历 (25 分)</title>
-            <link>http://example.com/posts/2f9775a0.html</link>
+            <link>http://example.com/2022/04/14/Algorithm023/</link>
             <category>Data Structure</category>
             <category>C++</category>
             <category>团体程序设计天梯赛</category>
@@ -209,15 +209,15 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/posts/5297b1f9.html</guid>
+            <guid isPermalink="true">http://example.com/2022/04/13/Algorithm022/</guid>
             <title>L2-031 深入虎穴 (25 分)</title>
-            <link>http://example.com/posts/5297b1f9.html</link>
+            <link>http://example.com/2022/04/13/Algorithm022/</link>
             <category>Data Structure</category>
             <category>C++</category>
             <category>团体程序设计天梯赛</category>
+            <category>Binary tree</category>
             <category>邻接表</category>
             <category>Vector</category>
-            <category>Binary tree</category>
             <category>BFS</category>
             <pubDate>Wed, 13 Apr 2022 19:09:46 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;著名的王牌间谍 007 需要执行一次任务，获取敌方的机密情报。已知情报藏在一个地下迷宫里，迷宫只有一个入口，里面有很多条通路，每条路通向一扇门。每一扇门背后或者是一个房间，或者又有很多条路，同样是每条路通向一扇门…… 他的手里有一张表格，是其他间谍帮他收集到的情报，他们记下了每扇门的编号，以及这扇门背后的每一条通路所到达的门的编号。007 发现不存在两条路通向同一扇门。&lt;/p&gt;
@@ -238,9 +238,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/posts/4f5dbf33.html</guid>
+            <guid isPermalink="true">http://example.com/2022/04/13/Algorithm021/</guid>
             <title>L2-040 哲哲打游戏 (25 分)</title>
-            <link>http://example.com/posts/4f5dbf33.html</link>
+            <link>http://example.com/2022/04/13/Algorithm021/</link>
             <category>Data Structure</category>
             <category>C++</category>
             <category>团体程序设计天梯赛</category>
@@ -276,9 +276,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/posts/d15ae7b2.html</guid>
+            <guid isPermalink="true">http://example.com/2022/04/13/Algorithm020/</guid>
             <title>L2-027 名人堂与代金券 (25 分)</title>
-            <link>http://example.com/posts/d15ae7b2.html</link>
+            <link>http://example.com/2022/04/13/Algorithm020/</link>
             <category>Data Structure</category>
             <category>C++</category>
             <category>团体程序设计天梯赛</category>
@@ -298,15 +298,15 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/posts/c3f0f4cb.html</guid>
+            <guid isPermalink="true">http://example.com/2022/04/13/Algorithm019/</guid>
             <title>L2-026 小字辈 (25 分)</title>
-            <link>http://example.com/posts/c3f0f4cb.html</link>
+            <link>http://example.com/2022/04/13/Algorithm019/</link>
             <category>Data Structure</category>
             <category>C++</category>
             <category>团体程序设计天梯赛</category>
+            <category>Binary tree</category>
             <category>邻接表</category>
             <category>Vector</category>
-            <category>Binary tree</category>
             <category>BFS</category>
             <pubDate>Wed, 13 Apr 2022 09:45:49 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;L2-026-小字辈-25-分&#34;&gt;&lt;a href=&#34;#L2-026-小字辈-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-026 小字辈 (25 分)&#34;&gt;&lt;/a&gt;&lt;strong&gt;L2-026 小字辈 (25 分)&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;本题给定一个庞大家族的家谱，要请你给出最小一辈的名单。&lt;/p&gt;
@@ -323,22 +323,22 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/posts/f073a4bd.html</guid>
+            <guid isPermalink="true">http://example.com/2022/04/12/Algorithm018/</guid>
             <title>L2-023 图着色问题 (25 分)</title>
-            <link>http://example.com/posts/f073a4bd.html</link>
+            <link>http://example.com/2022/04/12/Algorithm018/</link>
             <category>Data Structure</category>
             <category>C++</category>
             <category>Set</category>
             <category>团体程序设计天梯赛</category>
-            <category>Graph</category>
             <category>邻接表</category>
             <category>Vector</category>
+            <category>Graph</category>
             <pubDate>Tue, 12 Apr 2022 18:59:52 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;L2-023-图着色问题-25-分&#34;&gt;&lt;a href=&#34;#L2-023-图着色问题-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-023 图着色问题 (25 分)&#34;&gt;&lt;/a&gt;L2-023 图着色问题 (25 分)&lt;/h2&gt;&lt;p&gt;图着色问题是一个著名的NP完全问题。给定无向图&lt;em&gt;G&lt;/em&gt;&amp;#x3D;(&lt;em&gt;V&lt;/em&gt;,&lt;em&gt;E&lt;/em&gt;)，问可否用&lt;em&gt;K&lt;/em&gt;种颜色为&lt;em&gt;V&lt;/em&gt;中的每一个顶点分配一种颜色，使得不会有两个相邻顶点具有同一种颜色？&lt;/p&gt;
 &lt;p&gt;但本题并不是要你解决这个着色问题，而是对给定的一种颜色分配，请你判断这是否是图着色问题的一个解。&lt;/p&gt;
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;输入在第一行给出3个整数&lt;em&gt;V&lt;/em&gt;（0&amp;lt;&lt;em&gt;V&lt;/em&gt;≤500）、&lt;em&gt;E&lt;/em&gt;（≥0）和&lt;em&gt;K&lt;/em&gt;（0&amp;lt;&lt;em&gt;K&lt;/em&gt;≤&lt;em&gt;V&lt;/em&gt;），分别是无向图的顶点数、边数、以及颜色数。顶点和颜色都从1到&lt;em&gt;V&lt;/em&gt;编号。随后&lt;em&gt;E&lt;/em&gt;行，每行给出一条边的两个端点的编号。在图的信息给出之后，给出了一个正整数&lt;em&gt;N&lt;/em&gt;（≤20），是待检查的颜色分配方案的个数。随后&lt;em&gt;N&lt;/em&gt;行，每行顺次给出&lt;em&gt;V&lt;/em&gt;个顶点的颜色（第&lt;em&gt;i&lt;/em&gt;个数字表示第&lt;em&gt;i&lt;/em&gt;个顶点的颜色），数字间以空格分隔。题目保证给定的无向图是合法的（即不存在自回路和重边）。&lt;/p&gt;
 &lt;h3 id=&#34;输出格式：&#34;&gt;&lt;a href=&#34;#输出格式：&#34; class=&#34;headerlink&#34; title=&#34;输出格式：&#34;&gt;&lt;/a&gt;输出格式：&lt;/h3&gt;&lt;p&gt;对每种颜色分配方案，如果是图着色问题的一个解则输出&lt;code&gt;Yes&lt;/code&gt;，否则输出&lt;code&gt;No&lt;/code&gt;，每句占一行。&lt;/p&gt;
-&lt;h3 id=&#34;输入样例：&#34;&gt;&lt;a href=&#34;#输入样例：&#34; class=&#34;headerlink&#34; title=&#34;输入样例：&#34;&gt;&lt;/a&gt;输入样例：&lt;/h3&gt;&lt;img src=&#34;/posts/f073a4bd.htm/graph.png&#34; alt=&#34;graph&#34; style=&#34;zoom: 67%;&#34;&gt;
+&lt;h3 id=&#34;输入样例：&#34;&gt;&lt;a href=&#34;#输入样例：&#34; class=&#34;headerlink&#34; title=&#34;输入样例：&#34;&gt;&lt;/a&gt;输入样例：&lt;/h3&gt;&lt;img src=&#34;/2022/04/12/Algorithm018/graph.png&#34; alt=&#34;graph&#34; style=&#34;zoom: 67%;&#34;&gt;
 
 &lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs in&#34;&gt;6 8 3&lt;br&gt;2 1&lt;br&gt;1 3&lt;br&gt;4 6&lt;br&gt;2 5&lt;br&gt;2 4&lt;br&gt;5 4&lt;br&gt;5 6&lt;br&gt;3 6&lt;br&gt;4&lt;br&gt;1 2 3 3 1 2&lt;br&gt;4 5 6 6 4 5&lt;br&gt;1 2 3 4 5 6&lt;br&gt;2 3 4 2 3 4&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
@@ -351,9 +351,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/posts/bbb783c5.html</guid>
+            <guid isPermalink="true">http://example.com/2022/04/07/Algorithm014/</guid>
             <title>由遍历顺序构建二叉树(前序+中序;后序+中序)</title>
-            <link>http://example.com/posts/bbb783c5.html</link>
+            <link>http://example.com/2022/04/07/Algorithm014/</link>
             <category>Data Structure</category>
             <pubDate>Thu, 07 Apr 2022 20:55:58 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;由遍历顺序构建二叉树-前序-中序-后序-中序&#34;&gt;&lt;a href=&#34;#由遍历顺序构建二叉树-前序-中序-后序-中序&#34; class=&#34;headerlink&#34; title=&#34;由遍历顺序构建二叉树(前序+中序;后序+中序)&#34;&gt;&lt;/a&gt;由遍历顺序构建二叉树(前序+中序;后序+中序)&lt;/h1&gt;&lt;h2 id=&#34;前序-中序&#34;&gt;&lt;a href=&#34;#前序-中序&#34; class=&#34;headerlink&#34; title=&#34;前序+中序&#34;&gt;&lt;/a&gt;前序+中序&lt;/h2&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;26&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-function&#34;&gt;BiTree &lt;span class=&#34;hljs-title&#34;&gt;PreAndInCreateTree&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; prel,&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; prer, &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; inl,&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; inr)&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(prel&amp;gt;prer)&amp;#123;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;hljs-literal&#34;&gt;NULL&lt;/span&gt;;&lt;br&gt;    &amp;#125;&lt;br&gt;    BiTNode *root;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; index=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;&lt;br&gt;    root=(BiTNode*)&lt;span class=&#34;hljs-built_in&#34;&gt;malloc&lt;/span&gt;(&lt;span class=&#34;hljs-built_in&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;sizeof&lt;/span&gt;&lt;/span&gt;(BiTNode));				&lt;span class=&#34;hljs-comment&#34;&gt;//记住分配空间&lt;/span&gt;&lt;br&gt;    root-&amp;gt;data=preF[prel];			&lt;span class=&#34;hljs-comment&#34;&gt;//前序遍历的第一个结点是根结点&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;(i=inl;i&amp;lt;=inr;i++)&lt;br&gt;    &amp;#123;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(preF[prel]==inF[i])&amp;#123;&lt;br&gt;            index=i;&lt;br&gt;            &lt;span class=&#34;hljs-keyword&#34;&gt;break&lt;/span&gt;;&lt;br&gt;            &lt;span class=&#34;hljs-comment&#34;&gt;//找到了根结点，目的是在中序遍历中划分左右子树&lt;/span&gt;&lt;br&gt;        &amp;#125;&lt;br&gt;    &amp;#125;&lt;br&gt;    &lt;span class=&#34;hljs-comment&#34;&gt;//则其左子树节点个数为index-inl&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-comment&#34;&gt;//前序遍历的第一个结点是根结点,所以新的递归区间是prel+1,到prel+index-inl,&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-comment&#34;&gt;//中序遍历是左根右，所以新的递归区间是inl,index-1&lt;/span&gt;&lt;br&gt;    root-&amp;gt;lchild=&lt;span class=&#34;hljs-built_in&#34;&gt;PreAndInCreateTree&lt;/span&gt;(prel+&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;,prel+index-inl,inl,index&lt;span class=&#34;hljs-number&#34;&gt;-1&lt;/span&gt;);&lt;br&gt;    &lt;span class=&#34;hljs-comment&#34;&gt;//前序遍历是根左右，所以新的递归区间是prel+index-inl+1,prep&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-comment&#34;&gt;//中序遍历是左根右，所以新的递归区间是index+1,inr&lt;/span&gt;&lt;br&gt;    root-&amp;gt;rchild=&lt;span class=&#34;hljs-built_in&#34;&gt;PreAndInCreateTree&lt;/span&gt;(prel+index-inl+&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;,prer,index+&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;,inr);&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; root;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -369,9 +369,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/posts/de8d2b40.html</guid>
+            <guid isPermalink="true">http://example.com/2022/04/06/Algorithm012/</guid>
             <title>二叉树的存储结构</title>
-            <link>http://example.com/posts/de8d2b40.html</link>
+            <link>http://example.com/2022/04/06/Algorithm012/</link>
             <category>Data Structure</category>
             <pubDate>Wed, 06 Apr 2022 19:41:45 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;二叉树的存储结构&#34;&gt;&lt;a href=&#34;#二叉树的存储结构&#34; class=&#34;headerlink&#34; title=&#34;二叉树的存储结构&#34;&gt;&lt;/a&gt;二叉树的存储结构&lt;/h1&gt;&lt;h2 id=&#34;1-顺序存储方式&#34;&gt;&lt;a href=&#34;#1-顺序存储方式&#34; class=&#34;headerlink&#34; title=&#34;1.顺序存储方式&#34;&gt;&lt;/a&gt;1.顺序存储方式&lt;/h2&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;define&lt;/span&gt; MaxSize 100&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-class&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;TreeNode&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;    ElemType value;			&lt;span class=&#34;hljs-comment&#34;&gt;//结点中的数据元素&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;bool&lt;/span&gt; isEmpty;			&lt;span class=&#34;hljs-comment&#34;&gt;//结点是否为空&lt;/span&gt;&lt;br&gt;&amp;#125;;&lt;br&gt;&lt;br&gt;TreeNode t[MaxSize];&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -384,9 +384,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/posts/ec26e8a3.html</guid>
+            <guid isPermalink="true">http://example.com/2022/04/06/Algorithm011/</guid>
             <title>串的存储结构</title>
-            <link>http://example.com/posts/ec26e8a3.html</link>
+            <link>http://example.com/2022/04/06/Algorithm011/</link>
             <category>Data Structure</category>
             <pubDate>Wed, 06 Apr 2022 19:35:13 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;串的存储结构&#34;&gt;&lt;a href=&#34;#串的存储结构&#34; class=&#34;headerlink&#34; title=&#34;串的存储结构&#34;&gt;&lt;/a&gt;串的存储结构&lt;/h1&gt;&lt;h2 id=&#34;1-定长顺序存储表示&#34;&gt;&lt;a href=&#34;#1-定长顺序存储表示&#34; class=&#34;headerlink&#34; title=&#34;1.定长顺序存储表示&#34;&gt;&lt;/a&gt;1.定长顺序存储表示&lt;/h2&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;define&lt;/span&gt; MAXLEN 255					&lt;span class=&#34;hljs-comment&#34;&gt;//预定义最大串长&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;hljs-class&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;struct&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;char&lt;/span&gt; ch[MAXLEN];				&lt;span class=&#34;hljs-comment&#34;&gt;//每个分量存储一个字符&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; length;						&lt;span class=&#34;hljs-comment&#34;&gt;//串的实际长度&lt;/span&gt;&lt;br&gt;&amp;#125;SSting;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -396,9 +396,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/posts/b6c47025.html</guid>
+            <guid isPermalink="true">http://example.com/2022/03/31/Algorithm010/</guid>
             <title>队列</title>
-            <link>http://example.com/posts/b6c47025.html</link>
+            <link>http://example.com/2022/03/31/Algorithm010/</link>
             <category>Data Structure</category>
             <pubDate>Thu, 31 Mar 2022 15:58:39 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;队列&#34;&gt;&lt;a href=&#34;#队列&#34; class=&#34;headerlink&#34; title=&#34;队列&#34;&gt;&lt;/a&gt;队列&lt;/h2&gt;&lt;h3 id=&#34;队列的顺序存储解构&#34;&gt;&lt;a href=&#34;#队列的顺序存储解构&#34; class=&#34;headerlink&#34; title=&#34;队列的顺序存储解构&#34;&gt;&lt;/a&gt;队列的顺序存储解构&lt;/h3&gt;&lt;h4 id=&#34;队列的顺序存储&#34;&gt;&lt;a href=&#34;#队列的顺序存储&#34; class=&#34;headerlink&#34; title=&#34;队列的顺序存储&#34;&gt;&lt;/a&gt;队列的顺序存储&lt;/h4&gt;&lt;p&gt;队列的顺序存储类型可描述为&lt;/p&gt;
@@ -442,9 +442,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/posts/1f4ac2fb.html</guid>
+            <guid isPermalink="true">http://example.com/2022/03/30/Algorithm009/</guid>
             <title>栈</title>
-            <link>http://example.com/posts/1f4ac2fb.html</link>
+            <link>http://example.com/2022/03/30/Algorithm009/</link>
             <category>Data Structure</category>
             <pubDate>Wed, 30 Mar 2022 18:04:31 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;栈的顺序存储结构&#34;&gt;&lt;a href=&#34;#栈的顺序存储结构&#34; class=&#34;headerlink&#34; title=&#34;栈的顺序存储结构&#34;&gt;&lt;/a&gt;栈的顺序存储结构&lt;/h2&gt;&lt;h3 id=&#34;顺序栈的实现&#34;&gt;&lt;a href=&#34;#顺序栈的实现&#34; class=&#34;headerlink&#34; title=&#34;顺序栈的实现&#34;&gt;&lt;/a&gt;顺序栈的实现&lt;/h3&gt;&lt;p&gt;栈的顺序存储类型可描述为：&lt;/p&gt;
@@ -470,9 +470,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/posts/1387c3a8.html</guid>
+            <guid isPermalink="true">http://example.com/2022/03/29/Algorithm008/</guid>
             <title>双链表与静态链表</title>
-            <link>http://example.com/posts/1387c3a8.html</link>
+            <link>http://example.com/2022/03/29/Algorithm008/</link>
             <category>Data Structure</category>
             <pubDate>Tue, 29 Mar 2022 15:48:53 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;双链表&#34;&gt;&lt;a href=&#34;#双链表&#34; class=&#34;headerlink&#34; title=&#34;双链表&#34;&gt;&lt;/a&gt;双链表&lt;/h2&gt;&lt;h3 id=&#34;定义&#34;&gt;&lt;a href=&#34;#定义&#34; class=&#34;headerlink&#34; title=&#34;定义&#34;&gt;&lt;/a&gt;定义&lt;/h3&gt;&lt;p&gt;双链表中结点类型的描述如下：&lt;/p&gt;
@@ -485,14 +485,14 @@
 &lt;h2 id=&#34;静态链表&#34;&gt;&lt;a href=&#34;#静态链表&#34; class=&#34;headerlink&#34; title=&#34;静态链表&#34;&gt;&lt;/a&gt;静态链表&lt;/h2&gt;&lt;h3 id=&#34;定义-1&#34;&gt;&lt;a href=&#34;#定义-1&#34; class=&#34;headerlink&#34; title=&#34;定义&#34;&gt;&lt;/a&gt;定义&lt;/h3&gt;&lt;p&gt;静态链表结构类型的描述如下：&lt;/p&gt;
 &lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;define&lt;/span&gt; MaxSize 50				&lt;span class=&#34;hljs-comment&#34;&gt;//静态链表的最大长度&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;hljs-class&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;struct&lt;/span&gt;&amp;#123;&lt;/span&gt;					&lt;span class=&#34;hljs-comment&#34;&gt;//静态链表结构类型的定义&lt;/span&gt;&lt;br&gt;    ElemType data;				&lt;span class=&#34;hljs-comment&#34;&gt;//储存数据元素&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; next;					&lt;span class=&#34;hljs-comment&#34;&gt;//下一个元素的数组下标&lt;/span&gt;&lt;br&gt;&amp;#125;SLinkList[MaxSize];&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
-&lt;h3 id=&#34;对静态链表结构类型的定义的理解与猜想验证&#34;&gt;&lt;a href=&#34;#对静态链表结构类型的定义的理解与猜想验证&#34; class=&#34;headerlink&#34; title=&#34;对静态链表结构类型的定义的理解与猜想验证&#34;&gt;&lt;/a&gt;对静态链表结构类型的定义的理解与猜想验证&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;/posts/1387c3a8.htm/%E9%9D%99%E6%80%81%E9%93%BE%E8%A1%A8-16485415016461.png&#34; alt=&#34;静态链表&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/1387c3a8.htm/123-16485415073922.png&#34; alt=&#34;123&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;对静态链表结构类型的定义的理解与猜想验证&#34;&gt;&lt;a href=&#34;#对静态链表结构类型的定义的理解与猜想验证&#34; class=&#34;headerlink&#34; title=&#34;对静态链表结构类型的定义的理解与猜想验证&#34;&gt;&lt;/a&gt;对静态链表结构类型的定义的理解与猜想验证&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;/2022/03/29/Algorithm008/%E9%9D%99%E6%80%81%E9%93%BE%E8%A1%A8-16485415016461.png&#34; alt=&#34;静态链表&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2022/03/29/Algorithm008/123-16485415073922.png&#34; alt=&#34;123&#34;&gt;&lt;/p&gt;
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/posts/8c3d792d.html</guid>
+            <guid isPermalink="true">http://example.com/2022/03/28/Algorithm007/</guid>
             <title>单链表上的基本操作</title>
-            <link>http://example.com/posts/8c3d792d.html</link>
+            <link>http://example.com/2022/03/28/Algorithm007/</link>
             <category>Data Structure</category>
             <pubDate>Mon, 28 Mar 2022 17:40:19 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;单链表的定义&#34;&gt;&lt;a href=&#34;#单链表的定义&#34; class=&#34;headerlink&#34; title=&#34;单链表的定义&#34;&gt;&lt;/a&gt;单链表的定义&lt;/h2&gt;&lt;p&gt;单链表中结点类型的描述如下：&lt;/p&gt;
@@ -523,9 +523,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/posts/102e5a59.html</guid>
+            <guid isPermalink="true">http://example.com/2022/03/28/Algorithm006/</guid>
             <title>单链表的定义</title>
-            <link>http://example.com/posts/102e5a59.html</link>
+            <link>http://example.com/2022/03/28/Algorithm006/</link>
             <category>Data Structure</category>
             <pubDate>Mon, 28 Mar 2022 16:00:51 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;单链表的定义&#34;&gt;&lt;a href=&#34;#单链表的定义&#34; class=&#34;headerlink&#34; title=&#34;单链表的定义&#34;&gt;&lt;/a&gt;单链表的定义&lt;/h1&gt;&lt;h2 id=&#34;1-单链表的定义&#34;&gt;&lt;a href=&#34;#1-单链表的定义&#34; class=&#34;headerlink&#34; title=&#34;1.单链表的定义&#34;&gt;&lt;/a&gt;1.单链表的定义&lt;/h2&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;hljs-class&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;LNode&lt;/span&gt;&amp;#123;&lt;/span&gt;      &lt;span class=&#34;hljs-comment&#34;&gt;//定义单链表结点类型&lt;/span&gt;&lt;br&gt;    ElemType data;         &lt;span class=&#34;hljs-comment&#34;&gt;//每个结点存放一个数据元素&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-class&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;LNode&lt;/span&gt; *&lt;span class=&#34;hljs-title&#34;&gt;next&lt;/span&gt;;&lt;/span&gt;    &lt;span class=&#34;hljs-comment&#34;&gt;//指针指向下一个节点&lt;/span&gt;&lt;br&gt;&amp;#125;LNode,*LinkList;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -538,13 +538,13 @@
 
 &lt;h2 id=&#34;样例代码&#34;&gt;&lt;a href=&#34;#样例代码&#34; class=&#34;headerlink&#34; title=&#34;样例代码&#34;&gt;&lt;/a&gt;样例代码&lt;/h2&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;LNode *L；&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;//和：&lt;/span&gt;&lt;br&gt;LinkList L;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;//两者的区别就是强调不同&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
-&lt;p&gt;&lt;img src=&#34;/posts/102e5a59.htm/%E6%BC%94%E7%A4%BA.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2022/03/28/Algorithm006/%E6%BC%94%E7%A4%BA.png&#34;&gt;&lt;/p&gt;
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/posts/602ee0a8.html</guid>
+            <guid isPermalink="true">http://example.com/2022/03/11/Algorithm005/</guid>
             <title>优先队列</title>
-            <link>http://example.com/posts/602ee0a8.html</link>
+            <link>http://example.com/2022/03/11/Algorithm005/</link>
             <category>Data Structure</category>
             <pubDate>Fri, 11 Mar 2022 11:54:21 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;优先队列&#34;&gt;&lt;a href=&#34;#优先队列&#34; class=&#34;headerlink&#34; title=&#34;优先队列&#34;&gt;&lt;/a&gt;优先队列&lt;/h1&gt;&lt;h2 id=&#34;定义：&#34;&gt;&lt;a href=&#34;#定义：&#34; class=&#34;headerlink&#34; title=&#34;定义：&#34;&gt;&lt;/a&gt;定义：&lt;/h2&gt;&lt;p&gt;定义：priority_queue&amp;lt;Type, Container, Functional&amp;gt;&lt;/p&gt;

@@ -15,17 +15,17 @@
     <category term="Sort" />
     <category term="LinkList" />
     <category term="双向链表" />
-    <category term="Graph" />
+    <category term="Binary tree" />
     <category term="邻接表" />
     <category term="Vector" />
-    <category term="Binary tree" />
     <category term="BFS" />
+    <category term="Graph" />
     <category term="模拟" />
     <category term="邻接矩阵" />
     <category term="DFS" />
     <category term="结构体" />
-    <category term="贪心" />
     <category term="Double类型相等比较" />
+    <category term="贪心" />
     <category term="并查集" />
     <category term="Map" />
     <category term="Pair" />
@@ -36,13 +36,13 @@
     <category term="Numactl" />
     <category term="OpenMP" />
     <category term="Slurm" />
-    <category term="性能分析工具" />
     <category term="Tensorflow" />
+    <category term="性能分析工具" />
     <category term="gcov" />
     <entry>
-        <id>http://example.com/posts/ae13c0f6.html</id>
+        <id>http://example.com/2021/12/09/tensorflow001/</id>
         <title>Machine Learning(一) 一个神经元网络-线性函数</title>
-        <link rel="alternate" href="http://example.com/posts/ae13c0f6.html"/>
+        <link rel="alternate" href="http://example.com/2021/12/09/tensorflow001/"/>
         <content type="html">&lt;h1 id=&#34;一个神经元的网络-线性函数&#34;&gt;&lt;a href=&#34;#一个神经元的网络-线性函数&#34; class=&#34;headerlink&#34; title=&#34;一个神经元的网络(线性函数)&#34;&gt;&lt;/a&gt;一个神经元的网络(线性函数)&lt;/h1&gt;&lt;p&gt;线性函数 y &amp;#x3D; 2 * x -1 &lt;/p&gt;
 &lt;h2 id=&#34;程序源代码&#34;&gt;&lt;a href=&#34;#程序源代码&#34; class=&#34;headerlink&#34; title=&#34;程序源代码&#34;&gt;&lt;/a&gt;程序源代码&lt;/h2&gt;&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs python&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;from&lt;/span&gt; tensorflow &lt;span class=&#34;hljs-keyword&#34;&gt;import&lt;/span&gt; keras&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;import&lt;/span&gt; numpy &lt;span class=&#34;hljs-keyword&#34;&gt;as&lt;/span&gt; np&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;#构建模型&lt;/span&gt;&lt;br&gt;model = keras.Sequential([keras.layers.Dense(units=&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;,input_shape=[&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;])])&lt;br&gt;model.&lt;span class=&#34;hljs-built_in&#34;&gt;compile&lt;/span&gt;(optimizer=&lt;span class=&#34;hljs-string&#34;&gt;&amp;#x27;sgd&amp;#x27;&lt;/span&gt;,loss=&lt;span class=&#34;hljs-string&#34;&gt;&amp;#x27;mean_squared_error&amp;#x27;&lt;/span&gt;)&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;#准备训练数据&lt;/span&gt;&lt;br&gt;xs=np.array([-&lt;span class=&#34;hljs-number&#34;&gt;1.0&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;0.0&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;1.0&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;2.0&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;3.0&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;4.0&lt;/span&gt;], dtype = &lt;span class=&#34;hljs-built_in&#34;&gt;float&lt;/span&gt;)&lt;br&gt;ys=np.array([-&lt;span class=&#34;hljs-number&#34;&gt;3.0&lt;/span&gt;,-&lt;span class=&#34;hljs-number&#34;&gt;1.0&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;1.0&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;3.0&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;5.0&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;7.0&lt;/span&gt;], dtype = &lt;span class=&#34;hljs-built_in&#34;&gt;float&lt;/span&gt;)&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;#训练模型&lt;/span&gt;&lt;br&gt;model.fit(xs,ys,epochs=&lt;span class=&#34;hljs-number&#34;&gt;500&lt;/span&gt;)&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 

@@ -15,17 +15,17 @@
     <category term="Sort" />
     <category term="LinkList" />
     <category term="双向链表" />
-    <category term="Graph" />
+    <category term="Binary tree" />
     <category term="邻接表" />
     <category term="Vector" />
-    <category term="Binary tree" />
     <category term="BFS" />
+    <category term="Graph" />
     <category term="模拟" />
     <category term="邻接矩阵" />
     <category term="DFS" />
     <category term="结构体" />
-    <category term="贪心" />
     <category term="Double类型相等比较" />
+    <category term="贪心" />
     <category term="并查集" />
     <category term="Map" />
     <category term="Pair" />
@@ -36,13 +36,13 @@
     <category term="Numactl" />
     <category term="OpenMP" />
     <category term="Slurm" />
-    <category term="性能分析工具" />
     <category term="Tensorflow" />
+    <category term="性能分析工具" />
     <category term="gcov" />
     <entry>
-        <id>http://example.com/posts/9578eb86.html</id>
+        <id>http://example.com/2022/04/15/Algorithm025/</id>
         <title>L2-013 红色警报 (25 分)</title>
-        <link rel="alternate" href="http://example.com/posts/9578eb86.html"/>
+        <link rel="alternate" href="http://example.com/2022/04/15/Algorithm025/"/>
         <content type="html">&lt;h2 id=&#34;L2-013-红色警报-25-分&#34;&gt;&lt;a href=&#34;#L2-013-红色警报-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-013 红色警报 (25 分)&#34;&gt;&lt;/a&gt;L2-013 红色警报 (25 分)&lt;/h2&gt;&lt;p&gt;战争中保持各个城市间的连通性非常重要。本题要求你编写一个报警程序，当失去一个城市导致国家被分裂为多个无法连通的区域时，就发出红色警报。注意：若该国本来就不完全连通，是分裂的k个区域，而失去一个城市并不改变其他城市之间的连通性，则不要发出警报。&lt;/p&gt;
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;输入在第一行给出两个整数&lt;code&gt;N&lt;/code&gt;（0 &amp;lt; &lt;code&gt;N&lt;/code&gt; ≤ 500）和&lt;code&gt;M&lt;/code&gt;（≤ 5000），分别为城市个数（于是默认城市从0到&lt;code&gt;N&lt;/code&gt;-1编号）和连接两城市的通路条数。随后&lt;code&gt;M&lt;/code&gt;行，每行给出一条通路所连接的两个城市的编号，其间以1个空格分隔。在城市信息之后给出被攻占的信息，即一个正整数&lt;code&gt;K&lt;/code&gt;和随后的&lt;code&gt;K&lt;/code&gt;个被攻占的城市的编号。&lt;/p&gt;
 &lt;p&gt;注意：输入保证给出的被攻占的城市编号都是合法的且无重复，但并不保证给出的通路没有重复。&lt;/p&gt;
@@ -68,9 +68,9 @@
         <updated>2022-04-15T13:09:30.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/posts/286e8c9a.html</id>
+        <id>http://example.com/2021/12/21/algorithm001/</id>
         <title>DFS-深度优先搜索</title>
-        <link rel="alternate" href="http://example.com/posts/286e8c9a.html"/>
+        <link rel="alternate" href="http://example.com/2021/12/21/algorithm001/"/>
         <content type="html">&lt;h1 id=&#34;DFS-深度优先搜索&#34;&gt;&lt;a href=&#34;#DFS-深度优先搜索&#34; class=&#34;headerlink&#34; title=&#34;DFS-深度优先搜索&#34;&gt;&lt;/a&gt;DFS-深度优先搜索&lt;/h1&gt;&lt;h2 id=&#34;样题1-全排列&#34;&gt;&lt;a href=&#34;#样题1-全排列&#34; class=&#34;headerlink&#34; title=&#34;样题1-全排列&#34;&gt;&lt;/a&gt;样题1-全排列&lt;/h2&gt;&lt;h3 id=&#34;题目描述：&#34;&gt;&lt;a href=&#34;#题目描述：&#34; class=&#34;headerlink&#34; title=&#34;题目描述：&#34;&gt;&lt;/a&gt;题目描述：&lt;/h3&gt;&lt;p&gt;输入一个数n，输出n的全排列&lt;/p&gt;
 &lt;h3 id=&#34;程序源代码：&#34;&gt;&lt;a href=&#34;#程序源代码：&#34; class=&#34;headerlink&#34; title=&#34;程序源代码：&#34;&gt;&lt;/a&gt;程序源代码：&lt;/h3&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;36&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;hljs-meta-string&#34;&gt;&amp;lt;bits/stdc++.h&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;using&lt;/span&gt; &lt;span class=&#34;hljs-keyword&#34;&gt;namespace&lt;/span&gt; std;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; n;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; a[&lt;span class=&#34;hljs-number&#34;&gt;100&lt;/span&gt;];&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; book[&lt;span class=&#34;hljs-number&#34;&gt;100&lt;/span&gt;];&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;dfs&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; step)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;/span&gt;&amp;#123;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(step==n+&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;)  &lt;span class=&#34;hljs-comment&#34;&gt;//这里表示dfs结束,没有可以排的数字了&lt;/span&gt;&lt;br&gt;    &amp;#123;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; (i = &lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;;  i&amp;lt;=n ; i++) &amp;#123;&lt;br&gt;            cout&amp;lt;&amp;lt;a[i]&amp;lt;&amp;lt;&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot; &amp;quot;&lt;/span&gt;;&lt;br&gt;        &amp;#125;&lt;br&gt;        cout&amp;lt;&amp;lt;endl;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; ;&lt;br&gt;    &amp;#125;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i=&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;;i&amp;lt;=n;i++)&lt;br&gt;    &amp;#123;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(book[i]==&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;)  &lt;span class=&#34;hljs-comment&#34;&gt;//说明数字i还没有被使用,可以用来排列&lt;/span&gt;&lt;br&gt;        &amp;#123;&lt;br&gt;            a[step]=i;&lt;span class=&#34;hljs-comment&#34;&gt;//排列数字i&lt;/span&gt;&lt;br&gt;            book[i]=&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;;&lt;span class=&#34;hljs-comment&#34;&gt;//标记数字i为已使用&lt;/span&gt;&lt;br&gt;            &lt;span class=&#34;hljs-built_in&#34;&gt;dfs&lt;/span&gt;(step+&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;);&lt;br&gt;            &lt;span class=&#34;hljs-comment&#34;&gt;//继续排列没有使用的数字&lt;/span&gt;&lt;br&gt;            book[i]=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;&lt;br&gt;            &lt;span class=&#34;hljs-comment&#34;&gt;//这里表示dfs调用结束了,意思是数字i已经全部排列完了，但还需要&lt;/span&gt;&lt;br&gt;            &lt;span class=&#34;hljs-comment&#34;&gt;//按照顺序将数字i收回，重新排列。&lt;/span&gt;&lt;br&gt;        &amp;#125;&lt;br&gt;    &amp;#125;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt;;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;br&gt;    cin&amp;gt;&amp;gt;n;&lt;br&gt;    &lt;span class=&#34;hljs-built_in&#34;&gt;dfs&lt;/span&gt;(&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;); &lt;span class=&#34;hljs-comment&#34;&gt;//dfs函数的开始&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 

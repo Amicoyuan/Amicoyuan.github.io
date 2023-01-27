@@ -15,17 +15,17 @@
     <category term="Sort" />
     <category term="LinkList" />
     <category term="双向链表" />
-    <category term="Graph" />
+    <category term="Binary tree" />
     <category term="邻接表" />
     <category term="Vector" />
-    <category term="Binary tree" />
     <category term="BFS" />
+    <category term="Graph" />
     <category term="模拟" />
     <category term="邻接矩阵" />
     <category term="DFS" />
     <category term="结构体" />
-    <category term="贪心" />
     <category term="Double类型相等比较" />
+    <category term="贪心" />
     <category term="并查集" />
     <category term="Map" />
     <category term="Pair" />
@@ -36,13 +36,13 @@
     <category term="Numactl" />
     <category term="OpenMP" />
     <category term="Slurm" />
-    <category term="性能分析工具" />
     <category term="Tensorflow" />
+    <category term="性能分析工具" />
     <category term="gcov" />
     <entry>
-        <id>http://example.com/posts/83fe4875.html</id>
+        <id>http://example.com/2022/06/22/mirror001/</id>
         <title>国内常用镜像源</title>
-        <link rel="alternate" href="http://example.com/posts/83fe4875.html"/>
+        <link rel="alternate" href="http://example.com/2022/06/22/mirror001/"/>
         <content type="html">&lt;h2 id=&#34;国内常用镜像源&#34;&gt;&lt;a href=&#34;#国内常用镜像源&#34; class=&#34;headerlink&#34; title=&#34;国内常用镜像源&#34;&gt;&lt;/a&gt;国内常用镜像源&lt;/h2&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;清华大学： https:&lt;span class=&#34;hljs-comment&#34;&gt;//pypi.tuna.tsinghua.edu.cn/simple/&lt;/span&gt;&lt;br&gt;阿里云： https:&lt;span class=&#34;hljs-comment&#34;&gt;//mirrors.aliyun.com/pypi/simple/&lt;/span&gt;&lt;br&gt;豆瓣： http:&lt;span class=&#34;hljs-comment&#34;&gt;//pypi.douban.com/simple/&lt;/span&gt;&lt;br&gt;中国科学技术大学： http:&lt;span class=&#34;hljs-comment&#34;&gt;//pypi.mirrors.ustc.edu.cn/simple/&lt;/span&gt;&lt;br&gt;华中科技大学：http:&lt;span class=&#34;hljs-comment&#34;&gt;//pypi.hustunique.com/simple/&lt;/span&gt;&lt;br&gt;山东理工大学：http:&lt;span class=&#34;hljs-comment&#34;&gt;//pypi.sdutlinux.org/simple/&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 </content>
