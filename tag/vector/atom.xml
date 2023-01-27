@@ -40,10 +40,10 @@
     <category term="性能分析工具" />
     <category term="gcov" />
     <entry>
-        <id>http://example.com/2022/04/23/Algorithm031/</id>
+        <id>http://example.com/posts/c3cc0bdb.html</id>
         <title>L2-039 清点代码库 (25 分)</title>
-        <link rel="alternate" href="http://example.com/2022/04/23/Algorithm031/"/>
-        <content type="html">&lt;h2 id=&#34;L2-039-清点代码库-25-分&#34;&gt;&lt;a href=&#34;#L2-039-清点代码库-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-039 清点代码库 (25 分)&#34;&gt;&lt;/a&gt;L2-039 清点代码库 (25 分)&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;/2022/04/23/Algorithm031/58e6a034-993d-4049-8deb-23d769c8597e.jpg&#34; alt=&#34;code.jpg&#34;&gt;&lt;/p&gt;
+        <link rel="alternate" href="http://example.com/posts/c3cc0bdb.html"/>
+        <content type="html">&lt;h2 id=&#34;L2-039-清点代码库-25-分&#34;&gt;&lt;a href=&#34;#L2-039-清点代码库-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-039 清点代码库 (25 分)&#34;&gt;&lt;/a&gt;L2-039 清点代码库 (25 分)&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;/posts/c3cc0bdb.htm/58e6a034-993d-4049-8deb-23d769c8597e.jpg&#34; alt=&#34;code.jpg&#34;&gt;&lt;/p&gt;
 &lt;p&gt;上图转自新浪微博：“阿里代码库有几亿行代码，但其中有很多功能重复的代码，比如单单快排就被重写了几百遍。请设计一个程序，能够将代码库中所有功能重复的代码找出。各位大佬有啥想法，我当时就懵了，然后就挂了。。。”&lt;/p&gt;
 &lt;p&gt;这里我们把问题简化一下：首先假设两个功能模块如果接受同样的输入，总是给出同样的输出，则它们就是功能重复的；其次我们把每个模块的输出都简化为一个整数（在 &lt;strong&gt;int&lt;/strong&gt; 范围内）。于是我们可以设计一系列输入，检查所有功能模块的对应输出，从而查出功能重复的代码。你的任务就是设计并实现这个简化问题的解决方案。&lt;/p&gt;
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;输入在第一行中给出 2 个正整数，依次为 &lt;em&gt;N&lt;/em&gt;（≤104）和 &lt;em&gt;M&lt;/em&gt;（≤102），对应功能模块的个数和系列测试输入的个数。&lt;/p&gt;
@@ -69,9 +69,9 @@
         <updated>2022-04-23T13:44:47.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2022/04/13/Algorithm022/</id>
+        <id>http://example.com/posts/5297b1f9.html</id>
         <title>L2-031 深入虎穴 (25 分)</title>
-        <link rel="alternate" href="http://example.com/2022/04/13/Algorithm022/"/>
+        <link rel="alternate" href="http://example.com/posts/5297b1f9.html"/>
         <content type="html">&lt;p&gt;著名的王牌间谍 007 需要执行一次任务，获取敌方的机密情报。已知情报藏在一个地下迷宫里，迷宫只有一个入口，里面有很多条通路，每条路通向一扇门。每一扇门背后或者是一个房间，或者又有很多条路，同样是每条路通向一扇门…… 他的手里有一张表格，是其他间谍帮他收集到的情报，他们记下了每扇门的编号，以及这扇门背后的每一条通路所到达的门的编号。007 发现不存在两条路通向同一扇门。&lt;/p&gt;
 &lt;p&gt;内线告诉他，情报就藏在迷宫的最深处。但是这个迷宫太大了，他需要你的帮助 —— 请编程帮他找出距离入口最远的那扇门。&lt;/p&gt;
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;输入首先在一行中给出正整数 &lt;em&gt;N&lt;/em&gt;（&amp;lt;105），是门的数量。最后 &lt;em&gt;N&lt;/em&gt; 行，第 &lt;em&gt;i&lt;/em&gt; 行（1≤&lt;em&gt;i&lt;/em&gt;≤&lt;em&gt;N&lt;/em&gt;）按以下格式描述编号为 &lt;em&gt;i&lt;/em&gt; 的那扇门背后能通向的门：&lt;/p&gt;
@@ -98,9 +98,9 @@
         <updated>2022-04-13T11:09:46.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2022/04/13/Algorithm021/</id>
+        <id>http://example.com/posts/4f5dbf33.html</id>
         <title>L2-040 哲哲打游戏 (25 分)</title>
-        <link rel="alternate" href="http://example.com/2022/04/13/Algorithm021/"/>
+        <link rel="alternate" href="http://example.com/posts/4f5dbf33.html"/>
         <content type="html">&lt;h2 id=&#34;L2-040-哲哲打游戏-25-分&#34;&gt;&lt;a href=&#34;#L2-040-哲哲打游戏-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-040 哲哲打游戏 (25 分)&#34;&gt;&lt;/a&gt;&lt;strong&gt;L2-040 哲哲打游戏 (25 分)&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;哲哲是一位硬核游戏玩家。最近一款名叫《达诺达诺》的新游戏刚刚上市，哲哲自然要快速攻略游戏，守护硬核游戏玩家的一切！&lt;/p&gt;
 &lt;p&gt;为简化模型，我们不妨假设游戏有 &lt;em&gt;N&lt;/em&gt; 个剧情点，通过游戏里不同的操作或选择可以从某个剧情点去往另外一个剧情点。此外，游戏还设置了一些&lt;strong&gt;存档&lt;/strong&gt;，在某个剧情点可以将玩家的游戏进度保存在一个档位上，读取存档后可以回到剧情点，重新进行操作或者选择，到达不同的剧情点。&lt;/p&gt;
 &lt;p&gt;为了追踪硬核游戏玩家哲哲的攻略进度，你打算写一个程序来完成这个工作。假设你已经知道了游戏的全部剧情点和流程，以及哲哲的游戏操作，请你输出哲哲的游戏进度。&lt;/p&gt;
@@ -136,9 +136,9 @@
         <updated>2022-04-13T11:09:41.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2022/04/13/Algorithm019/</id>
+        <id>http://example.com/posts/c3f0f4cb.html</id>
         <title>L2-026 小字辈 (25 分)</title>
-        <link rel="alternate" href="http://example.com/2022/04/13/Algorithm019/"/>
+        <link rel="alternate" href="http://example.com/posts/c3f0f4cb.html"/>
         <content type="html">&lt;h2 id=&#34;L2-026-小字辈-25-分&#34;&gt;&lt;a href=&#34;#L2-026-小字辈-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-026 小字辈 (25 分)&#34;&gt;&lt;/a&gt;&lt;strong&gt;L2-026 小字辈 (25 分)&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;本题给定一个庞大家族的家谱，要请你给出最小一辈的名单。&lt;/p&gt;
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;输入在第一行给出家族人口总数 N（不超过 100 000 的正整数） —— 简单起见，我们把家族成员从 1 到 N 编号。随后第二行给出 N 个编号，其中第 i 个编号对应第 i 位成员的父&amp;#x2F;母。家谱中辈分最高的老祖宗对应的父&amp;#x2F;母编号为 -1。一行中的数字间以空格分隔。&lt;/p&gt;
 &lt;h3 id=&#34;输出格式：&#34;&gt;&lt;a href=&#34;#输出格式：&#34; class=&#34;headerlink&#34; title=&#34;输出格式：&#34;&gt;&lt;/a&gt;输出格式：&lt;/h3&gt;&lt;p&gt;首先输出最小的辈分（老祖宗的辈分为 1，以下逐级递增）。然后在第二行按递增顺序输出辈分最小的成员的编号。编号间以一个空格分隔，行首尾不得有多余空格。&lt;/p&gt;
@@ -161,14 +161,14 @@
         <updated>2022-04-13T01:45:49.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2022/04/12/Algorithm018/</id>
+        <id>http://example.com/posts/f073a4bd.html</id>
         <title>L2-023 图着色问题 (25 分)</title>
-        <link rel="alternate" href="http://example.com/2022/04/12/Algorithm018/"/>
+        <link rel="alternate" href="http://example.com/posts/f073a4bd.html"/>
         <content type="html">&lt;h2 id=&#34;L2-023-图着色问题-25-分&#34;&gt;&lt;a href=&#34;#L2-023-图着色问题-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-023 图着色问题 (25 分)&#34;&gt;&lt;/a&gt;L2-023 图着色问题 (25 分)&lt;/h2&gt;&lt;p&gt;图着色问题是一个著名的NP完全问题。给定无向图&lt;em&gt;G&lt;/em&gt;&amp;#x3D;(&lt;em&gt;V&lt;/em&gt;,&lt;em&gt;E&lt;/em&gt;)，问可否用&lt;em&gt;K&lt;/em&gt;种颜色为&lt;em&gt;V&lt;/em&gt;中的每一个顶点分配一种颜色，使得不会有两个相邻顶点具有同一种颜色？&lt;/p&gt;
 &lt;p&gt;但本题并不是要你解决这个着色问题，而是对给定的一种颜色分配，请你判断这是否是图着色问题的一个解。&lt;/p&gt;
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;输入在第一行给出3个整数&lt;em&gt;V&lt;/em&gt;（0&amp;lt;&lt;em&gt;V&lt;/em&gt;≤500）、&lt;em&gt;E&lt;/em&gt;（≥0）和&lt;em&gt;K&lt;/em&gt;（0&amp;lt;&lt;em&gt;K&lt;/em&gt;≤&lt;em&gt;V&lt;/em&gt;），分别是无向图的顶点数、边数、以及颜色数。顶点和颜色都从1到&lt;em&gt;V&lt;/em&gt;编号。随后&lt;em&gt;E&lt;/em&gt;行，每行给出一条边的两个端点的编号。在图的信息给出之后，给出了一个正整数&lt;em&gt;N&lt;/em&gt;（≤20），是待检查的颜色分配方案的个数。随后&lt;em&gt;N&lt;/em&gt;行，每行顺次给出&lt;em&gt;V&lt;/em&gt;个顶点的颜色（第&lt;em&gt;i&lt;/em&gt;个数字表示第&lt;em&gt;i&lt;/em&gt;个顶点的颜色），数字间以空格分隔。题目保证给定的无向图是合法的（即不存在自回路和重边）。&lt;/p&gt;
 &lt;h3 id=&#34;输出格式：&#34;&gt;&lt;a href=&#34;#输出格式：&#34; class=&#34;headerlink&#34; title=&#34;输出格式：&#34;&gt;&lt;/a&gt;输出格式：&lt;/h3&gt;&lt;p&gt;对每种颜色分配方案，如果是图着色问题的一个解则输出&lt;code&gt;Yes&lt;/code&gt;，否则输出&lt;code&gt;No&lt;/code&gt;，每句占一行。&lt;/p&gt;
-&lt;h3 id=&#34;输入样例：&#34;&gt;&lt;a href=&#34;#输入样例：&#34; class=&#34;headerlink&#34; title=&#34;输入样例：&#34;&gt;&lt;/a&gt;输入样例：&lt;/h3&gt;&lt;img src=&#34;/2022/04/12/Algorithm018/graph.png&#34; alt=&#34;graph&#34; style=&#34;zoom: 67%;&#34;&gt;
+&lt;h3 id=&#34;输入样例：&#34;&gt;&lt;a href=&#34;#输入样例：&#34; class=&#34;headerlink&#34; title=&#34;输入样例：&#34;&gt;&lt;/a&gt;输入样例：&lt;/h3&gt;&lt;img src=&#34;/posts/f073a4bd.htm/graph.png&#34; alt=&#34;graph&#34; style=&#34;zoom: 67%;&#34;&gt;
 
 &lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs in&#34;&gt;6 8 3&lt;br&gt;2 1&lt;br&gt;1 3&lt;br&gt;4 6&lt;br&gt;2 5&lt;br&gt;2 4&lt;br&gt;5 4&lt;br&gt;5 6&lt;br&gt;3 6&lt;br&gt;4&lt;br&gt;1 2 3 3 1 2&lt;br&gt;4 5 6 6 4 5&lt;br&gt;1 2 3 4 5 6&lt;br&gt;2 3 4 2 3 4&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 

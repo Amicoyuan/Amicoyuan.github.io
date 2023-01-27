@@ -40,23 +40,23 @@
     <category term="性能分析工具" />
     <category term="gcov" />
     <entry>
-        <id>http://example.com/2022/05/20/slurm001/</id>
+        <id>http://example.com/posts/b451a697.html</id>
         <title>Slurm</title>
-        <link rel="alternate" href="http://example.com/2022/05/20/slurm001/"/>
+        <link rel="alternate" href="http://example.com/posts/b451a697.html"/>
         <content type="html">&lt;h2 id=&#34;Slurm&#34;&gt;&lt;a href=&#34;#Slurm&#34; class=&#34;headerlink&#34; title=&#34;Slurm&#34;&gt;&lt;/a&gt;Slurm&lt;/h2&gt;&lt;h4 id=&#34;1-sstat-查看RUNNING作业&#34;&gt;&lt;a href=&#34;#1-sstat-查看RUNNING作业&#34; class=&#34;headerlink&#34; title=&#34;1.sstat 查看RUNNING作业&#34;&gt;&lt;/a&gt;1.sstat 查看RUNNING作业&lt;/h4&gt;&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs shell&#34;&gt;sstat -e&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
-&lt;p&gt;&lt;img src=&#34;/2022/05/20/slurm001/image-20220520174453969.png&#34; alt=&#34;image-20220520174453969&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/posts/b451a697.htm/image-20220520174453969.png&#34; alt=&#34;image-20220520174453969&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;使用举例：&lt;/strong&gt;&lt;/p&gt;
 &lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs shell&#34;&gt;sstat -a --format=&amp;quot;JobId,Pids,AveCPU,AveRSS,MaxRSS&amp;quot;  1755818&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
-&lt;p&gt;&lt;img src=&#34;/2022/05/20/slurm001/image-20220520175001331.png&#34; alt=&#34;image-20220520175001331&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/posts/b451a697.htm/image-20220520175001331.png&#34; alt=&#34;image-20220520175001331&#34;&gt;&lt;/p&gt;
 &lt;h4 id=&#34;2-sacct-查看FINISHED作业&#34;&gt;&lt;a href=&#34;#2-sacct-查看FINISHED作业&#34; class=&#34;headerlink&#34; title=&#34;2.sacct 查看FINISHED作业&#34;&gt;&lt;/a&gt;2.sacct 查看FINISHED作业&lt;/h4&gt;&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs shell&#34;&gt;sacct -e&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
-&lt;p&gt;&lt;img src=&#34;/2022/05/20/slurm001/image-20220520174622868.png&#34; alt=&#34;image-20220520174622868&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/posts/b451a697.htm/image-20220520174622868.png&#34; alt=&#34;image-20220520174622868&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;使用举例：&lt;/strong&gt;&lt;/p&gt;
 &lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs shell&#34;&gt;sacct --format=&amp;quot;JobId,Elapsed,CPUTime,CPUTimeRAW,AveCPU,TotalCPU,UserCPU,SystemCPU,AveRSS,MaxRSS&amp;quot; -j 1754217&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
-&lt;p&gt;&lt;img src=&#34;/2022/05/20/slurm001/image-20220520174807162.png&#34; alt=&#34;image-20220520174807162&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/posts/b451a697.htm/image-20220520174807162.png&#34; alt=&#34;image-20220520174807162&#34;&gt;&lt;/p&gt;
 &lt;h4 id=&#34;参考资料：&#34;&gt;&lt;a href=&#34;#参考资料：&#34; class=&#34;headerlink&#34; title=&#34;参考资料：&#34;&gt;&lt;/a&gt;参考资料：&lt;/h4&gt;&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/kongxx/article/details/52556943&#34;&gt;(28条消息) Slurm查看作业CPU和MEM_kongxx的博客-CSDN博客_slurm 查看节点&lt;/a&gt;&lt;/p&gt;
 </content>
         <category term="Linux" />
@@ -64,27 +64,27 @@
         <updated>2022-05-20T09:43:02.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2022/05/20/numactl001/</id>
+        <id>http://example.com/posts/baf4b3d6.html</id>
         <title>numactl</title>
-        <link rel="alternate" href="http://example.com/2022/05/20/numactl001/"/>
+        <link rel="alternate" href="http://example.com/posts/baf4b3d6.html"/>
         <content type="html">&lt;ol&gt;
 &lt;li&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs shell&#34;&gt;numactl --hardware&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
-&lt;p&gt;&lt;img src=&#34;/2022/05/20/numactl001/image-20220520173911653.png&#34; alt=&#34;image-20220520173911653&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/posts/baf4b3d6.htm/image-20220520173911653.png&#34; alt=&#34;image-20220520173911653&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs shelll&#34;&gt;numastat&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
-&lt;p&gt;&lt;img src=&#34;/2022/05/20/numactl001/image-20220520174030171.png&#34; alt=&#34;image-20220520174030171&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/posts/baf4b3d6.htm/image-20220520174030171.png&#34; alt=&#34;image-20220520174030171&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;3&#34;&gt;
 &lt;li&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;numactl --show&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
-&lt;p&gt;&lt;img src=&#34;/2022/05/20/numactl001/image-20220520174148487.png&#34; alt=&#34;image-20220520174148487&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/posts/baf4b3d6.htm/image-20220520174148487.png&#34; alt=&#34;image-20220520174148487&#34;&gt;&lt;/p&gt;
 &lt;h5 id=&#34;参考资料：&#34;&gt;&lt;a href=&#34;#参考资料：&#34; class=&#34;headerlink&#34; title=&#34;参考资料：&#34;&gt;&lt;/a&gt;参考资料：&lt;/h5&gt;&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/qccz123456/article/details/81979819&#34;&gt;(28条消息) Linux工具之numactl_qccz123456的博客-CSDN博客_numactl&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://baijiahao.baidu.com/s?id=1699088343604813491&amp;wfr=spider&amp;for=pc&amp;searchword=numactl&#34;&gt;宋宝华：为什么numactl内存绑定对代码段不起作用 (baidu.com)&lt;/a&gt;&lt;/p&gt;
 </content>
@@ -93,31 +93,31 @@
         <updated>2022-05-20T09:35:59.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2022/05/20/Linux002/</id>
+        <id>http://example.com/posts/60ffd68e.html</id>
         <title>linux的jobs,fg,bg命令</title>
-        <link rel="alternate" href="http://example.com/2022/05/20/Linux002/"/>
+        <link rel="alternate" href="http://example.com/posts/60ffd68e.html"/>
         <content type="html">&lt;h3 id=&#34;linux让前台程序脱离终端运行&#34;&gt;&lt;a href=&#34;#linux让前台程序脱离终端运行&#34; class=&#34;headerlink&#34; title=&#34;linux让前台程序脱离终端运行&#34;&gt;&lt;/a&gt;linux让前台程序脱离终端运行&lt;/h3&gt;&lt;p&gt;1.首先运行你的程序&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/2022/05/20/Linux002/image-20220520171436032.png&#34; alt=&#34;image-20220520171436032&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/posts/60ffd68e.htm/image-20220520171436032.png&#34; alt=&#34;image-20220520171436032&#34;&gt;&lt;/p&gt;
 &lt;p&gt;2.随后使用Ctrl + z，挂起你的进程&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/2022/05/20/Linux002/image-20220520171510946.png&#34; alt=&#34;image-20220520171510946&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/posts/60ffd68e.htm/image-20220520171510946.png&#34; alt=&#34;image-20220520171510946&#34;&gt;&lt;/p&gt;
 &lt;p&gt;3.然后使用jobs查看所有的进程&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/2022/05/20/Linux002/image-20220520171913979.png&#34; alt=&#34;image-20220520171913979&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/posts/60ffd68e.htm/image-20220520171913979.png&#34; alt=&#34;image-20220520171913979&#34;&gt;&lt;/p&gt;
 &lt;p&gt;4.随后使用bg+id，表示该任务为后台1号任务&lt;/p&gt;
 &lt;p&gt;bg命令用于将作业放到后台运行，使前台可以执行其他任务&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/2022/05/20/Linux002/image-20220520172110992.png&#34; alt=&#34;image-20220520172110992&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/posts/60ffd68e.htm/image-20220520172110992.png&#34; alt=&#34;image-20220520172110992&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;linux让后台程序移动到前台终端&#34;&gt;&lt;a href=&#34;#linux让后台程序移动到前台终端&#34; class=&#34;headerlink&#34; title=&#34;linux让后台程序移动到前台终端&#34;&gt;&lt;/a&gt;linux让后台程序移动到前台终端&lt;/h3&gt;&lt;p&gt;Linux常用命令fg主要用于将后台作业移动到前台终端运行&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/2022/05/20/Linux002/image-20220520172358345.png&#34; alt=&#34;image-20220520172358345&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/posts/60ffd68e.htm/image-20220520172358345.png&#34; alt=&#34;image-20220520172358345&#34;&gt;&lt;/p&gt;
 </content>
         <category term="Linux" />
         <updated>2022-05-20T09:13:08.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2022/05/20/Linux001/</id>
+        <id>http://example.com/posts/519ff8b5.html</id>
         <title>Linux常用指令</title>
-        <link rel="alternate" href="http://example.com/2022/05/20/Linux001/"/>
+        <link rel="alternate" href="http://example.com/posts/519ff8b5.html"/>
         <content type="html">&lt;h2 id=&#34;Linux常用指令&#34;&gt;&lt;a href=&#34;#Linux常用指令&#34; class=&#34;headerlink&#34; title=&#34;Linux常用指令&#34;&gt;&lt;/a&gt;Linux常用指令&lt;/h2&gt;&lt;h4 id=&#34;杀死进程&#34;&gt;&lt;a href=&#34;#杀死进程&#34; class=&#34;headerlink&#34; title=&#34;杀死进程&#34;&gt;&lt;/a&gt;杀死进程&lt;/h4&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;kill &lt;span class=&#34;hljs-number&#34;&gt;-9&lt;/span&gt; id&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
-&lt;p&gt;&lt;img src=&#34;/2022/05/20/Linux001/image-20220520171246860.png&#34; alt=&#34;image-20220520171246860&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/posts/519ff8b5.htm/image-20220520171246860.png&#34; alt=&#34;image-20220520171246860&#34;&gt;&lt;/p&gt;
 </content>
         <category term="Linux" />
         <updated>2022-05-20T09:08:45.000Z</updated>

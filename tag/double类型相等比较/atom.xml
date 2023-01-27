@@ -40,9 +40,9 @@
     <category term="性能分析工具" />
     <category term="gcov" />
     <entry>
-        <id>http://example.com/2022/04/16/Algorithm027/</id>
+        <id>http://example.com/posts/e7e148d.html</id>
         <title>L2-009 抢红包 (25 分)</title>
-        <link rel="alternate" href="http://example.com/2022/04/16/Algorithm027/"/>
+        <link rel="alternate" href="http://example.com/posts/e7e148d.html"/>
         <content type="html">&lt;h2 id=&#34;L2-009-抢红包-25-分&#34;&gt;&lt;a href=&#34;#L2-009-抢红包-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-009 抢红包 (25 分)&#34;&gt;&lt;/a&gt;&lt;strong&gt;L2-009 抢红包 (25 分)&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;没有人没抢过红包吧…… 这里给出&lt;em&gt;N&lt;/em&gt;个人之间互相发红包、抢红包的记录，请你统计一下他们抢红包的收获。&lt;/p&gt;
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;输入第一行给出一个正整数&lt;em&gt;N&lt;/em&gt;（≤104），即参与发红包和抢红包的总人数，则这些人从1到&lt;em&gt;N&lt;/em&gt;编号。随后&lt;em&gt;N&lt;/em&gt;行，第&lt;em&gt;i&lt;/em&gt;行给出编号为&lt;em&gt;i&lt;/em&gt;的人发红包的记录，格式如下：&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;K     N&lt;/em&gt;1 &lt;em&gt;P&lt;/em&gt;1⋯ NK PK&lt;/p&gt;

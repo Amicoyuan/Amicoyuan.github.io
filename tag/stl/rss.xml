@@ -43,9 +43,9 @@
         <category>性能分析工具</category>
         <category>gcov</category>
         <item>
-            <guid isPermalink="true">http://example.com/2022/04/16/Algorithm029/</guid>
+            <guid isPermalink="true">http://example.com/posts/6c4fe984.html</guid>
             <title>STL中map的使用</title>
-            <link>http://example.com/2022/04/16/Algorithm029/</link>
+            <link>http://example.com/posts/6c4fe984.html</link>
             <category>STL</category>
             <category>Map</category>
             <pubDate>Sat, 16 Apr 2022 16:26:03 +0800</pubDate>
@@ -71,9 +71,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2022/04/11/Algorithm016/</guid>
+            <guid isPermalink="true">http://example.com/posts/aab84a2d.html</guid>
             <title>L2-021 点赞狂魔 (25 分)</title>
-            <link>http://example.com/2022/04/11/Algorithm016/</link>
+            <link>http://example.com/posts/aab84a2d.html</link>
             <category>STL</category>
             <category>C++</category>
             <category>Set</category>
@@ -95,9 +95,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2022/04/08/Algorithm015/</guid>
+            <guid isPermalink="true">http://example.com/posts/f801da6b.html</guid>
             <title>C++的STL中字符串string自带方法find查找</title>
-            <link>http://example.com/2022/04/08/Algorithm015/</link>
+            <link>http://example.com/posts/f801da6b.html</link>
             <category>String</category>
             <category>Find</category>
             <category>STL</category>
@@ -110,7 +110,7 @@
 &lt;p&gt;要是没有找到，返回的是str::npos&lt;br&gt;注意，只有string的find方法是返回的下标，因为string是顺序索引，set,map,multiset,multimap都不是顺序索引的数据结构，所以返回的是迭代器。&lt;/p&gt;
 &lt;h2 id=&#34;样例一-L1-070-吃火锅-15-分&#34;&gt;&lt;a href=&#34;#样例一-L1-070-吃火锅-15-分&#34; class=&#34;headerlink&#34; title=&#34;样例一:L1-070 吃火锅 (15 分)&#34;&gt;&lt;/a&gt;样例一:&lt;strong&gt;L1-070 吃火锅 (15 分)&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;题目链接：&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://pintia.cn/problem-sets/994805046380707840/problems/1336215880692482053&#34;&gt;https://pintia.cn/problem-sets/994805046380707840/problems/1336215880692482053&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/2022/04/08/Algorithm015/68518b64-f2f7-4694-aaeb-d32afe657f7b.jpg&#34; alt=&#34;chg.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/posts/f801da6b.htm/68518b64-f2f7-4694-aaeb-d32afe657f7b.jpg&#34; alt=&#34;chg.jpg&#34;&gt;&lt;/p&gt;
 &lt;p&gt;以上图片来自微信朋友圈：这种天气你有什么破事打电话给我基本没用。但是如果你说“吃火锅”，那就厉害了，我们的故事就开始了。&lt;/p&gt;
 &lt;p&gt;本题要求你实现一个程序，自动检查你朋友给你发来的信息里有没有 &lt;code&gt;chi1 huo3 guo1&lt;/code&gt;。&lt;/p&gt;
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;输入每行给出一句不超过 80 个字符的、以回车结尾的朋友信息，信息为非空字符串，仅包括字母、数字、空格、可见的半角标点符号。当读到某一行只有一个英文句点 &lt;code&gt;.&lt;/code&gt; 时，输入结束，此行不算在朋友信息里。&lt;/p&gt;

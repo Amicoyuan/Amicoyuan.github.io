@@ -2,7 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://example.com/2023/01/17/cuda005/</loc>
+    <loc>http://example.com/about/index.html</loc>
+    
+    <lastmod>2023-01-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/posts/542b3a64.html</loc>
     
     <lastmod>2023-01-17</lastmod>
     
@@ -11,7 +20,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2023/01/17/cuda004/</loc>
+    <loc>http://example.com/posts/d012374.html</loc>
     
     <lastmod>2023-01-17</lastmod>
     
@@ -20,7 +29,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2023/01/17/cuda003/</loc>
+    <loc>http://example.com/posts/6fe1d3e0.html</loc>
     
     <lastmod>2023-01-17</lastmod>
     
@@ -29,7 +38,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2023/01/16/cuda002/</loc>
+    <loc>http://example.com/posts/4fa45d36.html</loc>
     
     <lastmod>2023-01-16</lastmod>
     
@@ -38,7 +47,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2023/01/16/cuda001/</loc>
+    <loc>http://example.com/posts/a5ec88a5.html</loc>
     
     <lastmod>2023-01-16</lastmod>
     
@@ -47,7 +56,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2023/01/14/openmp006/</loc>
+    <loc>http://example.com/posts/f1b4c4f6.html</loc>
     
     <lastmod>2023-01-16</lastmod>
     
@@ -56,7 +65,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2023/01/14/openmp005/</loc>
+    <loc>http://example.com/posts/dffd148.html</loc>
     
     <lastmod>2023-01-14</lastmod>
     
@@ -65,7 +74,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2023/01/13/openmp004/</loc>
+    <loc>http://example.com/posts/e0a4021f.html</loc>
     
     <lastmod>2023-01-13</lastmod>
     
@@ -74,7 +83,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2023/01/09/openmp003/</loc>
+    <loc>http://example.com/posts/27df7715.html</loc>
     
     <lastmod>2023-01-09</lastmod>
     
@@ -83,7 +92,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2023/01/03/openmp001/</loc>
+    <loc>http://example.com/posts/c48a3125.html</loc>
     
     <lastmod>2023-01-09</lastmod>
     
@@ -92,7 +101,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2023/01/06/openmp002/</loc>
+    <loc>http://example.com/posts/d2c11083.html</loc>
     
     <lastmod>2023-01-09</lastmod>
     
@@ -110,7 +119,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/06/12/%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90/</loc>
+    <loc>http://example.com/posts/7a86aa54.html</loc>
     
     <lastmod>2022-12-30</lastmod>
     
@@ -119,7 +128,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/05/20/Linux002/</loc>
+    <loc>http://example.com/posts/60ffd68e.html</loc>
     
     <lastmod>2022-12-30</lastmod>
     
@@ -128,7 +137,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/05/20/Linux001/</loc>
+    <loc>http://example.com/posts/519ff8b5.html</loc>
     
     <lastmod>2022-12-30</lastmod>
     
@@ -137,16 +146,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/about/index.html</loc>
-    
-    <lastmod>2022-12-30</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/2022/06/22/mirror001/</loc>
+    <loc>http://example.com/posts/83fe4875.html</loc>
     
     <lastmod>2022-06-23</lastmod>
     
@@ -155,7 +155,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/05/20/slurm001/</loc>
+    <loc>http://example.com/posts/b451a697.html</loc>
     
     <lastmod>2022-05-20</lastmod>
     
@@ -164,7 +164,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/05/20/numactl001/</loc>
+    <loc>http://example.com/posts/baf4b3d6.html</loc>
     
     <lastmod>2022-05-20</lastmod>
     
@@ -173,7 +173,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/05/08/tool004/</loc>
+    <loc>http://example.com/posts/e1c9d847.html</loc>
     
     <lastmod>2022-05-08</lastmod>
     
@@ -182,7 +182,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/04/23/Algorithm032/</loc>
+    <loc>http://example.com/posts/57e5cdd2.html</loc>
     
     <lastmod>2022-04-23</lastmod>
     
@@ -191,7 +191,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/04/23/Algorithm031/</loc>
+    <loc>http://example.com/posts/c3cc0bdb.html</loc>
     
     <lastmod>2022-04-23</lastmod>
     
@@ -200,7 +200,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/04/23/Algorithm030/</loc>
+    <loc>http://example.com/posts/660ce66a.html</loc>
     
     <lastmod>2022-04-23</lastmod>
     
@@ -209,7 +209,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/04/16/Algorithm029/</loc>
+    <loc>http://example.com/posts/6c4fe984.html</loc>
     
     <lastmod>2022-04-16</lastmod>
     
@@ -218,7 +218,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/04/16/Algorithm028/</loc>
+    <loc>http://example.com/posts/3f37820e.html</loc>
     
     <lastmod>2022-04-16</lastmod>
     
@@ -227,7 +227,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/04/16/Algorithm027/</loc>
+    <loc>http://example.com/posts/e7e148d.html</loc>
     
     <lastmod>2022-04-16</lastmod>
     
@@ -236,7 +236,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/04/15/Algorithm026/</loc>
+    <loc>http://example.com/posts/d1725e85.html</loc>
     
     <lastmod>2022-04-15</lastmod>
     
@@ -245,7 +245,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/04/15/Algorithm025/</loc>
+    <loc>http://example.com/posts/9578eb86.html</loc>
     
     <lastmod>2022-04-15</lastmod>
     
@@ -254,7 +254,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/04/14/Algorithm024/</loc>
+    <loc>http://example.com/posts/e6b4ff6a.html</loc>
     
     <lastmod>2022-04-14</lastmod>
     
@@ -263,7 +263,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/04/14/Algorithm023/</loc>
+    <loc>http://example.com/posts/2f9775a0.html</loc>
     
     <lastmod>2022-04-14</lastmod>
     
@@ -272,7 +272,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/04/13/Algorithm022/</loc>
+    <loc>http://example.com/posts/5297b1f9.html</loc>
     
     <lastmod>2022-04-13</lastmod>
     
@@ -281,7 +281,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/04/13/Algorithm021/</loc>
+    <loc>http://example.com/posts/4f5dbf33.html</loc>
     
     <lastmod>2022-04-13</lastmod>
     
@@ -290,7 +290,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/04/13/Algorithm019/</loc>
+    <loc>http://example.com/posts/c3f0f4cb.html</loc>
     
     <lastmod>2022-04-13</lastmod>
     
@@ -299,7 +299,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/04/12/Algorithm018/</loc>
+    <loc>http://example.com/posts/f073a4bd.html</loc>
     
     <lastmod>2022-04-13</lastmod>
     
@@ -308,7 +308,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/04/11/Algorithm016/</loc>
+    <loc>http://example.com/posts/aab84a2d.html</loc>
     
     <lastmod>2022-04-13</lastmod>
     
@@ -317,7 +317,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/04/13/Algorithm020/</loc>
+    <loc>http://example.com/posts/d15ae7b2.html</loc>
     
     <lastmod>2022-04-13</lastmod>
     
@@ -326,7 +326,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/04/12/Algorithm017/</loc>
+    <loc>http://example.com/posts/cea437a.html</loc>
     
     <lastmod>2022-04-12</lastmod>
     
@@ -335,7 +335,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/04/08/Algorithm015/</loc>
+    <loc>http://example.com/posts/f801da6b.html</loc>
     
     <lastmod>2022-04-08</lastmod>
     
@@ -344,7 +344,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/04/07/Algorithm014/</loc>
+    <loc>http://example.com/posts/bbb783c5.html</loc>
     
     <lastmod>2022-04-07</lastmod>
     
@@ -353,7 +353,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/04/06/Algorithm011/</loc>
+    <loc>http://example.com/posts/ec26e8a3.html</loc>
     
     <lastmod>2022-04-06</lastmod>
     
@@ -362,7 +362,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/04/06/Algorithm012/</loc>
+    <loc>http://example.com/posts/de8d2b40.html</loc>
     
     <lastmod>2022-04-06</lastmod>
     
@@ -371,7 +371,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/03/28/Algorithm007/</loc>
+    <loc>http://example.com/posts/8c3d792d.html</loc>
     
     <lastmod>2022-04-06</lastmod>
     
@@ -380,7 +380,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/04/02/mpi006/</loc>
+    <loc>http://example.com/posts/e92f0812.html</loc>
     
     <lastmod>2022-04-03</lastmod>
     
@@ -389,7 +389,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/03/31/Algorithm010/</loc>
+    <loc>http://example.com/posts/b6c47025.html</loc>
     
     <lastmod>2022-04-01</lastmod>
     
@@ -398,7 +398,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/03/30/Algorithm009/</loc>
+    <loc>http://example.com/posts/1f4ac2fb.html</loc>
     
     <lastmod>2022-04-01</lastmod>
     
@@ -407,7 +407,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/03/29/Algorithm008/</loc>
+    <loc>http://example.com/posts/1387c3a8.html</loc>
     
     <lastmod>2022-03-29</lastmod>
     
@@ -416,7 +416,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/03/28/Algorithm006/</loc>
+    <loc>http://example.com/posts/102e5a59.html</loc>
     
     <lastmod>2022-03-28</lastmod>
     
@@ -425,7 +425,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/03/11/Algorithm005/</loc>
+    <loc>http://example.com/posts/602ee0a8.html</loc>
     
     <lastmod>2022-03-11</lastmod>
     
@@ -434,7 +434,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/01/19/tool003/</loc>
+    <loc>http://example.com/posts/36bfc6de.html</loc>
     
     <lastmod>2022-01-19</lastmod>
     
@@ -443,7 +443,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/01/18/tool002/</loc>
+    <loc>http://example.com/posts/738721a6.html</loc>
     
     <lastmod>2022-01-18</lastmod>
     
@@ -452,7 +452,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/01/17/AVX005/</loc>
+    <loc>http://example.com/posts/289d74b2.html</loc>
     
     <lastmod>2022-01-17</lastmod>
     
@@ -461,7 +461,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/01/17/AVX004/</loc>
+    <loc>http://example.com/posts/e30c6743.html</loc>
     
     <lastmod>2022-01-17</lastmod>
     
@@ -470,7 +470,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/01/09/tool001/</loc>
+    <loc>http://example.com/posts/a13e6ad5.html</loc>
     
     <lastmod>2022-01-09</lastmod>
     
@@ -479,7 +479,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/01/04/Algorithm004/</loc>
+    <loc>http://example.com/posts/c517589e.html</loc>
     
     <lastmod>2022-01-04</lastmod>
     
@@ -488,7 +488,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/01/03/Algorithm003/</loc>
+    <loc>http://example.com/posts/ed427eb.html</loc>
     
     <lastmod>2022-01-04</lastmod>
     
@@ -497,7 +497,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/01/01/mpi005/</loc>
+    <loc>http://example.com/posts/e92b935c.html</loc>
     
     <lastmod>2022-01-01</lastmod>
     
@@ -506,7 +506,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2021/12/21/algorithm001/</loc>
+    <loc>http://example.com/posts/286e8c9a.html</loc>
     
     <lastmod>2021-12-26</lastmod>
     
@@ -515,7 +515,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2021/12/22/algorithm002/</loc>
+    <loc>http://example.com/posts/fc65fe22.html</loc>
     
     <lastmod>2021-12-23</lastmod>
     
@@ -524,7 +524,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2021/12/09/tensorflow001/</loc>
+    <loc>http://example.com/posts/ae13c0f6.html</loc>
     
     <lastmod>2021-12-09</lastmod>
     
@@ -533,7 +533,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2021/11/27/mpi004/</loc>
+    <loc>http://example.com/posts/522aec77.html</loc>
     
     <lastmod>2021-11-27</lastmod>
     
@@ -542,7 +542,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2021/11/26/mpi003/</loc>
+    <loc>http://example.com/posts/63a1f2d0.html</loc>
     
     <lastmod>2021-11-26</lastmod>
     
@@ -551,7 +551,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2021/11/26/mpi002/</loc>
+    <loc>http://example.com/posts/eb9a19d2.html</loc>
     
     <lastmod>2021-11-26</lastmod>
     
@@ -560,7 +560,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/06/12/MPI%E5%AD%A6%E4%B9%A0(%E4%B8%80)-%E7%AE%80%E5%8D%95%E7%9A%84%E5%8F%91%E9%80%81%E6%8E%A5%E6%94%B6/</loc>
+    <loc>http://example.com/posts/fdd885d9.html</loc>
     
     <lastmod>2021-11-26</lastmod>
     
@@ -569,7 +569,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2021/11/24/AVX003/</loc>
+    <loc>http://example.com/posts/e451cb25.html</loc>
     
     <lastmod>2021-11-24</lastmod>
     
@@ -578,7 +578,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/06/12/AVX%E5%90%91%E9%87%8F%E5%8C%96%E5%AD%A6%E4%B9%A0(%E4%BA%8C)-%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90%E7%9A%84%E5%BA%94%E7%94%A8/</loc>
+    <loc>http://example.com/posts/ba7262eb.html</loc>
     
     <lastmod>2021-11-24</lastmod>
     
@@ -587,7 +587,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/06/12/AVX%E5%90%91%E9%87%8F%E5%8C%96%E5%AD%A6%E4%B9%A0(%E4%B8%80)/</loc>
+    <loc>http://example.com/posts/e33aee2a.html</loc>
     
     <lastmod>2021-10-24</lastmod>
     

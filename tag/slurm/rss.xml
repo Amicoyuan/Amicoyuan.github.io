@@ -43,26 +43,26 @@
         <category>性能分析工具</category>
         <category>gcov</category>
         <item>
-            <guid isPermalink="true">http://example.com/2022/05/20/slurm001/</guid>
+            <guid isPermalink="true">http://example.com/posts/b451a697.html</guid>
             <title>Slurm</title>
-            <link>http://example.com/2022/05/20/slurm001/</link>
+            <link>http://example.com/posts/b451a697.html</link>
             <category>Linux</category>
             <category>Slurm</category>
             <pubDate>Fri, 20 May 2022 17:43:02 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;Slurm&#34;&gt;&lt;a href=&#34;#Slurm&#34; class=&#34;headerlink&#34; title=&#34;Slurm&#34;&gt;&lt;/a&gt;Slurm&lt;/h2&gt;&lt;h4 id=&#34;1-sstat-查看RUNNING作业&#34;&gt;&lt;a href=&#34;#1-sstat-查看RUNNING作业&#34; class=&#34;headerlink&#34; title=&#34;1.sstat 查看RUNNING作业&#34;&gt;&lt;/a&gt;1.sstat 查看RUNNING作业&lt;/h4&gt;&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs shell&#34;&gt;sstat -e&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
-&lt;p&gt;&lt;img src=&#34;/2022/05/20/slurm001/image-20220520174453969.png&#34; alt=&#34;image-20220520174453969&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/posts/b451a697.htm/image-20220520174453969.png&#34; alt=&#34;image-20220520174453969&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;使用举例：&lt;/strong&gt;&lt;/p&gt;
 &lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs shell&#34;&gt;sstat -a --format=&amp;quot;JobId,Pids,AveCPU,AveRSS,MaxRSS&amp;quot;  1755818&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
-&lt;p&gt;&lt;img src=&#34;/2022/05/20/slurm001/image-20220520175001331.png&#34; alt=&#34;image-20220520175001331&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/posts/b451a697.htm/image-20220520175001331.png&#34; alt=&#34;image-20220520175001331&#34;&gt;&lt;/p&gt;
 &lt;h4 id=&#34;2-sacct-查看FINISHED作业&#34;&gt;&lt;a href=&#34;#2-sacct-查看FINISHED作业&#34; class=&#34;headerlink&#34; title=&#34;2.sacct 查看FINISHED作业&#34;&gt;&lt;/a&gt;2.sacct 查看FINISHED作业&lt;/h4&gt;&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs shell&#34;&gt;sacct -e&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
-&lt;p&gt;&lt;img src=&#34;/2022/05/20/slurm001/image-20220520174622868.png&#34; alt=&#34;image-20220520174622868&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/posts/b451a697.htm/image-20220520174622868.png&#34; alt=&#34;image-20220520174622868&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;使用举例：&lt;/strong&gt;&lt;/p&gt;
 &lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs shell&#34;&gt;sacct --format=&amp;quot;JobId,Elapsed,CPUTime,CPUTimeRAW,AveCPU,TotalCPU,UserCPU,SystemCPU,AveRSS,MaxRSS&amp;quot; -j 1754217&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
-&lt;p&gt;&lt;img src=&#34;/2022/05/20/slurm001/image-20220520174807162.png&#34; alt=&#34;image-20220520174807162&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/posts/b451a697.htm/image-20220520174807162.png&#34; alt=&#34;image-20220520174807162&#34;&gt;&lt;/p&gt;
 &lt;h4 id=&#34;参考资料：&#34;&gt;&lt;a href=&#34;#参考资料：&#34; class=&#34;headerlink&#34; title=&#34;参考资料：&#34;&gt;&lt;/a&gt;参考资料：&lt;/h4&gt;&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/kongxx/article/details/52556943&#34;&gt;(28条消息) Slurm查看作业CPU和MEM_kongxx的博客-CSDN博客_slurm 查看节点&lt;/a&gt;&lt;/p&gt;
  ]]></description>
         </item>

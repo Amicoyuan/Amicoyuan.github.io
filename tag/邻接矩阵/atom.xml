@@ -40,9 +40,9 @@
     <category term="性能分析工具" />
     <category term="gcov" />
     <entry>
-        <id>http://example.com/2022/04/23/Algorithm032/</id>
+        <id>http://example.com/posts/57e5cdd2.html</id>
         <title>L2-036 网红点打卡攻略 (25 分)</title>
-        <link rel="alternate" href="http://example.com/2022/04/23/Algorithm032/"/>
+        <link rel="alternate" href="http://example.com/posts/57e5cdd2.html"/>
         <content type="html">&lt;h2 id=&#34;L2-036-网红点打卡攻略-25-分&#34;&gt;&lt;a href=&#34;#L2-036-网红点打卡攻略-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-036 网红点打卡攻略 (25 分)&#34;&gt;&lt;/a&gt;L2-036 网红点打卡攻略 (25 分)&lt;/h2&gt;&lt;p&gt;一个旅游景点，如果被带火了的话，就被称为“网红点”。大家来网红点游玩，俗称“打卡”。在各个网红点打卡的快（省）乐（钱）方法称为“攻略”。你的任务就是从一大堆攻略中，找出那个能在每个网红点打卡仅一次、并且路上花费最少的攻略。&lt;/p&gt;
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;首先第一行给出两个正整数：网红点的个数 &lt;em&gt;N&lt;/em&gt;（1&amp;lt;&lt;em&gt;N&lt;/em&gt;≤200）和网红点之间通路的条数 &lt;em&gt;M&lt;/em&gt;。随后 &lt;em&gt;M&lt;/em&gt; 行，每行给出有通路的两个网红点、以及这条路上的旅行花费（为正整数），格式为“网红点1 网红点2 费用”，其中网红点从 1 到 &lt;em&gt;N&lt;/em&gt; 编号；同时也给出你家到某些网红点的花费，格式相同，其中你家的编号固定为 &lt;code&gt;0&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;再下一行给出一个正整数 &lt;em&gt;K&lt;/em&gt;，是待检验的攻略的数量。随后 &lt;em&gt;K&lt;/em&gt; 行，每行给出一条待检攻略，格式为：&lt;/p&gt;
@@ -71,9 +71,9 @@
         <updated>2022-04-23T13:50:27.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2022/04/16/Algorithm028/</id>
+        <id>http://example.com/posts/3f37820e.html</id>
         <title>L2-010 排座位 (25 分)</title>
-        <link rel="alternate" href="http://example.com/2022/04/16/Algorithm028/"/>
+        <link rel="alternate" href="http://example.com/posts/3f37820e.html"/>
         <content type="html">&lt;h2 id=&#34;L2-010-排座位-25-分&#34;&gt;&lt;a href=&#34;#L2-010-排座位-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-010 排座位 (25 分)&#34;&gt;&lt;/a&gt;&lt;strong&gt;L2-010 排座位 (25 分)&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;布置宴席最微妙的事情，就是给前来参宴的各位宾客安排座位。无论如何，总不能把两个死对头排到同一张宴会桌旁！这个艰巨任务现在就交给你，对任何一对客人，请编写程序告诉主人他们是否能被安排同席。&lt;/p&gt;
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;输入第一行给出3个正整数：&lt;code&gt;N&lt;/code&gt;（≤100），即前来参宴的宾客总人数，则这些人从1到&lt;code&gt;N&lt;/code&gt;编号；&lt;code&gt;M&lt;/code&gt;为已知两两宾客之间的关系数；&lt;code&gt;K&lt;/code&gt;为查询的条数。随后&lt;code&gt;M&lt;/code&gt;行，每行给出一对宾客之间的关系，格式为：&lt;code&gt;宾客1 宾客2 关系&lt;/code&gt;，其中&lt;code&gt;关系&lt;/code&gt;为1表示是朋友，-1表示是死对头。注意两个人不可能既是朋友又是敌人。最后&lt;code&gt;K&lt;/code&gt;行，每行给出一对需要查询的宾客编号。&lt;/p&gt;
 &lt;p&gt;这里假设朋友的朋友也是朋友。但敌人的敌人并不一定就是朋友，朋友的敌人也不一定是敌人。只有单纯直接的敌对关系才是绝对不能同席的。&lt;/p&gt;
@@ -99,9 +99,9 @@
         <updated>2022-04-16T06:57:46.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2022/04/15/Algorithm025/</id>
+        <id>http://example.com/posts/9578eb86.html</id>
         <title>L2-013 红色警报 (25 分)</title>
-        <link rel="alternate" href="http://example.com/2022/04/15/Algorithm025/"/>
+        <link rel="alternate" href="http://example.com/posts/9578eb86.html"/>
         <content type="html">&lt;h2 id=&#34;L2-013-红色警报-25-分&#34;&gt;&lt;a href=&#34;#L2-013-红色警报-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-013 红色警报 (25 分)&#34;&gt;&lt;/a&gt;L2-013 红色警报 (25 分)&lt;/h2&gt;&lt;p&gt;战争中保持各个城市间的连通性非常重要。本题要求你编写一个报警程序，当失去一个城市导致国家被分裂为多个无法连通的区域时，就发出红色警报。注意：若该国本来就不完全连通，是分裂的k个区域，而失去一个城市并不改变其他城市之间的连通性，则不要发出警报。&lt;/p&gt;
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;输入在第一行给出两个整数&lt;code&gt;N&lt;/code&gt;（0 &amp;lt; &lt;code&gt;N&lt;/code&gt; ≤ 500）和&lt;code&gt;M&lt;/code&gt;（≤ 5000），分别为城市个数（于是默认城市从0到&lt;code&gt;N&lt;/code&gt;-1编号）和连接两城市的通路条数。随后&lt;code&gt;M&lt;/code&gt;行，每行给出一条通路所连接的两个城市的编号，其间以1个空格分隔。在城市信息之后给出被攻占的信息，即一个正整数&lt;code&gt;K&lt;/code&gt;和随后的&lt;code&gt;K&lt;/code&gt;个被攻占的城市的编号。&lt;/p&gt;
 &lt;p&gt;注意：输入保证给出的被攻占的城市编号都是合法的且无重复，但并不保证给出的通路没有重复。&lt;/p&gt;

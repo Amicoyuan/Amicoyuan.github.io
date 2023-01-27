@@ -40,10 +40,10 @@
     <category term="性能分析工具" />
     <category term="gcov" />
     <entry>
-        <id>http://example.com/2022/04/23/Algorithm031/</id>
+        <id>http://example.com/posts/c3cc0bdb.html</id>
         <title>L2-039 清点代码库 (25 分)</title>
-        <link rel="alternate" href="http://example.com/2022/04/23/Algorithm031/"/>
-        <content type="html">&lt;h2 id=&#34;L2-039-清点代码库-25-分&#34;&gt;&lt;a href=&#34;#L2-039-清点代码库-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-039 清点代码库 (25 分)&#34;&gt;&lt;/a&gt;L2-039 清点代码库 (25 分)&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;/2022/04/23/Algorithm031/58e6a034-993d-4049-8deb-23d769c8597e.jpg&#34; alt=&#34;code.jpg&#34;&gt;&lt;/p&gt;
+        <link rel="alternate" href="http://example.com/posts/c3cc0bdb.html"/>
+        <content type="html">&lt;h2 id=&#34;L2-039-清点代码库-25-分&#34;&gt;&lt;a href=&#34;#L2-039-清点代码库-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-039 清点代码库 (25 分)&#34;&gt;&lt;/a&gt;L2-039 清点代码库 (25 分)&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;/posts/c3cc0bdb.htm/58e6a034-993d-4049-8deb-23d769c8597e.jpg&#34; alt=&#34;code.jpg&#34;&gt;&lt;/p&gt;
 &lt;p&gt;上图转自新浪微博：“阿里代码库有几亿行代码，但其中有很多功能重复的代码，比如单单快排就被重写了几百遍。请设计一个程序，能够将代码库中所有功能重复的代码找出。各位大佬有啥想法，我当时就懵了，然后就挂了。。。”&lt;/p&gt;
 &lt;p&gt;这里我们把问题简化一下：首先假设两个功能模块如果接受同样的输入，总是给出同样的输出，则它们就是功能重复的；其次我们把每个模块的输出都简化为一个整数（在 &lt;strong&gt;int&lt;/strong&gt; 范围内）。于是我们可以设计一系列输入，检查所有功能模块的对应输出，从而查出功能重复的代码。你的任务就是设计并实现这个简化问题的解决方案。&lt;/p&gt;
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;输入在第一行中给出 2 个正整数，依次为 &lt;em&gt;N&lt;/em&gt;（≤104）和 &lt;em&gt;M&lt;/em&gt;（≤102），对应功能模块的个数和系列测试输入的个数。&lt;/p&gt;
@@ -69,9 +69,9 @@
         <updated>2022-04-23T13:44:47.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2022/04/16/Algorithm027/</id>
+        <id>http://example.com/posts/e7e148d.html</id>
         <title>L2-009 抢红包 (25 分)</title>
-        <link rel="alternate" href="http://example.com/2022/04/16/Algorithm027/"/>
+        <link rel="alternate" href="http://example.com/posts/e7e148d.html"/>
         <content type="html">&lt;h2 id=&#34;L2-009-抢红包-25-分&#34;&gt;&lt;a href=&#34;#L2-009-抢红包-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-009 抢红包 (25 分)&#34;&gt;&lt;/a&gt;&lt;strong&gt;L2-009 抢红包 (25 分)&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;没有人没抢过红包吧…… 这里给出&lt;em&gt;N&lt;/em&gt;个人之间互相发红包、抢红包的记录，请你统计一下他们抢红包的收获。&lt;/p&gt;
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;输入第一行给出一个正整数&lt;em&gt;N&lt;/em&gt;（≤104），即参与发红包和抢红包的总人数，则这些人从1到&lt;em&gt;N&lt;/em&gt;编号。随后&lt;em&gt;N&lt;/em&gt;行，第&lt;em&gt;i&lt;/em&gt;行给出编号为&lt;em&gt;i&lt;/em&gt;的人发红包的记录，格式如下：&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;K     N&lt;/em&gt;1 &lt;em&gt;P&lt;/em&gt;1⋯ NK PK&lt;/p&gt;
@@ -98,9 +98,9 @@
         <updated>2022-04-16T06:57:38.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2022/04/15/Algorithm026/</id>
+        <id>http://example.com/posts/d1725e85.html</id>
         <title>L2-003 月饼 (25 分)</title>
-        <link rel="alternate" href="http://example.com/2022/04/15/Algorithm026/"/>
+        <link rel="alternate" href="http://example.com/posts/d1725e85.html"/>
         <content type="html">&lt;h2 id=&#34;L2-003-月饼-25-分&#34;&gt;&lt;a href=&#34;#L2-003-月饼-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-003 月饼 (25 分)&#34;&gt;&lt;/a&gt;L2-003 月饼 (25 分)&lt;/h2&gt;&lt;p&gt;月饼是中国人在中秋佳节时吃的一种传统食品，不同地区有许多不同风味的月饼。现给定所有种类月饼的库存量、总售价、以及市场的最大需求量，请你计算可以获得的最大收益是多少。&lt;/p&gt;
 &lt;p&gt;注意：销售时允许取出一部分库存。样例给出的情形是这样的：假如我们有 3 种月饼，其库存量分别为 18、15、10 万吨，总售价分别为 75、72、45 亿元。如果市场的最大需求量只有 20 万吨，那么我们最大收益策略应该是卖出全部 15 万吨第 2 种月饼、以及 5 万吨第 3 种月饼，获得 72 + 45&amp;#x2F;2 &amp;#x3D; 94.5（亿元）。&lt;/p&gt;
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;每个输入包含一个测试用例。每个测试用例先给出一个不超过 1000 的正整数 &lt;em&gt;N&lt;/em&gt; 表示月饼的种类数、以及不超过 500（以万吨为单位）的正整数 &lt;em&gt;D&lt;/em&gt; 表示市场最大需求量。随后一行给出 &lt;em&gt;N&lt;/em&gt; 个正数表示每种月饼的库存量（以万吨为单位）；最后一行给出 &lt;em&gt;N&lt;/em&gt; 个正数表示每种月饼的总售价（以亿元为单位）。数字间以空格分隔。&lt;/p&gt;
@@ -122,9 +122,9 @@
         <updated>2022-04-15T14:03:52.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2022/04/13/Algorithm020/</id>
+        <id>http://example.com/posts/d15ae7b2.html</id>
         <title>L2-027 名人堂与代金券 (25 分)</title>
-        <link rel="alternate" href="http://example.com/2022/04/13/Algorithm020/"/>
+        <link rel="alternate" href="http://example.com/posts/d15ae7b2.html"/>
         <content type="html">&lt;h2 id=&#34;L2-027-名人堂与代金券-25-分&#34;&gt;&lt;a href=&#34;#L2-027-名人堂与代金券-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-027 名人堂与代金券 (25 分)&#34;&gt;&lt;/a&gt;L2-027 名人堂与代金券 (25 分)&lt;/h2&gt;&lt;p&gt;对于在中国大学MOOC（&lt;a href=&#34;http://www.icourse163.org/&#34;&gt;http://www.icourse163.org/&lt;/a&gt; ）学习“数据结构”课程的学生，想要获得一张合格证书，总评成绩必须达到 60 分及以上，并且有另加福利：总评分在 [G, 100] 区间内者，可以得到 50 元 PAT 代金券；在 [60, G) 区间内者，可以得到 20 元PAT代金券。全国考点通用，一年有效。同时任课老师还会把总评成绩前 K 名的学生列入课程“名人堂”。本题就请你编写程序，帮助老师列出名人堂的学生，并统计一共发出了面值多少元的 PAT 代金券。&lt;/p&gt;
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;输入在第一行给出 3 个整数，分别是 N（不超过 10 000 的正整数，为学生总数）、G（在 (60,100) 区间内的整数，为题面中描述的代金券等级分界线）、K（不超过 100 且不超过 N 的正整数，为进入名人堂的最低名次）。接下来 N 行，每行给出一位学生的账号（长度不超过15位、不带空格的字符串）和总评成绩（区间 [0, 100] 内的整数），其间以空格分隔。题目保证没有重复的账号。&lt;/p&gt;
 &lt;h3 id=&#34;输出格式：&#34;&gt;&lt;a href=&#34;#输出格式：&#34; class=&#34;headerlink&#34; title=&#34;输出格式：&#34;&gt;&lt;/a&gt;输出格式：&lt;/h3&gt;&lt;p&gt;首先在一行中输出发出的 PAT 代金券的总面值。然后按总评成绩非升序输出进入名人堂的学生的名次、账号和成绩，其间以 1 个空格分隔。需要注意的是：成绩相同的学生享有并列的排名，排名并列时，按账号的字母序升序输出。&lt;/p&gt;
@@ -144,9 +144,9 @@
         <updated>2022-04-13T01:45:55.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2022/04/11/Algorithm016/</id>
+        <id>http://example.com/posts/aab84a2d.html</id>
         <title>L2-021 点赞狂魔 (25 分)</title>
-        <link rel="alternate" href="http://example.com/2022/04/11/Algorithm016/"/>
+        <link rel="alternate" href="http://example.com/posts/aab84a2d.html"/>
         <content type="html">&lt;h1 id=&#34;L2-021-点赞狂魔-25-分&#34;&gt;&lt;a href=&#34;#L2-021-点赞狂魔-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-021 点赞狂魔 (25 分)&#34;&gt;&lt;/a&gt;L2-021 点赞狂魔 (25 分)&lt;/h1&gt;&lt;p&gt;微博上有个“点赞”功能，你可以为你喜欢的博文点个赞表示支持。每篇博文都有一些刻画其特性的标签，而你点赞的博文的类型，也间接刻画了你的特性。然而有这么一种人，他们会通过给自己看到的一切内容点赞来狂刷存在感，这种人就被称为“点赞狂魔”。他们点赞的标签非常分散，无法体现出明显的特性。本题就要求你写个程序，通过统计每个人点赞的不同标签的数量，找出前3名点赞狂魔。&lt;/p&gt;
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;输入在第一行给出一个正整数&lt;em&gt;N&lt;/em&gt;（≤100），是待统计的用户数。随后&lt;em&gt;N&lt;/em&gt;行，每行列出一位用户的点赞标签。格式为“&lt;code&gt;Name&lt;/code&gt; &lt;em&gt;K&lt;/em&gt; &lt;em&gt;F&lt;/em&gt;1⋯&lt;em&gt;F**K&lt;/em&gt;”，其中&lt;code&gt;Name&lt;/code&gt;是不超过8个英文小写字母的非空用户名，1≤&lt;em&gt;K&lt;/em&gt;≤1000，&lt;em&gt;F**i&lt;/em&gt;（&lt;em&gt;i&lt;/em&gt;&amp;#x3D;1,⋯,&lt;em&gt;K&lt;/em&gt;）是特性标签的编号，我们将所有特性标签从 1 到 107 编号。数字间以空格分隔。&lt;/p&gt;
 &lt;h3 id=&#34;输出格式：&#34;&gt;&lt;a href=&#34;#输出格式：&#34; class=&#34;headerlink&#34; title=&#34;输出格式：&#34;&gt;&lt;/a&gt;输出格式：&lt;/h3&gt;&lt;p&gt;统计每个人点赞的不同标签的数量，找出数量最大的前3名，在一行中顺序输出他们的用户名,其间以1个空格分隔,且行末不得有多余空格。如果有并列，则输出标签出现次数平均值最小的那个，题目保证这样的用户没有并列。若不足3人，则用&lt;code&gt;-&lt;/code&gt;补齐缺失，例如&lt;code&gt;mike jenny -&lt;/code&gt;就表示只有2人。&lt;/p&gt;

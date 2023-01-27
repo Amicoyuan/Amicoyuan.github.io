@@ -40,9 +40,9 @@
     <category term="性能分析工具" />
     <category term="gcov" />
     <entry>
-        <id>http://example.com/2022/04/23/Algorithm032/</id>
+        <id>http://example.com/posts/57e5cdd2.html</id>
         <title>L2-036 网红点打卡攻略 (25 分)</title>
-        <link rel="alternate" href="http://example.com/2022/04/23/Algorithm032/"/>
+        <link rel="alternate" href="http://example.com/posts/57e5cdd2.html"/>
         <content type="html">&lt;h2 id=&#34;L2-036-网红点打卡攻略-25-分&#34;&gt;&lt;a href=&#34;#L2-036-网红点打卡攻略-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-036 网红点打卡攻略 (25 分)&#34;&gt;&lt;/a&gt;L2-036 网红点打卡攻略 (25 分)&lt;/h2&gt;&lt;p&gt;一个旅游景点，如果被带火了的话，就被称为“网红点”。大家来网红点游玩，俗称“打卡”。在各个网红点打卡的快（省）乐（钱）方法称为“攻略”。你的任务就是从一大堆攻略中，找出那个能在每个网红点打卡仅一次、并且路上花费最少的攻略。&lt;/p&gt;
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;首先第一行给出两个正整数：网红点的个数 &lt;em&gt;N&lt;/em&gt;（1&amp;lt;&lt;em&gt;N&lt;/em&gt;≤200）和网红点之间通路的条数 &lt;em&gt;M&lt;/em&gt;。随后 &lt;em&gt;M&lt;/em&gt; 行，每行给出有通路的两个网红点、以及这条路上的旅行花费（为正整数），格式为“网红点1 网红点2 费用”，其中网红点从 1 到 &lt;em&gt;N&lt;/em&gt; 编号；同时也给出你家到某些网红点的花费，格式相同，其中你家的编号固定为 &lt;code&gt;0&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;再下一行给出一个正整数 &lt;em&gt;K&lt;/em&gt;，是待检验的攻略的数量。随后 &lt;em&gt;K&lt;/em&gt; 行，每行给出一条待检攻略，格式为：&lt;/p&gt;
@@ -71,10 +71,10 @@
         <updated>2022-04-23T13:50:27.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2022/04/23/Algorithm031/</id>
+        <id>http://example.com/posts/c3cc0bdb.html</id>
         <title>L2-039 清点代码库 (25 分)</title>
-        <link rel="alternate" href="http://example.com/2022/04/23/Algorithm031/"/>
-        <content type="html">&lt;h2 id=&#34;L2-039-清点代码库-25-分&#34;&gt;&lt;a href=&#34;#L2-039-清点代码库-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-039 清点代码库 (25 分)&#34;&gt;&lt;/a&gt;L2-039 清点代码库 (25 分)&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;/2022/04/23/Algorithm031/58e6a034-993d-4049-8deb-23d769c8597e.jpg&#34; alt=&#34;code.jpg&#34;&gt;&lt;/p&gt;
+        <link rel="alternate" href="http://example.com/posts/c3cc0bdb.html"/>
+        <content type="html">&lt;h2 id=&#34;L2-039-清点代码库-25-分&#34;&gt;&lt;a href=&#34;#L2-039-清点代码库-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-039 清点代码库 (25 分)&#34;&gt;&lt;/a&gt;L2-039 清点代码库 (25 分)&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;/posts/c3cc0bdb.htm/58e6a034-993d-4049-8deb-23d769c8597e.jpg&#34; alt=&#34;code.jpg&#34;&gt;&lt;/p&gt;
 &lt;p&gt;上图转自新浪微博：“阿里代码库有几亿行代码，但其中有很多功能重复的代码，比如单单快排就被重写了几百遍。请设计一个程序，能够将代码库中所有功能重复的代码找出。各位大佬有啥想法，我当时就懵了，然后就挂了。。。”&lt;/p&gt;
 &lt;p&gt;这里我们把问题简化一下：首先假设两个功能模块如果接受同样的输入，总是给出同样的输出，则它们就是功能重复的；其次我们把每个模块的输出都简化为一个整数（在 &lt;strong&gt;int&lt;/strong&gt; 范围内）。于是我们可以设计一系列输入，检查所有功能模块的对应输出，从而查出功能重复的代码。你的任务就是设计并实现这个简化问题的解决方案。&lt;/p&gt;
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;输入在第一行中给出 2 个正整数，依次为 &lt;em&gt;N&lt;/em&gt;（≤104）和 &lt;em&gt;M&lt;/em&gt;（≤102），对应功能模块的个数和系列测试输入的个数。&lt;/p&gt;
@@ -100,9 +100,9 @@
         <updated>2022-04-23T13:44:47.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2022/04/23/Algorithm030/</id>
+        <id>http://example.com/posts/660ce66a.html</id>
         <title>L2-005 集合相似度 (25 分)</title>
-        <link rel="alternate" href="http://example.com/2022/04/23/Algorithm030/"/>
+        <link rel="alternate" href="http://example.com/posts/660ce66a.html"/>
         <content type="html">&lt;h2 id=&#34;L2-005-集合相似度-25-分&#34;&gt;&lt;a href=&#34;#L2-005-集合相似度-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-005 集合相似度 (25 分)&#34;&gt;&lt;/a&gt;L2-005 集合相似度 (25 分)&lt;/h2&gt;&lt;p&gt;给定两个整数集合，它们的相似度定义为：Nc&amp;#x2F;Nt×100%。其中Nc是两个集合都有的不相等整数的个数，Nt是两个集合一共有的不相等整数的个数。你的任务就是计算任意一对给定集合的相似度。&lt;/p&gt;
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;输入第一行给出一个正整数&lt;em&gt;N&lt;/em&gt;（≤50），是集合的个数。随后&lt;em&gt;N&lt;/em&gt;行，每行对应一个集合。每个集合首先给出一个正整数&lt;em&gt;M&lt;/em&gt;（≤104），是集合中元素的个数；然后跟&lt;em&gt;M&lt;/em&gt;个[0,109]区间内的整数。&lt;/p&gt;
 &lt;p&gt;之后一行给出一个正整数&lt;em&gt;K&lt;/em&gt;（≤2000），随后&lt;em&gt;K&lt;/em&gt;行，每行对应一对需要计算相似度的集合的编号（集合从1到&lt;em&gt;N&lt;/em&gt;编号）。数字间以空格分隔。&lt;/p&gt;
@@ -123,9 +123,9 @@
         <updated>2022-04-23T13:39:53.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2022/04/16/Algorithm028/</id>
+        <id>http://example.com/posts/3f37820e.html</id>
         <title>L2-010 排座位 (25 分)</title>
-        <link rel="alternate" href="http://example.com/2022/04/16/Algorithm028/"/>
+        <link rel="alternate" href="http://example.com/posts/3f37820e.html"/>
         <content type="html">&lt;h2 id=&#34;L2-010-排座位-25-分&#34;&gt;&lt;a href=&#34;#L2-010-排座位-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-010 排座位 (25 分)&#34;&gt;&lt;/a&gt;&lt;strong&gt;L2-010 排座位 (25 分)&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;布置宴席最微妙的事情，就是给前来参宴的各位宾客安排座位。无论如何，总不能把两个死对头排到同一张宴会桌旁！这个艰巨任务现在就交给你，对任何一对客人，请编写程序告诉主人他们是否能被安排同席。&lt;/p&gt;
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;输入第一行给出3个正整数：&lt;code&gt;N&lt;/code&gt;（≤100），即前来参宴的宾客总人数，则这些人从1到&lt;code&gt;N&lt;/code&gt;编号；&lt;code&gt;M&lt;/code&gt;为已知两两宾客之间的关系数；&lt;code&gt;K&lt;/code&gt;为查询的条数。随后&lt;code&gt;M&lt;/code&gt;行，每行给出一对宾客之间的关系，格式为：&lt;code&gt;宾客1 宾客2 关系&lt;/code&gt;，其中&lt;code&gt;关系&lt;/code&gt;为1表示是朋友，-1表示是死对头。注意两个人不可能既是朋友又是敌人。最后&lt;code&gt;K&lt;/code&gt;行，每行给出一对需要查询的宾客编号。&lt;/p&gt;
 &lt;p&gt;这里假设朋友的朋友也是朋友。但敌人的敌人并不一定就是朋友，朋友的敌人也不一定是敌人。只有单纯直接的敌对关系才是绝对不能同席的。&lt;/p&gt;
@@ -151,9 +151,9 @@
         <updated>2022-04-16T06:57:46.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2022/04/16/Algorithm027/</id>
+        <id>http://example.com/posts/e7e148d.html</id>
         <title>L2-009 抢红包 (25 分)</title>
-        <link rel="alternate" href="http://example.com/2022/04/16/Algorithm027/"/>
+        <link rel="alternate" href="http://example.com/posts/e7e148d.html"/>
         <content type="html">&lt;h2 id=&#34;L2-009-抢红包-25-分&#34;&gt;&lt;a href=&#34;#L2-009-抢红包-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-009 抢红包 (25 分)&#34;&gt;&lt;/a&gt;&lt;strong&gt;L2-009 抢红包 (25 分)&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;没有人没抢过红包吧…… 这里给出&lt;em&gt;N&lt;/em&gt;个人之间互相发红包、抢红包的记录，请你统计一下他们抢红包的收获。&lt;/p&gt;
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;输入第一行给出一个正整数&lt;em&gt;N&lt;/em&gt;（≤104），即参与发红包和抢红包的总人数，则这些人从1到&lt;em&gt;N&lt;/em&gt;编号。随后&lt;em&gt;N&lt;/em&gt;行，第&lt;em&gt;i&lt;/em&gt;行给出编号为&lt;em&gt;i&lt;/em&gt;的人发红包的记录，格式如下：&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;K     N&lt;/em&gt;1 &lt;em&gt;P&lt;/em&gt;1⋯ NK PK&lt;/p&gt;
@@ -180,9 +180,9 @@
         <updated>2022-04-16T06:57:38.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2022/04/15/Algorithm026/</id>
+        <id>http://example.com/posts/d1725e85.html</id>
         <title>L2-003 月饼 (25 分)</title>
-        <link rel="alternate" href="http://example.com/2022/04/15/Algorithm026/"/>
+        <link rel="alternate" href="http://example.com/posts/d1725e85.html"/>
         <content type="html">&lt;h2 id=&#34;L2-003-月饼-25-分&#34;&gt;&lt;a href=&#34;#L2-003-月饼-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-003 月饼 (25 分)&#34;&gt;&lt;/a&gt;L2-003 月饼 (25 分)&lt;/h2&gt;&lt;p&gt;月饼是中国人在中秋佳节时吃的一种传统食品，不同地区有许多不同风味的月饼。现给定所有种类月饼的库存量、总售价、以及市场的最大需求量，请你计算可以获得的最大收益是多少。&lt;/p&gt;
 &lt;p&gt;注意：销售时允许取出一部分库存。样例给出的情形是这样的：假如我们有 3 种月饼，其库存量分别为 18、15、10 万吨，总售价分别为 75、72、45 亿元。如果市场的最大需求量只有 20 万吨，那么我们最大收益策略应该是卖出全部 15 万吨第 2 种月饼、以及 5 万吨第 3 种月饼，获得 72 + 45&amp;#x2F;2 &amp;#x3D; 94.5（亿元）。&lt;/p&gt;
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;每个输入包含一个测试用例。每个测试用例先给出一个不超过 1000 的正整数 &lt;em&gt;N&lt;/em&gt; 表示月饼的种类数、以及不超过 500（以万吨为单位）的正整数 &lt;em&gt;D&lt;/em&gt; 表示市场最大需求量。随后一行给出 &lt;em&gt;N&lt;/em&gt; 个正数表示每种月饼的库存量（以万吨为单位）；最后一行给出 &lt;em&gt;N&lt;/em&gt; 个正数表示每种月饼的总售价（以亿元为单位）。数字间以空格分隔。&lt;/p&gt;
@@ -204,9 +204,9 @@
         <updated>2022-04-15T14:03:52.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2022/04/15/Algorithm025/</id>
+        <id>http://example.com/posts/9578eb86.html</id>
         <title>L2-013 红色警报 (25 分)</title>
-        <link rel="alternate" href="http://example.com/2022/04/15/Algorithm025/"/>
+        <link rel="alternate" href="http://example.com/posts/9578eb86.html"/>
         <content type="html">&lt;h2 id=&#34;L2-013-红色警报-25-分&#34;&gt;&lt;a href=&#34;#L2-013-红色警报-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-013 红色警报 (25 分)&#34;&gt;&lt;/a&gt;L2-013 红色警报 (25 分)&lt;/h2&gt;&lt;p&gt;战争中保持各个城市间的连通性非常重要。本题要求你编写一个报警程序，当失去一个城市导致国家被分裂为多个无法连通的区域时，就发出红色警报。注意：若该国本来就不完全连通，是分裂的k个区域，而失去一个城市并不改变其他城市之间的连通性，则不要发出警报。&lt;/p&gt;
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;输入在第一行给出两个整数&lt;code&gt;N&lt;/code&gt;（0 &amp;lt; &lt;code&gt;N&lt;/code&gt; ≤ 500）和&lt;code&gt;M&lt;/code&gt;（≤ 5000），分别为城市个数（于是默认城市从0到&lt;code&gt;N&lt;/code&gt;-1编号）和连接两城市的通路条数。随后&lt;code&gt;M&lt;/code&gt;行，每行给出一条通路所连接的两个城市的编号，其间以1个空格分隔。在城市信息之后给出被攻占的信息，即一个正整数&lt;code&gt;K&lt;/code&gt;和随后的&lt;code&gt;K&lt;/code&gt;个被攻占的城市的编号。&lt;/p&gt;
 &lt;p&gt;注意：输入保证给出的被攻占的城市编号都是合法的且无重复，但并不保证给出的通路没有重复。&lt;/p&gt;
@@ -232,9 +232,9 @@
         <updated>2022-04-15T13:09:30.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2022/04/14/Algorithm024/</id>
+        <id>http://example.com/posts/e6b4ff6a.html</id>
         <title>L2-011 玩转二叉树 (25 分)</title>
-        <link rel="alternate" href="http://example.com/2022/04/14/Algorithm024/"/>
+        <link rel="alternate" href="http://example.com/posts/e6b4ff6a.html"/>
         <content type="html">&lt;h2 id=&#34;L2-011-玩转二叉树-25-分&#34;&gt;&lt;a href=&#34;#L2-011-玩转二叉树-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-011 玩转二叉树 (25 分)&#34;&gt;&lt;/a&gt;&lt;strong&gt;L2-011 玩转二叉树 (25 分)&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;给定一棵二叉树的中序遍历和前序遍历，请你先将树做个镜面反转，再输出反转后的层序遍历的序列。所谓镜面反转，是指将所有非叶结点的左右孩子对换。这里假设键值都是互不相等的正整数。&lt;/p&gt;
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;输入第一行给出一个正整数&lt;code&gt;N&lt;/code&gt;（≤30），是二叉树中结点的个数。第二行给出其中序遍历序列。第三行给出其前序遍历序列。数字间以空格分隔。&lt;/p&gt;
 &lt;h3 id=&#34;输出格式：&#34;&gt;&lt;a href=&#34;#输出格式：&#34; class=&#34;headerlink&#34; title=&#34;输出格式：&#34;&gt;&lt;/a&gt;输出格式：&lt;/h3&gt;&lt;p&gt;在一行中输出该树反转后的层序遍历的序列。数字间以1个空格分隔，行首尾不得有多余空格。&lt;/p&gt;
@@ -259,9 +259,9 @@
         <updated>2022-04-14T06:01:10.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2022/04/14/Algorithm023/</id>
+        <id>http://example.com/posts/2f9775a0.html</id>
         <title>L2-035 完全二叉树的层序遍历 (25 分)</title>
-        <link rel="alternate" href="http://example.com/2022/04/14/Algorithm023/"/>
+        <link rel="alternate" href="http://example.com/posts/2f9775a0.html"/>
         <content type="html">&lt;h2 id=&#34;L2-035-完全二叉树的层序遍历-25-分&#34;&gt;&lt;a href=&#34;#L2-035-完全二叉树的层序遍历-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-035 完全二叉树的层序遍历 (25 分)&#34;&gt;&lt;/a&gt;L2-035 完全二叉树的层序遍历 (25 分)&lt;/h2&gt;&lt;p&gt;一个二叉树，如果每一个层的结点数都达到最大值，则这个二叉树就是&lt;strong&gt;完美二叉树&lt;/strong&gt;。对于深度为 &lt;em&gt;D&lt;/em&gt; 的，有 &lt;em&gt;N&lt;/em&gt; 个结点的二叉树，若其结点对应于相同深度完美二叉树的层序遍历的前 &lt;em&gt;N&lt;/em&gt; 个结点，这样的树就是&lt;strong&gt;完全二叉树&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;给定一棵完全二叉树的后序遍历，请你给出这棵树的层序遍历结果。&lt;/p&gt;
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;输入在第一行中给出正整数 &lt;em&gt;N&lt;/em&gt;（≤30），即树中结点个数。第二行给出后序遍历序列，为 &lt;em&gt;N&lt;/em&gt; 个不超过 100 的正整数。同一行中所有数字都以空格分隔。&lt;/p&gt;
@@ -282,9 +282,9 @@
         <updated>2022-04-14T06:01:05.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2022/04/13/Algorithm022/</id>
+        <id>http://example.com/posts/5297b1f9.html</id>
         <title>L2-031 深入虎穴 (25 分)</title>
-        <link rel="alternate" href="http://example.com/2022/04/13/Algorithm022/"/>
+        <link rel="alternate" href="http://example.com/posts/5297b1f9.html"/>
         <content type="html">&lt;p&gt;著名的王牌间谍 007 需要执行一次任务，获取敌方的机密情报。已知情报藏在一个地下迷宫里，迷宫只有一个入口，里面有很多条通路，每条路通向一扇门。每一扇门背后或者是一个房间，或者又有很多条路，同样是每条路通向一扇门…… 他的手里有一张表格，是其他间谍帮他收集到的情报，他们记下了每扇门的编号，以及这扇门背后的每一条通路所到达的门的编号。007 发现不存在两条路通向同一扇门。&lt;/p&gt;
 &lt;p&gt;内线告诉他，情报就藏在迷宫的最深处。但是这个迷宫太大了，他需要你的帮助 —— 请编程帮他找出距离入口最远的那扇门。&lt;/p&gt;
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;输入首先在一行中给出正整数 &lt;em&gt;N&lt;/em&gt;（&amp;lt;105），是门的数量。最后 &lt;em&gt;N&lt;/em&gt; 行，第 &lt;em&gt;i&lt;/em&gt; 行（1≤&lt;em&gt;i&lt;/em&gt;≤&lt;em&gt;N&lt;/em&gt;）按以下格式描述编号为 &lt;em&gt;i&lt;/em&gt; 的那扇门背后能通向的门：&lt;/p&gt;
@@ -311,9 +311,9 @@
         <updated>2022-04-13T11:09:46.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2022/04/13/Algorithm021/</id>
+        <id>http://example.com/posts/4f5dbf33.html</id>
         <title>L2-040 哲哲打游戏 (25 分)</title>
-        <link rel="alternate" href="http://example.com/2022/04/13/Algorithm021/"/>
+        <link rel="alternate" href="http://example.com/posts/4f5dbf33.html"/>
         <content type="html">&lt;h2 id=&#34;L2-040-哲哲打游戏-25-分&#34;&gt;&lt;a href=&#34;#L2-040-哲哲打游戏-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-040 哲哲打游戏 (25 分)&#34;&gt;&lt;/a&gt;&lt;strong&gt;L2-040 哲哲打游戏 (25 分)&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;哲哲是一位硬核游戏玩家。最近一款名叫《达诺达诺》的新游戏刚刚上市，哲哲自然要快速攻略游戏，守护硬核游戏玩家的一切！&lt;/p&gt;
 &lt;p&gt;为简化模型，我们不妨假设游戏有 &lt;em&gt;N&lt;/em&gt; 个剧情点，通过游戏里不同的操作或选择可以从某个剧情点去往另外一个剧情点。此外，游戏还设置了一些&lt;strong&gt;存档&lt;/strong&gt;，在某个剧情点可以将玩家的游戏进度保存在一个档位上，读取存档后可以回到剧情点，重新进行操作或者选择，到达不同的剧情点。&lt;/p&gt;
 &lt;p&gt;为了追踪硬核游戏玩家哲哲的攻略进度，你打算写一个程序来完成这个工作。假设你已经知道了游戏的全部剧情点和流程，以及哲哲的游戏操作，请你输出哲哲的游戏进度。&lt;/p&gt;
@@ -349,9 +349,9 @@
         <updated>2022-04-13T11:09:41.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2022/04/13/Algorithm020/</id>
+        <id>http://example.com/posts/d15ae7b2.html</id>
         <title>L2-027 名人堂与代金券 (25 分)</title>
-        <link rel="alternate" href="http://example.com/2022/04/13/Algorithm020/"/>
+        <link rel="alternate" href="http://example.com/posts/d15ae7b2.html"/>
         <content type="html">&lt;h2 id=&#34;L2-027-名人堂与代金券-25-分&#34;&gt;&lt;a href=&#34;#L2-027-名人堂与代金券-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-027 名人堂与代金券 (25 分)&#34;&gt;&lt;/a&gt;L2-027 名人堂与代金券 (25 分)&lt;/h2&gt;&lt;p&gt;对于在中国大学MOOC（&lt;a href=&#34;http://www.icourse163.org/&#34;&gt;http://www.icourse163.org/&lt;/a&gt; ）学习“数据结构”课程的学生，想要获得一张合格证书，总评成绩必须达到 60 分及以上，并且有另加福利：总评分在 [G, 100] 区间内者，可以得到 50 元 PAT 代金券；在 [60, G) 区间内者，可以得到 20 元PAT代金券。全国考点通用，一年有效。同时任课老师还会把总评成绩前 K 名的学生列入课程“名人堂”。本题就请你编写程序，帮助老师列出名人堂的学生，并统计一共发出了面值多少元的 PAT 代金券。&lt;/p&gt;
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;输入在第一行给出 3 个整数，分别是 N（不超过 10 000 的正整数，为学生总数）、G（在 (60,100) 区间内的整数，为题面中描述的代金券等级分界线）、K（不超过 100 且不超过 N 的正整数，为进入名人堂的最低名次）。接下来 N 行，每行给出一位学生的账号（长度不超过15位、不带空格的字符串）和总评成绩（区间 [0, 100] 内的整数），其间以空格分隔。题目保证没有重复的账号。&lt;/p&gt;
 &lt;h3 id=&#34;输出格式：&#34;&gt;&lt;a href=&#34;#输出格式：&#34; class=&#34;headerlink&#34; title=&#34;输出格式：&#34;&gt;&lt;/a&gt;输出格式：&lt;/h3&gt;&lt;p&gt;首先在一行中输出发出的 PAT 代金券的总面值。然后按总评成绩非升序输出进入名人堂的学生的名次、账号和成绩，其间以 1 个空格分隔。需要注意的是：成绩相同的学生享有并列的排名，排名并列时，按账号的字母序升序输出。&lt;/p&gt;
@@ -371,9 +371,9 @@
         <updated>2022-04-13T01:45:55.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2022/04/13/Algorithm019/</id>
+        <id>http://example.com/posts/c3f0f4cb.html</id>
         <title>L2-026 小字辈 (25 分)</title>
-        <link rel="alternate" href="http://example.com/2022/04/13/Algorithm019/"/>
+        <link rel="alternate" href="http://example.com/posts/c3f0f4cb.html"/>
         <content type="html">&lt;h2 id=&#34;L2-026-小字辈-25-分&#34;&gt;&lt;a href=&#34;#L2-026-小字辈-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-026 小字辈 (25 分)&#34;&gt;&lt;/a&gt;&lt;strong&gt;L2-026 小字辈 (25 分)&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;本题给定一个庞大家族的家谱，要请你给出最小一辈的名单。&lt;/p&gt;
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;输入在第一行给出家族人口总数 N（不超过 100 000 的正整数） —— 简单起见，我们把家族成员从 1 到 N 编号。随后第二行给出 N 个编号，其中第 i 个编号对应第 i 位成员的父&amp;#x2F;母。家谱中辈分最高的老祖宗对应的父&amp;#x2F;母编号为 -1。一行中的数字间以空格分隔。&lt;/p&gt;
 &lt;h3 id=&#34;输出格式：&#34;&gt;&lt;a href=&#34;#输出格式：&#34; class=&#34;headerlink&#34; title=&#34;输出格式：&#34;&gt;&lt;/a&gt;输出格式：&lt;/h3&gt;&lt;p&gt;首先输出最小的辈分（老祖宗的辈分为 1，以下逐级递增）。然后在第二行按递增顺序输出辈分最小的成员的编号。编号间以一个空格分隔，行首尾不得有多余空格。&lt;/p&gt;
@@ -396,14 +396,14 @@
         <updated>2022-04-13T01:45:49.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2022/04/12/Algorithm018/</id>
+        <id>http://example.com/posts/f073a4bd.html</id>
         <title>L2-023 图着色问题 (25 分)</title>
-        <link rel="alternate" href="http://example.com/2022/04/12/Algorithm018/"/>
+        <link rel="alternate" href="http://example.com/posts/f073a4bd.html"/>
         <content type="html">&lt;h2 id=&#34;L2-023-图着色问题-25-分&#34;&gt;&lt;a href=&#34;#L2-023-图着色问题-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-023 图着色问题 (25 分)&#34;&gt;&lt;/a&gt;L2-023 图着色问题 (25 分)&lt;/h2&gt;&lt;p&gt;图着色问题是一个著名的NP完全问题。给定无向图&lt;em&gt;G&lt;/em&gt;&amp;#x3D;(&lt;em&gt;V&lt;/em&gt;,&lt;em&gt;E&lt;/em&gt;)，问可否用&lt;em&gt;K&lt;/em&gt;种颜色为&lt;em&gt;V&lt;/em&gt;中的每一个顶点分配一种颜色，使得不会有两个相邻顶点具有同一种颜色？&lt;/p&gt;
 &lt;p&gt;但本题并不是要你解决这个着色问题，而是对给定的一种颜色分配，请你判断这是否是图着色问题的一个解。&lt;/p&gt;
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;输入在第一行给出3个整数&lt;em&gt;V&lt;/em&gt;（0&amp;lt;&lt;em&gt;V&lt;/em&gt;≤500）、&lt;em&gt;E&lt;/em&gt;（≥0）和&lt;em&gt;K&lt;/em&gt;（0&amp;lt;&lt;em&gt;K&lt;/em&gt;≤&lt;em&gt;V&lt;/em&gt;），分别是无向图的顶点数、边数、以及颜色数。顶点和颜色都从1到&lt;em&gt;V&lt;/em&gt;编号。随后&lt;em&gt;E&lt;/em&gt;行，每行给出一条边的两个端点的编号。在图的信息给出之后，给出了一个正整数&lt;em&gt;N&lt;/em&gt;（≤20），是待检查的颜色分配方案的个数。随后&lt;em&gt;N&lt;/em&gt;行，每行顺次给出&lt;em&gt;V&lt;/em&gt;个顶点的颜色（第&lt;em&gt;i&lt;/em&gt;个数字表示第&lt;em&gt;i&lt;/em&gt;个顶点的颜色），数字间以空格分隔。题目保证给定的无向图是合法的（即不存在自回路和重边）。&lt;/p&gt;
 &lt;h3 id=&#34;输出格式：&#34;&gt;&lt;a href=&#34;#输出格式：&#34; class=&#34;headerlink&#34; title=&#34;输出格式：&#34;&gt;&lt;/a&gt;输出格式：&lt;/h3&gt;&lt;p&gt;对每种颜色分配方案，如果是图着色问题的一个解则输出&lt;code&gt;Yes&lt;/code&gt;，否则输出&lt;code&gt;No&lt;/code&gt;，每句占一行。&lt;/p&gt;
-&lt;h3 id=&#34;输入样例：&#34;&gt;&lt;a href=&#34;#输入样例：&#34; class=&#34;headerlink&#34; title=&#34;输入样例：&#34;&gt;&lt;/a&gt;输入样例：&lt;/h3&gt;&lt;img src=&#34;/2022/04/12/Algorithm018/graph.png&#34; alt=&#34;graph&#34; style=&#34;zoom: 67%;&#34;&gt;
+&lt;h3 id=&#34;输入样例：&#34;&gt;&lt;a href=&#34;#输入样例：&#34; class=&#34;headerlink&#34; title=&#34;输入样例：&#34;&gt;&lt;/a&gt;输入样例：&lt;/h3&gt;&lt;img src=&#34;/posts/f073a4bd.htm/graph.png&#34; alt=&#34;graph&#34; style=&#34;zoom: 67%;&#34;&gt;
 
 &lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs in&#34;&gt;6 8 3&lt;br&gt;2 1&lt;br&gt;1 3&lt;br&gt;4 6&lt;br&gt;2 5&lt;br&gt;2 4&lt;br&gt;5 4&lt;br&gt;5 6&lt;br&gt;3 6&lt;br&gt;4&lt;br&gt;1 2 3 3 1 2&lt;br&gt;4 5 6 6 4 5&lt;br&gt;1 2 3 4 5 6&lt;br&gt;2 3 4 2 3 4&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
@@ -424,9 +424,9 @@
         <updated>2022-04-12T10:59:52.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2022/04/12/Algorithm017/</id>
+        <id>http://example.com/posts/cea437a.html</id>
         <title>L2-022 重排链表 (25 分)</title>
-        <link rel="alternate" href="http://example.com/2022/04/12/Algorithm017/"/>
+        <link rel="alternate" href="http://example.com/posts/cea437a.html"/>
         <content type="html">&lt;h2 id=&#34;L2-022-重排链表-25-分&#34;&gt;&lt;a href=&#34;#L2-022-重排链表-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-022 重排链表 (25 分)&#34;&gt;&lt;/a&gt;L2-022 重排链表 (25 分)&lt;/h2&gt;&lt;p&gt;给定一个单链表 &lt;em&gt;L&lt;/em&gt;1→&lt;em&gt;L&lt;/em&gt;2→⋯→&lt;em&gt;Ln&lt;/em&gt;−1→&lt;em&gt;Ln&lt;/em&gt;，请编写程序将链表重新排列为 &lt;em&gt;Ln&lt;/em&gt;→&lt;em&gt;L&lt;/em&gt;1→&lt;em&gt;Ln&lt;/em&gt;−1→&lt;em&gt;L&lt;/em&gt;2→⋯。例如：给定&lt;em&gt;L&lt;/em&gt;为1→2→3→4→5→6，则输出应该为6→1→5→2→4→3。&lt;/p&gt;
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;每个输入包含1个测试用例。每个测试用例第1行给出第1个结点的地址和结点总个数，即正整数&lt;em&gt;N&lt;/em&gt; (≤105)。结点的地址是5位非负整数，NULL地址用−1表示。&lt;/p&gt;
 &lt;p&gt;接下来有&lt;em&gt;N&lt;/em&gt;行，每行格式为：&lt;/p&gt;
@@ -450,9 +450,9 @@
         <updated>2022-04-12T01:50:11.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2022/04/11/Algorithm016/</id>
+        <id>http://example.com/posts/aab84a2d.html</id>
         <title>L2-021 点赞狂魔 (25 分)</title>
-        <link rel="alternate" href="http://example.com/2022/04/11/Algorithm016/"/>
+        <link rel="alternate" href="http://example.com/posts/aab84a2d.html"/>
         <content type="html">&lt;h1 id=&#34;L2-021-点赞狂魔-25-分&#34;&gt;&lt;a href=&#34;#L2-021-点赞狂魔-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-021 点赞狂魔 (25 分)&#34;&gt;&lt;/a&gt;L2-021 点赞狂魔 (25 分)&lt;/h1&gt;&lt;p&gt;微博上有个“点赞”功能，你可以为你喜欢的博文点个赞表示支持。每篇博文都有一些刻画其特性的标签，而你点赞的博文的类型，也间接刻画了你的特性。然而有这么一种人，他们会通过给自己看到的一切内容点赞来狂刷存在感，这种人就被称为“点赞狂魔”。他们点赞的标签非常分散，无法体现出明显的特性。本题就要求你写个程序，通过统计每个人点赞的不同标签的数量，找出前3名点赞狂魔。&lt;/p&gt;
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;输入在第一行给出一个正整数&lt;em&gt;N&lt;/em&gt;（≤100），是待统计的用户数。随后&lt;em&gt;N&lt;/em&gt;行，每行列出一位用户的点赞标签。格式为“&lt;code&gt;Name&lt;/code&gt; &lt;em&gt;K&lt;/em&gt; &lt;em&gt;F&lt;/em&gt;1⋯&lt;em&gt;F**K&lt;/em&gt;”，其中&lt;code&gt;Name&lt;/code&gt;是不超过8个英文小写字母的非空用户名，1≤&lt;em&gt;K&lt;/em&gt;≤1000，&lt;em&gt;F**i&lt;/em&gt;（&lt;em&gt;i&lt;/em&gt;&amp;#x3D;1,⋯,&lt;em&gt;K&lt;/em&gt;）是特性标签的编号，我们将所有特性标签从 1 到 107 编号。数字间以空格分隔。&lt;/p&gt;
 &lt;h3 id=&#34;输出格式：&#34;&gt;&lt;a href=&#34;#输出格式：&#34; class=&#34;headerlink&#34; title=&#34;输出格式：&#34;&gt;&lt;/a&gt;输出格式：&lt;/h3&gt;&lt;p&gt;统计每个人点赞的不同标签的数量，找出数量最大的前3名，在一行中顺序输出他们的用户名,其间以1个空格分隔,且行末不得有多余空格。如果有并列，则输出标签出现次数平均值最小的那个，题目保证这样的用户没有并列。若不足3人，则用&lt;code&gt;-&lt;/code&gt;补齐缺失，例如&lt;code&gt;mike jenny -&lt;/code&gt;就表示只有2人。&lt;/p&gt;
@@ -474,9 +474,9 @@
         <updated>2022-04-11T11:21:06.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2022/04/08/Algorithm015/</id>
+        <id>http://example.com/posts/f801da6b.html</id>
         <title>C++的STL中字符串string自带方法find查找</title>
-        <link rel="alternate" href="http://example.com/2022/04/08/Algorithm015/"/>
+        <link rel="alternate" href="http://example.com/posts/f801da6b.html"/>
         <content type="html">&lt;h1 id=&#34;C-的STL中字符串string自带方法find查找&#34;&gt;&lt;a href=&#34;#C-的STL中字符串string自带方法find查找&#34; class=&#34;headerlink&#34; title=&#34;C++的STL中字符串string自带方法find查找&#34;&gt;&lt;/a&gt;C++的STL中字符串string自带方法find查找&lt;/h1&gt;&lt;h2 id=&#34;用法&#34;&gt;&lt;a href=&#34;#用法&#34; class=&#34;headerlink&#34; title=&#34;用法&#34;&gt;&lt;/a&gt;用法&lt;/h2&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;string str = &lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;abcd&amp;quot;&lt;/span&gt;;&lt;br&gt;	cout &amp;lt;&amp;lt; str.&lt;span class=&#34;hljs-built_in&#34;&gt;find&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;#x27;a&amp;#x27;&lt;/span&gt;);&lt;br&gt;	&lt;span class=&#34;hljs-comment&#34;&gt;//返回的是下标的值而不是指针或是迭代器&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;string str = &lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;abcd&amp;quot;&lt;/span&gt;&lt;br&gt;string sub = &lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;cd&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(str.&lt;span class=&#34;hljs-built_in&#34;&gt;find&lt;/span&gt;(sub)!=string::npos)&amp;#123;&lt;br&gt;    cout&amp;lt;&amp;lt;&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;找到了&amp;quot;&lt;/span&gt;&amp;lt;&amp;lt;endl;&lt;br&gt;&amp;#125;&lt;span class=&#34;hljs-keyword&#34;&gt;else&lt;/span&gt;&amp;#123;&lt;br&gt;    cout&amp;lt;&amp;lt;&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;没有找到&amp;quot;&lt;/span&gt;&amp;lt;&amp;lt;endl;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -484,7 +484,7 @@
 &lt;p&gt;要是没有找到，返回的是str::npos&lt;br&gt;注意，只有string的find方法是返回的下标，因为string是顺序索引，set,map,multiset,multimap都不是顺序索引的数据结构，所以返回的是迭代器。&lt;/p&gt;
 &lt;h2 id=&#34;样例一-L1-070-吃火锅-15-分&#34;&gt;&lt;a href=&#34;#样例一-L1-070-吃火锅-15-分&#34; class=&#34;headerlink&#34; title=&#34;样例一:L1-070 吃火锅 (15 分)&#34;&gt;&lt;/a&gt;样例一:&lt;strong&gt;L1-070 吃火锅 (15 分)&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;题目链接：&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://pintia.cn/problem-sets/994805046380707840/problems/1336215880692482053&#34;&gt;https://pintia.cn/problem-sets/994805046380707840/problems/1336215880692482053&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/2022/04/08/Algorithm015/68518b64-f2f7-4694-aaeb-d32afe657f7b.jpg&#34; alt=&#34;chg.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/posts/f801da6b.htm/68518b64-f2f7-4694-aaeb-d32afe657f7b.jpg&#34; alt=&#34;chg.jpg&#34;&gt;&lt;/p&gt;
 &lt;p&gt;以上图片来自微信朋友圈：这种天气你有什么破事打电话给我基本没用。但是如果你说“吃火锅”，那就厉害了，我们的故事就开始了。&lt;/p&gt;
 &lt;p&gt;本题要求你实现一个程序，自动检查你朋友给你发来的信息里有没有 &lt;code&gt;chi1 huo3 guo1&lt;/code&gt;。&lt;/p&gt;
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;输入每行给出一句不超过 80 个字符的、以回车结尾的朋友信息，信息为非空字符串，仅包括字母、数字、空格、可见的半角标点符号。当读到某一行只有一个英文句点 &lt;code&gt;.&lt;/code&gt; 时，输入结束，此行不算在朋友信息里。&lt;/p&gt;
