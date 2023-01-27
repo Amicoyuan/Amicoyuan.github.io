@@ -11,10 +11,10 @@
     <category term="STL" />
     <category term="C++" />
     <category term="Sort" />
-    <category term="String" />
-    <category term="Find" />
     <category term="LinkList" />
     <category term="双向链表" />
+    <category term="String" />
+    <category term="Find" />
     <category term="Graph" />
     <category term="邻接表" />
     <category term="Vector" />
