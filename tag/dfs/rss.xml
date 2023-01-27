@@ -9,15 +9,15 @@
         <lastBuildDate>Fri, 15 Apr 2022 21:09:30 +0800</lastBuildDate>
         <category>AVX</category>
         <category>Data Structure</category>
-        <category>Set</category>
-        <category>团体程序设计天梯赛</category>
+        <category>String</category>
+        <category>Find</category>
         <category>STL</category>
         <category>C++</category>
+        <category>Set</category>
+        <category>团体程序设计天梯赛</category>
         <category>Sort</category>
         <category>LinkList</category>
         <category>双向链表</category>
-        <category>String</category>
-        <category>Find</category>
         <category>Graph</category>
         <category>邻接表</category>
         <category>Vector</category>
@@ -47,8 +47,8 @@
             <title>L2-013 红色警报 (25 分)</title>
             <link>http://example.com/2022/04/15/Algorithm025/</link>
             <category>Data Structure</category>
-            <category>团体程序设计天梯赛</category>
             <category>C++</category>
+            <category>团体程序设计天梯赛</category>
             <category>Graph</category>
             <category>邻接矩阵</category>
             <category>DFS</category>
