@@ -18,11 +18,11 @@
         <category>Sort</category>
         <category>LinkList</category>
         <category>双向链表</category>
-        <category>Binary tree</category>
+        <category>Graph</category>
         <category>邻接表</category>
         <category>Vector</category>
+        <category>Binary tree</category>
         <category>BFS</category>
-        <category>Graph</category>
         <category>模拟</category>
         <category>邻接矩阵</category>
         <category>DFS</category>
@@ -33,9 +33,9 @@
         <category>Map</category>
         <category>Pair</category>
         <category>Linux</category>
-        <category>MPI</category>
         <category>CUDA</category>
         <category>Mirror</category>
+        <category>MPI</category>
         <category>Numactl</category>
         <category>OpenMP</category>
         <category>Slurm</category>
