@@ -36,8 +36,8 @@
     <category term="Numactl" />
     <category term="OpenMP" />
     <category term="Slurm" />
-    <category term="Tensorflow" />
     <category term="性能分析工具" />
+    <category term="Tensorflow" />
     <category term="gcov" />
     <entry>
         <id>http://example.com/posts/83fe4875.html</id>
