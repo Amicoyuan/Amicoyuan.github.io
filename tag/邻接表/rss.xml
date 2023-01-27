@@ -9,13 +9,13 @@
         <lastBuildDate>Wed, 13 Apr 2022 19:09:46 +0800</lastBuildDate>
         <category>AVX</category>
         <category>Data Structure</category>
-        <category>String</category>
-        <category>Find</category>
-        <category>STL</category>
-        <category>C++</category>
         <category>Set</category>
         <category>团体程序设计天梯赛</category>
+        <category>STL</category>
+        <category>C++</category>
         <category>Sort</category>
+        <category>String</category>
+        <category>Find</category>
         <category>LinkList</category>
         <category>双向链表</category>
         <category>Graph</category>
@@ -28,8 +28,8 @@
         <category>DFS</category>
         <category>结构体</category>
         <category>贪心</category>
-        <category>并查集</category>
         <category>Double类型相等比较</category>
+        <category>并查集</category>
         <category>Map</category>
         <category>Pair</category>
         <category>Linux</category>
@@ -47,8 +47,8 @@
             <title>L2-031 深入虎穴 (25 分)</title>
             <link>http://example.com/2022/04/13/Algorithm022/</link>
             <category>Data Structure</category>
-            <category>C++</category>
             <category>团体程序设计天梯赛</category>
+            <category>C++</category>
             <category>邻接表</category>
             <category>Vector</category>
             <category>Binary tree</category>
@@ -76,8 +76,8 @@
             <title>L2-040 哲哲打游戏 (25 分)</title>
             <link>http://example.com/2022/04/13/Algorithm021/</link>
             <category>Data Structure</category>
-            <category>C++</category>
             <category>团体程序设计天梯赛</category>
+            <category>C++</category>
             <category>邻接表</category>
             <category>Vector</category>
             <category>模拟</category>
@@ -114,8 +114,8 @@
             <title>L2-026 小字辈 (25 分)</title>
             <link>http://example.com/2022/04/13/Algorithm019/</link>
             <category>Data Structure</category>
-            <category>C++</category>
             <category>团体程序设计天梯赛</category>
+            <category>C++</category>
             <category>邻接表</category>
             <category>Vector</category>
             <category>Binary tree</category>
@@ -139,9 +139,9 @@
             <title>L2-023 图着色问题 (25 分)</title>
             <link>http://example.com/2022/04/12/Algorithm018/</link>
             <category>Data Structure</category>
-            <category>C++</category>
             <category>Set</category>
             <category>团体程序设计天梯赛</category>
+            <category>C++</category>
             <category>Graph</category>
             <category>邻接表</category>
             <category>Vector</category>
