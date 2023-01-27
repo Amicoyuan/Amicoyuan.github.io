@@ -38,8 +38,8 @@
         <category>Mirror</category>
         <category>Numactl</category>
         <category>OpenMP</category>
-        <category>Tensorflow</category>
         <category>Slurm</category>
+        <category>Tensorflow</category>
         <category>性能分析工具</category>
         <category>gcov</category>
         <item>
