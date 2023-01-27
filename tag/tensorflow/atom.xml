@@ -24,19 +24,19 @@
     <category term="邻接矩阵" />
     <category term="DFS" />
     <category term="结构体" />
-    <category term="Double类型相等比较" />
     <category term="贪心" />
+    <category term="Double类型相等比较" />
     <category term="并查集" />
     <category term="Map" />
     <category term="Pair" />
     <category term="Linux" />
+    <category term="MPI" />
     <category term="CUDA" />
     <category term="Mirror" />
-    <category term="MPI" />
     <category term="Numactl" />
     <category term="OpenMP" />
-    <category term="Slurm" />
     <category term="Tensorflow" />
+    <category term="Slurm" />
     <category term="性能分析工具" />
     <category term="gcov" />
     <entry>
