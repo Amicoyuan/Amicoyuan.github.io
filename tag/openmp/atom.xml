@@ -23,10 +23,10 @@
     <category term="模拟" />
     <category term="邻接矩阵" />
     <category term="DFS" />
+    <category term="并查集" />
     <category term="结构体" />
     <category term="贪心" />
     <category term="Double类型相等比较" />
-    <category term="并查集" />
     <category term="Map" />
     <category term="Pair" />
     <category term="Linux" />
@@ -41,7 +41,7 @@
     <category term="gcov" />
     <entry>
         <id>http://example.com/2023/01/14/openmp006/</id>
-        <title>OpenMP生产者消费者问题</title>
+        <title>OpenMP生产者消费者问题(未完结)</title>
         <link rel="alternate" href="http://example.com/2023/01/14/openmp006/"/>
         <content type="html">&lt;h2 id=&#34;OpenMP生产者消费者问题&#34;&gt;&lt;a href=&#34;#OpenMP生产者消费者问题&#34; class=&#34;headerlink&#34; title=&#34;OpenMP生产者消费者问题&#34;&gt;&lt;/a&gt;OpenMP生产者消费者问题&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;本节将讨论一个不适合用parallel for指令或者for指令来并行化的问题。&lt;/strong&gt;&lt;/p&gt;
 &lt;h3 id=&#34;1-队列&#34;&gt;&lt;a href=&#34;#1-队列&#34; class=&#34;headerlink&#34; title=&#34;1.队列&#34;&gt;&lt;/a&gt;1.队列&lt;/h3&gt;&lt;p&gt;队列是一种抽象的数据结构，插入元素时将元素插入到队列“尾部”，而读取元素时，队列“头部”的元素被返回并从队列中被移除。队列可以看做是在超市中等待付款的消费者的抽象，队列中的元素是消费者。新的消费者到达时排在等待队列的尾部，下一个付款离开等待队列的是排在队列头部的消费者。&lt;/p&gt;

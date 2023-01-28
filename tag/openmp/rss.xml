@@ -26,10 +26,10 @@
         <category>模拟</category>
         <category>邻接矩阵</category>
         <category>DFS</category>
+        <category>并查集</category>
         <category>结构体</category>
         <category>贪心</category>
         <category>Double类型相等比较</category>
-        <category>并查集</category>
         <category>Map</category>
         <category>Pair</category>
         <category>Linux</category>
@@ -44,7 +44,7 @@
         <category>gcov</category>
         <item>
             <guid isPermalink="true">http://example.com/2023/01/14/openmp006/</guid>
-            <title>OpenMP生产者消费者问题</title>
+            <title>OpenMP生产者消费者问题(未完结)</title>
             <link>http://example.com/2023/01/14/openmp006/</link>
             <category>OpenMP</category>
             <pubDate>Sat, 14 Jan 2023 22:30:05 +0800</pubDate>
