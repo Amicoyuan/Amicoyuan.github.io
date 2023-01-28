@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://example.com/2023/01/28/avx006/</loc>
+    <lastmod>2023-01-28</lastmod>
+  </url>
+  <url>
     <loc>http://example.com/2023/01/17/cuda005/</loc>
     <lastmod>2023-01-28</lastmod>
   </url>
@@ -13,11 +17,11 @@
     <lastmod>2023-01-27</lastmod>
   </url>
   <url>
-    <loc>http://example.com/2022/05/08/tool004/</loc>
+    <loc>http://example.com/2022/01/19/tool003/</loc>
     <lastmod>2023-01-27</lastmod>
   </url>
   <url>
-    <loc>http://example.com/2022/01/19/tool003/</loc>
+    <loc>http://example.com/2022/05/08/tool004/</loc>
     <lastmod>2023-01-27</lastmod>
   </url>
   <url>
@@ -57,11 +61,11 @@
     <lastmod>2023-01-27</lastmod>
   </url>
   <url>
-    <loc>http://example.com/2022/04/02/mpi006/</loc>
+    <loc>http://example.com/2022/05/20/numactl001/</loc>
     <lastmod>2023-01-27</lastmod>
   </url>
   <url>
-    <loc>http://example.com/2022/05/20/numactl001/</loc>
+    <loc>http://example.com/2022/04/02/mpi006/</loc>
     <lastmod>2023-01-27</lastmod>
   </url>
   <url>
@@ -69,11 +73,11 @@
     <lastmod>2023-01-27</lastmod>
   </url>
   <url>
-    <loc>http://example.com/2021/11/26/mpi003/</loc>
+    <loc>http://example.com/2021/11/27/mpi004/</loc>
     <lastmod>2023-01-27</lastmod>
   </url>
   <url>
-    <loc>http://example.com/2021/11/27/mpi004/</loc>
+    <loc>http://example.com/2021/11/26/mpi003/</loc>
     <lastmod>2023-01-27</lastmod>
   </url>
   <url>
@@ -161,11 +165,11 @@
     <lastmod>2023-01-27</lastmod>
   </url>
   <url>
-    <loc>http://example.com/2022/04/13/Algorithm022/</loc>
+    <loc>http://example.com/2022/04/13/Algorithm021/</loc>
     <lastmod>2023-01-27</lastmod>
   </url>
   <url>
-    <loc>http://example.com/2022/04/13/Algorithm021/</loc>
+    <loc>http://example.com/2022/04/13/Algorithm022/</loc>
     <lastmod>2023-01-27</lastmod>
   </url>
   <url>
@@ -221,11 +225,11 @@
     <lastmod>2023-01-27</lastmod>
   </url>
   <url>
-    <loc>http://example.com/2022/03/11/Algorithm005/</loc>
+    <loc>http://example.com/2022/03/28/Algorithm006/</loc>
     <lastmod>2023-01-27</lastmod>
   </url>
   <url>
-    <loc>http://example.com/2022/03/28/Algorithm006/</loc>
+    <loc>http://example.com/2022/03/11/Algorithm005/</loc>
     <lastmod>2023-01-27</lastmod>
   </url>
   <url>

@@ -5,35 +5,36 @@
         <link>http://example.com</link>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Tue, 17 Jan 2023 22:03:10 +0800</pubDate>
-        <lastBuildDate>Tue, 17 Jan 2023 22:03:10 +0800</lastBuildDate>
+        <pubDate>Sat, 28 Jan 2023 14:51:44 +0800</pubDate>
+        <lastBuildDate>Sat, 28 Jan 2023 14:51:44 +0800</lastBuildDate>
         <category>AVX</category>
         <category>Data Structure</category>
         <category>String</category>
         <category>Find</category>
         <category>STL</category>
         <category>C++</category>
-        <category>LinkList</category>
-        <category>团体程序设计天梯赛</category>
-        <category>双向链表</category>
         <category>Set</category>
+        <category>团体程序设计天梯赛</category>
         <category>Sort</category>
+        <category>LinkList</category>
+        <category>双向链表</category>
         <category>Graph</category>
         <category>邻接表</category>
         <category>Vector</category>
         <category>Binary tree</category>
         <category>BFS</category>
         <category>模拟</category>
+        <category>结构体</category>
+        <category>贪心</category>
         <category>邻接矩阵</category>
         <category>DFS</category>
-        <category>结构体</category>
         <category>Double类型相等比较</category>
-        <category>贪心</category>
-        <category>Map</category>
         <category>并查集</category>
+        <category>Map</category>
         <category>Pair</category>
         <category>Linux</category>
         <category>MPI</category>
+        <category>AVX2</category>
         <category>CUDA</category>
         <category>Mirror</category>
         <category>Numactl</category>
@@ -42,6 +43,29 @@
         <category>Tensorflow</category>
         <category>性能分析工具</category>
         <category>gcov</category>
+        <item>
+            <guid isPermalink="true">http://example.com/2023/01/28/avx006/</guid>
+            <title>如何使用AVX和AVX2处理数据(个人翻译)[未完成]</title>
+            <link>http://example.com/2023/01/28/avx006/</link>
+            <category>AVX</category>
+            <category>AVX2</category>
+            <pubDate>Sat, 28 Jan 2023 14:51:44 +0800</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;1-文章来源&#34;&gt;&lt;a href=&#34;#1-文章来源&#34; class=&#34;headerlink&#34; title=&#34;1.文章来源&#34;&gt;&lt;/a&gt;1.文章来源&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Matt Scarpino&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.codeproject.com/Articles/874396/Crunching-Numbers-with-AVX-and-AVX&#34;&gt;Crunching Numbers with AVX and AVX2 - CodeProject&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;2-介绍&#34;&gt;&lt;a href=&#34;#2-介绍&#34; class=&#34;headerlink&#34; title=&#34;2.介绍&#34;&gt;&lt;/a&gt;2.介绍&lt;/h2&gt;&lt;p&gt;在2003年，&lt;a href=&#34;https://www.codeproject.com/script/Membership/View.aspx?mid=22834&#34;&gt;Alex Fr&lt;/a&gt;写了一篇优秀的&lt;a href=&#34;https://www.codeproject.com/Articles/4522/Introduction-to-SSE-Programming&#34;&gt;文章&lt;/a&gt;[该文章现在已经被原作者删除]，解释了如何使用Intel的流式SIMD扩展(SSE)执行SIMD(单指令，多数据)处理。SSE是英特尔处理器支持的一组指令，可对大量数据执行高速运算。&lt;/p&gt;
+&lt;p&gt;2008年，英特尔推出了一套新的高性能指令，称为高级向量扩展(AVX)。AVX执行许多与SSE指令相同的操作，但以更快的速度对更大的数据块进行操作。最近，英特尔在AVX2和AVX512系列中发布了额外的指令。本文的重点是通过称为intrinsic funtions的特殊C函数访问AVX和AVX2指令。&lt;/p&gt;
+&lt;p&gt;本文不介绍整个AVX&amp;#x2F;AVX2 intrinsics，而是侧重于数学计算。特别地，目标是复数相乘。要使用AVX&amp;#x2F;AVX2执行此操作，需要三种类型的intrinsic:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Initialization intrinscis&lt;/li&gt;
+&lt;li&gt;Arithmetic intrinsics&lt;/li&gt;
+&lt;li&gt;Permute&amp;#x2F;shuffle intrinsics&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;		&lt;/p&gt;
+&lt;p&gt;本文讨论每个类别中的intrinsics，并解释如何在代码中使用它们。本文的最后将展示如何用这些intrinsic进行乘法复数运算。&lt;/p&gt;
+&lt;p&gt;理解处理器指令和intrinsic function之间的区别是很重要的。AVX指令是执行不可分割操作的汇编命令。例如，AVX指令vaddps添加了两个操作数，并将结果放在第三个操作数中。&lt;/p&gt;
+&lt;p&gt;要在C&amp;#x2F;C++中执行操作，the intrinsic funtion _mm256_add_ps()直接映射到vaddps，将汇编的性能与高级函数的便利性结合起来。An intrinsic funtion不一定映射到单个指令，但与其他C&amp;#x2F; c++函数相比，AVX&amp;#x2F;AVX2 intrinsics提供了可靠的高性能。&lt;/p&gt;
+&lt;h2 id=&#34;3-基本要求&#34;&gt;&lt;a href=&#34;#3-基本要求&#34; class=&#34;headerlink&#34; title=&#34;3.基本要求&#34;&gt;&lt;/a&gt;3.基本要求&lt;/h2&gt; ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">http://example.com/2023/01/17/cuda005/</guid>
             <title>CUDA内存管理</title>
@@ -791,81 +815,6 @@
 &lt;p&gt;&lt;img src=&#34;/2022/01/19/tool003/image-20220119124013315.png&#34;&gt;&lt;/p&gt;
 &lt;h1 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h1&gt;&lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/arnoldlu/p/6241297.html&#34;&gt;系统级性能分析工具perf的介绍与使用 - ArnoldLu - 博客园 (cnblogs.com)&lt;/a&gt;-系统性能分析工具perf的介绍与使用&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.bilibili.com/video/BV1MK4y1m7Uj?from=search&amp;seid=11304698501320722134&amp;spm_id_from=333.337.0.0&#34;&gt;如何使用gcov和perf工具抓热点代码 - 陈小欧 - 20210331 - PLCT实验室_哔哩哔哩_bilibili&lt;/a&gt;-如何使用gcov和perf工具抓热点代码 - 陈小欧 - 20210331 - PLCT实验室&lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://example.com/2022/01/18/tool002/</guid>
-            <title>gcov代码覆盖率测试</title>
-            <link>http://example.com/2022/01/18/tool002/</link>
-            <category>性能分析工具</category>
-            <pubDate>Tue, 18 Jan 2022 14:35:05 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;gcov代码覆盖率测试&#34;&gt;&lt;a href=&#34;#gcov代码覆盖率测试&#34; class=&#34;headerlink&#34; title=&#34;gcov代码覆盖率测试&#34;&gt;&lt;/a&gt;gcov代码覆盖率测试&lt;/h1&gt;&lt;h2 id=&#34;gcov的简单介绍&#34;&gt;&lt;a href=&#34;#gcov的简单介绍&#34; class=&#34;headerlink&#34; title=&#34;gcov的简单介绍&#34;&gt;&lt;/a&gt;gcov的简单介绍&lt;/h2&gt;&lt;p&gt;1.gcov是一个测试代码覆盖率的工具。与GCC一起使用来分析程序，以帮助创建更高效、更快的运行代码，并发现程序的未测试部分&lt;br&gt;2.是一个命令行方式的控制台程序。需要结合lcov,gcovr等前端图形工具才能实现统计数据图形化&lt;br&gt;3.伴随GCC发布，不需要单独下载gcov工具。配合GCC共同实现对c&amp;#x2F;c++文件的语句覆盖和分支覆盖测试&lt;br&gt;4.与程序概要分析工具（profiling tool，例如gprof）一起工作，可以估计程序中哪段代码最耗时&lt;/p&gt;
-&lt;h2 id=&#34;gcov能做什么&#34;&gt;&lt;a href=&#34;#gcov能做什么&#34; class=&#34;headerlink&#34; title=&#34;gcov能做什么&#34;&gt;&lt;/a&gt;gcov能做什么&lt;/h2&gt;&lt;p&gt;使用像gcov或gprof这样的分析器，您可以找到一些基本的性能统计数据：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;每一行代码执行的频率是多少&lt;/li&gt;
-&lt;li&gt;实际执行了哪些行代码，配合测试用例达到满意的覆盖率和预期工作&lt;/li&gt;
-&lt;li&gt;每段代码使用了多少计算时间，从而找到热点优化代码&lt;/li&gt;
-&lt;li&gt;gcov创建一个sourcefile.gcov的日志文件，此文件标识源文件sourcefile.c每一行执行的次数,您可以与gprof一起使用这些日志文件来帮助优化程序的性能。gprof提供了您可以使用的时间信息以及从gcov获得的信息。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;注意事项&#34;&gt;&lt;a href=&#34;#注意事项&#34; class=&#34;headerlink&#34; title=&#34;注意事项&#34;&gt;&lt;/a&gt;注意事项&lt;/h2&gt;&lt;p&gt;1.通过将一些代码行合并到一个函数中，可能不会提供足够的信息来查找代码使用大量计算机时间的“热点”。同样地，由于gcov按行(在最低的分辨率下)积累统计数据，它最适合于只在每行上放置一个语句的编程风格。如果您使用扩展到循环或其他控制结构的复杂宏，那么统计信息就没有那么有用了——它们只报告出现宏调用的行。如果您的复杂宏的行为类似于函数，那么您可以用inline fu替换它们。&lt;br&gt;2.gcov只在使用GCC编译的代码上工作。它与任何其他概要或测试覆盖机制不兼容。&lt;/p&gt;
-&lt;h2 id=&#34;使用gcov的3个阶段&#34;&gt;&lt;a href=&#34;#使用gcov的3个阶段&#34; class=&#34;headerlink&#34; title=&#34;使用gcov的3个阶段&#34;&gt;&lt;/a&gt;使用gcov的3个阶段&lt;/h2&gt;&lt;h3 id=&#34;1-编译阶段&#34;&gt;&lt;a href=&#34;#1-编译阶段&#34; class=&#34;headerlink&#34; title=&#34;1.编译阶段&#34;&gt;&lt;/a&gt;1.编译阶段&lt;/h3&gt;&lt;p&gt;要开启gcov功能，需要在源码编译参数中加入-fprofile-arcs -ftest-coverage&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;-ftest-coverage：在编译的时候产生.gcno文件，它包含了重建基本块图和相应的块的源码的行号的信息。&lt;/li&gt;
-&lt;li&gt;-fprofile-arcs：在运行编译过的程序的时候，会产生.gcda文件，它包含了弧跳变的次数等信息。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;以下我们以test.c这个程序为例子，源码如下：&lt;/p&gt;
-&lt;figure class=&#34;highlight c&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c&#34;&gt;&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;include&lt;/span&gt;&lt;span class=&#34;hljs-meta-string&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;()&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;/span&gt;&amp;#123;&lt;br&gt;	&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; n=&lt;span class=&#34;hljs-number&#34;&gt;4&lt;/span&gt;;&lt;br&gt;	&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;&lt;br&gt;	&lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;(i=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;i&amp;lt;n;i++)&lt;br&gt;	&amp;#123;&lt;br&gt;	   &lt;span class=&#34;hljs-built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;Hello World!\n&amp;quot;&lt;/span&gt;);&lt;br&gt;	&amp;#125;&lt;br&gt;	&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; a =&lt;span class=&#34;hljs-number&#34;&gt;20220118&lt;/span&gt;;&lt;br&gt;	&lt;span class=&#34;hljs-built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;%d\n&amp;quot;&lt;/span&gt;,a);&lt;br&gt;	&lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;&lt;strong&gt;编译阶段：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/2022/01/18/tool002/image-20220118145007919.png&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;2-gcov收集代码运行信息&#34;&gt;&lt;a href=&#34;#2-gcov收集代码运行信息&#34; class=&#34;headerlink&#34; title=&#34;2. gcov收集代码运行信息&#34;&gt;&lt;/a&gt;2. gcov收集代码运行信息&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;运行&lt;code&gt;./test&lt;/code&gt;产生&lt;code&gt;test.gcda&lt;/code&gt;文件，其中包含了代码基本块和狐跳变次数统计信息&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;/2022/01/18/tool002/image-20220118145103922.png&#34;&gt;&lt;/p&gt;
-&lt;h4 id=&#34;3-生成gcov代码覆盖率报告&#34;&gt;&lt;a href=&#34;#3-生成gcov代码覆盖率报告&#34; class=&#34;headerlink&#34; title=&#34;3. 生成gcov代码覆盖率报告&#34;&gt;&lt;/a&gt;3. 生成gcov代码覆盖率报告&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;再次运行&lt;code&gt;gcov test.c&lt;/code&gt;产生的&lt;code&gt;test.c.gcov&lt;/code&gt;中包含了代码覆盖率数据,其数据的来源为&lt;code&gt;test.gcda&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;/2022/01/18/tool002/image-20220118145303290.png&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;4-查看生成gcov代码覆盖率报告&#34;&gt;&lt;a href=&#34;#4-查看生成gcov代码覆盖率报告&#34; class=&#34;headerlink&#34; title=&#34;4.查看生成gcov代码覆盖率报告&#34;&gt;&lt;/a&gt;4.查看生成gcov代码覆盖率报告&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;/2022/01/18/tool002/image-20220118145514099.png&#34;&gt;&lt;/p&gt;
-&lt;p&gt;可以看到以下结果：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;其中&lt;code&gt;#####&lt;/code&gt;表示未运行的行&lt;/li&gt;
-&lt;li&gt;每行前面的数字表示行运行的次数&lt;/li&gt;
-&lt;li&gt;—代表不必执行&lt;/li&gt;
-&lt;/ul&gt;
-&lt;figure class=&#34;highlight c&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c&#34;&gt;-:    &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;:Source:test.c&lt;br&gt;-:    &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;:Graph:test.gcno&lt;br&gt;-:    &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;:Data:test.gcda&lt;br&gt;-:    &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;:Runs:&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;&lt;br&gt;-:    &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;:Programs:&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;&lt;br&gt;-:    &lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;:&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;include&lt;/span&gt;&lt;span class=&#34;hljs-meta-string&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;:    &lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt;:&lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;()&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;-:    3:&lt;/span&gt;&amp;#123;&lt;br&gt;&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;:    &lt;span class=&#34;hljs-number&#34;&gt;4&lt;/span&gt;:        &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; n=&lt;span class=&#34;hljs-number&#34;&gt;4&lt;/span&gt;;&lt;br&gt;&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;:    &lt;span class=&#34;hljs-number&#34;&gt;5&lt;/span&gt;:        &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;&lt;br&gt;&lt;span class=&#34;hljs-number&#34;&gt;5&lt;/span&gt;:    &lt;span class=&#34;hljs-number&#34;&gt;6&lt;/span&gt;:        &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;(i=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;i&amp;lt;n;i++)&lt;br&gt;-:    &lt;span class=&#34;hljs-number&#34;&gt;7&lt;/span&gt;:        &amp;#123;&lt;br&gt;&lt;span class=&#34;hljs-number&#34;&gt;4&lt;/span&gt;:    &lt;span class=&#34;hljs-number&#34;&gt;8&lt;/span&gt;:           &lt;span class=&#34;hljs-built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;Hello World!\n&amp;quot;&lt;/span&gt;);&lt;br&gt;-:    &lt;span class=&#34;hljs-number&#34;&gt;9&lt;/span&gt;:        &amp;#125;&lt;br&gt;&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;:   &lt;span class=&#34;hljs-number&#34;&gt;10&lt;/span&gt;:        &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; a =&lt;span class=&#34;hljs-number&#34;&gt;20220118&lt;/span&gt;;&lt;br&gt;&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;:   &lt;span class=&#34;hljs-number&#34;&gt;11&lt;/span&gt;:        &lt;span class=&#34;hljs-built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;%d\n&amp;quot;&lt;/span&gt;,a);&lt;br&gt;&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;:   &lt;span class=&#34;hljs-number&#34;&gt;12&lt;/span&gt;:        &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;&lt;br&gt;-:   &lt;span class=&#34;hljs-number&#34;&gt;13&lt;/span&gt;:&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h2 id=&#34;配合lcov使用，图形化显示&#34;&gt;&lt;a href=&#34;#配合lcov使用，图形化显示&#34; class=&#34;headerlink&#34; title=&#34;配合lcov使用，图形化显示&#34;&gt;&lt;/a&gt;配合lcov使用，图形化显示&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;1.centos安装lcov:&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;yum install lcov&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;&lt;strong&gt;2.运行lcov，生成相应信息&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/2022/01/18/tool002/image-20220118151526665.png&#34;&gt;&lt;/p&gt;
-&lt;p&gt;运行结果：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/2022/01/18/tool002/image-20220118151553801.png&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;3.生成web可视化信息&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/2022/01/18/tool002/image-20220118151821325.png&#34;&gt;&lt;/p&gt;
-&lt;p&gt;运行结果：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/2022/01/18/tool002/image-20220118151853477.png&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;4.打包result文件&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/2022/01/18/tool002/image-20220118152629648.png&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;5.从服务器下载到本地&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/2022/01/18/tool002/image-20220118152705023.png&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;6.查看web&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;​					1）查看index.html：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/2022/01/18/tool002/image-20220118152825105.png&#34;&gt;&lt;/p&gt;
-&lt;p&gt;​						2）详细信息：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/2022/01/18/tool002/image-20220118152908078.png&#34;&gt;&lt;/p&gt;
-&lt;p&gt;上述界面包含：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;函数覆盖率（执行率）&lt;/li&gt;
-&lt;li&gt;代码行数覆盖率（执行率）&lt;/li&gt;
-&lt;li&gt;语句执行次数&lt;/li&gt;
-&lt;li&gt;源码级的详细信息&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/yanxiangyfg/article/details/80989680&#34;&gt;(6条消息) gcov代码覆盖率测试-原理和实践总结_yanxiangyfg的专栏-CSDN博客_gcov代码覆盖率&lt;/a&gt;-gcov代码覆盖率测试-原理和实践总结&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/u012247418/article/details/90137291&#34;&gt;(6条消息) 代码覆盖率测试工具：gcov和lcov的使用_ARM-Linux-CSDN博客&lt;/a&gt;-代码覆盖率测试工具：gcov和lcov的使用&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/haoshine/p/5777735.html&#34;&gt;linux文件夹打包命令 - 小作一个 - 博客园 (cnblogs.com)&lt;/a&gt;-Linux文件打包命令&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.bilibili.com/video/BV1MK4y1m7Uj?from=search&amp;seid=16561916178807634748&amp;spm_id_from=333.337.0.0&#34;&gt;如何使用gcov和perf工具抓热点代码 - 陈小欧 - 20210331 - PLCT实验室_哔哩哔哩_bilibili&lt;/a&gt;-如何使用gcov和perf工具抓热点代码 - 陈小欧 - 20210331 - PLCT实验室&lt;/p&gt;
  ]]></description>
         </item>
     </channel>

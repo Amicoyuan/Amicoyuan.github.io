@@ -3,34 +3,35 @@
     <id>http://example.com</id>
     <title>Amicoyuan • Posts by &#34;avx&#34; tag</title>
     <link href="http://example.com" />
-    <updated>2022-06-12T07:11:29.549Z</updated>
+    <updated>2023-01-28T06:51:44.000Z</updated>
     <category term="AVX" />
     <category term="Data Structure" />
     <category term="String" />
     <category term="Find" />
     <category term="STL" />
     <category term="C++" />
-    <category term="LinkList" />
-    <category term="团体程序设计天梯赛" />
-    <category term="双向链表" />
     <category term="Set" />
+    <category term="团体程序设计天梯赛" />
     <category term="Sort" />
+    <category term="LinkList" />
+    <category term="双向链表" />
     <category term="Graph" />
     <category term="邻接表" />
     <category term="Vector" />
     <category term="Binary tree" />
     <category term="BFS" />
     <category term="模拟" />
+    <category term="结构体" />
+    <category term="贪心" />
     <category term="邻接矩阵" />
     <category term="DFS" />
-    <category term="结构体" />
     <category term="Double类型相等比较" />
-    <category term="贪心" />
-    <category term="Map" />
     <category term="并查集" />
+    <category term="Map" />
     <category term="Pair" />
     <category term="Linux" />
     <category term="MPI" />
+    <category term="AVX2" />
     <category term="CUDA" />
     <category term="Mirror" />
     <category term="Numactl" />
@@ -39,6 +40,29 @@
     <category term="Tensorflow" />
     <category term="性能分析工具" />
     <category term="gcov" />
+    <entry>
+        <id>http://example.com/2023/01/28/avx006/</id>
+        <title>如何使用AVX和AVX2处理数据(个人翻译)[未完成]</title>
+        <link rel="alternate" href="http://example.com/2023/01/28/avx006/"/>
+        <content type="html">&lt;h2 id=&#34;1-文章来源&#34;&gt;&lt;a href=&#34;#1-文章来源&#34; class=&#34;headerlink&#34; title=&#34;1.文章来源&#34;&gt;&lt;/a&gt;1.文章来源&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Matt Scarpino&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.codeproject.com/Articles/874396/Crunching-Numbers-with-AVX-and-AVX&#34;&gt;Crunching Numbers with AVX and AVX2 - CodeProject&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;2-介绍&#34;&gt;&lt;a href=&#34;#2-介绍&#34; class=&#34;headerlink&#34; title=&#34;2.介绍&#34;&gt;&lt;/a&gt;2.介绍&lt;/h2&gt;&lt;p&gt;在2003年，&lt;a href=&#34;https://www.codeproject.com/script/Membership/View.aspx?mid=22834&#34;&gt;Alex Fr&lt;/a&gt;写了一篇优秀的&lt;a href=&#34;https://www.codeproject.com/Articles/4522/Introduction-to-SSE-Programming&#34;&gt;文章&lt;/a&gt;[该文章现在已经被原作者删除]，解释了如何使用Intel的流式SIMD扩展(SSE)执行SIMD(单指令，多数据)处理。SSE是英特尔处理器支持的一组指令，可对大量数据执行高速运算。&lt;/p&gt;
+&lt;p&gt;2008年，英特尔推出了一套新的高性能指令，称为高级向量扩展(AVX)。AVX执行许多与SSE指令相同的操作，但以更快的速度对更大的数据块进行操作。最近，英特尔在AVX2和AVX512系列中发布了额外的指令。本文的重点是通过称为intrinsic funtions的特殊C函数访问AVX和AVX2指令。&lt;/p&gt;
+&lt;p&gt;本文不介绍整个AVX&amp;#x2F;AVX2 intrinsics，而是侧重于数学计算。特别地，目标是复数相乘。要使用AVX&amp;#x2F;AVX2执行此操作，需要三种类型的intrinsic:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Initialization intrinscis&lt;/li&gt;
+&lt;li&gt;Arithmetic intrinsics&lt;/li&gt;
+&lt;li&gt;Permute&amp;#x2F;shuffle intrinsics&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;		&lt;/p&gt;
+&lt;p&gt;本文讨论每个类别中的intrinsics，并解释如何在代码中使用它们。本文的最后将展示如何用这些intrinsic进行乘法复数运算。&lt;/p&gt;
+&lt;p&gt;理解处理器指令和intrinsic function之间的区别是很重要的。AVX指令是执行不可分割操作的汇编命令。例如，AVX指令vaddps添加了两个操作数，并将结果放在第三个操作数中。&lt;/p&gt;
+&lt;p&gt;要在C&amp;#x2F;C++中执行操作，the intrinsic funtion _mm256_add_ps()直接映射到vaddps，将汇编的性能与高级函数的便利性结合起来。An intrinsic funtion不一定映射到单个指令，但与其他C&amp;#x2F; c++函数相比，AVX&amp;#x2F;AVX2 intrinsics提供了可靠的高性能。&lt;/p&gt;
+&lt;h2 id=&#34;3-基本要求&#34;&gt;&lt;a href=&#34;#3-基本要求&#34; class=&#34;headerlink&#34; title=&#34;3.基本要求&#34;&gt;&lt;/a&gt;3.基本要求&lt;/h2&gt;</content>
+        <category term="AVX" />
+        <category term="AVX2" />
+        <updated>2023-01-28T06:51:44.000Z</updated>
+    </entry>
     <entry>
         <id>http://example.com/2022/06/12/AVX%E5%90%91%E9%87%8F%E5%8C%96%E5%AD%A6%E4%B9%A0(%E4%BA%8C)-%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90%E7%9A%84%E5%BA%94%E7%94%A8/</id>
         <title>AVX向量化学习(二)-内存对齐的应用</title>
