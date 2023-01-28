@@ -13,11 +13,11 @@
         <category>Find</category>
         <category>STL</category>
         <category>C++</category>
-        <category>Set</category>
-        <category>团体程序设计天梯赛</category>
-        <category>Sort</category>
         <category>LinkList</category>
+        <category>团体程序设计天梯赛</category>
         <category>双向链表</category>
+        <category>Set</category>
+        <category>Sort</category>
         <category>Graph</category>
         <category>邻接表</category>
         <category>Vector</category>
@@ -26,11 +26,11 @@
         <category>模拟</category>
         <category>邻接矩阵</category>
         <category>DFS</category>
-        <category>并查集</category>
         <category>结构体</category>
-        <category>贪心</category>
         <category>Double类型相等比较</category>
+        <category>贪心</category>
         <category>Map</category>
+        <category>并查集</category>
         <category>Pair</category>
         <category>Linux</category>
         <category>MPI</category>
@@ -100,9 +100,15 @@
 &lt;p&gt;cudaMemcpy的调用会导致主机运行阻塞。cudaMemcpyDeviceToHost的作用就是将存储在GPU上的数组d_C中的结果复制到gpuRef中。最后，调用cudaFree释放GPU的内存。&lt;/p&gt;
 &lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-built_in&#34;&gt;cudaFree&lt;/span&gt;(d_A);&lt;br&gt;&lt;span class=&#34;hljs-built_in&#34;&gt;cudaFree&lt;/span&gt;(d_B);&lt;br&gt;&lt;span class=&#34;hljs-built_in&#34;&gt;cudaFree&lt;/span&gt;(d_C);&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
+&lt;h3 id=&#34;3-不同的存储空间&#34;&gt;&lt;a href=&#34;#3-不同的存储空间&#34; class=&#34;headerlink&#34; title=&#34;3.不同的存储空间&#34;&gt;&lt;/a&gt;3.不同的存储空间&lt;/h3&gt;&lt;p&gt;使用CUDA C进行编程的人最常犯的错误就是对不同内存空间的不恰当引用。对于在GPU上被分配的内存来说，设备指针在主机代码中可能并没有被引用。如果你执行了错误的内存分配，如：&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;gpuRef = d_C&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
+&lt;p&gt;而不是用：&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-built_in&#34;&gt;cudaMemcpy&lt;/span&gt;(gpuRef, d_C, nBytes, cudaMemcpyDeviceToHost);&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
-&lt;h3 id=&#34;3-不同的存储空间&#34;&gt;&lt;a href=&#34;#3-不同的存储空间&#34; class=&#34;headerlink&#34; title=&#34;3.不同的存储空间&#34;&gt;&lt;/a&gt;3.不同的存储空间&lt;/h3&gt;&lt;h3 id=&#34;4-参考资料&#34;&gt;&lt;a href=&#34;#4-参考资料&#34; class=&#34;headerlink&#34; title=&#34;4.参考资料&#34;&gt;&lt;/a&gt;4.参考资料&lt;/h3&gt;&lt;p&gt;CUDA C编程权威指南 程润伟，Max Grossman(美)，Ty Mckercher &lt;/p&gt;
+&lt;p&gt;应用程序在运行时将会崩溃。&lt;/p&gt;
+&lt;p&gt;为了避免这类错误，CUDA6.0提出了统一寻址，使用一个指针来访问CPU和GPU的内存&lt;/p&gt;
+&lt;h3 id=&#34;4-参考资料&#34;&gt;&lt;a href=&#34;#4-参考资料&#34; class=&#34;headerlink&#34; title=&#34;4.参考资料&#34;&gt;&lt;/a&gt;4.参考资料&lt;/h3&gt;&lt;p&gt;CUDA C编程权威指南 程润伟，Max Grossman(美)，Ty Mckercher &lt;/p&gt;
  ]]></description>
         </item>
         <item>
