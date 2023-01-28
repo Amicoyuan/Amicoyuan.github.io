@@ -5,8 +5,8 @@
         <link>http://example.com</link>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Sat, 28 Jan 2023 14:51:44 +0800</pubDate>
-        <lastBuildDate>Sat, 28 Jan 2023 14:51:44 +0800</lastBuildDate>
+        <pubDate>Sat, 28 Jan 2023 15:41:55 +0800</pubDate>
+        <lastBuildDate>Sat, 28 Jan 2023 15:41:55 +0800</lastBuildDate>
         <category>AVX</category>
         <category>Data Structure</category>
         <category>String</category>
@@ -24,12 +24,12 @@
         <category>Binary tree</category>
         <category>BFS</category>
         <category>模拟</category>
-        <category>结构体</category>
-        <category>贪心</category>
         <category>邻接矩阵</category>
         <category>DFS</category>
-        <category>Double类型相等比较</category>
+        <category>结构体</category>
+        <category>贪心</category>
         <category>并查集</category>
+        <category>Double类型相等比较</category>
         <category>Map</category>
         <category>Pair</category>
         <category>Linux</category>
@@ -43,6 +43,46 @@
         <category>Tensorflow</category>
         <category>性能分析工具</category>
         <category>gcov</category>
+        <item>
+            <guid isPermalink="true">http://example.com/2023/01/28/cuda006/</guid>
+            <title>CUDA线程管理[未完成]</title>
+            <link>http://example.com/2023/01/28/cuda006/</link>
+            <category>CUDA</category>
+            <pubDate>Sat, 28 Jan 2023 15:41:55 +0800</pubDate>
+            <description><![CDATA[ &lt;h3 id=&#34;1-线程管理&#34;&gt;&lt;a href=&#34;#1-线程管理&#34; class=&#34;headerlink&#34; title=&#34;1.线程管理&#34;&gt;&lt;/a&gt;1.线程管理&lt;/h3&gt;&lt;p&gt;当核函数在主机端启动时，它的执行会移动到设备上，此时设备中会产生大量的线程并且每个线程都执行由核函数指定的语句。了解如何组织线程是CUDA编程的一个关键部分。CUDA明确了线程层次抽象的概念以便于你组织线程。这是一个两层的线程层次结构，由线程块和线程块网格构成，如图2-5所示。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/01/28/cuda006/image-20230128160011560.png&#34; alt=&#34;image-20230128160011560&#34;&gt;&lt;/p&gt;
+&lt;p&gt;由一个内核启动所产生的所有线程统称为一个网格。同一网格中的所有线程共享相同的全局内存空间。一个网格由多个线程块构成，一个线程块包含一组线程，同一线程块内的线程协作可以通过以下方式来实现。&lt;/p&gt;
+&lt;p&gt;​	-同步&lt;/p&gt;
+&lt;p&gt;​	-共享内存&lt;/p&gt;
+&lt;p&gt;不同块内的线程不能协作。&lt;/p&gt;
+&lt;p&gt;线程依靠以下两个坐标变量来区分彼此。&lt;/p&gt;
+&lt;p&gt;​	-blockIdx(线程块在线程格内的索引)&lt;/p&gt;
+&lt;p&gt;​	-threadIdx(块内的线程索引)&lt;/p&gt;
+&lt;p&gt;这些变量是核函数中需要预初始化的内置变量。当执行一个核函数时，CUDA运行时为每个线程分配坐标变量blockIdx和threadIdx。基于这些坐标，你可以将部分数据分配给不同的线程。&lt;/p&gt;
+&lt;p&gt;该坐标变量是基于uint3定义的CUDA内置的向量类型，是一个包含3个无符号整数的结构，可以通过x,y,z三个字段来指定。&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;blockIdx.x&lt;br&gt;blockIdx.y&lt;br&gt;blockIdx.z&lt;br&gt;threadIdx.x&lt;br&gt;threadIdx.y&lt;br&gt;threadIdx.z&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;CUDA可以组织三维的网格和块。图2-5展示了一个线程层次结构的示例，其结构是一个包含二维块的二维网格。网格和块的维度由下列两个内置变量指定。&lt;/p&gt;
+&lt;p&gt;​	-blockDim(线程块的维度，用每个线程块中的线程数来表示)&lt;/p&gt;
+&lt;p&gt;​	-gridDim(线程格的维度，用每个线程格中的线程数来表示)&lt;/p&gt;
+&lt;p&gt;它们是dim3类型的变量，是基于uint3定义的整数型向量，用来表示维度。当定义一个dim3类型的变量时，所有未指定的元素都被初始化为1。dim3类型变量中的每个组件可以通过它的x,y,z字段获得。如下所示。&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;blockDim.x&lt;br&gt;blockDim.y&lt;br&gt;blockDim.z&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h3 id=&#34;2-网格和线程块的维度&#34;&gt;&lt;a href=&#34;#2-网格和线程块的维度&#34; class=&#34;headerlink&#34; title=&#34;2.网格和线程块的维度&#34;&gt;&lt;/a&gt;2.网格和线程块的维度&lt;/h3&gt;&lt;p&gt;通常，一个线程格会被组织成线程块的二维数组形式，一个线程块会被组织成线程的三维数组形式。&lt;/p&gt;
+&lt;p&gt;线程格和线程块均使用3个dim3类型的无符号整型字段，而未使用的字段将被初始化为1且忽略不计。&lt;/p&gt;
+&lt;p&gt;在CUDA程序中有两组不同的网格和块变量：手动定义的dim3数据类型和预定义的uint3数据类型。在主机端，作为内核调用的一部分，你可以使用dim3数据类型定义一个网格和块的维度。当执行核函数时，CUDA运行时会生成相应的内置预初始化的网格，块和线程变量，它们在核函数内均可被访问到且为unit3类型。手动定义的dim3类型的网络和块变量仅在主机端可见，而unit3类型的内置预初始化的网格和块变量仅在设备端可见。&lt;/p&gt;
+&lt;p&gt;你可以通过代码清单2-2来验证这些变量如何使用。首先，定义程序所用的数据大小，为了对此进行说明，我们定义一个较小的数据。&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; nElem = &lt;span class=&#34;hljs-number&#34;&gt;6&lt;/span&gt;;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;接下来，定义块的尺寸并基于块和数据的大小计算网格尺寸。在下面例子中，定义了一个包含3个线程的一维线程块，以及一个基于块和数据大小定义的一定数量线程块的一维线程网格。&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-function&#34;&gt;dim3 &lt;span class=&#34;hljs-title&#34;&gt;block&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(&lt;span class=&#34;hljs-number&#34;&gt;3&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;dim3 &lt;span class=&#34;hljs-title&#34;&gt;grid&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;((nElem+block.x&lt;span class=&#34;hljs-number&#34;&gt;-1&lt;/span&gt;)/block.x)&lt;/span&gt;&lt;/span&gt;;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;你会发现网格大小是块大小的倍数。以下主机端上的程序段用来检查网格和块维度。&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;grid.x %d grid.y %d grid.z %d\n&amp;quot;&lt;/span&gt;,grid.x,grid.y,grid.z);&lt;br&gt;&lt;span class=&#34;hljs-built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;block.x %d block.y %d block.z %d\n&amp;quot;&lt;/span&gt;,block.x,block.y,block.z);&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;在核函数中，每个线程都输出自己的线程索引，块索引，块维度和网格维度。&lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">http://example.com/2023/01/28/avx006/</guid>
             <title>如何使用AVX和AVX2处理数据(个人翻译)[未完成]</title>
@@ -746,75 +786,6 @@
 
 &lt;h3 id=&#34;程序输出-1&#34;&gt;&lt;a href=&#34;#程序输出-1&#34; class=&#34;headerlink&#34; title=&#34;程序输出&#34;&gt;&lt;/a&gt;程序输出&lt;/h3&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-number&#34;&gt;5&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;4&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;8&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;11&lt;/span&gt; &lt;br&gt;&lt;span class=&#34;hljs-number&#34;&gt;6&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;9&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;15&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;17&lt;/span&gt; &lt;br&gt;&lt;span class=&#34;hljs-number&#34;&gt;20&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;22&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;28&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;17&lt;/span&gt; &lt;br&gt;&lt;span class=&#34;hljs-number&#34;&gt;28&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;28&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;35&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://example.com/2022/01/19/tool003/</guid>
-            <title>perf-系统级性能分析工具</title>
-            <link>http://example.com/2022/01/19/tool003/</link>
-            <category>性能分析工具</category>
-            <pubDate>Wed, 19 Jan 2022 11:56:40 +0800</pubDate>
-            <description><![CDATA[ &lt;p&gt;系统级性能优化通常包括两个阶段：性能剖析（performance profiling）和代码优化。&lt;/p&gt;
-&lt;p&gt;性能剖析的目标是寻找性能瓶颈，查找引发性能问题的原因及热点代码。&lt;/p&gt;
-&lt;p&gt;代码优化的目标是针对具体性能问题而优化代码或编译选项，以改善软件性能。&lt;/p&gt;
-&lt;p&gt;在性能剖析阶段，需要借助于现有的profiling工具，如perf等。在代码优化阶段往往需要借助开发者的经验，编写简洁高效的代码，甚至在汇编级别合理使用各种指令，合理安排各种指令的执行顺序。&lt;/p&gt;
-&lt;p&gt;perf是一款Linux性能分析工具。Linux性能计数器是一个新的基于内核的子系统，它提供一个性能分析框架，比如硬件（CPU、PMU(Performance Monitoring Unit)）功能和软件(软件计数器、tracepoint)功能。&lt;br&gt;通过perf，应用程序可以利用PMU、tracepoint和内核中的计数器来进行性能统计。它不但可以分析制定应用程序的性能问题（per thread），也可以用来分析内核的性能问题，当然也可以同时分析应用程序和内核，从而全面理解应用程序中的性能瓶颈。&lt;/p&gt;
-&lt;p&gt;使用perf，可以分析程序运行期间发生的硬件事件，比如instructions retired、processor clock cycles等；也可以分析软件时间，比如page fault和进程切换。&lt;/p&gt;
-&lt;p&gt;perf是一款综合性分析工具，大到系统全局性性能，再小到进程线程级别，甚至到函数及汇编级别。&lt;/p&gt;
-&lt;p&gt;perf提供了十八般武器，可以拿大刀大卸八块，也可以拿起手术刀细致分析。&lt;/p&gt;
-&lt;h1 id=&#34;1-背景知识&#34;&gt;&lt;a href=&#34;#1-背景知识&#34; class=&#34;headerlink&#34; title=&#34;1. 背景知识&#34;&gt;&lt;/a&gt;1. 背景知识&lt;/h1&gt;&lt;h2 id=&#34;1-1-tracepoints&#34;&gt;&lt;a href=&#34;#1-1-tracepoints&#34; class=&#34;headerlink&#34; title=&#34;1.1 tracepoints&#34;&gt;&lt;/a&gt;1.1 tracepoints&lt;/h2&gt;&lt;p&gt;tracepoints是散落在内核源码中的一些hook，它们可以在特定的代码被执行到时触发，这一特定可以被各种trace&amp;#x2F;debug工具所使用。&lt;/p&gt;
-&lt;p&gt;perf将tracepoint产生的时间记录下来，生成报告，通过分析这些报告，便可以了解程序运行期间内核的各种细节，对性能症状做出准确的诊断。&lt;/p&gt;
-&lt;p&gt;这些tracepint的对应的sysfs节点在&amp;#x2F;sys&amp;#x2F;kernel&amp;#x2F;debug&amp;#x2F;tracing&amp;#x2F;events目录下。&lt;/p&gt;
-&lt;h2 id=&#34;1-2-硬件特性之cache&#34;&gt;&lt;a href=&#34;#1-2-硬件特性之cache&#34; class=&#34;headerlink&#34; title=&#34;1.2 硬件特性之cache&#34;&gt;&lt;/a&gt;1.2 硬件特性之cache&lt;/h2&gt;&lt;p&gt;内存读写是很快的，但是还是无法和处理器指令执行速度相比。为了从内存中读取指令和数据，处理器需要等待，用处理器时间来衡量，这种等待非常漫长。cache是一种SRAM，读写速度非常快，能和处理器相匹配。因此将常用的数据保存在cache中，处理器便无需等待，从而提高性能。cache的尺寸一般都很小，充分利用cache是软件调优非常重要部分。&lt;/p&gt;
-&lt;h1 id=&#34;2-主要关注点&#34;&gt;&lt;a href=&#34;#2-主要关注点&#34; class=&#34;headerlink&#34; title=&#34;2. 主要关注点&#34;&gt;&lt;/a&gt;2. 主要关注点&lt;/h1&gt;&lt;p&gt;基于性能分析，可以进行算法优化（空间复杂度和时间复杂度权衡）、代码优化（提高执行速度、减少内存占用）。&lt;/p&gt;
-&lt;p&gt;评估程序对硬件资源的使用情况，例如各级cache的访问次数、各级cache的丢失次数、流水线停顿周期、前端总线访问次数等。&lt;/p&gt;
-&lt;p&gt;评估程序对操作系统资源的使用情况，系统调用次数、上下文切换次数、任务迁移次数。&lt;/p&gt;
-&lt;p&gt;事件可以分为三种：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Hardware Event由PMU部件产生，在特定的条件下探测性能事件是否发生以及发生的次数。比如cache命中。&lt;/li&gt;
-&lt;li&gt;Software Event是内核产生的事件，分布在各个功能模块中，统计和操作系统相关性能事件。比如进程切换，tick数等。&lt;/li&gt;
-&lt;li&gt;Tracepoint Event是内核中静态tracepoint所触发的事件，这些tracepoint用来判断程序运行期间内核的行为细节，比如slab分配器的分配次数等。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h1 id=&#34;3-perf的使用&#34;&gt;&lt;a href=&#34;#3-perf的使用&#34; class=&#34;headerlink&#34; title=&#34;3. perf的使用&#34;&gt;&lt;/a&gt;3. perf的使用&lt;/h1&gt;&lt;p&gt;perf –help后可以看到perf的二级命令&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/2022/01/19/tool003/image-20220119120817508.png&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;3-1perf-list&#34;&gt;&lt;a href=&#34;#3-1perf-list&#34; class=&#34;headerlink&#34; title=&#34;3.1perf list&#34;&gt;&lt;/a&gt;3.1perf list&lt;/h2&gt;&lt;p&gt;perf list查看支持的事件类型&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/2022/01/19/tool003/image-20220119121131231.png&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;3-2perf-top&#34;&gt;&lt;a href=&#34;#3-2perf-top&#34; class=&#34;headerlink&#34; title=&#34;3.2perf top&#34;&gt;&lt;/a&gt;3.2perf top&lt;/h2&gt;&lt;p&gt;即可以正常显示perf top如下：&lt;/p&gt;
-&lt;p&gt;第一列：符号引发的性能事件的比例，指占用的cpu周期比例。&lt;/p&gt;
-&lt;p&gt;第二列：符号所在的DSO(Dynamic Shared Object)，可以是应用程序、内核、动态链接库、模块。&lt;/p&gt;
-&lt;p&gt;第三列：DSO的类型。[.]表示此符号属于用户态的ELF文件，包括可执行文件与动态链接库；[k]表述此符号属于内核或模块。&lt;/p&gt;
-&lt;p&gt;第四列：符号名。有些符号不能解析为函数名，只能用地址表示。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/2022/01/19/tool003/image-20220119121453395.png&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;3-3-perf-stat&#34;&gt;&lt;a href=&#34;#3-3-perf-stat&#34; class=&#34;headerlink&#34; title=&#34;3.3 perf stat&#34;&gt;&lt;/a&gt;3.3 perf stat&lt;/h2&gt;&lt;p&gt;perf stat用于运行指令，并分析其统计结果。虽然perf top也可以指定pid，但是必须先启动应用才能查看信息。&lt;/p&gt;
-&lt;p&gt;perf stat能完整统计应用整个生命周期的信息。&lt;/p&gt;
-&lt;p&gt;命令格式为：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;perf stat [-e &lt;EVENT&gt; | –event&amp;#x3D;EVENT] [-a] &lt;command&gt;&lt;br&gt;perf stat [-e &lt;EVENT&gt; | –event&amp;#x3D;EVENT] [-a] — &lt;command&gt; [&lt;options&gt;]&lt;/options&gt;&lt;/EVENT&gt;&lt;/EVENT&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;/2022/01/19/tool003/image-20220119122351095.png&#34; alt=&#34;image-20220119122351095&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/2022/01/19/tool003/C2DDB2280E83453D6D8FE0D11A4380C3.png&#34;&gt;&lt;/p&gt;
-&lt;p&gt;cpu-clock：任务真正占用的处理器时间，单位为ms。CPUs utilized &amp;#x3D; task-clock &amp;#x2F; time elapsed，CPU的占用率。&lt;/p&gt;
-&lt;p&gt;context-switches：程序在运行过程中上下文的切换次数。&lt;/p&gt;
-&lt;p&gt;CPU-migrations：程序在运行过程中发生的处理器迁移次数。Linux为了维持多个处理器的负载均衡，在特定条件下会将某个任务从一个CPU迁移到另一个CPU。&lt;/p&gt;
-&lt;p&gt;CPU迁移和上下文切换：发生上下文切换不一定会发生CPU迁移，而发生CPU迁移时肯定会发生上下文切换。发生上下文切换有可能只是把上下文从当前CPU中换出，下一次调度器还是将进程安排在这个CPU上执行。&lt;/p&gt;
-&lt;p&gt;page-faults：缺页异常的次数。当应用程序请求的页面尚未建立、请求的页面不在内存中，或者请求的页面虽然在内存中，但物理地址和虚拟地址的映射关系尚未建立时，都会触发一次缺页异常。另外TLB不命中，页面访问权限不匹配等情况也会触发缺页异常。&lt;/p&gt;
-&lt;p&gt;cycles：消耗的处理器周期数。如果把被ls使用的cpu cycles看成是一个处理器的，那么它的主频为2.486GHz。可以用cycles &amp;#x2F; task-clock算出。&lt;/p&gt;
-&lt;p&gt;stalled-cycles-frontend：指令读取或解码的质量步骤，未能按理想状态发挥并行左右，发生停滞的时钟周期。&lt;/p&gt;
-&lt;p&gt;stalled-cycles-backend：指令执行步骤，发生停滞的时钟周期。&lt;/p&gt;
-&lt;p&gt;instructions：执行了多少条指令。IPC为平均每个cpu cycle执行了多少条指令。&lt;/p&gt;
-&lt;p&gt;branches：遇到的分支指令数。branch-misses是预测错误的分支指令数。&lt;/p&gt;
-&lt;h2 id=&#34;3-4-perf-record-amp-report&#34;&gt;&lt;a href=&#34;#3-4-perf-record-amp-report&#34; class=&#34;headerlink&#34; title=&#34;3.4 perf record &amp;amp; report&#34;&gt;&lt;/a&gt;3.4 perf record &amp;amp; report&lt;/h2&gt;&lt;p&gt;运行一个命令，并将其数据保存到perf.data中。随后，可以使用perf report进行分析。&lt;/p&gt;
-&lt;p&gt;perf record和perf report可以更精确的分析一个应用，perf record可以精确到函数级别。并且在函数里面混合显示汇编语言和代码。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/2022/01/19/tool003/image-20220119123152290.png&#34;&gt;&lt;/p&gt;
-&lt;p&gt;1.编译程序(这里以test.c为例子)&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/2022/01/19/tool003/image-20220119124049654.png&#34;&gt;&lt;/p&gt;
-&lt;p&gt;2.perf record&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/2022/01/19/tool003/image-20220119124217563.png&#34;&gt;&lt;/p&gt;
-&lt;p&gt;3.perf report&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/2022/01/19/tool003/image-20220119124149337.png&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/2022/01/19/tool003/image-20220119124013315.png&#34;&gt;&lt;/p&gt;
-&lt;h1 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h1&gt;&lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/arnoldlu/p/6241297.html&#34;&gt;系统级性能分析工具perf的介绍与使用 - ArnoldLu - 博客园 (cnblogs.com)&lt;/a&gt;-系统性能分析工具perf的介绍与使用&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.bilibili.com/video/BV1MK4y1m7Uj?from=search&amp;seid=11304698501320722134&amp;spm_id_from=333.337.0.0&#34;&gt;如何使用gcov和perf工具抓热点代码 - 陈小欧 - 20210331 - PLCT实验室_哔哩哔哩_bilibili&lt;/a&gt;-如何使用gcov和perf工具抓热点代码 - 陈小欧 - 20210331 - PLCT实验室&lt;/p&gt;
  ]]></description>
         </item>
     </channel>

@@ -5,8 +5,8 @@
         <link>http://example.com</link>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Sat, 28 Jan 2023 14:51:44 +0800</pubDate>
-        <lastBuildDate>Sat, 28 Jan 2023 14:51:44 +0800</lastBuildDate>
+        <pubDate>Sat, 28 Jan 2023 15:41:55 +0800</pubDate>
+        <lastBuildDate>Sat, 28 Jan 2023 15:41:55 +0800</lastBuildDate>
         <category>AVX</category>
         <category>Data Structure</category>
         <category>String</category>
@@ -24,12 +24,12 @@
         <category>Binary tree</category>
         <category>BFS</category>
         <category>模拟</category>
-        <category>结构体</category>
-        <category>贪心</category>
         <category>邻接矩阵</category>
         <category>DFS</category>
-        <category>Double类型相等比较</category>
+        <category>结构体</category>
+        <category>贪心</category>
         <category>并查集</category>
+        <category>Double类型相等比较</category>
         <category>Map</category>
         <category>Pair</category>
         <category>Linux</category>
@@ -43,6 +43,46 @@
         <category>Tensorflow</category>
         <category>性能分析工具</category>
         <category>gcov</category>
+        <item>
+            <guid isPermalink="true">http://example.com/2023/01/28/cuda006/</guid>
+            <title>CUDA线程管理[未完成]</title>
+            <link>http://example.com/2023/01/28/cuda006/</link>
+            <category>CUDA</category>
+            <pubDate>Sat, 28 Jan 2023 15:41:55 +0800</pubDate>
+            <description><![CDATA[ &lt;h3 id=&#34;1-线程管理&#34;&gt;&lt;a href=&#34;#1-线程管理&#34; class=&#34;headerlink&#34; title=&#34;1.线程管理&#34;&gt;&lt;/a&gt;1.线程管理&lt;/h3&gt;&lt;p&gt;当核函数在主机端启动时，它的执行会移动到设备上，此时设备中会产生大量的线程并且每个线程都执行由核函数指定的语句。了解如何组织线程是CUDA编程的一个关键部分。CUDA明确了线程层次抽象的概念以便于你组织线程。这是一个两层的线程层次结构，由线程块和线程块网格构成，如图2-5所示。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/01/28/cuda006/image-20230128160011560.png&#34; alt=&#34;image-20230128160011560&#34;&gt;&lt;/p&gt;
+&lt;p&gt;由一个内核启动所产生的所有线程统称为一个网格。同一网格中的所有线程共享相同的全局内存空间。一个网格由多个线程块构成，一个线程块包含一组线程，同一线程块内的线程协作可以通过以下方式来实现。&lt;/p&gt;
+&lt;p&gt;​	-同步&lt;/p&gt;
+&lt;p&gt;​	-共享内存&lt;/p&gt;
+&lt;p&gt;不同块内的线程不能协作。&lt;/p&gt;
+&lt;p&gt;线程依靠以下两个坐标变量来区分彼此。&lt;/p&gt;
+&lt;p&gt;​	-blockIdx(线程块在线程格内的索引)&lt;/p&gt;
+&lt;p&gt;​	-threadIdx(块内的线程索引)&lt;/p&gt;
+&lt;p&gt;这些变量是核函数中需要预初始化的内置变量。当执行一个核函数时，CUDA运行时为每个线程分配坐标变量blockIdx和threadIdx。基于这些坐标，你可以将部分数据分配给不同的线程。&lt;/p&gt;
+&lt;p&gt;该坐标变量是基于uint3定义的CUDA内置的向量类型，是一个包含3个无符号整数的结构，可以通过x,y,z三个字段来指定。&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;blockIdx.x&lt;br&gt;blockIdx.y&lt;br&gt;blockIdx.z&lt;br&gt;threadIdx.x&lt;br&gt;threadIdx.y&lt;br&gt;threadIdx.z&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;CUDA可以组织三维的网格和块。图2-5展示了一个线程层次结构的示例，其结构是一个包含二维块的二维网格。网格和块的维度由下列两个内置变量指定。&lt;/p&gt;
+&lt;p&gt;​	-blockDim(线程块的维度，用每个线程块中的线程数来表示)&lt;/p&gt;
+&lt;p&gt;​	-gridDim(线程格的维度，用每个线程格中的线程数来表示)&lt;/p&gt;
+&lt;p&gt;它们是dim3类型的变量，是基于uint3定义的整数型向量，用来表示维度。当定义一个dim3类型的变量时，所有未指定的元素都被初始化为1。dim3类型变量中的每个组件可以通过它的x,y,z字段获得。如下所示。&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;blockDim.x&lt;br&gt;blockDim.y&lt;br&gt;blockDim.z&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h3 id=&#34;2-网格和线程块的维度&#34;&gt;&lt;a href=&#34;#2-网格和线程块的维度&#34; class=&#34;headerlink&#34; title=&#34;2.网格和线程块的维度&#34;&gt;&lt;/a&gt;2.网格和线程块的维度&lt;/h3&gt;&lt;p&gt;通常，一个线程格会被组织成线程块的二维数组形式，一个线程块会被组织成线程的三维数组形式。&lt;/p&gt;
+&lt;p&gt;线程格和线程块均使用3个dim3类型的无符号整型字段，而未使用的字段将被初始化为1且忽略不计。&lt;/p&gt;
+&lt;p&gt;在CUDA程序中有两组不同的网格和块变量：手动定义的dim3数据类型和预定义的uint3数据类型。在主机端，作为内核调用的一部分，你可以使用dim3数据类型定义一个网格和块的维度。当执行核函数时，CUDA运行时会生成相应的内置预初始化的网格，块和线程变量，它们在核函数内均可被访问到且为unit3类型。手动定义的dim3类型的网络和块变量仅在主机端可见，而unit3类型的内置预初始化的网格和块变量仅在设备端可见。&lt;/p&gt;
+&lt;p&gt;你可以通过代码清单2-2来验证这些变量如何使用。首先，定义程序所用的数据大小，为了对此进行说明，我们定义一个较小的数据。&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; nElem = &lt;span class=&#34;hljs-number&#34;&gt;6&lt;/span&gt;;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;接下来，定义块的尺寸并基于块和数据的大小计算网格尺寸。在下面例子中，定义了一个包含3个线程的一维线程块，以及一个基于块和数据大小定义的一定数量线程块的一维线程网格。&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-function&#34;&gt;dim3 &lt;span class=&#34;hljs-title&#34;&gt;block&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(&lt;span class=&#34;hljs-number&#34;&gt;3&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;dim3 &lt;span class=&#34;hljs-title&#34;&gt;grid&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;((nElem+block.x&lt;span class=&#34;hljs-number&#34;&gt;-1&lt;/span&gt;)/block.x)&lt;/span&gt;&lt;/span&gt;;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;你会发现网格大小是块大小的倍数。以下主机端上的程序段用来检查网格和块维度。&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;grid.x %d grid.y %d grid.z %d\n&amp;quot;&lt;/span&gt;,grid.x,grid.y,grid.z);&lt;br&gt;&lt;span class=&#34;hljs-built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;block.x %d block.y %d block.z %d\n&amp;quot;&lt;/span&gt;,block.x,block.y,block.z);&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;在核函数中，每个线程都输出自己的线程索引，块索引，块维度和网格维度。&lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">http://example.com/2023/01/28/avx006/</guid>
             <title>如何使用AVX和AVX2处理数据(个人翻译)[未完成]</title>
@@ -835,25 +875,6 @@
 &lt;p&gt;&lt;img src=&#34;/2022/05/20/numactl001/image-20220520174148487.png&#34; alt=&#34;image-20220520174148487&#34;&gt;&lt;/p&gt;
 &lt;h5 id=&#34;参考资料：&#34;&gt;&lt;a href=&#34;#参考资料：&#34; class=&#34;headerlink&#34; title=&#34;参考资料：&#34;&gt;&lt;/a&gt;参考资料：&lt;/h5&gt;&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/qccz123456/article/details/81979819&#34;&gt;(28条消息) Linux工具之numactl_qccz123456的博客-CSDN博客_numactl&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://baijiahao.baidu.com/s?id=1699088343604813491&amp;wfr=spider&amp;for=pc&amp;searchword=numactl&#34;&gt;宋宝华：为什么numactl内存绑定对代码段不起作用 (baidu.com)&lt;/a&gt;&lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://example.com/2022/05/20/Linux002/</guid>
-            <title>linux的jobs,fg,bg命令</title>
-            <link>http://example.com/2022/05/20/Linux002/</link>
-            <category>Linux</category>
-            <pubDate>Fri, 20 May 2022 17:13:08 +0800</pubDate>
-            <description><![CDATA[ &lt;h3 id=&#34;linux让前台程序脱离终端运行&#34;&gt;&lt;a href=&#34;#linux让前台程序脱离终端运行&#34; class=&#34;headerlink&#34; title=&#34;linux让前台程序脱离终端运行&#34;&gt;&lt;/a&gt;linux让前台程序脱离终端运行&lt;/h3&gt;&lt;p&gt;1.首先运行你的程序&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/2022/05/20/Linux002/image-20220520171436032.png&#34; alt=&#34;image-20220520171436032&#34;&gt;&lt;/p&gt;
-&lt;p&gt;2.随后使用Ctrl + z，挂起你的进程&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/2022/05/20/Linux002/image-20220520171510946.png&#34; alt=&#34;image-20220520171510946&#34;&gt;&lt;/p&gt;
-&lt;p&gt;3.然后使用jobs查看所有的进程&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/2022/05/20/Linux002/image-20220520171913979.png&#34; alt=&#34;image-20220520171913979&#34;&gt;&lt;/p&gt;
-&lt;p&gt;4.随后使用bg+id，表示该任务为后台1号任务&lt;/p&gt;
-&lt;p&gt;bg命令用于将作业放到后台运行，使前台可以执行其他任务&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/2022/05/20/Linux002/image-20220520172110992.png&#34; alt=&#34;image-20220520172110992&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;linux让后台程序移动到前台终端&#34;&gt;&lt;a href=&#34;#linux让后台程序移动到前台终端&#34; class=&#34;headerlink&#34; title=&#34;linux让后台程序移动到前台终端&#34;&gt;&lt;/a&gt;linux让后台程序移动到前台终端&lt;/h3&gt;&lt;p&gt;Linux常用命令fg主要用于将后台作业移动到前台终端运行&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/2022/05/20/Linux002/image-20220520172358345.png&#34; alt=&#34;image-20220520172358345&#34;&gt;&lt;/p&gt;
  ]]></description>
         </item>
     </channel>

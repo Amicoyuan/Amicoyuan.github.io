@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://example.com/tools/index.html</loc>
+    
+    <lastmod>2023-01-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/2023/01/28/cuda006/</loc>
+    
+    <lastmod>2023-01-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://example.com/2023/01/28/avx006/</loc>
     
     <lastmod>2023-01-28</lastmod>
@@ -137,7 +155,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/05/20/numactl001/</loc>
+    <loc>http://example.com/2022/04/02/mpi006/</loc>
     
     <lastmod>2023-01-27</lastmod>
     
@@ -146,7 +164,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/04/02/mpi006/</loc>
+    <loc>http://example.com/2022/05/20/numactl001/</loc>
     
     <lastmod>2023-01-27</lastmod>
     
@@ -164,7 +182,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2021/11/27/mpi004/</loc>
+    <loc>http://example.com/2021/11/26/mpi003/</loc>
     
     <lastmod>2023-01-27</lastmod>
     
@@ -173,7 +191,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2021/11/26/mpi003/</loc>
+    <loc>http://example.com/2021/11/27/mpi004/</loc>
     
     <lastmod>2023-01-27</lastmod>
     
@@ -263,7 +281,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/05/20/Linux001/</loc>
+    <loc>http://example.com/2022/05/20/Linux002/</loc>
     
     <lastmod>2023-01-27</lastmod>
     
@@ -272,7 +290,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/05/20/Linux002/</loc>
+    <loc>http://example.com/2022/05/20/Linux001/</loc>
     
     <lastmod>2023-01-27</lastmod>
     
@@ -317,7 +335,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/04/16/Algorithm027/</loc>
+    <loc>http://example.com/2022/04/16/Algorithm028/</loc>
     
     <lastmod>2023-01-27</lastmod>
     
@@ -326,7 +344,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/04/16/Algorithm028/</loc>
+    <loc>http://example.com/2022/04/16/Algorithm027/</loc>
     
     <lastmod>2023-01-27</lastmod>
     
@@ -443,7 +461,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/04/06/Algorithm012/</loc>
+    <loc>http://example.com/2022/04/07/Algorithm014/</loc>
     
     <lastmod>2023-01-27</lastmod>
     
@@ -452,7 +470,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/04/07/Algorithm014/</loc>
+    <loc>http://example.com/2022/04/06/Algorithm012/</loc>
     
     <lastmod>2023-01-27</lastmod>
     
@@ -542,7 +560,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/06/12/AVX%E5%90%91%E9%87%8F%E5%8C%96%E5%AD%A6%E4%B9%A0(%E4%B8%80)/</loc>
+    <loc>http://example.com/2022/06/12/AVX%E5%90%91%E9%87%8F%E5%8C%96%E5%AD%A6%E4%B9%A0(%E4%BA%8C)-%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90%E7%9A%84%E5%BA%94%E7%94%A8/</loc>
     
     <lastmod>2023-01-27</lastmod>
     
@@ -551,7 +569,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/06/12/AVX%E5%90%91%E9%87%8F%E5%8C%96%E5%AD%A6%E4%B9%A0(%E4%BA%8C)-%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90%E7%9A%84%E5%BA%94%E7%94%A8/</loc>
+    <loc>http://example.com/2022/06/12/AVX%E5%90%91%E9%87%8F%E5%8C%96%E5%AD%A6%E4%B9%A0(%E4%B8%80)/</loc>
     
     <lastmod>2023-01-27</lastmod>
     
@@ -590,15 +608,6 @@
     <loc>http://example.com/about/index.html</loc>
     
     <lastmod>2023-01-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/tools/index.html</loc>
-    
-    <lastmod>2023-01-02</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
