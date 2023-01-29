@@ -13,14 +13,14 @@
         <category>Find</category>
         <category>STL</category>
         <category>C++</category>
-        <category>LinkList</category>
-        <category>团体程序设计天梯赛</category>
-        <category>双向链表</category>
         <category>Set</category>
+        <category>团体程序设计天梯赛</category>
         <category>Sort</category>
         <category>Graph</category>
         <category>邻接表</category>
         <category>Vector</category>
+        <category>LinkList</category>
+        <category>双向链表</category>
         <category>Binary tree</category>
         <category>BFS</category>
         <category>模拟</category>
@@ -28,8 +28,8 @@
         <category>贪心</category>
         <category>邻接矩阵</category>
         <category>DFS</category>
-        <category>Double类型相等比较</category>
         <category>并查集</category>
+        <category>Double类型相等比较</category>
         <category>Map</category>
         <category>Pair</category>
         <category>Linux</category>
@@ -108,8 +108,8 @@
             <title>L2-005 集合相似度 (25 分)</title>
             <link>http://example.com/2022/04/23/Algorithm030/</link>
             <category>C++</category>
-            <category>团体程序设计天梯赛</category>
             <category>Set</category>
+            <category>团体程序设计天梯赛</category>
             <category>模拟</category>
             <pubDate>Sat, 23 Apr 2022 21:39:53 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;L2-005-集合相似度-25-分&#34;&gt;&lt;a href=&#34;#L2-005-集合相似度-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-005 集合相似度 (25 分)&#34;&gt;&lt;/a&gt;L2-005 集合相似度 (25 分)&lt;/h2&gt;&lt;p&gt;给定两个整数集合，它们的相似度定义为：Nc&amp;#x2F;Nt×100%。其中Nc是两个集合都有的不相等整数的个数，Nt是两个集合一共有的不相等整数的个数。你的任务就是计算任意一对给定集合的相似度。&lt;/p&gt;
@@ -405,8 +405,8 @@
             <link>http://example.com/2022/04/12/Algorithm018/</link>
             <category>Data Structure</category>
             <category>C++</category>
-            <category>团体程序设计天梯赛</category>
             <category>Set</category>
+            <category>团体程序设计天梯赛</category>
             <category>Graph</category>
             <category>邻接表</category>
             <category>Vector</category>
@@ -432,8 +432,8 @@
             <title>L2-022 重排链表 (25 分)</title>
             <link>http://example.com/2022/04/12/Algorithm017/</link>
             <category>C++</category>
-            <category>LinkList</category>
             <category>团体程序设计天梯赛</category>
+            <category>LinkList</category>
             <category>双向链表</category>
             <pubDate>Tue, 12 Apr 2022 09:50:11 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;L2-022-重排链表-25-分&#34;&gt;&lt;a href=&#34;#L2-022-重排链表-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-022 重排链表 (25 分)&#34;&gt;&lt;/a&gt;L2-022 重排链表 (25 分)&lt;/h2&gt;&lt;p&gt;给定一个单链表 &lt;em&gt;L&lt;/em&gt;1→&lt;em&gt;L&lt;/em&gt;2→⋯→&lt;em&gt;Ln&lt;/em&gt;−1→&lt;em&gt;Ln&lt;/em&gt;，请编写程序将链表重新排列为 &lt;em&gt;Ln&lt;/em&gt;→&lt;em&gt;L&lt;/em&gt;1→&lt;em&gt;Ln&lt;/em&gt;−1→&lt;em&gt;L&lt;/em&gt;2→⋯。例如：给定&lt;em&gt;L&lt;/em&gt;为1→2→3→4→5→6，则输出应该为6→1→5→2→4→3。&lt;/p&gt;
@@ -459,8 +459,8 @@
             <link>http://example.com/2022/04/11/Algorithm016/</link>
             <category>STL</category>
             <category>C++</category>
-            <category>团体程序设计天梯赛</category>
             <category>Set</category>
+            <category>团体程序设计天梯赛</category>
             <category>Sort</category>
             <pubDate>Mon, 11 Apr 2022 19:21:06 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;L2-021-点赞狂魔-25-分&#34;&gt;&lt;a href=&#34;#L2-021-点赞狂魔-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-021 点赞狂魔 (25 分)&#34;&gt;&lt;/a&gt;L2-021 点赞狂魔 (25 分)&lt;/h1&gt;&lt;p&gt;微博上有个“点赞”功能，你可以为你喜欢的博文点个赞表示支持。每篇博文都有一些刻画其特性的标签，而你点赞的博文的类型，也间接刻画了你的特性。然而有这么一种人，他们会通过给自己看到的一切内容点赞来狂刷存在感，这种人就被称为“点赞狂魔”。他们点赞的标签非常分散，无法体现出明显的特性。本题就要求你写个程序，通过统计每个人点赞的不同标签的数量，找出前3名点赞狂魔。&lt;/p&gt;
