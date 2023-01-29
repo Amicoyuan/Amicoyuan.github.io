@@ -13,16 +13,16 @@
         <category>Find</category>
         <category>STL</category>
         <category>C++</category>
-        <category>LinkList</category>
-        <category>团体程序设计天梯赛</category>
-        <category>双向链表</category>
         <category>Set</category>
+        <category>团体程序设计天梯赛</category>
+        <category>Sort</category>
+        <category>LinkList</category>
+        <category>双向链表</category>
         <category>Graph</category>
         <category>邻接表</category>
         <category>Vector</category>
         <category>Binary tree</category>
         <category>BFS</category>
-        <category>Sort</category>
         <category>模拟</category>
         <category>邻接矩阵</category>
         <category>DFS</category>
@@ -81,8 +81,8 @@
             <category>Data Structure</category>
             <category>C++</category>
             <category>团体程序设计天梯赛</category>
-            <category>Vector</category>
             <category>Sort</category>
+            <category>Vector</category>
             <category>Map</category>
             <category>Pair</category>
             <pubDate>Sat, 23 Apr 2022 21:44:47 +0800</pubDate>
@@ -329,8 +329,8 @@
             <link>http://example.com/2022/04/12/Algorithm018/</link>
             <category>Data Structure</category>
             <category>C++</category>
-            <category>团体程序设计天梯赛</category>
             <category>Set</category>
+            <category>团体程序设计天梯赛</category>
             <category>Graph</category>
             <category>邻接表</category>
             <category>Vector</category>

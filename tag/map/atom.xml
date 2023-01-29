@@ -10,16 +10,16 @@
     <category term="Find" />
     <category term="STL" />
     <category term="C++" />
-    <category term="LinkList" />
-    <category term="团体程序设计天梯赛" />
-    <category term="双向链表" />
     <category term="Set" />
+    <category term="团体程序设计天梯赛" />
+    <category term="Sort" />
+    <category term="LinkList" />
+    <category term="双向链表" />
     <category term="Graph" />
     <category term="邻接表" />
     <category term="Vector" />
     <category term="Binary tree" />
     <category term="BFS" />
-    <category term="Sort" />
     <category term="模拟" />
     <category term="邻接矩阵" />
     <category term="DFS" />
@@ -63,8 +63,8 @@
         <category term="Data Structure" />
         <category term="C++" />
         <category term="团体程序设计天梯赛" />
-        <category term="Vector" />
         <category term="Sort" />
+        <category term="Vector" />
         <category term="Map" />
         <category term="Pair" />
         <updated>2022-04-23T13:44:47.000Z</updated>
