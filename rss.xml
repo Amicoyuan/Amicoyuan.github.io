@@ -13,23 +13,23 @@
         <category>Find</category>
         <category>STL</category>
         <category>C++</category>
-        <category>Set</category>
+        <category>LinkList</category>
         <category>团体程序设计天梯赛</category>
-        <category>Sort</category>
+        <category>双向链表</category>
+        <category>Set</category>
         <category>Graph</category>
         <category>邻接表</category>
         <category>Vector</category>
-        <category>LinkList</category>
-        <category>双向链表</category>
         <category>Binary tree</category>
         <category>BFS</category>
+        <category>Sort</category>
         <category>模拟</category>
-        <category>结构体</category>
-        <category>贪心</category>
         <category>邻接矩阵</category>
         <category>DFS</category>
-        <category>并查集</category>
+        <category>结构体</category>
+        <category>贪心</category>
         <category>Double类型相等比较</category>
+        <category>并查集</category>
         <category>Map</category>
         <category>Pair</category>
         <category>Linux</category>
@@ -104,7 +104,77 @@
 &lt;p&gt;本文讨论每个类别中的intrinsics，并解释如何在代码中使用它们。本文的最后将展示如何用这些intrinsic进行乘法复数运算。&lt;/p&gt;
 &lt;p&gt;理解处理器指令和intrinsic function之间的区别是很重要的。AVX指令是执行不可分割操作的汇编命令。例如，AVX指令vaddps添加了两个操作数，并将结果放在第三个操作数中。&lt;/p&gt;
 &lt;p&gt;要在C&amp;#x2F;C++中执行操作，the intrinsic funtion _mm256_add_ps()直接映射到vaddps，将汇编的性能与高级函数的便利性结合起来。An intrinsic funtion不一定映射到单个指令，但与其他C&amp;#x2F; C++函数相比，AVX&amp;#x2F;AVX2 intrinsics提供了可靠的高性能。&lt;/p&gt;
-&lt;h2 id=&#34;3-基本要求&#34;&gt;&lt;a href=&#34;#3-基本要求&#34; class=&#34;headerlink&#34; title=&#34;3.基本要求&#34;&gt;&lt;/a&gt;3.基本要求&lt;/h2&gt; ]]></description>
+&lt;h2 id=&#34;3-基本要求&#34;&gt;&lt;a href=&#34;#3-基本要求&#34; class=&#34;headerlink&#34; title=&#34;3.基本要求&#34;&gt;&lt;/a&gt;3.基本要求&lt;/h2&gt;&lt;p&gt;要理解本文的内容，您需要基本熟悉C语言和SIMD处理。要执行代码，您需要一个支持AVX或AVX&amp;#x2F;AVX2的CPU。以下是支持AVX的cpu:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Intel’s Sandy Bridge&amp;#x2F;Sandy Bridge E&amp;#x2F;Ivy Bridge&amp;#x2F;Ivy Bridge E&lt;/li&gt;
+&lt;li&gt;Intel’s Haswell&amp;#x2F;Haswell E&amp;#x2F;Broadwell&amp;#x2F;Broadwell E&lt;/li&gt;
+&lt;li&gt;AMD’s Bulldozer&amp;#x2F;Piledriver&amp;#x2F;Steamroller&amp;#x2F;Excavator&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;支持AVX2的CPU也支持AVX。以下是这些设备:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Intel’s Haswell&amp;#x2F;Haswell E&amp;#x2F;Broadwell&amp;#x2F;Broadwell E&lt;/li&gt;
+&lt;li&gt;AMD’s Excavator&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;本文中讨论的大多数函数都是由AVX提供的。但也有一些是AVX2特有的。为了区分它们，在本文的表中，我在AVX2 intrinsic的名称前面加上(2)。&lt;/p&gt;
+&lt;p&gt;[个人补充]&lt;/p&gt;
+&lt;p&gt;判断自己电脑CPU是否支持AVX和AVX2，最简单的就是在命令行执行以下命令：&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs shell&#34;&gt;lscpu&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;你会得到以下结果：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/01/28/avx006/image-20230129153048825.png&#34; alt=&#34;image-20230129153048825&#34;&gt;&lt;/p&gt;
+&lt;p&gt;在Flags里面你可以清楚的看到你的电脑是否支持AVX以及AVX2。&lt;/p&gt;
+&lt;h2 id=&#34;4-向量化概述&#34;&gt;&lt;a href=&#34;#4-向量化概述&#34; class=&#34;headerlink&#34; title=&#34;4.向量化概述&#34;&gt;&lt;/a&gt;4.向量化概述&lt;/h2&gt;&lt;p&gt;AVX指令通过同时处理大块值而不是单独处理值来提高应用程序的性能。这些值块称为向量，AVX向量最多可以包含256位数据。&lt;/p&gt;
+&lt;p&gt;常见的AVX向量包含4个double (4 x 64位&amp;#x3D; 256)，8个float (8 x 32位&amp;#x3D; 256)或8个int (8 x 32位&amp;#x3D; 256)。[double 8B, flout 4B, int 4B]&lt;/p&gt;
+&lt;p&gt;一个示例将演示AVX&amp;#x2F;AVX2处理的强大功能。假设一个函数需要将一个数组的8个浮点数乘以第二个数组的8个浮点数，并将结果添加到第三个数组。如果没有向量化，函数可能是这样的:&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-built_in&#34;&gt;multiply_and_add&lt;/span&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;hljs-keyword&#34;&gt;float&lt;/span&gt;* a, &lt;span class=&#34;hljs-keyword&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;hljs-keyword&#34;&gt;float&lt;/span&gt;* b, &lt;span class=&#34;hljs-keyword&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;hljs-keyword&#34;&gt;float&lt;/span&gt;* c, &lt;span class=&#34;hljs-keyword&#34;&gt;float&lt;/span&gt;* d) &amp;#123;  &lt;br&gt;&lt;br&gt;  &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;; i&amp;lt;&lt;span class=&#34;hljs-number&#34;&gt;8&lt;/span&gt;; i++) &amp;#123;&lt;br&gt;    d[i] = a[i] * b[i];&lt;br&gt;    d[i] = d[i] + c[i];&lt;br&gt;  &amp;#125;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;下面是使用AVX2函数的例子:&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-function&#34;&gt;__m256 &lt;span class=&#34;hljs-title&#34;&gt;multiply_and_add&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(__m256 a, __m256 b, __m256 c)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;br&gt;&lt;br&gt;  &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; _mm256_fmadd_ps(a, b, c);&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;This AVX2 intrinsic funtion _mm256_fmadd_ps处理24个floats，但它不映射到单个指令。相反，它执行三个指令:vfmadd132ps、vfmadd213ps和vfmadd231ps。尽管如此，它执行得很快，比遍历单个元素快得多。尽管英特尔的intrinsics功能强大，但它们还是让许多程序员感到紧张。这通常有两个原因。首先，数据类型有奇怪的名字，比如__m256。其次，函数有奇怪的名称，如_mm256_fmadd_ps。因此，在详细讨论intrinsic funtions之前，我想先讨论一下Intel的数据类型和命名约定。&lt;/p&gt;
+&lt;h2 id=&#34;5-AVX编程基础&#34;&gt;&lt;a href=&#34;#5-AVX编程基础&#34; class=&#34;headerlink&#34; title=&#34;5.AVX编程基础&#34;&gt;&lt;/a&gt;5.AVX编程基础&lt;/h2&gt;&lt;p&gt;本文主要关注AVX和AVX2提供的与数学相关的intrinsic functions。但在看函数之前，有三点很重要:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Data types&lt;/li&gt;
+&lt;li&gt;Function naming conventions&lt;/li&gt;
+&lt;li&gt;Compiling AVX applications&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;本节涉及这些要点，并提供一个简单的应用程序，用于从一个向量减去另一个向量。&lt;/p&gt;
+&lt;h3 id=&#34;5-1数据类型&#34;&gt;&lt;a href=&#34;#5-1数据类型&#34; class=&#34;headerlink&#34; title=&#34;5.1数据类型&#34;&gt;&lt;/a&gt;5.1数据类型&lt;/h3&gt;&lt;p&gt;少数intrinsic接受传统的数据类型，如ints或floats，但大多数intrinsic操作有特定的AVX和AVX2的数据类型。有六种主要的向量类型，表1列出了它们。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Table 1:AVX&amp;#x2F;AVX2 Data Types&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Data Type&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;__m128&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;128-bit vector containing 4 &lt;code&gt;float&lt;/code&gt;s&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;__m128d&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;128-bit vector containing 2 &lt;code&gt;double&lt;/code&gt;s&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;__m128i&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;128-bit vector containing integers&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;__m256&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;256-bit vector containing 8 &lt;code&gt;float&lt;/code&gt;s&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;__m256d&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;256-bit vector containing 4 &lt;code&gt;double&lt;/code&gt;s&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;__m256i&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;256-bit vector containing integers&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;p&gt;每种类型都以两个下划线、一个m和向量的宽度(以位为单位)开始。AVX512支持以_m512开头的512位向量类型，但AVX&amp;#x2F;AVX2向量不超过256位。如果向量类型以d结尾，则代表double，如果没有后缀，则代表float。看起来_m128i和_m256i向量必须包含int型，但事实并非如此。整数向量类型可以包含任何类型的整数，from chars to shorts to unsigned long longs.That is, an _m256i may contain 32 chars, 16 shorts, 8 ints, or 4 longs.  These integers can be signed or unsigned.&lt;/p&gt;
+ ]]></description>
         </item>
         <item>
             <guid isPermalink="true">http://example.com/2023/01/17/cuda005/</guid>
