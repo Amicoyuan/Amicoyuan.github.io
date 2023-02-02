@@ -6,13 +6,13 @@
     <updated>2022-05-20T09:13:08.000Z</updated>
     <category term="AVX" />
     <category term="Data Structure" />
-    <category term="Set" />
-    <category term="团体程序设计天梯赛" />
-    <category term="STL" />
-    <category term="C++" />
-    <category term="Sort" />
     <category term="String" />
     <category term="Find" />
+    <category term="STL" />
+    <category term="C++" />
+    <category term="Set" />
+    <category term="团体程序设计天梯赛" />
+    <category term="Sort" />
     <category term="LinkList" />
     <category term="双向链表" />
     <category term="Graph" />
@@ -37,8 +37,8 @@
     <category term="Mirror" />
     <category term="Numactl" />
     <category term="OpenMP" />
-    <category term="Slurm" />
     <category term="Tensorflow" />
+    <category term="Slurm" />
     <category term="性能分析工具" />
     <category term="gcov" />
     <entry>
