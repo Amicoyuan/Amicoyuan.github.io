@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>Amicoyuan • Posts by &#34;c/c++&#34; tag</title>
+        <link>http://example.com</link>
+        <description></description>
+        <language>zh-CN</language>
+        <pubDate>Thu, 02 Feb 2023 19:57:01 +0800</pubDate>
+        <lastBuildDate>Thu, 02 Feb 2023 19:57:01 +0800</lastBuildDate>
+        <category>AVX</category>
+        <category>Data Structure</category>
+        <category>String</category>
+        <category>Find</category>
+        <category>STL</category>
+        <category>C++</category>
+        <category>Set</category>
+        <category>团体程序设计天梯赛</category>
+        <category>Sort</category>
+        <category>LinkList</category>
+        <category>双向链表</category>
+        <category>Graph</category>
+        <category>邻接表</category>
+        <category>Vector</category>
+        <category>Binary tree</category>
+        <category>BFS</category>
+        <category>模拟</category>
+        <category>结构体</category>
+        <category>贪心</category>
+        <category>邻接矩阵</category>
+        <category>DFS</category>
+        <category>Double类型相等比较</category>
+        <category>并查集</category>
+        <category>Map</category>
+        <category>Pair</category>
+        <category>Linux</category>
+        <category>MPI</category>
+        <category>AVX2</category>
+        <category>dgemm</category>
+        <category>CUDA</category>
+        <category>Mirror</category>
+        <category>Numactl</category>
+        <category>OpenMP</category>
+        <category>C/C++</category>
+        <category>register</category>
+        <category>Slurm</category>
+        <category>Tensorflow</category>
+        <category>性能分析工具</category>
+        <category>gcov</category>
+        <item>
+            <guid isPermalink="true">http://example.com/2023/02/02/register/</guid>
+            <title>register关键字</title>
+            <link>http://example.com/2023/02/02/register/</link>
+            <category>C/C++</category>
+            <category>register</category>
+            <pubDate>Thu, 02 Feb 2023 19:57:01 +0800</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;register关键字&#34;&gt;&lt;a href=&#34;#register关键字&#34; class=&#34;headerlink&#34; title=&#34;register关键字&#34;&gt;&lt;/a&gt;register关键字&lt;/h2&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;()&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;/span&gt;&amp;#123;&lt;br&gt;	&lt;span class=&#34;hljs-keyword&#34;&gt;register&lt;/span&gt; &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; val = &lt;span class=&#34;hljs-number&#34;&gt;100&lt;/span&gt;;&lt;br&gt;	&lt;span class=&#34;hljs-comment&#34;&gt;//寄存器变量没有地址，不能取地址&lt;/span&gt;&lt;br&gt;	val = &lt;span class=&#34;hljs-number&#34;&gt;200&lt;/span&gt;; &lt;span class=&#34;hljs-comment&#34;&gt;//可以被写入&lt;/span&gt;&lt;br&gt;	&lt;span class=&#34;hljs-built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;%d\n&amp;quot;&lt;/span&gt;, val);&lt;br&gt;	&lt;span class=&#34;hljs-comment&#34;&gt;// 在gcc编译器下 也不允许取地址&lt;/span&gt;&lt;br&gt;	&lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;//由于使用register关键字，直接将val存在寄存器内，因此val没有内存地址，因此不能进行取地址操作。&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;ol&gt;
+&lt;li&gt;我们通常采用局部变量采用 register 的，全局变量会导致 CPU 当中的寄存器被长时间占用。&lt;/li&gt;
+&lt;li&gt;一个变量被存放到寄存器当中，那么这个变量的效率就会大大的提高,因为不用访存读取&lt;/li&gt;
+&lt;li&gt;register关键字可以与指针变量一起使用。&lt;/li&gt;
+&lt;li&gt;.寄存器是一个存储类，并且C不允许变量使用多个存储类说明符。因此，register不能与static一起使用。&lt;/li&gt;
+&lt;li&gt;寄存器只能在一个块内使用（局部），而不能在全局范围内（在主外部）使用&lt;/li&gt;
+&lt;li&gt;寄存器数量有限&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://xie.infoq.cn/article/f6093f4eebd3664c0a1514e26&#34;&gt;【C语言】register 关键字_11月月更_謓泽_InfoQ写作社区&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/263575137&#34;&gt;一步带您了解C语言中的“register”关键字 - 知乎 (zhihu.com)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.ab62.cn/article/5406.html&#34;&gt;C语言关键字之auto register详解_C 语言_AB教程网 (ab62.cn)&lt;/a&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

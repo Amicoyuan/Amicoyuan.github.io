@@ -21,10 +21,10 @@
     <category term="Binary tree" />
     <category term="BFS" />
     <category term="模拟" />
-    <category term="邻接矩阵" />
-    <category term="DFS" />
     <category term="结构体" />
     <category term="贪心" />
+    <category term="邻接矩阵" />
+    <category term="DFS" />
     <category term="Double类型相等比较" />
     <category term="并查集" />
     <category term="Map" />
@@ -37,8 +37,10 @@
     <category term="Mirror" />
     <category term="Numactl" />
     <category term="OpenMP" />
-    <category term="Tensorflow" />
+    <category term="C/C++" />
+    <category term="register" />
     <category term="Slurm" />
+    <category term="Tensorflow" />
     <category term="性能分析工具" />
     <category term="gcov" />
     <entry>
