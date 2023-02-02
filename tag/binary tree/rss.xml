@@ -16,32 +16,33 @@
         <category>Set</category>
         <category>团体程序设计天梯赛</category>
         <category>Sort</category>
+        <category>Binary tree</category>
+        <category>邻接表</category>
+        <category>Vector</category>
+        <category>BFS</category>
         <category>LinkList</category>
         <category>双向链表</category>
         <category>Graph</category>
-        <category>邻接表</category>
-        <category>Vector</category>
-        <category>Binary tree</category>
-        <category>BFS</category>
         <category>模拟</category>
         <category>邻接矩阵</category>
         <category>DFS</category>
         <category>结构体</category>
         <category>贪心</category>
         <category>Double类型相等比较</category>
-        <category>并查集</category>
         <category>Map</category>
+        <category>并查集</category>
         <category>Pair</category>
         <category>Linux</category>
-        <category>MPI</category>
         <category>AVX2</category>
+        <category>MPI</category>
+        <category>dgemm</category>
         <category>CUDA</category>
         <category>Mirror</category>
         <category>Numactl</category>
         <category>OpenMP</category>
         <category>Slurm</category>
-        <category>Tensorflow</category>
         <category>性能分析工具</category>
+        <category>Tensorflow</category>
         <category>gcov</category>
         <item>
             <guid isPermalink="true">http://example.com/2022/04/14/Algorithm024/</guid>
@@ -100,9 +101,9 @@
             <category>Data Structure</category>
             <category>C++</category>
             <category>团体程序设计天梯赛</category>
+            <category>Binary tree</category>
             <category>邻接表</category>
             <category>Vector</category>
-            <category>Binary tree</category>
             <category>BFS</category>
             <pubDate>Wed, 13 Apr 2022 19:09:46 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;著名的王牌间谍 007 需要执行一次任务，获取敌方的机密情报。已知情报藏在一个地下迷宫里，迷宫只有一个入口，里面有很多条通路，每条路通向一扇门。每一扇门背后或者是一个房间，或者又有很多条路，同样是每条路通向一扇门…… 他的手里有一张表格，是其他间谍帮他收集到的情报，他们记下了每扇门的编号，以及这扇门背后的每一条通路所到达的门的编号。007 发现不存在两条路通向同一扇门。&lt;/p&gt;
@@ -129,9 +130,9 @@
             <category>Data Structure</category>
             <category>C++</category>
             <category>团体程序设计天梯赛</category>
+            <category>Binary tree</category>
             <category>邻接表</category>
             <category>Vector</category>
-            <category>Binary tree</category>
             <category>BFS</category>
             <pubDate>Wed, 13 Apr 2022 09:45:49 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;L2-026-小字辈-25-分&#34;&gt;&lt;a href=&#34;#L2-026-小字辈-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-026 小字辈 (25 分)&#34;&gt;&lt;/a&gt;&lt;strong&gt;L2-026 小字辈 (25 分)&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;本题给定一个庞大家族的家谱，要请你给出最小一辈的名单。&lt;/p&gt;

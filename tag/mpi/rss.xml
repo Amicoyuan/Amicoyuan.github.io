@@ -16,32 +16,33 @@
         <category>Set</category>
         <category>团体程序设计天梯赛</category>
         <category>Sort</category>
+        <category>Binary tree</category>
+        <category>邻接表</category>
+        <category>Vector</category>
+        <category>BFS</category>
         <category>LinkList</category>
         <category>双向链表</category>
         <category>Graph</category>
-        <category>邻接表</category>
-        <category>Vector</category>
-        <category>Binary tree</category>
-        <category>BFS</category>
         <category>模拟</category>
         <category>邻接矩阵</category>
         <category>DFS</category>
         <category>结构体</category>
         <category>贪心</category>
         <category>Double类型相等比较</category>
-        <category>并查集</category>
         <category>Map</category>
+        <category>并查集</category>
         <category>Pair</category>
         <category>Linux</category>
-        <category>MPI</category>
         <category>AVX2</category>
+        <category>MPI</category>
+        <category>dgemm</category>
         <category>CUDA</category>
         <category>Mirror</category>
         <category>Numactl</category>
         <category>OpenMP</category>
         <category>Slurm</category>
-        <category>Tensorflow</category>
         <category>性能分析工具</category>
+        <category>Tensorflow</category>
         <category>gcov</category>
         <item>
             <guid isPermalink="true">http://example.com/2022/06/12/MPI%E5%AD%A6%E4%B9%A0(%E4%B8%80)-%E7%AE%80%E5%8D%95%E7%9A%84%E5%8F%91%E9%80%81%E6%8E%A5%E6%94%B6/</guid>
