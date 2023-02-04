@@ -24,10 +24,10 @@
         <category>Binary tree</category>
         <category>BFS</category>
         <category>模拟</category>
-        <category>结构体</category>
-        <category>贪心</category>
         <category>邻接矩阵</category>
         <category>DFS</category>
+        <category>结构体</category>
+        <category>贪心</category>
         <category>Double类型相等比较</category>
         <category>并查集</category>
         <category>Map</category>
@@ -314,6 +314,97 @@
 &lt;/tr&gt;
 &lt;/tbody&gt;&lt;/table&gt;
 &lt;p&gt;每种类型都以两个下划线、一个m和向量的宽度(以位为单位)开始。AVX512支持以_m512开头的512位向量类型，但AVX&amp;#x2F;AVX2向量不超过256位。如果向量类型以d结尾，则代表double，如果没有后缀，则代表float。看起来_m128i和_m256i向量必须包含int型，但事实并非如此。整数向量类型可以包含任何类型的整数，from chars to shorts to unsigned long longs.That is, an _m256i may contain 32 chars, 16 shorts, 8 ints, or 4 longs.  These integers can be signed or unsigned.&lt;/p&gt;
+&lt;h3 id=&#34;5-3函数命名约定&#34;&gt;&lt;a href=&#34;#5-3函数命名约定&#34; class=&#34;headerlink&#34; title=&#34;5.3函数命名约定&#34;&gt;&lt;/a&gt;5.3函数命名约定&lt;/h3&gt;&lt;p&gt;AVX&amp;#x2F;AVX2 intrinsics的名称一开始可能令人困惑，但命名约定确是非常直白的。一旦你理解了它，你就可以通过看它的名字来大致判断一个函数是做什么的。AVX&amp;#x2F;AVX2 intrinsics的一般形式如下:&lt;/p&gt;
+&lt;p&gt;_mm&lt;bit_width&gt;_&lt;name&gt;_&lt;data_type&gt;&lt;/data_type&gt;&lt;/name&gt;&lt;/bit_width&gt;&lt;/p&gt;
+&lt;p&gt;该格式的各部分如下所示:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;bit_width&amp;gt;&lt;/code&gt; identifies the size of the vector returned by the function. For 128-bit vectors, this is empty. For 256-bit vectors, this is set to &lt;code&gt;256&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;name&amp;gt;&lt;/code&gt; describes the operation performed by the intrinsic&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;data_type&amp;gt;&lt;/code&gt; identifies the data type of the function’s primary arguments&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;最后一部分&lt;data_type&gt;有点复杂。它标识输入值的内容，可以设置为以下任何值:&lt;/data_type&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;ps&lt;/code&gt; - vectors contain &lt;code&gt;float&lt;/code&gt;s (&lt;code&gt;ps&lt;/code&gt; stands for packed single-precision)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;pd&lt;/code&gt; - vectors contain &lt;code&gt;double&lt;/code&gt;s (&lt;code&gt;pd&lt;/code&gt; stands for packed double-precision)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;epi8/epi16/epi32/epi64&lt;/code&gt; - vectors contain 8-bit&amp;#x2F;16-bit&amp;#x2F;32-bit&amp;#x2F;64-bit signed integers&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;epu8/epu16/epu32/epu64&lt;/code&gt; - vectors contain 8-bit&amp;#x2F;16-bit&amp;#x2F;32-bit&amp;#x2F;64-bit unsigned integers&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;si128&lt;/code&gt;&amp;#x2F;&lt;code&gt;si256&lt;/code&gt; - unspecified 128-bit vector or 256-bit vector&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;m128/m128i/m128d/m256/m256i/m256d&lt;/code&gt; - identifies input vector types when they’re different than the type of the returned vector&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;例如，考虑_mm256_srlv_epi64。即使您不知道srlv是什么意思，_mm256前缀告诉您该函数返回一个256位向量，_epi64告诉您参数包含64位有符号整数。&lt;/p&gt;
+&lt;p&gt;作为第二个示例，考虑_mm_testnzc_ps。_mm表示函数返回一个128位的向量。末尾的_ps表示参数向量包含浮点数。&lt;/p&gt;
+&lt;p&gt;AVX数据类型以两个下划线和一个m开头。函数以一个下划线和两个ms开头。我很容易搞混这一点，所以我想出了一种方法来记住它们的区别:数据类型代表内存，函数代表多媒体操作。这是我能做的最好的了。&lt;/p&gt;
+&lt;h3 id=&#34;5-4构建AVX应用程序&#34;&gt;&lt;a href=&#34;#5-4构建AVX应用程序&#34; class=&#34;headerlink&#34; title=&#34;5.4构建AVX应用程序&#34;&gt;&lt;/a&gt;5.4构建AVX应用程序&lt;/h3&gt;&lt;p&gt;要构建使用AVX intrinsic的应用程序，不需要链接任何库。但是您需要包含imminrin .h头文件。此头文件包括将AVX&amp;#x2F;AVX2函数映射到指令的其他头文件。&lt;/p&gt;
+&lt;p&gt;hello_avx.c中的代码显示了一个基本的AVX应用程序的样子:&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;hljs-meta-string&#34;&gt;&amp;lt;immintrin.h&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;hljs-meta-string&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;br&gt;&lt;br&gt;  &lt;span class=&#34;hljs-comment&#34;&gt;/* Initialize the two argument vectors */&lt;/span&gt;			&lt;span class=&#34;hljs-comment&#34;&gt;//初始化&lt;/span&gt;&lt;br&gt;  __m256 evens = _mm256_set_ps(&lt;span class=&#34;hljs-number&#34;&gt;2.0&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;4.0&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;6.0&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;8.0&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;10.0&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;12.0&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;14.0&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;16.0&lt;/span&gt;);&lt;br&gt;  __m256 odds = _mm256_set_ps(&lt;span class=&#34;hljs-number&#34;&gt;1.0&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;3.0&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;5.0&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;7.0&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;9.0&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;11.0&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;13.0&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;15.0&lt;/span&gt;);&lt;br&gt;&lt;br&gt;  &lt;span class=&#34;hljs-comment&#34;&gt;/* Compute the difference between the two vectors */&lt;/span&gt;&lt;br&gt;  __m256 result = _mm256_sub_ps(evens, odds);			&lt;span class=&#34;hljs-comment&#34;&gt;//减法&lt;/span&gt;&lt;br&gt;&lt;br&gt;  &lt;span class=&#34;hljs-comment&#34;&gt;/* Display the elements of the result vector */&lt;/span&gt;&lt;br&gt;  &lt;span class=&#34;hljs-keyword&#34;&gt;float&lt;/span&gt;* f = (&lt;span class=&#34;hljs-keyword&#34;&gt;float&lt;/span&gt;*)&amp;amp;result;					&lt;span class=&#34;hljs-comment&#34;&gt;//类型转换&lt;/span&gt;&lt;br&gt;  &lt;span class=&#34;hljs-built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;%f %f %f %f %f %f %f %f\n&amp;quot;&lt;/span&gt;,&lt;br&gt;    f[&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;], f[&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;], f[&lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt;], f[&lt;span class=&#34;hljs-number&#34;&gt;3&lt;/span&gt;], f[&lt;span class=&#34;hljs-number&#34;&gt;4&lt;/span&gt;], f[&lt;span class=&#34;hljs-number&#34;&gt;5&lt;/span&gt;], f[&lt;span class=&#34;hljs-number&#34;&gt;6&lt;/span&gt;], f[&lt;span class=&#34;hljs-number&#34;&gt;7&lt;/span&gt;]);&lt;br&gt;&lt;br&gt;  &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;要构建应用程序，需要告诉编译器该体系结构支持AVX。这个标志取决于编译器，gcc需要-mavx标志。因此，可以使用以下命令编译hello_avx.c源文件:&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs shell&#34;&gt;gcc -mavx -o hello_avx hello_avx.c&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;在本例中，所有函数都以_mm256开始，以_ps结束，因此我希望所有操作都清楚地涉及包含floats的256位向量。我还希望结果向量中的每个元素都等于1.0。如果运行应用程序，您将看到情况就是这样。&lt;/p&gt;
+&lt;h3 id=&#34;5-5初始化intrinsics&#34;&gt;&lt;a href=&#34;#5-5初始化intrinsics&#34; class=&#34;headerlink&#34; title=&#34;5.5初始化intrinsics&#34;&gt;&lt;/a&gt;5.5初始化intrinsics&lt;/h3&gt;&lt;p&gt;在对AVX向量进行操作之前，需要用数据填充向量。因此，本文讨论的第一组intrinsics用数据初始化向量。有两种方法:用标量值初始化向量和用从内存加载的数据初始化向量。&lt;/p&gt;
+&lt;h4 id=&#34;5-5-4使用标量值初始化&#34;&gt;&lt;a href=&#34;#5-5-4使用标量值初始化&#34; class=&#34;headerlink&#34; title=&#34;5.5.4使用标量值初始化&#34;&gt;&lt;/a&gt;5.5.4使用标量值初始化&lt;/h4&gt;&lt;p&gt;AVX提供了将一个或多个值组合成256位向量的intrinsics funtions。表2列出了它们的名称，并提供了每个名称的描述。也有类似的intrinsics初始化128位向量，但它们是由SSE提供的，而不是AVX。函数名的唯一区别是_mm256_被替换为_mm_。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Table 2: Initialization Intrinsics&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Function&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;_mm256_setzero_ps/pd&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Returns a floating-point vector filled with zeros&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;_mm256_setzero_si256&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Returns an integer vector whose bytes are set to zero&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;_mm256_set1_ps/pd&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Fill a vector with a floating-point value&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;_mm256_set1_epi8/epi16&lt;/code&gt; &lt;code&gt;_mm256_set1_epi32/epi64&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Fill a vector with an integer&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;_mm256_set_ps/pd&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Initialize a vector with eight floats (ps) or four doubles (pd)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;_mm256_set_epi8/epi16&lt;/code&gt; &lt;code&gt;_mm256_set_epi32/epi64&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Initialize a vector with integers&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;_mm256_set_m128/m128d/&lt;/code&gt; &lt;code&gt;_mm256_set_m128i&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Initialize a 256-bit vector with two 128-bit vectors&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;_mm256_setr_ps/pd&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Initialize a vector with eight floats (ps) or four doubles (pd) in reverse order&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;_mm256_setr_epi8/epi16&lt;/code&gt; &lt;code&gt;_mm256_setr_epi32/epi64&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Initialize a vector with integers in reverse order&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;p&gt;表中的第一个函数是最容易理解的。_m256_setzero_ps返回一个__m256向量，包含8个设置为0的浮点数。类似地，_m256_setzero_si256返回一个__m256i向量，其字节被设置为0。例如，下面这行代码创建了一个256位的向量，其中包含4个设为0的double:&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;_m256d dbl_vector = _m256_setzero_pd();&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;名称中包含set1的函数接受一个值，并在整个向量中重复该值。例如，下面这行代码创建了一个__m256i，它的16个short value被设置为47:&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;_m256i short_vector = _m256_set1_pd();&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;表2中的其他函数包含_set_或_setr_。这些函数接受一系列值，每个向量的元素对应一个值。这些值被放置在返回的向量中，理解顺序很重要。下面的函数调用返回一个包含8个整数的向量，其值范围为1到8:&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;_m256i int_vector = _m256_set_epi32(&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;3&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;4&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;5&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;6&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;7&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;8&lt;/span&gt;);&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;您可能希望值按照给定的顺序存储。但英特尔的架构是小端存储类型的，所以最低有效值(8)先存储，最高有效值(1)最后存储。您可以通过将int_vector转换为int指针并打印存储的值来验证这一点。如下代码所示:&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;__m256i int_vector = _mm256_set_epi32(&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;3&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;4&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;5&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;6&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;7&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;8&lt;/span&gt;);&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; *ptr = (&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;*)&amp;amp;int_vector;&lt;br&gt;&lt;span class=&#34;hljs-built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;%d %d %d %d %d %d %d %d\n&amp;quot;&lt;/span&gt;, ptr[&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;], ptr[&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;], ptr[&lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt;], ptr[&lt;span class=&#34;hljs-number&#34;&gt;3&lt;/span&gt;], ptr[&lt;span class=&#34;hljs-number&#34;&gt;4&lt;/span&gt;], ptr[&lt;span class=&#34;hljs-number&#34;&gt;5&lt;/span&gt;], ptr[&lt;span class=&#34;hljs-number&#34;&gt;6&lt;/span&gt;], ptr[&lt;span class=&#34;hljs-number&#34;&gt;7&lt;/span&gt;]);&lt;br&gt;--&amp;gt; &lt;span class=&#34;hljs-number&#34;&gt;8&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;7&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;6&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;5&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;4&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;3&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;如果希望值按给定顺序存储，可以使用_setr_函数之一创建向量，其中r可能代表reverse。下面的代码展示了它是如何工作的:&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;__m256i int_vector = _mm256_setr_epi32(&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;3&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;4&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;5&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;6&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;7&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;8&lt;/span&gt;);&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; *ptr = (&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;*)&amp;amp;int_vector;&lt;br&gt;&lt;span class=&#34;hljs-built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;%d %d %d %d %d %d %d %d\n&amp;quot;&lt;/span&gt;, ptr[&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;], ptr[&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;], ptr[&lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt;], ptr[&lt;span class=&#34;hljs-number&#34;&gt;3&lt;/span&gt;], ptr[&lt;span class=&#34;hljs-number&#34;&gt;4&lt;/span&gt;], ptr[&lt;span class=&#34;hljs-number&#34;&gt;5&lt;/span&gt;], ptr[&lt;span class=&#34;hljs-number&#34;&gt;6&lt;/span&gt;], ptr[&lt;span class=&#34;hljs-number&#34;&gt;7&lt;/span&gt;]);&lt;br&gt;--&amp;gt; &lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;3&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;4&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;5&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;6&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;7&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;有趣的是，AVX和AVX2都没有提供用无符号整数初始化向量的intrinsic。但是，它们提供了对带无符号整数的向量进行操作的函数。&lt;/p&gt;
  ]]></description>
         </item>
         <item>
