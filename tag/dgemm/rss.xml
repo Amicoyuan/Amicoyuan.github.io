@@ -13,11 +13,11 @@
         <category>Find</category>
         <category>STL</category>
         <category>C++</category>
-        <category>Set</category>
-        <category>团体程序设计天梯赛</category>
-        <category>Sort</category>
         <category>LinkList</category>
+        <category>团体程序设计天梯赛</category>
         <category>双向链表</category>
+        <category>Set</category>
+        <category>Sort</category>
         <category>Graph</category>
         <category>邻接表</category>
         <category>Vector</category>
@@ -35,8 +35,8 @@
         <category>Linux</category>
         <category>MPI</category>
         <category>AVX2</category>
-        <category>CUDA</category>
         <category>dgemm</category>
+        <category>CUDA</category>
         <category>Mirror</category>
         <category>Numactl</category>
         <category>OpenMP</category>
@@ -122,6 +122,31 @@
 
 &lt;p&gt;&lt;img src=&#34;/2023/02/02/blislab/image-20230202192033816.png&#34; alt=&#34;image-20230202192033816&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;11-AddDot-2x2汇编代码【最内层循环展开】&#34;&gt;&lt;a href=&#34;#11-AddDot-2x2汇编代码【最内层循环展开】&#34; class=&#34;headerlink&#34; title=&#34;11.AddDot_2x2汇编代码【最内层循环展开】&#34;&gt;&lt;/a&gt;11.AddDot_2x2汇编代码【最内层循环展开】&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;/2023/02/02/blislab/image-20230202192319993.png&#34; alt=&#34;image-20230202192319993&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;Step2&#34;&gt;&lt;a href=&#34;#Step2&#34; class=&#34;headerlink&#34; title=&#34;Step2&#34;&gt;&lt;/a&gt;Step2&lt;/h2&gt;&lt;h3 id=&#34;1-与Step1的性能比较&#34;&gt;&lt;a href=&#34;#1-与Step1的性能比较&#34; class=&#34;headerlink&#34; title=&#34;1.与Step1的性能比较&#34;&gt;&lt;/a&gt;1.与Step1的性能比较&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;/2023/02/02/blislab/image-20230206163219051.png&#34; alt=&#34;image-20230206163219051&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;2-优化kernel-x2F-bl-dgemm-ukr-c&#34;&gt;&lt;a href=&#34;#2-优化kernel-x2F-bl-dgemm-ukr-c&#34; class=&#34;headerlink&#34; title=&#34;2.优化kernel&amp;#x2F;bl_dgemm_ukr.c&#34;&gt;&lt;/a&gt;2.优化kernel&amp;#x2F;bl_dgemm_ukr.c&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;/2023/02/02/blislab/image-20230206163713966.png&#34; alt=&#34;image-20230206163713966&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/02/02/blislab/image-20230206163803615.png&#34; alt=&#34;image-20230206163803615&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;3-优化后性能对比&#34;&gt;&lt;a href=&#34;#3-优化后性能对比&#34; class=&#34;headerlink&#34; title=&#34;3.优化后性能对比&#34;&gt;&lt;/a&gt;3.优化后性能对比&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;/2023/02/02/blislab/image-20230206163833950.png&#34; alt=&#34;image-20230206163833950&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;4-下降原因分析&#34;&gt;&lt;a href=&#34;#4-下降原因分析&#34; class=&#34;headerlink&#34; title=&#34;4.下降原因分析&#34;&gt;&lt;/a&gt;4.下降原因分析&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;/2023/02/02/blislab/image-20230206164335213.png&#34; alt=&#34;image-20230206164335213&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/02/02/blislab/image-20230206164734050.png&#34; alt=&#34;image-20230206164734050&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;5-如何进行分块&#34;&gt;&lt;a href=&#34;#5-如何进行分块&#34; class=&#34;headerlink&#34; title=&#34;5.如何进行分块&#34;&gt;&lt;/a&gt;5.如何进行分块&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;/2023/02/02/blislab/image-20230206165017812.png&#34; alt=&#34;image-20230206165017812&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/02/02/blislab/image-20230206165103417.png&#34; alt=&#34;image-20230206165103417&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/02/02/blislab/image-20230206170050450.png&#34; alt=&#34;image-20230206170050450&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/02/02/blislab/image-20230206170105998.png&#34; alt=&#34;image-20230206170105998&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/02/02/blislab/image-20230206170126588.png&#34; alt=&#34;image-20230206170126588&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/02/02/blislab/image-20230206170153251.png&#34; alt=&#34;image-20230206170153251&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/02/02/blislab/image-20230206170226248.png&#34; alt=&#34;image-20230206170226248&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/02/02/blislab/image-20230206170242872.png&#34; alt=&#34;image-20230206170242872&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/02/02/blislab/image-20230206170320842.png&#34; alt=&#34;image-20230206170320842&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/02/02/blislab/image-20230206170334857.png&#34; alt=&#34;image-20230206170334857&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;6-Dgemm代码&#34;&gt;&lt;a href=&#34;#6-Dgemm代码&#34; class=&#34;headerlink&#34; title=&#34;6.Dgemm代码&#34;&gt;&lt;/a&gt;6.Dgemm代码&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;/2023/02/02/blislab/image-20230206171538013.png&#34; alt=&#34;image-20230206171538013&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/02/02/blislab/image-20230206171556767.png&#34; alt=&#34;image-20230206171556767&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/02/02/blislab/image-20230206171622104.png&#34; alt=&#34;image-20230206171622104&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/02/02/blislab/image-20230206171639209.png&#34; alt=&#34;image-20230206171639209&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;7-Dgemm-macro-kenrel代码&#34;&gt;&lt;a href=&#34;#7-Dgemm-macro-kenrel代码&#34; class=&#34;headerlink&#34; title=&#34;7.Dgemm macro kenrel代码&#34;&gt;&lt;/a&gt;7.Dgemm macro kenrel代码&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;/2023/02/02/blislab/image-20230206171903844.png&#34; alt=&#34;image-20230206171903844&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/02/02/blislab/image-20230206171940282.png&#34; alt=&#34;image-20230206171940282&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;8-Gemm汇总&#34;&gt;&lt;a href=&#34;#8-Gemm汇总&#34; class=&#34;headerlink&#34; title=&#34;8.Gemm汇总&#34;&gt;&lt;/a&gt;8.Gemm汇总&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;/2023/02/02/blislab/image-20230206172351890.png&#34; alt=&#34;image-20230206172351890&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;9-拓展&#34;&gt;&lt;a href=&#34;#9-拓展&#34; class=&#34;headerlink&#34; title=&#34;9.拓展&#34;&gt;&lt;/a&gt;9.拓展&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;/2023/02/02/blislab/image-20230206172425329.png&#34; alt=&#34;image-20230206172425329&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;10-双缓冲优化&#34;&gt;&lt;a href=&#34;#10-双缓冲优化&#34; class=&#34;headerlink&#34; title=&#34;10.双缓冲优化&#34;&gt;&lt;/a&gt;10.双缓冲优化&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;/2023/02/02/blislab/image-20230206172846408.png&#34; alt=&#34;image-20230206172846408&#34;&gt;&lt;/p&gt;
  ]]></description>
         </item>
     </channel>

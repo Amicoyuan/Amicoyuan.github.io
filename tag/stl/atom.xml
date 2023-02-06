@@ -10,11 +10,11 @@
     <category term="Find" />
     <category term="STL" />
     <category term="C++" />
-    <category term="Set" />
-    <category term="团体程序设计天梯赛" />
-    <category term="Sort" />
     <category term="LinkList" />
+    <category term="团体程序设计天梯赛" />
     <category term="双向链表" />
+    <category term="Set" />
+    <category term="Sort" />
     <category term="Graph" />
     <category term="邻接表" />
     <category term="Vector" />
@@ -32,8 +32,8 @@
     <category term="Linux" />
     <category term="MPI" />
     <category term="AVX2" />
-    <category term="CUDA" />
     <category term="dgemm" />
+    <category term="CUDA" />
     <category term="Mirror" />
     <category term="Numactl" />
     <category term="OpenMP" />
@@ -90,8 +90,8 @@
 </content>
         <category term="STL" />
         <category term="C++" />
-        <category term="Set" />
         <category term="团体程序设计天梯赛" />
+        <category term="Set" />
         <category term="Sort" />
         <updated>2022-04-11T11:21:06.000Z</updated>
     </entry>
