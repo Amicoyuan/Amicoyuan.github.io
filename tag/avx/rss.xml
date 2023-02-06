@@ -35,8 +35,8 @@
         <category>Linux</category>
         <category>MPI</category>
         <category>AVX2</category>
-        <category>dgemm</category>
         <category>CUDA</category>
+        <category>dgemm</category>
         <category>Mirror</category>
         <category>Numactl</category>
         <category>OpenMP</category>
@@ -48,12 +48,12 @@
         <category>gcov</category>
         <item>
             <guid isPermalink="true">http://example.com/2023/01/28/avx006/</guid>
-            <title>如何使用AVX和AVX2处理数据(个人翻译)[未完成]</title>
+            <title>如何使用AVX和AVX2处理数据(个人翻译)</title>
             <link>http://example.com/2023/01/28/avx006/</link>
             <category>AVX</category>
             <category>AVX2</category>
             <pubDate>Sat, 28 Jan 2023 14:51:44 +0800</pubDate>
-            <description><![CDATA[ &lt;h2 id=&#34;1-文章来源&#34;&gt;&lt;a href=&#34;#1-文章来源&#34; class=&#34;headerlink&#34; title=&#34;1.文章来源&#34;&gt;&lt;/a&gt;1.文章来源&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Matt Scarpino&lt;/strong&gt;&lt;/p&gt;
+            <description><![CDATA[ &lt;h2 id=&#34;1-文章来源&#34;&gt;&lt;a href=&#34;#1-文章来源&#34; class=&#34;headerlink&#34; title=&#34;1.文章来源&#34;&gt;&lt;/a&gt;1.文章来源&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Matt Scarpino（USA）&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.codeproject.com/Articles/874396/Crunching-Numbers-with-AVX-and-AVX&#34;&gt;Crunching Numbers with AVX and AVX2 - CodeProject&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;2-介绍&#34;&gt;&lt;a href=&#34;#2-介绍&#34; class=&#34;headerlink&#34; title=&#34;2.介绍&#34;&gt;&lt;/a&gt;2.介绍&lt;/h2&gt;&lt;p&gt;在2003年，&lt;a href=&#34;https://www.codeproject.com/script/Membership/View.aspx?mid=22834&#34;&gt;Alex Fr&lt;/a&gt;写了一篇优秀的&lt;a href=&#34;https://www.codeproject.com/Articles/4522/Introduction-to-SSE-Programming&#34;&gt;文章&lt;/a&gt;[该文章现在已经被原作者删除]，解释了如何使用Intel的流式SIMD扩展(SSE)执行SIMD(单指令，多数据)处理。SSE是英特尔处理器支持的一组指令，可对大量数据执行高速运算。&lt;/p&gt;
 &lt;p&gt;2008年，英特尔推出了一套新的高性能指令，称为高级向量扩展(AVX)。AVX执行许多与SSE指令相同的操作，但以更快的速度对更大的数据块进行操作。最近，英特尔在AVX2和AVX512系列中发布了额外的指令。本文的重点是通过称为intrinsic funtions的特殊C函数访问AVX和AVX2指令。&lt;/p&gt;
@@ -403,7 +403,159 @@
 &lt;p&gt;_mullo_函数类似于整数_mul_函数，但它们不是乘低元素，而是乘两个向量的每个元素，只存储每个乘积的低一半。图3显示了它的外观:【图片丢失】&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;图3:整数相乘和存储低二分之一&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;_mm256_mulhi_epi16和_mm256_mulhi_epu16 intrinsics类似，但是它们存储整数积的高一半。&lt;/p&gt;
-&lt;h3 id=&#34;6-3Fused-Multiply-and-Add-FMA&#34;&gt;&lt;a href=&#34;#6-3Fused-Multiply-and-Add-FMA&#34; class=&#34;headerlink&#34; title=&#34;6.3Fused Multiply and Add (FMA)&#34;&gt;&lt;/a&gt;6.3Fused Multiply and Add (FMA)&lt;/h3&gt;&lt;p&gt;如前所述，两个N位数字相乘的结果可以占用2N位。&lt;/p&gt;
+&lt;h3 id=&#34;6-3Fused-Multiply-and-Add-FMA&#34;&gt;&lt;a href=&#34;#6-3Fused-Multiply-and-Add-FMA&#34; class=&#34;headerlink&#34; title=&#34;6.3Fused Multiply and Add (FMA)&#34;&gt;&lt;/a&gt;6.3Fused Multiply and Add (FMA)&lt;/h3&gt;&lt;p&gt;如前所述，两个N位数字相乘的结果可以占用2N位。因此，当您将两个浮点值a和b相乘时，结果实际上是四舍五入(a * b)，其中四舍五入(x)返回最接近x的浮点值。随着进一步操作的执行，这种精度损失会增加。&lt;/p&gt;
+&lt;p&gt;AVX2提供了将乘法和加法融合在一起的指令。也就是说，它们不是返回整数(整数(a * b) + c)，而是返回整数(a * b + c)。因此，这些指令比分别执行乘法和加法提供了更高的速度和准确性。&lt;/p&gt;
+&lt;p&gt;表6列出了AVX2提供的FMA intrinsic，并包括对每个函数的描述。表中的每条指令都接受三个输入向量，我把它们分别称为a、b和c。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Table 6: FMA Intrinsics&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Data Type&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;(2)_mm_fmadd_ps/pd/&lt;/code&gt; &lt;code&gt;(2)_mm256_fmadd_ps/pd&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Multiply two vectors and add the product to a third (res &amp;#x3D; a * b + c)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;(2)_mm_fmsub_ps/pd/&lt;/code&gt; &lt;code&gt;(2)_mm256_fmsub_ps/pd&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Multiply two vectors and subtract a vector from the product (res &amp;#x3D; a * b - c)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;(2)_mm_fmadd_ss/sd &lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Multiply and add the lowest element in the vectors (res[0] &amp;#x3D; a[0] * b[0] + c[0])&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;(2)_mm_fmsub_ss/sd&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Multiply and subtract the lowest element in the vectors (res[0] &amp;#x3D; a[0] * b[0] - c[0])&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;(2)_mm_fnmadd_ps/pd&lt;/code&gt; &lt;code&gt;(2)_mm256_fnmadd_ps/pd &lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Multiply two vectors and add the negated product to a third (res &amp;#x3D; -(a * b) + c)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;(2)_mm_fnmsub_ps/pd/&lt;/code&gt; &lt;code&gt;(2)_mm256_fnmsub_ps/pd&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Multiply two vectors and add the negated product to a third (res &amp;#x3D; -(a * b) - c)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;(2)_mm_fnmadd_ss/sd&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Multiply the two lowest elements and add the negated product to the lowest element of the third vector (res[0] &amp;#x3D; -(a[0] * b[0]) + c[0])&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;(2)_mm_fnmsub_ss/sd&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Multiply the lowest elements and subtract the lowest element of the third vector from the negated product (res[0] &amp;#x3D; -(a[0] * b[0]) - c[0])&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;(2)_mm_fmaddsub_ps/pd/&lt;/code&gt; &lt;code&gt;(2)_mm256_fmaddsub_ps/pd&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Multiply two vectors and alternately add and subtract from the product (res &amp;#x3D; a * b - c)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;(2)_mm_fmsubadd_ps/pd/&lt;/code&gt; &lt;code&gt;(2)_mmf256_fmsubadd_ps/pd &lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Multiply two vectors and alternately subtract and add from the product (res &amp;#x3D; a * b - c)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;p&gt;如果一个内征的名称以_ps或_pd结尾，则输入向量的每个元素都包含在运算中。如果intrinsic的名称以_ss或_sd结尾，则只包括最低的元素。输出向量中的其余元素被设置为与第一个输入向量中的元素相等。例如,假设vec_a &amp;#x3D; (1.0, 2.0)， vec_b &amp;#x3D; (5.0, 10.0)， vec_c &amp;#x3D;(7.0, 14.0)。在本例中，_mm_fmadd_sd(vec_a, vec_b, vec_c)返回(12.0,2.0)，因为(1.0 * 5.0)+ 7.0 &amp;#x3D; 12.0,2.0是vec_a的第二个元素。&lt;/p&gt;
+&lt;p&gt;了解_fmadd_&amp;#x2F;_fmsub_和_fnmadd_&amp;#x2F;_fnmsub_ intrinsic之间的区别很重要。后一种函数在加上或减去第三个输入向量之前，对前两个输入向量的乘积求反。&lt;/p&gt;
+&lt;p&gt;_fmaddsub_和_fmsubadd_内在函数在第三个向量的加法和减法元素之间交替使用。_fmaddsub_ intrinsic添加奇数元素并减去偶数元素。_fmsubadd_ intrinsic减去奇数元素并添加偶数元素。fmatest.c中的代码展示了如何在实践中使用_mm256_fmaddsub_pd intrinsic。&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;hljs-meta-string&#34;&gt;&amp;lt;immintrin.h&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;hljs-meta-string&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;br&gt;  &lt;br&gt;  __m256d veca = _mm256_setr_pd(&lt;span class=&#34;hljs-number&#34;&gt;6.0&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;6.0&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;6.0&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;6.0&lt;/span&gt;);&lt;br&gt;&lt;br&gt;  __m256d vecb = _mm256_setr_pd(&lt;span class=&#34;hljs-number&#34;&gt;2.0&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;2.0&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;2.0&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;2.0&lt;/span&gt;);&lt;br&gt;  &lt;br&gt;  __m256d vecc = _mm256_setr_pd(&lt;span class=&#34;hljs-number&#34;&gt;7.0&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;7.0&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;7.0&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;7.0&lt;/span&gt;);&lt;br&gt;  &lt;br&gt;  &lt;span class=&#34;hljs-comment&#34;&gt;/* Alternately subtract and add the third vector&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;     from the product of the first and second vectors */&lt;/span&gt;&lt;br&gt;  __m256d result = _mm256_fmaddsub_pd(veca, vecb, vecc);&lt;br&gt;  &lt;br&gt;  &lt;span class=&#34;hljs-comment&#34;&gt;/* Display the elements of the result vector */&lt;/span&gt;&lt;br&gt;  &lt;span class=&#34;hljs-keyword&#34;&gt;double&lt;/span&gt;* res = (&lt;span class=&#34;hljs-keyword&#34;&gt;double&lt;/span&gt;*)&amp;amp;result;&lt;br&gt;  &lt;span class=&#34;hljs-built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;%lf %lf %lf %lf\n&amp;quot;&lt;/span&gt;, res[&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;], res[&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;], res[&lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt;], res[&lt;span class=&#34;hljs-number&#34;&gt;3&lt;/span&gt;]);&lt;br&gt;  &lt;br&gt;  &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;当这段代码在支持AVX2的处理器上编译和执行时，打印的结果如下:&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-number&#34;&gt;5.000000&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;19.000000&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;5.000000&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;19.000000&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;FMA指令是由AVX2提供的，因此您可能认为使用gcc构建应用程序需要使用-mavx2标志。但是我发现-mfma标志是必需的。否则，我会得到奇怪的编译错误。&lt;/p&gt;
+&lt;h2 id=&#34;7-Permuting-and-Shuffling&#34;&gt;&lt;a href=&#34;#7-Permuting-and-Shuffling&#34; class=&#34;headerlink&#34; title=&#34;7.Permuting and Shuffling&#34;&gt;&lt;/a&gt;7.Permuting and Shuffling&lt;/h2&gt;&lt;p&gt;许多应用程序必须重新排列向量元素，以确保正确执行操作。&lt;/p&gt;
+&lt;p&gt;AVX&amp;#x2F;AVX2为此目的提供了许多intrinsic funtion，其中两大类是_permute_函数和_shuffle_函数。本节介绍这两种类型的intrinsic。&lt;/p&gt;
+&lt;h3 id=&#34;7-1Permuting&#34;&gt;&lt;a href=&#34;#7-1Permuting&#34; class=&#34;headerlink&#34; title=&#34;7.1Permuting&#34;&gt;&lt;/a&gt;7.1Permuting&lt;/h3&gt;&lt;p&gt;AVX提供了返回一个向量的函数，该向量包含一个向量的重新排列的元素。表7列出了这些排列函数，并提供了对每个函数的描述。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Table 7: Permute Intrinsics&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Data Type&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;_mm_permute_ps/pd/&lt;/code&gt; &lt;code&gt;_mm256_permute_ps/pd&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Select elements from the input vector based on an 8-bit control value&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;(2)_mm256_permute4x64_pd/&lt;/code&gt; &lt;code&gt;(2)_mm256_permute4x64_epi64&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Select 64-bit elements from the input vector based on an 8-bit control value&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;_mm256_permute2f128_ps/pd&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Select 128-bit chunks from two input vectors based on an 8-bit control value&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;_mm256_permute2f128_si256 &lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Select 128-bit chunks from two input vectors based on an 8-bit control value&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;_mm_permutevar_ps/pd&lt;/code&gt; &lt;code&gt;_mm256_permutevar_ps/pd &lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Select elements from the input vector based on bits in an integer vector&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;(2)_mm256_permutevar8x32_ps&lt;/code&gt;&amp;#x2F; &lt;code&gt;(2)_mm256_permutevar8x32_epi32&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Select 32-bit elements (&lt;code&gt;float&lt;/code&gt;s and &lt;code&gt;int&lt;/code&gt;s) using indices in an integer vector&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;p&gt;_permute_ intrinsic接受两个参数:一个输入向量和一个8位控制值。控制值的位决定输入向量的哪个元素插入到输出中。&lt;/p&gt;
+&lt;p&gt;对于_mm256_permute_ps，每对控制位通过选择输入向量中的一个上或下元素来确定一个上或下输出元素。这很复杂，所以我希望图4能让这个操作更清楚一些:【图片丢失】&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Figure 4: Operation of the Permute Intrinsic Function&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;如图所示，输入向量的值可以在输出中重复多次。其他输入值可能根本不被选择。&lt;/p&gt;
+&lt;p&gt;在_mm256_permute_pd中，控制值的低四位在相邻的双精度数对之间进行选择。_mm256_permute4x4_pd类似，但使用所有控制位来选择将哪个64位元素放在输出中。在_permute2f128_ intrinsic中，控制值从两个输入向量中选择128位块，而不是从一个输入向量中选择元素。&lt;/p&gt;
+&lt;p&gt;_permutevar_ intrinsic执行与_permute_ intrinsic相同的操作。但是它们不是使用8位控制值来选择元素，而是依赖于与输入向量大小相同的整数向量。例如，_mm256_permute_ps的输入向量是_mm256，因此整数向量是_mm256i。整数向量的高位执行选择的方式与_permute_ intrinsic的8位控制值的位相同。&lt;/p&gt;
+&lt;h3 id=&#34;7-2Shuffling&#34;&gt;&lt;a href=&#34;#7-2Shuffling&#34; class=&#34;headerlink&#34; title=&#34;7.2Shuffling&#34;&gt;&lt;/a&gt;7.2Shuffling&lt;/h3&gt;&lt;p&gt;像_permute_ intrinsic一样，_shuffle_ intrinsic从一个或两个输入向量中选择元素，并将它们放在输出向量中。表8列出了这些功能，并提供了每个功能的描述。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Table 8: Shuffle Intrinsics&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Data Type&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;_mm256_shuffle_ps/pd&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Select floating-point elements according to an 8-bit value&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;_mm256_shuffle_epi8/&lt;/code&gt; &lt;code&gt;_mm256_shuffle_epi32&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Select integer elements according to an 8-bit value&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;(2)_mm256_shufflelo_epi16/ &lt;/code&gt; &lt;code&gt;(2)_mm256_shufflehi_epi16&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Select 128-bit chunks from two input vectors based on an 8-bit control value&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;p&gt;所有的shuffle_ intrinsic运算于256位向量。在每种情况下，最后一个参数是一个8位的值，它决定哪些输入元素应该放在输出向量中。&lt;/p&gt;
+&lt;p&gt;对于_mm256_shuffle_ps，只使用控件值的高四位。如果输入向量包含整型或浮点数，则使用所有控制位。对于_mm256_shuffle_ps，前两对位选择第一个向量中的元素，后两对位选择第二个向量中的元素。图5说明了这是如何工作的:【图片丢失】&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Figure 5: Operation of the Shuffle Intrinsic Function&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;为了shuffle16位值，AVX2提供了_mm256_shufflelo_epi16和_mm256_shufflehi_epi16。与_mm256_shuffle_ps一样，控制值被分成四对从八个元素中选择的位。但是对于_mm256_shufflelo_epi16, 8个元素是从8个低的16位值中取出的。对于_mm256_shufflehi_epi16, 8个元素取自8个高的16位值。&lt;/p&gt;
+&lt;h2 id=&#34;8-Complex-Multiplication&#34;&gt;&lt;a href=&#34;#8-Complex-Multiplication&#34; class=&#34;headerlink&#34; title=&#34;8.Complex Multiplication&#34;&gt;&lt;/a&gt;8.Complex Multiplication&lt;/h2&gt;&lt;p&gt;在信号处理应用中，复杂乘法是一项必须反复执行的耗时操作。我不会深入讨论这个理论，但每个复数都可以表示为a + bi，其中a和b是浮点值，i是-1的平方根。A是实部，b是虚部。如果(a + bi)和(c + di)相乘，乘积等于(ac - bd) + (ad + bc)i。&lt;/p&gt;
+&lt;p&gt;复数可以以交错的方式存储，这意味着每个实数部分后面跟着虚数部分。假设vec1是一个__m256d，存储两个复数(a + bi)和(x + yi)， vec2是一个__m256d，存储(c + di)和(z + wi)。图6说明了如何存储这些值。如图所示，prod向量存储了两个产物:(ac - bd) + (ad + bc)i和(xz - yw) + (xw + yz)i。&lt;/p&gt;
+&lt;p&gt;【图片丢失】&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Figure 6: Complex Multiplication Using Vectors&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;我不知道用AVX&amp;#x2F;AVX2计算复杂乘积的最快方法。但我想出了一个方法，效果很好。它包括五个步骤:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;将vec1和vec2相乘，并将结果存储在vec3中。&lt;/li&gt;
+&lt;li&gt;切换vec2的实&amp;#x2F;虚值。&lt;/li&gt;
+&lt;li&gt;求vec2的虚数的负数。&lt;/li&gt;
+&lt;li&gt;将vec1和vec2相乘，并将结果存储在vec4中。&lt;/li&gt;
+&lt;li&gt;对vec3和vec4进行水平相减，得到vec1中的答案。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;complex_multi .c中的代码展示了如何使用AVX intrinsic执行此操作:&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;30&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;hljs-meta-string&#34;&gt;&amp;lt;immintrin.h&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;hljs-meta-string&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;br&gt;&lt;br&gt;  __m256d vec1 = _mm256_setr_pd(&lt;span class=&#34;hljs-number&#34;&gt;4.0&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;5.0&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;13.0&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;6.0&lt;/span&gt;);&lt;br&gt;  __m256d vec2 = _mm256_setr_pd(&lt;span class=&#34;hljs-number&#34;&gt;9.0&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;3.0&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;6.0&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;7.0&lt;/span&gt;);&lt;br&gt;  __m256d neg = _mm256_setr_pd(&lt;span class=&#34;hljs-number&#34;&gt;1.0&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;-1.0&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;1.0&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;-1.0&lt;/span&gt;);&lt;br&gt;  &lt;br&gt;  &lt;span class=&#34;hljs-comment&#34;&gt;/* Step 1: Multiply vec1 and vec2 */&lt;/span&gt;&lt;br&gt;  __m256d vec3 = _mm256_mul_pd(vec1, vec2);&lt;br&gt;&lt;br&gt;  &lt;span class=&#34;hljs-comment&#34;&gt;/* Step 2: Switch the real and imaginary elements of vec2 */&lt;/span&gt;&lt;br&gt;  vec2 = _mm256_permute_pd(vec2, &lt;span class=&#34;hljs-number&#34;&gt;0x5&lt;/span&gt;);&lt;br&gt;  &lt;br&gt;  &lt;span class=&#34;hljs-comment&#34;&gt;/* Step 3: Negate the imaginary elements of vec2 */&lt;/span&gt;&lt;br&gt;  vec2 = _mm256_mul_pd(vec2, neg);  &lt;br&gt;  &lt;br&gt;  &lt;span class=&#34;hljs-comment&#34;&gt;/* Step 4: Multiply vec1 and the modified vec2 */&lt;/span&gt;&lt;br&gt;  __m256d vec4 = _mm256_mul_pd(vec1, vec2);&lt;br&gt;&lt;br&gt;  &lt;span class=&#34;hljs-comment&#34;&gt;/* Horizontally subtract the elements in vec3 and vec4 */&lt;/span&gt;&lt;br&gt;  vec1 = _mm256_hsub_pd(vec3, vec4);&lt;br&gt;  &lt;br&gt;  &lt;span class=&#34;hljs-comment&#34;&gt;/* Display the elements of the result vector */&lt;/span&gt;&lt;br&gt;  &lt;span class=&#34;hljs-keyword&#34;&gt;double&lt;/span&gt;* res = (&lt;span class=&#34;hljs-keyword&#34;&gt;double&lt;/span&gt;*)&amp;amp;vec1;&lt;br&gt;  &lt;span class=&#34;hljs-built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;%lf %lf %lf %lf\n&amp;quot;&lt;/span&gt;, res[&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;], res[&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;], res[&lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt;], res[&lt;span class=&#34;hljs-number&#34;&gt;3&lt;/span&gt;]);&lt;br&gt;  &lt;br&gt;  &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;这段代码作用于双向量，但是可以很容易地扩展该方法以支持浮点向量。&lt;/p&gt;
+&lt;h2 id=&#34;9-Points-of-Interest&#34;&gt;&lt;a href=&#34;#9-Points-of-Interest&#34; class=&#34;headerlink&#34; title=&#34;9.Points of Interest&#34;&gt;&lt;/a&gt;9.Points of Interest&lt;/h2&gt;&lt;p&gt;许多开发人员可能会避免学习AVX&amp;#x2F;AVX2，希望编译器能够执行自动向量化。自动向量化是一个很好的特性，但是如果您了解本质，就可以重新安排算法以更好地利用SIMD处理。通过插入AVX&amp;#x2F;AVX2 intrinsic，我极大地提高了信号处理应用程序的处理速度。&lt;/p&gt;
+&lt;h2 id=&#34;10-History&#34;&gt;&lt;a href=&#34;#10-History&#34; class=&#34;headerlink&#34; title=&#34;10.History&#34;&gt;&lt;/a&gt;10.History&lt;/h2&gt;&lt;p&gt;2&amp;#x2F;20 - Fixed formatting and image links&lt;/p&gt;
+&lt;p&gt;4&amp;#x2F;2 - Fixed a couple typographical errors&lt;/p&gt;
+&lt;h2 id=&#34;11-License&#34;&gt;&lt;a href=&#34;#11-License&#34; class=&#34;headerlink&#34; title=&#34;11.License&#34;&gt;&lt;/a&gt;11.License&lt;/h2&gt;&lt;p&gt;This article, along with any associated source code and files, is licensed under &lt;a href=&#34;http://www.codeproject.com/info/cpol10.aspx&#34;&gt;The Code Project Open License (CPOL)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Written By&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://www.codeproject.com/Members/mattscar&#34;&gt;Matt Scarpino&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/01/28/avx006/US.gif&#34; alt=&#34;United States&#34;&gt; United States&lt;/p&gt;
+&lt;p&gt;I’ve been a programmer and engineer for over 20 years. I’m a certified Azure Developer Associate and an Azure IoT Developer Specialist.&lt;/p&gt;
  ]]></description>
         </item>
         <item>

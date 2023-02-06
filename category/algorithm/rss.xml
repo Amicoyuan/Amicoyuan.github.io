@@ -35,8 +35,8 @@
         <category>Linux</category>
         <category>MPI</category>
         <category>AVX2</category>
-        <category>dgemm</category>
         <category>CUDA</category>
+        <category>dgemm</category>
         <category>Mirror</category>
         <category>Numactl</category>
         <category>OpenMP</category>
