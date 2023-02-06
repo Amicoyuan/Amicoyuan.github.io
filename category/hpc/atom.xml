@@ -39,9 +39,9 @@
     <category term="OpenMP" />
     <category term="C/C++" />
     <category term="register" />
+    <category term="Slurm" />
     <category term="Tensorflow" />
     <category term="性能分析工具" />
-    <category term="Slurm" />
     <category term="gcov" />
     <entry>
         <id>http://example.com/2023/02/02/blislab/</id>
@@ -552,7 +552,8 @@
 &lt;p&gt;_mullo_函数类似于整数_mul_函数，但它们不是乘低元素，而是乘两个向量的每个元素，只存储每个乘积的低一半。图3显示了它的外观:【图片丢失】&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;图3:整数相乘和存储低二分之一&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;_mm256_mulhi_epi16和_mm256_mulhi_epu16 intrinsics类似，但是它们存储整数积的高一半。&lt;/p&gt;
-&lt;h3 id=&#34;6-3Fused-Multiply-and-Add-FMA&#34;&gt;&lt;a href=&#34;#6-3Fused-Multiply-and-Add-FMA&#34; class=&#34;headerlink&#34; title=&#34;6.3Fused Multiply and Add (FMA)&#34;&gt;&lt;/a&gt;6.3Fused Multiply and Add (FMA)&lt;/h3&gt;</content>
+&lt;h3 id=&#34;6-3Fused-Multiply-and-Add-FMA&#34;&gt;&lt;a href=&#34;#6-3Fused-Multiply-and-Add-FMA&#34; class=&#34;headerlink&#34; title=&#34;6.3Fused Multiply and Add (FMA)&#34;&gt;&lt;/a&gt;6.3Fused Multiply and Add (FMA)&lt;/h3&gt;&lt;p&gt;如前所述，两个N位数字相乘的结果可以占用2N位。&lt;/p&gt;
+</content>
         <category term="AVX" />
         <category term="AVX2" />
         <updated>2023-01-28T06:51:44.000Z</updated>
