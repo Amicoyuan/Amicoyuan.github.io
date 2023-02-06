@@ -10,11 +10,11 @@
     <category term="Find" />
     <category term="STL" />
     <category term="C++" />
-    <category term="LinkList" />
-    <category term="团体程序设计天梯赛" />
-    <category term="双向链表" />
     <category term="Set" />
+    <category term="团体程序设计天梯赛" />
     <category term="Sort" />
+    <category term="LinkList" />
+    <category term="双向链表" />
     <category term="Graph" />
     <category term="邻接表" />
     <category term="Vector" />
@@ -24,22 +24,23 @@
     <category term="邻接矩阵" />
     <category term="DFS" />
     <category term="结构体" />
-    <category term="贪心" />
     <category term="Double类型相等比较" />
+    <category term="贪心" />
     <category term="并查集" />
     <category term="Map" />
     <category term="Pair" />
     <category term="Linux" />
     <category term="MPI" />
-    <category term="AVX2" />
     <category term="dgemm" />
     <category term="CUDA" />
+    <category term="AVX2" />
+    <category term="Matrix" />
     <category term="Mirror" />
     <category term="Numactl" />
     <category term="OpenMP" />
+    <category term="Slurm" />
     <category term="C/C++" />
     <category term="register" />
-    <category term="Slurm" />
     <category term="Tensorflow" />
     <category term="性能分析工具" />
     <category term="gcov" />
@@ -61,8 +62,8 @@
 &lt;h3 id=&#34;参考资料：&#34;&gt;&lt;a href=&#34;#参考资料：&#34; class=&#34;headerlink&#34; title=&#34;参考资料：&#34;&gt;&lt;/a&gt;参考资料：&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://pintia.cn/problem-sets/994805046380707840/problems/994805070149828608&#34;&gt;题目详情 - L2-005 集合相似度 (25 分) (pintia.cn)&lt;/a&gt;&lt;/p&gt;
 </content>
         <category term="C++" />
-        <category term="团体程序设计天梯赛" />
         <category term="Set" />
+        <category term="团体程序设计天梯赛" />
         <category term="模拟" />
         <updated>2022-04-23T13:39:53.000Z</updated>
     </entry>
@@ -87,8 +88,8 @@
 </content>
         <category term="Data Structure" />
         <category term="C++" />
-        <category term="团体程序设计天梯赛" />
         <category term="Set" />
+        <category term="团体程序设计天梯赛" />
         <category term="Graph" />
         <category term="邻接表" />
         <category term="Vector" />
@@ -113,8 +114,8 @@
 </content>
         <category term="STL" />
         <category term="C++" />
-        <category term="团体程序设计天梯赛" />
         <category term="Set" />
+        <category term="团体程序设计天梯赛" />
         <category term="Sort" />
         <updated>2022-04-11T11:21:06.000Z</updated>
     </entry>

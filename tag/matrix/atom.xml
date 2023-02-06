@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>http://example.com</id>
+    <title>Amicoyuan • Posts by &#34;matrix&#34; tag</title>
+    <link href="http://example.com" />
+    <updated>2023-02-06T14:00:14.000Z</updated>
+    <category term="AVX" />
+    <category term="Data Structure" />
+    <category term="String" />
+    <category term="Find" />
+    <category term="STL" />
+    <category term="C++" />
+    <category term="Set" />
+    <category term="团体程序设计天梯赛" />
+    <category term="Sort" />
+    <category term="LinkList" />
+    <category term="双向链表" />
+    <category term="Graph" />
+    <category term="邻接表" />
+    <category term="Vector" />
+    <category term="Binary tree" />
+    <category term="BFS" />
+    <category term="模拟" />
+    <category term="邻接矩阵" />
+    <category term="DFS" />
+    <category term="结构体" />
+    <category term="Double类型相等比较" />
+    <category term="贪心" />
+    <category term="并查集" />
+    <category term="Map" />
+    <category term="Pair" />
+    <category term="Linux" />
+    <category term="MPI" />
+    <category term="dgemm" />
+    <category term="CUDA" />
+    <category term="AVX2" />
+    <category term="Matrix" />
+    <category term="Mirror" />
+    <category term="Numactl" />
+    <category term="OpenMP" />
+    <category term="Slurm" />
+    <category term="C/C++" />
+    <category term="register" />
+    <category term="Tensorflow" />
+    <category term="性能分析工具" />
+    <category term="gcov" />
+    <entry>
+        <id>http://example.com/2023/02/06/matrix001/</id>
+        <title>矩阵乘法最基础版本</title>
+        <link rel="alternate" href="http://example.com/2023/02/06/matrix001/"/>
+        <content type="html">&lt;h2 id=&#34;矩阵乘法最基础版本&#34;&gt;&lt;a href=&#34;#矩阵乘法最基础版本&#34; class=&#34;headerlink&#34; title=&#34;矩阵乘法最基础版本&#34;&gt;&lt;/a&gt;矩阵乘法最基础版本&lt;/h2&gt;&lt;h3 id=&#34;数学原理示例&#34;&gt;&lt;a href=&#34;#数学原理示例&#34; class=&#34;headerlink&#34; title=&#34;数学原理示例&#34;&gt;&lt;/a&gt;数学原理示例&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;/2023/02/06/matrix001/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25pYW5uaWFueGk=,size_16,color_FFFFFF,t_70.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;完整代码&#34;&gt;&lt;a href=&#34;#完整代码&#34; class=&#34;headerlink&#34; title=&#34;完整代码&#34;&gt;&lt;/a&gt;完整代码&lt;/h3&gt;&lt;p&gt;用A的第i行分别和B的第j列的各个元素相乘求和，求得C的第i行j列的元素，这种算法中，B的访问是按列进行访问的，代码如下：&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-comment&#34;&gt;//m是A矩阵的行,k是A矩阵的列,n是B矩阵的列&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;double&lt;/span&gt; temp=&lt;span class=&#34;hljs-number&#34;&gt;0.0&lt;/span&gt;;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i = &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;; i &amp;lt; m; i++)&amp;#123;				&lt;span class=&#34;hljs-comment&#34;&gt;//遍历C矩阵各行，其行数与A的行数相等 &lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; j = &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;; j &amp;lt; n; j++)&amp;#123;			&lt;span class=&#34;hljs-comment&#34;&gt;//遍历C矩阵i行各列&lt;/span&gt;&lt;br&gt;        temp = &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; p = &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;; p &amp;lt; k; p++)&amp;#123;		&lt;span class=&#34;hljs-comment&#34;&gt;//用p循环累加和计算C[i][j] &lt;/span&gt;&lt;br&gt;            &lt;span class=&#34;hljs-comment&#34;&gt;//计算区域&lt;/span&gt;&lt;br&gt;            temp += A[i][p] * B[p][j];		&lt;span class=&#34;hljs-comment&#34;&gt;//遍历A矩阵各行与B矩阵各列&lt;/span&gt;&lt;br&gt;        &amp;#125;&lt;br&gt;        C[i][j] = temp;&lt;br&gt;    &amp;#125;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;//结果C矩阵m行n列&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h3 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/niannianxi/article/details/104028215&#34;&gt;(64条消息) C语言实现矩阵的乘法_꧁年年曦꧂的博客-CSDN博客_c语言矩阵乘法&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.jb51.net/article/75750.htm&#34;&gt;C语言科学计算入门之矩阵乘法的相关计算_C 语言_脚本之家 (jb51.net)&lt;/a&gt;&lt;/p&gt;
+</content>
+        <category term="Matrix" />
+        <updated>2023-02-06T14:00:14.000Z</updated>
+    </entry>
+</feed>
