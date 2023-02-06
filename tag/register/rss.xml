@@ -42,9 +42,9 @@
         <category>OpenMP</category>
         <category>C/C++</category>
         <category>register</category>
-        <category>Slurm</category>
         <category>Tensorflow</category>
         <category>性能分析工具</category>
+        <category>Slurm</category>
         <category>gcov</category>
         <item>
             <guid isPermalink="true">http://example.com/2023/02/02/register/</guid>
@@ -59,7 +59,7 @@
 &lt;li&gt;我们通常采用局部变量采用 register 的，全局变量会导致 CPU 当中的寄存器被长时间占用。&lt;/li&gt;
 &lt;li&gt;一个变量被存放到寄存器当中，那么这个变量的效率就会大大的提高,因为不用访存读取&lt;/li&gt;
 &lt;li&gt;register关键字可以与指针变量一起使用。&lt;/li&gt;
-&lt;li&gt;.寄存器是一个存储类，并且C不允许变量使用多个存储类说明符。因此，register不能与static一起使用。&lt;/li&gt;
+&lt;li&gt;寄存器是一个存储类，并且C不允许变量使用多个存储类说明符。因此，register不能与static一起使用。&lt;/li&gt;
 &lt;li&gt;寄存器只能在一个块内使用（局部），而不能在全局范围内（在主外部）使用&lt;/li&gt;
 &lt;li&gt;寄存器数量有限&lt;/li&gt;
 &lt;/ol&gt;

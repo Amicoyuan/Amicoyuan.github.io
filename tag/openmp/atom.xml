@@ -39,9 +39,9 @@
     <category term="OpenMP" />
     <category term="C/C++" />
     <category term="register" />
-    <category term="Slurm" />
     <category term="Tensorflow" />
     <category term="性能分析工具" />
+    <category term="Slurm" />
     <category term="gcov" />
     <entry>
         <id>http://example.com/2023/01/14/openmp006/</id>

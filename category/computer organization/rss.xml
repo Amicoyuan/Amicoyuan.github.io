@@ -42,9 +42,9 @@
         <category>OpenMP</category>
         <category>C/C++</category>
         <category>register</category>
-        <category>Slurm</category>
         <category>Tensorflow</category>
         <category>性能分析工具</category>
+        <category>Slurm</category>
         <category>gcov</category>
         <item>
             <guid isPermalink="true">http://example.com/2022/06/12/%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90/</guid>

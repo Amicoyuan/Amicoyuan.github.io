@@ -39,9 +39,9 @@
     <category term="OpenMP" />
     <category term="C/C++" />
     <category term="register" />
-    <category term="Slurm" />
     <category term="Tensorflow" />
     <category term="性能分析工具" />
+    <category term="Slurm" />
     <category term="gcov" />
     <entry>
         <id>http://example.com/2023/02/02/blislab/</id>
@@ -315,7 +315,7 @@
 
 &lt;p&gt;在本例中，所有函数都以_mm256开始，以_ps结束，因此我希望所有操作都清楚地涉及包含floats的256位向量。我还希望结果向量中的每个元素都等于1.0。如果运行应用程序，您将看到情况就是这样。&lt;/p&gt;
 &lt;h3 id=&#34;5-5初始化intrinsics&#34;&gt;&lt;a href=&#34;#5-5初始化intrinsics&#34; class=&#34;headerlink&#34; title=&#34;5.5初始化intrinsics&#34;&gt;&lt;/a&gt;5.5初始化intrinsics&lt;/h3&gt;&lt;p&gt;在对AVX向量进行操作之前，需要用数据填充向量。因此，本文讨论的第一组intrinsics用数据初始化向量。有两种方法:用标量值初始化向量和用从内存加载的数据初始化向量。&lt;/p&gt;
-&lt;h4 id=&#34;5-5-4使用标量值初始化&#34;&gt;&lt;a href=&#34;#5-5-4使用标量值初始化&#34; class=&#34;headerlink&#34; title=&#34;5.5.4使用标量值初始化&#34;&gt;&lt;/a&gt;5.5.4使用标量值初始化&lt;/h4&gt;&lt;p&gt;AVX提供了将一个或多个值组合成256位向量的intrinsics funtions。表2列出了它们的名称，并提供了每个名称的描述。也有类似的intrinsics初始化128位向量，但它们是由SSE提供的，而不是AVX。函数名的唯一区别是_mm256_被替换为_mm_。&lt;/p&gt;
+&lt;h4 id=&#34;5-5-1使用标量值初始化&#34;&gt;&lt;a href=&#34;#5-5-1使用标量值初始化&#34; class=&#34;headerlink&#34; title=&#34;5.5.1使用标量值初始化&#34;&gt;&lt;/a&gt;5.5.1使用标量值初始化&lt;/h4&gt;&lt;p&gt;AVX提供了将一个或多个值组合成256位向量的intrinsics funtions。表2列出了它们的名称，并提供了每个名称的描述。也有类似的intrinsics初始化128位向量，但它们是由SSE提供的，而不是AVX。函数名的唯一区别是_mm256_被替换为_mm_。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Table 2: Initialization Intrinsics&lt;/strong&gt;&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -377,7 +377,182 @@
 &lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;__m256i int_vector = _mm256_setr_epi32(&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;3&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;4&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;5&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;6&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;7&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;8&lt;/span&gt;);&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; *ptr = (&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;*)&amp;amp;int_vector;&lt;br&gt;&lt;span class=&#34;hljs-built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;%d %d %d %d %d %d %d %d\n&amp;quot;&lt;/span&gt;, ptr[&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;], ptr[&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;], ptr[&lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt;], ptr[&lt;span class=&#34;hljs-number&#34;&gt;3&lt;/span&gt;], ptr[&lt;span class=&#34;hljs-number&#34;&gt;4&lt;/span&gt;], ptr[&lt;span class=&#34;hljs-number&#34;&gt;5&lt;/span&gt;], ptr[&lt;span class=&#34;hljs-number&#34;&gt;6&lt;/span&gt;], ptr[&lt;span class=&#34;hljs-number&#34;&gt;7&lt;/span&gt;]);&lt;br&gt;--&amp;gt; &lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;3&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;4&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;5&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;6&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;7&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;p&gt;有趣的是，AVX和AVX2都没有提供用无符号整数初始化向量的intrinsic。但是，它们提供了对带无符号整数的向量进行操作的函数。&lt;/p&gt;
-</content>
+&lt;h4 id=&#34;5-5-2从内存加载数据&#34;&gt;&lt;a href=&#34;#5-5-2从内存加载数据&#34; class=&#34;headerlink&#34; title=&#34;5.5.2从内存加载数据&#34;&gt;&lt;/a&gt;5.5.2从内存加载数据&lt;/h4&gt;&lt;p&gt;AVX&amp;#x2F;AVX2的一个常见用法是将数据从内存加载到向量中，对向量进行处理，并将结果存储回内存。第一步是使用表3中列出的intrinsic funtions完成的。最后两个函数前面有(2)，因为它们是由AVX2而不是AVX提供的。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Table 3: Vector Load Intrinsics&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Data Type&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;_mm256_load_ps/pd&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Loads a floating-point vector from an  aligned memory address&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;_mm256_load_si256&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Loads an integer vector from an aligned memory address&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;_mm256_loadu_ps/pd&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Loads a floating-point vector from an  unaligned memory address&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;_mm256_loadu_si256&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Loads an integer vector from an unaligned memory address&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;_mm_maskload_ps/pd&lt;/code&gt; &lt;code&gt;_mm256_maskload_ps/pd&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Load portions of a 128-bit&amp;#x2F;256-bit floating-point vector according to a mask&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;(2)_mm_maskload_epi32/64&lt;/code&gt; &lt;code&gt;(2)_mm256_maskload_epi32/64&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Load portions of a 128-bit&amp;#x2F;256-bit integer vector according to a mask&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;p&gt;当将数据加载到向量中时，内存对齐变得特别重要。每个_mm256_load_* intrinsic接受一个必须在32字节边界上对齐的内存地址。即地址必须能被32整除。下面的代码展示了如何在实践中使用它:&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;float&lt;/span&gt;* aligned_floats = (&lt;span class=&#34;hljs-keyword&#34;&gt;float&lt;/span&gt;*)&lt;span class=&#34;hljs-built_in&#34;&gt;aligned_alloc&lt;/span&gt;(&lt;span class=&#34;hljs-number&#34;&gt;32&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;64&lt;/span&gt; * &lt;span class=&#34;hljs-built_in&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;sizeof&lt;/span&gt;&lt;/span&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;float&lt;/span&gt;));		&lt;span class=&#34;hljs-comment&#34;&gt;//这里使用了内存对齐&lt;/span&gt;&lt;br&gt;... Initialize data ...&lt;br&gt;__m256 vec = _mm256_load_ps(aligned_floats);&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;【个人补充】关于内存对齐以及相关函数&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://xingyuanjie.top/2022/06/12/%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90/&#34;&gt;内存对齐 - Amicoyuan (xingyuanjie.top)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://xingyuanjie.top/2022/06/12/AVX%E5%90%91%E9%87%8F%E5%8C%96%E5%AD%A6%E4%B9%A0(%E4%BA%8C)-%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90%E7%9A%84%E5%BA%94%E7%94%A8/&#34;&gt;AVX向量化学习(二)-内存对齐的应用 - Amicoyuan (xingyuanjie.top)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;任何使用_m256_load_*加载未对齐数据的尝试都会造成segmentation fault。如果数据不是在32位边界对齐，则应该使用_m256_loadu_*函数。如下代码所示:&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;float&lt;/span&gt;* unaligned_floats = (&lt;span class=&#34;hljs-keyword&#34;&gt;float&lt;/span&gt;*)&lt;span class=&#34;hljs-built_in&#34;&gt;malloc&lt;/span&gt;(&lt;span class=&#34;hljs-number&#34;&gt;64&lt;/span&gt; * &lt;span class=&#34;hljs-built_in&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;sizeof&lt;/span&gt;&lt;/span&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;float&lt;/span&gt;));				&lt;span class=&#34;hljs-comment&#34;&gt;//未使用内存对齐&lt;/span&gt;&lt;br&gt;... Initialize data ...&lt;br&gt;__m256 vec = _mm256_loadu_ps(unaligned_floats);&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;假设你想用AVX向量处理一个浮点数组(float)，但是数组的长度是11，不能被8整除。在这种情况下，第二个__m256向量的最后五个浮点数需要设置为0，这样它们就不会影响计算。这种选择性加载可以用表3底部的_maskload_函数来完成。&lt;/p&gt;
+&lt;p&gt;每个_maskload_函数接受两个参数:一个内存地址和一个与返回向量元素数量相同的整数向量。对于整数向量中最高位为1的每个元素，将从内存中读取返回向量中相应的元素。如果整数向量中的最高位为零，则返回向量中的相应元素被设置为零。&lt;/p&gt;
+&lt;p&gt;一个示例将说明如何使用这些函数。mask_load.c中的代码将8个整型读入一个向量，最后3个应该设置为0。要使用的函数是_mm256_maskload_epi32，它的第二个参数应该是__m256i掩码向量。这个掩码向量包含5个最高位为1的整数和3个最高位为0的整数。下面是代码的样子:&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;hljs-meta-string&#34;&gt;&amp;lt;immintrin.h&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;hljs-meta-string&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;br&gt;&lt;br&gt;  &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i;&lt;br&gt;  &lt;br&gt;  &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; int_array[&lt;span class=&#34;hljs-number&#34;&gt;8&lt;/span&gt;] = &amp;#123;&lt;span class=&#34;hljs-number&#34;&gt;100&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;200&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;300&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;400&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;500&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;600&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;700&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;800&lt;/span&gt;&amp;#125;;&lt;br&gt;  &lt;br&gt;  &lt;span class=&#34;hljs-comment&#34;&gt;/* Initialize the mask vector */&lt;/span&gt;&lt;br&gt;  __m256i mask = _mm256_setr_epi32(&lt;span class=&#34;hljs-number&#34;&gt;-20&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;-72&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;-48&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;-9&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;-100&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;3&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;5&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;8&lt;/span&gt;);	&lt;span class=&#34;hljs-comment&#34;&gt;//这里需要充分理解计算机组成原理中的补码&lt;/span&gt;&lt;br&gt;&lt;br&gt;  &lt;span class=&#34;hljs-comment&#34;&gt;/* Selectively load data into the vector */&lt;/span&gt;&lt;br&gt;  __m256i result = _mm256_maskload_epi32(int_array, mask);&lt;br&gt;  &lt;br&gt;  &lt;span class=&#34;hljs-comment&#34;&gt;/* Display the elements of the result vector */&lt;/span&gt;&lt;br&gt;  &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;* res = (&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;*)&amp;amp;result;&lt;br&gt;  &lt;span class=&#34;hljs-built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;%d %d %d %d %d %d %d %d\n&amp;quot;&lt;/span&gt;, &lt;br&gt;    res[&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;], res[&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;], res[&lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt;], res[&lt;span class=&#34;hljs-number&#34;&gt;3&lt;/span&gt;], res[&lt;span class=&#34;hljs-number&#34;&gt;4&lt;/span&gt;], res[&lt;span class=&#34;hljs-number&#34;&gt;5&lt;/span&gt;], res[&lt;span class=&#34;hljs-number&#34;&gt;6&lt;/span&gt;], res[&lt;span class=&#34;hljs-number&#34;&gt;7&lt;/span&gt;]);&lt;br&gt;  &lt;br&gt;  &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;如果您在支持AVX2的系统上运行此应用程序，它将打印以下结果:&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-number&#34;&gt;100&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;200&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;300&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;400&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;500&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;有三点是需要注意的：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;代码使用_setr_函数而不是_set_来设置掩码向量的内容，因为它在将向量元素传递给函数时对它们进行排序。&lt;/li&gt;
+&lt;li&gt;负整数的最高位总是1。这就是掩码向量包含五个负数和三个正数的原因。&lt;/li&gt;
+&lt;li&gt;_mm256_maskload_epi32函数由AVX2提供，而不是AVX。因此，要用gcc编译这段代码，必须使用-mavx2标志而不是-mavx。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;除了表3中列出的函数之外，AVX2还提供了从内存加载索引数据的集合函数。&lt;/p&gt;
+&lt;h2 id=&#34;6-Arithmetic-Intrinsics&#34;&gt;&lt;a href=&#34;#6-Arithmetic-Intrinsics&#34; class=&#34;headerlink&#34; title=&#34;6.Arithmetic Intrinsics&#34;&gt;&lt;/a&gt;6.Arithmetic Intrinsics&lt;/h2&gt;&lt;p&gt;数学是AVX存在的主要原因，基本操作是加、减、乘和除。本节将介绍执行这些操作的intrinsic funtions，还将介绍AVX2提供的新的融合乘法和加法函数。&lt;/p&gt;
+&lt;h3 id=&#34;6-1加法和减法&#34;&gt;&lt;a href=&#34;#6-1加法和减法&#34; class=&#34;headerlink&#34; title=&#34;6.1加法和减法&#34;&gt;&lt;/a&gt;6.1加法和减法&lt;/h3&gt;&lt;p&gt;表4列出了执行加法和减法的AVX&amp;#x2F;AVX2 intrinsic。由于考虑到饱和度，它们大多数都作用于包含整数的向量。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Table 4: Addition and Subtraction Intrinsics&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Data Type&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;_mm256_add_ps/pd&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Add two floating-point vectors&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;_mm256_sub_ps/pd&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Subtract two floating-point vectors&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;(2)_mm256_add_epi8/16/32/64 &lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Add two integer vectors&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;(2)_mm236_sub_epi8/16/32/64&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Subtract two integer vectors&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;(2)_mm256_adds_epi8/16&lt;/code&gt; &lt;code&gt;(2)_mm256_adds_epu8/16 &lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Add two integer vectors with saturation&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;(2)_mm256_subs_epi8/16&lt;/code&gt; &lt;code&gt;(2)_mm256_subs_epu8/16&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Subtract two integer vectors with saturation&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;_mm256_hadd_ps/pd&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Add two floating-point vectors horizontally&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;_mm256_hsub_ps/pd&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Subtract two floating-point vectors horizontally&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;(2)_mm256_hadd_epi16/32&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Add two integer vectors horizontally&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;(2)_mm256_hsub_epi16/32&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Subtract two integer vectors horizontally&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;(2)_mm256_hadds_epi16&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Add two vectors containing shorts horizontally with saturation&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;(2)_mm256_hsubs_epi16&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Subtract two vectors containing shorts horizontally with saturation&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;_mm256_addsub_ps/pd&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Add and subtract two floating-point vectors&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;p&gt;在加法和减法整数向量时，重要的是要查看_add_&amp;#x2F;_sub_函数和_adds_&amp;#x2F;_subs_函数之间的区别。额外的s代表饱和，当结果需要的内存超过向量可以存储的内存时，就会产生饱和。Functions that take saturation into account clamp the result to the minimum&amp;#x2F;maximum value that can be stored.没有饱和的函数在发生饱和时忽略内存问题。&lt;/p&gt;
+&lt;p&gt;例如，假设一个向量包含有符号字节，那么每个元素的最大值是127 (0x7F)。如果一个运算将98加到85，数学和是183 (0xB7)。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;如果使用_mm256_add_epi8添加这些值，饱和度将被忽略，存储的结果将是-73 (0xB7)。&lt;/li&gt;
+&lt;li&gt;如果使用_mm256_adds_epi8添加这些值，结果将被固定为最大值127 (0x7F)。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;作为另一个例子，考虑两个包含有符号短整数的向量。最小值为-32,768。如果计算-18,000 - 19,000，数学结果是-37,000 (0xFFFF6F78作为32位整数)。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;如果用_mm256_sub_epi16减去这些值，饱和度将被忽略，存储的结果将是28,536 (0x6F78)。&lt;/li&gt;
+&lt;li&gt;如果用_mm256_subs_epi16减去这些值，结果将被压缩到最小值-32,768 (0x8000)。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;_hadd_&amp;#x2F;_hsub_函数水平执行加法和减法。也就是说，它们不是添加或减去不同向量的元素，而是在每个向量中添加或减去相邻的元素。结果以交错的方式存储。图1显示了_mm256_hadd_pd的工作原理，它水平地添加了两个向量A和B:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/01/28/avx006/Fig1.jpg&#34; alt=&#34;Image 1&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Figure 1: Horizontal Addition of Two Vectors&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;水平加减元素看起来可能很奇怪，但这些操作在复数相乘时很有用。本文稍后将对此进行解释。表4中的最后一个函数_mm256_addsub_ps&amp;#x2F;pd交替减法和加法两个浮点向量的元素。也就是说，偶数元素被减去，奇数元素被加上。例如，如果vec_a包含(0.1,0.2,0.3,0.4)，vec_b包含(0.5,0.6,0.7,0.8)，则_mm256_addsub_pd(vec_a, vec_b)等于(-0.4,0.8，-0.4,1.2)。&lt;/p&gt;
+&lt;h3 id=&#34;6-2乘法和除法&#34;&gt;&lt;a href=&#34;#6-2乘法和除法&#34; class=&#34;headerlink&#34; title=&#34;6.2乘法和除法&#34;&gt;&lt;/a&gt;6.2乘法和除法&lt;/h3&gt;&lt;p&gt;表5列出了执行乘法和除法的AVX&amp;#x2F;AVX2 intrinsic。与加法和减法一样，对整数进行运算也有一些特殊的特性。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Table 5: Multiplication and Division Intrinsics&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Data Type&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;_mm256_mul_ps/pd&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Multiply two floating-point vectors&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;(2)_mm256_mul_epi32/&lt;/code&gt; &lt;code&gt;(2)_mm256_mul_epu32 &lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Multiply the lowest four elements of vectors containing 32-bit integers&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;(2)_mm256_mullo_epi16/32&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Multiply integers and store low halves&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;(2)_mm256_mulhi_epi16/&lt;/code&gt; &lt;code&gt;(2)_mm256_mulhi_epu16&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Multiply integers and store high halves&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;(2)_mm256_mulhrs_epi16&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Multiply 16-bit elements to form 32-bit elements&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;_mm256_div_ps/pd&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Divide two floating-point vectors&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;p&gt;如果两个N位的数字在计算机上相乘，结果可以占用2N位。因此，只有_mm256_mul_epi32和_mm256_mul_epu32的四个低元素被乘在一起，结果是一个包含四个长整数的向量。图2显示了它的工作原理:【动态图丢失】&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;图2:整数向量的低元素相乘&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;_mullo_函数类似于整数_mul_函数，但它们不是乘低元素，而是乘两个向量的每个元素，只存储每个乘积的低一半。图3显示了它的外观:【图片丢失】&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;图3:整数相乘和存储低二分之一&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;_mm256_mulhi_epi16和_mm256_mulhi_epu16 intrinsics类似，但是它们存储整数积的高一半。&lt;/p&gt;
+&lt;h3 id=&#34;6-3Fused-Multiply-and-Add-FMA&#34;&gt;&lt;a href=&#34;#6-3Fused-Multiply-and-Add-FMA&#34; class=&#34;headerlink&#34; title=&#34;6.3Fused Multiply and Add (FMA)&#34;&gt;&lt;/a&gt;6.3Fused Multiply and Add (FMA)&lt;/h3&gt;</content>
         <category term="AVX" />
         <category term="AVX2" />
         <updated>2023-01-28T06:51:44.000Z</updated>

@@ -39,9 +39,9 @@
     <category term="OpenMP" />
     <category term="C/C++" />
     <category term="register" />
-    <category term="Slurm" />
     <category term="Tensorflow" />
     <category term="性能分析工具" />
+    <category term="Slurm" />
     <category term="gcov" />
     <entry>
         <id>http://example.com/2022/06/12/MPI%E5%AD%A6%E4%B9%A0(%E4%B8%80)-%E7%AE%80%E5%8D%95%E7%9A%84%E5%8F%91%E9%80%81%E6%8E%A5%E6%94%B6/</id>
