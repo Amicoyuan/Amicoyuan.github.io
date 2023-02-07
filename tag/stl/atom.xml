@@ -3,18 +3,18 @@
     <id>http://example.com</id>
     <title>Amicoyuan • Posts by &#34;stl&#34; tag</title>
     <link href="http://example.com" />
-    <updated>2023-02-07T08:58:01.000Z</updated>
+    <updated>2023-02-07T10:05:25.000Z</updated>
     <category term="AVX" />
     <category term="Data Structure" />
     <category term="String" />
     <category term="Find" />
     <category term="STL" />
     <category term="C++" />
-    <category term="Set" />
-    <category term="团体程序设计天梯赛" />
-    <category term="Sort" />
     <category term="LinkList" />
+    <category term="团体程序设计天梯赛" />
     <category term="双向链表" />
+    <category term="Set" />
+    <category term="Sort" />
     <category term="Graph" />
     <category term="邻接表" />
     <category term="Vector" />
@@ -36,14 +36,25 @@
     <category term="CUDA" />
     <category term="Matrix" />
     <category term="Mirror" />
-    <category term="OpenMP" />
     <category term="Numactl" />
+    <category term="OpenMP" />
     <category term="C/C++" />
     <category term="register" />
     <category term="Slurm" />
     <category term="Tensorflow" />
     <category term="性能分析工具" />
     <category term="gcov" />
+    <entry>
+        <id>http://example.com/2023/02/07/niuke002/</id>
+        <title>JZ5 替换空格</title>
+        <link rel="alternate" href="http://example.com/2023/02/07/niuke002/"/>
+        <content type="html">&lt;h2 id=&#34;JZ5-替换空格&#34;&gt;&lt;a href=&#34;#JZ5-替换空格&#34; class=&#34;headerlink&#34; title=&#34;JZ5 替换空格&#34;&gt;&lt;/a&gt;&lt;strong&gt;JZ5&lt;/strong&gt; &lt;strong&gt;替换空格&lt;/strong&gt;&lt;/h2&gt;&lt;h2 id=&#34;题目链接&#34;&gt;&lt;a href=&#34;#题目链接&#34; class=&#34;headerlink&#34; title=&#34;题目链接&#34;&gt;&lt;/a&gt;题目链接&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://www.nowcoder.com/practice/0e26e5551f2b489b9f58bc83aa4b6c68?tpId=265&amp;tqId=39209&amp;rp=1&amp;ru=/exam/oj/ta&amp;qru=/exam/oj/ta&amp;sourceUrl=/exam/oj/ta?tpId=13&amp;difficulty=undefined&amp;judgeStatus=undefined&amp;tags=&amp;title=&#34;&gt;替换空格_牛客题霸_牛客网 (nowcoder.com)&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;完整代码&#34;&gt;&lt;a href=&#34;#完整代码&#34; class=&#34;headerlink&#34; title=&#34;完整代码&#34;&gt;&lt;/a&gt;完整代码&lt;/h2&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;hljs-meta-string&#34;&gt;&amp;lt;string&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-class&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;Solution&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;public&lt;/span&gt;:&lt;br&gt;    &lt;span class=&#34;hljs-comment&#34;&gt;/**&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;     *&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;     * &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;     * @param s string字符串 &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;     * @return string字符串&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;     */&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-function&#34;&gt;string &lt;span class=&#34;hljs-title&#34;&gt;replaceSpace&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(string s)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;br&gt;        &lt;span class=&#34;hljs-comment&#34;&gt;// write code here&lt;/span&gt;&lt;br&gt;        string str2 =&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;%20&amp;quot;&lt;/span&gt;;&lt;br&gt;        string str3;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; (&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;; i&amp;lt;s.&lt;span class=&#34;hljs-built_in&#34;&gt;size&lt;/span&gt;(); i++) &amp;#123;&lt;br&gt;            &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(s[i]!=&lt;span class=&#34;hljs-string&#34;&gt;&amp;#x27; &amp;#x27;&lt;/span&gt;)					&lt;span class=&#34;hljs-comment&#34;&gt;//不是空格就插入到str3&lt;/span&gt;&lt;br&gt;                str3.&lt;span class=&#34;hljs-built_in&#34;&gt;push_back&lt;/span&gt;(s[i]);&lt;br&gt;            &lt;span class=&#34;hljs-keyword&#34;&gt;else&lt;/span&gt;&lt;br&gt;                str3.&lt;span class=&#34;hljs-built_in&#34;&gt;append&lt;/span&gt;(str2);			&lt;span class=&#34;hljs-comment&#34;&gt;//如果是空格就把str2插入到str3&lt;/span&gt;&lt;br&gt;        &amp;#125;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; str3;&lt;br&gt;    &amp;#125;&lt;br&gt;&amp;#125;;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+</content>
+        <category term="STL" />
+        <updated>2023-02-07T10:05:25.000Z</updated>
+    </entry>
     <entry>
         <id>http://example.com/2023/02/07/niuke001/</id>
         <title>JZ3 数组中重复的数字</title>
@@ -110,8 +121,8 @@
 </content>
         <category term="STL" />
         <category term="C++" />
-        <category term="Set" />
         <category term="团体程序设计天梯赛" />
+        <category term="Set" />
         <category term="Sort" />
         <updated>2022-04-11T11:21:06.000Z</updated>
     </entry>

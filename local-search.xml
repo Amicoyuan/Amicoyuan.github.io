@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>JZ5 替换空格</title>
+    <link href="/2023/02/07/niuke002/"/>
+    <url>/2023/02/07/niuke002/</url>
+    
+    <content type="html"><![CDATA[<h2 id="JZ5-替换空格"><a href="#JZ5-替换空格" class="headerlink" title="JZ5 替换空格"></a><strong>JZ5</strong> <strong>替换空格</strong></h2><h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h2><p><a href="https://www.nowcoder.com/practice/0e26e5551f2b489b9f58bc83aa4b6c68?tpId=265&tqId=39209&rp=1&ru=/exam/oj/ta&qru=/exam/oj/ta&sourceUrl=/exam/oj/ta?tpId=13&difficulty=undefined&judgeStatus=undefined&tags=&title=">替换空格_牛客题霸_牛客网 (nowcoder.com)</a></p><h2 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h2><figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;string&gt;</span></span><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> &#123;</span><br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可</span><br><span class="hljs-comment">     *</span><br><span class="hljs-comment">     * </span><br><span class="hljs-comment">     * @param s string字符串 </span><br><span class="hljs-comment">     * @return string字符串</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-function">string <span class="hljs-title">replaceSpace</span><span class="hljs-params">(string s)</span> </span>&#123;<br>        <span class="hljs-comment">// write code here</span><br>        string str2 =<span class="hljs-string">&quot;%20&quot;</span>;<br>        string str3;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>; i&lt;s.<span class="hljs-built_in">size</span>(); i++) &#123;<br>            <span class="hljs-keyword">if</span>(s[i]!=<span class="hljs-string">&#x27; &#x27;</span>)<span class="hljs-comment">//不是空格就插入到str3</span><br>                str3.<span class="hljs-built_in">push_back</span>(s[i]);<br>            <span class="hljs-keyword">else</span><br>                str3.<span class="hljs-built_in">append</span>(str2);<span class="hljs-comment">//如果是空格就把str2插入到str3</span><br>        &#125;<br>        <span class="hljs-keyword">return</span> str3;<br>    &#125;<br>&#125;;<br></code></pre></div></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Algorithm</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>STL</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>JZ3 数组中重复的数字</title>
     <link href="/2023/02/07/niuke001/"/>
     <url>/2023/02/07/niuke001/</url>
@@ -775,9 +800,9 @@
       
       <tag>C++</tag>
       
-      <tag>Set</tag>
-      
       <tag>团体程序设计天梯赛</tag>
+      
+      <tag>Set</tag>
       
       <tag>模拟</tag>
       
@@ -1169,9 +1194,9 @@
       
       <tag>C++</tag>
       
-      <tag>Set</tag>
-      
       <tag>团体程序设计天梯赛</tag>
+      
+      <tag>Set</tag>
       
       <tag>Graph</tag>
       
@@ -1204,9 +1229,9 @@
       
       <tag>C++</tag>
       
-      <tag>团体程序设计天梯赛</tag>
-      
       <tag>LinkList</tag>
+      
+      <tag>团体程序设计天梯赛</tag>
       
       <tag>双向链表</tag>
       
@@ -1237,9 +1262,9 @@
       
       <tag>C++</tag>
       
-      <tag>Set</tag>
-      
       <tag>团体程序设计天梯赛</tag>
+      
+      <tag>Set</tag>
       
       <tag>Sort</tag>
       
