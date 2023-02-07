@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>JZ6 从尾到头打印链表</title>
+    <link href="/2023/02/07/niuke003/"/>
+    <url>/2023/02/07/niuke003/</url>
+    
+    <content type="html"><![CDATA[<h2 id="JZ6-从尾到头打印链表"><a href="#JZ6-从尾到头打印链表" class="headerlink" title="JZ6 从尾到头打印链表"></a><strong>JZ6</strong> <strong>从尾到头打印链表</strong></h2><h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h2><p><a href="https://www.nowcoder.com/practice/d0267f7f55b3412ba93bd35cfa8e8035?tpId=265&tqId=39210&rp=1&ru=/exam/oj/ta&qru=/exam/oj/ta&sourceUrl=/exam/oj/ta?page=1&tpId=13&type=265&difficulty=undefined&judgeStatus=undefined&tags=&title=">从尾到头打印链表_牛客题霸_牛客网 (nowcoder.com)</a></p><h2 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h2><figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-comment">/**</span><br><span class="hljs-comment">*  struct ListNode &#123;</span><br><span class="hljs-comment">*        int val;</span><br><span class="hljs-comment">*        struct ListNode *next;</span><br><span class="hljs-comment">*        ListNode(int x) :</span><br><span class="hljs-comment">*              val(x), next(NULL) &#123;</span><br><span class="hljs-comment">*        &#125;</span><br><span class="hljs-comment">*  &#125;;</span><br><span class="hljs-comment">*/</span><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> &#123;</span><br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function">vector&lt;<span class="hljs-keyword">int</span>&gt; <span class="hljs-title">printListFromTailToHead</span><span class="hljs-params">(ListNode* head)</span> </span>&#123;<br>        vector&lt;<span class="hljs-keyword">int</span>&gt; s;<br>        <span class="hljs-keyword">while</span> (head!=<span class="hljs-literal">NULL</span>) &#123;<br>            s.<span class="hljs-built_in">insert</span>(s.<span class="hljs-built_in">begin</span>(),head-&gt;val);<span class="hljs-comment">//利用迭代器头插</span><br>            head=head-&gt;next;<br>        &#125;<br>        <span class="hljs-keyword">return</span> s;<br>    &#125;<br>&#125;;<br><br></code></pre></div></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Algorithm</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>STL</tag>
+      
+      <tag>牛客</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>JZ5 替换空格</title>
     <link href="/2023/02/07/niuke002/"/>
     <url>/2023/02/07/niuke002/</url>
@@ -21,6 +48,8 @@
     <tags>
       
       <tag>STL</tag>
+      
+      <tag>牛客</tag>
       
     </tags>
     
@@ -47,7 +76,7 @@
       
       <tag>STL</tag>
       
-      <tag>Set</tag>
+      <tag>牛客</tag>
       
     </tags>
     
@@ -800,9 +829,9 @@
       
       <tag>C++</tag>
       
-      <tag>团体程序设计天梯赛</tag>
-      
       <tag>Set</tag>
+      
+      <tag>团体程序设计天梯赛</tag>
       
       <tag>模拟</tag>
       
@@ -1194,9 +1223,9 @@
       
       <tag>C++</tag>
       
-      <tag>团体程序设计天梯赛</tag>
-      
       <tag>Set</tag>
+      
+      <tag>团体程序设计天梯赛</tag>
       
       <tag>Graph</tag>
       
@@ -1229,9 +1258,9 @@
       
       <tag>C++</tag>
       
-      <tag>LinkList</tag>
-      
       <tag>团体程序设计天梯赛</tag>
+      
+      <tag>LinkList</tag>
       
       <tag>双向链表</tag>
       
@@ -1262,9 +1291,9 @@
       
       <tag>C++</tag>
       
-      <tag>团体程序设计天梯赛</tag>
-      
       <tag>Set</tag>
+      
+      <tag>团体程序设计天梯赛</tag>
       
       <tag>Sort</tag>
       

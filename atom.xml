@@ -3,18 +3,18 @@
     <id>http://example.com</id>
     <title>Amicoyuan</title>
     <link href="http://example.com" />
-    <updated>2023-02-07T10:05:25.000Z</updated>
+    <updated>2023-02-07T10:21:41.000Z</updated>
     <category term="AVX" />
     <category term="Data Structure" />
     <category term="String" />
     <category term="Find" />
     <category term="STL" />
     <category term="C++" />
-    <category term="LinkList" />
-    <category term="团体程序设计天梯赛" />
-    <category term="双向链表" />
     <category term="Set" />
+    <category term="团体程序设计天梯赛" />
     <category term="Sort" />
+    <category term="LinkList" />
+    <category term="双向链表" />
     <category term="Graph" />
     <category term="邻接表" />
     <category term="Vector" />
@@ -26,8 +26,8 @@
     <category term="结构体" />
     <category term="贪心" />
     <category term="Double类型相等比较" />
-    <category term="并查集" />
     <category term="Map" />
+    <category term="并查集" />
     <category term="Pair" />
     <category term="Linux" />
     <category term="MPI" />
@@ -36,14 +36,27 @@
     <category term="CUDA" />
     <category term="Matrix" />
     <category term="Mirror" />
+    <category term="牛客" />
     <category term="Numactl" />
     <category term="OpenMP" />
     <category term="C/C++" />
     <category term="register" />
     <category term="Slurm" />
-    <category term="Tensorflow" />
     <category term="性能分析工具" />
+    <category term="Tensorflow" />
     <category term="gcov" />
+    <entry>
+        <id>http://example.com/2023/02/07/niuke003/</id>
+        <title>JZ6 从尾到头打印链表</title>
+        <link rel="alternate" href="http://example.com/2023/02/07/niuke003/"/>
+        <content type="html">&lt;h2 id=&#34;JZ6-从尾到头打印链表&#34;&gt;&lt;a href=&#34;#JZ6-从尾到头打印链表&#34; class=&#34;headerlink&#34; title=&#34;JZ6 从尾到头打印链表&#34;&gt;&lt;/a&gt;&lt;strong&gt;JZ6&lt;/strong&gt; &lt;strong&gt;从尾到头打印链表&lt;/strong&gt;&lt;/h2&gt;&lt;h2 id=&#34;题目链接&#34;&gt;&lt;a href=&#34;#题目链接&#34; class=&#34;headerlink&#34; title=&#34;题目链接&#34;&gt;&lt;/a&gt;题目链接&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://www.nowcoder.com/practice/d0267f7f55b3412ba93bd35cfa8e8035?tpId=265&amp;tqId=39210&amp;rp=1&amp;ru=/exam/oj/ta&amp;qru=/exam/oj/ta&amp;sourceUrl=/exam/oj/ta?page=1&amp;tpId=13&amp;type=265&amp;difficulty=undefined&amp;judgeStatus=undefined&amp;tags=&amp;title=&#34;&gt;从尾到头打印链表_牛客题霸_牛客网 (nowcoder.com)&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;完整代码&#34;&gt;&lt;a href=&#34;#完整代码&#34; class=&#34;headerlink&#34; title=&#34;完整代码&#34;&gt;&lt;/a&gt;完整代码&lt;/h2&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-comment&#34;&gt;/**&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;*  struct ListNode &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;*        int val;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;*        struct ListNode *next;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;*        ListNode(int x) :&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;*              val(x), next(NULL) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;*        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;*  &amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;*/&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-class&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;Solution&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;public&lt;/span&gt;:&lt;br&gt;    &lt;span class=&#34;hljs-function&#34;&gt;vector&amp;lt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;&amp;gt; &lt;span class=&#34;hljs-title&#34;&gt;printListFromTailToHead&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(ListNode* head)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;br&gt;        vector&amp;lt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;&amp;gt; s;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;while&lt;/span&gt; (head!=&lt;span class=&#34;hljs-literal&#34;&gt;NULL&lt;/span&gt;) &amp;#123;&lt;br&gt;            s.&lt;span class=&#34;hljs-built_in&#34;&gt;insert&lt;/span&gt;(s.&lt;span class=&#34;hljs-built_in&#34;&gt;begin&lt;/span&gt;(),head-&amp;gt;val);				&lt;span class=&#34;hljs-comment&#34;&gt;//利用迭代器头插&lt;/span&gt;&lt;br&gt;            head=head-&amp;gt;next;&lt;br&gt;        &amp;#125;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; s;&lt;br&gt;    &amp;#125;&lt;br&gt;&amp;#125;;&lt;br&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+</content>
+        <category term="STL" />
+        <category term="牛客" />
+        <updated>2023-02-07T10:21:41.000Z</updated>
+    </entry>
     <entry>
         <id>http://example.com/2023/02/07/niuke002/</id>
         <title>JZ5 替换空格</title>
@@ -53,6 +66,7 @@
 
 </content>
         <category term="STL" />
+        <category term="牛客" />
         <updated>2023-02-07T10:05:25.000Z</updated>
     </entry>
     <entry>
@@ -71,7 +85,7 @@
 &lt;h2 id=&#34;参考资料：&#34;&gt;&lt;a href=&#34;#参考资料：&#34; class=&#34;headerlink&#34; title=&#34;参考资料：&#34;&gt;&lt;/a&gt;参考资料：&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/cmehppc/article/details/121712019&#34;&gt;(64条消息) 【c++】set.count()用法_杳杳捞到月亮了吗的博客-CSDN博客_c++set count&lt;/a&gt;&lt;/p&gt;
 </content>
         <category term="STL" />
-        <category term="Set" />
+        <category term="牛客" />
         <updated>2023-02-07T08:58:01.000Z</updated>
     </entry>
     <entry>
@@ -1311,117 +1325,5 @@
 </content>
         <category term="Mirror" />
         <updated>2022-06-22T12:13:38.000Z</updated>
-    </entry>
-    <entry>
-        <id>http://example.com/2022/06/12/%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90/</id>
-        <title>内存对齐</title>
-        <link rel="alternate" href="http://example.com/2022/06/12/%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90/"/>
-        <content type="html">&lt;h1 id=&#34;内存对齐&#34;&gt;&lt;a href=&#34;#内存对齐&#34; class=&#34;headerlink&#34; title=&#34;内存对齐&#34;&gt;&lt;/a&gt;内存对齐&lt;/h1&gt;&lt;h2 id=&#34;CPU读取内存的方式&#34;&gt;&lt;a href=&#34;#CPU读取内存的方式&#34; class=&#34;headerlink&#34; title=&#34;CPU读取内存的方式&#34;&gt;&lt;/a&gt;CPU读取内存的方式&lt;/h2&gt;&lt;p&gt;CPU读取内存的方式其实非常复杂，为了更进一步的了解相关的原理，需要对计算机组成原理进行深度学习。&lt;/p&gt;
-&lt;h3 id=&#34;Memory-access-granularity-内存读取粒度&#34;&gt;&lt;a href=&#34;#Memory-access-granularity-内存读取粒度&#34; class=&#34;headerlink&#34; title=&#34;Memory access granularity(内存读取粒度)&#34;&gt;&lt;/a&gt;Memory access granularity(内存读取粒度)&lt;/h3&gt;&lt;p&gt;However, your computer’s processor does not read from and write to memory in byte-sized chunks. Instead, it accesses memory in two-, four-, eight- 16- or even 32-byte chunks. We’ll call the size in which a processor accesses memory its memory access granularity.&lt;/p&gt;
-&lt;p&gt;CPU把内存当成是一块一块的，块的大小可以是2，4，8，16字节大小，因此CPU在读取内存时是一块一块进行读取的。块大小成为&lt;em&gt;memory access granularity（粒度）&lt;/em&gt; 本人把它翻译为“内存读取粒度” 。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/feng9exe/p/10059543.html&#34;&gt;https://www.cnblogs.com/feng9exe/p/10059543.html&lt;/a&gt; ”内存对齐“&lt;/p&gt;
-&lt;h2 id=&#34;内存对齐举例&#34;&gt;&lt;a href=&#34;#内存对齐举例&#34; class=&#34;headerlink&#34; title=&#34;内存对齐举例&#34;&gt;&lt;/a&gt;内存对齐举例&lt;/h2&gt;&lt;p&gt;假设此计算机的内存读取粒度是4。&lt;/p&gt;
-&lt;h3 id=&#34;如果内存对齐时&#34;&gt;&lt;a href=&#34;#如果内存对齐时&#34; class=&#34;headerlink&#34; title=&#34;如果内存对齐时&#34;&gt;&lt;/a&gt;如果内存对齐时&lt;/h3&gt;&lt;p&gt;前提知识：&lt;/p&gt;
-&lt;p&gt;1 Byte &amp;#x3D; 8bit &lt;/p&gt;
-&lt;p&gt;1 int8 占用 1 Byte&lt;/p&gt;
-&lt;p&gt;1 int16 占用 2 Byte&lt;/p&gt;
-&lt;p&gt;1 int32 占用 4 Byte&lt;/p&gt;
-&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-comment&#34;&gt;//一个结构体的定义如下&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-class&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;S&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-class&#34;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;    int8 a;&lt;br&gt;    int32 b;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;0&lt;/th&gt;
-&lt;th&gt;1&lt;/th&gt;
-&lt;th&gt;2&lt;/th&gt;
-&lt;th&gt;3&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;4&lt;/th&gt;
-&lt;th&gt;5&lt;/th&gt;
-&lt;th&gt;6&lt;/th&gt;
-&lt;th&gt;7&lt;/th&gt;
-&lt;th&gt;8&lt;/th&gt;
-&lt;th&gt;9&lt;/th&gt;
-&lt;th&gt;10&lt;/th&gt;
-&lt;th&gt;11&lt;/th&gt;
-&lt;th&gt;12&lt;/th&gt;
-&lt;th&gt;13&lt;/th&gt;
-&lt;th&gt;14&lt;/th&gt;
-&lt;th&gt;15&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td&gt;int8 a&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;int32 b&lt;/td&gt;
-&lt;td&gt;int32 b&lt;/td&gt;
-&lt;td&gt;int32 b&lt;/td&gt;
-&lt;td&gt;int32 b&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;p&gt;我们可以发现int8 a储存在0号内存上，占用1个Byte，1-3号内存空下了3个Byte。int32 b储存在了4-7号内存，一共4个Byte。&lt;/p&gt;
-&lt;p&gt;由于此计算机的内存读取粒度时是4&lt;/p&gt;
-&lt;p&gt;当需要读取a(0号内存)时，计算机会读取0-3号一组内存，然后去掉1-3号内存。访问次数1次。&lt;/p&gt;
-&lt;p&gt;当需要读取b(4-7号内存时)，计算机会读取4-7号内存，访问次数1次。&lt;/p&gt;
-&lt;h3 id=&#34;如果内存没有对齐时&#34;&gt;&lt;a href=&#34;#如果内存没有对齐时&#34; class=&#34;headerlink&#34; title=&#34;如果内存没有对齐时&#34;&gt;&lt;/a&gt;如果内存没有对齐时&lt;/h3&gt;&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;0&lt;/th&gt;
-&lt;th&gt;1&lt;/th&gt;
-&lt;th&gt;2&lt;/th&gt;
-&lt;th&gt;3&lt;/th&gt;
-&lt;th&gt;4&lt;/th&gt;
-&lt;th&gt;5&lt;/th&gt;
-&lt;th&gt;6&lt;/th&gt;
-&lt;th&gt;7&lt;/th&gt;
-&lt;th&gt;8&lt;/th&gt;
-&lt;th&gt;9&lt;/th&gt;
-&lt;th&gt;10&lt;/th&gt;
-&lt;th&gt;11&lt;/th&gt;
-&lt;th&gt;12&lt;/th&gt;
-&lt;th&gt;13&lt;/th&gt;
-&lt;th&gt;14&lt;/th&gt;
-&lt;th&gt;15&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td&gt;int8 a&lt;/td&gt;
-&lt;td&gt;int32 b&lt;/td&gt;
-&lt;td&gt;int32 b&lt;/td&gt;
-&lt;td&gt;int32 b&lt;/td&gt;
-&lt;td&gt;int32 b&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;p&gt;我们可以发现int8 a储存在0号内存上，占用了1个Byte。int32 b储存在1-4号内存上，一共4个Byte。&lt;/p&gt;
-&lt;p&gt;由于此计算机的内存读取粒度时是4&lt;/p&gt;
-&lt;p&gt;当需要读取a(0号内存)时，计算机会读取0-3号一组内存，然后去掉1-3号内存。访问次数1次。&lt;/p&gt;
-&lt;p&gt;当需要读取b(1-4号内存)时，计算机会先读取0-3号一组内存，去掉0号内存，再读取4-7号一组内存，去掉5-7号内存，随后再拼接1-3号内存和4号内存组成完整的b。访问次数2次。&lt;/p&gt;
-&lt;h2 id=&#34;内存对齐的目的&#34;&gt;&lt;a href=&#34;#内存对齐的目的&#34; class=&#34;headerlink&#34; title=&#34;内存对齐的目的&#34;&gt;&lt;/a&gt;内存对齐的目的&lt;/h2&gt;&lt;p&gt;合理的内存对齐可以高效的利用硬件性能，减少处理器内存访问次数。&lt;/p&gt;
-&lt;h2 id=&#34;相关链接&#34;&gt;&lt;a href=&#34;#相关链接&#34; class=&#34;headerlink&#34; title=&#34;相关链接&#34;&gt;&lt;/a&gt;相关链接&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://www.bilibili.com/video/BV1Vt4y1m7DP?from=search&amp;amp;amp;seid=13964421962700904405&amp;amp;amp;spm_id_from=333.337.0.0&#34;&gt;https://www.bilibili.com/video/BV1Vt4y1m7DP?from=search&amp;amp;amp;seid=13964421962700904405&amp;amp;amp;spm_id_from=333.337.0.0&lt;/a&gt; “内存对齐”&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.bilibili.com/video/BV1v64y1X7YP?spm_id_from=333.999.0.0&#34;&gt;https://www.bilibili.com/video/BV1v64y1X7YP?spm_id_from=333.999.0.0&lt;/a&gt; “内存对齐对程序性能的影响”&lt;/p&gt;
-</content>
-        <updated>2022-06-12T07:11:29.730Z</updated>
     </entry>
 </feed>

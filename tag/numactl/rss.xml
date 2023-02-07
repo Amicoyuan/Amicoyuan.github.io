@@ -13,11 +13,11 @@
         <category>Find</category>
         <category>STL</category>
         <category>C++</category>
-        <category>LinkList</category>
-        <category>团体程序设计天梯赛</category>
-        <category>双向链表</category>
         <category>Set</category>
+        <category>团体程序设计天梯赛</category>
         <category>Sort</category>
+        <category>LinkList</category>
+        <category>双向链表</category>
         <category>Graph</category>
         <category>邻接表</category>
         <category>Vector</category>
@@ -29,8 +29,8 @@
         <category>结构体</category>
         <category>贪心</category>
         <category>Double类型相等比较</category>
-        <category>并查集</category>
         <category>Map</category>
+        <category>并查集</category>
         <category>Pair</category>
         <category>Linux</category>
         <category>MPI</category>
@@ -39,13 +39,14 @@
         <category>CUDA</category>
         <category>Matrix</category>
         <category>Mirror</category>
+        <category>牛客</category>
         <category>Numactl</category>
         <category>OpenMP</category>
         <category>C/C++</category>
         <category>register</category>
         <category>Slurm</category>
-        <category>Tensorflow</category>
         <category>性能分析工具</category>
+        <category>Tensorflow</category>
         <category>gcov</category>
         <item>
             <guid isPermalink="true">http://example.com/2022/05/20/numactl001/</guid>

@@ -13,11 +13,11 @@
         <category>Find</category>
         <category>STL</category>
         <category>C++</category>
-        <category>LinkList</category>
-        <category>团体程序设计天梯赛</category>
-        <category>双向链表</category>
         <category>Set</category>
+        <category>团体程序设计天梯赛</category>
         <category>Sort</category>
+        <category>LinkList</category>
+        <category>双向链表</category>
         <category>Graph</category>
         <category>邻接表</category>
         <category>Vector</category>
@@ -29,8 +29,8 @@
         <category>结构体</category>
         <category>贪心</category>
         <category>Double类型相等比较</category>
-        <category>并查集</category>
         <category>Map</category>
+        <category>并查集</category>
         <category>Pair</category>
         <category>Linux</category>
         <category>MPI</category>
@@ -39,21 +39,22 @@
         <category>CUDA</category>
         <category>Matrix</category>
         <category>Mirror</category>
+        <category>牛客</category>
         <category>Numactl</category>
         <category>OpenMP</category>
         <category>C/C++</category>
         <category>register</category>
         <category>Slurm</category>
-        <category>Tensorflow</category>
         <category>性能分析工具</category>
+        <category>Tensorflow</category>
         <category>gcov</category>
         <item>
             <guid isPermalink="true">http://example.com/2022/04/12/Algorithm017/</guid>
             <title>L2-022 重排链表 (25 分)</title>
             <link>http://example.com/2022/04/12/Algorithm017/</link>
             <category>C++</category>
-            <category>LinkList</category>
             <category>团体程序设计天梯赛</category>
+            <category>LinkList</category>
             <category>双向链表</category>
             <pubDate>Tue, 12 Apr 2022 09:50:11 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;L2-022-重排链表-25-分&#34;&gt;&lt;a href=&#34;#L2-022-重排链表-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-022 重排链表 (25 分)&#34;&gt;&lt;/a&gt;L2-022 重排链表 (25 分)&lt;/h2&gt;&lt;p&gt;给定一个单链表 &lt;em&gt;L&lt;/em&gt;1→&lt;em&gt;L&lt;/em&gt;2→⋯→&lt;em&gt;Ln&lt;/em&gt;−1→&lt;em&gt;Ln&lt;/em&gt;，请编写程序将链表重新排列为 &lt;em&gt;Ln&lt;/em&gt;→&lt;em&gt;L&lt;/em&gt;1→&lt;em&gt;Ln&lt;/em&gt;−1→&lt;em&gt;L&lt;/em&gt;2→⋯。例如：给定&lt;em&gt;L&lt;/em&gt;为1→2→3→4→5→6，则输出应该为6→1→5→2→4→3。&lt;/p&gt;

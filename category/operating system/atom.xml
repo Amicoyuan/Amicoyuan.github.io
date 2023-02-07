@@ -10,11 +10,11 @@
     <category term="Find" />
     <category term="STL" />
     <category term="C++" />
-    <category term="LinkList" />
-    <category term="团体程序设计天梯赛" />
-    <category term="双向链表" />
     <category term="Set" />
+    <category term="团体程序设计天梯赛" />
     <category term="Sort" />
+    <category term="LinkList" />
+    <category term="双向链表" />
     <category term="Graph" />
     <category term="邻接表" />
     <category term="Vector" />
@@ -26,8 +26,8 @@
     <category term="结构体" />
     <category term="贪心" />
     <category term="Double类型相等比较" />
-    <category term="并查集" />
     <category term="Map" />
+    <category term="并查集" />
     <category term="Pair" />
     <category term="Linux" />
     <category term="MPI" />
@@ -36,13 +36,14 @@
     <category term="CUDA" />
     <category term="Matrix" />
     <category term="Mirror" />
+    <category term="牛客" />
     <category term="Numactl" />
     <category term="OpenMP" />
     <category term="C/C++" />
     <category term="register" />
     <category term="Slurm" />
-    <category term="Tensorflow" />
     <category term="性能分析工具" />
+    <category term="Tensorflow" />
     <category term="gcov" />
     <entry>
         <id>http://example.com/2022/05/20/Linux002/</id>
