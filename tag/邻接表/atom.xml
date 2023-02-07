@@ -25,25 +25,25 @@
     <category term="DFS" />
     <category term="结构体" />
     <category term="贪心" />
+    <category term="并查集" />
     <category term="Double类型相等比较" />
     <category term="Map" />
-    <category term="并查集" />
     <category term="Pair" />
     <category term="Linux" />
     <category term="MPI" />
     <category term="AVX2" />
     <category term="dgemm" />
     <category term="CUDA" />
-    <category term="Matrix" />
     <category term="Mirror" />
+    <category term="Matrix" />
     <category term="牛客" />
     <category term="Numactl" />
     <category term="OpenMP" />
     <category term="C/C++" />
     <category term="register" />
     <category term="Slurm" />
-    <category term="性能分析工具" />
     <category term="Tensorflow" />
+    <category term="性能分析工具" />
     <category term="gcov" />
     <entry>
         <id>http://example.com/2022/04/13/Algorithm022/</id>
