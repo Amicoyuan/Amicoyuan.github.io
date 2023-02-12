@@ -3,7 +3,7 @@
     <id>http://example.com</id>
     <title>Amicoyuan • Posts by &#34;stl&#34; tag</title>
     <link href="http://example.com" />
-    <updated>2023-02-07T10:21:41.000Z</updated>
+    <updated>2022-04-16T08:26:03.000Z</updated>
     <category term="AVX" />
     <category term="Data Structure" />
     <category term="String" />
@@ -15,79 +15,36 @@
     <category term="Sort" />
     <category term="LinkList" />
     <category term="双向链表" />
-    <category term="Graph" />
+    <category term="Binary tree" />
     <category term="邻接表" />
     <category term="Vector" />
-    <category term="Binary tree" />
     <category term="BFS" />
+    <category term="Graph" />
     <category term="模拟" />
     <category term="邻接矩阵" />
     <category term="DFS" />
     <category term="结构体" />
     <category term="贪心" />
-    <category term="并查集" />
     <category term="Double类型相等比较" />
     <category term="Map" />
+    <category term="并查集" />
     <category term="Pair" />
     <category term="Linux" />
     <category term="MPI" />
-    <category term="AVX2" />
     <category term="dgemm" />
+    <category term="AVX2" />
     <category term="CUDA" />
-    <category term="Mirror" />
     <category term="Matrix" />
+    <category term="Mirror" />
     <category term="牛客" />
     <category term="Numactl" />
     <category term="OpenMP" />
     <category term="C/C++" />
     <category term="register" />
-    <category term="Slurm" />
     <category term="Tensorflow" />
+    <category term="Slurm" />
     <category term="性能分析工具" />
     <category term="gcov" />
-    <entry>
-        <id>http://example.com/2023/02/07/niuke003/</id>
-        <title>JZ6 从尾到头打印链表</title>
-        <link rel="alternate" href="http://example.com/2023/02/07/niuke003/"/>
-        <content type="html">&lt;h2 id=&#34;JZ6-从尾到头打印链表&#34;&gt;&lt;a href=&#34;#JZ6-从尾到头打印链表&#34; class=&#34;headerlink&#34; title=&#34;JZ6 从尾到头打印链表&#34;&gt;&lt;/a&gt;&lt;strong&gt;JZ6&lt;/strong&gt; &lt;strong&gt;从尾到头打印链表&lt;/strong&gt;&lt;/h2&gt;&lt;h2 id=&#34;题目链接&#34;&gt;&lt;a href=&#34;#题目链接&#34; class=&#34;headerlink&#34; title=&#34;题目链接&#34;&gt;&lt;/a&gt;题目链接&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://www.nowcoder.com/practice/d0267f7f55b3412ba93bd35cfa8e8035?tpId=265&amp;tqId=39210&amp;rp=1&amp;ru=/exam/oj/ta&amp;qru=/exam/oj/ta&amp;sourceUrl=/exam/oj/ta?page=1&amp;tpId=13&amp;type=265&amp;difficulty=undefined&amp;judgeStatus=undefined&amp;tags=&amp;title=&#34;&gt;从尾到头打印链表_牛客题霸_牛客网 (nowcoder.com)&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;完整代码&#34;&gt;&lt;a href=&#34;#完整代码&#34; class=&#34;headerlink&#34; title=&#34;完整代码&#34;&gt;&lt;/a&gt;完整代码&lt;/h2&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-comment&#34;&gt;/**&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;*  struct ListNode &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;*        int val;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;*        struct ListNode *next;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;*        ListNode(int x) :&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;*              val(x), next(NULL) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;*        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;*  &amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;*/&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-class&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;Solution&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;public&lt;/span&gt;:&lt;br&gt;    &lt;span class=&#34;hljs-function&#34;&gt;vector&amp;lt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;&amp;gt; &lt;span class=&#34;hljs-title&#34;&gt;printListFromTailToHead&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(ListNode* head)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;br&gt;        vector&amp;lt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;&amp;gt; s;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;while&lt;/span&gt; (head!=&lt;span class=&#34;hljs-literal&#34;&gt;NULL&lt;/span&gt;) &amp;#123;&lt;br&gt;            s.&lt;span class=&#34;hljs-built_in&#34;&gt;insert&lt;/span&gt;(s.&lt;span class=&#34;hljs-built_in&#34;&gt;begin&lt;/span&gt;(),head-&amp;gt;val);				&lt;span class=&#34;hljs-comment&#34;&gt;//利用迭代器头插&lt;/span&gt;&lt;br&gt;            head=head-&amp;gt;next;&lt;br&gt;        &amp;#125;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; s;&lt;br&gt;    &amp;#125;&lt;br&gt;&amp;#125;;&lt;br&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-</content>
-        <category term="STL" />
-        <category term="牛客" />
-        <updated>2023-02-07T10:21:41.000Z</updated>
-    </entry>
-    <entry>
-        <id>http://example.com/2023/02/07/niuke002/</id>
-        <title>JZ5 替换空格</title>
-        <link rel="alternate" href="http://example.com/2023/02/07/niuke002/"/>
-        <content type="html">&lt;h2 id=&#34;JZ5-替换空格&#34;&gt;&lt;a href=&#34;#JZ5-替换空格&#34; class=&#34;headerlink&#34; title=&#34;JZ5 替换空格&#34;&gt;&lt;/a&gt;&lt;strong&gt;JZ5&lt;/strong&gt; &lt;strong&gt;替换空格&lt;/strong&gt;&lt;/h2&gt;&lt;h2 id=&#34;题目链接&#34;&gt;&lt;a href=&#34;#题目链接&#34; class=&#34;headerlink&#34; title=&#34;题目链接&#34;&gt;&lt;/a&gt;题目链接&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://www.nowcoder.com/practice/0e26e5551f2b489b9f58bc83aa4b6c68?tpId=265&amp;tqId=39209&amp;rp=1&amp;ru=/exam/oj/ta&amp;qru=/exam/oj/ta&amp;sourceUrl=/exam/oj/ta?tpId=13&amp;difficulty=undefined&amp;judgeStatus=undefined&amp;tags=&amp;title=&#34;&gt;替换空格_牛客题霸_牛客网 (nowcoder.com)&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;完整代码&#34;&gt;&lt;a href=&#34;#完整代码&#34; class=&#34;headerlink&#34; title=&#34;完整代码&#34;&gt;&lt;/a&gt;完整代码&lt;/h2&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;hljs-meta-string&#34;&gt;&amp;lt;string&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-class&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;Solution&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;public&lt;/span&gt;:&lt;br&gt;    &lt;span class=&#34;hljs-comment&#34;&gt;/**&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;     *&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;     * &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;     * @param s string字符串 &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;     * @return string字符串&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;     */&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-function&#34;&gt;string &lt;span class=&#34;hljs-title&#34;&gt;replaceSpace&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(string s)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;br&gt;        &lt;span class=&#34;hljs-comment&#34;&gt;// write code here&lt;/span&gt;&lt;br&gt;        string str2 =&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;%20&amp;quot;&lt;/span&gt;;&lt;br&gt;        string str3;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; (&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;; i&amp;lt;s.&lt;span class=&#34;hljs-built_in&#34;&gt;size&lt;/span&gt;(); i++) &amp;#123;&lt;br&gt;            &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(s[i]!=&lt;span class=&#34;hljs-string&#34;&gt;&amp;#x27; &amp;#x27;&lt;/span&gt;)					&lt;span class=&#34;hljs-comment&#34;&gt;//不是空格就插入到str3&lt;/span&gt;&lt;br&gt;                str3.&lt;span class=&#34;hljs-built_in&#34;&gt;push_back&lt;/span&gt;(s[i]);&lt;br&gt;            &lt;span class=&#34;hljs-keyword&#34;&gt;else&lt;/span&gt;&lt;br&gt;                str3.&lt;span class=&#34;hljs-built_in&#34;&gt;append&lt;/span&gt;(str2);			&lt;span class=&#34;hljs-comment&#34;&gt;//如果是空格就把str2插入到str3&lt;/span&gt;&lt;br&gt;        &amp;#125;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; str3;&lt;br&gt;    &amp;#125;&lt;br&gt;&amp;#125;;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-</content>
-        <category term="STL" />
-        <category term="牛客" />
-        <updated>2023-02-07T10:05:25.000Z</updated>
-    </entry>
-    <entry>
-        <id>http://example.com/2023/02/07/niuke001/</id>
-        <title>JZ3 数组中重复的数字</title>
-        <link rel="alternate" href="http://example.com/2023/02/07/niuke001/"/>
-        <content type="html">&lt;h2 id=&#34;JZ3-数组中重复的数字&#34;&gt;&lt;a href=&#34;#JZ3-数组中重复的数字&#34; class=&#34;headerlink&#34; title=&#34;JZ3 数组中重复的数字&#34;&gt;&lt;/a&gt;JZ3 数组中重复的数字&lt;/h2&gt;&lt;h2 id=&#34;题目链接：&#34;&gt;&lt;a href=&#34;#题目链接：&#34; class=&#34;headerlink&#34; title=&#34;题目链接：&#34;&gt;&lt;/a&gt;题目链接：&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://www.nowcoder.com/practice/6fe361ede7e54db1b84adc81d09d8524?tpId=265&amp;tqId=39207&amp;rp=1&amp;ru=/exam/oj/ta&amp;qru=/exam/oj/ta&amp;sourceUrl=/exam/oj/ta?tpId=13&amp;difficulty=undefined&amp;judgeStatus=undefined&amp;tags=&amp;title=&#34;&gt;数组中重复的数字_牛客题霸_牛客网 (nowcoder.com)&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;完整解答：&#34;&gt;&lt;a href=&#34;#完整解答：&#34; class=&#34;headerlink&#34; title=&#34;完整解答：&#34;&gt;&lt;/a&gt;完整解答：&lt;/h2&gt;&lt;p&gt;set::count()是C++ STL中的内置函数，它返回元素在集合中出现的次数。由于set容器仅包含唯一元素，因此只能返回1或0。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;用法：set_name.count(element)&lt;/li&gt;
-&lt;li&gt;参数：该函数接受一个强制性参数element，该元素指定要返回其计数的元素。&lt;/li&gt;
-&lt;li&gt;返回值：该函数返回1或0，因为该集合仅包含唯一元素。如果设置的容器中存在该值，则返回1。如果容器中不存在它，则返回0。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-class&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;Solution&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;public&lt;/span&gt;:&lt;br&gt;    &lt;span class=&#34;hljs-comment&#34;&gt;/**&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;     *&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;     * &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;     * @param numbers int整型vector &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;     * @return int整型&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;     */&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;duplicate&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(vector&amp;lt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;&amp;gt;&amp;amp; numbers)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;br&gt;        &lt;span class=&#34;hljs-comment&#34;&gt;// write code here&lt;/span&gt;&lt;br&gt;        set&amp;lt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;&amp;gt; s;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;i&amp;lt;numbers.&lt;span class=&#34;hljs-built_in&#34;&gt;size&lt;/span&gt;();i++)&amp;#123;&lt;br&gt;            &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(s.&lt;span class=&#34;hljs-built_in&#34;&gt;count&lt;/span&gt;(numbers[i])&amp;gt;&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;) 				&lt;span class=&#34;hljs-comment&#34;&gt;//此元素重复，则返回&lt;/span&gt;&lt;br&gt;                &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; numbers[i];&lt;br&gt;            &lt;span class=&#34;hljs-keyword&#34;&gt;else&lt;/span&gt;&lt;br&gt;                s.&lt;span class=&#34;hljs-built_in&#34;&gt;insert&lt;/span&gt;(numbers[i]);				&lt;span class=&#34;hljs-comment&#34;&gt;//不重复则加入集合&lt;/span&gt;&lt;br&gt;        &amp;#125;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;-1&lt;/span&gt;;&lt;br&gt;    &amp;#125;&lt;br&gt;&amp;#125;;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h2 id=&#34;参考资料：&#34;&gt;&lt;a href=&#34;#参考资料：&#34; class=&#34;headerlink&#34; title=&#34;参考资料：&#34;&gt;&lt;/a&gt;参考资料：&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/cmehppc/article/details/121712019&#34;&gt;(64条消息) 【c++】set.count()用法_杳杳捞到月亮了吗的博客-CSDN博客_c++set count&lt;/a&gt;&lt;/p&gt;
-</content>
-        <category term="STL" />
-        <category term="牛客" />
-        <updated>2023-02-07T08:58:01.000Z</updated>
-    </entry>
     <entry>
         <id>http://example.com/2022/04/16/Algorithm029/</id>
         <title>STL中map的使用</title>

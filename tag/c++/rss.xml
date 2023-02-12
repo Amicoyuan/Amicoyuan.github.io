@@ -5,8 +5,8 @@
         <link>http://example.com</link>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Sat, 23 Apr 2022 21:50:27 +0800</pubDate>
-        <lastBuildDate>Sat, 23 Apr 2022 21:50:27 +0800</lastBuildDate>
+        <pubDate>Tue, 07 Feb 2023 18:21:41 +0800</pubDate>
+        <lastBuildDate>Tue, 07 Feb 2023 18:21:41 +0800</lastBuildDate>
         <category>AVX</category>
         <category>Data Structure</category>
         <category>String</category>
@@ -18,36 +18,79 @@
         <category>Sort</category>
         <category>LinkList</category>
         <category>双向链表</category>
-        <category>Graph</category>
+        <category>Binary tree</category>
         <category>邻接表</category>
         <category>Vector</category>
-        <category>Binary tree</category>
         <category>BFS</category>
+        <category>Graph</category>
         <category>模拟</category>
         <category>邻接矩阵</category>
         <category>DFS</category>
         <category>结构体</category>
         <category>贪心</category>
-        <category>并查集</category>
         <category>Double类型相等比较</category>
         <category>Map</category>
+        <category>并查集</category>
         <category>Pair</category>
         <category>Linux</category>
         <category>MPI</category>
-        <category>AVX2</category>
         <category>dgemm</category>
+        <category>AVX2</category>
         <category>CUDA</category>
-        <category>Mirror</category>
         <category>Matrix</category>
+        <category>Mirror</category>
         <category>牛客</category>
         <category>Numactl</category>
         <category>OpenMP</category>
         <category>C/C++</category>
         <category>register</category>
-        <category>Slurm</category>
         <category>Tensorflow</category>
+        <category>Slurm</category>
         <category>性能分析工具</category>
         <category>gcov</category>
+        <item>
+            <guid isPermalink="true">http://example.com/2023/02/07/niuke003/</guid>
+            <title>JZ6 从尾到头打印链表</title>
+            <link>http://example.com/2023/02/07/niuke003/</link>
+            <category>C++</category>
+            <category>牛客</category>
+            <pubDate>Tue, 07 Feb 2023 18:21:41 +0800</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;JZ6-从尾到头打印链表&#34;&gt;&lt;a href=&#34;#JZ6-从尾到头打印链表&#34; class=&#34;headerlink&#34; title=&#34;JZ6 从尾到头打印链表&#34;&gt;&lt;/a&gt;&lt;strong&gt;JZ6&lt;/strong&gt; &lt;strong&gt;从尾到头打印链表&lt;/strong&gt;&lt;/h2&gt;&lt;h2 id=&#34;题目链接&#34;&gt;&lt;a href=&#34;#题目链接&#34; class=&#34;headerlink&#34; title=&#34;题目链接&#34;&gt;&lt;/a&gt;题目链接&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://www.nowcoder.com/practice/d0267f7f55b3412ba93bd35cfa8e8035?tpId=265&amp;tqId=39210&amp;rp=1&amp;ru=/exam/oj/ta&amp;qru=/exam/oj/ta&amp;sourceUrl=/exam/oj/ta?page=1&amp;tpId=13&amp;type=265&amp;difficulty=undefined&amp;judgeStatus=undefined&amp;tags=&amp;title=&#34;&gt;从尾到头打印链表_牛客题霸_牛客网 (nowcoder.com)&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;完整代码&#34;&gt;&lt;a href=&#34;#完整代码&#34; class=&#34;headerlink&#34; title=&#34;完整代码&#34;&gt;&lt;/a&gt;完整代码&lt;/h2&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-comment&#34;&gt;/**&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;*  struct ListNode &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;*        int val;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;*        struct ListNode *next;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;*        ListNode(int x) :&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;*              val(x), next(NULL) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;*        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;*  &amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;*/&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-class&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;Solution&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;public&lt;/span&gt;:&lt;br&gt;    &lt;span class=&#34;hljs-function&#34;&gt;vector&amp;lt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;&amp;gt; &lt;span class=&#34;hljs-title&#34;&gt;printListFromTailToHead&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(ListNode* head)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;br&gt;        vector&amp;lt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;&amp;gt; s;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;while&lt;/span&gt; (head!=&lt;span class=&#34;hljs-literal&#34;&gt;NULL&lt;/span&gt;) &amp;#123;&lt;br&gt;            s.&lt;span class=&#34;hljs-built_in&#34;&gt;insert&lt;/span&gt;(s.&lt;span class=&#34;hljs-built_in&#34;&gt;begin&lt;/span&gt;(),head-&amp;gt;val);				&lt;span class=&#34;hljs-comment&#34;&gt;//利用迭代器头插&lt;/span&gt;&lt;br&gt;            head=head-&amp;gt;next;&lt;br&gt;        &amp;#125;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; s;&lt;br&gt;    &amp;#125;&lt;br&gt;&amp;#125;;&lt;br&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://example.com/2023/02/07/niuke002/</guid>
+            <title>JZ5 替换空格</title>
+            <link>http://example.com/2023/02/07/niuke002/</link>
+            <category>C++</category>
+            <category>牛客</category>
+            <pubDate>Tue, 07 Feb 2023 18:05:25 +0800</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;JZ5-替换空格&#34;&gt;&lt;a href=&#34;#JZ5-替换空格&#34; class=&#34;headerlink&#34; title=&#34;JZ5 替换空格&#34;&gt;&lt;/a&gt;&lt;strong&gt;JZ5&lt;/strong&gt; &lt;strong&gt;替换空格&lt;/strong&gt;&lt;/h2&gt;&lt;h2 id=&#34;题目链接&#34;&gt;&lt;a href=&#34;#题目链接&#34; class=&#34;headerlink&#34; title=&#34;题目链接&#34;&gt;&lt;/a&gt;题目链接&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://www.nowcoder.com/practice/0e26e5551f2b489b9f58bc83aa4b6c68?tpId=265&amp;tqId=39209&amp;rp=1&amp;ru=/exam/oj/ta&amp;qru=/exam/oj/ta&amp;sourceUrl=/exam/oj/ta?tpId=13&amp;difficulty=undefined&amp;judgeStatus=undefined&amp;tags=&amp;title=&#34;&gt;替换空格_牛客题霸_牛客网 (nowcoder.com)&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;完整代码&#34;&gt;&lt;a href=&#34;#完整代码&#34; class=&#34;headerlink&#34; title=&#34;完整代码&#34;&gt;&lt;/a&gt;完整代码&lt;/h2&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;hljs-meta-string&#34;&gt;&amp;lt;string&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-class&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;Solution&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;public&lt;/span&gt;:&lt;br&gt;    &lt;span class=&#34;hljs-comment&#34;&gt;/**&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;     *&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;     * &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;     * @param s string字符串 &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;     * @return string字符串&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;     */&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-function&#34;&gt;string &lt;span class=&#34;hljs-title&#34;&gt;replaceSpace&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(string s)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;br&gt;        &lt;span class=&#34;hljs-comment&#34;&gt;// write code here&lt;/span&gt;&lt;br&gt;        string str2 =&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;%20&amp;quot;&lt;/span&gt;;&lt;br&gt;        string str3;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; (&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;; i&amp;lt;s.&lt;span class=&#34;hljs-built_in&#34;&gt;size&lt;/span&gt;(); i++) &amp;#123;&lt;br&gt;            &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(s[i]!=&lt;span class=&#34;hljs-string&#34;&gt;&amp;#x27; &amp;#x27;&lt;/span&gt;)					&lt;span class=&#34;hljs-comment&#34;&gt;//不是空格就插入到str3&lt;/span&gt;&lt;br&gt;                str3.&lt;span class=&#34;hljs-built_in&#34;&gt;push_back&lt;/span&gt;(s[i]);&lt;br&gt;            &lt;span class=&#34;hljs-keyword&#34;&gt;else&lt;/span&gt;&lt;br&gt;                str3.&lt;span class=&#34;hljs-built_in&#34;&gt;append&lt;/span&gt;(str2);			&lt;span class=&#34;hljs-comment&#34;&gt;//如果是空格就把str2插入到str3&lt;/span&gt;&lt;br&gt;        &amp;#125;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; str3;&lt;br&gt;    &amp;#125;&lt;br&gt;&amp;#125;;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://example.com/2023/02/07/niuke001/</guid>
+            <title>JZ3 数组中重复的数字</title>
+            <link>http://example.com/2023/02/07/niuke001/</link>
+            <category>C++</category>
+            <category>牛客</category>
+            <pubDate>Tue, 07 Feb 2023 16:58:01 +0800</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;JZ3-数组中重复的数字&#34;&gt;&lt;a href=&#34;#JZ3-数组中重复的数字&#34; class=&#34;headerlink&#34; title=&#34;JZ3 数组中重复的数字&#34;&gt;&lt;/a&gt;JZ3 数组中重复的数字&lt;/h2&gt;&lt;h2 id=&#34;题目链接：&#34;&gt;&lt;a href=&#34;#题目链接：&#34; class=&#34;headerlink&#34; title=&#34;题目链接：&#34;&gt;&lt;/a&gt;题目链接：&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://www.nowcoder.com/practice/6fe361ede7e54db1b84adc81d09d8524?tpId=265&amp;tqId=39207&amp;rp=1&amp;ru=/exam/oj/ta&amp;qru=/exam/oj/ta&amp;sourceUrl=/exam/oj/ta?tpId=13&amp;difficulty=undefined&amp;judgeStatus=undefined&amp;tags=&amp;title=&#34;&gt;数组中重复的数字_牛客题霸_牛客网 (nowcoder.com)&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;完整解答：&#34;&gt;&lt;a href=&#34;#完整解答：&#34; class=&#34;headerlink&#34; title=&#34;完整解答：&#34;&gt;&lt;/a&gt;完整解答：&lt;/h2&gt;&lt;p&gt;set::count()是C++ STL中的内置函数，它返回元素在集合中出现的次数。由于set容器仅包含唯一元素，因此只能返回1或0。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;用法：set_name.count(element)&lt;/li&gt;
+&lt;li&gt;参数：该函数接受一个强制性参数element，该元素指定要返回其计数的元素。&lt;/li&gt;
+&lt;li&gt;返回值：该函数返回1或0，因为该集合仅包含唯一元素。如果设置的容器中存在该值，则返回1。如果容器中不存在它，则返回0。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-class&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;Solution&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;public&lt;/span&gt;:&lt;br&gt;    &lt;span class=&#34;hljs-comment&#34;&gt;/**&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;     *&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;     * &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;     * @param numbers int整型vector &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;     * @return int整型&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;     */&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;duplicate&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(vector&amp;lt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;&amp;gt;&amp;amp; numbers)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;br&gt;        &lt;span class=&#34;hljs-comment&#34;&gt;// write code here&lt;/span&gt;&lt;br&gt;        set&amp;lt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;&amp;gt; s;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;i&amp;lt;numbers.&lt;span class=&#34;hljs-built_in&#34;&gt;size&lt;/span&gt;();i++)&amp;#123;&lt;br&gt;            &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(s.&lt;span class=&#34;hljs-built_in&#34;&gt;count&lt;/span&gt;(numbers[i])&amp;gt;&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;) 				&lt;span class=&#34;hljs-comment&#34;&gt;//此元素重复，则返回&lt;/span&gt;&lt;br&gt;                &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; numbers[i];&lt;br&gt;            &lt;span class=&#34;hljs-keyword&#34;&gt;else&lt;/span&gt;&lt;br&gt;                s.&lt;span class=&#34;hljs-built_in&#34;&gt;insert&lt;/span&gt;(numbers[i]);				&lt;span class=&#34;hljs-comment&#34;&gt;//不重复则加入集合&lt;/span&gt;&lt;br&gt;        &amp;#125;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;-1&lt;/span&gt;;&lt;br&gt;    &amp;#125;&lt;br&gt;&amp;#125;;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h2 id=&#34;参考资料：&#34;&gt;&lt;a href=&#34;#参考资料：&#34; class=&#34;headerlink&#34; title=&#34;参考资料：&#34;&gt;&lt;/a&gt;参考资料：&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/cmehppc/article/details/121712019&#34;&gt;(64条消息) 【c++】set.count()用法_杳杳捞到月亮了吗的博客-CSDN博客_c++set count&lt;/a&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">http://example.com/2022/04/23/Algorithm032/</guid>
             <title>L2-036 网红点打卡攻略 (25 分)</title>
@@ -297,9 +340,9 @@
             <category>Data Structure</category>
             <category>C++</category>
             <category>团体程序设计天梯赛</category>
+            <category>Binary tree</category>
             <category>邻接表</category>
             <category>Vector</category>
-            <category>Binary tree</category>
             <category>BFS</category>
             <pubDate>Wed, 13 Apr 2022 19:09:46 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;著名的王牌间谍 007 需要执行一次任务，获取敌方的机密情报。已知情报藏在一个地下迷宫里，迷宫只有一个入口，里面有很多条通路，每条路通向一扇门。每一扇门背后或者是一个房间，或者又有很多条路，同样是每条路通向一扇门…… 他的手里有一张表格，是其他间谍帮他收集到的情报，他们记下了每扇门的编号，以及这扇门背后的每一条通路所到达的门的编号。007 发现不存在两条路通向同一扇门。&lt;/p&gt;
@@ -386,9 +429,9 @@
             <category>Data Structure</category>
             <category>C++</category>
             <category>团体程序设计天梯赛</category>
+            <category>Binary tree</category>
             <category>邻接表</category>
             <category>Vector</category>
-            <category>Binary tree</category>
             <category>BFS</category>
             <pubDate>Wed, 13 Apr 2022 09:45:49 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;L2-026-小字辈-25-分&#34;&gt;&lt;a href=&#34;#L2-026-小字辈-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-026 小字辈 (25 分)&#34;&gt;&lt;/a&gt;&lt;strong&gt;L2-026 小字辈 (25 分)&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;本题给定一个庞大家族的家谱，要请你给出最小一辈的名单。&lt;/p&gt;
@@ -412,9 +455,9 @@
             <category>C++</category>
             <category>Set</category>
             <category>团体程序设计天梯赛</category>
-            <category>Graph</category>
             <category>邻接表</category>
             <category>Vector</category>
+            <category>Graph</category>
             <pubDate>Tue, 12 Apr 2022 18:59:52 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;L2-023-图着色问题-25-分&#34;&gt;&lt;a href=&#34;#L2-023-图着色问题-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-023 图着色问题 (25 分)&#34;&gt;&lt;/a&gt;L2-023 图着色问题 (25 分)&lt;/h2&gt;&lt;p&gt;图着色问题是一个著名的NP完全问题。给定无向图&lt;em&gt;G&lt;/em&gt;&amp;#x3D;(&lt;em&gt;V&lt;/em&gt;,&lt;em&gt;E&lt;/em&gt;)，问可否用&lt;em&gt;K&lt;/em&gt;种颜色为&lt;em&gt;V&lt;/em&gt;中的每一个顶点分配一种颜色，使得不会有两个相邻顶点具有同一种颜色？&lt;/p&gt;
 &lt;p&gt;但本题并不是要你解决这个着色问题，而是对给定的一种颜色分配，请你判断这是否是图着色问题的一个解。&lt;/p&gt;
