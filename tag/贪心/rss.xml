@@ -28,14 +28,14 @@
         <category>DFS</category>
         <category>结构体</category>
         <category>贪心</category>
-        <category>Double类型相等比较</category>
-        <category>Map</category>
         <category>并查集</category>
+        <category>Map</category>
+        <category>Double类型相等比较</category>
         <category>Pair</category>
         <category>Linux</category>
         <category>MPI</category>
-        <category>dgemm</category>
         <category>AVX2</category>
+        <category>dgemm</category>
         <category>CUDA</category>
         <category>Matrix</category>
         <category>Mirror</category>
@@ -44,8 +44,8 @@
         <category>OpenMP</category>
         <category>C/C++</category>
         <category>register</category>
-        <category>Tensorflow</category>
         <category>Slurm</category>
+        <category>Tensorflow</category>
         <category>性能分析工具</category>
         <category>gcov</category>
         <item>

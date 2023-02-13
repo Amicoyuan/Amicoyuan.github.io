@@ -28,14 +28,14 @@
         <category>DFS</category>
         <category>结构体</category>
         <category>贪心</category>
-        <category>Double类型相等比较</category>
-        <category>Map</category>
         <category>并查集</category>
+        <category>Map</category>
+        <category>Double类型相等比较</category>
         <category>Pair</category>
         <category>Linux</category>
         <category>MPI</category>
-        <category>dgemm</category>
         <category>AVX2</category>
+        <category>dgemm</category>
         <category>CUDA</category>
         <category>Matrix</category>
         <category>Mirror</category>
@@ -44,8 +44,8 @@
         <category>OpenMP</category>
         <category>C/C++</category>
         <category>register</category>
-        <category>Tensorflow</category>
         <category>Slurm</category>
+        <category>Tensorflow</category>
         <category>性能分析工具</category>
         <category>gcov</category>
         <item>
@@ -70,7 +70,19 @@
 &lt;p&gt;&lt;img src=&#34;/2023/02/12/blislib002/image-20230212215836596.png&#34; alt=&#34;image-20230212215836596&#34;&gt;&lt;/p&gt;
 &lt;p&gt;其中C是m × n, A是m × k, B是k × n。如果了解如何优化dgemm的这种特殊情况，那么可以很容易地将此知识扩展到所有3级BLAS功能。&lt;/p&gt;
 &lt;h3 id=&#34;1-3-High-performance-implementation&#34;&gt;&lt;a href=&#34;#1-3-High-performance-implementation&#34; class=&#34;headerlink&#34; title=&#34;1.3 High-performance implementation&#34;&gt;&lt;/a&gt;1.3 High-performance implementation&lt;/h3&gt;&lt;p&gt;高性能实现的复杂性使得BLAS(尤其是Gemm)的实现通常都是由默默无闻的专家来完成的，这些专家为硬件供应商开发数字库，例如IBM的ESSL、Intel的MKL、Cray的LibSci和AMD的ACML库。这些库通常是用汇编代码编写的(至少是部分)，并且针对特定的处理器高度专门化。&lt;/p&gt;
- ]]></description>
+&lt;p&gt;一篇关键论文[1]展示了“算法和体系结构”方法如何携手设计ar体系结构、编译器和算法，使BLAS能够用高级语言(Fortan)为IBM Power体系结构编写，并解释了在这些处理器上实现高性能的复杂性。便携式高性能ANSI C (PHiPAC)[3]项目随后提供了用C编写高性能代码的指南，并建议如何自动生成和优化以这种方式编写的Gemm。Au tomatatically tuning Linear Algebra Software (ATLAS)[17,18]建立在这些见解的基础上，使BLAS库的自动调优和自动生成成为主流。&lt;/p&gt;
+&lt;p&gt;在本文档的一部分中，我们讨论了有关该主题的最新论文，包括引入了实施Gemm[6]的Goto方法和该方法[16]的BLIS重构的论文，以及其他更直接相关的论文。&lt;/p&gt;
+&lt;h3 id=&#34;1-4-Other-similar-exercises&#34;&gt;&lt;a href=&#34;#1-4-Other-similar-exercises&#34; class=&#34;headerlink&#34; title=&#34;1.4 Other similar exercises&#34;&gt;&lt;/a&gt;1.4 Other similar exercises&lt;/h3&gt;&lt;p&gt;还有一些人基于Gemm组合了练习。与本文相关的最新成果有:乌尔姆大学Michael Lehn所作的“优化微内核:从纯C到SSE”，以及我们自己整理的关于“优化微内核”的维基。&lt;/p&gt;
+&lt;h3 id=&#34;1-5-We-need-you&#34;&gt;&lt;a href=&#34;#1-5-We-need-you&#34; class=&#34;headerlink&#34; title=&#34;1.5 We need you!&#34;&gt;&lt;/a&gt;1.5 We need you!&lt;/h3&gt;&lt;p&gt;本文的目的是指导您实现Gemm的高性能实现。我们的别有用心是，用于实现BLAS的BLIS框架需要针对各种cpu高度优化的所谓微内核。在教你基本技巧的过程中，我们希望找到“那个人”将贡献最好的微内核。就把它当做我们版的高性能计算机达人秀吧。虽然我们在描述中关注的是Intel Haswell架构的优化，但是设置可以很容易地修改，从而帮助您(和我们)优化其他cpu。事实上，BLIS本身支持的体系结构包括AMD和Intel的x86处理器，IBM的Power处理器，ARM处理器和德州仪器的DSP处理器[15,12,8]。&lt;/p&gt;
+&lt;h2 id=&#34;2-Step-1-The-Basics&#34;&gt;&lt;a href=&#34;#2-Step-1-The-Basics&#34; class=&#34;headerlink&#34; title=&#34;2 Step 1: The Basics&#34;&gt;&lt;/a&gt;2 Step 1: The Basics&lt;/h2&gt;&lt;h3 id=&#34;2-1-Simple-matrix-matrix-multiplication&#34;&gt;&lt;a href=&#34;#2-1-Simple-matrix-matrix-multiplication&#34; class=&#34;headerlink&#34; title=&#34;2.1 Simple matrix-matrix multiplication&#34;&gt;&lt;/a&gt;2.1 Simple matrix-matrix multiplication&lt;/h3&gt;&lt;p&gt;在我们的讨论中，我们将考虑计算：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/02/12/blislib002/image-20230213165803939.png&#34; alt=&#34;image-20230213165803939&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/02/12/blislib002/image-20230213165826084.png&#34; alt=&#34;image-20230213165826084&#34;&gt;&lt;/p&gt;
+&lt;p&gt;其中，A、B、C分别为m × k、k × n、m × n矩阵。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/02/12/blislib002/image-20230213165920897.png&#34; alt=&#34;image-20230213165920897&#34;&gt;&lt;/p&gt;
+&lt;p&gt;如果A、B和C存储在二维数组A、B和C中，下面的伪代码计算C:&amp;#x3D;&lt;br&gt;AB + C:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/02/12/blislib002/image-20230213170125083.png&#34; alt=&#34;image-20230213170125083&#34;&gt;&lt;/p&gt;
+&lt;p&gt;分别计算乘法和加法，计算需要2mnk个浮点运算(flop)。&lt;/p&gt;
+&lt;h3 id=&#34;2-2-Setup&#34;&gt;&lt;a href=&#34;#2-2-Setup&#34; class=&#34;headerlink&#34; title=&#34;2.2 Setup&#34;&gt;&lt;/a&gt;2.2 Setup&lt;/h3&gt; ]]></description>
         </item>
         <item>
             <guid isPermalink="true">http://example.com/2023/02/06/matrix001/</guid>
