@@ -6,20 +6,20 @@
     <updated>2023-02-12T13:11:56.000Z</updated>
     <category term="AVX" />
     <category term="Data Structure" />
-    <category term="String" />
-    <category term="Find" />
+    <category term="Set" />
+    <category term="团体程序设计天梯赛" />
     <category term="STL" />
     <category term="C++" />
-    <category term="LinkList" />
-    <category term="团体程序设计天梯赛" />
-    <category term="双向链表" />
-    <category term="Set" />
     <category term="Sort" />
-    <category term="Graph" />
+    <category term="String" />
+    <category term="Find" />
+    <category term="LinkList" />
+    <category term="双向链表" />
+    <category term="Binary tree" />
     <category term="邻接表" />
     <category term="Vector" />
-    <category term="Binary tree" />
     <category term="BFS" />
+    <category term="Graph" />
     <category term="模拟" />
     <category term="邻接矩阵" />
     <category term="DFS" />
@@ -34,8 +34,8 @@
     <category term="AVX2" />
     <category term="dgemm" />
     <category term="CUDA" />
-    <category term="Mirror" />
     <category term="Matrix" />
+    <category term="Mirror" />
     <category term="牛客" />
     <category term="Numactl" />
     <category term="OpenMP" />
@@ -76,7 +76,40 @@
 &lt;p&gt;如果A、B和C存储在二维数组A、B和C中，下面的伪代码计算C:&amp;#x3D;&lt;br&gt;AB + C:&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/2023/02/12/blislib002/image-20230213170125083.png&#34; alt=&#34;image-20230213170125083&#34;&gt;&lt;/p&gt;
 &lt;p&gt;分别计算乘法和加法，计算需要2mnk个浮点运算(flop)。&lt;/p&gt;
-&lt;h3 id=&#34;2-2-Setup&#34;&gt;&lt;a href=&#34;#2-2-Setup&#34; class=&#34;headerlink&#34; title=&#34;2.2 Setup&#34;&gt;&lt;/a&gt;2.2 Setup&lt;/h3&gt;</content>
+&lt;h3 id=&#34;2-2-Setup&#34;&gt;&lt;a href=&#34;#2-2-Setup&#34; class=&#34;headerlink&#34; title=&#34;2.2 Setup&#34;&gt;&lt;/a&gt;2.2 Setup&lt;/h3&gt;&lt;p&gt;为了让您高效地学习如何高效地进行计算，您可以在启动项目时准备好大部分基础设施。我们已经构造了子目录step1，有点像实现真正库might的项目。对于我们的目的来说，这可能是多余的，但是如何构建软件项目是一项值得学习的有用技能。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/02/12/blislib002/image-20230214173819349.png&#34; alt=&#34;image-20230214173819349&#34;&gt;&lt;/p&gt;
+&lt;p&gt;考虑图4，它演示了子目录step1的目录结构:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;README&lt;/strong&gt;是一个描述目录内容以及如何编译和执行代码的文件。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;source .sh&lt;/strong&gt;配置环境变量的文件。在那个文件中&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;BLISLAB USE INTEL&lt;/strong&gt;设置是否使用INTEL编译器(true)或GNU编译器(false)。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;BLISLAB USE BLAS&lt;/strong&gt;指示您的参考dgemm是否使用外部BLAS库实现(如果您的机器上安装了这样的BLAS库，则为true)，还是简单的三重循环实现(false)。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;COMPILER OPT LEVEL&lt;/strong&gt;设置GNU或Intel编译器的优化级别(O0, O1, O2, O3)。&lt;br&gt;(请注意，例如，O3由大写字母“O”和数字“3”组成。)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;OMP NUM THREADS&lt;/strong&gt; and &lt;strong&gt;BLISLAB IC NT&lt;/strong&gt;设置用于并行版本的线程数&lt;br&gt;代码。对于第1步，将它们都设置为1。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;dgemm&lt;/strong&gt;是实现dgemm的例程存在的子目录。在其中&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;bl_dgemm_ref.c&lt;/strong&gt;包含例程&lt;strong&gt;dgemm ref&lt;/strong&gt;，它是dgemm的一个简单实现，如果&lt;strong&gt;BLISLAB_use_BLAS &amp;#x3D; false&lt;/strong&gt;，您将使用它来检查实现的正确性。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;my_dgemm.c&lt;/strong&gt;包含例程&lt;strong&gt;dgemm&lt;/strong&gt;，它最初是dgemm的一个简单实现，您将优化它作为掌握如何优化gemm的第一步的一部分。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Bl_dgemm_util.c&lt;/strong&gt;包含稍后会派上用场的实用程序例程&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;include&lt;/strong&gt;这个目录包含包含各种宏定义和其他头信息的文件。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;lib&lt;/strong&gt;此目录将保存由您实现的源文件(libblislab. lib)生成的库。libblislab.a)您还可以在此目录中安装参考库(例如OpenBLAS)以比较性能。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;test&lt;/strong&gt; 这个目录包含“测试驱动程序”和各种实现的正确性&amp;#x2F;性能检查脚本。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;test_bl_demm .c&lt;/strong&gt;包含测试例程bl_demm的“测试驱动程序”。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;test_bl_dgemm.x&lt;/strong&gt;是&lt;strong&gt;test_bl_dgemm.c&lt;/strong&gt;的可执行文件。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Run_bl_dgemm.sh&lt;/strong&gt;包含一个bash脚本，用于收集性能结果。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;tacc_run_bl_dgemm.sh&lt;/strong&gt; contains a &lt;strong&gt;SLURM&lt;/strong&gt; script for you to (optionally) submit the job to the Texas Advanced Computing Center (TACC) machines if you have an account there.&lt;/p&gt;
+&lt;h3 id=&#34;2-3-Getting-started&#34;&gt;&lt;a href=&#34;#2-3-Getting-started&#34; class=&#34;headerlink&#34; title=&#34;2.3 Getting started&#34;&gt;&lt;/a&gt;2.3 Getting started&lt;/h3&gt;&lt;p&gt;我们希望您从my_dgemm.c中的实现开始，并通过应用各种标准优化技术对其进行优化。该文件中的初始实现是具有图2中给出的三个循环的简单实现。首先要注意的是二维数组如何以所谓的列-主序映射到内存。这种选择的原因是最初的BLAS假定数组的列主存储，因为该接口首先是为Fortran用户提供的。检查&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/02/12/blislib002/image-20230214185803699.png&#34; alt=&#34;image-20230214185803699&#34;&gt;&lt;/p&gt;
+&lt;p&gt;我们注意到，每个操作数都是一个宏。考虑文件的早期&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/02/12/blislib002/image-20230214185849594.png&#34; alt=&#34;image-20230214185849594&#34;&gt;&lt;/p&gt;
+&lt;p&gt;地址C处的线性数组用于存储元素Ci,j，因此i,j元素被映射到位置j * ldc + i。查看它的方法是C的每一列都是连续存储的。但是，可以把矩阵C看作是嵌入在一个更大的数组中，该数组有ldc行，因此访问一行就意味着跨ldc遍历数组C。二维数组C的前维数通常是指这个较大数组的行维数，因此变量ldc (C的前维数)。下图说明了这三个矩阵:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/02/12/blislib002/image-20230214190409172.png&#34; alt=&#34;image-20230214190409172&#34;&gt;&lt;/p&gt;
+&lt;p&gt;其中箭头表示列是连续存储的。&lt;/p&gt;
+&lt;h4 id=&#34;2-3-1-Configure-the-default-implementation&#34;&gt;&lt;a href=&#34;#2-3-1-Configure-the-default-implementation&#34; class=&#34;headerlink&#34; title=&#34;2.3.1 Configure the default implementation&#34;&gt;&lt;/a&gt;2.3.1 Configure the default implementation&lt;/h4&gt;&lt;p&gt;默认情况下，练习编译并链接到Intel的icc编译器，该编译器将对代码应用编译器优化(O3级)。您需要通过以下命令设置环境变量:&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs shell&#34;&gt;source sourceme.sh&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;在终端中，您将看到输出:&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs shell&#34;&gt;BLISLAB_USE_INTEL = TRUE&lt;br&gt;COMPILER_OPT_LEVEL = O3&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+</content>
         <category term="Linux" />
         <category term="dgemm" />
         <updated>2023-02-12T13:11:56.000Z</updated>
