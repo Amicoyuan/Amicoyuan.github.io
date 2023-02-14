@@ -13,14 +13,14 @@
     <category term="Sort" />
     <category term="String" />
     <category term="Find" />
-    <category term="LinkList" />
-    <category term="双向链表" />
     <category term="Binary tree" />
     <category term="邻接表" />
     <category term="Vector" />
     <category term="BFS" />
     <category term="Graph" />
     <category term="模拟" />
+    <category term="LinkList" />
+    <category term="双向链表" />
     <category term="邻接矩阵" />
     <category term="DFS" />
     <category term="结构体" />
@@ -39,9 +39,9 @@
     <category term="牛客" />
     <category term="Numactl" />
     <category term="OpenMP" />
+    <category term="Slurm" />
     <category term="C/C++" />
     <category term="register" />
-    <category term="Slurm" />
     <category term="Tensorflow" />
     <category term="性能分析工具" />
     <category term="gcov" />
@@ -109,7 +109,42 @@
 &lt;p&gt;在终端中，您将看到输出:&lt;/p&gt;
 &lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs shell&#34;&gt;BLISLAB_USE_INTEL = TRUE&lt;br&gt;COMPILER_OPT_LEVEL = O3&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
-</content>
+&lt;h4 id=&#34;2-3-2-Compile-execute-and-collect-results&#34;&gt;&lt;a href=&#34;#2-3-2-Compile-execute-and-collect-results&#34; class=&#34;headerlink&#34; title=&#34;2.3.2 Compile, execute and collect results&#34;&gt;&lt;/a&gt;2.3.2 Compile, execute and collect results&lt;/h4&gt;&lt;p&gt;如果您无法访问Intel的编译器(icc)，请阅读第2.3.2小节和2.3.3小节，并继续阅读第2.3.5小节。&lt;/p&gt;
+&lt;p&gt;您可以编译、执行代码并通过执行收集性能结果&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs shell&#34;&gt;make clean&lt;br&gt;make&lt;br&gt;cd test&lt;br&gt;./run_bl_dgemm.sh&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;在子目录step1中。您将看到性能结果输出:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/02/12/blislib002/image-20230214231134260.png&#34; alt=&#34;image-20230214231134260&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/02/12/blislib002/image-20230214231142311.png&#34; alt=&#34;image-20230214231142311&#34;&gt;&lt;/p&gt;
+&lt;p&gt;您可以在run_bl_dgemm.sh中更改采样块大小。请注意，如果代码中有错误，这些错误将被报告为，例如，&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/02/12/blislib002/image-20230214231406465.png&#34; alt=&#34;image-20230214231406465&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;2-3-3-Draw-the-performance-graph&#34;&gt;&lt;a href=&#34;#2-3-3-Draw-the-performance-graph&#34; class=&#34;headerlink&#34; title=&#34;2.3.3 Draw the performance graph&#34;&gt;&lt;/a&gt;2.3.3 Draw the performance graph&lt;/h4&gt;&lt;p&gt;最后，您可以使用&lt;strong&gt;MATLAB&lt;/strong&gt;用我们的脚本绘制性能图。在&lt;strong&gt;test&lt;/strong&gt;子目录下，执行后&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;./collect_result_step1&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;你会得到一个MATLAB文件“step1_result.m”，具有性能结果。然后你可以执行&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs shell&#34;&gt;bl_dgemm_plot.m&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;在MATLAB中，然后生成性能图。&lt;/p&gt;
+&lt;h4 id=&#34;2-3-4-Change-to-the-GNU-compiler&#34;&gt;&lt;a href=&#34;#2-3-4-Change-to-the-GNU-compiler&#34; class=&#34;headerlink&#34; title=&#34;2.3.4 Change to the GNU compiler&#34;&gt;&lt;/a&gt;2.3.4 Change to the GNU compiler&lt;/h4&gt;&lt;p&gt;由于我们希望您明确地了解什么样的技巧可以带来高性能，并且由于有些人可能无法访问Intel编译器，因此接下来应该改为使用GNU C编译器。为此，你必须编辑&lt;strong&gt;sourceme.sh&lt;/strong&gt;:&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs shell&#34;&gt;BLISLAB_USE_INTEL=false&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;然后，类似于默认设置，您需要通过执行以下命令来设置环境变量:&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs shell&#34;&gt;source sourceme.sh&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;在终端，你会观察到:&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs shell&#34;&gt;BLISLAB_USE_INTEL = false&lt;br&gt;COMILER_OPT_LEVEL = O3&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h4 id=&#34;2-3-5-Turn-off-optimization&#34;&gt;&lt;a href=&#34;#2-3-5-Turn-off-optimization&#34; class=&#34;headerlink&#34; title=&#34;2.3.5 Turn off optimization&#34;&gt;&lt;/a&gt;2.3.5 Turn off optimization&lt;/h4&gt;&lt;p&gt;接下来，我们希望您关闭编译器执行的优化。这有三个目的:首先，这意味着您将必须显式地执行优化，这将允许您了解架构和算法如何交互。其次，优化编译器很可能会试图“撤销”您显式试图完成的任务。第三，在代码中构建的技巧越多，编译器就越难找出优化的方法。&lt;/p&gt;
+&lt;p&gt;你需要先编辑&lt;strong&gt;sourceme.sh:&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs shell&#34;&gt;COMILER_OPT_LEVEL = O0&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;然后，类似于默认设置，您需要通过执行以下命令来设置环境变量:&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs shell&#34;&gt;source sourceme.sh&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;在终端中，您将看到输出:&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs shell&#34;&gt;BLISLAB_USE_INTEL = false&lt;br&gt;COMILER_OPT_LEVEL =O0&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h4 id=&#34;2-3-6-Optional-Use-optimized-BLAS-library-as-reference-implementation&#34;&gt;&lt;a href=&#34;#2-3-6-Optional-Use-optimized-BLAS-library-as-reference-implementation&#34; class=&#34;headerlink&#34; title=&#34;2.3.6 (Optional) Use optimized BLAS library as reference implementation&#34;&gt;&lt;/a&gt;2.3.6 (Optional) Use optimized BLAS library as reference implementation&lt;/h4&gt;</content>
         <category term="Linux" />
         <category term="dgemm" />
         <updated>2023-02-12T13:11:56.000Z</updated>

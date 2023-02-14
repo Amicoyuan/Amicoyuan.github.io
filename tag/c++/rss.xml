@@ -16,14 +16,14 @@
         <category>Sort</category>
         <category>String</category>
         <category>Find</category>
-        <category>LinkList</category>
-        <category>双向链表</category>
         <category>Binary tree</category>
         <category>邻接表</category>
         <category>Vector</category>
         <category>BFS</category>
         <category>Graph</category>
         <category>模拟</category>
+        <category>LinkList</category>
+        <category>双向链表</category>
         <category>邻接矩阵</category>
         <category>DFS</category>
         <category>结构体</category>
@@ -42,9 +42,9 @@
         <category>牛客</category>
         <category>Numactl</category>
         <category>OpenMP</category>
+        <category>Slurm</category>
         <category>C/C++</category>
         <category>register</category>
-        <category>Slurm</category>
         <category>Tensorflow</category>
         <category>性能分析工具</category>
         <category>gcov</category>
