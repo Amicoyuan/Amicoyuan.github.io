@@ -9,15 +9,15 @@
         <lastBuildDate>Sat, 23 Apr 2022 21:39:53 +0800</lastBuildDate>
         <category>AVX</category>
         <category>Data Structure</category>
-        <category>LinkList</category>
-        <category>团体程序设计天梯赛</category>
-        <category>C++</category>
-        <category>双向链表</category>
         <category>String</category>
         <category>Find</category>
         <category>STL</category>
+        <category>C++</category>
         <category>Set</category>
+        <category>团体程序设计天梯赛</category>
         <category>Sort</category>
+        <category>LinkList</category>
+        <category>双向链表</category>
         <category>Graph</category>
         <category>邻接表</category>
         <category>Vector</category>
@@ -34,8 +34,8 @@
         <category>Pair</category>
         <category>Linux</category>
         <category>MPI</category>
-        <category>dgemm</category>
         <category>AVX2</category>
+        <category>dgemm</category>
         <category>CUDA</category>
         <category>Matrix</category>
         <category>Mirror</category>
@@ -52,9 +52,9 @@
             <guid isPermalink="true">http://example.com/2022/04/23/Algorithm030/</guid>
             <title>L2-005 集合相似度 (25 分)</title>
             <link>http://example.com/2022/04/23/Algorithm030/</link>
-            <category>团体程序设计天梯赛</category>
             <category>C++</category>
             <category>Set</category>
+            <category>团体程序设计天梯赛</category>
             <category>模拟</category>
             <pubDate>Sat, 23 Apr 2022 21:39:53 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;L2-005-集合相似度-25-分&#34;&gt;&lt;a href=&#34;#L2-005-集合相似度-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-005 集合相似度 (25 分)&#34;&gt;&lt;/a&gt;L2-005 集合相似度 (25 分)&lt;/h2&gt;&lt;p&gt;给定两个整数集合，它们的相似度定义为：Nc&amp;#x2F;Nt×100%。其中Nc是两个集合都有的不相等整数的个数，Nt是两个集合一共有的不相等整数的个数。你的任务就是计算任意一对给定集合的相似度。&lt;/p&gt;
@@ -76,8 +76,8 @@
             <title>L2-040 哲哲打游戏 (25 分)</title>
             <link>http://example.com/2022/04/13/Algorithm021/</link>
             <category>Data Structure</category>
-            <category>团体程序设计天梯赛</category>
             <category>C++</category>
+            <category>团体程序设计天梯赛</category>
             <category>邻接表</category>
             <category>Vector</category>
             <category>模拟</category>

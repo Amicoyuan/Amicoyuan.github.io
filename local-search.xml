@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>BLISlab中C矩阵初始化速度测试</title>
+    <link href="/2023/02/15/blislab003/"/>
+    <url>/2023/02/15/blislab003/</url>
+    
+    <content type="html"><![CDATA[<h2 id="BLISlab中C矩阵初始化速度测试"><a href="#BLISlab中C矩阵初始化速度测试" class="headerlink" title="BLISlab中C矩阵初始化速度测试"></a>BLISlab中C矩阵初始化速度测试</h2><p><strong>假设我们想把C中的所有元素都设为0。</strong></p><p><strong>统一编译命令：</strong></p><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">g++  xxx.cpp -O0 -std=c++11 -o xxx<br></code></pre></div></td></tr></table></figure><h3 id="版本一："><a href="#版本一：" class="headerlink" title="版本一："></a>版本一：</h3><figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> C( i, j )     C[ (j)*ldc + (i) ]</span><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br><span class="hljs-keyword">int</span> i,j,m,n;<br>m=<span class="hljs-number">20000</span>;<br>n=<span class="hljs-number">20000</span>;<br><span class="hljs-keyword">int</span> ldc=m;<br><span class="hljs-keyword">int</span> time =<span class="hljs-number">100</span>;<br><span class="hljs-keyword">double</span>*C =(<span class="hljs-keyword">double</span>*)_mm_malloc(m*n*<span class="hljs-built_in"><span class="hljs-keyword">sizeof</span></span>(<span class="hljs-keyword">double</span>),<span class="hljs-number">32</span>);<br>std::chrono::high_resolution_clock::time_point tp1 = std::chrono::high_resolution_clock::<span class="hljs-built_in">now</span>();<br><span class="hljs-keyword">for</span>( i = <span class="hljs-number">0</span>; i &lt; m; i++)&#123;<br>    <span class="hljs-keyword">for</span>( j = <span class="hljs-number">0</span>; j &lt; n; j++)&#123; <br>        <span class="hljs-built_in">C</span>(i,j) = <span class="hljs-number">0.0</span>;<br>    &#125;<br>&#125;<br>std::chrono::high_resolution_clock::time_point tp2 = std::chrono::high_resolution_clock::<span class="hljs-built_in">now</span>();<br>std::chrono::duration&lt;<span class="hljs-keyword">size_t</span>, std::nano&gt; dur = tp2 - tp1;<br>std::cout &lt;&lt; <span class="hljs-string">&quot;1 被计时代码耗时：&quot;</span> &lt;&lt; std::chrono::duration_cast&lt;std::chrono::nanoseconds&gt;(dur).<span class="hljs-built_in">count</span>() &lt;&lt; <span class="hljs-string">&quot; 纳秒&quot;</span> &lt;&lt; std::endl;<br>    std::cout &lt;&lt; <span class="hljs-string">&quot;2 被计时代码耗时：&quot;</span> &lt;&lt; std::chrono::duration_cast&lt;std::chrono::microseconds&gt;(dur).<span class="hljs-built_in">count</span>() &lt;&lt; <span class="hljs-string">&quot; 微妙&quot;</span> &lt;&lt; std::endl;<br>    std::cout &lt;&lt; <span class="hljs-string">&quot;3 被计时代码耗时：&quot;</span> &lt;&lt; std::chrono::duration_cast&lt;std::chrono::milliseconds&gt;(dur).<span class="hljs-built_in">count</span>() &lt;&lt; <span class="hljs-string">&quot; 毫秒&quot;</span> &lt;&lt; std::endl;<br>    std::cout &lt;&lt; <span class="hljs-string">&quot;4 被计时代码耗时：&quot;</span> &lt;&lt; std::chrono::duration_cast&lt;std::chrono::seconds&gt;(dur).<span class="hljs-built_in">count</span>() &lt;&lt; <span class="hljs-string">&quot; 秒钟&quot;</span> &lt;&lt; std::endl;<br><span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125; <br></code></pre></div></td></tr></table></figure><h3 id="实测结果："><a href="#实测结果：" class="headerlink" title="实测结果："></a>实测结果：</h3><figure class="highlight basic"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs basic"><span class="hljs-symbol">1 </span>被计时代码耗时：<span class="hljs-number">10776901341</span> 纳秒<br><span class="hljs-symbol">2 </span>被计时代码耗时：<span class="hljs-number">10776901</span> 微妙<br><span class="hljs-symbol">3 </span>被计时代码耗时：<span class="hljs-number">10776</span> 毫秒<br><span class="hljs-symbol">4 </span>被计时代码耗时：<span class="hljs-number">10</span> 秒钟<br></code></pre></div></td></tr></table></figure><h3 id="版本二："><a href="#版本二：" class="headerlink" title="版本二："></a>版本二：</h3><figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> C( i, j )     C[ (j)*ldc + (i) ]</span><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br><span class="hljs-keyword">int</span> i,j,m,n;<br>m=<span class="hljs-number">20000</span>;<br>n=<span class="hljs-number">20000</span>;<br><span class="hljs-keyword">int</span> ldc=m;<br><span class="hljs-keyword">int</span> time =<span class="hljs-number">100</span>;<br><span class="hljs-keyword">double</span>*C =(<span class="hljs-keyword">double</span>*)_mm_malloc(m*n*<span class="hljs-built_in"><span class="hljs-keyword">sizeof</span></span>(<span class="hljs-keyword">double</span>),<span class="hljs-number">32</span>);<br><span class="hljs-keyword">double</span> *cp;<br>std::chrono::high_resolution_clock::time_point tp1 = std::chrono::high_resolution_clock::<span class="hljs-built_in">now</span>();<br><span class="hljs-keyword">for</span>( j = <span class="hljs-number">0</span>; j &lt; n; j++)&#123;<br>    cp = &amp;C[ j*ldc ];<span class="hljs-comment">//point cp to top of ith column</span><br>    <span class="hljs-keyword">for</span>( i = <span class="hljs-number">0</span>; i &lt; m; i++)&#123;<br>        *cp++ = <span class="hljs-number">0.0</span>;<span class="hljs-comment">//set element that cp points to to zero and</span><br>    &#125;<span class="hljs-comment">//advance the pointer</span><br>&#125;<br>std::chrono::high_resolution_clock::time_point tp2 = std::chrono::high_resolution_clock::<span class="hljs-built_in">now</span>();<br>std::chrono::duration&lt;<span class="hljs-keyword">size_t</span>, std::nano&gt; dur = tp2 - tp1;<br>std::cout &lt;&lt; <span class="hljs-string">&quot;1 被计时代码耗时：&quot;</span> &lt;&lt; std::chrono::duration_cast&lt;std::chrono::nanoseconds&gt;(dur).<span class="hljs-built_in">count</span>() &lt;&lt; <span class="hljs-string">&quot; 纳秒&quot;</span> &lt;&lt; std::endl;<br>    std::cout &lt;&lt; <span class="hljs-string">&quot;2 被计时代码耗时：&quot;</span> &lt;&lt; std::chrono::duration_cast&lt;std::chrono::microseconds&gt;(dur).<span class="hljs-built_in">count</span>() &lt;&lt; <span class="hljs-string">&quot; 微妙&quot;</span> &lt;&lt; std::endl;<br>    std::cout &lt;&lt; <span class="hljs-string">&quot;3 被计时代码耗时：&quot;</span> &lt;&lt; std::chrono::duration_cast&lt;std::chrono::milliseconds&gt;(dur).<span class="hljs-built_in">count</span>() &lt;&lt; <span class="hljs-string">&quot; 毫秒&quot;</span> &lt;&lt; std::endl;<br>    std::cout &lt;&lt; <span class="hljs-string">&quot;4 被计时代码耗时：&quot;</span> &lt;&lt; std::chrono::duration_cast&lt;std::chrono::seconds&gt;(dur).<span class="hljs-built_in">count</span>() &lt;&lt; <span class="hljs-string">&quot; 秒钟&quot;</span> &lt;&lt; std::endl;<br><span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125; <br></code></pre></div></td></tr></table></figure><h3 id="实测结果：-1"><a href="#实测结果：-1" class="headerlink" title="实测结果："></a>实测结果：</h3><figure class="highlight basic"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs basic"><span class="hljs-symbol">1 </span>被计时代码耗时：<span class="hljs-number">3455968000</span> 纳秒<br><span class="hljs-symbol">2 </span>被计时代码耗时：<span class="hljs-number">3455968</span> 微妙<br><span class="hljs-symbol">3 </span>被计时代码耗时：<span class="hljs-number">3455</span> 毫秒<br><span class="hljs-symbol">4 </span>被计时代码耗时：<span class="hljs-number">3</span> 秒钟<br></code></pre></div></td></tr></table></figure><h3 id="版本三："><a href="#版本三：" class="headerlink" title="版本三："></a>版本三：</h3><figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> C( i, j )     C[ (j)*ldc + (i) ]</span><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br><span class="hljs-keyword">int</span> i,j,m,n;<br>m=<span class="hljs-number">20000</span>;<br>n=<span class="hljs-number">20000</span>;<br><span class="hljs-keyword">int</span> ldc=m;<br><span class="hljs-keyword">int</span> time =<span class="hljs-number">100</span>;<br><span class="hljs-keyword">double</span>*C =(<span class="hljs-keyword">double</span>*)_mm_malloc(m*n*<span class="hljs-built_in"><span class="hljs-keyword">sizeof</span></span>(<span class="hljs-keyword">double</span>),<span class="hljs-number">32</span>);<br><span class="hljs-keyword">double</span> *cp;<br>std::chrono::high_resolution_clock::time_point tp1 = std::chrono::high_resolution_clock::<span class="hljs-built_in">now</span>();<br><span class="hljs-keyword">for</span>( j = <span class="hljs-number">0</span>; j &lt; n; j++)&#123;<br>    cp = &amp;C[ j * ldc ];<br>    <span class="hljs-keyword">for</span>( i = <span class="hljs-number">0</span>; i &lt; m; i+=<span class="hljs-number">4</span>)&#123;<br>       *(cp+<span class="hljs-number">0</span>) = <span class="hljs-number">0.0</span>;<br>        *(cp+<span class="hljs-number">1</span>) = <span class="hljs-number">0.0</span>;<br>        *(cp+<span class="hljs-number">2</span>) = <span class="hljs-number">0.0</span>;<br>        *(cp+<span class="hljs-number">3</span>) = <span class="hljs-number">0.0</span>;<br>        cp+=<span class="hljs-number">4</span>;<br>   &#125;<br>&#125;<br>std::chrono::high_resolution_clock::time_point tp2 = std::chrono::high_resolution_clock::<span class="hljs-built_in">now</span>();<br>std::chrono::duration&lt;<span class="hljs-keyword">size_t</span>, std::nano&gt; dur = tp2 - tp1;<br>std::cout &lt;&lt; <span class="hljs-string">&quot;1 被计时代码耗时：&quot;</span> &lt;&lt; std::chrono::duration_cast&lt;std::chrono::nanoseconds&gt;(dur).<span class="hljs-built_in">count</span>() &lt;&lt; <span class="hljs-string">&quot; 纳秒&quot;</span> &lt;&lt; std::endl;<br>    std::cout &lt;&lt; <span class="hljs-string">&quot;2 被计时代码耗时：&quot;</span> &lt;&lt; std::chrono::duration_cast&lt;std::chrono::microseconds&gt;(dur).<span class="hljs-built_in">count</span>() &lt;&lt; <span class="hljs-string">&quot; 微妙&quot;</span> &lt;&lt; std::endl;<br>    std::cout &lt;&lt; <span class="hljs-string">&quot;3 被计时代码耗时：&quot;</span> &lt;&lt; std::chrono::duration_cast&lt;std::chrono::milliseconds&gt;(dur).<span class="hljs-built_in">count</span>() &lt;&lt; <span class="hljs-string">&quot; 毫秒&quot;</span> &lt;&lt; std::endl;<br>    std::cout &lt;&lt; <span class="hljs-string">&quot;4 被计时代码耗时：&quot;</span> &lt;&lt; std::chrono::duration_cast&lt;std::chrono::seconds&gt;(dur).<span class="hljs-built_in">count</span>() &lt;&lt; <span class="hljs-string">&quot; 秒钟&quot;</span> &lt;&lt; std::endl;<br><span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125; <br></code></pre></div></td></tr></table></figure><h3 id="实测结果：-2"><a href="#实测结果：-2" class="headerlink" title="实测结果："></a>实测结果：</h3><figure class="highlight basic"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs basic"><span class="hljs-symbol">1 </span>被计时代码耗时：<span class="hljs-number">2581347801</span> 纳秒<br><span class="hljs-symbol">2 </span>被计时代码耗时：<span class="hljs-number">2581347</span> 微妙<br><span class="hljs-symbol">3 </span>被计时代码耗时：<span class="hljs-number">2581</span> 毫秒<br><span class="hljs-symbol">4 </span>被计时代码耗时：<span class="hljs-number">2</span> 秒钟<br></code></pre></div></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>HPC</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Linux</tag>
+      
+      <tag>dgemm</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>BLISlab tutoril阅读</title>
     <link href="/2023/02/12/blislib002/"/>
     <url>/2023/02/12/blislib002/</url>
@@ -786,9 +813,9 @@
       
       <tag>Data Structure</tag>
       
-      <tag>团体程序设计天梯赛</tag>
-      
       <tag>C++</tag>
+      
+      <tag>团体程序设计天梯赛</tag>
       
       <tag>Graph</tag>
       
@@ -819,9 +846,9 @@
       
       <tag>Data Structure</tag>
       
-      <tag>团体程序设计天梯赛</tag>
-      
       <tag>C++</tag>
+      
+      <tag>团体程序设计天梯赛</tag>
       
       <tag>Sort</tag>
       
@@ -854,11 +881,11 @@
     
     <tags>
       
-      <tag>团体程序设计天梯赛</tag>
-      
       <tag>C++</tag>
       
       <tag>Set</tag>
+      
+      <tag>团体程序设计天梯赛</tag>
       
       <tag>模拟</tag>
       
@@ -914,9 +941,9 @@
       
       <tag>Data Structure</tag>
       
-      <tag>团体程序设计天梯赛</tag>
-      
       <tag>C++</tag>
+      
+      <tag>团体程序设计天梯赛</tag>
       
       <tag>Graph</tag>
       
@@ -947,9 +974,9 @@
     
     <tags>
       
-      <tag>团体程序设计天梯赛</tag>
-      
       <tag>C++</tag>
+      
+      <tag>团体程序设计天梯赛</tag>
       
       <tag>Sort</tag>
       
@@ -980,9 +1007,9 @@
     
     <tags>
       
-      <tag>团体程序设计天梯赛</tag>
-      
       <tag>C++</tag>
+      
+      <tag>团体程序设计天梯赛</tag>
       
       <tag>Sort</tag>
       
@@ -1015,9 +1042,9 @@
       
       <tag>Data Structure</tag>
       
-      <tag>团体程序设计天梯赛</tag>
-      
       <tag>C++</tag>
+      
+      <tag>团体程序设计天梯赛</tag>
       
       <tag>Graph</tag>
       
@@ -1050,9 +1077,9 @@
       
       <tag>Data Structure</tag>
       
-      <tag>团体程序设计天梯赛</tag>
-      
       <tag>C++</tag>
+      
+      <tag>团体程序设计天梯赛</tag>
       
       <tag>Binary tree</tag>
       
@@ -1083,9 +1110,9 @@
       
       <tag>Data Structure</tag>
       
-      <tag>团体程序设计天梯赛</tag>
-      
       <tag>C++</tag>
+      
+      <tag>团体程序设计天梯赛</tag>
       
       <tag>Binary tree</tag>
       
@@ -1114,9 +1141,9 @@
       
       <tag>Data Structure</tag>
       
-      <tag>团体程序设计天梯赛</tag>
-      
       <tag>C++</tag>
+      
+      <tag>团体程序设计天梯赛</tag>
       
       <tag>邻接表</tag>
       
@@ -1151,9 +1178,9 @@
       
       <tag>Data Structure</tag>
       
-      <tag>团体程序设计天梯赛</tag>
-      
       <tag>C++</tag>
+      
+      <tag>团体程序设计天梯赛</tag>
       
       <tag>邻接表</tag>
       
@@ -1180,9 +1207,9 @@
       
       <tag>Data Structure</tag>
       
-      <tag>团体程序设计天梯赛</tag>
-      
       <tag>C++</tag>
+      
+      <tag>团体程序设计天梯赛</tag>
       
       <tag>Sort</tag>
       
@@ -1211,9 +1238,9 @@
       
       <tag>Data Structure</tag>
       
-      <tag>团体程序设计天梯赛</tag>
-      
       <tag>C++</tag>
+      
+      <tag>团体程序设计天梯赛</tag>
       
       <tag>邻接表</tag>
       
@@ -1248,11 +1275,11 @@
       
       <tag>Data Structure</tag>
       
-      <tag>团体程序设计天梯赛</tag>
-      
       <tag>C++</tag>
       
       <tag>Set</tag>
+      
+      <tag>团体程序设计天梯赛</tag>
       
       <tag>Graph</tag>
       
@@ -1283,11 +1310,11 @@
     
     <tags>
       
-      <tag>LinkList</tag>
+      <tag>C++</tag>
       
       <tag>团体程序设计天梯赛</tag>
       
-      <tag>C++</tag>
+      <tag>LinkList</tag>
       
       <tag>双向链表</tag>
       
@@ -1314,13 +1341,13 @@
     
     <tags>
       
-      <tag>团体程序设计天梯赛</tag>
+      <tag>STL</tag>
       
       <tag>C++</tag>
       
-      <tag>STL</tag>
-      
       <tag>Set</tag>
+      
+      <tag>团体程序设计天梯赛</tag>
       
       <tag>Sort</tag>
       
@@ -1347,13 +1374,13 @@
     
     <tags>
       
-      <tag>C++</tag>
-      
       <tag>String</tag>
       
       <tag>Find</tag>
       
       <tag>STL</tag>
+      
+      <tag>C++</tag>
       
     </tags>
     
