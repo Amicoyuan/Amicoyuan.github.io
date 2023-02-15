@@ -9,43 +9,43 @@
         <lastBuildDate>Sun, 12 Feb 2023 21:11:56 +0800</lastBuildDate>
         <category>AVX</category>
         <category>Data Structure</category>
-        <category>Set</category>
+        <category>LinkList</category>
         <category>团体程序设计天梯赛</category>
-        <category>STL</category>
         <category>C++</category>
-        <category>Sort</category>
+        <category>双向链表</category>
         <category>String</category>
         <category>Find</category>
-        <category>Binary tree</category>
+        <category>STL</category>
+        <category>Set</category>
+        <category>Sort</category>
+        <category>Graph</category>
         <category>邻接表</category>
         <category>Vector</category>
+        <category>Binary tree</category>
         <category>BFS</category>
-        <category>Graph</category>
         <category>模拟</category>
-        <category>LinkList</category>
-        <category>双向链表</category>
         <category>邻接矩阵</category>
         <category>DFS</category>
         <category>结构体</category>
-        <category>贪心</category>
         <category>Double类型相等比较</category>
+        <category>贪心</category>
         <category>并查集</category>
         <category>Map</category>
         <category>Pair</category>
         <category>Linux</category>
         <category>MPI</category>
-        <category>AVX2</category>
         <category>dgemm</category>
+        <category>AVX2</category>
         <category>CUDA</category>
         <category>Matrix</category>
         <category>Mirror</category>
         <category>牛客</category>
         <category>Numactl</category>
         <category>OpenMP</category>
-        <category>Slurm</category>
         <category>C/C++</category>
         <category>register</category>
         <category>Tensorflow</category>
+        <category>Slurm</category>
         <category>性能分析工具</category>
         <category>gcov</category>
         <item>
@@ -150,7 +150,45 @@
 &lt;p&gt;在终端中，您将看到输出:&lt;/p&gt;
 &lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs shell&#34;&gt;BLISLAB_USE_INTEL = false&lt;br&gt;COMILER_OPT_LEVEL =O0&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
-&lt;h4 id=&#34;2-3-6-Optional-Use-optimized-BLAS-library-as-reference-implementation&#34;&gt;&lt;a href=&#34;#2-3-6-Optional-Use-optimized-BLAS-library-as-reference-implementation&#34; class=&#34;headerlink&#34; title=&#34;2.3.6 (Optional) Use optimized BLAS library as reference implementation&#34;&gt;&lt;/a&gt;2.3.6 (Optional) Use optimized BLAS library as reference implementation&lt;/h4&gt; ]]></description>
+&lt;h4 id=&#34;2-3-6-Optional-Use-optimized-BLAS-library-as-reference-implementation&#34;&gt;&lt;a href=&#34;#2-3-6-Optional-Use-optimized-BLAS-library-as-reference-implementation&#34; class=&#34;headerlink&#34; title=&#34;2.3.6 (Optional) Use optimized BLAS library as reference implementation&#34;&gt;&lt;/a&gt;2.3.6 (Optional) Use optimized BLAS library as reference implementation&lt;/h4&gt;&lt;p&gt;默认情况下，您的参考Gemm实现是一个非常缓慢的三循环实现。如果你在测试机器上安装了BLAS库，你可以通过设置该库中的dgemm作为你的参考实现:&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs shell&#34;&gt;BLISLAB_USE_BLAS=true&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;在sourceme.sh。如果使用Intel编译器，则不需要显式指定MKL的路径。但是，如果使用GNU编译器，则需要指定BLAS库的路径。例如，您可能希望从&lt;a href=&#34;https://github.com/flame/blis%E5%AE%89%E8%A3%85%E6%88%91%E4%BB%AC%E7%9A%84BLIS%E5%BA%93%E5%88%B0/home/lib/blis%E7%9B%AE%E5%BD%95%E5%90%8C%E6%97%B6%E5%9C%A8sourceme&#34;&gt;https://github.com/flame/blis安装我们的BLIS库到/home/lib/blis目录同时在sourceme&lt;/a&gt; .sh中设置&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs shell&#34;&gt;BLAS_DIR=/home/lib/blis&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;执行**$ source sourceme .sh**后，你会看到:&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs shell&#34;&gt;BLISLAB_USE_BLAS = true&lt;br&gt;BLAS_DIR = /home/lib/blis&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;现在，您的实现的性能和准确性将与这个优化的库例程进行比较。&lt;/p&gt;
+&lt;h3 id=&#34;2-4-Basic-techniques&#34;&gt;&lt;a href=&#34;#2-4-Basic-techniques&#34; class=&#34;headerlink&#34; title=&#34;2.4 Basic techniques&#34;&gt;&lt;/a&gt;2.4 Basic techniques&lt;/h3&gt;&lt;p&gt;在本小节中，我们将介绍一些基本的交易技巧。&lt;/p&gt;
+&lt;h4 id=&#34;2-4-1-Using-pointers&#34;&gt;&lt;a href=&#34;#2-4-1-Using-pointers&#34; class=&#34;headerlink&#34; title=&#34;2.4.1 Using pointers&#34;&gt;&lt;/a&gt;2.4.1 Using pointers&lt;/h4&gt;&lt;p&gt;既然优化被关闭了，那么矩阵元素所在地址的计算将显式地公开。(优化编译器可以消除这种开销。)您要做的是更改my_gemm.c中的实现，以便它使用指针。在这样做之前，您可能需要备份原始的my_gemm.c，以防需要从头开始重新启动。实际上，在每个步骤中，您可能都希望在单独的文件中备份前面的实现&lt;/p&gt;
+&lt;p&gt;这是基本的想法。假设我们想把C中的所有元素都设为0。一个基本的循环，按照在my_gemm.c中找到的内容来设计&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;( i = &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;; i &amp;lt; m; i++)&amp;#123;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;( j = &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;; j &amp;lt; n; j++)&amp;#123;&lt;br&gt;        &lt;span class=&#34;hljs-built_in&#34;&gt;C&lt;/span&gt;(i,j) =&lt;span class=&#34;hljs-number&#34;&gt;0.0&lt;/span&gt;;&lt;br&gt;    &amp;#125;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;Using pointers, we might implement this as&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;double&lt;/span&gt; *cp;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;( j = &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;; j &amp;lt; n; j++)&amp;#123;&lt;br&gt;    cp = &amp;amp;C[ j*ldc ];			&lt;span class=&#34;hljs-comment&#34;&gt;//point cp to top of ith column&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;( i = &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;; i &amp;lt; m; i++)&amp;#123;&lt;br&gt;        *cp++ = &lt;span class=&#34;hljs-number&#34;&gt;0.0&lt;/span&gt;;		&lt;span class=&#34;hljs-comment&#34;&gt;//set element that cp points to to zero and&lt;/span&gt;&lt;br&gt;    &amp;#125;		&lt;span class=&#34;hljs-comment&#34;&gt;//advance the pointer&lt;/span&gt;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;注意，我们有意地交换了循环的顺序，以便向前移动指针将我们带到C的列中。&lt;/p&gt;
+&lt;h4 id=&#34;2-4-2-Loop-unrolling&#34;&gt;&lt;a href=&#34;#2-4-2-Loop-unrolling&#34; class=&#34;headerlink&#34; title=&#34;2.4.2 Loop unrolling&#34;&gt;&lt;/a&gt;2.4.2 Loop unrolling&lt;/h4&gt;&lt;p&gt;每次通过内部循环更新循环索引i和指针cp都会产生相当大的开销。&lt;/p&gt;
+&lt;p&gt;因此，编译器将执行循环展开。使用展开因子4，我们将C设置为0的简单循环变成&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;double&lt;/span&gt; *cp;&lt;br&gt;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;( j = &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;; j &amp;lt; n; j++)&amp;#123;&lt;br&gt;    cp = &amp;amp;C[ j * ldc ];&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;( i = &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;; i &amp;lt; m; i+=&lt;span class=&#34;hljs-number&#34;&gt;4&lt;/span&gt;)&amp;#123;&lt;br&gt;        *(cp+&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;) = &lt;span class=&#34;hljs-number&#34;&gt;0.0&lt;/span&gt;;&lt;br&gt;        *(cp+&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;) = &lt;span class=&#34;hljs-number&#34;&gt;0.0&lt;/span&gt;;&lt;br&gt;        *(cp+&lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt;) = &lt;span class=&#34;hljs-number&#34;&gt;0.0&lt;/span&gt;;&lt;br&gt;        *(cp+&lt;span class=&#34;hljs-number&#34;&gt;3&lt;/span&gt;) = &lt;span class=&#34;hljs-number&#34;&gt;0.0&lt;/span&gt;;&lt;br&gt;        cp+=&lt;span class=&#34;hljs-number&#34;&gt;4&lt;/span&gt;;&lt;br&gt;    &amp;#125;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;重要的&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;i和cp现在每四次迭代才更新一次。&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;(cp+0)使用称为间接寻址的机器指令，这比使用&lt;/em&gt;(cp+k)计算更有效，其中k是变量。&lt;/li&gt;
+&lt;li&gt;当它从内存中输入数据到缓存中时，每次输入一条64字节的缓存线。这意味着以64字节的块访问连续数据可以减少内存层之间的内存移动成本。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;请注意，在展开时，如果m不是4的倍数，则可能必须处理“边缘”。&lt;/p&gt;
+&lt;p&gt;为了这个练习，你不需要担心这个边缘，只要你明智地选择你的采样块大小，就像第2.5节重申的那样。&lt;/p&gt;
+&lt;h4 id=&#34;2-4-3-Register-variables&#34;&gt;&lt;a href=&#34;#2-4-3-Register-variables&#34; class=&#34;headerlink&#34; title=&#34;2.4.3 Register variables&#34;&gt;&lt;/a&gt;2.4.3 Register variables&lt;/h4&gt;&lt;p&gt;注意，只有当数据存储在寄存器中时，计算才会发生。编译器将自动转换代码，以便插入将某些数据放入寄存器的中间步骤。可以给编译器一个提示，将某些数据保存在寄存器中是很好的，如下面的例子所示:&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;double&lt;/span&gt; *cp;&lt;br&gt;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;( j = &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;; j &amp;lt; n; j++)&amp;#123;&lt;br&gt;    cp = &amp;amp;C[ j * ldc ];&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;( i = &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;; i &amp;lt; m; i+=&lt;span class=&#34;hljs-number&#34;&gt;4&lt;/span&gt;)&amp;#123;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;register&lt;/span&gt; &lt;span class=&#34;hljs-keyword&#34;&gt;double&lt;/span&gt; c0 =&lt;span class=&#34;hljs-number&#34;&gt;0.0&lt;/span&gt;,c1=&lt;span class=&#34;hljs-number&#34;&gt;0.0&lt;/span&gt;.c2=&lt;span class=&#34;hljs-number&#34;&gt;0.0&lt;/span&gt;,c3=&lt;span class=&#34;hljs-number&#34;&gt;0.0&lt;/span&gt;;&lt;br&gt;        *(cp+&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;) = c0;&lt;br&gt;        *(cp+&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;) = c1;&lt;br&gt;        *(cp+&lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt;) = c2;&lt;br&gt;        *(cp+&lt;span class=&#34;hljs-number&#34;&gt;3&lt;/span&gt;) = c3;&lt;br&gt;        cp+=&lt;span class=&#34;hljs-number&#34;&gt;4&lt;/span&gt;;&lt;br&gt;    &amp;#125;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h4 id=&#34;2-5-A-modest-first-goal&#34;&gt;&lt;a href=&#34;#2-5-A-modest-first-goal&#34; class=&#34;headerlink&#34; title=&#34;2.5 A modest first goal&#34;&gt;&lt;/a&gt;2.5 A modest first goal&lt;/h4&gt;&lt;p&gt;现在我们要求您使用上面讨论的技术来优化my_dgemm.c。现在，只需要考虑如何为较小的矩阵获得更好的性能。具体来说，请看下面这张图:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/02/12/blislib002/image-20230215110352304.png&#34; alt=&#34;image-20230215110352304&#34;&gt;&lt;/p&gt;
+&lt;p&gt;我们想让你做的是编写你的代码，使C的mR × nR块保存在寄存器中。你可以选择mR和nR，但是你需要用这些选项更新文件&lt;strong&gt;include&amp;#x2F;bl_config.h&lt;/strong&gt;。这确保了测试驱动程序只尝试这些块大小的倍数的问题大小，所以您不必担心“边缘”。&lt;/p&gt;
+&lt;p&gt;您将注意到，即使对于可以放入某个缓存内存中的较小的矩阵，您的实现(比您可能已安装的MKL或其他优化的BLAS库的实现差得多)。原因是编译器没有为浮点运算使用最快的指令。可以通过使用向量intrinsic funtions函数(允许您从C显式地利用它们)或通过在汇编代码中编码来访问这些函数。现在，我们还没到那一步。我们将&lt;br&gt;在步骤3中讨论更多。&lt;/p&gt;
+ ]]></description>
         </item>
         <item>
             <guid isPermalink="true">http://example.com/2023/02/07/niuke003/</guid>
