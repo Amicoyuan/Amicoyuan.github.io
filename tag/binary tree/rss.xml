@@ -9,15 +9,15 @@
         <lastBuildDate>Thu, 14 Apr 2022 14:01:10 +0800</lastBuildDate>
         <category>AVX</category>
         <category>Data Structure</category>
+        <category>LinkList</category>
+        <category>团体程序设计天梯赛</category>
+        <category>C++</category>
+        <category>双向链表</category>
         <category>String</category>
         <category>Find</category>
         <category>STL</category>
-        <category>C++</category>
         <category>Set</category>
-        <category>团体程序设计天梯赛</category>
         <category>Sort</category>
-        <category>LinkList</category>
-        <category>双向链表</category>
         <category>Graph</category>
         <category>邻接表</category>
         <category>Vector</category>
@@ -28,9 +28,9 @@
         <category>DFS</category>
         <category>结构体</category>
         <category>贪心</category>
-        <category>Map</category>
         <category>Double类型相等比较</category>
         <category>并查集</category>
+        <category>Map</category>
         <category>Pair</category>
         <category>Linux</category>
         <category>MPI</category>
@@ -53,8 +53,8 @@
             <title>L2-011 玩转二叉树 (25 分)</title>
             <link>http://example.com/2022/04/14/Algorithm024/</link>
             <category>Data Structure</category>
-            <category>C++</category>
             <category>团体程序设计天梯赛</category>
+            <category>C++</category>
             <category>Binary tree</category>
             <category>BFS</category>
             <pubDate>Thu, 14 Apr 2022 14:01:10 +0800</pubDate>
@@ -80,8 +80,8 @@
             <title>L2-035 完全二叉树的层序遍历 (25 分)</title>
             <link>http://example.com/2022/04/14/Algorithm023/</link>
             <category>Data Structure</category>
-            <category>C++</category>
             <category>团体程序设计天梯赛</category>
+            <category>C++</category>
             <category>Binary tree</category>
             <pubDate>Thu, 14 Apr 2022 14:01:05 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;L2-035-完全二叉树的层序遍历-25-分&#34;&gt;&lt;a href=&#34;#L2-035-完全二叉树的层序遍历-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-035 完全二叉树的层序遍历 (25 分)&#34;&gt;&lt;/a&gt;L2-035 完全二叉树的层序遍历 (25 分)&lt;/h2&gt;&lt;p&gt;一个二叉树，如果每一个层的结点数都达到最大值，则这个二叉树就是&lt;strong&gt;完美二叉树&lt;/strong&gt;。对于深度为 &lt;em&gt;D&lt;/em&gt; 的，有 &lt;em&gt;N&lt;/em&gt; 个结点的二叉树，若其结点对应于相同深度完美二叉树的层序遍历的前 &lt;em&gt;N&lt;/em&gt; 个结点，这样的树就是&lt;strong&gt;完全二叉树&lt;/strong&gt;。&lt;/p&gt;
@@ -103,8 +103,8 @@
             <title>L2-031 深入虎穴 (25 分)</title>
             <link>http://example.com/2022/04/13/Algorithm022/</link>
             <category>Data Structure</category>
-            <category>C++</category>
             <category>团体程序设计天梯赛</category>
+            <category>C++</category>
             <category>邻接表</category>
             <category>Vector</category>
             <category>Binary tree</category>
@@ -132,8 +132,8 @@
             <title>L2-026 小字辈 (25 分)</title>
             <link>http://example.com/2022/04/13/Algorithm019/</link>
             <category>Data Structure</category>
-            <category>C++</category>
             <category>团体程序设计天梯赛</category>
+            <category>C++</category>
             <category>邻接表</category>
             <category>Vector</category>
             <category>Binary tree</category>
