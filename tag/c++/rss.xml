@@ -5,19 +5,19 @@
         <link>http://example.com</link>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Tue, 07 Feb 2023 18:21:41 +0800</pubDate>
-        <lastBuildDate>Tue, 07 Feb 2023 18:21:41 +0800</lastBuildDate>
+        <pubDate>Fri, 17 Feb 2023 14:31:45 +0800</pubDate>
+        <lastBuildDate>Fri, 17 Feb 2023 14:31:45 +0800</lastBuildDate>
         <category>AVX</category>
         <category>Data Structure</category>
-        <category>LinkList</category>
-        <category>团体程序设计天梯赛</category>
-        <category>C++</category>
-        <category>双向链表</category>
         <category>String</category>
         <category>Find</category>
         <category>STL</category>
+        <category>C++</category>
         <category>Set</category>
+        <category>团体程序设计天梯赛</category>
         <category>Sort</category>
+        <category>LinkList</category>
+        <category>双向链表</category>
         <category>Graph</category>
         <category>邻接表</category>
         <category>Vector</category>
@@ -34,9 +34,10 @@
         <category>Pair</category>
         <category>Linux</category>
         <category>MPI</category>
-        <category>AVX2</category>
         <category>dgemm</category>
+        <category>AVX2</category>
         <category>CUDA</category>
+        <category>LeetCode</category>
         <category>Matrix</category>
         <category>Mirror</category>
         <category>牛客</category>
@@ -48,6 +49,19 @@
         <category>Tensorflow</category>
         <category>性能分析工具</category>
         <category>gcov</category>
+        <item>
+            <guid isPermalink="true">http://example.com/2023/02/17/leetcode001/</guid>
+            <title>146.LRU cache</title>
+            <link>http://example.com/2023/02/17/leetcode001/</link>
+            <category>C++</category>
+            <category>LeetCode</category>
+            <pubDate>Fri, 17 Feb 2023 14:31:45 +0800</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;146-LRU-cache&#34;&gt;&lt;a href=&#34;#146-LRU-cache&#34; class=&#34;headerlink&#34; title=&#34;146.LRU cache&#34;&gt;&lt;/a&gt;146.LRU cache&lt;/h2&gt;&lt;h2 id=&#34;题目链接&#34;&gt;&lt;a href=&#34;#题目链接&#34; class=&#34;headerlink&#34; title=&#34;题目链接&#34;&gt;&lt;/a&gt;题目链接&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://leetcode.cn/problems/lru-cache/&#34;&gt;146. LRU 缓存 - 力扣（LeetCode）&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;完整代码&#34;&gt;&lt;a href=&#34;#完整代码&#34; class=&#34;headerlink&#34; title=&#34;完整代码&#34;&gt;&lt;/a&gt;完整代码&lt;/h2&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;41&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-class&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;LRUCache&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;private&lt;/span&gt;:&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; cap=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;&lt;br&gt;    list&amp;lt;pair&amp;lt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;,&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;&amp;gt;&amp;gt; lru;   &lt;span class=&#34;hljs-comment&#34;&gt;//真正的cache&lt;/span&gt;&lt;br&gt;    unordered_map&amp;lt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;,list&amp;lt;pair&amp;lt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;,&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;&amp;gt;&amp;gt;::iterator&amp;gt; mp;   &lt;span class=&#34;hljs-comment&#34;&gt;//主要用处就是查找&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;public&lt;/span&gt;:&lt;br&gt;    &lt;span class=&#34;hljs-built_in&#34;&gt;LRUCache&lt;/span&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; capacity) &amp;#123;&lt;br&gt;        cap = capacity;						&lt;span class=&#34;hljs-comment&#34;&gt;//容量&lt;/span&gt;&lt;br&gt;    &amp;#125;&lt;br&gt;    &lt;br&gt;    &lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;get&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; key)&lt;/span&gt; &lt;/span&gt;&amp;#123;						&lt;span class=&#34;hljs-comment&#34;&gt;//作为就是把最近访问的放在表头&lt;/span&gt;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(mp.&lt;span class=&#34;hljs-built_in&#34;&gt;find&lt;/span&gt;(key)!=mp.&lt;span class=&#34;hljs-built_in&#34;&gt;end&lt;/span&gt;())&amp;#123;							&lt;span class=&#34;hljs-comment&#34;&gt;//有这个元素&lt;/span&gt;&lt;br&gt;            lru.&lt;span class=&#34;hljs-built_in&#34;&gt;splice&lt;/span&gt;(lru.&lt;span class=&#34;hljs-built_in&#34;&gt;begin&lt;/span&gt;(),lru,mp[key]);			&lt;span class=&#34;hljs-comment&#34;&gt;//将一个 list 容器中的元素插入到另一个容器的指定位置&lt;/span&gt;&lt;br&gt;            &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; lru.&lt;span class=&#34;hljs-built_in&#34;&gt;begin&lt;/span&gt;()-&amp;gt;second;				&lt;span class=&#34;hljs-comment&#34;&gt;//返回元素&lt;/span&gt;&lt;br&gt;        &amp;#125;&lt;span class=&#34;hljs-keyword&#34;&gt;else&lt;/span&gt;&amp;#123;&lt;br&gt;            &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;-1&lt;/span&gt;;								&lt;span class=&#34;hljs-comment&#34;&gt;//没有这个元素&lt;/span&gt;&lt;br&gt;        &amp;#125;&lt;br&gt;    &amp;#125;&lt;br&gt;&lt;br&gt;    &lt;br&gt;    &lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;put&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; key, &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; value)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(&lt;span class=&#34;hljs-built_in&#34;&gt;get&lt;/span&gt;(key)!=&lt;span class=&#34;hljs-number&#34;&gt;-1&lt;/span&gt;)&amp;#123;				&lt;span class=&#34;hljs-comment&#34;&gt;//cache中有key，调用get后自动插入到表头【key存在】&lt;/span&gt;&lt;br&gt;            lru.&lt;span class=&#34;hljs-built_in&#34;&gt;begin&lt;/span&gt;()-&amp;gt;second = value;&lt;br&gt;        &amp;#125;&lt;span class=&#34;hljs-keyword&#34;&gt;else&lt;/span&gt;&amp;#123;			&lt;span class=&#34;hljs-comment&#34;&gt;//【key不存在】&lt;/span&gt;&lt;br&gt;            &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(lru.&lt;span class=&#34;hljs-built_in&#34;&gt;size&lt;/span&gt;()==cap)&amp;#123;			&lt;span class=&#34;hljs-comment&#34;&gt;//如果容量满了&lt;/span&gt;&lt;br&gt;                &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; delkey = lru.&lt;span class=&#34;hljs-built_in&#34;&gt;back&lt;/span&gt;().first;		 &lt;span class=&#34;hljs-comment&#34;&gt;//记录最久未访问的key&lt;/span&gt;&lt;br&gt;                lru.&lt;span class=&#34;hljs-built_in&#34;&gt;pop_back&lt;/span&gt;();						 &lt;span class=&#34;hljs-comment&#34;&gt;//pop掉，置换&lt;/span&gt;&lt;br&gt;                mp.&lt;span class=&#34;hljs-built_in&#34;&gt;erase&lt;/span&gt;(delkey);					 &lt;span class=&#34;hljs-comment&#34;&gt;//查找表中也删除	&lt;/span&gt;&lt;br&gt;            &amp;#125;&lt;br&gt;            lru.&lt;span class=&#34;hljs-built_in&#34;&gt;emplace_front&lt;/span&gt;(key,value);			&lt;span class=&#34;hljs-comment&#34;&gt;//头部生成一个元素&lt;/span&gt;&lt;br&gt;            mp[key]=lru.&lt;span class=&#34;hljs-built_in&#34;&gt;begin&lt;/span&gt;();					&lt;span class=&#34;hljs-comment&#34;&gt;//加入查找表&lt;/span&gt;&lt;br&gt;        &amp;#125;&lt;br&gt;    &amp;#125;&lt;br&gt;&amp;#125;;&lt;br&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;/**&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt; * Your LRUCache object will be instantiated and called as such:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt; * LRUCache* obj = new LRUCache(capacity);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt; * int param_1 = obj-&amp;gt;get(key);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt; * obj-&amp;gt;put(key,value);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt; */&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h2 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://www.jianshu.com/p/bbea4b2410e6&#34;&gt;C++实现LRU缓存——LeetCode146 - 简书 (jianshu.com)&lt;/a&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">http://example.com/2023/02/07/niuke003/</guid>
             <title>JZ6 从尾到头打印链表</title>
@@ -96,8 +110,8 @@
             <title>L2-036 网红点打卡攻略 (25 分)</title>
             <link>http://example.com/2022/04/23/Algorithm032/</link>
             <category>Data Structure</category>
-            <category>团体程序设计天梯赛</category>
             <category>C++</category>
+            <category>团体程序设计天梯赛</category>
             <category>Graph</category>
             <category>邻接矩阵</category>
             <pubDate>Sat, 23 Apr 2022 21:50:27 +0800</pubDate>
@@ -127,8 +141,8 @@
             <title>L2-039 清点代码库 (25 分)</title>
             <link>http://example.com/2022/04/23/Algorithm031/</link>
             <category>Data Structure</category>
-            <category>团体程序设计天梯赛</category>
             <category>C++</category>
+            <category>团体程序设计天梯赛</category>
             <category>Sort</category>
             <category>Vector</category>
             <category>Map</category>
@@ -155,9 +169,9 @@
             <guid isPermalink="true">http://example.com/2022/04/23/Algorithm030/</guid>
             <title>L2-005 集合相似度 (25 分)</title>
             <link>http://example.com/2022/04/23/Algorithm030/</link>
-            <category>团体程序设计天梯赛</category>
             <category>C++</category>
             <category>Set</category>
+            <category>团体程序设计天梯赛</category>
             <category>模拟</category>
             <pubDate>Sat, 23 Apr 2022 21:39:53 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;L2-005-集合相似度-25-分&#34;&gt;&lt;a href=&#34;#L2-005-集合相似度-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-005 集合相似度 (25 分)&#34;&gt;&lt;/a&gt;L2-005 集合相似度 (25 分)&lt;/h2&gt;&lt;p&gt;给定两个整数集合，它们的相似度定义为：Nc&amp;#x2F;Nt×100%。其中Nc是两个集合都有的不相等整数的个数，Nt是两个集合一共有的不相等整数的个数。你的任务就是计算任意一对给定集合的相似度。&lt;/p&gt;
@@ -179,8 +193,8 @@
             <title>L2-010 排座位 (25 分)</title>
             <link>http://example.com/2022/04/16/Algorithm028/</link>
             <category>Data Structure</category>
-            <category>团体程序设计天梯赛</category>
             <category>C++</category>
+            <category>团体程序设计天梯赛</category>
             <category>Graph</category>
             <category>邻接矩阵</category>
             <category>并查集</category>
@@ -206,8 +220,8 @@
             <guid isPermalink="true">http://example.com/2022/04/16/Algorithm027/</guid>
             <title>L2-009 抢红包 (25 分)</title>
             <link>http://example.com/2022/04/16/Algorithm027/</link>
-            <category>团体程序设计天梯赛</category>
             <category>C++</category>
+            <category>团体程序设计天梯赛</category>
             <category>Sort</category>
             <category>结构体</category>
             <category>Double类型相等比较</category>
@@ -235,8 +249,8 @@
             <guid isPermalink="true">http://example.com/2022/04/15/Algorithm026/</guid>
             <title>L2-003 月饼 (25 分)</title>
             <link>http://example.com/2022/04/15/Algorithm026/</link>
-            <category>团体程序设计天梯赛</category>
             <category>C++</category>
+            <category>团体程序设计天梯赛</category>
             <category>Sort</category>
             <category>结构体</category>
             <category>贪心</category>
@@ -260,8 +274,8 @@
             <title>L2-013 红色警报 (25 分)</title>
             <link>http://example.com/2022/04/15/Algorithm025/</link>
             <category>Data Structure</category>
-            <category>团体程序设计天梯赛</category>
             <category>C++</category>
+            <category>团体程序设计天梯赛</category>
             <category>Graph</category>
             <category>邻接矩阵</category>
             <category>DFS</category>
@@ -288,8 +302,8 @@
             <title>L2-011 玩转二叉树 (25 分)</title>
             <link>http://example.com/2022/04/14/Algorithm024/</link>
             <category>Data Structure</category>
-            <category>团体程序设计天梯赛</category>
             <category>C++</category>
+            <category>团体程序设计天梯赛</category>
             <category>Binary tree</category>
             <category>BFS</category>
             <pubDate>Thu, 14 Apr 2022 14:01:10 +0800</pubDate>
@@ -315,8 +329,8 @@
             <title>L2-035 完全二叉树的层序遍历 (25 分)</title>
             <link>http://example.com/2022/04/14/Algorithm023/</link>
             <category>Data Structure</category>
-            <category>团体程序设计天梯赛</category>
             <category>C++</category>
+            <category>团体程序设计天梯赛</category>
             <category>Binary tree</category>
             <pubDate>Thu, 14 Apr 2022 14:01:05 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;L2-035-完全二叉树的层序遍历-25-分&#34;&gt;&lt;a href=&#34;#L2-035-完全二叉树的层序遍历-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-035 完全二叉树的层序遍历 (25 分)&#34;&gt;&lt;/a&gt;L2-035 完全二叉树的层序遍历 (25 分)&lt;/h2&gt;&lt;p&gt;一个二叉树，如果每一个层的结点数都达到最大值，则这个二叉树就是&lt;strong&gt;完美二叉树&lt;/strong&gt;。对于深度为 &lt;em&gt;D&lt;/em&gt; 的，有 &lt;em&gt;N&lt;/em&gt; 个结点的二叉树，若其结点对应于相同深度完美二叉树的层序遍历的前 &lt;em&gt;N&lt;/em&gt; 个结点，这样的树就是&lt;strong&gt;完全二叉树&lt;/strong&gt;。&lt;/p&gt;
@@ -338,8 +352,8 @@
             <title>L2-031 深入虎穴 (25 分)</title>
             <link>http://example.com/2022/04/13/Algorithm022/</link>
             <category>Data Structure</category>
-            <category>团体程序设计天梯赛</category>
             <category>C++</category>
+            <category>团体程序设计天梯赛</category>
             <category>邻接表</category>
             <category>Vector</category>
             <category>Binary tree</category>
@@ -367,8 +381,8 @@
             <title>L2-040 哲哲打游戏 (25 分)</title>
             <link>http://example.com/2022/04/13/Algorithm021/</link>
             <category>Data Structure</category>
-            <category>团体程序设计天梯赛</category>
             <category>C++</category>
+            <category>团体程序设计天梯赛</category>
             <category>邻接表</category>
             <category>Vector</category>
             <category>模拟</category>
@@ -405,8 +419,8 @@
             <title>L2-027 名人堂与代金券 (25 分)</title>
             <link>http://example.com/2022/04/13/Algorithm020/</link>
             <category>Data Structure</category>
-            <category>团体程序设计天梯赛</category>
             <category>C++</category>
+            <category>团体程序设计天梯赛</category>
             <category>Sort</category>
             <pubDate>Wed, 13 Apr 2022 09:45:55 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;L2-027-名人堂与代金券-25-分&#34;&gt;&lt;a href=&#34;#L2-027-名人堂与代金券-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-027 名人堂与代金券 (25 分)&#34;&gt;&lt;/a&gt;L2-027 名人堂与代金券 (25 分)&lt;/h2&gt;&lt;p&gt;对于在中国大学MOOC（&lt;a href=&#34;http://www.icourse163.org/&#34;&gt;http://www.icourse163.org/&lt;/a&gt; ）学习“数据结构”课程的学生，想要获得一张合格证书，总评成绩必须达到 60 分及以上，并且有另加福利：总评分在 [G, 100] 区间内者，可以得到 50 元 PAT 代金券；在 [60, G) 区间内者，可以得到 20 元PAT代金券。全国考点通用，一年有效。同时任课老师还会把总评成绩前 K 名的学生列入课程“名人堂”。本题就请你编写程序，帮助老师列出名人堂的学生，并统计一共发出了面值多少元的 PAT 代金券。&lt;/p&gt;
@@ -427,8 +441,8 @@
             <title>L2-026 小字辈 (25 分)</title>
             <link>http://example.com/2022/04/13/Algorithm019/</link>
             <category>Data Structure</category>
-            <category>团体程序设计天梯赛</category>
             <category>C++</category>
+            <category>团体程序设计天梯赛</category>
             <category>邻接表</category>
             <category>Vector</category>
             <category>Binary tree</category>
@@ -452,9 +466,9 @@
             <title>L2-023 图着色问题 (25 分)</title>
             <link>http://example.com/2022/04/12/Algorithm018/</link>
             <category>Data Structure</category>
-            <category>团体程序设计天梯赛</category>
             <category>C++</category>
             <category>Set</category>
+            <category>团体程序设计天梯赛</category>
             <category>Graph</category>
             <category>邻接表</category>
             <category>Vector</category>
@@ -479,9 +493,9 @@
             <guid isPermalink="true">http://example.com/2022/04/12/Algorithm017/</guid>
             <title>L2-022 重排链表 (25 分)</title>
             <link>http://example.com/2022/04/12/Algorithm017/</link>
-            <category>LinkList</category>
-            <category>团体程序设计天梯赛</category>
             <category>C++</category>
+            <category>团体程序设计天梯赛</category>
+            <category>LinkList</category>
             <category>双向链表</category>
             <pubDate>Tue, 12 Apr 2022 09:50:11 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;L2-022-重排链表-25-分&#34;&gt;&lt;a href=&#34;#L2-022-重排链表-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-022 重排链表 (25 分)&#34;&gt;&lt;/a&gt;L2-022 重排链表 (25 分)&lt;/h2&gt;&lt;p&gt;给定一个单链表 &lt;em&gt;L&lt;/em&gt;1→&lt;em&gt;L&lt;/em&gt;2→⋯→&lt;em&gt;Ln&lt;/em&gt;−1→&lt;em&gt;Ln&lt;/em&gt;，请编写程序将链表重新排列为 &lt;em&gt;Ln&lt;/em&gt;→&lt;em&gt;L&lt;/em&gt;1→&lt;em&gt;Ln&lt;/em&gt;−1→&lt;em&gt;L&lt;/em&gt;2→⋯。例如：给定&lt;em&gt;L&lt;/em&gt;为1→2→3→4→5→6，则输出应该为6→1→5→2→4→3。&lt;/p&gt;
@@ -505,10 +519,10 @@
             <guid isPermalink="true">http://example.com/2022/04/11/Algorithm016/</guid>
             <title>L2-021 点赞狂魔 (25 分)</title>
             <link>http://example.com/2022/04/11/Algorithm016/</link>
-            <category>团体程序设计天梯赛</category>
-            <category>C++</category>
             <category>STL</category>
+            <category>C++</category>
             <category>Set</category>
+            <category>团体程序设计天梯赛</category>
             <category>Sort</category>
             <pubDate>Mon, 11 Apr 2022 19:21:06 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;L2-021-点赞狂魔-25-分&#34;&gt;&lt;a href=&#34;#L2-021-点赞狂魔-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-021 点赞狂魔 (25 分)&#34;&gt;&lt;/a&gt;L2-021 点赞狂魔 (25 分)&lt;/h1&gt;&lt;p&gt;微博上有个“点赞”功能，你可以为你喜欢的博文点个赞表示支持。每篇博文都有一些刻画其特性的标签，而你点赞的博文的类型，也间接刻画了你的特性。然而有这么一种人，他们会通过给自己看到的一切内容点赞来狂刷存在感，这种人就被称为“点赞狂魔”。他们点赞的标签非常分散，无法体现出明显的特性。本题就要求你写个程序，通过统计每个人点赞的不同标签的数量，找出前3名点赞狂魔。&lt;/p&gt;
@@ -523,42 +537,6 @@
 
 &lt;h3 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://pintia.cn/problem-sets/994805046380707840/problems/994805058485469184&#34;&gt;题目详情 - L2-021 点赞狂魔 (25 分) (pintia.cn)&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/changjiale110/article/details/79108447&#34;&gt;(19条消息) STL中的set使用方法详细！！！！_知足–常乐的博客-CSDN博客_set stl&lt;/a&gt;&lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://example.com/2022/04/08/Algorithm015/</guid>
-            <title>C++的STL中字符串string自带方法find查找</title>
-            <link>http://example.com/2022/04/08/Algorithm015/</link>
-            <category>C++</category>
-            <category>String</category>
-            <category>Find</category>
-            <category>STL</category>
-            <pubDate>Fri, 08 Apr 2022 19:18:57 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;C-的STL中字符串string自带方法find查找&#34;&gt;&lt;a href=&#34;#C-的STL中字符串string自带方法find查找&#34; class=&#34;headerlink&#34; title=&#34;C++的STL中字符串string自带方法find查找&#34;&gt;&lt;/a&gt;C++的STL中字符串string自带方法find查找&lt;/h1&gt;&lt;h2 id=&#34;用法&#34;&gt;&lt;a href=&#34;#用法&#34; class=&#34;headerlink&#34; title=&#34;用法&#34;&gt;&lt;/a&gt;用法&lt;/h2&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;string str = &lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;abcd&amp;quot;&lt;/span&gt;;&lt;br&gt;	cout &amp;lt;&amp;lt; str.&lt;span class=&#34;hljs-built_in&#34;&gt;find&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;#x27;a&amp;#x27;&lt;/span&gt;);&lt;br&gt;	&lt;span class=&#34;hljs-comment&#34;&gt;//返回的是下标的值而不是指针或是迭代器&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;string str = &lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;abcd&amp;quot;&lt;/span&gt;&lt;br&gt;string sub = &lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;cd&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(str.&lt;span class=&#34;hljs-built_in&#34;&gt;find&lt;/span&gt;(sub)!=string::npos)&amp;#123;&lt;br&gt;    cout&amp;lt;&amp;lt;&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;找到了&amp;quot;&lt;/span&gt;&amp;lt;&amp;lt;endl;&lt;br&gt;&amp;#125;&lt;span class=&#34;hljs-keyword&#34;&gt;else&lt;/span&gt;&amp;#123;&lt;br&gt;    cout&amp;lt;&amp;lt;&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;没有找到&amp;quot;&lt;/span&gt;&amp;lt;&amp;lt;endl;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;要是没有找到，返回的是str::npos&lt;br&gt;注意，只有string的find方法是返回的下标，因为string是顺序索引，set,map,multiset,multimap都不是顺序索引的数据结构，所以返回的是迭代器。&lt;/p&gt;
-&lt;h2 id=&#34;样例一-L1-070-吃火锅-15-分&#34;&gt;&lt;a href=&#34;#样例一-L1-070-吃火锅-15-分&#34; class=&#34;headerlink&#34; title=&#34;样例一:L1-070 吃火锅 (15 分)&#34;&gt;&lt;/a&gt;样例一:&lt;strong&gt;L1-070 吃火锅 (15 分)&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;题目链接：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://pintia.cn/problem-sets/994805046380707840/problems/1336215880692482053&#34;&gt;https://pintia.cn/problem-sets/994805046380707840/problems/1336215880692482053&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/2022/04/08/Algorithm015/68518b64-f2f7-4694-aaeb-d32afe657f7b.jpg&#34; alt=&#34;chg.jpg&#34;&gt;&lt;/p&gt;
-&lt;p&gt;以上图片来自微信朋友圈：这种天气你有什么破事打电话给我基本没用。但是如果你说“吃火锅”，那就厉害了，我们的故事就开始了。&lt;/p&gt;
-&lt;p&gt;本题要求你实现一个程序，自动检查你朋友给你发来的信息里有没有 &lt;code&gt;chi1 huo3 guo1&lt;/code&gt;。&lt;/p&gt;
-&lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;输入每行给出一句不超过 80 个字符的、以回车结尾的朋友信息，信息为非空字符串，仅包括字母、数字、空格、可见的半角标点符号。当读到某一行只有一个英文句点 &lt;code&gt;.&lt;/code&gt; 时，输入结束，此行不算在朋友信息里。&lt;/p&gt;
-&lt;h3 id=&#34;输出格式：&#34;&gt;&lt;a href=&#34;#输出格式：&#34; class=&#34;headerlink&#34; title=&#34;输出格式：&#34;&gt;&lt;/a&gt;输出格式：&lt;/h3&gt;&lt;p&gt;首先在一行中输出朋友信息的总条数。然后对朋友的每一行信息，检查其中是否包含 &lt;code&gt;chi1 huo3 guo1&lt;/code&gt;，并且统计这样厉害的信息有多少条。在第二行中首先输出第一次出现 &lt;code&gt;chi1 huo3 guo1&lt;/code&gt; 的信息是第几条（从 1 开始计数），然后输出这类信息的总条数，其间以一个空格分隔。题目保证输出的所有数字不超过 100。&lt;/p&gt;
-&lt;p&gt;如果朋友从头到尾都没提 &lt;code&gt;chi1 huo3 guo1&lt;/code&gt; 这个关键词，则在第二行输出一个表情 &lt;code&gt;-_-#&lt;/code&gt;。&lt;/p&gt;
-&lt;h3 id=&#34;输入样例-1：&#34;&gt;&lt;a href=&#34;#输入样例-1：&#34; class=&#34;headerlink&#34; title=&#34;输入样例 1：&#34;&gt;&lt;/a&gt;输入样例 1：&lt;/h3&gt;&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs in&#34;&gt;Hello!&lt;br&gt;are you there?&lt;br&gt;wantta chi1 huo3 guo1?&lt;br&gt;that&amp;#x27;s so li hai le&lt;br&gt;our story begins from chi1 huo3 guo1 le&lt;br&gt;.&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h3 id=&#34;输出样例-1：&#34;&gt;&lt;a href=&#34;#输出样例-1：&#34; class=&#34;headerlink&#34; title=&#34;输出样例 1：&#34;&gt;&lt;/a&gt;输出样例 1：&lt;/h3&gt;&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs out&#34;&gt;5&lt;br&gt;3 2&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h3 id=&#34;输入样例-2：&#34;&gt;&lt;a href=&#34;#输入样例-2：&#34; class=&#34;headerlink&#34; title=&#34;输入样例 2：&#34;&gt;&lt;/a&gt;输入样例 2：&lt;/h3&gt;&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs in&#34;&gt;Hello!&lt;br&gt;are you there?&lt;br&gt;wantta qi huo3 guo1 chi1huo3guo1?&lt;br&gt;that&amp;#x27;s so li hai le&lt;br&gt;our story begins from ci1 huo4 guo2 le&lt;br&gt;.&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h3 id=&#34;输出样例-2：&#34;&gt;&lt;a href=&#34;#输出样例-2：&#34; class=&#34;headerlink&#34; title=&#34;输出样例 2：&#34;&gt;&lt;/a&gt;输出样例 2：&lt;/h3&gt;&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs out&#34;&gt;5&lt;br&gt;-_-#&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h3 id=&#34;程序源代码&#34;&gt;&lt;a href=&#34;#程序源代码&#34; class=&#34;headerlink&#34; title=&#34;程序源代码&#34;&gt;&lt;/a&gt;程序源代码&lt;/h3&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;38&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;hljs-meta-string&#34;&gt;&amp;lt;bits/stdc++.h&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;using&lt;/span&gt; &lt;span class=&#34;hljs-keyword&#34;&gt;namespace&lt;/span&gt; std;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;()&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;/span&gt;&amp;#123;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; flag=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;					&lt;span class=&#34;hljs-comment&#34;&gt;//用来判断是否是第一次找到吃火锅&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; cnt=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;					&lt;span class=&#34;hljs-comment&#34;&gt;//用来记录总行数&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; count=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;				&lt;span class=&#34;hljs-comment&#34;&gt;//用来记录有多少个吃火锅&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; firstp=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;				&lt;span class=&#34;hljs-comment&#34;&gt;//用来记录第一次出现吃火锅的位置&lt;/span&gt;&lt;br&gt;    string cmp=&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;chi1 huo3 guo1&amp;quot;&lt;/span&gt;;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;while&lt;/span&gt; (&lt;span class=&#34;hljs-literal&#34;&gt;true&lt;/span&gt;)&lt;br&gt;    &amp;#123;&lt;br&gt;        string s;&lt;br&gt;        s.&lt;span class=&#34;hljs-built_in&#34;&gt;clear&lt;/span&gt;();&lt;br&gt;        &lt;span class=&#34;hljs-built_in&#34;&gt;getline&lt;/span&gt;(cin,s);&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(s.&lt;span class=&#34;hljs-built_in&#34;&gt;size&lt;/span&gt;()==&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;&amp;amp;&amp;amp;s==&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;.&amp;quot;&lt;/span&gt;)&amp;#123;&lt;br&gt;            &lt;span class=&#34;hljs-keyword&#34;&gt;break&lt;/span&gt;;&lt;br&gt;        &amp;#125;&lt;br&gt;        string tmp =s;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(tmp.&lt;span class=&#34;hljs-built_in&#34;&gt;find&lt;/span&gt;(cmp)!=string::npos)&amp;#123;&lt;br&gt;            &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(flag==&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;) &amp;#123;&lt;br&gt;                flag =&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;;&lt;br&gt;                firstp = cnt+&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;;&lt;br&gt;            &amp;#125;&lt;br&gt;            count=count+&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;;&lt;br&gt;        &amp;#125;&lt;br&gt;        cnt=cnt+&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;;&lt;br&gt;&lt;br&gt;    &amp;#125;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(count==&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;)&amp;#123;&lt;br&gt;        cout&amp;lt;&amp;lt;cnt&amp;lt;&amp;lt;endl;&lt;br&gt;        cout&amp;lt;&amp;lt;&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;-_-#&amp;quot;&lt;/span&gt;&amp;lt;&amp;lt;endl;&lt;br&gt;    &amp;#125; &lt;span class=&#34;hljs-keyword&#34;&gt;else&lt;/span&gt;&amp;#123;&lt;br&gt;        cout&amp;lt;&amp;lt;cnt&amp;lt;&amp;lt;endl;&lt;br&gt;        cout&amp;lt;&amp;lt;firstp&amp;lt;&amp;lt;&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot; &amp;quot;&lt;/span&gt;&amp;lt;&amp;lt;count&amp;lt;&amp;lt;endl;&lt;br&gt;    &amp;#125;&lt;br&gt;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h2 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/qq_50675813/article/details/113313343&#34;&gt;(18条消息) c++STL中的find()函数 有两种使用方法_我们不生产代码，只是代码的搬运工的博客-CSDN博客_c++中find函数的使用方法&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://pintia.cn/problem-sets/994805046380707840/problems/1336215880692482053&#34;&gt;https://pintia.cn/problem-sets/994805046380707840/problems/1336215880692482053&lt;/a&gt;&lt;/p&gt;
  ]]></description>
         </item>
     </channel>

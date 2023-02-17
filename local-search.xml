@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>146.LRU cache</title>
+    <link href="/2023/02/17/leetcode001/"/>
+    <url>/2023/02/17/leetcode001/</url>
+    
+    <content type="html"><![CDATA[<h2 id="146-LRU-cache"><a href="#146-LRU-cache" class="headerlink" title="146.LRU cache"></a>146.LRU cache</h2><h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h2><p><a href="https://leetcode.cn/problems/lru-cache/">146. LRU 缓存 - 力扣（LeetCode）</a></p><h2 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h2><figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LRUCache</span> &#123;</span><br><span class="hljs-keyword">private</span>:<br>    <span class="hljs-keyword">int</span> cap=<span class="hljs-number">0</span>;<br>    list&lt;pair&lt;<span class="hljs-keyword">int</span>,<span class="hljs-keyword">int</span>&gt;&gt; lru;   <span class="hljs-comment">//真正的cache</span><br>    unordered_map&lt;<span class="hljs-keyword">int</span>,list&lt;pair&lt;<span class="hljs-keyword">int</span>,<span class="hljs-keyword">int</span>&gt;&gt;::iterator&gt; mp;   <span class="hljs-comment">//主要用处就是查找</span><br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-built_in">LRUCache</span>(<span class="hljs-keyword">int</span> capacity) &#123;<br>        cap = capacity;<span class="hljs-comment">//容量</span><br>    &#125;<br>    <br>    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">get</span><span class="hljs-params">(<span class="hljs-keyword">int</span> key)</span> </span>&#123;<span class="hljs-comment">//作为就是把最近访问的放在表头</span><br>        <span class="hljs-keyword">if</span>(mp.<span class="hljs-built_in">find</span>(key)!=mp.<span class="hljs-built_in">end</span>())&#123;<span class="hljs-comment">//有这个元素</span><br>            lru.<span class="hljs-built_in">splice</span>(lru.<span class="hljs-built_in">begin</span>(),lru,mp[key]);<span class="hljs-comment">//将一个 list 容器中的元素插入到另一个容器的指定位置</span><br>            <span class="hljs-keyword">return</span> lru.<span class="hljs-built_in">begin</span>()-&gt;second;<span class="hljs-comment">//返回元素</span><br>        &#125;<span class="hljs-keyword">else</span>&#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;<span class="hljs-comment">//没有这个元素</span><br>        &#125;<br>    &#125;<br><br>    <br>    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">put</span><span class="hljs-params">(<span class="hljs-keyword">int</span> key, <span class="hljs-keyword">int</span> value)</span> </span>&#123;<br>        <span class="hljs-keyword">if</span>(<span class="hljs-built_in">get</span>(key)!=<span class="hljs-number">-1</span>)&#123;<span class="hljs-comment">//cache中有key，调用get后自动插入到表头【key存在】</span><br>            lru.<span class="hljs-built_in">begin</span>()-&gt;second = value;<br>        &#125;<span class="hljs-keyword">else</span>&#123;<span class="hljs-comment">//【key不存在】</span><br>            <span class="hljs-keyword">if</span>(lru.<span class="hljs-built_in">size</span>()==cap)&#123;<span class="hljs-comment">//如果容量满了</span><br>                <span class="hljs-keyword">int</span> delkey = lru.<span class="hljs-built_in">back</span>().first; <span class="hljs-comment">//记录最久未访问的key</span><br>                lru.<span class="hljs-built_in">pop_back</span>(); <span class="hljs-comment">//pop掉，置换</span><br>                mp.<span class="hljs-built_in">erase</span>(delkey); <span class="hljs-comment">//查找表中也删除</span><br>            &#125;<br>            lru.<span class="hljs-built_in">emplace_front</span>(key,value);<span class="hljs-comment">//头部生成一个元素</span><br>            mp[key]=lru.<span class="hljs-built_in">begin</span>();<span class="hljs-comment">//加入查找表</span><br>        &#125;<br>    &#125;<br>&#125;;<br><br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * Your LRUCache object will be instantiated and called as such:</span><br><span class="hljs-comment"> * LRUCache* obj = new LRUCache(capacity);</span><br><span class="hljs-comment"> * int param_1 = obj-&gt;get(key);</span><br><span class="hljs-comment"> * obj-&gt;put(key,value);</span><br><span class="hljs-comment"> */</span><br></code></pre></div></td></tr></table></figure><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://www.jianshu.com/p/bbea4b2410e6">C++实现LRU缓存——LeetCode146 - 简书 (jianshu.com)</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Algorithm</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>C++</tag>
+      
+      <tag>LeetCode</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>BLISlab中C矩阵初始化速度测试</title>
     <link href="/2023/02/15/blislab003/"/>
     <url>/2023/02/15/blislab003/</url>
@@ -813,9 +840,9 @@
       
       <tag>Data Structure</tag>
       
-      <tag>团体程序设计天梯赛</tag>
-      
       <tag>C++</tag>
+      
+      <tag>团体程序设计天梯赛</tag>
       
       <tag>Graph</tag>
       
@@ -846,9 +873,9 @@
       
       <tag>Data Structure</tag>
       
-      <tag>团体程序设计天梯赛</tag>
-      
       <tag>C++</tag>
+      
+      <tag>团体程序设计天梯赛</tag>
       
       <tag>Sort</tag>
       
@@ -881,11 +908,11 @@
     
     <tags>
       
-      <tag>团体程序设计天梯赛</tag>
-      
       <tag>C++</tag>
       
       <tag>Set</tag>
+      
+      <tag>团体程序设计天梯赛</tag>
       
       <tag>模拟</tag>
       
@@ -941,9 +968,9 @@
       
       <tag>Data Structure</tag>
       
-      <tag>团体程序设计天梯赛</tag>
-      
       <tag>C++</tag>
+      
+      <tag>团体程序设计天梯赛</tag>
       
       <tag>Graph</tag>
       
@@ -974,9 +1001,9 @@
     
     <tags>
       
-      <tag>团体程序设计天梯赛</tag>
-      
       <tag>C++</tag>
+      
+      <tag>团体程序设计天梯赛</tag>
       
       <tag>Sort</tag>
       
@@ -1007,9 +1034,9 @@
     
     <tags>
       
-      <tag>团体程序设计天梯赛</tag>
-      
       <tag>C++</tag>
+      
+      <tag>团体程序设计天梯赛</tag>
       
       <tag>Sort</tag>
       
@@ -1042,9 +1069,9 @@
       
       <tag>Data Structure</tag>
       
-      <tag>团体程序设计天梯赛</tag>
-      
       <tag>C++</tag>
+      
+      <tag>团体程序设计天梯赛</tag>
       
       <tag>Graph</tag>
       
@@ -1077,9 +1104,9 @@
       
       <tag>Data Structure</tag>
       
-      <tag>团体程序设计天梯赛</tag>
-      
       <tag>C++</tag>
+      
+      <tag>团体程序设计天梯赛</tag>
       
       <tag>Binary tree</tag>
       
@@ -1110,9 +1137,9 @@
       
       <tag>Data Structure</tag>
       
-      <tag>团体程序设计天梯赛</tag>
-      
       <tag>C++</tag>
+      
+      <tag>团体程序设计天梯赛</tag>
       
       <tag>Binary tree</tag>
       
@@ -1141,9 +1168,9 @@
       
       <tag>Data Structure</tag>
       
-      <tag>团体程序设计天梯赛</tag>
-      
       <tag>C++</tag>
+      
+      <tag>团体程序设计天梯赛</tag>
       
       <tag>邻接表</tag>
       
@@ -1178,9 +1205,9 @@
       
       <tag>Data Structure</tag>
       
-      <tag>团体程序设计天梯赛</tag>
-      
       <tag>C++</tag>
+      
+      <tag>团体程序设计天梯赛</tag>
       
       <tag>邻接表</tag>
       
@@ -1207,9 +1234,9 @@
       
       <tag>Data Structure</tag>
       
-      <tag>团体程序设计天梯赛</tag>
-      
       <tag>C++</tag>
+      
+      <tag>团体程序设计天梯赛</tag>
       
       <tag>Sort</tag>
       
@@ -1238,9 +1265,9 @@
       
       <tag>Data Structure</tag>
       
-      <tag>团体程序设计天梯赛</tag>
-      
       <tag>C++</tag>
+      
+      <tag>团体程序设计天梯赛</tag>
       
       <tag>邻接表</tag>
       
@@ -1275,11 +1302,11 @@
       
       <tag>Data Structure</tag>
       
-      <tag>团体程序设计天梯赛</tag>
-      
       <tag>C++</tag>
       
       <tag>Set</tag>
+      
+      <tag>团体程序设计天梯赛</tag>
       
       <tag>Graph</tag>
       
@@ -1310,11 +1337,11 @@
     
     <tags>
       
-      <tag>LinkList</tag>
+      <tag>C++</tag>
       
       <tag>团体程序设计天梯赛</tag>
       
-      <tag>C++</tag>
+      <tag>LinkList</tag>
       
       <tag>双向链表</tag>
       
@@ -1341,13 +1368,13 @@
     
     <tags>
       
-      <tag>团体程序设计天梯赛</tag>
+      <tag>STL</tag>
       
       <tag>C++</tag>
       
-      <tag>STL</tag>
-      
       <tag>Set</tag>
+      
+      <tag>团体程序设计天梯赛</tag>
       
       <tag>Sort</tag>
       
@@ -1374,13 +1401,13 @@
     
     <tags>
       
-      <tag>C++</tag>
-      
       <tag>String</tag>
       
       <tag>Find</tag>
       
       <tag>STL</tag>
+      
+      <tag>C++</tag>
       
     </tags>
     

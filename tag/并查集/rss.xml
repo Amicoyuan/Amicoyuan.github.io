@@ -9,15 +9,15 @@
         <lastBuildDate>Sat, 16 Apr 2022 14:57:46 +0800</lastBuildDate>
         <category>AVX</category>
         <category>Data Structure</category>
-        <category>LinkList</category>
-        <category>团体程序设计天梯赛</category>
-        <category>C++</category>
-        <category>双向链表</category>
         <category>String</category>
         <category>Find</category>
         <category>STL</category>
+        <category>C++</category>
         <category>Set</category>
+        <category>团体程序设计天梯赛</category>
         <category>Sort</category>
+        <category>LinkList</category>
+        <category>双向链表</category>
         <category>Graph</category>
         <category>邻接表</category>
         <category>Vector</category>
@@ -34,9 +34,10 @@
         <category>Pair</category>
         <category>Linux</category>
         <category>MPI</category>
-        <category>AVX2</category>
         <category>dgemm</category>
+        <category>AVX2</category>
         <category>CUDA</category>
+        <category>LeetCode</category>
         <category>Matrix</category>
         <category>Mirror</category>
         <category>牛客</category>
@@ -53,8 +54,8 @@
             <title>L2-010 排座位 (25 分)</title>
             <link>http://example.com/2022/04/16/Algorithm028/</link>
             <category>Data Structure</category>
-            <category>团体程序设计天梯赛</category>
             <category>C++</category>
+            <category>团体程序设计天梯赛</category>
             <category>Graph</category>
             <category>邻接矩阵</category>
             <category>并查集</category>
