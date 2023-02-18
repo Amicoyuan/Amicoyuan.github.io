@@ -1,0 +1,20 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Amicoyuan • All posts by \"双指针\" tag",
+    "description": "",
+    "home_page_url": "http://example.com",
+    "items": [
+        {
+            "id": "http://example.com/2023/02/18/leetcode11/",
+            "url": "http://example.com/2023/02/18/leetcode11/",
+            "title": "11. 盛最多水的容器",
+            "date_published": "2023-02-18T08:27:01.000Z",
+            "content_html": "<h2 id=\"11-盛最多水的容器\"><a href=\"#11-盛最多水的容器\" class=\"headerlink\" title=\"11.盛最多水的容器\"></a>11.盛最多水的容器</h2><h2 id=\"题目链接\"><a href=\"#题目链接\" class=\"headerlink\" title=\"题目链接\"></a>题目链接</h2><h4 id=\"11-盛最多水的容器-1\"><a href=\"#11-盛最多水的容器-1\" class=\"headerlink\" title=\"11. 盛最多水的容器\"></a><a href=\"https://leetcode.cn/problems/container-with-most-water/\">11. 盛最多水的容器</a></h4><h2 id=\"完整代码\"><a href=\"#完整代码\" class=\"headerlink\" title=\"完整代码\"></a>完整代码</h2><figure class=\"highlight c++\"><table><tr><td class=\"gutter hljs\"><div class=\"hljs code-wrapper\"><pre><span class=\"line\">1</span><br><span class=\"line\">2</span><br><span class=\"line\">3</span><br><span class=\"line\">4</span><br><span class=\"line\">5</span><br><span class=\"line\">6</span><br><span class=\"line\">7</span><br><span class=\"line\">8</span><br><span class=\"line\">9</span><br><span class=\"line\">10</span><br><span class=\"line\">11</span><br><span class=\"line\">12</span><br><span class=\"line\">13</span><br><span class=\"line\">14</span><br><span class=\"line\">15</span><br><span class=\"line\">16</span><br><span class=\"line\">17</span><br><span class=\"line\">18</span><br><span class=\"line\">19</span><br><span class=\"line\">20</span><br><span class=\"line\">21</span><br><span class=\"line\">22</span><br><span class=\"line\">23</span><br><span class=\"line\">24</span><br></pre></div></td><td class=\"code\"><div class=\"hljs code-wrapper\"><pre><code class=\"hljs c++\"><span class=\"hljs-class\"><span class=\"hljs-keyword\">class</span> <span class=\"hljs-title\">Solution</span> &#123;</span><br><span class=\"hljs-keyword\">public</span>:<br>    <span class=\"hljs-function\"><span class=\"hljs-keyword\">int</span> <span class=\"hljs-title\">maxArea</span><span class=\"hljs-params\">(vector&lt;<span class=\"hljs-keyword\">int</span>&gt;&amp; height)</span> </span>&#123;<br>        <span class=\"hljs-comment\">//双指针；</span><br>        <span class=\"hljs-keyword\">int</span> ans =<span class=\"hljs-number\">-1</span>;<br>        <span class=\"hljs-keyword\">int</span> left=<span class=\"hljs-number\">0</span>;<br>        <span class=\"hljs-keyword\">int</span> right=height.<span class=\"hljs-built_in\">size</span>()<span class=\"hljs-number\">-1</span>;<br>        <span class=\"hljs-keyword\">while</span>(left&lt;right)&#123;<br>            <span class=\"hljs-keyword\">int</span> temp=<span class=\"hljs-number\">0</span>;<br>            <span class=\"hljs-keyword\">if</span>(height[left]&lt;=height[right])&#123;<br>                temp = height[left]*(right-left);<br>                ans = std::<span class=\"hljs-built_in\">max</span>(ans,temp);<br>                left++;<br>            &#125;<span class=\"hljs-keyword\">else</span>&#123;<br>                temp = height[right]*(right-left);<br>                ans = std::<span class=\"hljs-built_in\">max</span>(ans,temp);<br>                right--;<br>            &#125;<br>            <br>        &#125;<br>        <span class=\"hljs-keyword\">return</span> ans;<br>        <br>    &#125;<br>&#125;;<br></code></pre></div></td></tr></table></figure>\n\n<h2 id=\"参考资料\"><a href=\"#参考资料\" class=\"headerlink\" title=\"参考资料\"></a>参考资料</h2><p><a href=\"https://leetcode.cn/problems/container-with-most-water/solution/sheng-zui-duo-shui-de-rong-qi-by-leetcode-solution/\">盛最多水的容器 - 盛最多水的容器 - 力扣（LeetCode）</a></p>\n",
+            "tags": [
+                "C++",
+                "LeetCode",
+                "双指针"
+            ]
+        }
+    ]
+}

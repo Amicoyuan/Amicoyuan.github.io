@@ -25,8 +25,8 @@
     <category term="DFS" />
     <category term="结构体" />
     <category term="贪心" />
-    <category term="Double类型相等比较" />
     <category term="并查集" />
+    <category term="Double类型相等比较" />
     <category term="Map" />
     <category term="Pair" />
     <category term="Linux" />
@@ -35,6 +35,7 @@
     <category term="AVX2" />
     <category term="CUDA" />
     <category term="LeetCode" />
+    <category term="双指针" />
     <category term="Matrix" />
     <category term="Mirror" />
     <category term="牛客" />
