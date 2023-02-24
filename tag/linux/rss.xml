@@ -5,8 +5,8 @@
         <link>http://example.com</link>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Wed, 15 Feb 2023 11:48:16 +0800</pubDate>
-        <lastBuildDate>Wed, 15 Feb 2023 11:48:16 +0800</lastBuildDate>
+        <pubDate>Fri, 24 Feb 2023 16:50:20 +0800</pubDate>
+        <lastBuildDate>Fri, 24 Feb 2023 16:50:20 +0800</lastBuildDate>
         <category>AVX</category>
         <category>Data Structure</category>
         <category>String</category>
@@ -19,25 +19,25 @@
         <category>Graph</category>
         <category>邻接表</category>
         <category>Vector</category>
-        <category>Binary tree</category>
-        <category>BFS</category>
         <category>LinkList</category>
         <category>双向链表</category>
+        <category>Binary tree</category>
+        <category>BFS</category>
         <category>模拟</category>
         <category>邻接矩阵</category>
         <category>DFS</category>
         <category>结构体</category>
         <category>贪心</category>
-        <category>并查集</category>
         <category>Double类型相等比较</category>
+        <category>并查集</category>
         <category>Map</category>
         <category>Pair</category>
         <category>Linux</category>
+        <category>MPI</category>
         <category>Matrix</category>
         <category>GEMM</category>
-        <category>MPI</category>
-        <category>dgemm</category>
         <category>AVX2</category>
+        <category>dgemm</category>
         <category>CUDA</category>
         <category>LeetCode</category>
         <category>双指针</category>
@@ -51,6 +51,67 @@
         <category>Tensorflow</category>
         <category>性能分析工具</category>
         <category>gcov</category>
+        <item>
+            <guid isPermalink="true">http://example.com/2023/02/24/Linux003/</guid>
+            <title>基于GDB的程序调试</title>
+            <link>http://example.com/2023/02/24/Linux003/</link>
+            <category>Linux</category>
+            <pubDate>Fri, 24 Feb 2023 16:50:20 +0800</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;基于GDB的程序调试&#34;&gt;&lt;a href=&#34;#基于GDB的程序调试&#34; class=&#34;headerlink&#34; title=&#34;基于GDB的程序调试&#34;&gt;&lt;/a&gt;基于GDB的程序调试&lt;/h2&gt;&lt;h3 id=&#34;程序调试工具GDB&#34;&gt;&lt;a href=&#34;#程序调试工具GDB&#34; class=&#34;headerlink&#34; title=&#34;程序调试工具GDB&#34;&gt;&lt;/a&gt;程序调试工具GDB&lt;/h3&gt;&lt;p&gt;编译器GCC，项目构建工具Make（又称gmake），以及GDB。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/02/24/Linux003/image-20230224165344672.png&#34; alt=&#34;image-20230224165344672&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;GDB是什么？&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;GDB：GNU symbolic debugger是Linux下常用的程序调试器&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;GDB可以做什么？&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/02/24/Linux003/image-20230224165606636.png&#34; alt=&#34;image-20230224165606636&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;GDB官网：&lt;/strong&gt;&lt;a href=&#34;https://www.sourceware.org/gdb/&#34;&gt;GDB: The GNU Project Debugger (sourceware.org)&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;调试案例一&#34;&gt;&lt;a href=&#34;#调试案例一&#34; class=&#34;headerlink&#34; title=&#34;调试案例一&#34;&gt;&lt;/a&gt;调试案例一&lt;/h3&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;hljs-meta-string&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;()&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;/span&gt;&amp;#123;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;unsigned&lt;/span&gt; &lt;span class=&#34;hljs-keyword&#34;&gt;long&lt;/span&gt; &lt;span class=&#34;hljs-keyword&#34;&gt;long&lt;/span&gt; &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; n,sum;&lt;br&gt;    n = &lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;;&lt;br&gt;    sum = &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;while&lt;/span&gt;( n &amp;lt;= &lt;span class=&#34;hljs-number&#34;&gt;100&lt;/span&gt;)&lt;br&gt;    &amp;#123;&lt;br&gt;        sum = sum + n;&lt;br&gt;        n = n + &lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;;&lt;br&gt;    &amp;#125;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;在编译程序的时候，需要加调试选项： -g&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs shell&#34;&gt;gcc gdb001.c -g -o ex1&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;使用gdb启动程序：&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs shell&#34;&gt;gdb ./ex1&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;进入gdb调试环境&lt;/strong&gt;：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/02/24/Linux003/image-20230224170419171.png&#34; alt=&#34;image-20230224170419171&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;在调试环境中：使用l选项会显示带行号的源代码&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/02/24/Linux003/image-20230224170620617.png&#34; alt=&#34;image-20230224170620617&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;但是默认情况下，l选项只显示10行源代码，如果查看后续代码，在调试界面Enter回车即可&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/02/24/Linux003/image-20230224170804048.png&#34; alt=&#34;image-20230224170804048&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;在第7行源代码处打断点：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/02/24/Linux003/image-20230224171858691.png&#34; alt=&#34;image-20230224171858691&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;运行程序，遇到断点停止：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/02/24/Linux003/image-20230224172105514.png&#34; alt=&#34;image-20230224172105514&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;查看代码中变量n的值&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/02/24/Linux003/image-20230224172200662.png&#34; alt=&#34;image-20230224172200662&#34;&gt;&lt;/p&gt;
+&lt;p&gt;当前n的值为1，$1表示该变量所在存储区的名称&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;在程序第12行处打断点&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/02/24/Linux003/image-20230224172321002.png&#34; alt=&#34;image-20230224172321002&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;继续执行程序&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/02/24/Linux003/image-20230224172356622.png&#34; alt=&#34;image-20230224172356622&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;查看当前n变量的值&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/02/24/Linux003/image-20230224172422998.png&#34; alt=&#34;image-20230224172422998&#34;&gt;&lt;/p&gt;
+&lt;p&gt;当前n的值为101&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;退出调试&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/02/24/Linux003/image-20230224172456626.png&#34; alt=&#34;image-20230224172456626&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;查看调试环境所有断点：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/02/24/Linux003/image-20230224172650422.png&#34; alt=&#34;image-20230224172650422&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;删除第7行的断点：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/02/24/Linux003/image-20230224172745323.png&#34; alt=&#34;image-20230224172745323&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;禁用编号为2的断点：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/02/24/Linux003/image-20230224172832507.png&#34; alt=&#34;image-20230224172832507&#34;&gt;&lt;/p&gt;
+&lt;p&gt;注意断点状态Enb(enable)由y变成n，代表禁用&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;恢复编号为2的断点：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/02/24/Linux003/image-20230224173006975.png&#34; alt=&#34;image-20230224173006975&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;小结&#34;&gt;&lt;a href=&#34;#小结&#34; class=&#34;headerlink&#34; title=&#34;小结&#34;&gt;&lt;/a&gt;小结&lt;/h3&gt;&lt;p&gt;GDB有三种调试模式：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;调试执行程序：&lt;/strong&gt;（前面的案例），注意编译加调试信息(-g)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;调试core文件   ：&lt;/strong&gt;需要对系统设置的core文件大小作调整（ulimit - c unlimlited），否则可能无法							  产生core文件&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;调试正在执行的程序（gdb attach） ：&lt;/strong&gt;Top找到进程编号pid，Gdb attach pid&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;GDB结构组成：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/02/24/Linux003/image-20230224173613247.png&#34; alt=&#34;image-20230224173613247&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;来源培训PPT 作者：Relax  邮箱：&lt;a href=&#34;mailto:&amp;#119;&amp;#x61;&amp;#x6e;&amp;#x67;&amp;#x77;&amp;#x31;&amp;#49;&amp;#49;&amp;#64;&amp;#x69;&amp;#x63;&amp;#x6c;&amp;#111;&amp;#117;&amp;#x64;&amp;#x2e;&amp;#x63;&amp;#x6f;&amp;#x6d;&#34;&gt;&amp;#119;&amp;#x61;&amp;#x6e;&amp;#x67;&amp;#x77;&amp;#x31;&amp;#49;&amp;#49;&amp;#64;&amp;#x69;&amp;#x63;&amp;#x6c;&amp;#111;&amp;#117;&amp;#x64;&amp;#x2e;&amp;#x63;&amp;#x6f;&amp;#x6d;&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">http://example.com/2023/02/15/blislab003/</guid>
             <title>BLISlab中C矩阵初始化速度测试</title>
