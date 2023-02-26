@@ -5,19 +5,19 @@
         <link>http://example.com</link>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Sat, 14 Jan 2023 22:30:05 +0800</pubDate>
-        <lastBuildDate>Sat, 14 Jan 2023 22:30:05 +0800</lastBuildDate>
+        <pubDate>Sun, 26 Feb 2023 17:06:59 +0800</pubDate>
+        <lastBuildDate>Sun, 26 Feb 2023 17:06:59 +0800</lastBuildDate>
         <category>AVX</category>
         <category>Data Structure</category>
         <category>String</category>
         <category>Find</category>
         <category>STL</category>
         <category>C++</category>
-        <category>Set</category>
-        <category>团体程序设计天梯赛</category>
-        <category>Sort</category>
         <category>LinkList</category>
+        <category>团体程序设计天梯赛</category>
         <category>双向链表</category>
+        <category>Set</category>
+        <category>Sort</category>
         <category>Graph</category>
         <category>邻接表</category>
         <category>Vector</category>
@@ -28,16 +28,16 @@
         <category>DFS</category>
         <category>结构体</category>
         <category>贪心</category>
-        <category>并查集</category>
         <category>Double类型相等比较</category>
+        <category>并查集</category>
         <category>Map</category>
         <category>Pair</category>
         <category>Linux</category>
         <category>MPI</category>
         <category>Matrix</category>
         <category>GEMM</category>
-        <category>dgemm</category>
         <category>AVX2</category>
+        <category>dgemm</category>
         <category>CUDA</category>
         <category>LeetCode</category>
         <category>双指针</category>
@@ -51,6 +51,26 @@
         <category>Tensorflow</category>
         <category>性能分析工具</category>
         <category>gcov</category>
+        <item>
+            <guid isPermalink="true">http://example.com/2023/02/26/openmp007/</guid>
+            <title>OpenMP线程绑定【未完结】</title>
+            <link>http://example.com/2023/02/26/openmp007/</link>
+            <category>OpenMP</category>
+            <pubDate>Sun, 26 Feb 2023 17:06:59 +0800</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;OpenMP线程绑定&#34;&gt;&lt;a href=&#34;#OpenMP线程绑定&#34; class=&#34;headerlink&#34; title=&#34;OpenMP线程绑定&#34;&gt;&lt;/a&gt;OpenMP线程绑定&lt;/h2&gt;&lt;h3 id=&#34;OpenMP相关环境变量与指令&#34;&gt;&lt;a href=&#34;#OpenMP相关环境变量与指令&#34; class=&#34;headerlink&#34; title=&#34;OpenMP相关环境变量与指令&#34;&gt;&lt;/a&gt;OpenMP相关环境变量与指令&lt;/h3&gt;&lt;h4 id=&#34;OMP-PROC-BIND&#34;&gt;&lt;a href=&#34;#OMP-PROC-BIND&#34; class=&#34;headerlink&#34; title=&#34;OMP_PROC_BIND&#34;&gt;&lt;/a&gt;OMP_PROC_BIND&lt;/h4&gt;&lt;p&gt;OMP_PROC_BIND环境变量设置bind-var ICV的初始值。这个环境变量的值可以是true、false，或者用逗号分隔的master、close或spread列表。列表的值设置了对应嵌套级别的并行区域要使用的线程亲和策略。&lt;/p&gt;
+&lt;p&gt;如果环境变量设置为false，则执行环境可能会在OpenMP位置之间移动OpenMP线程，线程相关性将被禁用，并行构造上的proc_bind子句将被忽略。&lt;/p&gt;
+&lt;p&gt;否则，执行环境不应该在OpenMP位置之间移动OpenMP线程，线程亲和性被启用，并且初始线程被绑定到OpenMP位置列表中的第一个位置，先于第一个活动并行区域。&lt;/p&gt;
+&lt;p&gt;如果OMP_PROC_BIND环境变量中的值不是true、false或master、close或spread的逗号分隔列表，则程序的行为是实现定义的。如果初始线程不能绑定到OpenMP位置列表中的第一个位置，则该行为也是实现定义的。&lt;/p&gt;
+&lt;p&gt;例子：&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs shell&#34;&gt;setenv OMP_PROC_BIND false&lt;br&gt;setenv OMP_PROC_BIND &amp;quot;spread,	spread, close&amp;quot;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h3 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://harrychen.xyz/2022/05/08/numa-processor-and-cpu-binding/&#34;&gt;NUMA 处理器与进程绑定 - Harry Chen’s Blog&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.openmp.org/spec-html/5.0/openmpse52.html&#34;&gt;OMP_PROC_BIND (openmp.org)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.openmp.org/spec-html/5.0/openmpsu36.html#x56-900002.6.2&#34;&gt;Controlling OpenMP Thread Affinity&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.openmp.org/spec-html/5.0/openmpse53.html&#34;&gt;OMP_PLACES (openmp.org)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.intel.com/content/www/us/en/develop/documentation/cpp-compiler-developer-guide-and-reference/top/optimization-and-programming/openmp-support/openmp-library-support/thread-affinity-interface.html&#34;&gt;Thread Affinity Interface (intel.com)&lt;/a&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">http://example.com/2023/01/14/openmp006/</guid>
             <title>OpenMP生产者消费者问题(未完结)</title>
