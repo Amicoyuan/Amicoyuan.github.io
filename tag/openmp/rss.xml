@@ -5,8 +5,8 @@
         <link>http://example.com</link>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Sun, 26 Feb 2023 17:06:59 +0800</pubDate>
-        <lastBuildDate>Sun, 26 Feb 2023 17:06:59 +0800</lastBuildDate>
+        <pubDate>Sun, 26 Feb 2023 17:36:54 +0800</pubDate>
+        <lastBuildDate>Sun, 26 Feb 2023 17:36:54 +0800</lastBuildDate>
         <category>AVX</category>
         <category>Data Structure</category>
         <category>String</category>
@@ -17,10 +17,10 @@
         <category>团体程序设计天梯赛</category>
         <category>双向链表</category>
         <category>Set</category>
-        <category>Sort</category>
         <category>Graph</category>
         <category>邻接表</category>
         <category>Vector</category>
+        <category>Sort</category>
         <category>Binary tree</category>
         <category>BFS</category>
         <category>模拟</category>
@@ -28,16 +28,16 @@
         <category>DFS</category>
         <category>结构体</category>
         <category>贪心</category>
-        <category>Double类型相等比较</category>
         <category>并查集</category>
         <category>Map</category>
+        <category>Double类型相等比较</category>
         <category>Pair</category>
         <category>Linux</category>
         <category>MPI</category>
         <category>Matrix</category>
         <category>GEMM</category>
-        <category>AVX2</category>
         <category>dgemm</category>
+        <category>AVX2</category>
         <category>CUDA</category>
         <category>LeetCode</category>
         <category>双指针</category>
@@ -47,10 +47,21 @@
         <category>OpenMP</category>
         <category>C/C++</category>
         <category>register</category>
-        <category>Slurm</category>
         <category>Tensorflow</category>
+        <category>Slurm</category>
         <category>性能分析工具</category>
         <category>gcov</category>
+        <item>
+            <guid isPermalink="true">http://example.com/2023/02/26/openmp008/</guid>
+            <title>OpenMP:Internal Control Variables</title>
+            <link>http://example.com/2023/02/26/openmp008/</link>
+            <category>OpenMP</category>
+            <pubDate>Sun, 26 Feb 2023 17:36:54 +0800</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;2-5-Internal-Control-Variables&#34;&gt;&lt;a href=&#34;#2-5-Internal-Control-Variables&#34; class=&#34;headerlink&#34; title=&#34;2.5 Internal Control Variables&#34;&gt;&lt;/a&gt;2.5 Internal Control Variables&lt;/h2&gt;&lt;p&gt;OpenMP实现必须像内部控制变量(icv)一样控制OpenMP程序的行为。这些icv存储的信息包括用于未来并行区域的线程数、用于工作共享循环的调度以及是否启用嵌套并行。在程序执行期间，icv在不同的时间被赋予值(如下所述)。它们是由实现本身初始化的，并且可以通过OpenMP环境变量和调用OpenMP API例程来赋值。程序只能通过OpenMP API例程检索这些icv的值。&lt;/p&gt;
+&lt;p&gt;出于说明的目的，本文档使用特定的名称来引用icv，但是实现不需要使用这些名称，也不需要提供访问变量的任何方法，除非通过第&lt;a href=&#34;https://www.openmp.org/spec-html/5.0/openmpsu31.html#x50-680002.5.2&#34;&gt;189&lt;/a&gt;页第&lt;a href=&#34;https://www.openmp.org/spec-html/5.0/openmpsu31.html#x50-680002.5.2&#34;&gt;2.5.2节&lt;/a&gt;所示的方法。&lt;/p&gt;
+&lt;h2 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://www.openmp.org/spec-html/5.0/openmpse13.html#x48-660002.5&#34;&gt;Internal Control Variables (openmp.org)&lt;/a&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">http://example.com/2023/02/26/openmp007/</guid>
             <title>OpenMP线程绑定【未完结】</title>

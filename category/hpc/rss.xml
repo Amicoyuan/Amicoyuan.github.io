@@ -5,8 +5,8 @@
         <link>http://example.com</link>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Sun, 26 Feb 2023 17:06:59 +0800</pubDate>
-        <lastBuildDate>Sun, 26 Feb 2023 17:06:59 +0800</lastBuildDate>
+        <pubDate>Sun, 26 Feb 2023 17:36:54 +0800</pubDate>
+        <lastBuildDate>Sun, 26 Feb 2023 17:36:54 +0800</lastBuildDate>
         <category>AVX</category>
         <category>Data Structure</category>
         <category>String</category>
@@ -17,10 +17,10 @@
         <category>团体程序设计天梯赛</category>
         <category>双向链表</category>
         <category>Set</category>
-        <category>Sort</category>
         <category>Graph</category>
         <category>邻接表</category>
         <category>Vector</category>
+        <category>Sort</category>
         <category>Binary tree</category>
         <category>BFS</category>
         <category>模拟</category>
@@ -28,16 +28,16 @@
         <category>DFS</category>
         <category>结构体</category>
         <category>贪心</category>
-        <category>Double类型相等比较</category>
         <category>并查集</category>
         <category>Map</category>
+        <category>Double类型相等比较</category>
         <category>Pair</category>
         <category>Linux</category>
         <category>MPI</category>
         <category>Matrix</category>
         <category>GEMM</category>
-        <category>AVX2</category>
         <category>dgemm</category>
+        <category>AVX2</category>
         <category>CUDA</category>
         <category>LeetCode</category>
         <category>双指针</category>
@@ -47,10 +47,21 @@
         <category>OpenMP</category>
         <category>C/C++</category>
         <category>register</category>
-        <category>Slurm</category>
         <category>Tensorflow</category>
+        <category>Slurm</category>
         <category>性能分析工具</category>
         <category>gcov</category>
+        <item>
+            <guid isPermalink="true">http://example.com/2023/02/26/openmp008/</guid>
+            <title>OpenMP:Internal Control Variables</title>
+            <link>http://example.com/2023/02/26/openmp008/</link>
+            <category>OpenMP</category>
+            <pubDate>Sun, 26 Feb 2023 17:36:54 +0800</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;2-5-Internal-Control-Variables&#34;&gt;&lt;a href=&#34;#2-5-Internal-Control-Variables&#34; class=&#34;headerlink&#34; title=&#34;2.5 Internal Control Variables&#34;&gt;&lt;/a&gt;2.5 Internal Control Variables&lt;/h2&gt;&lt;p&gt;OpenMP实现必须像内部控制变量(icv)一样控制OpenMP程序的行为。这些icv存储的信息包括用于未来并行区域的线程数、用于工作共享循环的调度以及是否启用嵌套并行。在程序执行期间，icv在不同的时间被赋予值(如下所述)。它们是由实现本身初始化的，并且可以通过OpenMP环境变量和调用OpenMP API例程来赋值。程序只能通过OpenMP API例程检索这些icv的值。&lt;/p&gt;
+&lt;p&gt;出于说明的目的，本文档使用特定的名称来引用icv，但是实现不需要使用这些名称，也不需要提供访问变量的任何方法，除非通过第&lt;a href=&#34;https://www.openmp.org/spec-html/5.0/openmpsu31.html#x50-680002.5.2&#34;&gt;189&lt;/a&gt;页第&lt;a href=&#34;https://www.openmp.org/spec-html/5.0/openmpsu31.html#x50-680002.5.2&#34;&gt;2.5.2节&lt;/a&gt;所示的方法。&lt;/p&gt;
+&lt;h2 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://www.openmp.org/spec-html/5.0/openmpse13.html#x48-660002.5&#34;&gt;Internal Control Variables (openmp.org)&lt;/a&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">http://example.com/2023/02/26/openmp007/</guid>
             <title>OpenMP线程绑定【未完结】</title>
@@ -1523,25 +1534,6 @@
 &lt;li&gt;通过共享变量实现了归约的操作(这里使用到了临界区)&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;6-参考资料&#34;&gt;&lt;a href=&#34;#6-参考资料&#34; class=&#34;headerlink&#34; title=&#34;6.参考资料&#34;&gt;&lt;/a&gt;6.参考资料&lt;/h3&gt;&lt;p&gt;并行程序导论 （美）Peter S.Pacheco&lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://example.com/2022/06/12/MPI%E5%AD%A6%E4%B9%A0(%E4%B8%80)-%E7%AE%80%E5%8D%95%E7%9A%84%E5%8F%91%E9%80%81%E6%8E%A5%E6%94%B6/</guid>
-            <title>MPI学习(一)-简单的发送接收</title>
-            <link>http://example.com/2022/06/12/MPI%E5%AD%A6%E4%B9%A0(%E4%B8%80)-%E7%AE%80%E5%8D%95%E7%9A%84%E5%8F%91%E9%80%81%E6%8E%A5%E6%94%B6/</link>
-            <category>MPI</category>
-            <pubDate>Sun, 12 Jun 2022 15:11:29 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;MPI-简单的发送接收&#34;&gt;&lt;a href=&#34;#MPI-简单的发送接收&#34; class=&#34;headerlink&#34; title=&#34;MPI-简单的发送接收&#34;&gt;&lt;/a&gt;MPI-简单的发送接收&lt;/h1&gt;&lt;p&gt;打印来自进程问候语句的MPI程序&lt;/p&gt;
-&lt;h2 id=&#34;所使用的MPI原语&#34;&gt;&lt;a href=&#34;#所使用的MPI原语&#34; class=&#34;headerlink&#34; title=&#34;所使用的MPI原语&#34;&gt;&lt;/a&gt;所使用的MPI原语&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;/2022/06/12/MPI%E5%AD%A6%E4%B9%A0(%E4%B8%80)-%E7%AE%80%E5%8D%95%E7%9A%84%E5%8F%91%E9%80%81%E6%8E%A5%E6%94%B6/mpi001.png&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/2022/06/12/MPI%E5%AD%A6%E4%B9%A0(%E4%B8%80)-%E7%AE%80%E5%8D%95%E7%9A%84%E5%8F%91%E9%80%81%E6%8E%A5%E6%94%B6/mpi002.png&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;程序运行平台&#34;&gt;&lt;a href=&#34;#程序运行平台&#34; class=&#34;headerlink&#34; title=&#34;程序运行平台&#34;&gt;&lt;/a&gt;程序运行平台&lt;/h2&gt;&lt;p&gt;北京超级云计算中心A3分区&lt;/p&gt;
-&lt;h2 id=&#34;环境变量&#34;&gt;&lt;a href=&#34;#环境变量&#34; class=&#34;headerlink&#34; title=&#34;环境变量&#34;&gt;&lt;/a&gt;环境变量&lt;/h2&gt;&lt;p&gt;mpi&amp;#x2F;intel&amp;#x2F;2017.5&lt;/p&gt;
-&lt;h2 id=&#34;编译指令&#34;&gt;&lt;a href=&#34;#编译指令&#34; class=&#34;headerlink&#34; title=&#34;编译指令&#34;&gt;&lt;/a&gt;编译指令&lt;/h2&gt;&lt;p&gt;mpicc  3.1.cpp -o 3.1&lt;/p&gt;
-&lt;h2 id=&#34;运行指令&#34;&gt;&lt;a href=&#34;#运行指令&#34; class=&#34;headerlink&#34; title=&#34;运行指令&#34;&gt;&lt;/a&gt;运行指令&lt;/h2&gt;&lt;p&gt;mpirun -np 4 .&amp;#x2F;3.1(本地提交,采取4个进程)&lt;/p&gt;
-&lt;h2 id=&#34;程序源代码&#34;&gt;&lt;a href=&#34;#程序源代码&#34; class=&#34;headerlink&#34; title=&#34;程序源代码&#34;&gt;&lt;/a&gt;程序源代码&lt;/h2&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;39&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;hljs-meta-string&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;hljs-meta-string&#34;&gt;&amp;lt;string.h&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;hljs-meta-string&#34;&gt;&amp;lt;mpi.h&amp;gt;&lt;/span&gt;   &lt;span class=&#34;hljs-comment&#34;&gt;//头文件&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; MAX_STRING = &lt;span class=&#34;hljs-number&#34;&gt;100&lt;/span&gt; ;&lt;br&gt;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; argc,&lt;span class=&#34;hljs-keyword&#34;&gt;char&lt;/span&gt; **argv)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;/span&gt;&amp;#123;&lt;br&gt;	&lt;span class=&#34;hljs-keyword&#34;&gt;char&lt;/span&gt; greeting[MAX_STRING];&lt;br&gt;	&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; comm_sz;&lt;br&gt;	&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; my_rank;&lt;br&gt;	MPI_Status status;&lt;br&gt;&lt;br&gt;	&lt;span class=&#34;hljs-built_in&#34;&gt;MPI_Init&lt;/span&gt;(&amp;amp;argc,&amp;amp;argv);&lt;br&gt;&lt;br&gt;	&lt;span class=&#34;hljs-built_in&#34;&gt;MPI_Comm_size&lt;/span&gt;(MPI_COMM_WORLD,&amp;amp;comm_sz);&lt;br&gt;	&lt;span class=&#34;hljs-built_in&#34;&gt;MPI_Comm_rank&lt;/span&gt;(MPI_COMM_WORLD,&amp;amp;my_rank);&lt;br&gt;	&lt;br&gt;	&lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(my_rank != &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;)&lt;br&gt;	&amp;#123;&lt;br&gt;		&lt;span class=&#34;hljs-comment&#34;&gt;//其他进程向0号进程发消息&lt;/span&gt;&lt;br&gt;		&lt;span class=&#34;hljs-built_in&#34;&gt;sprintf&lt;/span&gt;(greeting,&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;Greetings from process %d of %d!&amp;quot;&lt;/span&gt;,my_rank,comm_sz);&lt;br&gt;		&lt;span class=&#34;hljs-built_in&#34;&gt;MPI_Send&lt;/span&gt;(greeting,&lt;span class=&#34;hljs-built_in&#34;&gt;strlen&lt;/span&gt;(greeting)+&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;,MPI_CHAR,&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;,MPI_COMM_WORLD); &lt;br&gt;	&amp;#125;&lt;br&gt;	&lt;span class=&#34;hljs-keyword&#34;&gt;else&lt;/span&gt;&lt;br&gt;	&amp;#123;&lt;br&gt;		&lt;span class=&#34;hljs-built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;Greetings from process %d of %d!\n&amp;quot;&lt;/span&gt;,my_rank,comm_sz);&lt;br&gt;		&lt;span class=&#34;hljs-comment&#34;&gt;//0号进程接受来自其他进程的消息并输出&lt;/span&gt;&lt;br&gt;		&lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; q=&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;;q&amp;lt;comm_sz;q++)&lt;br&gt;		&amp;#123;&lt;br&gt;			&lt;span class=&#34;hljs-built_in&#34;&gt;MPI_Recv&lt;/span&gt;(greeting,MAX_STRING,MPI_CHAR,q,&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;,MPI_COMM_WORLD,&amp;amp;status);&lt;br&gt;			&lt;span class=&#34;hljs-built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;%s\n&amp;quot;&lt;/span&gt;,greeting);&lt;br&gt;		&amp;#125;&lt;br&gt;	&amp;#125;&lt;br&gt;	&lt;span class=&#34;hljs-built_in&#34;&gt;MPI_Finalize&lt;/span&gt;();&lt;br&gt;	&lt;br&gt;	&lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h2 id=&#34;程序运行结果&#34;&gt;&lt;a href=&#34;#程序运行结果&#34; class=&#34;headerlink&#34; title=&#34;程序运行结果&#34;&gt;&lt;/a&gt;程序运行结果&lt;/h2&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;Greetings from process &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt; of &lt;span class=&#34;hljs-number&#34;&gt;4&lt;/span&gt;!&lt;br&gt;Greetings from process &lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt; of &lt;span class=&#34;hljs-number&#34;&gt;4&lt;/span&gt;!&lt;br&gt;Greetings from process &lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt; of &lt;span class=&#34;hljs-number&#34;&gt;4&lt;/span&gt;!&lt;br&gt;Greetings from process &lt;span class=&#34;hljs-number&#34;&gt;3&lt;/span&gt; of &lt;span class=&#34;hljs-number&#34;&gt;4&lt;/span&gt;!&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
  ]]></description>
         </item>
     </channel>
