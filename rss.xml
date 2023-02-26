@@ -96,6 +96,12 @@
             <pubDate>Sun, 26 Feb 2023 17:36:54 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;2-5-Internal-Control-Variables&#34;&gt;&lt;a href=&#34;#2-5-Internal-Control-Variables&#34; class=&#34;headerlink&#34; title=&#34;2.5 Internal Control Variables&#34;&gt;&lt;/a&gt;2.5 Internal Control Variables&lt;/h2&gt;&lt;p&gt;OpenMP实现必须像内部控制变量(icv)一样控制OpenMP程序的行为。这些icv存储的信息包括用于未来并行区域的线程数、用于工作共享循环的调度以及是否启用嵌套并行。在程序执行期间，icv在不同的时间被赋予值(如下所述)。它们是由实现本身初始化的，并且可以通过OpenMP环境变量和调用OpenMP API例程来赋值。程序只能通过OpenMP API例程检索这些icv的值。&lt;/p&gt;
 &lt;p&gt;出于说明的目的，本文档使用特定的名称来引用icv，但是实现不需要使用这些名称，也不需要提供访问变量的任何方法，除非通过第&lt;a href=&#34;https://www.openmp.org/spec-html/5.0/openmpsu31.html#x50-680002.5.2&#34;&gt;189&lt;/a&gt;页第&lt;a href=&#34;https://www.openmp.org/spec-html/5.0/openmpsu31.html#x50-680002.5.2&#34;&gt;2.5.2节&lt;/a&gt;所示的方法。&lt;/p&gt;
+&lt;p&gt;2.5.1 &lt;a href=&#34;https://www.openmp.org/spec-html/5.0/openmpsu30.html#x49-670002.5.1&#34;&gt;ICV Descriptions&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;2.5.2 &lt;a href=&#34;https://www.openmp.org/spec-html/5.0/openmpsu31.html#x50-680002.5.2&#34;&gt;ICV Initialization&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;2.5.3 &lt;a href=&#34;https://www.openmp.org/spec-html/5.0/openmpsu32.html#x51-710002.5.3&#34;&gt;Modifying and Retrieving ICV Values&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;2.5.4 &lt;a href=&#34;https://www.openmp.org/spec-html/5.0/openmpsu33.html#x52-740002.5.4&#34;&gt;How ICVs are Scoped&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;​		 2.5.4.1 &lt;a href=&#34;https://www.openmp.org/spec-html/5.0/openmpsu33.html#x52-760002.5.4.1&#34;&gt;How the Per-Data Environment ICVs Work&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;2.5.5 &lt;a href=&#34;https://www.openmp.org/spec-html/5.0/openmpsu34.html#x53-770002.5.5&#34;&gt;ICV Override Relationships&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://www.openmp.org/spec-html/5.0/openmpse13.html#x48-660002.5&#34;&gt;Internal Control Variables (openmp.org)&lt;/a&gt;&lt;/p&gt;
  ]]></description>
         </item>
@@ -221,7 +227,7 @@
 &lt;p&gt;info register	查看寄存器（除了浮点寄存器）&lt;/p&gt;
 &lt;p&gt;all-registers	查看所有寄存器&lt;/p&gt;
 &lt;p&gt;info registers &amp;lt;reg_name …&amp;gt;查看所指定寄存器&lt;/p&gt;
-&lt;h3 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;来源培训PPT 作者：Relax  邮箱：&lt;a href=&#34;mailto:&amp;#x77;&amp;#x61;&amp;#x6e;&amp;#x67;&amp;#119;&amp;#x31;&amp;#49;&amp;#49;&amp;#x40;&amp;#105;&amp;#x63;&amp;#x6c;&amp;#x6f;&amp;#x75;&amp;#100;&amp;#46;&amp;#x63;&amp;#111;&amp;#109;&#34;&gt;&amp;#x77;&amp;#x61;&amp;#x6e;&amp;#x67;&amp;#119;&amp;#x31;&amp;#49;&amp;#49;&amp;#x40;&amp;#105;&amp;#x63;&amp;#x6c;&amp;#x6f;&amp;#x75;&amp;#100;&amp;#46;&amp;#x63;&amp;#111;&amp;#109;&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;来源培训PPT 作者：Relax  邮箱：&lt;a href=&#34;mailto:&amp;#119;&amp;#97;&amp;#x6e;&amp;#103;&amp;#x77;&amp;#49;&amp;#x31;&amp;#x31;&amp;#x40;&amp;#x69;&amp;#x63;&amp;#x6c;&amp;#111;&amp;#117;&amp;#100;&amp;#46;&amp;#99;&amp;#x6f;&amp;#109;&#34;&gt;&amp;#119;&amp;#97;&amp;#x6e;&amp;#103;&amp;#x77;&amp;#49;&amp;#x31;&amp;#x31;&amp;#x40;&amp;#x69;&amp;#x63;&amp;#x6c;&amp;#111;&amp;#117;&amp;#100;&amp;#46;&amp;#99;&amp;#x6f;&amp;#109;&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
  ]]></description>
         </item>
         <item>
