@@ -9,15 +9,13 @@
         <lastBuildDate>Thu, 14 Apr 2022 14:01:10 +0800</lastBuildDate>
         <category>AVX</category>
         <category>Data Structure</category>
-        <category>String</category>
-        <category>Find</category>
-        <category>STL</category>
-        <category>C++</category>
-        <category>Set</category>
-        <category>团体程序设计天梯赛</category>
-        <category>Sort</category>
         <category>LinkList</category>
+        <category>团体程序设计天梯赛</category>
+        <category>C++</category>
         <category>双向链表</category>
+        <category>Set</category>
+        <category>STL</category>
+        <category>Sort</category>
         <category>Graph</category>
         <category>邻接表</category>
         <category>Vector</category>
@@ -36,13 +34,16 @@
         <category>MPI</category>
         <category>Matrix</category>
         <category>GEMM</category>
-        <category>AVX2</category>
         <category>dgemm</category>
+        <category>AVX2</category>
+        <category>String</category>
+        <category>Find</category>
         <category>Cache</category>
         <category>Blocking</category>
         <category>CUDA</category>
         <category>LeetCode</category>
         <category>双指针</category>
+        <category>Intel</category>
         <category>Mirror</category>
         <category>牛客</category>
         <category>Numactl</category>
@@ -58,8 +59,8 @@
             <title>L2-011 玩转二叉树 (25 分)</title>
             <link>http://example.com/2022/04/14/Algorithm024/</link>
             <category>Data Structure</category>
-            <category>C++</category>
             <category>团体程序设计天梯赛</category>
+            <category>C++</category>
             <category>Binary tree</category>
             <category>BFS</category>
             <pubDate>Thu, 14 Apr 2022 14:01:10 +0800</pubDate>
@@ -85,8 +86,8 @@
             <title>L2-031 深入虎穴 (25 分)</title>
             <link>http://example.com/2022/04/13/Algorithm022/</link>
             <category>Data Structure</category>
-            <category>C++</category>
             <category>团体程序设计天梯赛</category>
+            <category>C++</category>
             <category>邻接表</category>
             <category>Vector</category>
             <category>Binary tree</category>
@@ -114,8 +115,8 @@
             <title>L2-026 小字辈 (25 分)</title>
             <link>http://example.com/2022/04/13/Algorithm019/</link>
             <category>Data Structure</category>
-            <category>C++</category>
             <category>团体程序设计天梯赛</category>
+            <category>C++</category>
             <category>邻接表</category>
             <category>Vector</category>
             <category>Binary tree</category>

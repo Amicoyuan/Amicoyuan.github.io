@@ -5,19 +5,17 @@
         <link>http://example.com</link>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Sat, 18 Feb 2023 16:27:01 +0800</pubDate>
-        <lastBuildDate>Sat, 18 Feb 2023 16:27:01 +0800</lastBuildDate>
+        <pubDate>Sun, 26 Feb 2023 19:12:51 +0800</pubDate>
+        <lastBuildDate>Sun, 26 Feb 2023 19:12:51 +0800</lastBuildDate>
         <category>AVX</category>
         <category>Data Structure</category>
-        <category>String</category>
-        <category>Find</category>
-        <category>STL</category>
-        <category>C++</category>
-        <category>Set</category>
-        <category>团体程序设计天梯赛</category>
-        <category>Sort</category>
         <category>LinkList</category>
+        <category>团体程序设计天梯赛</category>
+        <category>C++</category>
         <category>双向链表</category>
+        <category>Set</category>
+        <category>STL</category>
+        <category>Sort</category>
         <category>Graph</category>
         <category>邻接表</category>
         <category>Vector</category>
@@ -36,13 +34,16 @@
         <category>MPI</category>
         <category>Matrix</category>
         <category>GEMM</category>
-        <category>AVX2</category>
         <category>dgemm</category>
+        <category>AVX2</category>
+        <category>String</category>
+        <category>Find</category>
         <category>Cache</category>
         <category>Blocking</category>
         <category>CUDA</category>
         <category>LeetCode</category>
         <category>双指针</category>
+        <category>Intel</category>
         <category>Mirror</category>
         <category>牛客</category>
         <category>Numactl</category>
@@ -53,6 +54,29 @@
         <category>Tensorflow</category>
         <category>性能分析工具</category>
         <category>gcov</category>
+        <item>
+            <guid isPermalink="true">http://example.com/2023/02/26/intel001/</guid>
+            <title>unroll_and_jam/nounroll_and_jam</title>
+            <link>http://example.com/2023/02/26/intel001/</link>
+            <category>C++</category>
+            <category>Intel</category>
+            <pubDate>Sun, 26 Feb 2023 19:12:51 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;unroll-and-jam-x2F-nounroll-and-jam&#34;&gt;&lt;a href=&#34;#unroll-and-jam-x2F-nounroll-and-jam&#34; class=&#34;headerlink&#34; title=&#34;unroll_and_jam&amp;#x2F;nounroll_and_jam&#34;&gt;&lt;/a&gt;unroll_and_jam&amp;#x2F;nounroll_and_jam&lt;/h1&gt;&lt;p&gt;启用或禁用循环展开和阻塞。这些指令只能应用于迭代for循环。&lt;/p&gt;
+&lt;h2 id=&#34;Syntax&#34;&gt;&lt;a href=&#34;#Syntax&#34; class=&#34;headerlink&#34; title=&#34;Syntax&#34;&gt;&lt;/a&gt;Syntax&lt;/h2&gt;&lt;p&gt;#pragma unroll_and_jam	#pragma unroll_and_jam (n)	#pragma nounroll_and_jam&lt;/p&gt;
+&lt;h2 id=&#34;Arguments&#34;&gt;&lt;a href=&#34;#Arguments&#34; class=&#34;headerlink&#34; title=&#34;Arguments&#34;&gt;&lt;/a&gt;Arguments&lt;/h2&gt;&lt;p&gt;展开因子，表示展开循环的次数;必须是0到255之间的整数常数&lt;/p&gt;
+&lt;h2 id=&#34;Description&#34;&gt;&lt;a href=&#34;#Description&#34; class=&#34;headerlink&#34; title=&#34;Description&#34;&gt;&lt;/a&gt;Description&lt;/h2&gt;&lt;p&gt;unroll_and_jam指令部分展开套中比最内层循环更高的一个或多个循环，并将结果循环融合&amp;#x2F;阻塞回一起。这种转换允许在循环中进行更多的重用。&lt;/p&gt;
+&lt;p&gt;此pragma对最内层循环无效。确保紧随其后的循环不是编译器发起的交换完成后的最内层循环。&lt;/p&gt;
+&lt;p&gt;指定此pragma是向编译器提示展开和阻塞序列是合法且有利可图的。编译器会在任何可能的情况下启用这种转换。&lt;/p&gt;
+&lt;p&gt;对于它影响的每个for循环，unroll_and_jam指令必须在for语句之前。如果指定了n，优化器将展开循环n次。如果n被省略或超出允许的范围，优化器将分配展开循环的次数。编译器通过比较n和循环计数生成正确的代码。&lt;/p&gt;
+&lt;p&gt;只有在设置了编译器选项O3时，才支持此pragma。unroll_and_jam指令将覆盖从命令行展开循环的任何设置。&lt;/p&gt;
+&lt;p&gt;当展开循环会增加寄存器压力和代码大小时，可能需要防止展开嵌套循环或不完美的嵌套循环。在这种情况下，使用nounroll_and_jam编译指令。nounroll_and_jam pragma提示编译器不要展开指定的循环。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Examples&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Use the unroll_and_jam pragma:&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; a[&lt;span class=&#34;hljs-number&#34;&gt;10&lt;/span&gt;][&lt;span class=&#34;hljs-number&#34;&gt;10&lt;/span&gt;]; &lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; b[&lt;span class=&#34;hljs-number&#34;&gt;10&lt;/span&gt;][&lt;span class=&#34;hljs-number&#34;&gt;10&lt;/span&gt;]; &lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; c[&lt;span class=&#34;hljs-number&#34;&gt;10&lt;/span&gt;][&lt;span class=&#34;hljs-number&#34;&gt;10&lt;/span&gt;]; &lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; d[&lt;span class=&#34;hljs-number&#34;&gt;10&lt;/span&gt;][&lt;span class=&#34;hljs-number&#34;&gt;10&lt;/span&gt;]; &lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;unroll&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; n)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i,j,k;&lt;br&gt;    &lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;pragma&lt;/span&gt; unroll_and_jam (6)&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; (i = &lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;; i &amp;lt; n; i++) &amp;#123;&lt;br&gt;       &lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;pragma&lt;/span&gt; unroll_and_jam (6)&lt;/span&gt;&lt;br&gt;       &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; (j = &lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;; j &amp;lt; n; j++) &amp;#123;&lt;br&gt;          &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; (k = &lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;; k &amp;lt; n; k++)&amp;#123;&lt;br&gt;            a[i][j] += b[i][k]*c[k][j];&lt;br&gt;            &amp;#125;&lt;br&gt;       &amp;#125;&lt;br&gt;    &amp;#125; &lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h2 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://www.intel.com/content/www/us/en/develop/documentation/cpp-compiler-developer-guide-and-reference/top/compiler-reference/pragmas/intel-specific-pragma-reference/unroll-and-jam-nounroll-and-jam.html&#34;&gt;unroll_and_jam nounroll_and_jam (intel.com)&lt;/a&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">http://example.com/2023/02/18/leetcode11/</guid>
             <title>11. 盛最多水的容器</title>
@@ -127,8 +151,8 @@
             <title>L2-036 网红点打卡攻略 (25 分)</title>
             <link>http://example.com/2022/04/23/Algorithm032/</link>
             <category>Data Structure</category>
-            <category>C++</category>
             <category>团体程序设计天梯赛</category>
+            <category>C++</category>
             <category>Graph</category>
             <category>邻接矩阵</category>
             <pubDate>Sat, 23 Apr 2022 21:50:27 +0800</pubDate>
@@ -158,8 +182,8 @@
             <title>L2-039 清点代码库 (25 分)</title>
             <link>http://example.com/2022/04/23/Algorithm031/</link>
             <category>Data Structure</category>
-            <category>C++</category>
             <category>团体程序设计天梯赛</category>
+            <category>C++</category>
             <category>Sort</category>
             <category>Vector</category>
             <category>Map</category>
@@ -186,9 +210,9 @@
             <guid isPermalink="true">http://example.com/2022/04/23/Algorithm030/</guid>
             <title>L2-005 集合相似度 (25 分)</title>
             <link>http://example.com/2022/04/23/Algorithm030/</link>
+            <category>团体程序设计天梯赛</category>
             <category>C++</category>
             <category>Set</category>
-            <category>团体程序设计天梯赛</category>
             <category>模拟</category>
             <pubDate>Sat, 23 Apr 2022 21:39:53 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;L2-005-集合相似度-25-分&#34;&gt;&lt;a href=&#34;#L2-005-集合相似度-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-005 集合相似度 (25 分)&#34;&gt;&lt;/a&gt;L2-005 集合相似度 (25 分)&lt;/h2&gt;&lt;p&gt;给定两个整数集合，它们的相似度定义为：Nc&amp;#x2F;Nt×100%。其中Nc是两个集合都有的不相等整数的个数，Nt是两个集合一共有的不相等整数的个数。你的任务就是计算任意一对给定集合的相似度。&lt;/p&gt;
@@ -210,8 +234,8 @@
             <title>L2-010 排座位 (25 分)</title>
             <link>http://example.com/2022/04/16/Algorithm028/</link>
             <category>Data Structure</category>
-            <category>C++</category>
             <category>团体程序设计天梯赛</category>
+            <category>C++</category>
             <category>Graph</category>
             <category>邻接矩阵</category>
             <category>并查集</category>
@@ -237,8 +261,8 @@
             <guid isPermalink="true">http://example.com/2022/04/16/Algorithm027/</guid>
             <title>L2-009 抢红包 (25 分)</title>
             <link>http://example.com/2022/04/16/Algorithm027/</link>
-            <category>C++</category>
             <category>团体程序设计天梯赛</category>
+            <category>C++</category>
             <category>Sort</category>
             <category>结构体</category>
             <category>Double类型相等比较</category>
@@ -266,8 +290,8 @@
             <guid isPermalink="true">http://example.com/2022/04/15/Algorithm026/</guid>
             <title>L2-003 月饼 (25 分)</title>
             <link>http://example.com/2022/04/15/Algorithm026/</link>
-            <category>C++</category>
             <category>团体程序设计天梯赛</category>
+            <category>C++</category>
             <category>Sort</category>
             <category>结构体</category>
             <category>贪心</category>
@@ -291,8 +315,8 @@
             <title>L2-013 红色警报 (25 分)</title>
             <link>http://example.com/2022/04/15/Algorithm025/</link>
             <category>Data Structure</category>
-            <category>C++</category>
             <category>团体程序设计天梯赛</category>
+            <category>C++</category>
             <category>Graph</category>
             <category>邻接矩阵</category>
             <category>DFS</category>
@@ -319,8 +343,8 @@
             <title>L2-011 玩转二叉树 (25 分)</title>
             <link>http://example.com/2022/04/14/Algorithm024/</link>
             <category>Data Structure</category>
-            <category>C++</category>
             <category>团体程序设计天梯赛</category>
+            <category>C++</category>
             <category>Binary tree</category>
             <category>BFS</category>
             <pubDate>Thu, 14 Apr 2022 14:01:10 +0800</pubDate>
@@ -346,8 +370,8 @@
             <title>L2-035 完全二叉树的层序遍历 (25 分)</title>
             <link>http://example.com/2022/04/14/Algorithm023/</link>
             <category>Data Structure</category>
-            <category>C++</category>
             <category>团体程序设计天梯赛</category>
+            <category>C++</category>
             <category>Binary tree</category>
             <pubDate>Thu, 14 Apr 2022 14:01:05 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;L2-035-完全二叉树的层序遍历-25-分&#34;&gt;&lt;a href=&#34;#L2-035-完全二叉树的层序遍历-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-035 完全二叉树的层序遍历 (25 分)&#34;&gt;&lt;/a&gt;L2-035 完全二叉树的层序遍历 (25 分)&lt;/h2&gt;&lt;p&gt;一个二叉树，如果每一个层的结点数都达到最大值，则这个二叉树就是&lt;strong&gt;完美二叉树&lt;/strong&gt;。对于深度为 &lt;em&gt;D&lt;/em&gt; 的，有 &lt;em&gt;N&lt;/em&gt; 个结点的二叉树，若其结点对应于相同深度完美二叉树的层序遍历的前 &lt;em&gt;N&lt;/em&gt; 个结点，这样的树就是&lt;strong&gt;完全二叉树&lt;/strong&gt;。&lt;/p&gt;
@@ -369,8 +393,8 @@
             <title>L2-031 深入虎穴 (25 分)</title>
             <link>http://example.com/2022/04/13/Algorithm022/</link>
             <category>Data Structure</category>
-            <category>C++</category>
             <category>团体程序设计天梯赛</category>
+            <category>C++</category>
             <category>邻接表</category>
             <category>Vector</category>
             <category>Binary tree</category>
@@ -398,8 +422,8 @@
             <title>L2-040 哲哲打游戏 (25 分)</title>
             <link>http://example.com/2022/04/13/Algorithm021/</link>
             <category>Data Structure</category>
-            <category>C++</category>
             <category>团体程序设计天梯赛</category>
+            <category>C++</category>
             <category>邻接表</category>
             <category>Vector</category>
             <category>模拟</category>
@@ -436,8 +460,8 @@
             <title>L2-027 名人堂与代金券 (25 分)</title>
             <link>http://example.com/2022/04/13/Algorithm020/</link>
             <category>Data Structure</category>
-            <category>C++</category>
             <category>团体程序设计天梯赛</category>
+            <category>C++</category>
             <category>Sort</category>
             <pubDate>Wed, 13 Apr 2022 09:45:55 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;L2-027-名人堂与代金券-25-分&#34;&gt;&lt;a href=&#34;#L2-027-名人堂与代金券-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-027 名人堂与代金券 (25 分)&#34;&gt;&lt;/a&gt;L2-027 名人堂与代金券 (25 分)&lt;/h2&gt;&lt;p&gt;对于在中国大学MOOC（&lt;a href=&#34;http://www.icourse163.org/&#34;&gt;http://www.icourse163.org/&lt;/a&gt; ）学习“数据结构”课程的学生，想要获得一张合格证书，总评成绩必须达到 60 分及以上，并且有另加福利：总评分在 [G, 100] 区间内者，可以得到 50 元 PAT 代金券；在 [60, G) 区间内者，可以得到 20 元PAT代金券。全国考点通用，一年有效。同时任课老师还会把总评成绩前 K 名的学生列入课程“名人堂”。本题就请你编写程序，帮助老师列出名人堂的学生，并统计一共发出了面值多少元的 PAT 代金券。&lt;/p&gt;
@@ -458,8 +482,8 @@
             <title>L2-026 小字辈 (25 分)</title>
             <link>http://example.com/2022/04/13/Algorithm019/</link>
             <category>Data Structure</category>
-            <category>C++</category>
             <category>团体程序设计天梯赛</category>
+            <category>C++</category>
             <category>邻接表</category>
             <category>Vector</category>
             <category>Binary tree</category>
@@ -483,9 +507,9 @@
             <title>L2-023 图着色问题 (25 分)</title>
             <link>http://example.com/2022/04/12/Algorithm018/</link>
             <category>Data Structure</category>
+            <category>团体程序设计天梯赛</category>
             <category>C++</category>
             <category>Set</category>
-            <category>团体程序设计天梯赛</category>
             <category>Graph</category>
             <category>邻接表</category>
             <category>Vector</category>
@@ -504,32 +528,6 @@
 &lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;45&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;46&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;hljs-meta-string&#34;&gt;&amp;lt;bits/stdc++.h&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;using&lt;/span&gt; &lt;span class=&#34;hljs-keyword&#34;&gt;namespace&lt;/span&gt; std;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;()&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;/span&gt;&amp;#123;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; v,e,k;&lt;br&gt;    cin&amp;gt;&amp;gt;v&amp;gt;&amp;gt;e&amp;gt;&amp;gt;k;&lt;br&gt;    vector&amp;lt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;&amp;gt; g[&lt;span class=&#34;hljs-number&#34;&gt;505&lt;/span&gt;];			&lt;span class=&#34;hljs-comment&#34;&gt;//邻接表&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; color[&lt;span class=&#34;hljs-number&#34;&gt;505&lt;/span&gt;];				&lt;span class=&#34;hljs-comment&#34;&gt;//记录颜色&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; (&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i = &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;; i &amp;lt;e ; ++i) &amp;#123;       &lt;span class=&#34;hljs-comment&#34;&gt;//建立邻接表&lt;/span&gt;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; a,b;&lt;br&gt;        cin&amp;gt;&amp;gt;a&amp;gt;&amp;gt;b;&lt;br&gt;        g[a].&lt;span class=&#34;hljs-built_in&#34;&gt;push_back&lt;/span&gt;(b);&lt;br&gt;        g[b].&lt;span class=&#34;hljs-built_in&#34;&gt;push_back&lt;/span&gt;(a);&lt;br&gt;    &amp;#125;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; time;&lt;br&gt;    cin&amp;gt;&amp;gt;time;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; (&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; j = &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;; j &amp;lt;time ; ++j) &amp;#123;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; flag=&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;;&lt;br&gt;        set&amp;lt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;&amp;gt; s;					&lt;span class=&#34;hljs-comment&#34;&gt;//用来统计颜色总数&lt;/span&gt;&lt;br&gt;        s.&lt;span class=&#34;hljs-built_in&#34;&gt;clear&lt;/span&gt;();&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; (&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i = &lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;; i &amp;lt;=v; ++i) &amp;#123;&lt;br&gt;            &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; num;&lt;br&gt;            cin&amp;gt;&amp;gt;num;&lt;br&gt;            color[i]=num;&lt;br&gt;            s.&lt;span class=&#34;hljs-built_in&#34;&gt;insert&lt;/span&gt;(num);&lt;br&gt;        &amp;#125;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(s.&lt;span class=&#34;hljs-built_in&#34;&gt;size&lt;/span&gt;()!=k)&amp;#123;			&lt;span class=&#34;hljs-comment&#34;&gt;//如果颜色数不等于k即非法&lt;/span&gt;&lt;br&gt;            cout&amp;lt;&amp;lt;&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;No&amp;quot;&lt;/span&gt;&amp;lt;&amp;lt;endl;&lt;br&gt;            &lt;span class=&#34;hljs-keyword&#34;&gt;continue&lt;/span&gt;;&lt;br&gt;        &amp;#125;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; (&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; l = &lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;; l &amp;lt;=v ; ++l) &amp;#123;						&lt;span class=&#34;hljs-comment&#34;&gt;//遍历邻接表&lt;/span&gt;&lt;br&gt;            &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; (&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i = &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;; i &amp;lt;g[l].&lt;span class=&#34;hljs-built_in&#34;&gt;size&lt;/span&gt;(); ++i) &amp;#123;&lt;br&gt;                &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(color[l]==color[g[l][i]])&amp;#123;				&lt;span class=&#34;hljs-comment&#34;&gt;//如果相邻结点颜色一样则为假&lt;/span&gt;&lt;br&gt;                    flag=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;&lt;br&gt;                    &lt;span class=&#34;hljs-keyword&#34;&gt;break&lt;/span&gt;;&lt;br&gt;                &amp;#125;&lt;br&gt;            &amp;#125;&lt;br&gt;        &amp;#125;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(flag==&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;)&amp;#123;&lt;br&gt;            cout&amp;lt;&amp;lt;&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;Yes&amp;quot;&lt;/span&gt;&amp;lt;&amp;lt;endl;&lt;br&gt;        &amp;#125;&lt;span class=&#34;hljs-keyword&#34;&gt;else&lt;/span&gt;&amp;#123;&lt;br&gt;            cout&amp;lt;&amp;lt;&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;No&amp;quot;&lt;/span&gt;&amp;lt;&amp;lt;endl;&lt;br&gt;        &amp;#125;&lt;br&gt;    &amp;#125;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;h3 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://pintia.cn/problem-sets/994805046380707840/problems/994805057298481152&#34;&gt;题目详情 - L2-023 图着色问题 (25 分) (pintia.cn)&lt;/a&gt;&lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://example.com/2022/04/12/Algorithm017/</guid>
-            <title>L2-022 重排链表 (25 分)</title>
-            <link>http://example.com/2022/04/12/Algorithm017/</link>
-            <category>C++</category>
-            <category>团体程序设计天梯赛</category>
-            <category>LinkList</category>
-            <category>双向链表</category>
-            <pubDate>Tue, 12 Apr 2022 09:50:11 +0800</pubDate>
-            <description><![CDATA[ &lt;h2 id=&#34;L2-022-重排链表-25-分&#34;&gt;&lt;a href=&#34;#L2-022-重排链表-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-022 重排链表 (25 分)&#34;&gt;&lt;/a&gt;L2-022 重排链表 (25 分)&lt;/h2&gt;&lt;p&gt;给定一个单链表 &lt;em&gt;L&lt;/em&gt;1→&lt;em&gt;L&lt;/em&gt;2→⋯→&lt;em&gt;Ln&lt;/em&gt;−1→&lt;em&gt;Ln&lt;/em&gt;，请编写程序将链表重新排列为 &lt;em&gt;Ln&lt;/em&gt;→&lt;em&gt;L&lt;/em&gt;1→&lt;em&gt;Ln&lt;/em&gt;−1→&lt;em&gt;L&lt;/em&gt;2→⋯。例如：给定&lt;em&gt;L&lt;/em&gt;为1→2→3→4→5→6，则输出应该为6→1→5→2→4→3。&lt;/p&gt;
-&lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;每个输入包含1个测试用例。每个测试用例第1行给出第1个结点的地址和结点总个数，即正整数&lt;em&gt;N&lt;/em&gt; (≤105)。结点的地址是5位非负整数，NULL地址用−1表示。&lt;/p&gt;
-&lt;p&gt;接下来有&lt;em&gt;N&lt;/em&gt;行，每行格式为：&lt;/p&gt;
-&lt;figure class=&#34;highlight purebasic&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs purebasic&#34;&gt;Address &lt;span class=&#34;hljs-keyword&#34;&gt;Data&lt;/span&gt; &lt;span class=&#34;hljs-keyword&#34;&gt;Next&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;其中&lt;code&gt;Address&lt;/code&gt;是结点地址；&lt;code&gt;Data&lt;/code&gt;是该结点保存的数据，为不超过105的正整数；&lt;code&gt;Next&lt;/code&gt;是下一结点的地址。题目保证给出的链表上至少有两个结点。&lt;/p&gt;
-&lt;h3 id=&#34;输出格式：&#34;&gt;&lt;a href=&#34;#输出格式：&#34; class=&#34;headerlink&#34; title=&#34;输出格式：&#34;&gt;&lt;/a&gt;输出格式：&lt;/h3&gt;&lt;p&gt;对每个测试用例，顺序输出重排后的结果链表，其上每个结点占一行，格式与输入相同。&lt;/p&gt;
-&lt;h3 id=&#34;输入样例：&#34;&gt;&lt;a href=&#34;#输入样例：&#34; class=&#34;headerlink&#34; title=&#34;输入样例：&#34;&gt;&lt;/a&gt;输入样例：&lt;/h3&gt;&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs in&#34;&gt;00100 6&lt;br&gt;00000 4 99999&lt;br&gt;00100 1 12309&lt;br&gt;68237 6 -1&lt;br&gt;33218 3 00000&lt;br&gt;99999 5 68237&lt;br&gt;12309 2 33218&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h3 id=&#34;输出样例：&#34;&gt;&lt;a href=&#34;#输出样例：&#34; class=&#34;headerlink&#34; title=&#34;输出样例：&#34;&gt;&lt;/a&gt;输出样例：&lt;/h3&gt;&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs out&#34;&gt;68237 6 00100&lt;br&gt;00100 1 99999&lt;br&gt;99999 5 12309&lt;br&gt;12309 2 00000&lt;br&gt;00000 4 33218&lt;br&gt;33218 3 -1&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h3 id=&#34;程序源代码&#34;&gt;&lt;a href=&#34;#程序源代码&#34; class=&#34;headerlink&#34; title=&#34;程序源代码&#34;&gt;&lt;/a&gt;程序源代码&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;利用双向链表，头尾指针来模拟&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;45&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;46&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;47&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;48&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;49&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;50&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;51&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;52&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;53&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;54&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;55&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;56&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;57&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;58&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;59&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;60&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;61&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;hljs-meta-string&#34;&gt;&amp;lt;bits/stdc++.h&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;using&lt;/span&gt; &lt;span class=&#34;hljs-keyword&#34;&gt;namespace&lt;/span&gt; std;&lt;br&gt;&lt;span class=&#34;hljs-class&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;linklist&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; address=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;			&lt;span class=&#34;hljs-comment&#34;&gt;//记录当前结点的地址，虽然也没用到&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; data=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;				&lt;span class=&#34;hljs-comment&#34;&gt;//记录数据域&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; next=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;				&lt;span class=&#34;hljs-comment&#34;&gt;//指向下一个结点的地址&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; pre=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;				&lt;span class=&#34;hljs-comment&#34;&gt;//指向上一个结点的地址&lt;/span&gt;&lt;br&gt;&amp;#125;l[&lt;span class=&#34;hljs-number&#34;&gt;100005&lt;/span&gt;];&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;()&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;/span&gt;&amp;#123;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; start,back=&lt;span class=&#34;hljs-number&#34;&gt;-1&lt;/span&gt;;		&lt;span class=&#34;hljs-comment&#34;&gt;//头尾指针&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; tmp;				&lt;span class=&#34;hljs-comment&#34;&gt;//用来遍历当前链表用于统计链表的长度&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; n;&lt;br&gt;    cin&amp;gt;&amp;gt;start&amp;gt;&amp;gt;n;&lt;br&gt;    tmp=start;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; address, data, next;&lt;br&gt;    l[start].pre=&lt;span class=&#34;hljs-number&#34;&gt;-1&lt;/span&gt;;	   &lt;span class=&#34;hljs-comment&#34;&gt;//初始化第一个结点的前一个结点位置为-1&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; cnt=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;			  	&lt;span class=&#34;hljs-comment&#34;&gt;//记录链表长&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; (&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i = &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;; i &amp;lt;n ; ++i) &amp;#123;&lt;br&gt;       cin&amp;gt;&amp;gt;address&amp;gt;&amp;gt;data&amp;gt;&amp;gt;next;&lt;br&gt;       l[address].address=address;&lt;br&gt;       l[address].data=data;&lt;br&gt;       l[address].next=next;&lt;br&gt;       &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(next!=&lt;span class=&#34;hljs-number&#34;&gt;-1&lt;/span&gt;)&amp;#123;&lt;br&gt;           l[next].pre=address;				&lt;span class=&#34;hljs-comment&#34;&gt;//设值上一个结点的地址&lt;/span&gt;&lt;br&gt;       &amp;#125;&lt;br&gt;    &amp;#125;&lt;br&gt;    &lt;span class=&#34;hljs-comment&#34;&gt;//这道题比较坑的地方是会出现不是这个链表的结点，所以n不是真正的链表长，需要统计真正的链表长&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-comment&#34;&gt;//如果没注意这点，第三个测试点会不通过，不过也能得到21分&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;while&lt;/span&gt; (&lt;span class=&#34;hljs-literal&#34;&gt;true&lt;/span&gt;) &amp;#123;&lt;br&gt;        cnt++;				&lt;span class=&#34;hljs-comment&#34;&gt;//统计链表长	&lt;/span&gt;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(l[tmp].next==&lt;span class=&#34;hljs-number&#34;&gt;-1&lt;/span&gt;)&amp;#123;&lt;br&gt;            back=tmp;       &lt;span class=&#34;hljs-comment&#34;&gt;//尾指针&lt;/span&gt;&lt;br&gt;            &lt;span class=&#34;hljs-keyword&#34;&gt;break&lt;/span&gt;;&lt;br&gt;        &amp;#125;&lt;br&gt;        tmp=l[tmp].next;&lt;br&gt;    &amp;#125;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; flag=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;&lt;br&gt;    &lt;span class=&#34;hljs-comment&#34;&gt;//flag=0动尾指针,flag=1动头指针。我并没有改变原来链表！&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; (&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; k = &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;; k &amp;lt;cnt ; ++k) &amp;#123;&lt;br&gt;            &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(flag==&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;)&amp;#123;&lt;br&gt;                &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(k==cnt&lt;span class=&#34;hljs-number&#34;&gt;-1&lt;/span&gt;)&amp;#123;&lt;br&gt;                    &lt;span class=&#34;hljs-built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;%05d %d %d\n&amp;quot;&lt;/span&gt;,l[back].address,l[back].data,&lt;span class=&#34;hljs-number&#34;&gt;-1&lt;/span&gt;);&lt;br&gt;                &amp;#125;&lt;span class=&#34;hljs-keyword&#34;&gt;else&lt;/span&gt;&amp;#123;&lt;br&gt;                    &lt;span class=&#34;hljs-built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;%05d %d %05d\n&amp;quot;&lt;/span&gt;,l[back].address,l[back].data,start);&lt;br&gt;                &amp;#125;&lt;br&gt;                back=l[back].pre;&lt;br&gt;                flag=&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;;&lt;br&gt;            &amp;#125;&lt;br&gt;            &lt;span class=&#34;hljs-keyword&#34;&gt;else&lt;/span&gt; &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(flag==&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;)&amp;#123;&lt;br&gt;                &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(k==cnt&lt;span class=&#34;hljs-number&#34;&gt;-1&lt;/span&gt;)&amp;#123;&lt;br&gt;                    &lt;span class=&#34;hljs-built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;%05d %d %d\n&amp;quot;&lt;/span&gt;,l[start].address,l[start].data,&lt;span class=&#34;hljs-number&#34;&gt;-1&lt;/span&gt;);&lt;br&gt;                &amp;#125;&lt;span class=&#34;hljs-keyword&#34;&gt;else&lt;/span&gt;&amp;#123;&lt;br&gt;                    &lt;span class=&#34;hljs-built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;%05d %d %05d\n&amp;quot;&lt;/span&gt;,l[start].address,l[start].data,back);&lt;br&gt;                &amp;#125;&lt;br&gt;                start=l[start].next;&lt;br&gt;                flag=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;&lt;br&gt;            &amp;#125;&lt;br&gt;    &amp;#125;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h3 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://pintia.cn/problem-sets/994805046380707840/problems/994805057860517888&#34;&gt;题目详情 - L2-022 重排链表 (25 分) (pintia.cn)&lt;/a&gt;&lt;/p&gt;
  ]]></description>
         </item>
     </channel>
