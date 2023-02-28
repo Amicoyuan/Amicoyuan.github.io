@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>C/C++关键字之restrict</title>
+    <link href="/2023/02/28/Linux004/"/>
+    <url>/2023/02/28/Linux004/</url>
+    
+    <content type="html"><![CDATA[<h1 id="C-x2F-C-关键字之restrict"><a href="#C-x2F-C-关键字之restrict" class="headerlink" title="C&#x2F;C++关键字之restrict"></a>C&#x2F;C++关键字之restrict</h1><p>在C语言中，restrict关键字用于修饰指针（C99标准）。通过加上restrict关键字，程序员可提示编译器：在该指针的生命周期内，其指向的对象不会被别的指针所引用。</p><p>需要注意的是，在C++中，并无明确统一的标准支持restrict关键字。但是很多编译器实现了功能相同的关键字，例如gcc和clang中的__restrict关键字。</p><figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">add1</span><span class="hljs-params">(<span class="hljs-keyword">int</span>*a, <span class="hljs-keyword">int</span>* b)</span></span><br><span class="hljs-function"></span>&#123;<br>    *a = <span class="hljs-number">10</span>;<br>    *b = <span class="hljs-number">12</span>;<br>    <span class="hljs-keyword">return</span> *a + *b;<br>&#125;<br></code></pre></div></td></tr></table></figure><p>add1函数的返回值会永远是10 + 12 &#x3D; 22吗？</p><p>答案是不一定。在指针a和b的地址不同时，返回22没有问题。但是当指针a与b指向的是同一个int对象时，该对象先被赋值为10，后被赋值为12，因此a和b都返回12，因此add1函数最终返回24。</p><p>下面是一个简单的例子：</p><figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">add1</span><span class="hljs-params">(<span class="hljs-keyword">int</span>* a, <span class="hljs-keyword">int</span>* b)</span></span><br><span class="hljs-function"></span>&#123;<br>    *a = <span class="hljs-number">10</span>;<br>    *b = <span class="hljs-number">12</span>;<br>    <span class="hljs-keyword">return</span> *a + *b;<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    <span class="hljs-keyword">int</span>* c;<br>    <span class="hljs-keyword">int</span>* d;<br>    d=(<span class="hljs-keyword">int</span>*)<span class="hljs-built_in">malloc</span>(<span class="hljs-built_in"><span class="hljs-keyword">sizeof</span></span>(<span class="hljs-keyword">int</span>)*<span class="hljs-number">1</span>);<br>    c=(<span class="hljs-keyword">int</span>*)<span class="hljs-built_in">malloc</span>(<span class="hljs-built_in"><span class="hljs-keyword">sizeof</span></span>(<span class="hljs-keyword">int</span>)*<span class="hljs-number">1</span>);<br>    *c=<span class="hljs-number">10</span>;<br>    *d=<span class="hljs-number">12</span>;<br>    *d=<span class="hljs-number">12</span>;<br>    cout&lt;&lt;<span class="hljs-string">&quot;c:&quot;</span>&lt;&lt;*c&lt;&lt;endl;<br>    cout&lt;&lt;<span class="hljs-string">&quot;d:&quot;</span>&lt;&lt;*d&lt;&lt;endl;<br>    cout&lt;&lt;<span class="hljs-string">&quot;When Pointers a and b have different addresses&quot;</span>&lt;&lt;endl;<br>    cout&lt;&lt;<span class="hljs-built_in">add1</span>(c,d)&lt;&lt;endl;<br>    cout&lt;&lt;<span class="hljs-string">&quot;When Pointers a and b have the same address&quot;</span>&lt;&lt;endl;<br>    cout&lt;&lt;<span class="hljs-built_in">add1</span>(c,c)&lt;&lt;endl;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure><p>程序输出：</p><figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++">c:<span class="hljs-number">10</span><br>d:<span class="hljs-number">12</span><br>When Pointers a <span class="hljs-keyword">and</span> b have different addresses<br><span class="hljs-number">22</span><br>When Pointers a <span class="hljs-keyword">and</span> b have the same address<br><span class="hljs-number">24</span><br></code></pre></div></td></tr></table></figure><p>开启-O3优化，add1对应的汇编代码如下:</p><p>为了得到<code>*a</code>的值访问了1次内存，而不管在何种条件下(<code>a == b</code> or <code>a != b</code>)，<code>*b</code>的值都是12。因此编译器将<code>*a</code>的值载入<code>eax</code>寄存器后，直接加上立即数12，而无需再访问内存获取<code>*b</code>的值。在无法确定指针a和b是否相同的情况下，编译器只能帮你优化到这里了。</p><figure class="highlight fortran"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs fortran"><span class="hljs-number">0000000000400</span>a10 &lt;_Z4add1PiS_&gt;:<br>  <span class="hljs-number">400</span>a10:   c7 <span class="hljs-number">07</span> <span class="hljs-number">0</span>a <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span>       movl   $<span class="hljs-number">0</span>xa,(%rdi) ; *a = <span class="hljs-number">10</span><br>  <span class="hljs-number">400</span>a16:   c7 <span class="hljs-number">06</span> <span class="hljs-number">0</span>c <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span>       movl   $<span class="hljs-number">0</span>xc,(%rsi) ; *b = <span class="hljs-number">10</span><br>  <span class="hljs-number">400</span>a1c:   <span class="hljs-number">8</span>b <span class="hljs-number">07</span>                   mov    (%rdi),%eax ; 结果 = *a<br>  <span class="hljs-number">400</span>a1e:   <span class="hljs-number">83</span> c0 <span class="hljs-number">0</span>c                add    $<span class="hljs-number">0</span>xc,%eax   ; 结果 += <span class="hljs-number">12</span> <br>  <span class="hljs-number">400</span>a21:   c3                      retq<br></code></pre></div></td></tr></table></figure><p>加上了restrict关键字过后，同样开启-O3优化，add1对应的汇编代码如下：</p><p>加上关键字restrict后，编译器能够确认指针a和b不可能指向同一个内存地址，因此在求*a + *b时，无虚访问内存，因为*a必然等于立即数10，*b必然等于立即数12。</p><figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">add2</span><span class="hljs-params">(<span class="hljs-keyword">int</span>* __restrict  a, <span class="hljs-keyword">int</span>* __restrict b)</span> </span><br><span class="hljs-function"></span>&#123;<br>    *a = <span class="hljs-number">10</span>;<br>    *b = <span class="hljs-number">12</span>;<br>    <span class="hljs-keyword">return</span> *a + *b ;<br>&#125;<br><span class="hljs-number">0000000000400</span>a30 &lt;_Z4add2PiS_&gt;:<br>  <span class="hljs-number">400</span>a30:   c7 <span class="hljs-number">07</span> <span class="hljs-number">0</span>a <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span>       movl   $<span class="hljs-number">0xa</span>,(%rdi) ; *a = <span class="hljs-number">10</span><br>  <span class="hljs-number">400</span>a36:   b8 <span class="hljs-number">16</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span>          mov    $<span class="hljs-number">0x16</span>,%eax  ; 结果 = <span class="hljs-number">22</span><br>  <span class="hljs-number">400</span>a3b:   c7 <span class="hljs-number">06</span> <span class="hljs-number">0</span>c <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span>       movl   $<span class="hljs-number">0xc</span>,(%rsi) ; *b = <span class="hljs-number">12</span><br>  <span class="hljs-number">400</span>a41:   c3  <br></code></pre></div></td></tr></table></figure><p>有无restrict关键字的两种情况下的汇编指令可看到，后者比前者少访问一次内存，且少执行一条指令。就是因为没加restruct关键字时，编译器不能确定别的地方是不是会修改此值，所以会去相应的地址查看。</p><p><strong>这样当我们明确知道两个指针不可能指向同一个地址时，我们就可以通过使用restrict关键字来进行性能优化。</strong></p><p>注意使用restrict的时候，程序员必须确保不会出现<strong>pointer aliasing</strong>，即同一块内存无法通过两个或以上的指针变量名访问。不满足这个条件强行指定restrict，将会出现<strong>underfined behavior</strong>。</p><p>通常编写代码时会忽略pointer aliasing的问题。更常见是在性能分析时，通过反汇编看到很多冗余的读取指令，才会想到加入restrict关键字来提升性能。</p><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://zhuanlan.zhihu.com/p/349726808">C&#x2F;C++关键字之restrict - 知乎 (zhihu.com)</a></p><p><a href="https://github.com/ClickHouse/ClickHouse/pull/19946">Improve performance of aggregate functions by alexey-milovidov · Pull Request #19946 · ClickHouse&#x2F;ClickHouse (github.com)</a></p><p><a href="https://en.cppreference.com/w/c/language/restrict">restrict type qualifier - cppreference.com</a></p><p><a href="https://www.zhihu.com/question/41653775/answer/2535730128">如何理解C语言关键字restrict？ - 知乎 (zhihu.com)</a></p><p><a href="https://blog.csdn.net/qq_41822235/article/details/83479562">(65条消息) 关键字_restrict___restrict_楚楚可薇的博客-CSDN博客</a></p><p><a href="https://blog.csdn.net/qq_41950508/article/details/126619881?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~Rate-1-126619881-blog-102577325.pc_relevant_3mothn_strategy_recovery&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~Rate-1-126619881-blog-102577325.pc_relevant_3mothn_strategy_recovery&utm_relevant_index=1">(65条消息) 【C++】关键字restrict的作用_restrict关键字的作用_不知所措的渣渣辉的博客-CSDN博客</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Operating System</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Linux</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>unroll_and_jam/nounroll_and_jam</title>
     <link href="/2023/02/26/intel001/"/>
     <url>/2023/02/26/intel001/</url>
@@ -112,7 +137,7 @@
     <link href="/2023/02/24/Linux003/"/>
     <url>/2023/02/24/Linux003/</url>
     
-    <content type="html"><![CDATA[<h2 id="基于GDB的程序调试"><a href="#基于GDB的程序调试" class="headerlink" title="基于GDB的程序调试"></a>基于GDB的程序调试</h2><h3 id="程序调试工具GDB"><a href="#程序调试工具GDB" class="headerlink" title="程序调试工具GDB"></a>程序调试工具GDB</h3><p>编译器GCC，项目构建工具Make（又称gmake），以及GDB。</p><p><img src="/2023/02/24/Linux003/image-20230224165344672.png" alt="image-20230224165344672"></p><p><strong>GDB是什么？</strong></p><p>GDB：GNU symbolic debugger是Linux下常用的程序调试器</p><p><strong>GDB可以做什么？</strong></p><p><img src="/2023/02/24/Linux003/image-20230224165606636.png" alt="image-20230224165606636"></p><p><strong>GDB官网：</strong><a href="https://www.sourceware.org/gdb/">GDB: The GNU Project Debugger (sourceware.org)</a></p><h3 id="调试案例一"><a href="#调试案例一" class="headerlink" title="调试案例一"></a>调试案例一</h3><figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">int</span> n,sum;<br>    n = <span class="hljs-number">1</span>;<br>    sum = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">while</span>( n &lt;= <span class="hljs-number">100</span>)<br>    &#123;<br>        sum = sum + n;<br>        n = n + <span class="hljs-number">1</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure><p>在编译程序的时候，需要加调试选项： -g</p><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">gcc gdb001.c -g -o ex1<br></code></pre></div></td></tr></table></figure><p>使用gdb启动程序：</p><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">gdb ./ex1<br></code></pre></div></td></tr></table></figure><p><strong>进入gdb调试环境</strong>：</p><p><img src="/2023/02/24/Linux003/image-20230224170419171.png" alt="image-20230224170419171"></p><p><strong>在调试环境中：使用l选项会显示带行号的源代码</strong></p><p><img src="/2023/02/24/Linux003/image-20230224170620617.png" alt="image-20230224170620617"></p><p><strong>但是默认情况下，l选项只显示10行源代码，如果查看后续代码，在调试界面Enter回车即可</strong></p><p><img src="/2023/02/24/Linux003/image-20230224170804048.png" alt="image-20230224170804048"></p><p><strong>在第7行源代码处打断点：</strong></p><p><img src="/2023/02/24/Linux003/image-20230224171858691.png" alt="image-20230224171858691"></p><p><strong>运行程序，遇到断点停止：</strong></p><p><img src="/2023/02/24/Linux003/image-20230224172105514.png" alt="image-20230224172105514"></p><p><strong>查看代码中变量n的值</strong></p><p><img src="/2023/02/24/Linux003/image-20230224172200662.png" alt="image-20230224172200662"></p><p>当前n的值为1，$1表示该变量所在存储区的名称</p><p><strong>在程序第12行处打断点</strong></p><p><img src="/2023/02/24/Linux003/image-20230224172321002.png" alt="image-20230224172321002"></p><p><strong>继续执行程序</strong></p><p><img src="/2023/02/24/Linux003/image-20230224172356622.png" alt="image-20230224172356622"></p><p><strong>查看当前n变量的值</strong></p><p><img src="/2023/02/24/Linux003/image-20230224172422998.png" alt="image-20230224172422998"></p><p>当前n的值为101</p><p><strong>退出调试</strong></p><p><img src="/2023/02/24/Linux003/image-20230224172456626.png" alt="image-20230224172456626"></p><p><strong>查看调试环境所有断点：</strong></p><p><img src="/2023/02/24/Linux003/image-20230224172650422.png" alt="image-20230224172650422"></p><p><strong>删除第7行的断点：</strong></p><p><img src="/2023/02/24/Linux003/image-20230224172745323.png" alt="image-20230224172745323"></p><p><strong>禁用编号为2的断点：</strong></p><p><img src="/2023/02/24/Linux003/image-20230224172832507.png" alt="image-20230224172832507"></p><p>注意断点状态Enb(enable)由y变成n，代表禁用</p><p><strong>恢复编号为2的断点：</strong></p><p><img src="/2023/02/24/Linux003/image-20230224173006975.png" alt="image-20230224173006975"></p><h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>GDB有三种调试模式：</p><p><strong>调试执行程序：</strong>（前面的案例），注意编译加调试信息(-g)</p><p><strong>调试core文件   ：</strong>需要对系统设置的core文件大小作调整（ulimit - c unlimlited），否则可能无法  产生core文件</p><p><strong>调试正在执行的程序（gdb attach） ：</strong>Top找到进程编号pid，Gdb attach pid</p><p><strong>GDB结构组成：</strong></p><p><img src="/2023/02/24/Linux003/image-20230224173613247.png" alt="image-20230224173613247"></p><h3 id="常用调试指令："><a href="#常用调试指令：" class="headerlink" title="常用调试指令："></a>常用调试指令：</h3><h4 id="启动指令"><a href="#启动指令" class="headerlink" title="启动指令"></a>启动指令</h4><p>调试程序：gdb program</p><p>根据core文件调试程序：gdb program corefile</p><p>跟踪调试进程：gdb attach pid</p><h4 id="程序运行"><a href="#程序运行" class="headerlink" title="程序运行"></a>程序运行</h4><p>run，该命令会运行至程序结束，除非遇到断点或报错</p><h4 id="单步执行"><a href="#单步执行" class="headerlink" title="单步执行"></a>单步执行</h4><p>步进执行不进栈？next</p><p>步进执行，进栈step</p><h4 id="代码查看"><a href="#代码查看" class="headerlink" title="代码查看"></a>代码查看</h4><p>列出断点附近或程序所有代码list</p><p>设置现实代码的行数 set listsize &lt;n&gt;</p><h4 id="退出调试"><a href="#退出调试" class="headerlink" title="退出调试"></a>退出调试</h4><p>quit</p><h4 id="查看栈信息"><a href="#查看栈信息" class="headerlink" title="查看栈信息"></a>查看栈信息</h4><p>bt打印当前的函数调用栈的所有信息</p><p>bt &lt;n&gt;n是一个正整数，表示只打印栈顶上n层的栈信息</p><p>bt &lt;-n&gt;表示只打印栈底下n层的栈信息</p><h4 id="设置断点"><a href="#设置断点" class="headerlink" title="设置断点"></a>设置断点</h4><p><strong>代码断点：</strong></p><ul><li>break lineNumber | functionName</li><li>break lineNumber | functionName if condition</li><li>tbreak lineNumber | functionName  临时断点，仅能使用一次</li></ul><p><strong>内存断点（观察点）：</strong></p><ul><li>监控内存值改变 watch expr [if condition]</li><li>监控内存值被读取 rwatch expr [if condition]</li><li>监控内存值被读取和写入 awatch wxpr [if condition]</li></ul><p><strong>事件断点：</strong></p><ul><li>C++ exception，使用catch exception [name]</li><li>Ada exception，使用catch handlers [name]</li><li>exec事件，使用catch exec</li><li>fork事件，使用catch fork 或者 catch vfork</li><li>加载和卸载动态so事件，使用catch load|unload [regexp]</li><li>监听系统信号，使用catch signal [signal]</li><li>监听系统调用，使用catch syscall[name|number|group:groupname|g:groupname]…</li></ul><p><strong>打印变量：</strong></p><ul><li>Print [file | func]::variable 查看局部变量或全局变量</li><li>Print *array@len  数组首地址@查看长度</li><li>x&#x2F;[n | u] &lt;addr&gt;x命令查看内存地址钟的值，n：表示显示内存的长度，u：表示从当前地址往后请求的字节数</li></ul><p><strong>打印寄存器：</strong></p><p>info register查看寄存器（除了浮点寄存器）</p><p>all-registers查看所有寄存器</p><p>info registers &lt;reg_name …&gt;查看所指定寄存器</p><h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p><strong>来源培训PPT 作者：Relax  邮箱：<a href="mailto:&#119;&#x61;&#x6e;&#103;&#x77;&#49;&#49;&#49;&#x40;&#x69;&#99;&#x6c;&#x6f;&#x75;&#100;&#x2e;&#99;&#x6f;&#x6d;">&#119;&#x61;&#x6e;&#103;&#x77;&#49;&#49;&#49;&#x40;&#x69;&#99;&#x6c;&#x6f;&#x75;&#100;&#x2e;&#99;&#x6f;&#x6d;</a></strong></p>]]></content>
+    <content type="html"><![CDATA[<h2 id="基于GDB的程序调试"><a href="#基于GDB的程序调试" class="headerlink" title="基于GDB的程序调试"></a>基于GDB的程序调试</h2><h3 id="程序调试工具GDB"><a href="#程序调试工具GDB" class="headerlink" title="程序调试工具GDB"></a>程序调试工具GDB</h3><p>编译器GCC，项目构建工具Make（又称gmake），以及GDB。</p><p><img src="/2023/02/24/Linux003/image-20230224165344672.png" alt="image-20230224165344672"></p><p><strong>GDB是什么？</strong></p><p>GDB：GNU symbolic debugger是Linux下常用的程序调试器</p><p><strong>GDB可以做什么？</strong></p><p><img src="/2023/02/24/Linux003/image-20230224165606636.png" alt="image-20230224165606636"></p><p><strong>GDB官网：</strong><a href="https://www.sourceware.org/gdb/">GDB: The GNU Project Debugger (sourceware.org)</a></p><h3 id="调试案例一"><a href="#调试案例一" class="headerlink" title="调试案例一"></a>调试案例一</h3><figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">int</span> n,sum;<br>    n = <span class="hljs-number">1</span>;<br>    sum = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">while</span>( n &lt;= <span class="hljs-number">100</span>)<br>    &#123;<br>        sum = sum + n;<br>        n = n + <span class="hljs-number">1</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure><p>在编译程序的时候，需要加调试选项： -g</p><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">gcc gdb001.c -g -o ex1<br></code></pre></div></td></tr></table></figure><p>使用gdb启动程序：</p><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">gdb ./ex1<br></code></pre></div></td></tr></table></figure><p><strong>进入gdb调试环境</strong>：</p><p><img src="/2023/02/24/Linux003/image-20230224170419171.png" alt="image-20230224170419171"></p><p><strong>在调试环境中：使用l选项会显示带行号的源代码</strong></p><p><img src="/2023/02/24/Linux003/image-20230224170620617.png" alt="image-20230224170620617"></p><p><strong>但是默认情况下，l选项只显示10行源代码，如果查看后续代码，在调试界面Enter回车即可</strong></p><p><img src="/2023/02/24/Linux003/image-20230224170804048.png" alt="image-20230224170804048"></p><p><strong>在第7行源代码处打断点：</strong></p><p><img src="/2023/02/24/Linux003/image-20230224171858691.png" alt="image-20230224171858691"></p><p><strong>运行程序，遇到断点停止：</strong></p><p><img src="/2023/02/24/Linux003/image-20230224172105514.png" alt="image-20230224172105514"></p><p><strong>查看代码中变量n的值</strong></p><p><img src="/2023/02/24/Linux003/image-20230224172200662.png" alt="image-20230224172200662"></p><p>当前n的值为1，$1表示该变量所在存储区的名称</p><p><strong>在程序第12行处打断点</strong></p><p><img src="/2023/02/24/Linux003/image-20230224172321002.png" alt="image-20230224172321002"></p><p><strong>继续执行程序</strong></p><p><img src="/2023/02/24/Linux003/image-20230224172356622.png" alt="image-20230224172356622"></p><p><strong>查看当前n变量的值</strong></p><p><img src="/2023/02/24/Linux003/image-20230224172422998.png" alt="image-20230224172422998"></p><p>当前n的值为101</p><p><strong>退出调试</strong></p><p><img src="/2023/02/24/Linux003/image-20230224172456626.png" alt="image-20230224172456626"></p><p><strong>查看调试环境所有断点：</strong></p><p><img src="/2023/02/24/Linux003/image-20230224172650422.png" alt="image-20230224172650422"></p><p><strong>删除第7行的断点：</strong></p><p><img src="/2023/02/24/Linux003/image-20230224172745323.png" alt="image-20230224172745323"></p><p><strong>禁用编号为2的断点：</strong></p><p><img src="/2023/02/24/Linux003/image-20230224172832507.png" alt="image-20230224172832507"></p><p>注意断点状态Enb(enable)由y变成n，代表禁用</p><p><strong>恢复编号为2的断点：</strong></p><p><img src="/2023/02/24/Linux003/image-20230224173006975.png" alt="image-20230224173006975"></p><h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>GDB有三种调试模式：</p><p><strong>调试执行程序：</strong>（前面的案例），注意编译加调试信息(-g)</p><p><strong>调试core文件   ：</strong>需要对系统设置的core文件大小作调整（ulimit - c unlimlited），否则可能无法  产生core文件</p><p><strong>调试正在执行的程序（gdb attach） ：</strong>Top找到进程编号pid，Gdb attach pid</p><p><strong>GDB结构组成：</strong></p><p><img src="/2023/02/24/Linux003/image-20230224173613247.png" alt="image-20230224173613247"></p><h3 id="常用调试指令："><a href="#常用调试指令：" class="headerlink" title="常用调试指令："></a>常用调试指令：</h3><h4 id="启动指令"><a href="#启动指令" class="headerlink" title="启动指令"></a>启动指令</h4><p>调试程序：gdb program</p><p>根据core文件调试程序：gdb program corefile</p><p>跟踪调试进程：gdb attach pid</p><h4 id="程序运行"><a href="#程序运行" class="headerlink" title="程序运行"></a>程序运行</h4><p>run，该命令会运行至程序结束，除非遇到断点或报错</p><h4 id="单步执行"><a href="#单步执行" class="headerlink" title="单步执行"></a>单步执行</h4><p>步进执行不进栈？next</p><p>步进执行，进栈step</p><h4 id="代码查看"><a href="#代码查看" class="headerlink" title="代码查看"></a>代码查看</h4><p>列出断点附近或程序所有代码list</p><p>设置现实代码的行数 set listsize &lt;n&gt;</p><h4 id="退出调试"><a href="#退出调试" class="headerlink" title="退出调试"></a>退出调试</h4><p>quit</p><h4 id="查看栈信息"><a href="#查看栈信息" class="headerlink" title="查看栈信息"></a>查看栈信息</h4><p>bt打印当前的函数调用栈的所有信息</p><p>bt &lt;n&gt;n是一个正整数，表示只打印栈顶上n层的栈信息</p><p>bt &lt;-n&gt;表示只打印栈底下n层的栈信息</p><h4 id="设置断点"><a href="#设置断点" class="headerlink" title="设置断点"></a>设置断点</h4><p><strong>代码断点：</strong></p><ul><li>break lineNumber | functionName</li><li>break lineNumber | functionName if condition</li><li>tbreak lineNumber | functionName  临时断点，仅能使用一次</li></ul><p><strong>内存断点（观察点）：</strong></p><ul><li>监控内存值改变 watch expr [if condition]</li><li>监控内存值被读取 rwatch expr [if condition]</li><li>监控内存值被读取和写入 awatch wxpr [if condition]</li></ul><p><strong>事件断点：</strong></p><ul><li>C++ exception，使用catch exception [name]</li><li>Ada exception，使用catch handlers [name]</li><li>exec事件，使用catch exec</li><li>fork事件，使用catch fork 或者 catch vfork</li><li>加载和卸载动态so事件，使用catch load|unload [regexp]</li><li>监听系统信号，使用catch signal [signal]</li><li>监听系统调用，使用catch syscall[name|number|group:groupname|g:groupname]…</li></ul><p><strong>打印变量：</strong></p><ul><li>Print [file | func]::variable 查看局部变量或全局变量</li><li>Print *array@len  数组首地址@查看长度</li><li>x&#x2F;[n | u] &lt;addr&gt;x命令查看内存地址钟的值，n：表示显示内存的长度，u：表示从当前地址往后请求的字节数</li></ul><p><strong>打印寄存器：</strong></p><p>info register查看寄存器（除了浮点寄存器）</p><p>all-registers查看所有寄存器</p><p>info registers &lt;reg_name …&gt;查看所指定寄存器</p><h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p><strong>来源培训PPT 作者：Relax  邮箱：<a href="mailto:&#x77;&#97;&#x6e;&#103;&#119;&#x31;&#x31;&#49;&#64;&#x69;&#99;&#108;&#111;&#x75;&#100;&#x2e;&#99;&#x6f;&#x6d;">&#x77;&#97;&#x6e;&#103;&#119;&#x31;&#x31;&#49;&#64;&#x69;&#99;&#108;&#111;&#x75;&#100;&#x2e;&#99;&#x6f;&#x6d;</a></strong></p>]]></content>
     
     
     <categories>
@@ -1027,9 +1052,9 @@
       
       <tag>Data Structure</tag>
       
-      <tag>团体程序设计天梯赛</tag>
-      
       <tag>C++</tag>
+      
+      <tag>团体程序设计天梯赛</tag>
       
       <tag>Graph</tag>
       
@@ -1060,9 +1085,9 @@
       
       <tag>Data Structure</tag>
       
-      <tag>团体程序设计天梯赛</tag>
-      
       <tag>C++</tag>
+      
+      <tag>团体程序设计天梯赛</tag>
       
       <tag>Sort</tag>
       
@@ -1095,11 +1120,11 @@
     
     <tags>
       
-      <tag>团体程序设计天梯赛</tag>
-      
       <tag>C++</tag>
       
       <tag>Set</tag>
+      
+      <tag>团体程序设计天梯赛</tag>
       
       <tag>模拟</tag>
       
@@ -1155,9 +1180,9 @@
       
       <tag>Data Structure</tag>
       
-      <tag>团体程序设计天梯赛</tag>
-      
       <tag>C++</tag>
+      
+      <tag>团体程序设计天梯赛</tag>
       
       <tag>Graph</tag>
       
@@ -1188,9 +1213,9 @@
     
     <tags>
       
-      <tag>团体程序设计天梯赛</tag>
-      
       <tag>C++</tag>
+      
+      <tag>团体程序设计天梯赛</tag>
       
       <tag>Sort</tag>
       
@@ -1221,9 +1246,9 @@
     
     <tags>
       
-      <tag>团体程序设计天梯赛</tag>
-      
       <tag>C++</tag>
+      
+      <tag>团体程序设计天梯赛</tag>
       
       <tag>Sort</tag>
       
@@ -1256,9 +1281,9 @@
       
       <tag>Data Structure</tag>
       
-      <tag>团体程序设计天梯赛</tag>
-      
       <tag>C++</tag>
+      
+      <tag>团体程序设计天梯赛</tag>
       
       <tag>Graph</tag>
       
@@ -1291,9 +1316,9 @@
       
       <tag>Data Structure</tag>
       
-      <tag>团体程序设计天梯赛</tag>
-      
       <tag>C++</tag>
+      
+      <tag>团体程序设计天梯赛</tag>
       
       <tag>Binary tree</tag>
       
@@ -1324,9 +1349,9 @@
       
       <tag>Data Structure</tag>
       
-      <tag>团体程序设计天梯赛</tag>
-      
       <tag>C++</tag>
+      
+      <tag>团体程序设计天梯赛</tag>
       
       <tag>Binary tree</tag>
       
@@ -1355,9 +1380,9 @@
       
       <tag>Data Structure</tag>
       
-      <tag>团体程序设计天梯赛</tag>
-      
       <tag>C++</tag>
+      
+      <tag>团体程序设计天梯赛</tag>
       
       <tag>邻接表</tag>
       
@@ -1392,9 +1417,9 @@
       
       <tag>Data Structure</tag>
       
-      <tag>团体程序设计天梯赛</tag>
-      
       <tag>C++</tag>
+      
+      <tag>团体程序设计天梯赛</tag>
       
       <tag>邻接表</tag>
       
@@ -1421,9 +1446,9 @@
       
       <tag>Data Structure</tag>
       
-      <tag>团体程序设计天梯赛</tag>
-      
       <tag>C++</tag>
+      
+      <tag>团体程序设计天梯赛</tag>
       
       <tag>Sort</tag>
       
@@ -1452,9 +1477,9 @@
       
       <tag>Data Structure</tag>
       
-      <tag>团体程序设计天梯赛</tag>
-      
       <tag>C++</tag>
+      
+      <tag>团体程序设计天梯赛</tag>
       
       <tag>邻接表</tag>
       
@@ -1489,11 +1514,11 @@
       
       <tag>Data Structure</tag>
       
-      <tag>团体程序设计天梯赛</tag>
-      
       <tag>C++</tag>
       
       <tag>Set</tag>
+      
+      <tag>团体程序设计天梯赛</tag>
       
       <tag>Graph</tag>
       
@@ -1524,11 +1549,11 @@
     
     <tags>
       
-      <tag>LinkList</tag>
+      <tag>C++</tag>
       
       <tag>团体程序设计天梯赛</tag>
       
-      <tag>C++</tag>
+      <tag>LinkList</tag>
       
       <tag>双向链表</tag>
       
@@ -1555,13 +1580,13 @@
     
     <tags>
       
-      <tag>团体程序设计天梯赛</tag>
+      <tag>STL</tag>
       
       <tag>C++</tag>
       
       <tag>Set</tag>
       
-      <tag>STL</tag>
+      <tag>团体程序设计天梯赛</tag>
       
       <tag>Sort</tag>
       
@@ -1588,13 +1613,13 @@
     
     <tags>
       
-      <tag>C++</tag>
-      
-      <tag>STL</tag>
-      
       <tag>String</tag>
       
       <tag>Find</tag>
+      
+      <tag>STL</tag>
+      
+      <tag>C++</tag>
       
     </tags>
     

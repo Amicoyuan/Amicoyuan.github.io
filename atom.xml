@@ -3,16 +3,18 @@
     <id>http://example.com</id>
     <title>Amicoyuan</title>
     <link href="http://example.com" />
-    <updated>2023-02-26T11:12:51.000Z</updated>
+    <updated>2023-02-28T11:45:09.000Z</updated>
     <category term="AVX" />
     <category term="Data Structure" />
-    <category term="LinkList" />
-    <category term="团体程序设计天梯赛" />
-    <category term="C++" />
-    <category term="双向链表" />
-    <category term="Set" />
+    <category term="String" />
+    <category term="Find" />
     <category term="STL" />
+    <category term="C++" />
+    <category term="Set" />
+    <category term="团体程序设计天梯赛" />
     <category term="Sort" />
+    <category term="LinkList" />
+    <category term="双向链表" />
     <category term="Graph" />
     <category term="邻接表" />
     <category term="Vector" />
@@ -31,16 +33,14 @@
     <category term="MPI" />
     <category term="Matrix" />
     <category term="GEMM" />
-    <category term="dgemm" />
     <category term="AVX2" />
-    <category term="String" />
-    <category term="Find" />
+    <category term="dgemm" />
     <category term="Cache" />
     <category term="Blocking" />
     <category term="CUDA" />
+    <category term="Intel" />
     <category term="LeetCode" />
     <category term="双指针" />
-    <category term="Intel" />
     <category term="Mirror" />
     <category term="牛客" />
     <category term="Numactl" />
@@ -51,6 +51,44 @@
     <category term="Tensorflow" />
     <category term="性能分析工具" />
     <category term="gcov" />
+    <entry>
+        <id>http://example.com/2023/02/28/Linux004/</id>
+        <title>C/C++关键字之restrict</title>
+        <link rel="alternate" href="http://example.com/2023/02/28/Linux004/"/>
+        <content type="html">&lt;h1 id=&#34;C-x2F-C-关键字之restrict&#34;&gt;&lt;a href=&#34;#C-x2F-C-关键字之restrict&#34; class=&#34;headerlink&#34; title=&#34;C&amp;#x2F;C++关键字之restrict&#34;&gt;&lt;/a&gt;C&amp;#x2F;C++关键字之restrict&lt;/h1&gt;&lt;p&gt;在C语言中，restrict关键字用于修饰指针（C99标准）。通过加上restrict关键字，程序员可提示编译器：在该指针的生命周期内，其指向的对象不会被别的指针所引用。&lt;/p&gt;
+&lt;p&gt;需要注意的是，在C++中，并无明确统一的标准支持restrict关键字。但是很多编译器实现了功能相同的关键字，例如gcc和clang中的__restrict关键字。&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;add1&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;*a, &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;* b)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;/span&gt;&amp;#123;&lt;br&gt;    *a = &lt;span class=&#34;hljs-number&#34;&gt;10&lt;/span&gt;;&lt;br&gt;    *b = &lt;span class=&#34;hljs-number&#34;&gt;12&lt;/span&gt;;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; *a + *b;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;add1函数的返回值会永远是10 + 12 &amp;#x3D; 22吗？&lt;/p&gt;
+&lt;p&gt;答案是不一定。在指针a和b的地址不同时，返回22没有问题。但是当指针a与b指向的是同一个int对象时，该对象先被赋值为10，后被赋值为12，因此a和b都返回12，因此add1函数最终返回24。&lt;/p&gt;
+&lt;p&gt;下面是一个简单的例子：&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;hljs-meta-string&#34;&gt;&amp;lt;bits/stdc++.h&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;using&lt;/span&gt; &lt;span class=&#34;hljs-keyword&#34;&gt;namespace&lt;/span&gt; std;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;add1&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;* a, &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;* b)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;/span&gt;&amp;#123;&lt;br&gt;    *a = &lt;span class=&#34;hljs-number&#34;&gt;10&lt;/span&gt;;&lt;br&gt;    *b = &lt;span class=&#34;hljs-number&#34;&gt;12&lt;/span&gt;;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; *a + *b;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;()&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;* c;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;* d;&lt;br&gt;    d=(&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;*)&lt;span class=&#34;hljs-built_in&#34;&gt;malloc&lt;/span&gt;(&lt;span class=&#34;hljs-built_in&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;sizeof&lt;/span&gt;&lt;/span&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;)*&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;);&lt;br&gt;    c=(&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;*)&lt;span class=&#34;hljs-built_in&#34;&gt;malloc&lt;/span&gt;(&lt;span class=&#34;hljs-built_in&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;sizeof&lt;/span&gt;&lt;/span&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;)*&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;);&lt;br&gt;    *c=&lt;span class=&#34;hljs-number&#34;&gt;10&lt;/span&gt;;&lt;br&gt;    *d=&lt;span class=&#34;hljs-number&#34;&gt;12&lt;/span&gt;;&lt;br&gt;    *d=&lt;span class=&#34;hljs-number&#34;&gt;12&lt;/span&gt;;&lt;br&gt;    cout&amp;lt;&amp;lt;&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;c:&amp;quot;&lt;/span&gt;&amp;lt;&amp;lt;*c&amp;lt;&amp;lt;endl;&lt;br&gt;    cout&amp;lt;&amp;lt;&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;d:&amp;quot;&lt;/span&gt;&amp;lt;&amp;lt;*d&amp;lt;&amp;lt;endl;&lt;br&gt;    cout&amp;lt;&amp;lt;&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;When Pointers a and b have different addresses&amp;quot;&lt;/span&gt;&amp;lt;&amp;lt;endl;&lt;br&gt;    cout&amp;lt;&amp;lt;&lt;span class=&#34;hljs-built_in&#34;&gt;add1&lt;/span&gt;(c,d)&amp;lt;&amp;lt;endl;&lt;br&gt;    cout&amp;lt;&amp;lt;&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;When Pointers a and b have the same address&amp;quot;&lt;/span&gt;&amp;lt;&amp;lt;endl;&lt;br&gt;    cout&amp;lt;&amp;lt;&lt;span class=&#34;hljs-built_in&#34;&gt;add1&lt;/span&gt;(c,c)&amp;lt;&amp;lt;endl;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;程序输出：&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;c:&lt;span class=&#34;hljs-number&#34;&gt;10&lt;/span&gt;&lt;br&gt;d:&lt;span class=&#34;hljs-number&#34;&gt;12&lt;/span&gt;&lt;br&gt;When Pointers a &lt;span class=&#34;hljs-keyword&#34;&gt;and&lt;/span&gt; b have different addresses&lt;br&gt;&lt;span class=&#34;hljs-number&#34;&gt;22&lt;/span&gt;&lt;br&gt;When Pointers a &lt;span class=&#34;hljs-keyword&#34;&gt;and&lt;/span&gt; b have the same address&lt;br&gt;&lt;span class=&#34;hljs-number&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;开启-O3优化，add1对应的汇编代码如下:&lt;/p&gt;
+&lt;p&gt;为了得到&lt;code&gt;*a&lt;/code&gt;的值访问了1次内存，而不管在何种条件下(&lt;code&gt;a == b&lt;/code&gt; or &lt;code&gt;a != b&lt;/code&gt;)，&lt;code&gt;*b&lt;/code&gt;的值都是12。因此编译器将&lt;code&gt;*a&lt;/code&gt;的值载入&lt;code&gt;eax&lt;/code&gt;寄存器后，直接加上立即数12，而无需再访问内存获取&lt;code&gt;*b&lt;/code&gt;的值。在无法确定指针a和b是否相同的情况下，编译器只能帮你优化到这里了。&lt;/p&gt;
+&lt;figure class=&#34;highlight fortran&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs fortran&#34;&gt;&lt;span class=&#34;hljs-number&#34;&gt;0000000000400&lt;/span&gt;a10 &amp;lt;_Z4add1PiS_&amp;gt;:&lt;br&gt;  &lt;span class=&#34;hljs-number&#34;&gt;400&lt;/span&gt;a10:   c7 &lt;span class=&#34;hljs-number&#34;&gt;07&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;a &lt;span class=&#34;hljs-number&#34;&gt;00&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;00&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;00&lt;/span&gt;       movl   $&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;xa,(%rdi) ; *a = &lt;span class=&#34;hljs-number&#34;&gt;10&lt;/span&gt;&lt;br&gt;  &lt;span class=&#34;hljs-number&#34;&gt;400&lt;/span&gt;a16:   c7 &lt;span class=&#34;hljs-number&#34;&gt;06&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;c &lt;span class=&#34;hljs-number&#34;&gt;00&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;00&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;00&lt;/span&gt;       movl   $&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;xc,(%rsi) ; *b = &lt;span class=&#34;hljs-number&#34;&gt;10&lt;/span&gt;&lt;br&gt;  &lt;span class=&#34;hljs-number&#34;&gt;400&lt;/span&gt;a1c:   &lt;span class=&#34;hljs-number&#34;&gt;8&lt;/span&gt;b &lt;span class=&#34;hljs-number&#34;&gt;07&lt;/span&gt;                   mov    (%rdi),%eax ; 结果 = *a&lt;br&gt;  &lt;span class=&#34;hljs-number&#34;&gt;400&lt;/span&gt;a1e:   &lt;span class=&#34;hljs-number&#34;&gt;83&lt;/span&gt; c0 &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;c                add    $&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;xc,%eax   ; 结果 += &lt;span class=&#34;hljs-number&#34;&gt;12&lt;/span&gt; &lt;br&gt;  &lt;span class=&#34;hljs-number&#34;&gt;400&lt;/span&gt;a21:   c3                      retq&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;加上了restrict关键字过后，同样开启-O3优化，add1对应的汇编代码如下：&lt;/p&gt;
+&lt;p&gt;加上关键字restrict后，编译器能够确认指针a和b不可能指向同一个内存地址，因此在求*a + *b时，无虚访问内存，因为*a必然等于立即数10，*b必然等于立即数12。&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;add2&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;* __restrict  a, &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;* __restrict b)&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;/span&gt;&amp;#123;&lt;br&gt;    *a = &lt;span class=&#34;hljs-number&#34;&gt;10&lt;/span&gt;;&lt;br&gt;    *b = &lt;span class=&#34;hljs-number&#34;&gt;12&lt;/span&gt;;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; *a + *b ;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;span class=&#34;hljs-number&#34;&gt;0000000000400&lt;/span&gt;a30 &amp;lt;_Z4add2PiS_&amp;gt;:&lt;br&gt;  &lt;span class=&#34;hljs-number&#34;&gt;400&lt;/span&gt;a30:   c7 &lt;span class=&#34;hljs-number&#34;&gt;07&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;a &lt;span class=&#34;hljs-number&#34;&gt;00&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;00&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;00&lt;/span&gt;       movl   $&lt;span class=&#34;hljs-number&#34;&gt;0xa&lt;/span&gt;,(%rdi) ; *a = &lt;span class=&#34;hljs-number&#34;&gt;10&lt;/span&gt;&lt;br&gt;  &lt;span class=&#34;hljs-number&#34;&gt;400&lt;/span&gt;a36:   b8 &lt;span class=&#34;hljs-number&#34;&gt;16&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;00&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;00&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;00&lt;/span&gt;          mov    $&lt;span class=&#34;hljs-number&#34;&gt;0x16&lt;/span&gt;,%eax  ; 结果 = &lt;span class=&#34;hljs-number&#34;&gt;22&lt;/span&gt;&lt;br&gt;  &lt;span class=&#34;hljs-number&#34;&gt;400&lt;/span&gt;a3b:   c7 &lt;span class=&#34;hljs-number&#34;&gt;06&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;c &lt;span class=&#34;hljs-number&#34;&gt;00&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;00&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;00&lt;/span&gt;       movl   $&lt;span class=&#34;hljs-number&#34;&gt;0xc&lt;/span&gt;,(%rsi) ; *b = &lt;span class=&#34;hljs-number&#34;&gt;12&lt;/span&gt;&lt;br&gt;  &lt;span class=&#34;hljs-number&#34;&gt;400&lt;/span&gt;a41:   c3  &lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;有无restrict关键字的两种情况下的汇编指令可看到，后者比前者少访问一次内存，且少执行一条指令。就是因为没加restruct关键字时，编译器不能确定别的地方是不是会修改此值，所以会去相应的地址查看。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;这样当我们明确知道两个指针不可能指向同一个地址时，我们就可以通过使用restrict关键字来进行性能优化。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;注意使用restrict的时候，程序员必须确保不会出现&lt;strong&gt;pointer aliasing&lt;/strong&gt;，即同一块内存无法通过两个或以上的指针变量名访问。不满足这个条件强行指定restrict，将会出现&lt;strong&gt;underfined behavior&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;通常编写代码时会忽略pointer aliasing的问题。更常见是在性能分析时，通过反汇编看到很多冗余的读取指令，才会想到加入restrict关键字来提升性能。&lt;/p&gt;
+&lt;h2 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/349726808&#34;&gt;C&amp;#x2F;C++关键字之restrict - 知乎 (zhihu.com)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/ClickHouse/ClickHouse/pull/19946&#34;&gt;Improve performance of aggregate functions by alexey-milovidov · Pull Request #19946 · ClickHouse&amp;#x2F;ClickHouse (github.com)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://en.cppreference.com/w/c/language/restrict&#34;&gt;restrict type qualifier - cppreference.com&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.zhihu.com/question/41653775/answer/2535730128&#34;&gt;如何理解C语言关键字restrict？ - 知乎 (zhihu.com)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/qq_41822235/article/details/83479562&#34;&gt;(65条消息) 关键字_restrict___restrict_楚楚可薇的博客-CSDN博客&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/qq_41950508/article/details/126619881?spm=1001.2101.3001.6661.1&amp;utm_medium=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~Rate-1-126619881-blog-102577325.pc_relevant_3mothn_strategy_recovery&amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~Rate-1-126619881-blog-102577325.pc_relevant_3mothn_strategy_recovery&amp;utm_relevant_index=1&#34;&gt;(65条消息) 【C++】关键字restrict的作用_restrict关键字的作用_不知所措的渣渣辉的博客-CSDN博客&lt;/a&gt;&lt;/p&gt;
+</content>
+        <category term="Linux" />
+        <updated>2023-02-28T11:45:09.000Z</updated>
+    </entry>
     <entry>
         <id>http://example.com/2023/02/26/intel001/</id>
         <title>unroll_and_jam/nounroll_and_jam</title>
@@ -246,7 +284,7 @@
 &lt;p&gt;info register	查看寄存器（除了浮点寄存器）&lt;/p&gt;
 &lt;p&gt;all-registers	查看所有寄存器&lt;/p&gt;
 &lt;p&gt;info registers &amp;lt;reg_name …&amp;gt;查看所指定寄存器&lt;/p&gt;
-&lt;h3 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;来源培训PPT 作者：Relax  邮箱：&lt;a href=&#34;mailto:&amp;#119;&amp;#x61;&amp;#x6e;&amp;#103;&amp;#x77;&amp;#49;&amp;#49;&amp;#49;&amp;#x40;&amp;#x69;&amp;#99;&amp;#x6c;&amp;#x6f;&amp;#x75;&amp;#100;&amp;#x2e;&amp;#99;&amp;#x6f;&amp;#x6d;&#34;&gt;&amp;#119;&amp;#x61;&amp;#x6e;&amp;#103;&amp;#x77;&amp;#49;&amp;#49;&amp;#49;&amp;#x40;&amp;#x69;&amp;#99;&amp;#x6c;&amp;#x6f;&amp;#x75;&amp;#100;&amp;#x2e;&amp;#99;&amp;#x6f;&amp;#x6d;&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;来源培训PPT 作者：Relax  邮箱：&lt;a href=&#34;mailto:&amp;#x77;&amp;#97;&amp;#x6e;&amp;#103;&amp;#119;&amp;#x31;&amp;#x31;&amp;#49;&amp;#64;&amp;#x69;&amp;#99;&amp;#108;&amp;#111;&amp;#x75;&amp;#100;&amp;#x2e;&amp;#99;&amp;#x6f;&amp;#x6d;&#34;&gt;&amp;#x77;&amp;#97;&amp;#x6e;&amp;#103;&amp;#119;&amp;#x31;&amp;#x31;&amp;#49;&amp;#64;&amp;#x69;&amp;#99;&amp;#108;&amp;#111;&amp;#x75;&amp;#100;&amp;#x2e;&amp;#99;&amp;#x6f;&amp;#x6d;&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 </content>
         <category term="Linux" />
         <updated>2023-02-24T08:50:20.000Z</updated>
@@ -1364,32 +1402,5 @@
 </content>
         <category term="CUDA" />
         <updated>2023-01-17T14:03:10.000Z</updated>
-    </entry>
-    <entry>
-        <id>http://example.com/2023/01/17/cuda004/</id>
-        <title>CUDA编程结构</title>
-        <link rel="alternate" href="http://example.com/2023/01/17/cuda004/"/>
-        <content type="html">&lt;h2 id=&#34;CUDA编程结构&#34;&gt;&lt;a href=&#34;#CUDA编程结构&#34; class=&#34;headerlink&#34; title=&#34;CUDA编程结构&#34;&gt;&lt;/a&gt;CUDA编程结构&lt;/h2&gt;&lt;p&gt;CUDA编程模型使用由C语言扩展生成的注释代码在异构计算系统中执行应用程序。&lt;/p&gt;
-&lt;p&gt;在一个异构环境中包含多个CPU和GPU，每个GPU和CPU的内存都由一条PCI-Express总线分隔开。因此，需要注意区别以下内容。&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;主机：CPU及其内存（主机内存）&lt;/li&gt;
-&lt;li&gt;设备：GPU及其内存（设备内存）&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;为了清楚地指明不同的内存空间，在本书的示例代码中，主机内存中的变量名以h__为前缀，设备内存中的变量名以d__为前缀。&lt;/p&gt;
-&lt;p&gt;从CUDA6.0开始，NVDIA提出了名为“统一寻址”（Unified Memory）的编程模型的改进，它连接了主机内存和设备内存空间，可使用单个指针访问CPU和GPU内存，无须彼此之间手动拷贝数据。现在，重要的是应学会如何为主机和设备分配内存空间以及如何在CPU和GPU之间拷贝共享数据。这种程序员管理模式控制下的内存和数据可以优化应用程序并实现硬件系统利用率的最大化。&lt;/p&gt;
-&lt;p&gt;内核（kernel）是CUDA编程模型的一个重要组成部分，其代码在GPU上运行。作为一个开发人员，你可以串行的执行核函数。在此背景下，CUDA的调度管理程序员在GPU线程上编写核函数。在主机上，基于应用程序数据以及GPU的性能定义如何让设备实现算法功能。这样做的目的是使你专注于算法的逻辑（通过编写串行代码），且在创建和管理大量的GPU线程时不必拘泥于细节。&lt;/p&gt;
-&lt;p&gt;多数情况下，主机可以独立地对设备进行操作。内核一旦被启动，端粒权立刻返回给主机，释放CPU来执行由设备上运行的并行代码实现的额外的任务。CUDA编程模型主要是异步的，因此在GPU上进行的运算可以与主机-设备通信重叠。一个典型的CUDA程序包括由并行代码互补的串行代码。如图2-2所示，串行代码（及任务并行代码）在主机CPU上执行，而并行代码在GPU上执行。主机代码按照ANSI C标准进行编写，而设备代码使用CUDA C进行编写。你可以将所有的代码统一放在一个源文件中，也可以使用多个源文件来构建应用程序和库。NVIDIA的C编译器(nvcc)为主机和设备生成可执行代码。&lt;/p&gt;
-&lt;p&gt;一个典型的CUDA程序实现流程遵循以下模式&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;把数据从CPU内存拷贝到GPU内存&lt;/li&gt;
-&lt;li&gt;调用核函数对存储在GPU内存中的数据进行操作&lt;/li&gt;
-&lt;li&gt;将数据从GPU内存传送回到CPU内存&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;首先，你要学习的是内存管理及主机和设备之间的数据传输。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/2023/01/17/cuda004/image-20230117220146068.png&#34; alt=&#34;image-20230117220146068&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;p&gt;CUDA C编程权威指南 程润伟，Max Grossman(美)，Ty Mckercher &lt;/p&gt;
-</content>
-        <category term="CUDA" />
-        <updated>2023-01-17T13:36:04.000Z</updated>
     </entry>
 </feed>
