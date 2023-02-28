@@ -3,7 +3,7 @@
     <id>http://example.com</id>
     <title>Amicoyuan • Posts by &#34;vector&#34; tag</title>
     <link href="http://example.com" />
-    <updated>2022-04-23T13:44:47.000Z</updated>
+    <updated>2023-02-28T12:59:01.000Z</updated>
     <category term="AVX" />
     <category term="Data Structure" />
     <category term="String" />
@@ -21,12 +21,12 @@
     <category term="Binary tree" />
     <category term="BFS" />
     <category term="模拟" />
-    <category term="邻接矩阵" />
-    <category term="DFS" />
     <category term="结构体" />
     <category term="贪心" />
-    <category term="Double类型相等比较" />
+    <category term="邻接矩阵" />
+    <category term="DFS" />
     <category term="并查集" />
+    <category term="Double类型相等比较" />
     <category term="Map" />
     <category term="Pair" />
     <category term="Linux" />
@@ -51,6 +51,31 @@
     <category term="Tensorflow" />
     <category term="性能分析工具" />
     <category term="gcov" />
+    <category term="bool" />
+    <entry>
+        <id>http://example.com/2023/02/28/vectorbool/</id>
+        <title>vector&lt;bool&gt;与vector&lt;T&gt;</title>
+        <link rel="alternate" href="http://example.com/2023/02/28/vectorbool/"/>
+        <content type="html">&lt;h1 id=&#34;vector-lt-bool-gt-与vector-lt-T-gt&#34;&gt;&lt;a href=&#34;#vector-lt-bool-gt-与vector-lt-T-gt&#34; class=&#34;headerlink&#34; title=&#34;vector&amp;lt;bool&amp;gt;与vector&amp;lt;T&amp;gt;&#34;&gt;&lt;/a&gt;vector&amp;lt;bool&amp;gt;与vector&amp;lt;T&amp;gt;&lt;/h1&gt;&lt;p&gt;vector&amp;lt;bool&amp;gt; 不像其他容器一样按Byte存储的，它是按bit存储的，也就是说一个正常的bool类型的空间可以存放vector&amp;lt;bool&amp;gt;中的8个，空间上确实优化了很多，然而，c++是不能直接取对bit操作的（因为C++的最小可寻址值通常以byte为单位），对其使用operator[]其实返回的不是bool的引用而是一个”proxy reference”是”std::vector&amp;lt; bool&amp;gt;:reference”类型的对象。&lt;/p&gt;
+&lt;p&gt;正因为如此，vector&amp;lt;bool&amp;gt;通过代理对象进行存取访问时需要执行逐位处理，访问通常比int之类的普通类型操作要慢很多。&lt;/p&gt;
+&lt;p&gt;因此，对vecotr&amp;lt;bool&amp;gt;的使用需慎重考虑以下几点：&lt;br&gt;(1)是否需要牺牲速度来获取空间上的优化&lt;br&gt;(2)算法中会否有对vecotr地址进行解引用操作的可能。&lt;/p&gt;
+&lt;p&gt;如果不满足以上条件，建议使用deque&amp;lt;bool&amp;gt;来取代vector&amp;lt;bool&amp;gt;，功能基本相同，但deque&amp;lt;bool&amp;gt;未对其进行特殊处理。&lt;/p&gt;
+&lt;p&gt;下面是vector&amp;lt;bool&amp;gt;与vector&amp;lt;T&amp;gt;简单的对比例子：&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;32&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;()&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;br&gt;	vector&amp;lt;&lt;span class=&#34;hljs-keyword&#34;&gt;char&lt;/span&gt;&amp;gt; ch;&lt;br&gt;	vector&amp;lt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;&amp;gt; in;&lt;br&gt;	vector&amp;lt;&lt;span class=&#34;hljs-keyword&#34;&gt;bool&lt;/span&gt;&amp;gt; bo;&lt;br&gt; &lt;br&gt;	&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; m = &lt;span class=&#34;hljs-number&#34;&gt;1e6&lt;/span&gt;;&lt;br&gt;	&lt;span class=&#34;hljs-keyword&#34;&gt;clock_t&lt;/span&gt; t1, t2, t3;&lt;br&gt; &lt;br&gt;	t1 = &lt;span class=&#34;hljs-built_in&#34;&gt;clock&lt;/span&gt;();&lt;br&gt;	&lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; (&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i = &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;; i &amp;lt; m; i++)&amp;#123;&lt;br&gt;		ch.&lt;span class=&#34;hljs-built_in&#34;&gt;push_back&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;#x27;0&amp;#x27;&lt;/span&gt;);&lt;br&gt;	&amp;#125;&lt;br&gt;	t1 = &lt;span class=&#34;hljs-built_in&#34;&gt;clock&lt;/span&gt;() - t1;&lt;br&gt; &lt;br&gt;	t2 = &lt;span class=&#34;hljs-built_in&#34;&gt;clock&lt;/span&gt;();&lt;br&gt;	&lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; (&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i = &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;; i &amp;lt; m; i++)&amp;#123;&lt;br&gt;		in.&lt;span class=&#34;hljs-built_in&#34;&gt;push_back&lt;/span&gt;(&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;);&lt;br&gt;	&amp;#125;&lt;br&gt;	t2 = &lt;span class=&#34;hljs-built_in&#34;&gt;clock&lt;/span&gt;() - t2;&lt;br&gt; &lt;br&gt;	t3 = &lt;span class=&#34;hljs-built_in&#34;&gt;clock&lt;/span&gt;();&lt;br&gt;	&lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; (&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i = &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;; i &amp;lt; m; i++)&amp;#123;&lt;br&gt;		bo.&lt;span class=&#34;hljs-built_in&#34;&gt;push_back&lt;/span&gt;(&lt;span class=&#34;hljs-literal&#34;&gt;true&lt;/span&gt;);&lt;br&gt;	&amp;#125;&lt;br&gt;	t3 = &lt;span class=&#34;hljs-built_in&#34;&gt;clock&lt;/span&gt;() - t3;&lt;br&gt; &lt;br&gt;	cout &amp;lt;&amp;lt;&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;vector&amp;lt;char&amp;gt; &amp;quot;&lt;/span&gt;&amp;lt;&amp;lt; t1 &amp;lt;&amp;lt; &lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;\n vector&amp;lt;int&amp;gt; &amp;quot;&lt;/span&gt; &amp;lt;&amp;lt; t2 &amp;lt;&amp;lt; &lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;\nvector&amp;lt;bool&amp;gt; &amp;quot;&lt;/span&gt; &amp;lt;&amp;lt; t3 &amp;lt;&amp;lt; endl;&lt;br&gt;	cout &amp;lt;&amp;lt; endl;&lt;br&gt; &lt;br&gt;	&lt;span class=&#34;hljs-built_in&#34;&gt;system&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;pause&amp;quot;&lt;/span&gt;);&lt;br&gt;	&lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;运行结果：&lt;/p&gt;
+&lt;figure class=&#34;highlight cpp&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs cpp&#34;&gt;vector&amp;lt;&lt;span class=&#34;hljs-keyword&#34;&gt;char&lt;/span&gt;&amp;gt; &lt;span class=&#34;hljs-number&#34;&gt;216&lt;/span&gt;&lt;br&gt;vextor&amp;lt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;&amp;gt; &lt;span class=&#34;hljs-number&#34;&gt;229&lt;/span&gt;&lt;br&gt;vector&amp;lt;&lt;span class=&#34;hljs-keyword&#34;&gt;bool&lt;/span&gt;&amp;gt; &lt;span class=&#34;hljs-number&#34;&gt;16535&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;这里发现vector&amp;lt;bool&amp;gt;相较于其他vector&amp;lt;T&amp;gt;速度要慢的多！&lt;/p&gt;
+&lt;h2 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/qq_52134928/article/details/121066304?spm=1001.2101.3001.6661.1&amp;utm_medium=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~Rate-1-121066304-blog-86603050.pc_relevant_3mothn_strategy_and_data_recovery&amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~Rate-1-121066304-blog-86603050.pc_relevant_3mothn_strategy_and_data_recovery&amp;utm_relevant_index=1&#34;&gt;(65条消息) 【C++】vector＜bool＞的特别之处_小陶同学_的博客-CSDN博客&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/u013249689/article/details/25297657&#34;&gt;(65条消息) 不使用vector的原因和替代方法_jackycmu的博客-CSDN博客&lt;/a&gt;&lt;/p&gt;
+</content>
+        <category term="STL" />
+        <category term="Vector" />
+        <category term="C/C++" />
+        <category term="bool" />
+        <updated>2023-02-28T12:59:01.000Z</updated>
+    </entry>
     <entry>
         <id>http://example.com/2022/04/23/Algorithm031/</id>
         <title>L2-039 清点代码库 (25 分)</title>

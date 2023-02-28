@@ -24,12 +24,12 @@
         <category>Binary tree</category>
         <category>BFS</category>
         <category>模拟</category>
-        <category>邻接矩阵</category>
-        <category>DFS</category>
         <category>结构体</category>
         <category>贪心</category>
-        <category>Double类型相等比较</category>
+        <category>邻接矩阵</category>
+        <category>DFS</category>
         <category>并查集</category>
+        <category>Double类型相等比较</category>
         <category>Map</category>
         <category>Pair</category>
         <category>Linux</category>
@@ -54,6 +54,7 @@
         <category>Tensorflow</category>
         <category>性能分析工具</category>
         <category>gcov</category>
+        <category>bool</category>
         <item>
             <guid isPermalink="true">http://example.com/2022/04/23/Algorithm030/</guid>
             <title>L2-005 集合相似度 (25 分)</title>
