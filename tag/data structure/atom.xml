@@ -33,8 +33,8 @@
     <category term="MPI" />
     <category term="Matrix" />
     <category term="GEMM" />
-    <category term="dgemm" />
     <category term="AVX2" />
+    <category term="dgemm" />
     <category term="Cache" />
     <category term="Blocking" />
     <category term="CUDA" />
@@ -44,12 +44,12 @@
     <category term="前缀和" />
     <category term="Mirror" />
     <category term="牛客" />
-    <category term="OpenMP" />
     <category term="Numactl" />
+    <category term="OpenMP" />
     <category term="C/C++" />
     <category term="register" />
-    <category term="Tensorflow" />
     <category term="Slurm" />
+    <category term="Tensorflow" />
     <category term="性能分析工具" />
     <category term="gcov" />
     <category term="bool" />
