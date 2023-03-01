@@ -5,8 +5,8 @@
         <link>http://example.com</link>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Sat, 18 Feb 2023 16:27:01 +0800</pubDate>
-        <lastBuildDate>Sat, 18 Feb 2023 16:27:01 +0800</lastBuildDate>
+        <pubDate>Wed, 01 Mar 2023 17:35:03 +0800</pubDate>
+        <lastBuildDate>Wed, 01 Mar 2023 17:35:03 +0800</lastBuildDate>
         <category>AVX</category>
         <category>Data Structure</category>
         <category>String</category>
@@ -24,26 +24,27 @@
         <category>Binary tree</category>
         <category>BFS</category>
         <category>模拟</category>
-        <category>结构体</category>
-        <category>贪心</category>
         <category>邻接矩阵</category>
         <category>DFS</category>
-        <category>并查集</category>
+        <category>结构体</category>
+        <category>贪心</category>
         <category>Double类型相等比较</category>
+        <category>并查集</category>
         <category>Map</category>
         <category>Pair</category>
         <category>Linux</category>
         <category>MPI</category>
         <category>Matrix</category>
         <category>GEMM</category>
-        <category>AVX2</category>
         <category>dgemm</category>
+        <category>AVX2</category>
         <category>Cache</category>
         <category>Blocking</category>
         <category>CUDA</category>
         <category>Intel</category>
         <category>LeetCode</category>
         <category>双指针</category>
+        <category>前缀和</category>
         <category>Mirror</category>
         <category>牛客</category>
         <category>Numactl</category>
@@ -55,6 +56,21 @@
         <category>性能分析工具</category>
         <category>gcov</category>
         <category>bool</category>
+        <item>
+            <guid isPermalink="true">http://example.com/2023/03/01/leetcode724/</guid>
+            <title>724.寻找数组的中心下标</title>
+            <link>http://example.com/2023/03/01/leetcode724/</link>
+            <category>C++</category>
+            <category>LeetCode</category>
+            <category>前缀和</category>
+            <pubDate>Wed, 01 Mar 2023 17:35:03 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;724-寻找数组的中心下标&#34;&gt;&lt;a href=&#34;#724-寻找数组的中心下标&#34; class=&#34;headerlink&#34; title=&#34;724.寻找数组的中心下标&#34;&gt;&lt;/a&gt;724.寻找数组的中心下标&lt;/h1&gt;&lt;h2 id=&#34;题目链接&#34;&gt;&lt;a href=&#34;#题目链接&#34; class=&#34;headerlink&#34; title=&#34;题目链接&#34;&gt;&lt;/a&gt;题目链接&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://leetcode.cn/problems/find-pivot-index/&#34;&gt;724. 寻找数组的中心下标 - 力扣（LeetCode）&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;完整代码&#34;&gt;&lt;a href=&#34;#完整代码&#34; class=&#34;headerlink&#34; title=&#34;完整代码&#34;&gt;&lt;/a&gt;完整代码&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;/2023/03/01/leetcode724/image-20230301173931031.png&#34; alt=&#34;image-20230301173931031&#34;&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-class&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;Solution&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;public&lt;/span&gt;:&lt;br&gt;    &lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;pivotIndex&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(vector&amp;lt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;&amp;gt;&amp;amp; nums)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; total=&lt;span class=&#34;hljs-built_in&#34;&gt;accumulate&lt;/span&gt;(nums.&lt;span class=&#34;hljs-built_in&#34;&gt;begin&lt;/span&gt;(), nums.&lt;span class=&#34;hljs-built_in&#34;&gt;end&lt;/span&gt;(),&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;);	&lt;span class=&#34;hljs-comment&#34;&gt;//第三个形参是累加的初始值&lt;/span&gt;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; sum=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;i&amp;lt;nums.&lt;span class=&#34;hljs-built_in&#34;&gt;size&lt;/span&gt;();i++)&lt;br&gt;        &amp;#123;&lt;br&gt;            &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(&lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt;*sum+nums[i] == total)&amp;#123;&lt;br&gt;                &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; i;&lt;br&gt;            &amp;#125;&lt;br&gt;            sum+=nums[i];&lt;br&gt;        &amp;#125;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;-1&lt;/span&gt;;&lt;br&gt;    &amp;#125;&lt;br&gt;&amp;#125;;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h2 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://leetcode.cn/problems/find-pivot-index/solution/xun-zhao-shu-zu-de-zhong-xin-suo-yin-by-gzjle/&#34;&gt;寻找数组的中心索引 - 寻找数组的中心下标 - 力扣（LeetCode）&lt;/a&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">http://example.com/2023/02/18/leetcode11/</guid>
             <title>11. 盛最多水的容器</title>
