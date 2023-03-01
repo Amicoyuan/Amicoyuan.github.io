@@ -2,7 +2,7 @@
 <rss version="2.0">
     <channel>
         <title>Amicoyuan • Posts by &#34;avx&#34; tag</title>
-        <link>http://example.com</link>
+        <link>https://xingyuanjie.top</link>
         <description></description>
         <language>zh-CN</language>
         <pubDate>Sat, 28 Jan 2023 14:51:44 +0800</pubDate>
@@ -16,11 +16,11 @@
         <category>Set</category>
         <category>团体程序设计天梯赛</category>
         <category>Sort</category>
-        <category>LinkList</category>
-        <category>双向链表</category>
         <category>Graph</category>
         <category>邻接表</category>
         <category>Vector</category>
+        <category>LinkList</category>
+        <category>双向链表</category>
         <category>Binary tree</category>
         <category>BFS</category>
         <category>模拟</category>
@@ -28,8 +28,8 @@
         <category>DFS</category>
         <category>结构体</category>
         <category>贪心</category>
-        <category>Double类型相等比较</category>
         <category>并查集</category>
+        <category>Double类型相等比较</category>
         <category>Map</category>
         <category>Pair</category>
         <category>Linux</category>
@@ -57,9 +57,9 @@
         <category>gcov</category>
         <category>bool</category>
         <item>
-            <guid isPermalink="true">http://example.com/2023/01/28/avx006/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/01/28/avx006/</guid>
             <title>如何使用AVX和AVX2处理数据(个人翻译)</title>
-            <link>http://example.com/2023/01/28/avx006/</link>
+            <link>https://xingyuanjie.top/2023/01/28/avx006/</link>
             <category>AVX</category>
             <category>AVX2</category>
             <pubDate>Sat, 28 Jan 2023 14:51:44 +0800</pubDate>
@@ -569,9 +569,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2022/06/12/AVX%E5%90%91%E9%87%8F%E5%8C%96%E5%AD%A6%E4%B9%A0(%E4%BA%8C)-%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90%E7%9A%84%E5%BA%94%E7%94%A8/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2022/06/12/AVX%E5%90%91%E9%87%8F%E5%8C%96%E5%AD%A6%E4%B9%A0(%E4%BA%8C)-%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90%E7%9A%84%E5%BA%94%E7%94%A8/</guid>
             <title>AVX向量化学习(二)-内存对齐的应用</title>
-            <link>http://example.com/2022/06/12/AVX%E5%90%91%E9%87%8F%E5%8C%96%E5%AD%A6%E4%B9%A0(%E4%BA%8C)-%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90%E7%9A%84%E5%BA%94%E7%94%A8/</link>
+            <link>https://xingyuanjie.top/2022/06/12/AVX%E5%90%91%E9%87%8F%E5%8C%96%E5%AD%A6%E4%B9%A0(%E4%BA%8C)-%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90%E7%9A%84%E5%BA%94%E7%94%A8/</link>
             <category>AVX</category>
             <pubDate>Sun, 12 Jun 2022 15:11:29 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;AVX指令集的简单操作-内存对齐版&#34;&gt;&lt;a href=&#34;#AVX指令集的简单操作-内存对齐版&#34; class=&#34;headerlink&#34; title=&#34;AVX指令集的简单操作(内存对齐版)&#34;&gt;&lt;/a&gt;AVX指令集的简单操作(内存对齐版)&lt;/h1&gt;&lt;p&gt;使用AVX指令集进行2个double型的数组相加操作&lt;/p&gt;
@@ -613,9 +613,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2022/06/12/AVX%E5%90%91%E9%87%8F%E5%8C%96%E5%AD%A6%E4%B9%A0(%E4%B8%80)/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2022/06/12/AVX%E5%90%91%E9%87%8F%E5%8C%96%E5%AD%A6%E4%B9%A0(%E4%B8%80)/</guid>
             <title>AVX向量化学习(一)</title>
-            <link>http://example.com/2022/06/12/AVX%E5%90%91%E9%87%8F%E5%8C%96%E5%AD%A6%E4%B9%A0(%E4%B8%80)/</link>
+            <link>https://xingyuanjie.top/2022/06/12/AVX%E5%90%91%E9%87%8F%E5%8C%96%E5%AD%A6%E4%B9%A0(%E4%B8%80)/</link>
             <category>AVX</category>
             <pubDate>Sun, 12 Jun 2022 15:11:29 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;AVX指令集的简单操作&#34;&gt;&lt;a href=&#34;#AVX指令集的简单操作&#34; class=&#34;headerlink&#34; title=&#34;AVX指令集的简单操作&#34;&gt;&lt;/a&gt;AVX指令集的简单操作&lt;/h1&gt;&lt;p&gt;使用AVX指令集进行2个double型的数组相加操作&lt;/p&gt;
@@ -646,9 +646,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2022/01/17/AVX005/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2022/01/17/AVX005/</guid>
             <title>AVX向量化学习(五)-INT型数组相加操作</title>
-            <link>http://example.com/2022/01/17/AVX005/</link>
+            <link>https://xingyuanjie.top/2022/01/17/AVX005/</link>
             <category>AVX</category>
             <pubDate>Mon, 17 Jan 2022 21:28:22 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;AVX向量化学习-五-INT型数组相加操作&#34;&gt;&lt;a href=&#34;#AVX向量化学习-五-INT型数组相加操作&#34; class=&#34;headerlink&#34; title=&#34;AVX向量化学习(五)-INT型数组相加操作&#34;&gt;&lt;/a&gt;AVX向量化学习(五)-INT型数组相加操作&lt;/h1&gt;&lt;p&gt;使用AVX指令集进行2个INT型的数组相加操作&lt;/p&gt;
@@ -743,9 +743,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2022/01/17/AVX004/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2022/01/17/AVX004/</guid>
             <title>AVX向量化学习(四)-INT类型转化成DOUBLE类型</title>
-            <link>http://example.com/2022/01/17/AVX004/</link>
+            <link>https://xingyuanjie.top/2022/01/17/AVX004/</link>
             <category>AVX</category>
             <pubDate>Mon, 17 Jan 2022 20:41:56 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;AVX向量化学习-四-INT类型转化成DOUBLE类型&#34;&gt;&lt;a href=&#34;#AVX向量化学习-四-INT类型转化成DOUBLE类型&#34; class=&#34;headerlink&#34; title=&#34;AVX向量化学习(四)-INT类型转化成DOUBLE类型&#34;&gt;&lt;/a&gt;AVX向量化学习(四)-INT类型转化成DOUBLE类型&lt;/h1&gt;&lt;p&gt;使用AVX指令集把INT类型转化为DOUBLE类型&lt;/p&gt;
@@ -815,9 +815,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2021/11/24/AVX003/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2021/11/24/AVX003/</guid>
             <title>AVX向量化学习(三)-if判断的处理</title>
-            <link>http://example.com/2021/11/24/AVX003/</link>
+            <link>https://xingyuanjie.top/2021/11/24/AVX003/</link>
             <category>AVX</category>
             <pubDate>Wed, 24 Nov 2021 17:42:35 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;AVX-if判断的处理&#34;&gt;&lt;a href=&#34;#AVX-if判断的处理&#34; class=&#34;headerlink&#34; title=&#34;AVX-if判断的处理&#34;&gt;&lt;/a&gt;AVX-if判断的处理&lt;/h1&gt;&lt;p&gt;使用AVX指令集对if判断进行处理&lt;/p&gt;

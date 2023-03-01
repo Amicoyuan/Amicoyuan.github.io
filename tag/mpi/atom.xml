@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>http://example.com</id>
+    <id>https://xingyuanjie.top</id>
     <title>Amicoyuan • Posts by &#34;mpi&#34; tag</title>
-    <link href="http://example.com" />
+    <link href="https://xingyuanjie.top" />
     <updated>2022-06-12T07:11:29.651Z</updated>
     <category term="AVX" />
     <category term="Data Structure" />
@@ -13,11 +13,11 @@
     <category term="Set" />
     <category term="团体程序设计天梯赛" />
     <category term="Sort" />
-    <category term="LinkList" />
-    <category term="双向链表" />
     <category term="Graph" />
     <category term="邻接表" />
     <category term="Vector" />
+    <category term="LinkList" />
+    <category term="双向链表" />
     <category term="Binary tree" />
     <category term="BFS" />
     <category term="模拟" />
@@ -25,8 +25,8 @@
     <category term="DFS" />
     <category term="结构体" />
     <category term="贪心" />
-    <category term="Double类型相等比较" />
     <category term="并查集" />
+    <category term="Double类型相等比较" />
     <category term="Map" />
     <category term="Pair" />
     <category term="Linux" />
@@ -54,9 +54,9 @@
     <category term="gcov" />
     <category term="bool" />
     <entry>
-        <id>http://example.com/2022/06/12/MPI%E5%AD%A6%E4%B9%A0(%E4%B8%80)-%E7%AE%80%E5%8D%95%E7%9A%84%E5%8F%91%E9%80%81%E6%8E%A5%E6%94%B6/</id>
+        <id>https://xingyuanjie.top/2022/06/12/MPI%E5%AD%A6%E4%B9%A0(%E4%B8%80)-%E7%AE%80%E5%8D%95%E7%9A%84%E5%8F%91%E9%80%81%E6%8E%A5%E6%94%B6/</id>
         <title>MPI学习(一)-简单的发送接收</title>
-        <link rel="alternate" href="http://example.com/2022/06/12/MPI%E5%AD%A6%E4%B9%A0(%E4%B8%80)-%E7%AE%80%E5%8D%95%E7%9A%84%E5%8F%91%E9%80%81%E6%8E%A5%E6%94%B6/"/>
+        <link rel="alternate" href="https://xingyuanjie.top/2022/06/12/MPI%E5%AD%A6%E4%B9%A0(%E4%B8%80)-%E7%AE%80%E5%8D%95%E7%9A%84%E5%8F%91%E9%80%81%E6%8E%A5%E6%94%B6/"/>
         <content type="html">&lt;h1 id=&#34;MPI-简单的发送接收&#34;&gt;&lt;a href=&#34;#MPI-简单的发送接收&#34; class=&#34;headerlink&#34; title=&#34;MPI-简单的发送接收&#34;&gt;&lt;/a&gt;MPI-简单的发送接收&lt;/h1&gt;&lt;p&gt;打印来自进程问候语句的MPI程序&lt;/p&gt;
 &lt;h2 id=&#34;所使用的MPI原语&#34;&gt;&lt;a href=&#34;#所使用的MPI原语&#34; class=&#34;headerlink&#34; title=&#34;所使用的MPI原语&#34;&gt;&lt;/a&gt;所使用的MPI原语&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;/2022/06/12/MPI%E5%AD%A6%E4%B9%A0(%E4%B8%80)-%E7%AE%80%E5%8D%95%E7%9A%84%E5%8F%91%E9%80%81%E6%8E%A5%E6%94%B6/mpi001.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/2022/06/12/MPI%E5%AD%A6%E4%B9%A0(%E4%B8%80)-%E7%AE%80%E5%8D%95%E7%9A%84%E5%8F%91%E9%80%81%E6%8E%A5%E6%94%B6/mpi002.png&#34;&gt;&lt;/p&gt;
@@ -73,9 +73,9 @@
         <updated>2022-06-12T07:11:29.651Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2022/04/02/mpi006/</id>
+        <id>https://xingyuanjie.top/2022/04/02/mpi006/</id>
         <title>MPI学习(六)-两个矩阵相加MPI版本</title>
-        <link rel="alternate" href="http://example.com/2022/04/02/mpi006/"/>
+        <link rel="alternate" href="https://xingyuanjie.top/2022/04/02/mpi006/"/>
         <content type="html">&lt;h1 id=&#34;MPI学习-六-两个矩阵相加MPI版本&#34;&gt;&lt;a href=&#34;#MPI学习-六-两个矩阵相加MPI版本&#34; class=&#34;headerlink&#34; title=&#34;MPI学习(六)-两个矩阵相加MPI版本&#34;&gt;&lt;/a&gt;MPI学习(六)-两个矩阵相加MPI版本&lt;/h1&gt;&lt;p&gt;这里，我们演示了两个简单的程序，一个是矩阵相加串行版本，一个是矩阵相加MPI版本&lt;/p&gt;
 &lt;h2 id=&#34;串行版本&#34;&gt;&lt;a href=&#34;#串行版本&#34; class=&#34;headerlink&#34; title=&#34;串行版本&#34;&gt;&lt;/a&gt;串行版本&lt;/h2&gt;&lt;h3 id=&#34;程序源代码&#34;&gt;&lt;a href=&#34;#程序源代码&#34; class=&#34;headerlink&#34; title=&#34;程序源代码&#34;&gt;&lt;/a&gt;程序源代码&lt;/h3&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;31&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;include&lt;/span&gt;&lt;span class=&#34;hljs-meta-string&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;include&lt;/span&gt;&lt;span class=&#34;hljs-meta-string&#34;&gt;&amp;lt;string.h&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;()&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;/span&gt;&amp;#123;&lt;br&gt;	&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; a[&lt;span class=&#34;hljs-number&#34;&gt;4&lt;/span&gt;][&lt;span class=&#34;hljs-number&#34;&gt;4&lt;/span&gt;]=&amp;#123;&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;3&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;4&lt;/span&gt;,&lt;br&gt;				&lt;span class=&#34;hljs-number&#34;&gt;5&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;6&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;7&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;8&lt;/span&gt;,&lt;br&gt;				&lt;span class=&#34;hljs-number&#34;&gt;9&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;10&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;11&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;12&lt;/span&gt;,&lt;br&gt;				&lt;span class=&#34;hljs-number&#34;&gt;13&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;14&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;15&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;16&lt;/span&gt;&amp;#125;;&lt;br&gt;	&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; b[&lt;span class=&#34;hljs-number&#34;&gt;4&lt;/span&gt;][&lt;span class=&#34;hljs-number&#34;&gt;4&lt;/span&gt;]=&amp;#123;&lt;span class=&#34;hljs-number&#34;&gt;4&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;5&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;7&lt;/span&gt;,&lt;br&gt;				&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;3&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;8&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;9&lt;/span&gt;,&lt;br&gt;				&lt;span class=&#34;hljs-number&#34;&gt;11&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;12&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;17&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;5&lt;/span&gt;,&lt;br&gt;				&lt;span class=&#34;hljs-number&#34;&gt;15&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;14&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;20&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;3&lt;/span&gt;&amp;#125;;&lt;br&gt;	&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; c[&lt;span class=&#34;hljs-number&#34;&gt;4&lt;/span&gt;][&lt;span class=&#34;hljs-number&#34;&gt;4&lt;/span&gt;];&lt;br&gt;	&lt;span class=&#34;hljs-built_in&#34;&gt;memset&lt;/span&gt;(c,&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;,&lt;span class=&#34;hljs-built_in&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;sizeof&lt;/span&gt;&lt;/span&gt;(c)); &lt;br&gt;	&lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;i&amp;lt;&lt;span class=&#34;hljs-number&#34;&gt;4&lt;/span&gt;;i++)&lt;br&gt;	&amp;#123;&lt;br&gt;		&lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; j=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;j&amp;lt;&lt;span class=&#34;hljs-number&#34;&gt;4&lt;/span&gt;;j++)&lt;br&gt;		&amp;#123;&lt;br&gt;			c[i][j]=a[i][j]+b[i][j];&lt;br&gt;		&amp;#125;&lt;br&gt;	&amp;#125;&lt;br&gt;	&lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;i&amp;lt;&lt;span class=&#34;hljs-number&#34;&gt;4&lt;/span&gt;;i++)&lt;br&gt;	&amp;#123;&lt;br&gt;		&lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; j=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;j&amp;lt;&lt;span class=&#34;hljs-number&#34;&gt;4&lt;/span&gt;;j++)&lt;br&gt;		&amp;#123;&lt;br&gt;			&lt;span class=&#34;hljs-built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;%d &amp;quot;&lt;/span&gt;,c[i][j]);&lt;br&gt;		&amp;#125;&lt;br&gt;		&lt;span class=&#34;hljs-built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;\n&amp;quot;&lt;/span&gt;);&lt;br&gt;	&amp;#125;&lt;br&gt;	&lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
@@ -95,9 +95,9 @@
         <updated>2022-04-02T08:07:46.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2022/01/01/mpi005/</id>
+        <id>https://xingyuanjie.top/2022/01/01/mpi005/</id>
         <title>MPI学习(五)-环形拓扑上利用MPI进行通信</title>
-        <link rel="alternate" href="http://example.com/2022/01/01/mpi005/"/>
+        <link rel="alternate" href="https://xingyuanjie.top/2022/01/01/mpi005/"/>
         <content type="html">&lt;h1 id=&#34;MPI学习-五-环形拓扑上利用MPI进行通信&#34;&gt;&lt;a href=&#34;#MPI学习-五-环形拓扑上利用MPI进行通信&#34; class=&#34;headerlink&#34; title=&#34;MPI学习(五)-环形拓扑上利用MPI进行通信&#34;&gt;&lt;/a&gt;MPI学习(五)-环形拓扑上利用MPI进行通信&lt;/h1&gt;&lt;p&gt;这里，我们演示了一个简单的MPI程序，它使用阻塞通信原语send和receive来进行广播操作：&lt;/p&gt;
 &lt;h2 id=&#34;程序运行平台&#34;&gt;&lt;a href=&#34;#程序运行平台&#34; class=&#34;headerlink&#34; title=&#34;程序运行平台&#34;&gt;&lt;/a&gt;程序运行平台&lt;/h2&gt;&lt;p&gt;北京超级云计算中心A3分区&lt;/p&gt;
 &lt;h2 id=&#34;环境变量&#34;&gt;&lt;a href=&#34;#环境变量&#34; class=&#34;headerlink&#34; title=&#34;环境变量&#34;&gt;&lt;/a&gt;环境变量&lt;/h2&gt;&lt;p&gt;mpi&amp;#x2F;intel&amp;#x2F;2017.5&lt;/p&gt;
@@ -113,9 +113,9 @@
         <updated>2022-01-01T09:01:47.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2021/11/27/mpi004/</id>
+        <id>https://xingyuanjie.top/2021/11/27/mpi004/</id>
         <title>MPI学习(四)-广播、散播、收集、归约和全归约的MPI语法</title>
-        <link rel="alternate" href="http://example.com/2021/11/27/mpi004/"/>
+        <link rel="alternate" href="https://xingyuanjie.top/2021/11/27/mpi004/"/>
         <content type="html">&lt;h1 id=&#34;MPI-广播、散播、收集、归约和全归约的MPI语法&#34;&gt;&lt;a href=&#34;#MPI-广播、散播、收集、归约和全归约的MPI语法&#34; class=&#34;headerlink&#34; title=&#34;MPI-广播、散播、收集、归约和全归约的MPI语法&#34;&gt;&lt;/a&gt;MPI-广播、散播、收集、归约和全归约的MPI语法&lt;/h1&gt;&lt;h2 id=&#34;广播：MPI-Bcast&#34;&gt;&lt;a href=&#34;#广播：MPI-Bcast&#34; class=&#34;headerlink&#34; title=&#34;广播：MPI_Bcast&#34;&gt;&lt;/a&gt;广播：MPI_Bcast&lt;/h2&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;MPI_Bcast&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;void&lt;/span&gt; *buffer, &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; count, MPI_Datatype datatype, &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; root, MPI_Comm comm)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-comment&#34;&gt;//int root 广播数据的根进程的标识号(整型)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;p&gt;&lt;img src=&#34;/2021/11/27/mpi004/mpi001.png&#34;&gt;&lt;/p&gt;
@@ -137,9 +137,9 @@
         <updated>2021-11-27T08:58:36.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2021/11/26/mpi003/</id>
+        <id>https://xingyuanjie.top/2021/11/26/mpi003/</id>
         <title>MPI学习(三)-通过OpenmMP使用MPI</title>
-        <link rel="alternate" href="http://example.com/2021/11/26/mpi003/"/>
+        <link rel="alternate" href="https://xingyuanjie.top/2021/11/26/mpi003/"/>
         <content type="html">&lt;h1 id=&#34;MPI-通过OpenMP使用MPI&#34;&gt;&lt;a href=&#34;#MPI-通过OpenMP使用MPI&#34; class=&#34;headerlink&#34; title=&#34;MPI-通过OpenMP使用MPI&#34;&gt;&lt;/a&gt;MPI-通过OpenMP使用MPI&lt;/h1&gt;&lt;p&gt;OpenMP是另一种为基于共享内存的并行编程提供的应用编程接口。当人们想使用多核处理器时，通常使用OpenMP。下面是一个“Hello World”程序，使用了MPI和OpenMP的API。&lt;/p&gt;
 &lt;h2 id=&#34;程序运行平台&#34;&gt;&lt;a href=&#34;#程序运行平台&#34; class=&#34;headerlink&#34; title=&#34;程序运行平台&#34;&gt;&lt;/a&gt;程序运行平台&lt;/h2&gt;&lt;p&gt;北京超级云计算中心A3分区&lt;/p&gt;
 &lt;h2 id=&#34;环境变量&#34;&gt;&lt;a href=&#34;#环境变量&#34; class=&#34;headerlink&#34; title=&#34;环境变量&#34;&gt;&lt;/a&gt;环境变量&lt;/h2&gt;&lt;p&gt;mpi&amp;#x2F;intel&amp;#x2F;2017.5&lt;/p&gt;
@@ -154,9 +154,9 @@
         <updated>2021-11-26T14:09:37.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2021/11/26/mpi002/</id>
+        <id>https://xingyuanjie.top/2021/11/26/mpi002/</id>
         <title>MPI学习(二)-非阻塞通信程序(无缓冲)</title>
-        <link rel="alternate" href="http://example.com/2021/11/26/mpi002/"/>
+        <link rel="alternate" href="https://xingyuanjie.top/2021/11/26/mpi002/"/>
         <content type="html">&lt;h1 id=&#34;MPI-非阻塞通信程序-无缓冲&#34;&gt;&lt;a href=&#34;#MPI-非阻塞通信程序-无缓冲&#34; class=&#34;headerlink&#34; title=&#34;MPI-非阻塞通信程序(无缓冲)&#34;&gt;&lt;/a&gt;MPI-非阻塞通信程序(无缓冲)&lt;/h1&gt;&lt;p&gt;非阻塞通信程序(无缓冲)是由MPI中的Isend和Ireceive来表示的，即异步通信。在这种情况下，发送进程发布一条“发送授权请求”(挂起的消息)的消息，并继续其程序的执行。当接收进程发布一个“同意发送”许可指令时，数据传输就启动了。所有的这些机制都是通过操作系统的信号进行内部管理的。当数据传输完成时，检查状态并指示进程是否可以安全地进行读&amp;#x2F;写数据。                                                                      需要注意的是原语MPI_Wait(&amp;amp;request,&amp;amp;status)等到数据传输完成(或中断后)，使用一个成为status的状态变量来指示数据传输是否已经成功。&lt;/p&gt;
 &lt;h2 id=&#34;相关的MPI原语&#34;&gt;&lt;a href=&#34;#相关的MPI原语&#34; class=&#34;headerlink&#34; title=&#34;相关的MPI原语&#34;&gt;&lt;/a&gt;相关的MPI原语&lt;/h2&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;MPI_Isend&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;void&lt;/span&gt; *buf, &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; count, MPI_Datatype datatype, &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; dest, &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; tag, MPI_comm comm, MPI_Request *req)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;MPI_Irecv&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;void&lt;/span&gt; *buf, &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; count, MPI_Datatype datatype, &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; src, &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; tag, MPI_Comm comm, MPI_Request *req)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 

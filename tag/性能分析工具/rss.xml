@@ -2,7 +2,7 @@
 <rss version="2.0">
     <channel>
         <title>Amicoyuan • Posts by &#34;性能分析工具&#34; tag</title>
-        <link>http://example.com</link>
+        <link>https://xingyuanjie.top</link>
         <description></description>
         <language>zh-CN</language>
         <pubDate>Sun, 08 May 2022 10:34:59 +0800</pubDate>
@@ -16,11 +16,11 @@
         <category>Set</category>
         <category>团体程序设计天梯赛</category>
         <category>Sort</category>
-        <category>LinkList</category>
-        <category>双向链表</category>
         <category>Graph</category>
         <category>邻接表</category>
         <category>Vector</category>
+        <category>LinkList</category>
+        <category>双向链表</category>
         <category>Binary tree</category>
         <category>BFS</category>
         <category>模拟</category>
@@ -28,8 +28,8 @@
         <category>DFS</category>
         <category>结构体</category>
         <category>贪心</category>
-        <category>Double类型相等比较</category>
         <category>并查集</category>
+        <category>Double类型相等比较</category>
         <category>Map</category>
         <category>Pair</category>
         <category>Linux</category>
@@ -57,9 +57,9 @@
         <category>gcov</category>
         <category>bool</category>
         <item>
-            <guid isPermalink="true">http://example.com/2022/05/08/tool004/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2022/05/08/tool004/</guid>
             <title>gcov代码覆盖率测试-完整样例-SLIC</title>
-            <link>http://example.com/2022/05/08/tool004/</link>
+            <link>https://xingyuanjie.top/2022/05/08/tool004/</link>
             <category>性能分析工具</category>
             <category>gcov</category>
             <pubDate>Sun, 08 May 2022 10:34:59 +0800</pubDate>
@@ -68,9 +68,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2022/01/19/tool003/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2022/01/19/tool003/</guid>
             <title>perf-系统级性能分析工具</title>
-            <link>http://example.com/2022/01/19/tool003/</link>
+            <link>https://xingyuanjie.top/2022/01/19/tool003/</link>
             <category>性能分析工具</category>
             <pubDate>Wed, 19 Jan 2022 11:56:40 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;系统级性能优化通常包括两个阶段：性能剖析（performance profiling）和代码优化。&lt;/p&gt;
@@ -137,9 +137,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2022/01/18/tool002/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2022/01/18/tool002/</guid>
             <title>gcov代码覆盖率测试</title>
-            <link>http://example.com/2022/01/18/tool002/</link>
+            <link>https://xingyuanjie.top/2022/01/18/tool002/</link>
             <category>性能分析工具</category>
             <pubDate>Tue, 18 Jan 2022 14:35:05 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;gcov代码覆盖率测试&#34;&gt;&lt;a href=&#34;#gcov代码覆盖率测试&#34; class=&#34;headerlink&#34; title=&#34;gcov代码覆盖率测试&#34;&gt;&lt;/a&gt;gcov代码覆盖率测试&lt;/h1&gt;&lt;h2 id=&#34;gcov的简单介绍&#34;&gt;&lt;a href=&#34;#gcov的简单介绍&#34; class=&#34;headerlink&#34; title=&#34;gcov的简单介绍&#34;&gt;&lt;/a&gt;gcov的简单介绍&lt;/h2&gt;&lt;p&gt;1.gcov是一个测试代码覆盖率的工具。与GCC一起使用来分析程序，以帮助创建更高效、更快的运行代码，并发现程序的未测试部分&lt;br&gt;2.是一个命令行方式的控制台程序。需要结合lcov,gcovr等前端图形工具才能实现统计数据图形化&lt;br&gt;3.伴随GCC发布，不需要单独下载gcov工具。配合GCC共同实现对c&amp;#x2F;c++文件的语句覆盖和分支覆盖测试&lt;br&gt;4.与程序概要分析工具（profiling tool，例如gprof）一起工作，可以估计程序中哪段代码最耗时&lt;/p&gt;
@@ -212,9 +212,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2022/01/09/tool001/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2022/01/09/tool001/</guid>
             <title>gprof、gprof2dot.py、dot使用方法简介</title>
-            <link>http://example.com/2022/01/09/tool001/</link>
+            <link>https://xingyuanjie.top/2022/01/09/tool001/</link>
             <category>性能分析工具</category>
             <pubDate>Sun, 09 Jan 2022 16:33:37 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;gprof、gprof2dot-py、dot使用方法简介&#34;&gt;&lt;a href=&#34;#gprof、gprof2dot-py、dot使用方法简介&#34; class=&#34;headerlink&#34; title=&#34;gprof、gprof2dot.py、dot使用方法简介&#34;&gt;&lt;/a&gt;gprof、gprof2dot.py、dot使用方法简介&lt;/h1&gt;&lt;h2 id=&#34;1-：gprof使用步骤如下，以SLIC为例：&#34;&gt;&lt;a href=&#34;#1-：gprof使用步骤如下，以SLIC为例：&#34; class=&#34;headerlink&#34; title=&#34;(1)：gprof使用步骤如下，以SLIC为例：&#34;&gt;&lt;/a&gt;(1)：gprof使用步骤如下，以SLIC为例：&lt;/h2&gt;&lt;h3 id=&#34;1-在编译过程中添加-pg选项，命令如下：&#34;&gt;&lt;a href=&#34;#1-在编译过程中添加-pg选项，命令如下：&#34; class=&#34;headerlink&#34; title=&#34;1 在编译过程中添加-pg选项，命令如下：&#34;&gt;&lt;/a&gt;1 在编译过程中添加-pg选项，命令如下：&lt;/h3&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;gcc -pg SLIC.cpp -o SLIC&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;

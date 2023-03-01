@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>http://example.com</id>
+    <id>https://xingyuanjie.top</id>
     <title>Amicoyuan • Posts by &#34;linux&#34; tag</title>
-    <link href="http://example.com" />
+    <link href="https://xingyuanjie.top" />
     <updated>2023-02-28T11:45:09.000Z</updated>
     <category term="AVX" />
     <category term="Data Structure" />
@@ -13,11 +13,11 @@
     <category term="Set" />
     <category term="团体程序设计天梯赛" />
     <category term="Sort" />
-    <category term="LinkList" />
-    <category term="双向链表" />
     <category term="Graph" />
     <category term="邻接表" />
     <category term="Vector" />
+    <category term="LinkList" />
+    <category term="双向链表" />
     <category term="Binary tree" />
     <category term="BFS" />
     <category term="模拟" />
@@ -25,8 +25,8 @@
     <category term="DFS" />
     <category term="结构体" />
     <category term="贪心" />
-    <category term="Double类型相等比较" />
     <category term="并查集" />
+    <category term="Double类型相等比较" />
     <category term="Map" />
     <category term="Pair" />
     <category term="Linux" />
@@ -54,9 +54,9 @@
     <category term="gcov" />
     <category term="bool" />
     <entry>
-        <id>http://example.com/2023/02/28/Linux004/</id>
+        <id>https://xingyuanjie.top/2023/02/28/Linux004/</id>
         <title>C/C++关键字之restrict</title>
-        <link rel="alternate" href="http://example.com/2023/02/28/Linux004/"/>
+        <link rel="alternate" href="https://xingyuanjie.top/2023/02/28/Linux004/"/>
         <content type="html">&lt;h1 id=&#34;C-x2F-C-关键字之restrict&#34;&gt;&lt;a href=&#34;#C-x2F-C-关键字之restrict&#34; class=&#34;headerlink&#34; title=&#34;C&amp;#x2F;C++关键字之restrict&#34;&gt;&lt;/a&gt;C&amp;#x2F;C++关键字之restrict&lt;/h1&gt;&lt;p&gt;在C语言中，restrict关键字用于修饰指针（C99标准）。通过加上restrict关键字，程序员可提示编译器：在该指针的生命周期内，其指向的对象不会被别的指针所引用。&lt;/p&gt;
 &lt;p&gt;需要注意的是，在C++中，并无明确统一的标准支持restrict关键字。但是很多编译器实现了功能相同的关键字，例如gcc和clang中的__restrict关键字。&lt;/p&gt;
 &lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;add1&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;*a, &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;* b)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;/span&gt;&amp;#123;&lt;br&gt;    *a = &lt;span class=&#34;hljs-number&#34;&gt;10&lt;/span&gt;;&lt;br&gt;    *b = &lt;span class=&#34;hljs-number&#34;&gt;12&lt;/span&gt;;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; *a + *b;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -92,9 +92,9 @@
         <updated>2023-02-28T11:45:09.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2023/02/24/Linux003/</id>
+        <id>https://xingyuanjie.top/2023/02/24/Linux003/</id>
         <title>基于GDB的程序调试</title>
-        <link rel="alternate" href="http://example.com/2023/02/24/Linux003/"/>
+        <link rel="alternate" href="https://xingyuanjie.top/2023/02/24/Linux003/"/>
         <content type="html">&lt;h2 id=&#34;基于GDB的程序调试&#34;&gt;&lt;a href=&#34;#基于GDB的程序调试&#34; class=&#34;headerlink&#34; title=&#34;基于GDB的程序调试&#34;&gt;&lt;/a&gt;基于GDB的程序调试&lt;/h2&gt;&lt;h3 id=&#34;程序调试工具GDB&#34;&gt;&lt;a href=&#34;#程序调试工具GDB&#34; class=&#34;headerlink&#34; title=&#34;程序调试工具GDB&#34;&gt;&lt;/a&gt;程序调试工具GDB&lt;/h3&gt;&lt;p&gt;编译器GCC，项目构建工具Make（又称gmake），以及GDB。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/2023/02/24/Linux003/image-20230224165344672.png&#34; alt=&#34;image-20230224165344672&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;GDB是什么？&lt;/strong&gt;&lt;/p&gt;
@@ -191,15 +191,15 @@
 &lt;p&gt;info register	查看寄存器（除了浮点寄存器）&lt;/p&gt;
 &lt;p&gt;all-registers	查看所有寄存器&lt;/p&gt;
 &lt;p&gt;info registers &amp;lt;reg_name …&amp;gt;查看所指定寄存器&lt;/p&gt;
-&lt;h3 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;来源培训PPT 作者：Relax  邮箱：&lt;a href=&#34;mailto:&amp;#x77;&amp;#97;&amp;#110;&amp;#x67;&amp;#x77;&amp;#49;&amp;#49;&amp;#49;&amp;#x40;&amp;#x69;&amp;#x63;&amp;#108;&amp;#111;&amp;#117;&amp;#100;&amp;#46;&amp;#x63;&amp;#111;&amp;#x6d;&#34;&gt;&amp;#x77;&amp;#97;&amp;#110;&amp;#x67;&amp;#x77;&amp;#49;&amp;#49;&amp;#49;&amp;#x40;&amp;#x69;&amp;#x63;&amp;#108;&amp;#111;&amp;#117;&amp;#100;&amp;#46;&amp;#x63;&amp;#111;&amp;#x6d;&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;来源培训PPT 作者：Relax  邮箱：&lt;a href=&#34;mailto:&amp;#119;&amp;#97;&amp;#x6e;&amp;#x67;&amp;#119;&amp;#49;&amp;#x31;&amp;#49;&amp;#64;&amp;#105;&amp;#x63;&amp;#x6c;&amp;#x6f;&amp;#x75;&amp;#100;&amp;#x2e;&amp;#99;&amp;#111;&amp;#x6d;&#34;&gt;&amp;#119;&amp;#97;&amp;#x6e;&amp;#x67;&amp;#119;&amp;#49;&amp;#x31;&amp;#49;&amp;#64;&amp;#105;&amp;#x63;&amp;#x6c;&amp;#x6f;&amp;#x75;&amp;#100;&amp;#x2e;&amp;#99;&amp;#111;&amp;#x6d;&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 </content>
         <category term="Linux" />
         <updated>2023-02-24T08:50:20.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2023/02/15/blislab003/</id>
+        <id>https://xingyuanjie.top/2023/02/15/blislab003/</id>
         <title>BLISlab中C矩阵初始化速度测试</title>
-        <link rel="alternate" href="http://example.com/2023/02/15/blislab003/"/>
+        <link rel="alternate" href="https://xingyuanjie.top/2023/02/15/blislab003/"/>
         <content type="html">&lt;h2 id=&#34;BLISlab中C矩阵初始化速度测试&#34;&gt;&lt;a href=&#34;#BLISlab中C矩阵初始化速度测试&#34; class=&#34;headerlink&#34; title=&#34;BLISlab中C矩阵初始化速度测试&#34;&gt;&lt;/a&gt;BLISlab中C矩阵初始化速度测试&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;假设我们想把C中的所有元素都设为0。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;统一编译命令：&lt;/strong&gt;&lt;/p&gt;
 &lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs shell&#34;&gt;g++  xxx.cpp -O0 -std=c++11 -o xxx&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -227,9 +227,9 @@
         <updated>2023-02-15T03:48:16.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2023/02/12/blislib002/</id>
+        <id>https://xingyuanjie.top/2023/02/12/blislib002/</id>
         <title>BLISlab tutoril阅读</title>
-        <link rel="alternate" href="http://example.com/2023/02/12/blislib002/"/>
+        <link rel="alternate" href="https://xingyuanjie.top/2023/02/12/blislib002/"/>
         <content type="html">&lt;h1 id=&#34;BLISlab-tutoril阅读&#34;&gt;&lt;a href=&#34;#BLISlab-tutoril阅读&#34; class=&#34;headerlink&#34; title=&#34;BLISlab tutoril阅读&#34;&gt;&lt;/a&gt;BLISlab tutoril阅读&lt;/h1&gt;&lt;h2 id=&#34;参考资料：&#34;&gt;&lt;a href=&#34;#参考资料：&#34; class=&#34;headerlink&#34; title=&#34;参考资料：&#34;&gt;&lt;/a&gt;参考资料：&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Git地址：&lt;/strong&gt;&lt;a href=&#34;https://github.com/flame/blislab&#34;&gt;https://github.com/flame/blislab&lt;/a&gt; 【代码包包含tutoril.pdf】&lt;/p&gt;
 &lt;h2 id=&#34;BLISlab-A-Sandbox-for-Optimizing-GEMM&#34;&gt;&lt;a href=&#34;#BLISlab-A-Sandbox-for-Optimizing-GEMM&#34; class=&#34;headerlink&#34; title=&#34;BLISlab: A Sandbox for Optimizing GEMM&#34;&gt;&lt;/a&gt;BLISlab: A Sandbox for Optimizing GEMM&lt;/h2&gt;&lt;h2 id=&#34;Abstract&#34;&gt;&lt;a href=&#34;#Abstract&#34; class=&#34;headerlink&#34; title=&#34;Abstract&#34;&gt;&lt;/a&gt;Abstract&lt;/h2&gt;&lt;p&gt;矩阵-矩阵乘法是科学计算中非常重要的基本运算，机器学习也越来越重要。这是一个非常简单的概念，可以在典型的高中代数课程中引入，但在实践中又非常重要，它在计算机上的实现仍然是一个活跃的研究主题。本笔记描述了一组使用该操作的练习，如何在具有分层内存(多个缓存)的现代cpu上获得高性能。它是基于blas类库实例化软件(BLIS)框架下的见解，通过公开一个模仿BLIS实现的简化“沙盒”来实现的。因此，它也成为BLIS优化的“众包”工具。&lt;/p&gt;
 &lt;h2 id=&#34;1-Introduction&#34;&gt;&lt;a href=&#34;#1-Introduction&#34; class=&#34;headerlink&#34; title=&#34;1.Introduction&#34;&gt;&lt;/a&gt;1.Introduction&lt;/h2&gt;&lt;p&gt;矩阵-矩阵乘法(Gemm)经常被用作一个简单的例子，以提高如何在现代处理器上优化代码的意识。原因是该操作描述简单，很难完全优化，而且具有实际意义。在本文档中，我们将带领读者了解目前CPU架构中最快实现的技术。&lt;/p&gt;
@@ -410,9 +410,9 @@
         <updated>2023-02-12T13:11:56.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2023/02/02/blislab/</id>
+        <id>https://xingyuanjie.top/2023/02/02/blislab/</id>
         <title>BLISlab dgemm优化</title>
-        <link rel="alternate" href="http://example.com/2023/02/02/blislab/"/>
+        <link rel="alternate" href="https://xingyuanjie.top/2023/02/02/blislab/"/>
         <content type="html">&lt;h1 id=&#34;BLISlab-dgemm优化&#34;&gt;&lt;a href=&#34;#BLISlab-dgemm优化&#34; class=&#34;headerlink&#34; title=&#34;BLISlab dgemm优化&#34;&gt;&lt;/a&gt;BLISlab dgemm优化&lt;/h1&gt;&lt;h2 id=&#34;参考资料：&#34;&gt;&lt;a href=&#34;#参考资料：&#34; class=&#34;headerlink&#34; title=&#34;参考资料：&#34;&gt;&lt;/a&gt;参考资料：&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Git地址：&lt;/strong&gt;&lt;a href=&#34;https://github.com/flame/blislab&#34;&gt;https://github.com/flame/blislab&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;视频教程：&lt;/strong&gt;&lt;a href=&#34;https://www.bilibili.com/video/BV1c94y117Uw?vd_source=3ae32e36058f58c5b85935fca9b77797%E3%80%90%E6%BE%8E%E5%B3%B0%E7%A7%91%E6%8A%80-%E5%BC%A0%E5%85%88%E8%BD%B6%E8%80%81%E5%B8%88%E3%80%91&#34;&gt;https://www.bilibili.com/video/BV1c94y117Uw?vd_source=3ae32e36058f58c5b85935fca9b77797【澎峰科技-张先轶老师】&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;阅读&lt;/strong&gt;：tutorial.pdf【位于代码包中】&lt;/p&gt;
@@ -513,9 +513,9 @@
         <updated>2023-02-02T06:38:00.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2022/05/20/slurm001/</id>
+        <id>https://xingyuanjie.top/2022/05/20/slurm001/</id>
         <title>Slurm</title>
-        <link rel="alternate" href="http://example.com/2022/05/20/slurm001/"/>
+        <link rel="alternate" href="https://xingyuanjie.top/2022/05/20/slurm001/"/>
         <content type="html">&lt;h2 id=&#34;Slurm&#34;&gt;&lt;a href=&#34;#Slurm&#34; class=&#34;headerlink&#34; title=&#34;Slurm&#34;&gt;&lt;/a&gt;Slurm&lt;/h2&gt;&lt;h4 id=&#34;1-sstat-查看RUNNING作业&#34;&gt;&lt;a href=&#34;#1-sstat-查看RUNNING作业&#34; class=&#34;headerlink&#34; title=&#34;1.sstat 查看RUNNING作业&#34;&gt;&lt;/a&gt;1.sstat 查看RUNNING作业&lt;/h4&gt;&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs shell&#34;&gt;sstat -e&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;p&gt;&lt;img src=&#34;/2022/05/20/slurm001/image-20220520174453969.png&#34; alt=&#34;image-20220520174453969&#34;&gt;&lt;/p&gt;
@@ -537,9 +537,9 @@
         <updated>2022-05-20T09:43:02.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2022/05/20/numactl001/</id>
+        <id>https://xingyuanjie.top/2022/05/20/numactl001/</id>
         <title>numactl</title>
-        <link rel="alternate" href="http://example.com/2022/05/20/numactl001/"/>
+        <link rel="alternate" href="https://xingyuanjie.top/2022/05/20/numactl001/"/>
         <content type="html">&lt;ol&gt;
 &lt;li&gt;&lt;/li&gt;
 &lt;/ol&gt;
@@ -566,9 +566,9 @@
         <updated>2022-05-20T09:35:59.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2022/05/20/Linux002/</id>
+        <id>https://xingyuanjie.top/2022/05/20/Linux002/</id>
         <title>linux的jobs,fg,bg命令</title>
-        <link rel="alternate" href="http://example.com/2022/05/20/Linux002/"/>
+        <link rel="alternate" href="https://xingyuanjie.top/2022/05/20/Linux002/"/>
         <content type="html">&lt;h3 id=&#34;linux让前台程序脱离终端运行&#34;&gt;&lt;a href=&#34;#linux让前台程序脱离终端运行&#34; class=&#34;headerlink&#34; title=&#34;linux让前台程序脱离终端运行&#34;&gt;&lt;/a&gt;linux让前台程序脱离终端运行&lt;/h3&gt;&lt;p&gt;1.首先运行你的程序&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/2022/05/20/Linux002/image-20220520171436032.png&#34; alt=&#34;image-20220520171436032&#34;&gt;&lt;/p&gt;
 &lt;p&gt;2.随后使用Ctrl + z，挂起你的进程&lt;/p&gt;
@@ -585,9 +585,9 @@
         <updated>2022-05-20T09:13:08.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2022/05/20/Linux001/</id>
+        <id>https://xingyuanjie.top/2022/05/20/Linux001/</id>
         <title>Linux常用指令</title>
-        <link rel="alternate" href="http://example.com/2022/05/20/Linux001/"/>
+        <link rel="alternate" href="https://xingyuanjie.top/2022/05/20/Linux001/"/>
         <content type="html">&lt;h2 id=&#34;Linux常用指令&#34;&gt;&lt;a href=&#34;#Linux常用指令&#34; class=&#34;headerlink&#34; title=&#34;Linux常用指令&#34;&gt;&lt;/a&gt;Linux常用指令&lt;/h2&gt;&lt;h4 id=&#34;杀死进程&#34;&gt;&lt;a href=&#34;#杀死进程&#34; class=&#34;headerlink&#34; title=&#34;杀死进程&#34;&gt;&lt;/a&gt;杀死进程&lt;/h4&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;kill &lt;span class=&#34;hljs-number&#34;&gt;-9&lt;/span&gt; id&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;p&gt;&lt;img src=&#34;/2022/05/20/Linux001/image-20220520171246860.png&#34; alt=&#34;image-20220520171246860&#34;&gt;&lt;/p&gt;

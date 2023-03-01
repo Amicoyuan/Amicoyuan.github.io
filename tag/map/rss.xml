@@ -2,7 +2,7 @@
 <rss version="2.0">
     <channel>
         <title>Amicoyuan • Posts by &#34;map&#34; tag</title>
-        <link>http://example.com</link>
+        <link>https://xingyuanjie.top</link>
         <description></description>
         <language>zh-CN</language>
         <pubDate>Sat, 23 Apr 2022 21:44:47 +0800</pubDate>
@@ -16,11 +16,11 @@
         <category>Set</category>
         <category>团体程序设计天梯赛</category>
         <category>Sort</category>
-        <category>LinkList</category>
-        <category>双向链表</category>
         <category>Graph</category>
         <category>邻接表</category>
         <category>Vector</category>
+        <category>LinkList</category>
+        <category>双向链表</category>
         <category>Binary tree</category>
         <category>BFS</category>
         <category>模拟</category>
@@ -28,8 +28,8 @@
         <category>DFS</category>
         <category>结构体</category>
         <category>贪心</category>
-        <category>Double类型相等比较</category>
         <category>并查集</category>
+        <category>Double类型相等比较</category>
         <category>Map</category>
         <category>Pair</category>
         <category>Linux</category>
@@ -57,9 +57,9 @@
         <category>gcov</category>
         <category>bool</category>
         <item>
-            <guid isPermalink="true">http://example.com/2022/04/23/Algorithm031/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2022/04/23/Algorithm031/</guid>
             <title>L2-039 清点代码库 (25 分)</title>
-            <link>http://example.com/2022/04/23/Algorithm031/</link>
+            <link>https://xingyuanjie.top/2022/04/23/Algorithm031/</link>
             <category>Data Structure</category>
             <category>C++</category>
             <category>团体程序设计天梯赛</category>
@@ -86,9 +86,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2022/04/16/Algorithm029/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2022/04/16/Algorithm029/</guid>
             <title>STL中map的使用</title>
-            <link>http://example.com/2022/04/16/Algorithm029/</link>
+            <link>https://xingyuanjie.top/2022/04/16/Algorithm029/</link>
             <category>STL</category>
             <category>Map</category>
             <pubDate>Sat, 16 Apr 2022 16:26:03 +0800</pubDate>

@@ -2,7 +2,7 @@
 <rss version="2.0">
     <channel>
         <title>Amicoyuan • Posts by &#34;牛客&#34; tag</title>
-        <link>http://example.com</link>
+        <link>https://xingyuanjie.top</link>
         <description></description>
         <language>zh-CN</language>
         <pubDate>Tue, 07 Feb 2023 18:21:41 +0800</pubDate>
@@ -16,11 +16,11 @@
         <category>Set</category>
         <category>团体程序设计天梯赛</category>
         <category>Sort</category>
-        <category>LinkList</category>
-        <category>双向链表</category>
         <category>Graph</category>
         <category>邻接表</category>
         <category>Vector</category>
+        <category>LinkList</category>
+        <category>双向链表</category>
         <category>Binary tree</category>
         <category>BFS</category>
         <category>模拟</category>
@@ -28,8 +28,8 @@
         <category>DFS</category>
         <category>结构体</category>
         <category>贪心</category>
-        <category>Double类型相等比较</category>
         <category>并查集</category>
+        <category>Double类型相等比较</category>
         <category>Map</category>
         <category>Pair</category>
         <category>Linux</category>
@@ -57,9 +57,9 @@
         <category>gcov</category>
         <category>bool</category>
         <item>
-            <guid isPermalink="true">http://example.com/2023/02/07/niuke003/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/02/07/niuke003/</guid>
             <title>JZ6 从尾到头打印链表</title>
-            <link>http://example.com/2023/02/07/niuke003/</link>
+            <link>https://xingyuanjie.top/2023/02/07/niuke003/</link>
             <category>C++</category>
             <category>牛客</category>
             <pubDate>Tue, 07 Feb 2023 18:21:41 +0800</pubDate>
@@ -69,9 +69,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2023/02/07/niuke002/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/02/07/niuke002/</guid>
             <title>JZ5 替换空格</title>
-            <link>http://example.com/2023/02/07/niuke002/</link>
+            <link>https://xingyuanjie.top/2023/02/07/niuke002/</link>
             <category>C++</category>
             <category>牛客</category>
             <pubDate>Tue, 07 Feb 2023 18:05:25 +0800</pubDate>
@@ -81,9 +81,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2023/02/07/niuke001/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/02/07/niuke001/</guid>
             <title>JZ3 数组中重复的数字</title>
-            <link>http://example.com/2023/02/07/niuke001/</link>
+            <link>https://xingyuanjie.top/2023/02/07/niuke001/</link>
             <category>C++</category>
             <category>牛客</category>
             <pubDate>Tue, 07 Feb 2023 16:58:01 +0800</pubDate>

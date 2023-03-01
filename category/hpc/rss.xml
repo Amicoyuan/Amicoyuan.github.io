@@ -2,7 +2,7 @@
 <rss version="2.0">
     <channel>
         <title>Amicoyuan • Posts by &#34;hpc&#34; category</title>
-        <link>http://example.com</link>
+        <link>https://xingyuanjie.top</link>
         <description></description>
         <language>zh-CN</language>
         <pubDate>Sun, 26 Feb 2023 19:12:51 +0800</pubDate>
@@ -16,11 +16,11 @@
         <category>Set</category>
         <category>团体程序设计天梯赛</category>
         <category>Sort</category>
-        <category>LinkList</category>
-        <category>双向链表</category>
         <category>Graph</category>
         <category>邻接表</category>
         <category>Vector</category>
+        <category>LinkList</category>
+        <category>双向链表</category>
         <category>Binary tree</category>
         <category>BFS</category>
         <category>模拟</category>
@@ -28,8 +28,8 @@
         <category>DFS</category>
         <category>结构体</category>
         <category>贪心</category>
-        <category>Double类型相等比较</category>
         <category>并查集</category>
+        <category>Double类型相等比较</category>
         <category>Map</category>
         <category>Pair</category>
         <category>Linux</category>
@@ -57,9 +57,9 @@
         <category>gcov</category>
         <category>bool</category>
         <item>
-            <guid isPermalink="true">http://example.com/2023/02/26/intel001/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/02/26/intel001/</guid>
             <title>unroll_and_jam/nounroll_and_jam</title>
-            <link>http://example.com/2023/02/26/intel001/</link>
+            <link>https://xingyuanjie.top/2023/02/26/intel001/</link>
             <category>C++</category>
             <category>Intel</category>
             <pubDate>Sun, 26 Feb 2023 19:12:51 +0800</pubDate>
@@ -80,9 +80,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2023/02/26/cache001/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/02/26/cache001/</guid>
             <title>Cache Blocking Techniques【个人翻译】</title>
-            <link>http://example.com/2023/02/26/cache001/</link>
+            <link>https://xingyuanjie.top/2023/02/26/cache001/</link>
             <category>Cache</category>
             <category>Blocking</category>
             <pubDate>Sun, 26 Feb 2023 18:02:29 +0800</pubDate>
@@ -115,9 +115,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2023/02/26/openmp008/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/02/26/openmp008/</guid>
             <title>OpenMP:Internal Control Variables</title>
-            <link>http://example.com/2023/02/26/openmp008/</link>
+            <link>https://xingyuanjie.top/2023/02/26/openmp008/</link>
             <category>OpenMP</category>
             <pubDate>Sun, 26 Feb 2023 17:36:54 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;2-5-Internal-Control-Variables&#34;&gt;&lt;a href=&#34;#2-5-Internal-Control-Variables&#34; class=&#34;headerlink&#34; title=&#34;2.5 Internal Control Variables&#34;&gt;&lt;/a&gt;2.5 Internal Control Variables&lt;/h2&gt;&lt;p&gt;OpenMP实现必须像内部控制变量(icv)一样控制OpenMP程序的行为。这些icv存储的信息包括用于未来并行区域的线程数、用于工作共享循环的调度以及是否启用嵌套并行。在程序执行期间，icv在不同的时间被赋予值(如下所述)。它们是由实现本身初始化的，并且可以通过OpenMP环境变量和调用OpenMP API例程来赋值。程序只能通过OpenMP API例程检索这些icv的值。&lt;/p&gt;
@@ -132,9 +132,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2023/02/26/openmp007/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/02/26/openmp007/</guid>
             <title>OpenMP线程绑定【未完结】</title>
-            <link>http://example.com/2023/02/26/openmp007/</link>
+            <link>https://xingyuanjie.top/2023/02/26/openmp007/</link>
             <category>OpenMP</category>
             <pubDate>Sun, 26 Feb 2023 17:06:59 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;OpenMP线程绑定&#34;&gt;&lt;a href=&#34;#OpenMP线程绑定&#34; class=&#34;headerlink&#34; title=&#34;OpenMP线程绑定&#34;&gt;&lt;/a&gt;OpenMP线程绑定&lt;/h2&gt;&lt;h3 id=&#34;OpenMP相关环境变量与指令&#34;&gt;&lt;a href=&#34;#OpenMP相关环境变量与指令&#34; class=&#34;headerlink&#34; title=&#34;OpenMP相关环境变量与指令&#34;&gt;&lt;/a&gt;OpenMP相关环境变量与指令&lt;/h3&gt;&lt;h4 id=&#34;OMP-PROC-BIND&#34;&gt;&lt;a href=&#34;#OMP-PROC-BIND&#34; class=&#34;headerlink&#34; title=&#34;OMP_PROC_BIND&#34;&gt;&lt;/a&gt;OMP_PROC_BIND&lt;/h4&gt;&lt;p&gt;OMP_PROC_BIND环境变量设置bind-var ICV的初始值。这个环境变量的值可以是true、false，或者用逗号分隔的master、close或spread列表。列表的值设置了对应嵌套级别的并行区域要使用的线程亲和策略。&lt;/p&gt;
@@ -152,9 +152,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2023/02/19/Matrix002/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/02/19/Matrix002/</guid>
             <title>矩阵乘法计算拆分展示</title>
-            <link>http://example.com/2023/02/19/Matrix002/</link>
+            <link>https://xingyuanjie.top/2023/02/19/Matrix002/</link>
             <category>Matrix</category>
             <category>GEMM</category>
             <pubDate>Sun, 19 Feb 2023 17:04:23 +0800</pubDate>
@@ -186,9 +186,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2023/02/15/blislab003/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/02/15/blislab003/</guid>
             <title>BLISlab中C矩阵初始化速度测试</title>
-            <link>http://example.com/2023/02/15/blislab003/</link>
+            <link>https://xingyuanjie.top/2023/02/15/blislab003/</link>
             <category>Linux</category>
             <category>dgemm</category>
             <pubDate>Wed, 15 Feb 2023 11:48:16 +0800</pubDate>
@@ -216,9 +216,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2023/02/12/blislib002/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/02/12/blislib002/</guid>
             <title>BLISlab tutoril阅读</title>
-            <link>http://example.com/2023/02/12/blislib002/</link>
+            <link>https://xingyuanjie.top/2023/02/12/blislib002/</link>
             <category>Linux</category>
             <category>dgemm</category>
             <pubDate>Sun, 12 Feb 2023 21:11:56 +0800</pubDate>
@@ -399,9 +399,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2023/02/06/matrix001/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/02/06/matrix001/</guid>
             <title>矩阵乘法最基础版本</title>
-            <link>http://example.com/2023/02/06/matrix001/</link>
+            <link>https://xingyuanjie.top/2023/02/06/matrix001/</link>
             <category>Matrix</category>
             <category>GEMM</category>
             <pubDate>Mon, 06 Feb 2023 22:00:14 +0800</pubDate>
@@ -414,9 +414,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2023/02/02/blislab/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/02/02/blislab/</guid>
             <title>BLISlab dgemm优化</title>
-            <link>http://example.com/2023/02/02/blislab/</link>
+            <link>https://xingyuanjie.top/2023/02/02/blislab/</link>
             <category>Linux</category>
             <category>dgemm</category>
             <pubDate>Thu, 02 Feb 2023 14:38:00 +0800</pubDate>
@@ -517,9 +517,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2023/01/28/cuda006/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/01/28/cuda006/</guid>
             <title>CUDA线程管理</title>
-            <link>http://example.com/2023/01/28/cuda006/</link>
+            <link>https://xingyuanjie.top/2023/01/28/cuda006/</link>
             <category>CUDA</category>
             <pubDate>Sat, 28 Jan 2023 15:41:55 +0800</pubDate>
             <description><![CDATA[ &lt;h3 id=&#34;1-线程管理&#34;&gt;&lt;a href=&#34;#1-线程管理&#34; class=&#34;headerlink&#34; title=&#34;1.线程管理&#34;&gt;&lt;/a&gt;1.线程管理&lt;/h3&gt;&lt;p&gt;当核函数在主机端启动时，它的执行会移动到设备上，此时设备中会产生大量的线程并且每个线程都执行由核函数指定的语句。了解如何组织线程是CUDA编程的一个关键部分。CUDA明确了线程层次抽象的概念以便于你组织线程。这是一个两层的线程层次结构，由线程块和线程块网格构成，如图2-5所示。&lt;/p&gt;
@@ -594,9 +594,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2023/01/28/avx006/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/01/28/avx006/</guid>
             <title>如何使用AVX和AVX2处理数据(个人翻译)</title>
-            <link>http://example.com/2023/01/28/avx006/</link>
+            <link>https://xingyuanjie.top/2023/01/28/avx006/</link>
             <category>AVX</category>
             <category>AVX2</category>
             <pubDate>Sat, 28 Jan 2023 14:51:44 +0800</pubDate>
@@ -1106,9 +1106,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2023/01/17/cuda005/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/01/17/cuda005/</guid>
             <title>CUDA内存管理</title>
-            <link>http://example.com/2023/01/17/cuda005/</link>
+            <link>https://xingyuanjie.top/2023/01/17/cuda005/</link>
             <category>CUDA</category>
             <pubDate>Tue, 17 Jan 2023 22:03:10 +0800</pubDate>
             <description><![CDATA[ &lt;h3 id=&#34;1-内存管理&#34;&gt;&lt;a href=&#34;#1-内存管理&#34; class=&#34;headerlink&#34; title=&#34;1.内存管理&#34;&gt;&lt;/a&gt;1.内存管理&lt;/h3&gt;&lt;p&gt;CUDA编程模型假设系统是由一个主机和一个设备组成的，而且各自拥有独立的内存。核函数是在设备上运行的。为使你拥有充分的控制权并使系统达到最佳性能，CUDA运行时负责分配与释放设备内存，并且在主机内存和设备内存之间传输数据。表2-1列出了标准的C函数以及相应地针对内存操作的CUDA C函数。&lt;/p&gt;
@@ -1175,9 +1175,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2023/01/17/cuda004/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/01/17/cuda004/</guid>
             <title>CUDA编程结构</title>
-            <link>http://example.com/2023/01/17/cuda004/</link>
+            <link>https://xingyuanjie.top/2023/01/17/cuda004/</link>
             <category>CUDA</category>
             <pubDate>Tue, 17 Jan 2023 21:36:04 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;CUDA编程结构&#34;&gt;&lt;a href=&#34;#CUDA编程结构&#34; class=&#34;headerlink&#34; title=&#34;CUDA编程结构&#34;&gt;&lt;/a&gt;CUDA编程结构&lt;/h2&gt;&lt;p&gt;CUDA编程模型使用由C语言扩展生成的注释代码在异构计算系统中执行应用程序。&lt;/p&gt;
@@ -1202,9 +1202,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2023/01/17/cuda003/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/01/17/cuda003/</guid>
             <title>CUDA编程模型概述</title>
-            <link>http://example.com/2023/01/17/cuda003/</link>
+            <link>https://xingyuanjie.top/2023/01/17/cuda003/</link>
             <category>CUDA</category>
             <pubDate>Tue, 17 Jan 2023 20:29:01 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;CUDA编程模型概述&#34;&gt;&lt;a href=&#34;#CUDA编程模型概述&#34; class=&#34;headerlink&#34; title=&#34;CUDA编程模型概述&#34;&gt;&lt;/a&gt;CUDA编程模型概述&lt;/h2&gt;&lt;p&gt;CUDA编程模型提供了一个计算机架构抽象作为应用程序和其可用硬件之间的桥梁。图2-1说明了程序和编程模型实现之间的抽象结构的重要。通信抽象是程序与编程模型实现之间的分界线，它通过专业的硬件原语和操作系统的编译器或库来实现。利用编程模型所编写的程序指定了程序的各组成部分是如何共享信息及相互协作的。编程模型从逻辑上提供了一个特定的计算机架构，通常它体现在编程语言或编程环境中。&lt;/p&gt;
@@ -1225,9 +1225,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2023/01/16/cuda002/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/01/16/cuda002/</guid>
             <title>CUDA:一种异构计算平台</title>
-            <link>http://example.com/2023/01/16/cuda002/</link>
+            <link>https://xingyuanjie.top/2023/01/16/cuda002/</link>
             <category>CUDA</category>
             <pubDate>Mon, 16 Jan 2023 17:46:48 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;CUDA-一种异构计算平台&#34;&gt;&lt;a href=&#34;#CUDA-一种异构计算平台&#34; class=&#34;headerlink&#34; title=&#34;CUDA:一种异构计算平台&#34;&gt;&lt;/a&gt;CUDA:一种异构计算平台&lt;/h2&gt;&lt;h3 id=&#34;1-CUDA的简单介绍&#34;&gt;&lt;a href=&#34;#1-CUDA的简单介绍&#34; class=&#34;headerlink&#34; title=&#34;1.CUDA的简单介绍&#34;&gt;&lt;/a&gt;1.CUDA的简单介绍&lt;/h3&gt;&lt;p&gt;CUDA是一种通用的并行计算平台和编程模型，它利用NVIDIA GPU中的并行计算引擎能够有效地解决复杂的计算问题。通过使用CUDA，你可以像在CPU上，通过GPU来进行计算。&lt;/p&gt;
@@ -1254,9 +1254,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2023/01/16/cuda001/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/01/16/cuda001/</guid>
             <title>CUDA用GPU输出Hello World</title>
-            <link>http://example.com/2023/01/16/cuda001/</link>
+            <link>https://xingyuanjie.top/2023/01/16/cuda001/</link>
             <category>CUDA</category>
             <pubDate>Mon, 16 Jan 2023 16:58:39 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;用GPU输出Hello-World&#34;&gt;&lt;a href=&#34;#用GPU输出Hello-World&#34; class=&#34;headerlink&#34; title=&#34;用GPU输出Hello World&#34;&gt;&lt;/a&gt;用GPU输出Hello World&lt;/h2&gt;&lt;h3 id=&#34;1-检查环境&#34;&gt;&lt;a href=&#34;#1-检查环境&#34; class=&#34;headerlink&#34; title=&#34;1.检查环境&#34;&gt;&lt;/a&gt;1.检查环境&lt;/h3&gt;&lt;p&gt;学习一个新编程语言的最好方式就是使用这种语言来编写程序。在本节，你将开始编写在GPU上运行的第一个内核代码。像其他任何编程语言一样编写GPU上的第一个程序是输出字符串“Hello World”。&lt;/p&gt;
@@ -1313,9 +1313,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2023/01/14/openmp006/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/01/14/openmp006/</guid>
             <title>OpenMP生产者消费者问题(未完结)</title>
-            <link>http://example.com/2023/01/14/openmp006/</link>
+            <link>https://xingyuanjie.top/2023/01/14/openmp006/</link>
             <category>OpenMP</category>
             <pubDate>Sat, 14 Jan 2023 22:30:05 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;OpenMP生产者消费者问题&#34;&gt;&lt;a href=&#34;#OpenMP生产者消费者问题&#34; class=&#34;headerlink&#34; title=&#34;OpenMP生产者消费者问题&#34;&gt;&lt;/a&gt;OpenMP生产者消费者问题&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;本节将讨论一个不适合用parallel for指令或者for指令来并行化的问题。&lt;/strong&gt;&lt;/p&gt;
@@ -1398,9 +1398,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2023/01/14/openmp005/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/01/14/openmp005/</guid>
             <title>OpenMP循环调度</title>
-            <link>http://example.com/2023/01/14/openmp005/</link>
+            <link>https://xingyuanjie.top/2023/01/14/openmp005/</link>
             <category>OpenMP</category>
             <pubDate>Sat, 14 Jan 2023 13:04:25 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;OpenMP循环调度&#34;&gt;&lt;a href=&#34;#OpenMP循环调度&#34; class=&#34;headerlink&#34; title=&#34;OpenMP循环调度&#34;&gt;&lt;/a&gt;OpenMP循环调度&lt;/h2&gt;&lt;h3 id=&#34;1-循环调度&#34;&gt;&lt;a href=&#34;#1-循环调度&#34; class=&#34;headerlink&#34; title=&#34;1.循环调度&#34;&gt;&lt;/a&gt;1.循环调度&lt;/h3&gt;&lt;p&gt;当第一次遇到parallel for指令时，我们看到将各次循环分配给线程的操作是由系统完成的。然而，大部分OpenMP实现只是粗略地使用块分割：如果在串行循环中有n次迭代，那么在并行循环中，前n&amp;#x2F;thread_count个迭代分配给线程0，接下来的n&amp;#x2F;thread_count个迭代分配给线程1，依此类推。不难想到，这种分配方式肯定不是最优的。例如，假如我们想要并行化循环：&lt;/p&gt;
@@ -1471,9 +1471,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2023/01/13/openmp004/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/01/13/openmp004/</guid>
             <title>OpenMP排序</title>
-            <link>http://example.com/2023/01/13/openmp004/</link>
+            <link>https://xingyuanjie.top/2023/01/13/openmp004/</link>
             <category>OpenMP</category>
             <pubDate>Fri, 13 Jan 2023 16:26:51 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;OpenMP排序&#34;&gt;&lt;a href=&#34;#OpenMP排序&#34; class=&#34;headerlink&#34; title=&#34;OpenMP排序&#34;&gt;&lt;/a&gt;OpenMP排序&lt;/h2&gt;&lt;h3 id=&#34;1-冒泡排序&#34;&gt;&lt;a href=&#34;#1-冒泡排序&#34; class=&#34;headerlink&#34; title=&#34;1.冒泡排序&#34;&gt;&lt;/a&gt;1.冒泡排序&lt;/h3&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;(list_length = n; list.length &amp;gt;= &lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt;; list_length--)				&lt;span class=&#34;hljs-comment&#34;&gt;//升序排列&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;(i = &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;i &amp;lt; list_length&lt;span class=&#34;hljs-number&#34;&gt;-1&lt;/span&gt;; i++)&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(a[i] &amp;gt; a[i+&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;])&amp;#123;&lt;br&gt;            tmp = a[i];&lt;br&gt;            a[i] = a[i+&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;];&lt;br&gt;            a[i+&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;] = tmp;&lt;br&gt;        &amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -1507,9 +1507,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2023/01/09/openmp003/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/01/09/openmp003/</guid>
             <title>OpenMP π值估计</title>
-            <link>http://example.com/2023/01/09/openmp003/</link>
+            <link>https://xingyuanjie.top/2023/01/09/openmp003/</link>
             <category>OpenMP</category>
             <pubDate>Mon, 09 Jan 2023 15:06:18 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;π值估计&#34;&gt;&lt;a href=&#34;#π值估计&#34; class=&#34;headerlink&#34; title=&#34;π值估计&#34;&gt;&lt;/a&gt;π值估计&lt;/h2&gt;&lt;h3 id=&#34;1-数学背景&#34;&gt;&lt;a href=&#34;#1-数学背景&#34; class=&#34;headerlink&#34; title=&#34;1.数学背景&#34;&gt;&lt;/a&gt;1.数学背景&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;/2023/01/09/openmp003/image-20230109150836877.png&#34; alt=&#34;image-20230109150836877&#34;&gt;&lt;/p&gt;

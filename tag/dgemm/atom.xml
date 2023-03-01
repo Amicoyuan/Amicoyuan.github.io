@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>http://example.com</id>
+    <id>https://xingyuanjie.top</id>
     <title>Amicoyuan • Posts by &#34;dgemm&#34; tag</title>
-    <link href="http://example.com" />
+    <link href="https://xingyuanjie.top" />
     <updated>2023-02-15T03:48:16.000Z</updated>
     <category term="AVX" />
     <category term="Data Structure" />
@@ -13,11 +13,11 @@
     <category term="Set" />
     <category term="团体程序设计天梯赛" />
     <category term="Sort" />
-    <category term="LinkList" />
-    <category term="双向链表" />
     <category term="Graph" />
     <category term="邻接表" />
     <category term="Vector" />
+    <category term="LinkList" />
+    <category term="双向链表" />
     <category term="Binary tree" />
     <category term="BFS" />
     <category term="模拟" />
@@ -25,8 +25,8 @@
     <category term="DFS" />
     <category term="结构体" />
     <category term="贪心" />
-    <category term="Double类型相等比较" />
     <category term="并查集" />
+    <category term="Double类型相等比较" />
     <category term="Map" />
     <category term="Pair" />
     <category term="Linux" />
@@ -54,9 +54,9 @@
     <category term="gcov" />
     <category term="bool" />
     <entry>
-        <id>http://example.com/2023/02/15/blislab003/</id>
+        <id>https://xingyuanjie.top/2023/02/15/blislab003/</id>
         <title>BLISlab中C矩阵初始化速度测试</title>
-        <link rel="alternate" href="http://example.com/2023/02/15/blislab003/"/>
+        <link rel="alternate" href="https://xingyuanjie.top/2023/02/15/blislab003/"/>
         <content type="html">&lt;h2 id=&#34;BLISlab中C矩阵初始化速度测试&#34;&gt;&lt;a href=&#34;#BLISlab中C矩阵初始化速度测试&#34; class=&#34;headerlink&#34; title=&#34;BLISlab中C矩阵初始化速度测试&#34;&gt;&lt;/a&gt;BLISlab中C矩阵初始化速度测试&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;假设我们想把C中的所有元素都设为0。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;统一编译命令：&lt;/strong&gt;&lt;/p&gt;
 &lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs shell&#34;&gt;g++  xxx.cpp -O0 -std=c++11 -o xxx&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -84,9 +84,9 @@
         <updated>2023-02-15T03:48:16.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2023/02/12/blislib002/</id>
+        <id>https://xingyuanjie.top/2023/02/12/blislib002/</id>
         <title>BLISlab tutoril阅读</title>
-        <link rel="alternate" href="http://example.com/2023/02/12/blislib002/"/>
+        <link rel="alternate" href="https://xingyuanjie.top/2023/02/12/blislib002/"/>
         <content type="html">&lt;h1 id=&#34;BLISlab-tutoril阅读&#34;&gt;&lt;a href=&#34;#BLISlab-tutoril阅读&#34; class=&#34;headerlink&#34; title=&#34;BLISlab tutoril阅读&#34;&gt;&lt;/a&gt;BLISlab tutoril阅读&lt;/h1&gt;&lt;h2 id=&#34;参考资料：&#34;&gt;&lt;a href=&#34;#参考资料：&#34; class=&#34;headerlink&#34; title=&#34;参考资料：&#34;&gt;&lt;/a&gt;参考资料：&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Git地址：&lt;/strong&gt;&lt;a href=&#34;https://github.com/flame/blislab&#34;&gt;https://github.com/flame/blislab&lt;/a&gt; 【代码包包含tutoril.pdf】&lt;/p&gt;
 &lt;h2 id=&#34;BLISlab-A-Sandbox-for-Optimizing-GEMM&#34;&gt;&lt;a href=&#34;#BLISlab-A-Sandbox-for-Optimizing-GEMM&#34; class=&#34;headerlink&#34; title=&#34;BLISlab: A Sandbox for Optimizing GEMM&#34;&gt;&lt;/a&gt;BLISlab: A Sandbox for Optimizing GEMM&lt;/h2&gt;&lt;h2 id=&#34;Abstract&#34;&gt;&lt;a href=&#34;#Abstract&#34; class=&#34;headerlink&#34; title=&#34;Abstract&#34;&gt;&lt;/a&gt;Abstract&lt;/h2&gt;&lt;p&gt;矩阵-矩阵乘法是科学计算中非常重要的基本运算，机器学习也越来越重要。这是一个非常简单的概念，可以在典型的高中代数课程中引入，但在实践中又非常重要，它在计算机上的实现仍然是一个活跃的研究主题。本笔记描述了一组使用该操作的练习，如何在具有分层内存(多个缓存)的现代cpu上获得高性能。它是基于blas类库实例化软件(BLIS)框架下的见解，通过公开一个模仿BLIS实现的简化“沙盒”来实现的。因此，它也成为BLIS优化的“众包”工具。&lt;/p&gt;
 &lt;h2 id=&#34;1-Introduction&#34;&gt;&lt;a href=&#34;#1-Introduction&#34; class=&#34;headerlink&#34; title=&#34;1.Introduction&#34;&gt;&lt;/a&gt;1.Introduction&lt;/h2&gt;&lt;p&gt;矩阵-矩阵乘法(Gemm)经常被用作一个简单的例子，以提高如何在现代处理器上优化代码的意识。原因是该操作描述简单，很难完全优化，而且具有实际意义。在本文档中，我们将带领读者了解目前CPU架构中最快实现的技术。&lt;/p&gt;
@@ -267,9 +267,9 @@
         <updated>2023-02-12T13:11:56.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2023/02/02/blislab/</id>
+        <id>https://xingyuanjie.top/2023/02/02/blislab/</id>
         <title>BLISlab dgemm优化</title>
-        <link rel="alternate" href="http://example.com/2023/02/02/blislab/"/>
+        <link rel="alternate" href="https://xingyuanjie.top/2023/02/02/blislab/"/>
         <content type="html">&lt;h1 id=&#34;BLISlab-dgemm优化&#34;&gt;&lt;a href=&#34;#BLISlab-dgemm优化&#34; class=&#34;headerlink&#34; title=&#34;BLISlab dgemm优化&#34;&gt;&lt;/a&gt;BLISlab dgemm优化&lt;/h1&gt;&lt;h2 id=&#34;参考资料：&#34;&gt;&lt;a href=&#34;#参考资料：&#34; class=&#34;headerlink&#34; title=&#34;参考资料：&#34;&gt;&lt;/a&gt;参考资料：&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Git地址：&lt;/strong&gt;&lt;a href=&#34;https://github.com/flame/blislab&#34;&gt;https://github.com/flame/blislab&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;视频教程：&lt;/strong&gt;&lt;a href=&#34;https://www.bilibili.com/video/BV1c94y117Uw?vd_source=3ae32e36058f58c5b85935fca9b77797%E3%80%90%E6%BE%8E%E5%B3%B0%E7%A7%91%E6%8A%80-%E5%BC%A0%E5%85%88%E8%BD%B6%E8%80%81%E5%B8%88%E3%80%91&#34;&gt;https://www.bilibili.com/video/BV1c94y117Uw?vd_source=3ae32e36058f58c5b85935fca9b77797【澎峰科技-张先轶老师】&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;阅读&lt;/strong&gt;：tutorial.pdf【位于代码包中】&lt;/p&gt;

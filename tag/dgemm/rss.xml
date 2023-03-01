@@ -2,7 +2,7 @@
 <rss version="2.0">
     <channel>
         <title>Amicoyuan • Posts by &#34;dgemm&#34; tag</title>
-        <link>http://example.com</link>
+        <link>https://xingyuanjie.top</link>
         <description></description>
         <language>zh-CN</language>
         <pubDate>Wed, 15 Feb 2023 11:48:16 +0800</pubDate>
@@ -16,11 +16,11 @@
         <category>Set</category>
         <category>团体程序设计天梯赛</category>
         <category>Sort</category>
-        <category>LinkList</category>
-        <category>双向链表</category>
         <category>Graph</category>
         <category>邻接表</category>
         <category>Vector</category>
+        <category>LinkList</category>
+        <category>双向链表</category>
         <category>Binary tree</category>
         <category>BFS</category>
         <category>模拟</category>
@@ -28,8 +28,8 @@
         <category>DFS</category>
         <category>结构体</category>
         <category>贪心</category>
-        <category>Double类型相等比较</category>
         <category>并查集</category>
+        <category>Double类型相等比较</category>
         <category>Map</category>
         <category>Pair</category>
         <category>Linux</category>
@@ -57,9 +57,9 @@
         <category>gcov</category>
         <category>bool</category>
         <item>
-            <guid isPermalink="true">http://example.com/2023/02/15/blislab003/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/02/15/blislab003/</guid>
             <title>BLISlab中C矩阵初始化速度测试</title>
-            <link>http://example.com/2023/02/15/blislab003/</link>
+            <link>https://xingyuanjie.top/2023/02/15/blislab003/</link>
             <category>Linux</category>
             <category>dgemm</category>
             <pubDate>Wed, 15 Feb 2023 11:48:16 +0800</pubDate>
@@ -87,9 +87,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2023/02/12/blislib002/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/02/12/blislib002/</guid>
             <title>BLISlab tutoril阅读</title>
-            <link>http://example.com/2023/02/12/blislib002/</link>
+            <link>https://xingyuanjie.top/2023/02/12/blislib002/</link>
             <category>Linux</category>
             <category>dgemm</category>
             <pubDate>Sun, 12 Feb 2023 21:11:56 +0800</pubDate>
@@ -270,9 +270,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2023/02/02/blislab/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/02/02/blislab/</guid>
             <title>BLISlab dgemm优化</title>
-            <link>http://example.com/2023/02/02/blislab/</link>
+            <link>https://xingyuanjie.top/2023/02/02/blislab/</link>
             <category>Linux</category>
             <category>dgemm</category>
             <pubDate>Thu, 02 Feb 2023 14:38:00 +0800</pubDate>

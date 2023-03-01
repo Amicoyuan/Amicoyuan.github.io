@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>http://example.com</id>
+    <id>https://xingyuanjie.top</id>
     <title>Amicoyuan • Posts by &#34;computer organization&#34; category</title>
-    <link href="http://example.com" />
+    <link href="https://xingyuanjie.top" />
     <updated>2022-06-12T07:11:29.730Z</updated>
     <category term="AVX" />
     <category term="Data Structure" />
@@ -13,11 +13,11 @@
     <category term="Set" />
     <category term="团体程序设计天梯赛" />
     <category term="Sort" />
-    <category term="LinkList" />
-    <category term="双向链表" />
     <category term="Graph" />
     <category term="邻接表" />
     <category term="Vector" />
+    <category term="LinkList" />
+    <category term="双向链表" />
     <category term="Binary tree" />
     <category term="BFS" />
     <category term="模拟" />
@@ -25,8 +25,8 @@
     <category term="DFS" />
     <category term="结构体" />
     <category term="贪心" />
-    <category term="Double类型相等比较" />
     <category term="并查集" />
+    <category term="Double类型相等比较" />
     <category term="Map" />
     <category term="Pair" />
     <category term="Linux" />
@@ -54,9 +54,9 @@
     <category term="gcov" />
     <category term="bool" />
     <entry>
-        <id>http://example.com/2022/06/12/%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90/</id>
+        <id>https://xingyuanjie.top/2022/06/12/%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90/</id>
         <title>内存对齐</title>
-        <link rel="alternate" href="http://example.com/2022/06/12/%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90/"/>
+        <link rel="alternate" href="https://xingyuanjie.top/2022/06/12/%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90/"/>
         <content type="html">&lt;h1 id=&#34;内存对齐&#34;&gt;&lt;a href=&#34;#内存对齐&#34; class=&#34;headerlink&#34; title=&#34;内存对齐&#34;&gt;&lt;/a&gt;内存对齐&lt;/h1&gt;&lt;h2 id=&#34;CPU读取内存的方式&#34;&gt;&lt;a href=&#34;#CPU读取内存的方式&#34; class=&#34;headerlink&#34; title=&#34;CPU读取内存的方式&#34;&gt;&lt;/a&gt;CPU读取内存的方式&lt;/h2&gt;&lt;p&gt;CPU读取内存的方式其实非常复杂，为了更进一步的了解相关的原理，需要对计算机组成原理进行深度学习。&lt;/p&gt;
 &lt;h3 id=&#34;Memory-access-granularity-内存读取粒度&#34;&gt;&lt;a href=&#34;#Memory-access-granularity-内存读取粒度&#34; class=&#34;headerlink&#34; title=&#34;Memory access granularity(内存读取粒度)&#34;&gt;&lt;/a&gt;Memory access granularity(内存读取粒度)&lt;/h3&gt;&lt;p&gt;However, your computer’s processor does not read from and write to memory in byte-sized chunks. Instead, it accesses memory in two-, four-, eight- 16- or even 32-byte chunks. We’ll call the size in which a processor accesses memory its memory access granularity.&lt;/p&gt;
 &lt;p&gt;CPU把内存当成是一块一块的，块的大小可以是2，4，8，16字节大小，因此CPU在读取内存时是一块一块进行读取的。块大小成为&lt;em&gt;memory access granularity（粒度）&lt;/em&gt; 本人把它翻译为“内存读取粒度” 。&lt;/p&gt;

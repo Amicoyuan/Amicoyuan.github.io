@@ -2,7 +2,7 @@
 <rss version="2.0">
     <channel>
         <title>Amicoyuan • Posts by &#34;computer organization&#34; category</title>
-        <link>http://example.com</link>
+        <link>https://xingyuanjie.top</link>
         <description></description>
         <language>zh-CN</language>
         <pubDate>Sun, 12 Jun 2022 15:11:29 +0800</pubDate>
@@ -16,11 +16,11 @@
         <category>Set</category>
         <category>团体程序设计天梯赛</category>
         <category>Sort</category>
-        <category>LinkList</category>
-        <category>双向链表</category>
         <category>Graph</category>
         <category>邻接表</category>
         <category>Vector</category>
+        <category>LinkList</category>
+        <category>双向链表</category>
         <category>Binary tree</category>
         <category>BFS</category>
         <category>模拟</category>
@@ -28,8 +28,8 @@
         <category>DFS</category>
         <category>结构体</category>
         <category>贪心</category>
-        <category>Double类型相等比较</category>
         <category>并查集</category>
+        <category>Double类型相等比较</category>
         <category>Map</category>
         <category>Pair</category>
         <category>Linux</category>
@@ -57,9 +57,9 @@
         <category>gcov</category>
         <category>bool</category>
         <item>
-            <guid isPermalink="true">http://example.com/2022/06/12/%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2022/06/12/%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90/</guid>
             <title>内存对齐</title>
-            <link>http://example.com/2022/06/12/%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90/</link>
+            <link>https://xingyuanjie.top/2022/06/12/%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90/</link>
             <pubDate>Sun, 12 Jun 2022 15:11:29 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;内存对齐&#34;&gt;&lt;a href=&#34;#内存对齐&#34; class=&#34;headerlink&#34; title=&#34;内存对齐&#34;&gt;&lt;/a&gt;内存对齐&lt;/h1&gt;&lt;h2 id=&#34;CPU读取内存的方式&#34;&gt;&lt;a href=&#34;#CPU读取内存的方式&#34; class=&#34;headerlink&#34; title=&#34;CPU读取内存的方式&#34;&gt;&lt;/a&gt;CPU读取内存的方式&lt;/h2&gt;&lt;p&gt;CPU读取内存的方式其实非常复杂，为了更进一步的了解相关的原理，需要对计算机组成原理进行深度学习。&lt;/p&gt;
 &lt;h3 id=&#34;Memory-access-granularity-内存读取粒度&#34;&gt;&lt;a href=&#34;#Memory-access-granularity-内存读取粒度&#34; class=&#34;headerlink&#34; title=&#34;Memory access granularity(内存读取粒度)&#34;&gt;&lt;/a&gt;Memory access granularity(内存读取粒度)&lt;/h3&gt;&lt;p&gt;However, your computer’s processor does not read from and write to memory in byte-sized chunks. Instead, it accesses memory in two-, four-, eight- 16- or even 32-byte chunks. We’ll call the size in which a processor accesses memory its memory access granularity.&lt;/p&gt;

@@ -2,7 +2,7 @@
 <rss version="2.0">
     <channel>
         <title>Amicoyuan</title>
-        <link>http://example.com</link>
+        <link>https://xingyuanjie.top</link>
         <description></description>
         <language>zh-CN</language>
         <pubDate>Wed, 01 Mar 2023 17:35:03 +0800</pubDate>
@@ -16,11 +16,11 @@
         <category>Set</category>
         <category>团体程序设计天梯赛</category>
         <category>Sort</category>
-        <category>LinkList</category>
-        <category>双向链表</category>
         <category>Graph</category>
         <category>邻接表</category>
         <category>Vector</category>
+        <category>LinkList</category>
+        <category>双向链表</category>
         <category>Binary tree</category>
         <category>BFS</category>
         <category>模拟</category>
@@ -28,8 +28,8 @@
         <category>DFS</category>
         <category>结构体</category>
         <category>贪心</category>
-        <category>Double类型相等比较</category>
         <category>并查集</category>
+        <category>Double类型相等比较</category>
         <category>Map</category>
         <category>Pair</category>
         <category>Linux</category>
@@ -57,9 +57,9 @@
         <category>gcov</category>
         <category>bool</category>
         <item>
-            <guid isPermalink="true">http://example.com/2023/03/01/leetcode724/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/03/01/leetcode724/</guid>
             <title>724.寻找数组的中心下标</title>
-            <link>http://example.com/2023/03/01/leetcode724/</link>
+            <link>https://xingyuanjie.top/2023/03/01/leetcode724/</link>
             <category>C++</category>
             <category>LeetCode</category>
             <category>前缀和</category>
@@ -72,9 +72,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2023/02/28/vectorbool/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/02/28/vectorbool/</guid>
             <title>vector&lt;bool&gt;与vector&lt;T&gt;</title>
-            <link>http://example.com/2023/02/28/vectorbool/</link>
+            <link>https://xingyuanjie.top/2023/02/28/vectorbool/</link>
             <category>STL</category>
             <category>Vector</category>
             <category>C/C++</category>
@@ -96,9 +96,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2023/02/28/Linux004/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/02/28/Linux004/</guid>
             <title>C/C++关键字之restrict</title>
-            <link>http://example.com/2023/02/28/Linux004/</link>
+            <link>https://xingyuanjie.top/2023/02/28/Linux004/</link>
             <category>Linux</category>
             <pubDate>Tue, 28 Feb 2023 19:45:09 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;C-x2F-C-关键字之restrict&#34;&gt;&lt;a href=&#34;#C-x2F-C-关键字之restrict&#34; class=&#34;headerlink&#34; title=&#34;C&amp;#x2F;C++关键字之restrict&#34;&gt;&lt;/a&gt;C&amp;#x2F;C++关键字之restrict&lt;/h1&gt;&lt;p&gt;在C语言中，restrict关键字用于修饰指针（C99标准）。通过加上restrict关键字，程序员可提示编译器：在该指针的生命周期内，其指向的对象不会被别的指针所引用。&lt;/p&gt;
@@ -134,9 +134,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2023/02/26/intel001/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/02/26/intel001/</guid>
             <title>unroll_and_jam/nounroll_and_jam</title>
-            <link>http://example.com/2023/02/26/intel001/</link>
+            <link>https://xingyuanjie.top/2023/02/26/intel001/</link>
             <category>C++</category>
             <category>Intel</category>
             <pubDate>Sun, 26 Feb 2023 19:12:51 +0800</pubDate>
@@ -157,9 +157,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2023/02/26/cache001/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/02/26/cache001/</guid>
             <title>Cache Blocking Techniques【个人翻译】</title>
-            <link>http://example.com/2023/02/26/cache001/</link>
+            <link>https://xingyuanjie.top/2023/02/26/cache001/</link>
             <category>Cache</category>
             <category>Blocking</category>
             <pubDate>Sun, 26 Feb 2023 18:02:29 +0800</pubDate>
@@ -192,9 +192,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2023/02/26/openmp008/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/02/26/openmp008/</guid>
             <title>OpenMP:Internal Control Variables</title>
-            <link>http://example.com/2023/02/26/openmp008/</link>
+            <link>https://xingyuanjie.top/2023/02/26/openmp008/</link>
             <category>OpenMP</category>
             <pubDate>Sun, 26 Feb 2023 17:36:54 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;2-5-Internal-Control-Variables&#34;&gt;&lt;a href=&#34;#2-5-Internal-Control-Variables&#34; class=&#34;headerlink&#34; title=&#34;2.5 Internal Control Variables&#34;&gt;&lt;/a&gt;2.5 Internal Control Variables&lt;/h2&gt;&lt;p&gt;OpenMP实现必须像内部控制变量(icv)一样控制OpenMP程序的行为。这些icv存储的信息包括用于未来并行区域的线程数、用于工作共享循环的调度以及是否启用嵌套并行。在程序执行期间，icv在不同的时间被赋予值(如下所述)。它们是由实现本身初始化的，并且可以通过OpenMP环境变量和调用OpenMP API例程来赋值。程序只能通过OpenMP API例程检索这些icv的值。&lt;/p&gt;
@@ -209,9 +209,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2023/02/26/openmp007/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/02/26/openmp007/</guid>
             <title>OpenMP线程绑定【未完结】</title>
-            <link>http://example.com/2023/02/26/openmp007/</link>
+            <link>https://xingyuanjie.top/2023/02/26/openmp007/</link>
             <category>OpenMP</category>
             <pubDate>Sun, 26 Feb 2023 17:06:59 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;OpenMP线程绑定&#34;&gt;&lt;a href=&#34;#OpenMP线程绑定&#34; class=&#34;headerlink&#34; title=&#34;OpenMP线程绑定&#34;&gt;&lt;/a&gt;OpenMP线程绑定&lt;/h2&gt;&lt;h3 id=&#34;OpenMP相关环境变量与指令&#34;&gt;&lt;a href=&#34;#OpenMP相关环境变量与指令&#34; class=&#34;headerlink&#34; title=&#34;OpenMP相关环境变量与指令&#34;&gt;&lt;/a&gt;OpenMP相关环境变量与指令&lt;/h3&gt;&lt;h4 id=&#34;OMP-PROC-BIND&#34;&gt;&lt;a href=&#34;#OMP-PROC-BIND&#34; class=&#34;headerlink&#34; title=&#34;OMP_PROC_BIND&#34;&gt;&lt;/a&gt;OMP_PROC_BIND&lt;/h4&gt;&lt;p&gt;OMP_PROC_BIND环境变量设置bind-var ICV的初始值。这个环境变量的值可以是true、false，或者用逗号分隔的master、close或spread列表。列表的值设置了对应嵌套级别的并行区域要使用的线程亲和策略。&lt;/p&gt;
@@ -229,9 +229,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2023/02/24/Linux003/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/02/24/Linux003/</guid>
             <title>基于GDB的程序调试</title>
-            <link>http://example.com/2023/02/24/Linux003/</link>
+            <link>https://xingyuanjie.top/2023/02/24/Linux003/</link>
             <category>Linux</category>
             <pubDate>Fri, 24 Feb 2023 16:50:20 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;基于GDB的程序调试&#34;&gt;&lt;a href=&#34;#基于GDB的程序调试&#34; class=&#34;headerlink&#34; title=&#34;基于GDB的程序调试&#34;&gt;&lt;/a&gt;基于GDB的程序调试&lt;/h2&gt;&lt;h3 id=&#34;程序调试工具GDB&#34;&gt;&lt;a href=&#34;#程序调试工具GDB&#34; class=&#34;headerlink&#34; title=&#34;程序调试工具GDB&#34;&gt;&lt;/a&gt;程序调试工具GDB&lt;/h3&gt;&lt;p&gt;编译器GCC，项目构建工具Make（又称gmake），以及GDB。&lt;/p&gt;
@@ -330,13 +330,13 @@
 &lt;p&gt;info register	查看寄存器（除了浮点寄存器）&lt;/p&gt;
 &lt;p&gt;all-registers	查看所有寄存器&lt;/p&gt;
 &lt;p&gt;info registers &amp;lt;reg_name …&amp;gt;查看所指定寄存器&lt;/p&gt;
-&lt;h3 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;来源培训PPT 作者：Relax  邮箱：&lt;a href=&#34;mailto:&amp;#x77;&amp;#97;&amp;#110;&amp;#x67;&amp;#x77;&amp;#49;&amp;#49;&amp;#49;&amp;#x40;&amp;#x69;&amp;#x63;&amp;#108;&amp;#111;&amp;#117;&amp;#100;&amp;#46;&amp;#x63;&amp;#111;&amp;#x6d;&#34;&gt;&amp;#x77;&amp;#97;&amp;#110;&amp;#x67;&amp;#x77;&amp;#49;&amp;#49;&amp;#49;&amp;#x40;&amp;#x69;&amp;#x63;&amp;#108;&amp;#111;&amp;#117;&amp;#100;&amp;#46;&amp;#x63;&amp;#111;&amp;#x6d;&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;来源培训PPT 作者：Relax  邮箱：&lt;a href=&#34;mailto:&amp;#119;&amp;#97;&amp;#x6e;&amp;#x67;&amp;#119;&amp;#49;&amp;#x31;&amp;#49;&amp;#64;&amp;#105;&amp;#x63;&amp;#x6c;&amp;#x6f;&amp;#x75;&amp;#100;&amp;#x2e;&amp;#99;&amp;#111;&amp;#x6d;&#34;&gt;&amp;#119;&amp;#97;&amp;#x6e;&amp;#x67;&amp;#119;&amp;#49;&amp;#x31;&amp;#49;&amp;#64;&amp;#105;&amp;#x63;&amp;#x6c;&amp;#x6f;&amp;#x75;&amp;#100;&amp;#x2e;&amp;#99;&amp;#111;&amp;#x6d;&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2023/02/19/Matrix002/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/02/19/Matrix002/</guid>
             <title>矩阵乘法计算拆分展示</title>
-            <link>http://example.com/2023/02/19/Matrix002/</link>
+            <link>https://xingyuanjie.top/2023/02/19/Matrix002/</link>
             <category>Matrix</category>
             <category>GEMM</category>
             <pubDate>Sun, 19 Feb 2023 17:04:23 +0800</pubDate>
@@ -368,9 +368,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2023/02/18/leetcode11/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/02/18/leetcode11/</guid>
             <title>11. 盛最多水的容器</title>
-            <link>http://example.com/2023/02/18/leetcode11/</link>
+            <link>https://xingyuanjie.top/2023/02/18/leetcode11/</link>
             <category>C++</category>
             <category>LeetCode</category>
             <category>双指针</category>
@@ -381,9 +381,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2023/02/17/leetcode001/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/02/17/leetcode001/</guid>
             <title>146.LRU cache</title>
-            <link>http://example.com/2023/02/17/leetcode001/</link>
+            <link>https://xingyuanjie.top/2023/02/17/leetcode001/</link>
             <category>C++</category>
             <category>LeetCode</category>
             <pubDate>Fri, 17 Feb 2023 14:31:45 +0800</pubDate>
@@ -394,9 +394,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2023/02/15/blislab003/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/02/15/blislab003/</guid>
             <title>BLISlab中C矩阵初始化速度测试</title>
-            <link>http://example.com/2023/02/15/blislab003/</link>
+            <link>https://xingyuanjie.top/2023/02/15/blislab003/</link>
             <category>Linux</category>
             <category>dgemm</category>
             <pubDate>Wed, 15 Feb 2023 11:48:16 +0800</pubDate>
@@ -424,9 +424,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2023/02/12/blislib002/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/02/12/blislib002/</guid>
             <title>BLISlab tutoril阅读</title>
-            <link>http://example.com/2023/02/12/blislib002/</link>
+            <link>https://xingyuanjie.top/2023/02/12/blislib002/</link>
             <category>Linux</category>
             <category>dgemm</category>
             <pubDate>Sun, 12 Feb 2023 21:11:56 +0800</pubDate>
@@ -607,9 +607,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2023/02/07/niuke003/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/02/07/niuke003/</guid>
             <title>JZ6 从尾到头打印链表</title>
-            <link>http://example.com/2023/02/07/niuke003/</link>
+            <link>https://xingyuanjie.top/2023/02/07/niuke003/</link>
             <category>C++</category>
             <category>牛客</category>
             <pubDate>Tue, 07 Feb 2023 18:21:41 +0800</pubDate>
@@ -619,9 +619,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2023/02/07/niuke002/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/02/07/niuke002/</guid>
             <title>JZ5 替换空格</title>
-            <link>http://example.com/2023/02/07/niuke002/</link>
+            <link>https://xingyuanjie.top/2023/02/07/niuke002/</link>
             <category>C++</category>
             <category>牛客</category>
             <pubDate>Tue, 07 Feb 2023 18:05:25 +0800</pubDate>
@@ -631,9 +631,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2023/02/07/niuke001/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/02/07/niuke001/</guid>
             <title>JZ3 数组中重复的数字</title>
-            <link>http://example.com/2023/02/07/niuke001/</link>
+            <link>https://xingyuanjie.top/2023/02/07/niuke001/</link>
             <category>C++</category>
             <category>牛客</category>
             <pubDate>Tue, 07 Feb 2023 16:58:01 +0800</pubDate>
@@ -650,9 +650,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2023/02/06/matrix001/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/02/06/matrix001/</guid>
             <title>矩阵乘法最基础版本</title>
-            <link>http://example.com/2023/02/06/matrix001/</link>
+            <link>https://xingyuanjie.top/2023/02/06/matrix001/</link>
             <category>Matrix</category>
             <category>GEMM</category>
             <pubDate>Mon, 06 Feb 2023 22:00:14 +0800</pubDate>
@@ -665,9 +665,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2023/02/02/register/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/02/02/register/</guid>
             <title>register关键字</title>
-            <link>http://example.com/2023/02/02/register/</link>
+            <link>https://xingyuanjie.top/2023/02/02/register/</link>
             <category>C/C++</category>
             <category>register</category>
             <pubDate>Thu, 02 Feb 2023 19:57:01 +0800</pubDate>
@@ -687,9 +687,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2023/02/02/blislab/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/02/02/blislab/</guid>
             <title>BLISlab dgemm优化</title>
-            <link>http://example.com/2023/02/02/blislab/</link>
+            <link>https://xingyuanjie.top/2023/02/02/blislab/</link>
             <category>Linux</category>
             <category>dgemm</category>
             <pubDate>Thu, 02 Feb 2023 14:38:00 +0800</pubDate>
@@ -790,9 +790,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2023/01/28/cuda006/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/01/28/cuda006/</guid>
             <title>CUDA线程管理</title>
-            <link>http://example.com/2023/01/28/cuda006/</link>
+            <link>https://xingyuanjie.top/2023/01/28/cuda006/</link>
             <category>CUDA</category>
             <pubDate>Sat, 28 Jan 2023 15:41:55 +0800</pubDate>
             <description><![CDATA[ &lt;h3 id=&#34;1-线程管理&#34;&gt;&lt;a href=&#34;#1-线程管理&#34; class=&#34;headerlink&#34; title=&#34;1.线程管理&#34;&gt;&lt;/a&gt;1.线程管理&lt;/h3&gt;&lt;p&gt;当核函数在主机端启动时，它的执行会移动到设备上，此时设备中会产生大量的线程并且每个线程都执行由核函数指定的语句。了解如何组织线程是CUDA编程的一个关键部分。CUDA明确了线程层次抽象的概念以便于你组织线程。这是一个两层的线程层次结构，由线程块和线程块网格构成，如图2-5所示。&lt;/p&gt;

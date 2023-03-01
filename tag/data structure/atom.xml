@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>http://example.com</id>
+    <id>https://xingyuanjie.top</id>
     <title>Amicoyuan • Posts by &#34;data structure&#34; tag</title>
-    <link href="http://example.com" />
+    <link href="https://xingyuanjie.top" />
     <updated>2022-04-23T13:50:27.000Z</updated>
     <category term="AVX" />
     <category term="Data Structure" />
@@ -13,11 +13,11 @@
     <category term="Set" />
     <category term="团体程序设计天梯赛" />
     <category term="Sort" />
-    <category term="LinkList" />
-    <category term="双向链表" />
     <category term="Graph" />
     <category term="邻接表" />
     <category term="Vector" />
+    <category term="LinkList" />
+    <category term="双向链表" />
     <category term="Binary tree" />
     <category term="BFS" />
     <category term="模拟" />
@@ -25,8 +25,8 @@
     <category term="DFS" />
     <category term="结构体" />
     <category term="贪心" />
-    <category term="Double类型相等比较" />
     <category term="并查集" />
+    <category term="Double类型相等比较" />
     <category term="Map" />
     <category term="Pair" />
     <category term="Linux" />
@@ -54,9 +54,9 @@
     <category term="gcov" />
     <category term="bool" />
     <entry>
-        <id>http://example.com/2022/04/23/Algorithm032/</id>
+        <id>https://xingyuanjie.top/2022/04/23/Algorithm032/</id>
         <title>L2-036 网红点打卡攻略 (25 分)</title>
-        <link rel="alternate" href="http://example.com/2022/04/23/Algorithm032/"/>
+        <link rel="alternate" href="https://xingyuanjie.top/2022/04/23/Algorithm032/"/>
         <content type="html">&lt;h2 id=&#34;L2-036-网红点打卡攻略-25-分&#34;&gt;&lt;a href=&#34;#L2-036-网红点打卡攻略-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-036 网红点打卡攻略 (25 分)&#34;&gt;&lt;/a&gt;L2-036 网红点打卡攻略 (25 分)&lt;/h2&gt;&lt;p&gt;一个旅游景点，如果被带火了的话，就被称为“网红点”。大家来网红点游玩，俗称“打卡”。在各个网红点打卡的快（省）乐（钱）方法称为“攻略”。你的任务就是从一大堆攻略中，找出那个能在每个网红点打卡仅一次、并且路上花费最少的攻略。&lt;/p&gt;
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;首先第一行给出两个正整数：网红点的个数 &lt;em&gt;N&lt;/em&gt;（1&amp;lt;&lt;em&gt;N&lt;/em&gt;≤200）和网红点之间通路的条数 &lt;em&gt;M&lt;/em&gt;。随后 &lt;em&gt;M&lt;/em&gt; 行，每行给出有通路的两个网红点、以及这条路上的旅行花费（为正整数），格式为“网红点1 网红点2 费用”，其中网红点从 1 到 &lt;em&gt;N&lt;/em&gt; 编号；同时也给出你家到某些网红点的花费，格式相同，其中你家的编号固定为 &lt;code&gt;0&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;再下一行给出一个正整数 &lt;em&gt;K&lt;/em&gt;，是待检验的攻略的数量。随后 &lt;em&gt;K&lt;/em&gt; 行，每行给出一条待检攻略，格式为：&lt;/p&gt;
@@ -85,9 +85,9 @@
         <updated>2022-04-23T13:50:27.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2022/04/23/Algorithm031/</id>
+        <id>https://xingyuanjie.top/2022/04/23/Algorithm031/</id>
         <title>L2-039 清点代码库 (25 分)</title>
-        <link rel="alternate" href="http://example.com/2022/04/23/Algorithm031/"/>
+        <link rel="alternate" href="https://xingyuanjie.top/2022/04/23/Algorithm031/"/>
         <content type="html">&lt;h2 id=&#34;L2-039-清点代码库-25-分&#34;&gt;&lt;a href=&#34;#L2-039-清点代码库-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-039 清点代码库 (25 分)&#34;&gt;&lt;/a&gt;L2-039 清点代码库 (25 分)&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;/2022/04/23/Algorithm031/58e6a034-993d-4049-8deb-23d769c8597e.jpg&#34; alt=&#34;code.jpg&#34;&gt;&lt;/p&gt;
 &lt;p&gt;上图转自新浪微博：“阿里代码库有几亿行代码，但其中有很多功能重复的代码，比如单单快排就被重写了几百遍。请设计一个程序，能够将代码库中所有功能重复的代码找出。各位大佬有啥想法，我当时就懵了，然后就挂了。。。”&lt;/p&gt;
 &lt;p&gt;这里我们把问题简化一下：首先假设两个功能模块如果接受同样的输入，总是给出同样的输出，则它们就是功能重复的；其次我们把每个模块的输出都简化为一个整数（在 &lt;strong&gt;int&lt;/strong&gt; 范围内）。于是我们可以设计一系列输入，检查所有功能模块的对应输出，从而查出功能重复的代码。你的任务就是设计并实现这个简化问题的解决方案。&lt;/p&gt;
@@ -114,9 +114,9 @@
         <updated>2022-04-23T13:44:47.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2022/04/16/Algorithm028/</id>
+        <id>https://xingyuanjie.top/2022/04/16/Algorithm028/</id>
         <title>L2-010 排座位 (25 分)</title>
-        <link rel="alternate" href="http://example.com/2022/04/16/Algorithm028/"/>
+        <link rel="alternate" href="https://xingyuanjie.top/2022/04/16/Algorithm028/"/>
         <content type="html">&lt;h2 id=&#34;L2-010-排座位-25-分&#34;&gt;&lt;a href=&#34;#L2-010-排座位-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-010 排座位 (25 分)&#34;&gt;&lt;/a&gt;&lt;strong&gt;L2-010 排座位 (25 分)&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;布置宴席最微妙的事情，就是给前来参宴的各位宾客安排座位。无论如何，总不能把两个死对头排到同一张宴会桌旁！这个艰巨任务现在就交给你，对任何一对客人，请编写程序告诉主人他们是否能被安排同席。&lt;/p&gt;
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;输入第一行给出3个正整数：&lt;code&gt;N&lt;/code&gt;（≤100），即前来参宴的宾客总人数，则这些人从1到&lt;code&gt;N&lt;/code&gt;编号；&lt;code&gt;M&lt;/code&gt;为已知两两宾客之间的关系数；&lt;code&gt;K&lt;/code&gt;为查询的条数。随后&lt;code&gt;M&lt;/code&gt;行，每行给出一对宾客之间的关系，格式为：&lt;code&gt;宾客1 宾客2 关系&lt;/code&gt;，其中&lt;code&gt;关系&lt;/code&gt;为1表示是朋友，-1表示是死对头。注意两个人不可能既是朋友又是敌人。最后&lt;code&gt;K&lt;/code&gt;行，每行给出一对需要查询的宾客编号。&lt;/p&gt;
 &lt;p&gt;这里假设朋友的朋友也是朋友。但敌人的敌人并不一定就是朋友，朋友的敌人也不一定是敌人。只有单纯直接的敌对关系才是绝对不能同席的。&lt;/p&gt;
@@ -142,9 +142,9 @@
         <updated>2022-04-16T06:57:46.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2022/04/15/Algorithm025/</id>
+        <id>https://xingyuanjie.top/2022/04/15/Algorithm025/</id>
         <title>L2-013 红色警报 (25 分)</title>
-        <link rel="alternate" href="http://example.com/2022/04/15/Algorithm025/"/>
+        <link rel="alternate" href="https://xingyuanjie.top/2022/04/15/Algorithm025/"/>
         <content type="html">&lt;h2 id=&#34;L2-013-红色警报-25-分&#34;&gt;&lt;a href=&#34;#L2-013-红色警报-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-013 红色警报 (25 分)&#34;&gt;&lt;/a&gt;L2-013 红色警报 (25 分)&lt;/h2&gt;&lt;p&gt;战争中保持各个城市间的连通性非常重要。本题要求你编写一个报警程序，当失去一个城市导致国家被分裂为多个无法连通的区域时，就发出红色警报。注意：若该国本来就不完全连通，是分裂的k个区域，而失去一个城市并不改变其他城市之间的连通性，则不要发出警报。&lt;/p&gt;
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;输入在第一行给出两个整数&lt;code&gt;N&lt;/code&gt;（0 &amp;lt; &lt;code&gt;N&lt;/code&gt; ≤ 500）和&lt;code&gt;M&lt;/code&gt;（≤ 5000），分别为城市个数（于是默认城市从0到&lt;code&gt;N&lt;/code&gt;-1编号）和连接两城市的通路条数。随后&lt;code&gt;M&lt;/code&gt;行，每行给出一条通路所连接的两个城市的编号，其间以1个空格分隔。在城市信息之后给出被攻占的信息，即一个正整数&lt;code&gt;K&lt;/code&gt;和随后的&lt;code&gt;K&lt;/code&gt;个被攻占的城市的编号。&lt;/p&gt;
 &lt;p&gt;注意：输入保证给出的被攻占的城市编号都是合法的且无重复，但并不保证给出的通路没有重复。&lt;/p&gt;
@@ -170,9 +170,9 @@
         <updated>2022-04-15T13:09:30.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2022/04/14/Algorithm024/</id>
+        <id>https://xingyuanjie.top/2022/04/14/Algorithm024/</id>
         <title>L2-011 玩转二叉树 (25 分)</title>
-        <link rel="alternate" href="http://example.com/2022/04/14/Algorithm024/"/>
+        <link rel="alternate" href="https://xingyuanjie.top/2022/04/14/Algorithm024/"/>
         <content type="html">&lt;h2 id=&#34;L2-011-玩转二叉树-25-分&#34;&gt;&lt;a href=&#34;#L2-011-玩转二叉树-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-011 玩转二叉树 (25 分)&#34;&gt;&lt;/a&gt;&lt;strong&gt;L2-011 玩转二叉树 (25 分)&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;给定一棵二叉树的中序遍历和前序遍历，请你先将树做个镜面反转，再输出反转后的层序遍历的序列。所谓镜面反转，是指将所有非叶结点的左右孩子对换。这里假设键值都是互不相等的正整数。&lt;/p&gt;
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;输入第一行给出一个正整数&lt;code&gt;N&lt;/code&gt;（≤30），是二叉树中结点的个数。第二行给出其中序遍历序列。第三行给出其前序遍历序列。数字间以空格分隔。&lt;/p&gt;
 &lt;h3 id=&#34;输出格式：&#34;&gt;&lt;a href=&#34;#输出格式：&#34; class=&#34;headerlink&#34; title=&#34;输出格式：&#34;&gt;&lt;/a&gt;输出格式：&lt;/h3&gt;&lt;p&gt;在一行中输出该树反转后的层序遍历的序列。数字间以1个空格分隔，行首尾不得有多余空格。&lt;/p&gt;
@@ -197,9 +197,9 @@
         <updated>2022-04-14T06:01:10.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2022/04/14/Algorithm023/</id>
+        <id>https://xingyuanjie.top/2022/04/14/Algorithm023/</id>
         <title>L2-035 完全二叉树的层序遍历 (25 分)</title>
-        <link rel="alternate" href="http://example.com/2022/04/14/Algorithm023/"/>
+        <link rel="alternate" href="https://xingyuanjie.top/2022/04/14/Algorithm023/"/>
         <content type="html">&lt;h2 id=&#34;L2-035-完全二叉树的层序遍历-25-分&#34;&gt;&lt;a href=&#34;#L2-035-完全二叉树的层序遍历-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-035 完全二叉树的层序遍历 (25 分)&#34;&gt;&lt;/a&gt;L2-035 完全二叉树的层序遍历 (25 分)&lt;/h2&gt;&lt;p&gt;一个二叉树，如果每一个层的结点数都达到最大值，则这个二叉树就是&lt;strong&gt;完美二叉树&lt;/strong&gt;。对于深度为 &lt;em&gt;D&lt;/em&gt; 的，有 &lt;em&gt;N&lt;/em&gt; 个结点的二叉树，若其结点对应于相同深度完美二叉树的层序遍历的前 &lt;em&gt;N&lt;/em&gt; 个结点，这样的树就是&lt;strong&gt;完全二叉树&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;给定一棵完全二叉树的后序遍历，请你给出这棵树的层序遍历结果。&lt;/p&gt;
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;输入在第一行中给出正整数 &lt;em&gt;N&lt;/em&gt;（≤30），即树中结点个数。第二行给出后序遍历序列，为 &lt;em&gt;N&lt;/em&gt; 个不超过 100 的正整数。同一行中所有数字都以空格分隔。&lt;/p&gt;
@@ -220,9 +220,9 @@
         <updated>2022-04-14T06:01:05.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2022/04/13/Algorithm022/</id>
+        <id>https://xingyuanjie.top/2022/04/13/Algorithm022/</id>
         <title>L2-031 深入虎穴 (25 分)</title>
-        <link rel="alternate" href="http://example.com/2022/04/13/Algorithm022/"/>
+        <link rel="alternate" href="https://xingyuanjie.top/2022/04/13/Algorithm022/"/>
         <content type="html">&lt;p&gt;著名的王牌间谍 007 需要执行一次任务，获取敌方的机密情报。已知情报藏在一个地下迷宫里，迷宫只有一个入口，里面有很多条通路，每条路通向一扇门。每一扇门背后或者是一个房间，或者又有很多条路，同样是每条路通向一扇门…… 他的手里有一张表格，是其他间谍帮他收集到的情报，他们记下了每扇门的编号，以及这扇门背后的每一条通路所到达的门的编号。007 发现不存在两条路通向同一扇门。&lt;/p&gt;
 &lt;p&gt;内线告诉他，情报就藏在迷宫的最深处。但是这个迷宫太大了，他需要你的帮助 —— 请编程帮他找出距离入口最远的那扇门。&lt;/p&gt;
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;输入首先在一行中给出正整数 &lt;em&gt;N&lt;/em&gt;（&amp;lt;105），是门的数量。最后 &lt;em&gt;N&lt;/em&gt; 行，第 &lt;em&gt;i&lt;/em&gt; 行（1≤&lt;em&gt;i&lt;/em&gt;≤&lt;em&gt;N&lt;/em&gt;）按以下格式描述编号为 &lt;em&gt;i&lt;/em&gt; 的那扇门背后能通向的门：&lt;/p&gt;
@@ -249,9 +249,9 @@
         <updated>2022-04-13T11:09:46.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2022/04/13/Algorithm021/</id>
+        <id>https://xingyuanjie.top/2022/04/13/Algorithm021/</id>
         <title>L2-040 哲哲打游戏 (25 分)</title>
-        <link rel="alternate" href="http://example.com/2022/04/13/Algorithm021/"/>
+        <link rel="alternate" href="https://xingyuanjie.top/2022/04/13/Algorithm021/"/>
         <content type="html">&lt;h2 id=&#34;L2-040-哲哲打游戏-25-分&#34;&gt;&lt;a href=&#34;#L2-040-哲哲打游戏-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-040 哲哲打游戏 (25 分)&#34;&gt;&lt;/a&gt;&lt;strong&gt;L2-040 哲哲打游戏 (25 分)&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;哲哲是一位硬核游戏玩家。最近一款名叫《达诺达诺》的新游戏刚刚上市，哲哲自然要快速攻略游戏，守护硬核游戏玩家的一切！&lt;/p&gt;
 &lt;p&gt;为简化模型，我们不妨假设游戏有 &lt;em&gt;N&lt;/em&gt; 个剧情点，通过游戏里不同的操作或选择可以从某个剧情点去往另外一个剧情点。此外，游戏还设置了一些&lt;strong&gt;存档&lt;/strong&gt;，在某个剧情点可以将玩家的游戏进度保存在一个档位上，读取存档后可以回到剧情点，重新进行操作或者选择，到达不同的剧情点。&lt;/p&gt;
 &lt;p&gt;为了追踪硬核游戏玩家哲哲的攻略进度，你打算写一个程序来完成这个工作。假设你已经知道了游戏的全部剧情点和流程，以及哲哲的游戏操作，请你输出哲哲的游戏进度。&lt;/p&gt;
@@ -287,9 +287,9 @@
         <updated>2022-04-13T11:09:41.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2022/04/13/Algorithm020/</id>
+        <id>https://xingyuanjie.top/2022/04/13/Algorithm020/</id>
         <title>L2-027 名人堂与代金券 (25 分)</title>
-        <link rel="alternate" href="http://example.com/2022/04/13/Algorithm020/"/>
+        <link rel="alternate" href="https://xingyuanjie.top/2022/04/13/Algorithm020/"/>
         <content type="html">&lt;h2 id=&#34;L2-027-名人堂与代金券-25-分&#34;&gt;&lt;a href=&#34;#L2-027-名人堂与代金券-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-027 名人堂与代金券 (25 分)&#34;&gt;&lt;/a&gt;L2-027 名人堂与代金券 (25 分)&lt;/h2&gt;&lt;p&gt;对于在中国大学MOOC（&lt;a href=&#34;http://www.icourse163.org/&#34;&gt;http://www.icourse163.org/&lt;/a&gt; ）学习“数据结构”课程的学生，想要获得一张合格证书，总评成绩必须达到 60 分及以上，并且有另加福利：总评分在 [G, 100] 区间内者，可以得到 50 元 PAT 代金券；在 [60, G) 区间内者，可以得到 20 元PAT代金券。全国考点通用，一年有效。同时任课老师还会把总评成绩前 K 名的学生列入课程“名人堂”。本题就请你编写程序，帮助老师列出名人堂的学生，并统计一共发出了面值多少元的 PAT 代金券。&lt;/p&gt;
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;输入在第一行给出 3 个整数，分别是 N（不超过 10 000 的正整数，为学生总数）、G（在 (60,100) 区间内的整数，为题面中描述的代金券等级分界线）、K（不超过 100 且不超过 N 的正整数，为进入名人堂的最低名次）。接下来 N 行，每行给出一位学生的账号（长度不超过15位、不带空格的字符串）和总评成绩（区间 [0, 100] 内的整数），其间以空格分隔。题目保证没有重复的账号。&lt;/p&gt;
 &lt;h3 id=&#34;输出格式：&#34;&gt;&lt;a href=&#34;#输出格式：&#34; class=&#34;headerlink&#34; title=&#34;输出格式：&#34;&gt;&lt;/a&gt;输出格式：&lt;/h3&gt;&lt;p&gt;首先在一行中输出发出的 PAT 代金券的总面值。然后按总评成绩非升序输出进入名人堂的学生的名次、账号和成绩，其间以 1 个空格分隔。需要注意的是：成绩相同的学生享有并列的排名，排名并列时，按账号的字母序升序输出。&lt;/p&gt;
@@ -309,9 +309,9 @@
         <updated>2022-04-13T01:45:55.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2022/04/13/Algorithm019/</id>
+        <id>https://xingyuanjie.top/2022/04/13/Algorithm019/</id>
         <title>L2-026 小字辈 (25 分)</title>
-        <link rel="alternate" href="http://example.com/2022/04/13/Algorithm019/"/>
+        <link rel="alternate" href="https://xingyuanjie.top/2022/04/13/Algorithm019/"/>
         <content type="html">&lt;h2 id=&#34;L2-026-小字辈-25-分&#34;&gt;&lt;a href=&#34;#L2-026-小字辈-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-026 小字辈 (25 分)&#34;&gt;&lt;/a&gt;&lt;strong&gt;L2-026 小字辈 (25 分)&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;本题给定一个庞大家族的家谱，要请你给出最小一辈的名单。&lt;/p&gt;
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;输入在第一行给出家族人口总数 N（不超过 100 000 的正整数） —— 简单起见，我们把家族成员从 1 到 N 编号。随后第二行给出 N 个编号，其中第 i 个编号对应第 i 位成员的父&amp;#x2F;母。家谱中辈分最高的老祖宗对应的父&amp;#x2F;母编号为 -1。一行中的数字间以空格分隔。&lt;/p&gt;
 &lt;h3 id=&#34;输出格式：&#34;&gt;&lt;a href=&#34;#输出格式：&#34; class=&#34;headerlink&#34; title=&#34;输出格式：&#34;&gt;&lt;/a&gt;输出格式：&lt;/h3&gt;&lt;p&gt;首先输出最小的辈分（老祖宗的辈分为 1，以下逐级递增）。然后在第二行按递增顺序输出辈分最小的成员的编号。编号间以一个空格分隔，行首尾不得有多余空格。&lt;/p&gt;
@@ -334,9 +334,9 @@
         <updated>2022-04-13T01:45:49.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2022/04/12/Algorithm018/</id>
+        <id>https://xingyuanjie.top/2022/04/12/Algorithm018/</id>
         <title>L2-023 图着色问题 (25 分)</title>
-        <link rel="alternate" href="http://example.com/2022/04/12/Algorithm018/"/>
+        <link rel="alternate" href="https://xingyuanjie.top/2022/04/12/Algorithm018/"/>
         <content type="html">&lt;h2 id=&#34;L2-023-图着色问题-25-分&#34;&gt;&lt;a href=&#34;#L2-023-图着色问题-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-023 图着色问题 (25 分)&#34;&gt;&lt;/a&gt;L2-023 图着色问题 (25 分)&lt;/h2&gt;&lt;p&gt;图着色问题是一个著名的NP完全问题。给定无向图&lt;em&gt;G&lt;/em&gt;&amp;#x3D;(&lt;em&gt;V&lt;/em&gt;,&lt;em&gt;E&lt;/em&gt;)，问可否用&lt;em&gt;K&lt;/em&gt;种颜色为&lt;em&gt;V&lt;/em&gt;中的每一个顶点分配一种颜色，使得不会有两个相邻顶点具有同一种颜色？&lt;/p&gt;
 &lt;p&gt;但本题并不是要你解决这个着色问题，而是对给定的一种颜色分配，请你判断这是否是图着色问题的一个解。&lt;/p&gt;
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;输入在第一行给出3个整数&lt;em&gt;V&lt;/em&gt;（0&amp;lt;&lt;em&gt;V&lt;/em&gt;≤500）、&lt;em&gt;E&lt;/em&gt;（≥0）和&lt;em&gt;K&lt;/em&gt;（0&amp;lt;&lt;em&gt;K&lt;/em&gt;≤&lt;em&gt;V&lt;/em&gt;），分别是无向图的顶点数、边数、以及颜色数。顶点和颜色都从1到&lt;em&gt;V&lt;/em&gt;编号。随后&lt;em&gt;E&lt;/em&gt;行，每行给出一条边的两个端点的编号。在图的信息给出之后，给出了一个正整数&lt;em&gt;N&lt;/em&gt;（≤20），是待检查的颜色分配方案的个数。随后&lt;em&gt;N&lt;/em&gt;行，每行顺次给出&lt;em&gt;V&lt;/em&gt;个顶点的颜色（第&lt;em&gt;i&lt;/em&gt;个数字表示第&lt;em&gt;i&lt;/em&gt;个顶点的颜色），数字间以空格分隔。题目保证给定的无向图是合法的（即不存在自回路和重边）。&lt;/p&gt;
@@ -362,9 +362,9 @@
         <updated>2022-04-12T10:59:52.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2022/04/07/Algorithm014/</id>
+        <id>https://xingyuanjie.top/2022/04/07/Algorithm014/</id>
         <title>由遍历顺序构建二叉树(前序+中序;后序+中序)</title>
-        <link rel="alternate" href="http://example.com/2022/04/07/Algorithm014/"/>
+        <link rel="alternate" href="https://xingyuanjie.top/2022/04/07/Algorithm014/"/>
         <content type="html">&lt;h1 id=&#34;由遍历顺序构建二叉树-前序-中序-后序-中序&#34;&gt;&lt;a href=&#34;#由遍历顺序构建二叉树-前序-中序-后序-中序&#34; class=&#34;headerlink&#34; title=&#34;由遍历顺序构建二叉树(前序+中序;后序+中序)&#34;&gt;&lt;/a&gt;由遍历顺序构建二叉树(前序+中序;后序+中序)&lt;/h1&gt;&lt;h2 id=&#34;前序-中序&#34;&gt;&lt;a href=&#34;#前序-中序&#34; class=&#34;headerlink&#34; title=&#34;前序+中序&#34;&gt;&lt;/a&gt;前序+中序&lt;/h2&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;26&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-function&#34;&gt;BiTree &lt;span class=&#34;hljs-title&#34;&gt;PreAndInCreateTree&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; prel,&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; prer, &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; inl,&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; inr)&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(prel&amp;gt;prer)&amp;#123;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;hljs-literal&#34;&gt;NULL&lt;/span&gt;;&lt;br&gt;    &amp;#125;&lt;br&gt;    BiTNode *root;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; index=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;&lt;br&gt;    root=(BiTNode*)&lt;span class=&#34;hljs-built_in&#34;&gt;malloc&lt;/span&gt;(&lt;span class=&#34;hljs-built_in&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;sizeof&lt;/span&gt;&lt;/span&gt;(BiTNode));				&lt;span class=&#34;hljs-comment&#34;&gt;//记住分配空间&lt;/span&gt;&lt;br&gt;    root-&amp;gt;data=preF[prel];			&lt;span class=&#34;hljs-comment&#34;&gt;//前序遍历的第一个结点是根结点&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;(i=inl;i&amp;lt;=inr;i++)&lt;br&gt;    &amp;#123;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(preF[prel]==inF[i])&amp;#123;&lt;br&gt;            index=i;&lt;br&gt;            &lt;span class=&#34;hljs-keyword&#34;&gt;break&lt;/span&gt;;&lt;br&gt;            &lt;span class=&#34;hljs-comment&#34;&gt;//找到了根结点，目的是在中序遍历中划分左右子树&lt;/span&gt;&lt;br&gt;        &amp;#125;&lt;br&gt;    &amp;#125;&lt;br&gt;    &lt;span class=&#34;hljs-comment&#34;&gt;//则其左子树节点个数为index-inl&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-comment&#34;&gt;//前序遍历的第一个结点是根结点,所以新的递归区间是prel+1,到prel+index-inl,&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-comment&#34;&gt;//中序遍历是左根右，所以新的递归区间是inl,index-1&lt;/span&gt;&lt;br&gt;    root-&amp;gt;lchild=&lt;span class=&#34;hljs-built_in&#34;&gt;PreAndInCreateTree&lt;/span&gt;(prel+&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;,prel+index-inl,inl,index&lt;span class=&#34;hljs-number&#34;&gt;-1&lt;/span&gt;);&lt;br&gt;    &lt;span class=&#34;hljs-comment&#34;&gt;//前序遍历是根左右，所以新的递归区间是prel+index-inl+1,prep&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-comment&#34;&gt;//中序遍历是左根右，所以新的递归区间是index+1,inr&lt;/span&gt;&lt;br&gt;    root-&amp;gt;rchild=&lt;span class=&#34;hljs-built_in&#34;&gt;PreAndInCreateTree&lt;/span&gt;(prel+index-inl+&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;,prer,index+&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;,inr);&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; root;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;h2 id=&#34;后序-中序&#34;&gt;&lt;a href=&#34;#后序-中序&#34; class=&#34;headerlink&#34; title=&#34;后序+中序&#34;&gt;&lt;/a&gt;后序+中序&lt;/h2&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-function&#34;&gt;BiTree &lt;span class=&#34;hljs-title&#34;&gt;PostAndInCreateTree&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; postl,&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; postr, &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; inl,&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; inr)&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(postl&amp;gt;postr)&amp;#123;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;hljs-literal&#34;&gt;NULL&lt;/span&gt;;&lt;br&gt;    &amp;#125;&lt;br&gt;    BiTNode *root;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; index=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;&lt;br&gt;    root=(BiTNode*)&lt;span class=&#34;hljs-built_in&#34;&gt;malloc&lt;/span&gt;(&lt;span class=&#34;hljs-built_in&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;sizeof&lt;/span&gt;&lt;/span&gt;(BiTNode));&lt;br&gt;    root-&amp;gt;data=posts[postr];	&lt;span class=&#34;hljs-comment&#34;&gt;//后序遍历的最后一个结点是根结点&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; (&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i = inl; i &amp;lt;=inr ; ++i) &amp;#123;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(posts[postr]==ins[i])&lt;br&gt;        &amp;#123;&lt;br&gt;            index =i;&lt;br&gt;            &lt;span class=&#34;hljs-keyword&#34;&gt;break&lt;/span&gt;;&lt;br&gt;            &lt;span class=&#34;hljs-comment&#34;&gt;//找到了根结点，目的是在中序遍历中划分左右子树&lt;/span&gt;&lt;br&gt;        &amp;#125;&lt;br&gt;    &amp;#125;&lt;span class=&#34;hljs-comment&#34;&gt;//则其左子树节点个数为index-inl&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-comment&#34;&gt;//后续遍历的最后一个结点是根节点，所以新的递归区间是，postl,postl+index-inl-1&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-comment&#34;&gt;//中序遍历是左根右，所以新的递归区间是inl,index-1&lt;/span&gt;&lt;br&gt;    root-&amp;gt;lchild=&lt;span class=&#34;hljs-built_in&#34;&gt;PostAndInCreateTree&lt;/span&gt;(postl,postl+index-inl&lt;span class=&#34;hljs-number&#34;&gt;-1&lt;/span&gt;,inl,index&lt;span class=&#34;hljs-number&#34;&gt;-1&lt;/span&gt;);&lt;br&gt;    &lt;span class=&#34;hljs-comment&#34;&gt;//后序遍历是左右根，所以新的递归区间是postl+index-inl,postr-1&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-comment&#34;&gt;//中序遍历是左根右，所以新的递归区间是index+1,inr&lt;/span&gt;&lt;br&gt;    root-&amp;gt;rchild=&lt;span class=&#34;hljs-built_in&#34;&gt;PostAndInCreateTree&lt;/span&gt;(postl+index-inl,postr&lt;span class=&#34;hljs-number&#34;&gt;-1&lt;/span&gt;,index+&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;,inr);&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; root;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -380,9 +380,9 @@
         <updated>2022-04-07T12:55:58.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2022/04/06/Algorithm012/</id>
+        <id>https://xingyuanjie.top/2022/04/06/Algorithm012/</id>
         <title>二叉树的存储结构</title>
-        <link rel="alternate" href="http://example.com/2022/04/06/Algorithm012/"/>
+        <link rel="alternate" href="https://xingyuanjie.top/2022/04/06/Algorithm012/"/>
         <content type="html">&lt;h1 id=&#34;二叉树的存储结构&#34;&gt;&lt;a href=&#34;#二叉树的存储结构&#34; class=&#34;headerlink&#34; title=&#34;二叉树的存储结构&#34;&gt;&lt;/a&gt;二叉树的存储结构&lt;/h1&gt;&lt;h2 id=&#34;1-顺序存储方式&#34;&gt;&lt;a href=&#34;#1-顺序存储方式&#34; class=&#34;headerlink&#34; title=&#34;1.顺序存储方式&#34;&gt;&lt;/a&gt;1.顺序存储方式&lt;/h2&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;define&lt;/span&gt; MaxSize 100&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-class&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;TreeNode&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;    ElemType value;			&lt;span class=&#34;hljs-comment&#34;&gt;//结点中的数据元素&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;bool&lt;/span&gt; isEmpty;			&lt;span class=&#34;hljs-comment&#34;&gt;//结点是否为空&lt;/span&gt;&lt;br&gt;&amp;#125;;&lt;br&gt;&lt;br&gt;TreeNode t[MaxSize];&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;h2 id=&#34;2-链式存储结构&#34;&gt;&lt;a href=&#34;#2-链式存储结构&#34; class=&#34;headerlink&#34; title=&#34;2.链式存储结构&#34;&gt;&lt;/a&gt;2.链式存储结构&lt;/h2&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;hljs-class&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;BiTNode&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;    ElemType data;							&lt;span class=&#34;hljs-comment&#34;&gt;//数据域&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-class&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;BiTNode&lt;/span&gt; *&lt;span class=&#34;hljs-title&#34;&gt;lchild&lt;/span&gt;,*&lt;span class=&#34;hljs-title&#34;&gt;rchild&lt;/span&gt;;&lt;/span&gt;			&lt;span class=&#34;hljs-comment&#34;&gt;//左右孩子指针&lt;/span&gt;&lt;br&gt;&amp;#125;BiTNode,*BiTree;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -395,9 +395,9 @@
         <updated>2022-04-06T11:41:45.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2022/04/06/Algorithm011/</id>
+        <id>https://xingyuanjie.top/2022/04/06/Algorithm011/</id>
         <title>串的存储结构</title>
-        <link rel="alternate" href="http://example.com/2022/04/06/Algorithm011/"/>
+        <link rel="alternate" href="https://xingyuanjie.top/2022/04/06/Algorithm011/"/>
         <content type="html">&lt;h1 id=&#34;串的存储结构&#34;&gt;&lt;a href=&#34;#串的存储结构&#34; class=&#34;headerlink&#34; title=&#34;串的存储结构&#34;&gt;&lt;/a&gt;串的存储结构&lt;/h1&gt;&lt;h2 id=&#34;1-定长顺序存储表示&#34;&gt;&lt;a href=&#34;#1-定长顺序存储表示&#34; class=&#34;headerlink&#34; title=&#34;1.定长顺序存储表示&#34;&gt;&lt;/a&gt;1.定长顺序存储表示&lt;/h2&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;define&lt;/span&gt; MAXLEN 255					&lt;span class=&#34;hljs-comment&#34;&gt;//预定义最大串长&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;hljs-class&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;struct&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;char&lt;/span&gt; ch[MAXLEN];				&lt;span class=&#34;hljs-comment&#34;&gt;//每个分量存储一个字符&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; length;						&lt;span class=&#34;hljs-comment&#34;&gt;//串的实际长度&lt;/span&gt;&lt;br&gt;&amp;#125;SSting;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;h2 id=&#34;2-堆分配存储表示&#34;&gt;&lt;a href=&#34;#2-堆分配存储表示&#34; class=&#34;headerlink&#34; title=&#34;2.堆分配存储表示&#34;&gt;&lt;/a&gt;2.堆分配存储表示&lt;/h2&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;hljs-class&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;struct&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;char&lt;/span&gt; *ch;						&lt;span class=&#34;hljs-comment&#34;&gt;//按串长分配存储区，ch指向串的基地址&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; length;						&lt;span class=&#34;hljs-comment&#34;&gt;//串的长度&lt;/span&gt;&lt;br&gt;&amp;#125;HString;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -407,9 +407,9 @@
         <updated>2022-04-06T11:35:13.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2022/03/31/Algorithm010/</id>
+        <id>https://xingyuanjie.top/2022/03/31/Algorithm010/</id>
         <title>队列</title>
-        <link rel="alternate" href="http://example.com/2022/03/31/Algorithm010/"/>
+        <link rel="alternate" href="https://xingyuanjie.top/2022/03/31/Algorithm010/"/>
         <content type="html">&lt;h2 id=&#34;队列&#34;&gt;&lt;a href=&#34;#队列&#34; class=&#34;headerlink&#34; title=&#34;队列&#34;&gt;&lt;/a&gt;队列&lt;/h2&gt;&lt;h3 id=&#34;队列的顺序存储解构&#34;&gt;&lt;a href=&#34;#队列的顺序存储解构&#34; class=&#34;headerlink&#34; title=&#34;队列的顺序存储解构&#34;&gt;&lt;/a&gt;队列的顺序存储解构&lt;/h3&gt;&lt;h4 id=&#34;队列的顺序存储&#34;&gt;&lt;a href=&#34;#队列的顺序存储&#34; class=&#34;headerlink&#34; title=&#34;队列的顺序存储&#34;&gt;&lt;/a&gt;队列的顺序存储&lt;/h4&gt;&lt;p&gt;队列的顺序存储类型可描述为&lt;/p&gt;
 &lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;define&lt;/span&gt; MaxSize 50						&lt;span class=&#34;hljs-comment&#34;&gt;//定义队列中元素的最大个数&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;hljs-class&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;struct&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;    ElemType data[MaxSize];				&lt;span class=&#34;hljs-comment&#34;&gt;//存放队列元素&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; front,rear;						&lt;span class=&#34;hljs-comment&#34;&gt;//队头指针和队尾指针&lt;/span&gt;&lt;br&gt;&amp;#125;SqQueue;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
@@ -453,9 +453,9 @@
         <updated>2022-03-31T07:58:39.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2022/03/30/Algorithm009/</id>
+        <id>https://xingyuanjie.top/2022/03/30/Algorithm009/</id>
         <title>栈</title>
-        <link rel="alternate" href="http://example.com/2022/03/30/Algorithm009/"/>
+        <link rel="alternate" href="https://xingyuanjie.top/2022/03/30/Algorithm009/"/>
         <content type="html">&lt;h2 id=&#34;栈的顺序存储结构&#34;&gt;&lt;a href=&#34;#栈的顺序存储结构&#34; class=&#34;headerlink&#34; title=&#34;栈的顺序存储结构&#34;&gt;&lt;/a&gt;栈的顺序存储结构&lt;/h2&gt;&lt;h3 id=&#34;顺序栈的实现&#34;&gt;&lt;a href=&#34;#顺序栈的实现&#34; class=&#34;headerlink&#34; title=&#34;顺序栈的实现&#34;&gt;&lt;/a&gt;顺序栈的实现&lt;/h3&gt;&lt;p&gt;栈的顺序存储类型可描述为：&lt;/p&gt;
 &lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;define&lt;/span&gt; MaxSize 50				&lt;span class=&#34;hljs-comment&#34;&gt;//定义栈中元素的最大个数&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;hljs-class&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;struct&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;    ElemType data[MaxSize];			&lt;span class=&#34;hljs-comment&#34;&gt;//存放栈中元素&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; top;						&lt;span class=&#34;hljs-comment&#34;&gt;//栈顶指针&lt;/span&gt;&lt;br&gt;&amp;#125;SqStack;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
@@ -481,9 +481,9 @@
         <updated>2022-03-30T10:04:31.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2022/03/29/Algorithm008/</id>
+        <id>https://xingyuanjie.top/2022/03/29/Algorithm008/</id>
         <title>双链表与静态链表</title>
-        <link rel="alternate" href="http://example.com/2022/03/29/Algorithm008/"/>
+        <link rel="alternate" href="https://xingyuanjie.top/2022/03/29/Algorithm008/"/>
         <content type="html">&lt;h2 id=&#34;双链表&#34;&gt;&lt;a href=&#34;#双链表&#34; class=&#34;headerlink&#34; title=&#34;双链表&#34;&gt;&lt;/a&gt;双链表&lt;/h2&gt;&lt;h3 id=&#34;定义&#34;&gt;&lt;a href=&#34;#定义&#34; class=&#34;headerlink&#34; title=&#34;定义&#34;&gt;&lt;/a&gt;定义&lt;/h3&gt;&lt;p&gt;双链表中结点类型的描述如下：&lt;/p&gt;
 &lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;hljs-class&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;DNode&lt;/span&gt;&amp;#123;&lt;/span&gt;					&lt;span class=&#34;hljs-comment&#34;&gt;//定义双链表结点类型&lt;/span&gt;&lt;br&gt;    ElemType data;						&lt;span class=&#34;hljs-comment&#34;&gt;//数据域&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-class&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;DNode&lt;/span&gt; *&lt;span class=&#34;hljs-title&#34;&gt;prior&lt;/span&gt;,*&lt;span class=&#34;hljs-title&#34;&gt;next&lt;/span&gt;;&lt;/span&gt;			&lt;span class=&#34;hljs-comment&#34;&gt;//前驱和后继指针&lt;/span&gt;&lt;br&gt;&amp;#125;DNode,*DLinkList;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
@@ -501,9 +501,9 @@
         <updated>2022-03-29T07:48:53.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2022/03/28/Algorithm007/</id>
+        <id>https://xingyuanjie.top/2022/03/28/Algorithm007/</id>
         <title>单链表上的基本操作</title>
-        <link rel="alternate" href="http://example.com/2022/03/28/Algorithm007/"/>
+        <link rel="alternate" href="https://xingyuanjie.top/2022/03/28/Algorithm007/"/>
         <content type="html">&lt;h2 id=&#34;单链表的定义&#34;&gt;&lt;a href=&#34;#单链表的定义&#34; class=&#34;headerlink&#34; title=&#34;单链表的定义&#34;&gt;&lt;/a&gt;单链表的定义&lt;/h2&gt;&lt;p&gt;单链表中结点类型的描述如下：&lt;/p&gt;
 &lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;hljs-class&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;LNode&lt;/span&gt;&amp;#123;&lt;/span&gt;			&lt;span class=&#34;hljs-comment&#34;&gt;//定义单链表结点类型&lt;/span&gt;&lt;br&gt;    ElemType data;				&lt;span class=&#34;hljs-comment&#34;&gt;//数据域&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-class&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;LNode&lt;/span&gt; *&lt;span class=&#34;hljs-title&#34;&gt;next&lt;/span&gt;;&lt;/span&gt;		&lt;span class=&#34;hljs-comment&#34;&gt;//指针域&lt;/span&gt;&lt;br&gt;&amp;#125;LNode,*LinkList;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
@@ -534,9 +534,9 @@
         <updated>2022-03-28T09:40:19.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2022/03/28/Algorithm006/</id>
+        <id>https://xingyuanjie.top/2022/03/28/Algorithm006/</id>
         <title>单链表的定义</title>
-        <link rel="alternate" href="http://example.com/2022/03/28/Algorithm006/"/>
+        <link rel="alternate" href="https://xingyuanjie.top/2022/03/28/Algorithm006/"/>
         <content type="html">&lt;h1 id=&#34;单链表的定义&#34;&gt;&lt;a href=&#34;#单链表的定义&#34; class=&#34;headerlink&#34; title=&#34;单链表的定义&#34;&gt;&lt;/a&gt;单链表的定义&lt;/h1&gt;&lt;h2 id=&#34;1-单链表的定义&#34;&gt;&lt;a href=&#34;#1-单链表的定义&#34; class=&#34;headerlink&#34; title=&#34;1.单链表的定义&#34;&gt;&lt;/a&gt;1.单链表的定义&lt;/h2&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;hljs-class&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;LNode&lt;/span&gt;&amp;#123;&lt;/span&gt;      &lt;span class=&#34;hljs-comment&#34;&gt;//定义单链表结点类型&lt;/span&gt;&lt;br&gt;    ElemType data;         &lt;span class=&#34;hljs-comment&#34;&gt;//每个结点存放一个数据元素&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-class&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;LNode&lt;/span&gt; *&lt;span class=&#34;hljs-title&#34;&gt;next&lt;/span&gt;;&lt;/span&gt;    &lt;span class=&#34;hljs-comment&#34;&gt;//指针指向下一个节点&lt;/span&gt;&lt;br&gt;&amp;#125;LNode,*LinkList;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;hljs-class&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;LNode&lt;/span&gt;&amp;#123;&lt;/span&gt;      &lt;span class=&#34;hljs-comment&#34;&gt;//定义单链表结点类型&lt;/span&gt;&lt;br&gt;    ElemType data;         &lt;span class=&#34;hljs-comment&#34;&gt;//每个结点存放一个数据元素&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-class&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;LNode&lt;/span&gt; *&lt;span class=&#34;hljs-title&#34;&gt;next&lt;/span&gt;;&lt;/span&gt;    &lt;span class=&#34;hljs-comment&#34;&gt;//指针指向下一个节点&lt;/span&gt;&lt;br&gt;&amp;#125;;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;hljs-class&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;LNode&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;LNode&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;hljs-class&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;LNode&lt;/span&gt; *&lt;span class=&#34;hljs-title&#34;&gt;LinkList&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -553,9 +553,9 @@
         <updated>2022-03-28T08:00:51.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2022/03/11/Algorithm005/</id>
+        <id>https://xingyuanjie.top/2022/03/11/Algorithm005/</id>
         <title>优先队列</title>
-        <link rel="alternate" href="http://example.com/2022/03/11/Algorithm005/"/>
+        <link rel="alternate" href="https://xingyuanjie.top/2022/03/11/Algorithm005/"/>
         <content type="html">&lt;h1 id=&#34;优先队列&#34;&gt;&lt;a href=&#34;#优先队列&#34; class=&#34;headerlink&#34; title=&#34;优先队列&#34;&gt;&lt;/a&gt;优先队列&lt;/h1&gt;&lt;h2 id=&#34;定义：&#34;&gt;&lt;a href=&#34;#定义：&#34; class=&#34;headerlink&#34; title=&#34;定义：&#34;&gt;&lt;/a&gt;定义：&lt;/h2&gt;&lt;p&gt;定义：priority_queue&amp;lt;Type, Container, Functional&amp;gt;&lt;/p&gt;
 &lt;p&gt;Type 就是数据类型，Container 就是容器类型（Container必须是用数组实现的容器，比如vector,deque等等，但不能用 list。STL里面默认用的是vector），Functional 就是比较的方式。&lt;/p&gt;
 &lt;p&gt;当需要用自定义的数据类型时才需要传入这三个参数，使用基本数据类型时，只需要传入数据类型，默认是大顶堆。&lt;br&gt;一般是：&lt;/p&gt;

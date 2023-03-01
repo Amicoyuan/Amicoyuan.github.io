@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>http://example.com</id>
+    <id>https://xingyuanjie.top</id>
     <title>Amicoyuan • Posts by &#34;avx&#34; tag</title>
-    <link href="http://example.com" />
+    <link href="https://xingyuanjie.top" />
     <updated>2023-01-28T06:51:44.000Z</updated>
     <category term="AVX" />
     <category term="Data Structure" />
@@ -13,11 +13,11 @@
     <category term="Set" />
     <category term="团体程序设计天梯赛" />
     <category term="Sort" />
-    <category term="LinkList" />
-    <category term="双向链表" />
     <category term="Graph" />
     <category term="邻接表" />
     <category term="Vector" />
+    <category term="LinkList" />
+    <category term="双向链表" />
     <category term="Binary tree" />
     <category term="BFS" />
     <category term="模拟" />
@@ -25,8 +25,8 @@
     <category term="DFS" />
     <category term="结构体" />
     <category term="贪心" />
-    <category term="Double类型相等比较" />
     <category term="并查集" />
+    <category term="Double类型相等比较" />
     <category term="Map" />
     <category term="Pair" />
     <category term="Linux" />
@@ -54,9 +54,9 @@
     <category term="gcov" />
     <category term="bool" />
     <entry>
-        <id>http://example.com/2023/01/28/avx006/</id>
+        <id>https://xingyuanjie.top/2023/01/28/avx006/</id>
         <title>如何使用AVX和AVX2处理数据(个人翻译)</title>
-        <link rel="alternate" href="http://example.com/2023/01/28/avx006/"/>
+        <link rel="alternate" href="https://xingyuanjie.top/2023/01/28/avx006/"/>
         <content type="html">&lt;h2 id=&#34;1-文章来源&#34;&gt;&lt;a href=&#34;#1-文章来源&#34; class=&#34;headerlink&#34; title=&#34;1.文章来源&#34;&gt;&lt;/a&gt;1.文章来源&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Matt Scarpino（USA）&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.codeproject.com/Articles/874396/Crunching-Numbers-with-AVX-and-AVX&#34;&gt;Crunching Numbers with AVX and AVX2 - CodeProject&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;2-介绍&#34;&gt;&lt;a href=&#34;#2-介绍&#34; class=&#34;headerlink&#34; title=&#34;2.介绍&#34;&gt;&lt;/a&gt;2.介绍&lt;/h2&gt;&lt;p&gt;在2003年，&lt;a href=&#34;https://www.codeproject.com/script/Membership/View.aspx?mid=22834&#34;&gt;Alex Fr&lt;/a&gt;写了一篇优秀的&lt;a href=&#34;https://www.codeproject.com/Articles/4522/Introduction-to-SSE-Programming&#34;&gt;文章&lt;/a&gt;[该文章现在已经被原作者删除]，解释了如何使用Intel的流式SIMD扩展(SSE)执行SIMD(单指令，多数据)处理。SSE是英特尔处理器支持的一组指令，可对大量数据执行高速运算。&lt;/p&gt;
@@ -566,9 +566,9 @@
         <updated>2023-01-28T06:51:44.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2022/06/12/AVX%E5%90%91%E9%87%8F%E5%8C%96%E5%AD%A6%E4%B9%A0(%E4%BA%8C)-%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90%E7%9A%84%E5%BA%94%E7%94%A8/</id>
+        <id>https://xingyuanjie.top/2022/06/12/AVX%E5%90%91%E9%87%8F%E5%8C%96%E5%AD%A6%E4%B9%A0(%E4%BA%8C)-%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90%E7%9A%84%E5%BA%94%E7%94%A8/</id>
         <title>AVX向量化学习(二)-内存对齐的应用</title>
-        <link rel="alternate" href="http://example.com/2022/06/12/AVX%E5%90%91%E9%87%8F%E5%8C%96%E5%AD%A6%E4%B9%A0(%E4%BA%8C)-%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90%E7%9A%84%E5%BA%94%E7%94%A8/"/>
+        <link rel="alternate" href="https://xingyuanjie.top/2022/06/12/AVX%E5%90%91%E9%87%8F%E5%8C%96%E5%AD%A6%E4%B9%A0(%E4%BA%8C)-%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90%E7%9A%84%E5%BA%94%E7%94%A8/"/>
         <content type="html">&lt;h1 id=&#34;AVX指令集的简单操作-内存对齐版&#34;&gt;&lt;a href=&#34;#AVX指令集的简单操作-内存对齐版&#34; class=&#34;headerlink&#34; title=&#34;AVX指令集的简单操作(内存对齐版)&#34;&gt;&lt;/a&gt;AVX指令集的简单操作(内存对齐版)&lt;/h1&gt;&lt;p&gt;使用AVX指令集进行2个double型的数组相加操作&lt;/p&gt;
 &lt;h2 id=&#34;常用的内存对齐函数&#34;&gt;&lt;a href=&#34;#常用的内存对齐函数&#34; class=&#34;headerlink&#34; title=&#34;常用的内存对齐函数&#34;&gt;&lt;/a&gt;常用的内存对齐函数&lt;/h2&gt;&lt;p&gt;因为AVX中要求mem__addr必须在32字节边界上对齐，否则可能会产生通用保护异常。  &lt;/p&gt;
 &lt;h3 id=&#34;1&#34;&gt;&lt;a href=&#34;#1&#34; class=&#34;headerlink&#34; title=&#34;1.&#34;&gt;&lt;/a&gt;1.&lt;/h3&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;double&lt;/span&gt;*	a =(&lt;span class=&#34;hljs-keyword&#34;&gt;double&lt;/span&gt;*)&lt;span class=&#34;hljs-built_in&#34;&gt;memalign&lt;/span&gt;(&lt;span class=&#34;hljs-number&#34;&gt;32&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;9&lt;/span&gt;*&lt;span class=&#34;hljs-built_in&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;sizeof&lt;/span&gt;&lt;/span&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;double&lt;/span&gt;));&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -610,9 +610,9 @@
         <updated>2022-06-12T07:11:29.549Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2022/06/12/AVX%E5%90%91%E9%87%8F%E5%8C%96%E5%AD%A6%E4%B9%A0(%E4%B8%80)/</id>
+        <id>https://xingyuanjie.top/2022/06/12/AVX%E5%90%91%E9%87%8F%E5%8C%96%E5%AD%A6%E4%B9%A0(%E4%B8%80)/</id>
         <title>AVX向量化学习(一)</title>
-        <link rel="alternate" href="http://example.com/2022/06/12/AVX%E5%90%91%E9%87%8F%E5%8C%96%E5%AD%A6%E4%B9%A0(%E4%B8%80)/"/>
+        <link rel="alternate" href="https://xingyuanjie.top/2022/06/12/AVX%E5%90%91%E9%87%8F%E5%8C%96%E5%AD%A6%E4%B9%A0(%E4%B8%80)/"/>
         <content type="html">&lt;h1 id=&#34;AVX指令集的简单操作&#34;&gt;&lt;a href=&#34;#AVX指令集的简单操作&#34; class=&#34;headerlink&#34; title=&#34;AVX指令集的简单操作&#34;&gt;&lt;/a&gt;AVX指令集的简单操作&lt;/h1&gt;&lt;p&gt;使用AVX指令集进行2个double型的数组相加操作&lt;/p&gt;
 &lt;h2 id=&#34;使用到的AVX函数介绍&#34;&gt;&lt;a href=&#34;#使用到的AVX函数介绍&#34; class=&#34;headerlink&#34; title=&#34;使用到的AVX函数介绍&#34;&gt;&lt;/a&gt;使用到的AVX函数介绍&lt;/h2&gt;&lt;h3 id=&#34;1&#34;&gt;&lt;a href=&#34;#1&#34; class=&#34;headerlink&#34; title=&#34;1.&#34;&gt;&lt;/a&gt;1.&lt;/h3&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;__m256 _mm256_loadu_ps (&lt;span class=&#34;hljs-keyword&#34;&gt;float&lt;/span&gt; &lt;span class=&#34;hljs-keyword&#34;&gt;const&lt;/span&gt; * mem_addr)&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
@@ -643,9 +643,9 @@
         <updated>2022-06-12T07:11:29.538Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2022/01/17/AVX005/</id>
+        <id>https://xingyuanjie.top/2022/01/17/AVX005/</id>
         <title>AVX向量化学习(五)-INT型数组相加操作</title>
-        <link rel="alternate" href="http://example.com/2022/01/17/AVX005/"/>
+        <link rel="alternate" href="https://xingyuanjie.top/2022/01/17/AVX005/"/>
         <content type="html">&lt;h1 id=&#34;AVX向量化学习-五-INT型数组相加操作&#34;&gt;&lt;a href=&#34;#AVX向量化学习-五-INT型数组相加操作&#34; class=&#34;headerlink&#34; title=&#34;AVX向量化学习(五)-INT型数组相加操作&#34;&gt;&lt;/a&gt;AVX向量化学习(五)-INT型数组相加操作&lt;/h1&gt;&lt;p&gt;使用AVX指令集进行2个INT型的数组相加操作&lt;/p&gt;
 &lt;h2 id=&#34;使用到的AVX函数介绍&#34;&gt;&lt;a href=&#34;#使用到的AVX函数介绍&#34; class=&#34;headerlink&#34; title=&#34;使用到的AVX函数介绍&#34;&gt;&lt;/a&gt;使用到的AVX函数介绍&lt;/h2&gt;&lt;h3 id=&#34;1&#34;&gt;&lt;a href=&#34;#1&#34; class=&#34;headerlink&#34; title=&#34;1.&#34;&gt;&lt;/a&gt;1.&lt;/h3&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;__m256i _mm256_loadu_si256 (__m256i &lt;span class=&#34;hljs-keyword&#34;&gt;const&lt;/span&gt; * mem_addr)&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
@@ -740,9 +740,9 @@
         <updated>2022-01-17T13:28:22.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2022/01/17/AVX004/</id>
+        <id>https://xingyuanjie.top/2022/01/17/AVX004/</id>
         <title>AVX向量化学习(四)-INT类型转化成DOUBLE类型</title>
-        <link rel="alternate" href="http://example.com/2022/01/17/AVX004/"/>
+        <link rel="alternate" href="https://xingyuanjie.top/2022/01/17/AVX004/"/>
         <content type="html">&lt;h1 id=&#34;AVX向量化学习-四-INT类型转化成DOUBLE类型&#34;&gt;&lt;a href=&#34;#AVX向量化学习-四-INT类型转化成DOUBLE类型&#34; class=&#34;headerlink&#34; title=&#34;AVX向量化学习(四)-INT类型转化成DOUBLE类型&#34;&gt;&lt;/a&gt;AVX向量化学习(四)-INT类型转化成DOUBLE类型&lt;/h1&gt;&lt;p&gt;使用AVX指令集把INT类型转化为DOUBLE类型&lt;/p&gt;
 &lt;h2 id=&#34;使用到的AVX函数介绍&#34;&gt;&lt;a href=&#34;#使用到的AVX函数介绍&#34; class=&#34;headerlink&#34; title=&#34;使用到的AVX函数介绍&#34;&gt;&lt;/a&gt;使用到的AVX函数介绍&lt;/h2&gt;&lt;h3 id=&#34;1&#34;&gt;&lt;a href=&#34;#1&#34; class=&#34;headerlink&#34; title=&#34;1.&#34;&gt;&lt;/a&gt;1.&lt;/h3&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;__m128i _mm_setr_epi32 (&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; e3, &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; e2, &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; e1, &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; e0)&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
@@ -812,9 +812,9 @@
         <updated>2022-01-17T12:41:56.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2021/11/24/AVX003/</id>
+        <id>https://xingyuanjie.top/2021/11/24/AVX003/</id>
         <title>AVX向量化学习(三)-if判断的处理</title>
-        <link rel="alternate" href="http://example.com/2021/11/24/AVX003/"/>
+        <link rel="alternate" href="https://xingyuanjie.top/2021/11/24/AVX003/"/>
         <content type="html">&lt;h1 id=&#34;AVX-if判断的处理&#34;&gt;&lt;a href=&#34;#AVX-if判断的处理&#34; class=&#34;headerlink&#34; title=&#34;AVX-if判断的处理&#34;&gt;&lt;/a&gt;AVX-if判断的处理&lt;/h1&gt;&lt;p&gt;使用AVX指令集对if判断进行处理&lt;/p&gt;
 &lt;h2 id=&#34;使用到的AVX函数介绍&#34;&gt;&lt;a href=&#34;#使用到的AVX函数介绍&#34; class=&#34;headerlink&#34; title=&#34;使用到的AVX函数介绍&#34;&gt;&lt;/a&gt;使用到的AVX函数介绍&lt;/h2&gt;&lt;h3 id=&#34;1&#34;&gt;&lt;a href=&#34;#1&#34; class=&#34;headerlink&#34; title=&#34;1.&#34;&gt;&lt;/a&gt;1.&lt;/h3&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;__m256d _mm256_blendv_pd (__m256d a, __m256d b, __m256d mask)&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 

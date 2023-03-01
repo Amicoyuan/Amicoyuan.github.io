@@ -2,7 +2,7 @@
 <rss version="2.0">
     <channel>
         <title>Amicoyuan • Posts by &#34;openmp&#34; tag</title>
-        <link>http://example.com</link>
+        <link>https://xingyuanjie.top</link>
         <description></description>
         <language>zh-CN</language>
         <pubDate>Sun, 26 Feb 2023 17:36:54 +0800</pubDate>
@@ -16,11 +16,11 @@
         <category>Set</category>
         <category>团体程序设计天梯赛</category>
         <category>Sort</category>
-        <category>LinkList</category>
-        <category>双向链表</category>
         <category>Graph</category>
         <category>邻接表</category>
         <category>Vector</category>
+        <category>LinkList</category>
+        <category>双向链表</category>
         <category>Binary tree</category>
         <category>BFS</category>
         <category>模拟</category>
@@ -28,8 +28,8 @@
         <category>DFS</category>
         <category>结构体</category>
         <category>贪心</category>
-        <category>Double类型相等比较</category>
         <category>并查集</category>
+        <category>Double类型相等比较</category>
         <category>Map</category>
         <category>Pair</category>
         <category>Linux</category>
@@ -57,9 +57,9 @@
         <category>gcov</category>
         <category>bool</category>
         <item>
-            <guid isPermalink="true">http://example.com/2023/02/26/openmp008/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/02/26/openmp008/</guid>
             <title>OpenMP:Internal Control Variables</title>
-            <link>http://example.com/2023/02/26/openmp008/</link>
+            <link>https://xingyuanjie.top/2023/02/26/openmp008/</link>
             <category>OpenMP</category>
             <pubDate>Sun, 26 Feb 2023 17:36:54 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;2-5-Internal-Control-Variables&#34;&gt;&lt;a href=&#34;#2-5-Internal-Control-Variables&#34; class=&#34;headerlink&#34; title=&#34;2.5 Internal Control Variables&#34;&gt;&lt;/a&gt;2.5 Internal Control Variables&lt;/h2&gt;&lt;p&gt;OpenMP实现必须像内部控制变量(icv)一样控制OpenMP程序的行为。这些icv存储的信息包括用于未来并行区域的线程数、用于工作共享循环的调度以及是否启用嵌套并行。在程序执行期间，icv在不同的时间被赋予值(如下所述)。它们是由实现本身初始化的，并且可以通过OpenMP环境变量和调用OpenMP API例程来赋值。程序只能通过OpenMP API例程检索这些icv的值。&lt;/p&gt;
@@ -74,9 +74,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2023/02/26/openmp007/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/02/26/openmp007/</guid>
             <title>OpenMP线程绑定【未完结】</title>
-            <link>http://example.com/2023/02/26/openmp007/</link>
+            <link>https://xingyuanjie.top/2023/02/26/openmp007/</link>
             <category>OpenMP</category>
             <pubDate>Sun, 26 Feb 2023 17:06:59 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;OpenMP线程绑定&#34;&gt;&lt;a href=&#34;#OpenMP线程绑定&#34; class=&#34;headerlink&#34; title=&#34;OpenMP线程绑定&#34;&gt;&lt;/a&gt;OpenMP线程绑定&lt;/h2&gt;&lt;h3 id=&#34;OpenMP相关环境变量与指令&#34;&gt;&lt;a href=&#34;#OpenMP相关环境变量与指令&#34; class=&#34;headerlink&#34; title=&#34;OpenMP相关环境变量与指令&#34;&gt;&lt;/a&gt;OpenMP相关环境变量与指令&lt;/h3&gt;&lt;h4 id=&#34;OMP-PROC-BIND&#34;&gt;&lt;a href=&#34;#OMP-PROC-BIND&#34; class=&#34;headerlink&#34; title=&#34;OMP_PROC_BIND&#34;&gt;&lt;/a&gt;OMP_PROC_BIND&lt;/h4&gt;&lt;p&gt;OMP_PROC_BIND环境变量设置bind-var ICV的初始值。这个环境变量的值可以是true、false，或者用逗号分隔的master、close或spread列表。列表的值设置了对应嵌套级别的并行区域要使用的线程亲和策略。&lt;/p&gt;
@@ -94,9 +94,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2023/01/14/openmp006/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/01/14/openmp006/</guid>
             <title>OpenMP生产者消费者问题(未完结)</title>
-            <link>http://example.com/2023/01/14/openmp006/</link>
+            <link>https://xingyuanjie.top/2023/01/14/openmp006/</link>
             <category>OpenMP</category>
             <pubDate>Sat, 14 Jan 2023 22:30:05 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;OpenMP生产者消费者问题&#34;&gt;&lt;a href=&#34;#OpenMP生产者消费者问题&#34; class=&#34;headerlink&#34; title=&#34;OpenMP生产者消费者问题&#34;&gt;&lt;/a&gt;OpenMP生产者消费者问题&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;本节将讨论一个不适合用parallel for指令或者for指令来并行化的问题。&lt;/strong&gt;&lt;/p&gt;
@@ -179,9 +179,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2023/01/14/openmp005/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/01/14/openmp005/</guid>
             <title>OpenMP循环调度</title>
-            <link>http://example.com/2023/01/14/openmp005/</link>
+            <link>https://xingyuanjie.top/2023/01/14/openmp005/</link>
             <category>OpenMP</category>
             <pubDate>Sat, 14 Jan 2023 13:04:25 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;OpenMP循环调度&#34;&gt;&lt;a href=&#34;#OpenMP循环调度&#34; class=&#34;headerlink&#34; title=&#34;OpenMP循环调度&#34;&gt;&lt;/a&gt;OpenMP循环调度&lt;/h2&gt;&lt;h3 id=&#34;1-循环调度&#34;&gt;&lt;a href=&#34;#1-循环调度&#34; class=&#34;headerlink&#34; title=&#34;1.循环调度&#34;&gt;&lt;/a&gt;1.循环调度&lt;/h3&gt;&lt;p&gt;当第一次遇到parallel for指令时，我们看到将各次循环分配给线程的操作是由系统完成的。然而，大部分OpenMP实现只是粗略地使用块分割：如果在串行循环中有n次迭代，那么在并行循环中，前n&amp;#x2F;thread_count个迭代分配给线程0，接下来的n&amp;#x2F;thread_count个迭代分配给线程1，依此类推。不难想到，这种分配方式肯定不是最优的。例如，假如我们想要并行化循环：&lt;/p&gt;
@@ -252,9 +252,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2023/01/13/openmp004/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/01/13/openmp004/</guid>
             <title>OpenMP排序</title>
-            <link>http://example.com/2023/01/13/openmp004/</link>
+            <link>https://xingyuanjie.top/2023/01/13/openmp004/</link>
             <category>OpenMP</category>
             <pubDate>Fri, 13 Jan 2023 16:26:51 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;OpenMP排序&#34;&gt;&lt;a href=&#34;#OpenMP排序&#34; class=&#34;headerlink&#34; title=&#34;OpenMP排序&#34;&gt;&lt;/a&gt;OpenMP排序&lt;/h2&gt;&lt;h3 id=&#34;1-冒泡排序&#34;&gt;&lt;a href=&#34;#1-冒泡排序&#34; class=&#34;headerlink&#34; title=&#34;1.冒泡排序&#34;&gt;&lt;/a&gt;1.冒泡排序&lt;/h3&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;(list_length = n; list.length &amp;gt;= &lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt;; list_length--)				&lt;span class=&#34;hljs-comment&#34;&gt;//升序排列&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;(i = &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;i &amp;lt; list_length&lt;span class=&#34;hljs-number&#34;&gt;-1&lt;/span&gt;; i++)&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(a[i] &amp;gt; a[i+&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;])&amp;#123;&lt;br&gt;            tmp = a[i];&lt;br&gt;            a[i] = a[i+&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;];&lt;br&gt;            a[i+&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;] = tmp;&lt;br&gt;        &amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -288,9 +288,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2023/01/09/openmp003/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/01/09/openmp003/</guid>
             <title>OpenMP π值估计</title>
-            <link>http://example.com/2023/01/09/openmp003/</link>
+            <link>https://xingyuanjie.top/2023/01/09/openmp003/</link>
             <category>OpenMP</category>
             <pubDate>Mon, 09 Jan 2023 15:06:18 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;π值估计&#34;&gt;&lt;a href=&#34;#π值估计&#34; class=&#34;headerlink&#34; title=&#34;π值估计&#34;&gt;&lt;/a&gt;π值估计&lt;/h2&gt;&lt;h3 id=&#34;1-数学背景&#34;&gt;&lt;a href=&#34;#1-数学背景&#34; class=&#34;headerlink&#34; title=&#34;1.数学背景&#34;&gt;&lt;/a&gt;1.数学背景&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;/2023/01/09/openmp003/image-20230109150836877.png&#34; alt=&#34;image-20230109150836877&#34;&gt;&lt;/p&gt;
@@ -338,9 +338,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2023/01/06/openmp002/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/01/06/openmp002/</guid>
             <title>OpenMP寻找循环依赖</title>
-            <link>http://example.com/2023/01/06/openmp002/</link>
+            <link>https://xingyuanjie.top/2023/01/06/openmp002/</link>
             <category>OpenMP</category>
             <pubDate>Fri, 06 Jan 2023 17:15:48 +0800</pubDate>
             <description><![CDATA[ &lt;h3 id=&#34;1-OpenMP寻找循环依赖&#34;&gt;&lt;a href=&#34;#1-OpenMP寻找循环依赖&#34; class=&#34;headerlink&#34; title=&#34;1.OpenMP寻找循环依赖&#34;&gt;&lt;/a&gt;1.OpenMP寻找循环依赖&lt;/h3&gt;&lt;p&gt;​		当我们试图使用一个parallel for指令时，首先应该注意的是：要小心发现循环依赖。我们不需要担心一般的数据依赖。例如，在下面循环中：&lt;/p&gt;
@@ -359,9 +359,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2023/01/03/openmp001/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/01/03/openmp001/</guid>
             <title>OpenMP梯度积分法</title>
-            <link>http://example.com/2023/01/03/openmp001/</link>
+            <link>https://xingyuanjie.top/2023/01/03/openmp001/</link>
             <category>OpenMP</category>
             <pubDate>Tue, 03 Jan 2023 17:19:45 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;OpenMP梯度积分法&#34;&gt;&lt;a href=&#34;#OpenMP梯度积分法&#34; class=&#34;headerlink&#34; title=&#34;OpenMP梯度积分法&#34;&gt;&lt;/a&gt;OpenMP梯度积分法&lt;/h2&gt;&lt;h3 id=&#34;1-梯度积分法&#34;&gt;&lt;a href=&#34;#1-梯度积分法&#34; class=&#34;headerlink&#34; title=&#34;1.梯度积分法&#34;&gt;&lt;/a&gt;1.梯度积分法&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;/2023/01/03/openmp001/image-20230106165434252.png&#34; alt=&#34;001&#34;&gt;&lt;/p&gt;

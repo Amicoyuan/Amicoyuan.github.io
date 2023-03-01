@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>http://example.com</id>
+    <id>https://xingyuanjie.top</id>
     <title>Amicoyuan • Posts by &#34;graph&#34; tag</title>
-    <link href="http://example.com" />
+    <link href="https://xingyuanjie.top" />
     <updated>2022-04-23T13:50:27.000Z</updated>
     <category term="AVX" />
     <category term="Data Structure" />
@@ -13,11 +13,11 @@
     <category term="Set" />
     <category term="团体程序设计天梯赛" />
     <category term="Sort" />
-    <category term="LinkList" />
-    <category term="双向链表" />
     <category term="Graph" />
     <category term="邻接表" />
     <category term="Vector" />
+    <category term="LinkList" />
+    <category term="双向链表" />
     <category term="Binary tree" />
     <category term="BFS" />
     <category term="模拟" />
@@ -25,8 +25,8 @@
     <category term="DFS" />
     <category term="结构体" />
     <category term="贪心" />
-    <category term="Double类型相等比较" />
     <category term="并查集" />
+    <category term="Double类型相等比较" />
     <category term="Map" />
     <category term="Pair" />
     <category term="Linux" />
@@ -54,9 +54,9 @@
     <category term="gcov" />
     <category term="bool" />
     <entry>
-        <id>http://example.com/2022/04/23/Algorithm032/</id>
+        <id>https://xingyuanjie.top/2022/04/23/Algorithm032/</id>
         <title>L2-036 网红点打卡攻略 (25 分)</title>
-        <link rel="alternate" href="http://example.com/2022/04/23/Algorithm032/"/>
+        <link rel="alternate" href="https://xingyuanjie.top/2022/04/23/Algorithm032/"/>
         <content type="html">&lt;h2 id=&#34;L2-036-网红点打卡攻略-25-分&#34;&gt;&lt;a href=&#34;#L2-036-网红点打卡攻略-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-036 网红点打卡攻略 (25 分)&#34;&gt;&lt;/a&gt;L2-036 网红点打卡攻略 (25 分)&lt;/h2&gt;&lt;p&gt;一个旅游景点，如果被带火了的话，就被称为“网红点”。大家来网红点游玩，俗称“打卡”。在各个网红点打卡的快（省）乐（钱）方法称为“攻略”。你的任务就是从一大堆攻略中，找出那个能在每个网红点打卡仅一次、并且路上花费最少的攻略。&lt;/p&gt;
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;首先第一行给出两个正整数：网红点的个数 &lt;em&gt;N&lt;/em&gt;（1&amp;lt;&lt;em&gt;N&lt;/em&gt;≤200）和网红点之间通路的条数 &lt;em&gt;M&lt;/em&gt;。随后 &lt;em&gt;M&lt;/em&gt; 行，每行给出有通路的两个网红点、以及这条路上的旅行花费（为正整数），格式为“网红点1 网红点2 费用”，其中网红点从 1 到 &lt;em&gt;N&lt;/em&gt; 编号；同时也给出你家到某些网红点的花费，格式相同，其中你家的编号固定为 &lt;code&gt;0&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;再下一行给出一个正整数 &lt;em&gt;K&lt;/em&gt;，是待检验的攻略的数量。随后 &lt;em&gt;K&lt;/em&gt; 行，每行给出一条待检攻略，格式为：&lt;/p&gt;
@@ -85,9 +85,9 @@
         <updated>2022-04-23T13:50:27.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2022/04/16/Algorithm028/</id>
+        <id>https://xingyuanjie.top/2022/04/16/Algorithm028/</id>
         <title>L2-010 排座位 (25 分)</title>
-        <link rel="alternate" href="http://example.com/2022/04/16/Algorithm028/"/>
+        <link rel="alternate" href="https://xingyuanjie.top/2022/04/16/Algorithm028/"/>
         <content type="html">&lt;h2 id=&#34;L2-010-排座位-25-分&#34;&gt;&lt;a href=&#34;#L2-010-排座位-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-010 排座位 (25 分)&#34;&gt;&lt;/a&gt;&lt;strong&gt;L2-010 排座位 (25 分)&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;布置宴席最微妙的事情，就是给前来参宴的各位宾客安排座位。无论如何，总不能把两个死对头排到同一张宴会桌旁！这个艰巨任务现在就交给你，对任何一对客人，请编写程序告诉主人他们是否能被安排同席。&lt;/p&gt;
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;输入第一行给出3个正整数：&lt;code&gt;N&lt;/code&gt;（≤100），即前来参宴的宾客总人数，则这些人从1到&lt;code&gt;N&lt;/code&gt;编号；&lt;code&gt;M&lt;/code&gt;为已知两两宾客之间的关系数；&lt;code&gt;K&lt;/code&gt;为查询的条数。随后&lt;code&gt;M&lt;/code&gt;行，每行给出一对宾客之间的关系，格式为：&lt;code&gt;宾客1 宾客2 关系&lt;/code&gt;，其中&lt;code&gt;关系&lt;/code&gt;为1表示是朋友，-1表示是死对头。注意两个人不可能既是朋友又是敌人。最后&lt;code&gt;K&lt;/code&gt;行，每行给出一对需要查询的宾客编号。&lt;/p&gt;
 &lt;p&gt;这里假设朋友的朋友也是朋友。但敌人的敌人并不一定就是朋友，朋友的敌人也不一定是敌人。只有单纯直接的敌对关系才是绝对不能同席的。&lt;/p&gt;
@@ -113,9 +113,9 @@
         <updated>2022-04-16T06:57:46.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2022/04/15/Algorithm025/</id>
+        <id>https://xingyuanjie.top/2022/04/15/Algorithm025/</id>
         <title>L2-013 红色警报 (25 分)</title>
-        <link rel="alternate" href="http://example.com/2022/04/15/Algorithm025/"/>
+        <link rel="alternate" href="https://xingyuanjie.top/2022/04/15/Algorithm025/"/>
         <content type="html">&lt;h2 id=&#34;L2-013-红色警报-25-分&#34;&gt;&lt;a href=&#34;#L2-013-红色警报-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-013 红色警报 (25 分)&#34;&gt;&lt;/a&gt;L2-013 红色警报 (25 分)&lt;/h2&gt;&lt;p&gt;战争中保持各个城市间的连通性非常重要。本题要求你编写一个报警程序，当失去一个城市导致国家被分裂为多个无法连通的区域时，就发出红色警报。注意：若该国本来就不完全连通，是分裂的k个区域，而失去一个城市并不改变其他城市之间的连通性，则不要发出警报。&lt;/p&gt;
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;输入在第一行给出两个整数&lt;code&gt;N&lt;/code&gt;（0 &amp;lt; &lt;code&gt;N&lt;/code&gt; ≤ 500）和&lt;code&gt;M&lt;/code&gt;（≤ 5000），分别为城市个数（于是默认城市从0到&lt;code&gt;N&lt;/code&gt;-1编号）和连接两城市的通路条数。随后&lt;code&gt;M&lt;/code&gt;行，每行给出一条通路所连接的两个城市的编号，其间以1个空格分隔。在城市信息之后给出被攻占的信息，即一个正整数&lt;code&gt;K&lt;/code&gt;和随后的&lt;code&gt;K&lt;/code&gt;个被攻占的城市的编号。&lt;/p&gt;
 &lt;p&gt;注意：输入保证给出的被攻占的城市编号都是合法的且无重复，但并不保证给出的通路没有重复。&lt;/p&gt;
@@ -141,9 +141,9 @@
         <updated>2022-04-15T13:09:30.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2022/04/12/Algorithm018/</id>
+        <id>https://xingyuanjie.top/2022/04/12/Algorithm018/</id>
         <title>L2-023 图着色问题 (25 分)</title>
-        <link rel="alternate" href="http://example.com/2022/04/12/Algorithm018/"/>
+        <link rel="alternate" href="https://xingyuanjie.top/2022/04/12/Algorithm018/"/>
         <content type="html">&lt;h2 id=&#34;L2-023-图着色问题-25-分&#34;&gt;&lt;a href=&#34;#L2-023-图着色问题-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-023 图着色问题 (25 分)&#34;&gt;&lt;/a&gt;L2-023 图着色问题 (25 分)&lt;/h2&gt;&lt;p&gt;图着色问题是一个著名的NP完全问题。给定无向图&lt;em&gt;G&lt;/em&gt;&amp;#x3D;(&lt;em&gt;V&lt;/em&gt;,&lt;em&gt;E&lt;/em&gt;)，问可否用&lt;em&gt;K&lt;/em&gt;种颜色为&lt;em&gt;V&lt;/em&gt;中的每一个顶点分配一种颜色，使得不会有两个相邻顶点具有同一种颜色？&lt;/p&gt;
 &lt;p&gt;但本题并不是要你解决这个着色问题，而是对给定的一种颜色分配，请你判断这是否是图着色问题的一个解。&lt;/p&gt;
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;输入在第一行给出3个整数&lt;em&gt;V&lt;/em&gt;（0&amp;lt;&lt;em&gt;V&lt;/em&gt;≤500）、&lt;em&gt;E&lt;/em&gt;（≥0）和&lt;em&gt;K&lt;/em&gt;（0&amp;lt;&lt;em&gt;K&lt;/em&gt;≤&lt;em&gt;V&lt;/em&gt;），分别是无向图的顶点数、边数、以及颜色数。顶点和颜色都从1到&lt;em&gt;V&lt;/em&gt;编号。随后&lt;em&gt;E&lt;/em&gt;行，每行给出一条边的两个端点的编号。在图的信息给出之后，给出了一个正整数&lt;em&gt;N&lt;/em&gt;（≤20），是待检查的颜色分配方案的个数。随后&lt;em&gt;N&lt;/em&gt;行，每行顺次给出&lt;em&gt;V&lt;/em&gt;个顶点的颜色（第&lt;em&gt;i&lt;/em&gt;个数字表示第&lt;em&gt;i&lt;/em&gt;个顶点的颜色），数字间以空格分隔。题目保证给定的无向图是合法的（即不存在自回路和重边）。&lt;/p&gt;
@@ -169,9 +169,9 @@
         <updated>2022-04-12T10:59:52.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2021/12/22/algorithm002/</id>
+        <id>https://xingyuanjie.top/2021/12/22/algorithm002/</id>
         <title>Graph-Data Structure</title>
-        <link rel="alternate" href="http://example.com/2021/12/22/algorithm002/"/>
+        <link rel="alternate" href="https://xingyuanjie.top/2021/12/22/algorithm002/"/>
         <content type="html">&lt;h1 id=&#34;Graph-Data-Structure&#34;&gt;&lt;a href=&#34;#Graph-Data-Structure&#34; class=&#34;headerlink&#34; title=&#34;Graph-Data Structure&#34;&gt;&lt;/a&gt;Graph-Data Structure&lt;/h1&gt;&lt;h2 id=&#34;1-邻接表的应用&#34;&gt;&lt;a href=&#34;#1-邻接表的应用&#34; class=&#34;headerlink&#34; title=&#34;1.邻接表的应用&#34;&gt;&lt;/a&gt;1.邻接表的应用&lt;/h2&gt;&lt;h3 id=&#34;样题一：L2-025-分而治之-25-分&#34;&gt;&lt;a href=&#34;#样题一：L2-025-分而治之-25-分&#34; class=&#34;headerlink&#34; title=&#34;样题一：L2-025 分而治之 (25 分)&#34;&gt;&lt;/a&gt;样题一：L2-025 分而治之 (25 分)&lt;/h3&gt;&lt;h4 id=&#34;题目描述：&#34;&gt;&lt;a href=&#34;#题目描述：&#34; class=&#34;headerlink&#34; title=&#34;题目描述：&#34;&gt;&lt;/a&gt;题目描述：&lt;/h4&gt;&lt;p&gt;分而治之，各个击破是兵家常用的策略之一。在战争中，我们希望首先攻下敌方的部分城市，使其剩余的城市变成孤立无援，然后再分头各个击破。为此参谋部提供了若干打击方案。本题就请你编写程序，判断每个方案的可行性。&lt;/p&gt;
 &lt;h4 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h4&gt;&lt;p&gt;输入在第一行给出两个正整数 N 和 M（均不超过10 000），分别为敌方城市个数（于是默认城市从 1 到 N 编号）和连接两城市的通路条数。随后 M 行，每行给出一条通路所连接的两个城市的编号，其间以一个空格分隔。在城市信息之后给出参谋部的系列方案，即一个正整数 K （≤ 100）和随后的 K 行方案，每行按以下格式给出：&lt;/p&gt;
 &lt;figure class=&#34;highlight css&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs css&#34;&gt;Np v&lt;span class=&#34;hljs-selector-attr&#34;&gt;[1]&lt;/span&gt; v&lt;span class=&#34;hljs-selector-attr&#34;&gt;[2]&lt;/span&gt; ... v&lt;span class=&#34;hljs-selector-attr&#34;&gt;[Np]&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;

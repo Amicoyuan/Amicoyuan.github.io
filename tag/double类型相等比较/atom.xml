@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>http://example.com</id>
+    <id>https://xingyuanjie.top</id>
     <title>Amicoyuan • Posts by &#34;double类型相等比较&#34; tag</title>
-    <link href="http://example.com" />
+    <link href="https://xingyuanjie.top" />
     <updated>2022-04-16T06:57:38.000Z</updated>
     <category term="AVX" />
     <category term="Data Structure" />
@@ -13,11 +13,11 @@
     <category term="Set" />
     <category term="团体程序设计天梯赛" />
     <category term="Sort" />
-    <category term="LinkList" />
-    <category term="双向链表" />
     <category term="Graph" />
     <category term="邻接表" />
     <category term="Vector" />
+    <category term="LinkList" />
+    <category term="双向链表" />
     <category term="Binary tree" />
     <category term="BFS" />
     <category term="模拟" />
@@ -25,8 +25,8 @@
     <category term="DFS" />
     <category term="结构体" />
     <category term="贪心" />
-    <category term="Double类型相等比较" />
     <category term="并查集" />
+    <category term="Double类型相等比较" />
     <category term="Map" />
     <category term="Pair" />
     <category term="Linux" />
@@ -54,9 +54,9 @@
     <category term="gcov" />
     <category term="bool" />
     <entry>
-        <id>http://example.com/2022/04/16/Algorithm027/</id>
+        <id>https://xingyuanjie.top/2022/04/16/Algorithm027/</id>
         <title>L2-009 抢红包 (25 分)</title>
-        <link rel="alternate" href="http://example.com/2022/04/16/Algorithm027/"/>
+        <link rel="alternate" href="https://xingyuanjie.top/2022/04/16/Algorithm027/"/>
         <content type="html">&lt;h2 id=&#34;L2-009-抢红包-25-分&#34;&gt;&lt;a href=&#34;#L2-009-抢红包-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-009 抢红包 (25 分)&#34;&gt;&lt;/a&gt;&lt;strong&gt;L2-009 抢红包 (25 分)&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;没有人没抢过红包吧…… 这里给出&lt;em&gt;N&lt;/em&gt;个人之间互相发红包、抢红包的记录，请你统计一下他们抢红包的收获。&lt;/p&gt;
 &lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;输入第一行给出一个正整数&lt;em&gt;N&lt;/em&gt;（≤104），即参与发红包和抢红包的总人数，则这些人从1到&lt;em&gt;N&lt;/em&gt;编号。随后&lt;em&gt;N&lt;/em&gt;行，第&lt;em&gt;i&lt;/em&gt;行给出编号为&lt;em&gt;i&lt;/em&gt;的人发红包的记录，格式如下：&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;K     N&lt;/em&gt;1 &lt;em&gt;P&lt;/em&gt;1⋯ NK PK&lt;/p&gt;

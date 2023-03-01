@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>http://example.com</id>
+    <id>https://xingyuanjie.top</id>
     <title>Amicoyuan • Posts by &#34;intel&#34; tag</title>
-    <link href="http://example.com" />
+    <link href="https://xingyuanjie.top" />
     <updated>2023-02-26T11:12:51.000Z</updated>
     <category term="AVX" />
     <category term="Data Structure" />
@@ -13,11 +13,11 @@
     <category term="Set" />
     <category term="团体程序设计天梯赛" />
     <category term="Sort" />
-    <category term="LinkList" />
-    <category term="双向链表" />
     <category term="Graph" />
     <category term="邻接表" />
     <category term="Vector" />
+    <category term="LinkList" />
+    <category term="双向链表" />
     <category term="Binary tree" />
     <category term="BFS" />
     <category term="模拟" />
@@ -25,8 +25,8 @@
     <category term="DFS" />
     <category term="结构体" />
     <category term="贪心" />
-    <category term="Double类型相等比较" />
     <category term="并查集" />
+    <category term="Double类型相等比较" />
     <category term="Map" />
     <category term="Pair" />
     <category term="Linux" />
@@ -54,9 +54,9 @@
     <category term="gcov" />
     <category term="bool" />
     <entry>
-        <id>http://example.com/2023/02/26/intel001/</id>
+        <id>https://xingyuanjie.top/2023/02/26/intel001/</id>
         <title>unroll_and_jam/nounroll_and_jam</title>
-        <link rel="alternate" href="http://example.com/2023/02/26/intel001/"/>
+        <link rel="alternate" href="https://xingyuanjie.top/2023/02/26/intel001/"/>
         <content type="html">&lt;h1 id=&#34;unroll-and-jam-x2F-nounroll-and-jam&#34;&gt;&lt;a href=&#34;#unroll-and-jam-x2F-nounroll-and-jam&#34; class=&#34;headerlink&#34; title=&#34;unroll_and_jam&amp;#x2F;nounroll_and_jam&#34;&gt;&lt;/a&gt;unroll_and_jam&amp;#x2F;nounroll_and_jam&lt;/h1&gt;&lt;p&gt;启用或禁用循环展开和阻塞。这些指令只能应用于迭代for循环。&lt;/p&gt;
 &lt;h2 id=&#34;Syntax&#34;&gt;&lt;a href=&#34;#Syntax&#34; class=&#34;headerlink&#34; title=&#34;Syntax&#34;&gt;&lt;/a&gt;Syntax&lt;/h2&gt;&lt;p&gt;#pragma unroll_and_jam	#pragma unroll_and_jam (n)	#pragma nounroll_and_jam&lt;/p&gt;
 &lt;h2 id=&#34;Arguments&#34;&gt;&lt;a href=&#34;#Arguments&#34; class=&#34;headerlink&#34; title=&#34;Arguments&#34;&gt;&lt;/a&gt;Arguments&lt;/h2&gt;&lt;p&gt;展开因子，表示展开循环的次数;必须是0到255之间的整数常数&lt;/p&gt;

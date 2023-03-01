@@ -2,7 +2,7 @@
 <rss version="2.0">
     <channel>
         <title>Amicoyuan • Posts by &#34;vector&#34; tag</title>
-        <link>http://example.com</link>
+        <link>https://xingyuanjie.top</link>
         <description></description>
         <language>zh-CN</language>
         <pubDate>Tue, 28 Feb 2023 20:59:01 +0800</pubDate>
@@ -16,11 +16,11 @@
         <category>Set</category>
         <category>团体程序设计天梯赛</category>
         <category>Sort</category>
-        <category>LinkList</category>
-        <category>双向链表</category>
         <category>Graph</category>
         <category>邻接表</category>
         <category>Vector</category>
+        <category>LinkList</category>
+        <category>双向链表</category>
         <category>Binary tree</category>
         <category>BFS</category>
         <category>模拟</category>
@@ -28,8 +28,8 @@
         <category>DFS</category>
         <category>结构体</category>
         <category>贪心</category>
-        <category>Double类型相等比较</category>
         <category>并查集</category>
+        <category>Double类型相等比较</category>
         <category>Map</category>
         <category>Pair</category>
         <category>Linux</category>
@@ -57,9 +57,9 @@
         <category>gcov</category>
         <category>bool</category>
         <item>
-            <guid isPermalink="true">http://example.com/2023/02/28/vectorbool/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/02/28/vectorbool/</guid>
             <title>vector&lt;bool&gt;与vector&lt;T&gt;</title>
-            <link>http://example.com/2023/02/28/vectorbool/</link>
+            <link>https://xingyuanjie.top/2023/02/28/vectorbool/</link>
             <category>STL</category>
             <category>Vector</category>
             <category>C/C++</category>
@@ -81,9 +81,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2022/04/23/Algorithm031/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2022/04/23/Algorithm031/</guid>
             <title>L2-039 清点代码库 (25 分)</title>
-            <link>http://example.com/2022/04/23/Algorithm031/</link>
+            <link>https://xingyuanjie.top/2022/04/23/Algorithm031/</link>
             <category>Data Structure</category>
             <category>C++</category>
             <category>团体程序设计天梯赛</category>
@@ -110,9 +110,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2022/04/13/Algorithm022/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2022/04/13/Algorithm022/</guid>
             <title>L2-031 深入虎穴 (25 分)</title>
-            <link>http://example.com/2022/04/13/Algorithm022/</link>
+            <link>https://xingyuanjie.top/2022/04/13/Algorithm022/</link>
             <category>Data Structure</category>
             <category>C++</category>
             <category>团体程序设计天梯赛</category>
@@ -139,9 +139,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2022/04/13/Algorithm021/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2022/04/13/Algorithm021/</guid>
             <title>L2-040 哲哲打游戏 (25 分)</title>
-            <link>http://example.com/2022/04/13/Algorithm021/</link>
+            <link>https://xingyuanjie.top/2022/04/13/Algorithm021/</link>
             <category>Data Structure</category>
             <category>C++</category>
             <category>团体程序设计天梯赛</category>
@@ -177,9 +177,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2022/04/13/Algorithm019/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2022/04/13/Algorithm019/</guid>
             <title>L2-026 小字辈 (25 分)</title>
-            <link>http://example.com/2022/04/13/Algorithm019/</link>
+            <link>https://xingyuanjie.top/2022/04/13/Algorithm019/</link>
             <category>Data Structure</category>
             <category>C++</category>
             <category>团体程序设计天梯赛</category>
@@ -202,9 +202,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2022/04/12/Algorithm018/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2022/04/12/Algorithm018/</guid>
             <title>L2-023 图着色问题 (25 分)</title>
-            <link>http://example.com/2022/04/12/Algorithm018/</link>
+            <link>https://xingyuanjie.top/2022/04/12/Algorithm018/</link>
             <category>Data Structure</category>
             <category>C++</category>
             <category>Set</category>

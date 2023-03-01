@@ -2,7 +2,7 @@
 <rss version="2.0">
     <channel>
         <title>Amicoyuan • Posts by &#34;cuda&#34; tag</title>
-        <link>http://example.com</link>
+        <link>https://xingyuanjie.top</link>
         <description></description>
         <language>zh-CN</language>
         <pubDate>Sat, 28 Jan 2023 15:41:55 +0800</pubDate>
@@ -16,11 +16,11 @@
         <category>Set</category>
         <category>团体程序设计天梯赛</category>
         <category>Sort</category>
-        <category>LinkList</category>
-        <category>双向链表</category>
         <category>Graph</category>
         <category>邻接表</category>
         <category>Vector</category>
+        <category>LinkList</category>
+        <category>双向链表</category>
         <category>Binary tree</category>
         <category>BFS</category>
         <category>模拟</category>
@@ -28,8 +28,8 @@
         <category>DFS</category>
         <category>结构体</category>
         <category>贪心</category>
-        <category>Double类型相等比较</category>
         <category>并查集</category>
+        <category>Double类型相等比较</category>
         <category>Map</category>
         <category>Pair</category>
         <category>Linux</category>
@@ -57,9 +57,9 @@
         <category>gcov</category>
         <category>bool</category>
         <item>
-            <guid isPermalink="true">http://example.com/2023/01/28/cuda006/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/01/28/cuda006/</guid>
             <title>CUDA线程管理</title>
-            <link>http://example.com/2023/01/28/cuda006/</link>
+            <link>https://xingyuanjie.top/2023/01/28/cuda006/</link>
             <category>CUDA</category>
             <pubDate>Sat, 28 Jan 2023 15:41:55 +0800</pubDate>
             <description><![CDATA[ &lt;h3 id=&#34;1-线程管理&#34;&gt;&lt;a href=&#34;#1-线程管理&#34; class=&#34;headerlink&#34; title=&#34;1.线程管理&#34;&gt;&lt;/a&gt;1.线程管理&lt;/h3&gt;&lt;p&gt;当核函数在主机端启动时，它的执行会移动到设备上，此时设备中会产生大量的线程并且每个线程都执行由核函数指定的语句。了解如何组织线程是CUDA编程的一个关键部分。CUDA明确了线程层次抽象的概念以便于你组织线程。这是一个两层的线程层次结构，由线程块和线程块网格构成，如图2-5所示。&lt;/p&gt;
@@ -134,9 +134,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2023/01/17/cuda005/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/01/17/cuda005/</guid>
             <title>CUDA内存管理</title>
-            <link>http://example.com/2023/01/17/cuda005/</link>
+            <link>https://xingyuanjie.top/2023/01/17/cuda005/</link>
             <category>CUDA</category>
             <pubDate>Tue, 17 Jan 2023 22:03:10 +0800</pubDate>
             <description><![CDATA[ &lt;h3 id=&#34;1-内存管理&#34;&gt;&lt;a href=&#34;#1-内存管理&#34; class=&#34;headerlink&#34; title=&#34;1.内存管理&#34;&gt;&lt;/a&gt;1.内存管理&lt;/h3&gt;&lt;p&gt;CUDA编程模型假设系统是由一个主机和一个设备组成的，而且各自拥有独立的内存。核函数是在设备上运行的。为使你拥有充分的控制权并使系统达到最佳性能，CUDA运行时负责分配与释放设备内存，并且在主机内存和设备内存之间传输数据。表2-1列出了标准的C函数以及相应地针对内存操作的CUDA C函数。&lt;/p&gt;
@@ -203,9 +203,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2023/01/17/cuda004/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/01/17/cuda004/</guid>
             <title>CUDA编程结构</title>
-            <link>http://example.com/2023/01/17/cuda004/</link>
+            <link>https://xingyuanjie.top/2023/01/17/cuda004/</link>
             <category>CUDA</category>
             <pubDate>Tue, 17 Jan 2023 21:36:04 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;CUDA编程结构&#34;&gt;&lt;a href=&#34;#CUDA编程结构&#34; class=&#34;headerlink&#34; title=&#34;CUDA编程结构&#34;&gt;&lt;/a&gt;CUDA编程结构&lt;/h2&gt;&lt;p&gt;CUDA编程模型使用由C语言扩展生成的注释代码在异构计算系统中执行应用程序。&lt;/p&gt;
@@ -230,9 +230,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2023/01/17/cuda003/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/01/17/cuda003/</guid>
             <title>CUDA编程模型概述</title>
-            <link>http://example.com/2023/01/17/cuda003/</link>
+            <link>https://xingyuanjie.top/2023/01/17/cuda003/</link>
             <category>CUDA</category>
             <pubDate>Tue, 17 Jan 2023 20:29:01 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;CUDA编程模型概述&#34;&gt;&lt;a href=&#34;#CUDA编程模型概述&#34; class=&#34;headerlink&#34; title=&#34;CUDA编程模型概述&#34;&gt;&lt;/a&gt;CUDA编程模型概述&lt;/h2&gt;&lt;p&gt;CUDA编程模型提供了一个计算机架构抽象作为应用程序和其可用硬件之间的桥梁。图2-1说明了程序和编程模型实现之间的抽象结构的重要。通信抽象是程序与编程模型实现之间的分界线，它通过专业的硬件原语和操作系统的编译器或库来实现。利用编程模型所编写的程序指定了程序的各组成部分是如何共享信息及相互协作的。编程模型从逻辑上提供了一个特定的计算机架构，通常它体现在编程语言或编程环境中。&lt;/p&gt;
@@ -253,9 +253,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2023/01/16/cuda002/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/01/16/cuda002/</guid>
             <title>CUDA:一种异构计算平台</title>
-            <link>http://example.com/2023/01/16/cuda002/</link>
+            <link>https://xingyuanjie.top/2023/01/16/cuda002/</link>
             <category>CUDA</category>
             <pubDate>Mon, 16 Jan 2023 17:46:48 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;CUDA-一种异构计算平台&#34;&gt;&lt;a href=&#34;#CUDA-一种异构计算平台&#34; class=&#34;headerlink&#34; title=&#34;CUDA:一种异构计算平台&#34;&gt;&lt;/a&gt;CUDA:一种异构计算平台&lt;/h2&gt;&lt;h3 id=&#34;1-CUDA的简单介绍&#34;&gt;&lt;a href=&#34;#1-CUDA的简单介绍&#34; class=&#34;headerlink&#34; title=&#34;1.CUDA的简单介绍&#34;&gt;&lt;/a&gt;1.CUDA的简单介绍&lt;/h3&gt;&lt;p&gt;CUDA是一种通用的并行计算平台和编程模型，它利用NVIDIA GPU中的并行计算引擎能够有效地解决复杂的计算问题。通过使用CUDA，你可以像在CPU上，通过GPU来进行计算。&lt;/p&gt;
@@ -282,9 +282,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2023/01/16/cuda001/</guid>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/01/16/cuda001/</guid>
             <title>CUDA用GPU输出Hello World</title>
-            <link>http://example.com/2023/01/16/cuda001/</link>
+            <link>https://xingyuanjie.top/2023/01/16/cuda001/</link>
             <category>CUDA</category>
             <pubDate>Mon, 16 Jan 2023 16:58:39 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;用GPU输出Hello-World&#34;&gt;&lt;a href=&#34;#用GPU输出Hello-World&#34; class=&#34;headerlink&#34; title=&#34;用GPU输出Hello World&#34;&gt;&lt;/a&gt;用GPU输出Hello World&lt;/h2&gt;&lt;h3 id=&#34;1-检查环境&#34;&gt;&lt;a href=&#34;#1-检查环境&#34; class=&#34;headerlink&#34; title=&#34;1.检查环境&#34;&gt;&lt;/a&gt;1.检查环境&lt;/h3&gt;&lt;p&gt;学习一个新编程语言的最好方式就是使用这种语言来编写程序。在本节，你将开始编写在GPU上运行的第一个内核代码。像其他任何编程语言一样编写GPU上的第一个程序是输出字符串“Hello World”。&lt;/p&gt;
