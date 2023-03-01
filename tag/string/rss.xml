@@ -47,12 +47,12 @@
         <category>前缀和</category>
         <category>Mirror</category>
         <category>牛客</category>
-        <category>Numactl</category>
         <category>OpenMP</category>
+        <category>Numactl</category>
         <category>C/C++</category>
         <category>register</category>
-        <category>Slurm</category>
         <category>Tensorflow</category>
+        <category>Slurm</category>
         <category>性能分析工具</category>
         <category>gcov</category>
         <category>bool</category>
