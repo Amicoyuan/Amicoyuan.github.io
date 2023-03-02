@@ -3,7 +3,7 @@
     <id>https://xingyuanjie.top</id>
     <title>Amicoyuan • Posts by &#34;leetcode&#34; tag</title>
     <link href="https://xingyuanjie.top" />
-    <updated>2023-03-01T09:35:03.000Z</updated>
+    <updated>2023-03-02T12:03:32.000Z</updated>
     <category term="AVX" />
     <category term="Data Structure" />
     <category term="String" />
@@ -15,11 +15,11 @@
     <category term="Sort" />
     <category term="LinkList" />
     <category term="双向链表" />
-    <category term="Binary tree" />
+    <category term="Graph" />
     <category term="邻接表" />
     <category term="Vector" />
+    <category term="Binary tree" />
     <category term="BFS" />
-    <category term="Graph" />
     <category term="模拟" />
     <category term="邻接矩阵" />
     <category term="DFS" />
@@ -35,12 +35,13 @@
     <category term="GEMM" />
     <category term="AVX2" />
     <category term="dgemm" />
-    <category term="CUDA" />
     <category term="Cache" />
     <category term="Blocking" />
-    <category term="LeetCode" />
+    <category term="CUDA" />
     <category term="Intel" />
+    <category term="LeetCode" />
     <category term="双指针" />
+    <category term="数组翻转" />
     <category term="前缀和" />
     <category term="Mirror" />
     <category term="牛客" />
@@ -53,6 +54,21 @@
     <category term="性能分析工具" />
     <category term="gcov" />
     <category term="bool" />
+    <entry>
+        <id>https://xingyuanjie.top/2023/03/02/leetcode189/</id>
+        <title>189.轮转数组</title>
+        <link rel="alternate" href="https://xingyuanjie.top/2023/03/02/leetcode189/"/>
+        <content type="html">&lt;h2 id=&#34;189-轮转数组&#34;&gt;&lt;a href=&#34;#189-轮转数组&#34; class=&#34;headerlink&#34; title=&#34;189.轮转数组&#34;&gt;&lt;/a&gt;189.轮转数组&lt;/h2&gt;&lt;h2 id=&#34;题目链接&#34;&gt;&lt;a href=&#34;#题目链接&#34; class=&#34;headerlink&#34; title=&#34;题目链接&#34;&gt;&lt;/a&gt;题目链接&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://leetcode.cn/problems/rotate-array/&#34;&gt;189. 轮转数组 - 力扣（LeetCode）&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;完整代码&#34;&gt;&lt;a href=&#34;#完整代码&#34; class=&#34;headerlink&#34; title=&#34;完整代码&#34;&gt;&lt;/a&gt;完整代码&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;/2023/03/02/leetcode189/image-20230302200538871.png&#34; alt=&#34;image-20230302200538871&#34;&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-class&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;Solution&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;public&lt;/span&gt;:&lt;br&gt;    &lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;reverse&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(vector&amp;lt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;&amp;gt;&amp;amp; nums,&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; begin,&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; end)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;    &lt;/span&gt;&amp;#123;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;while&lt;/span&gt;(begin&amp;lt;end)&amp;#123;&lt;br&gt;            &lt;span class=&#34;hljs-built_in&#34;&gt;swap&lt;/span&gt;(nums[begin], nums[end]);&lt;br&gt;            begin++;&lt;br&gt;            end--;&lt;br&gt;        &amp;#125;&lt;br&gt;    &amp;#125;&lt;br&gt;    &lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;rotate&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(vector&amp;lt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;&amp;gt;&amp;amp; nums, &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; k)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;br&gt;        &lt;span class=&#34;hljs-comment&#34;&gt;//数组翻转&lt;/span&gt;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; p = k%nums.&lt;span class=&#34;hljs-built_in&#34;&gt;size&lt;/span&gt;();&lt;br&gt;        &lt;span class=&#34;hljs-built_in&#34;&gt;reverse&lt;/span&gt;(nums,&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;,nums.&lt;span class=&#34;hljs-built_in&#34;&gt;size&lt;/span&gt;()&lt;span class=&#34;hljs-number&#34;&gt;-1&lt;/span&gt;);&lt;br&gt;        &lt;span class=&#34;hljs-built_in&#34;&gt;reverse&lt;/span&gt;(nums,&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;,p&lt;span class=&#34;hljs-number&#34;&gt;-1&lt;/span&gt;);&lt;br&gt;        &lt;span class=&#34;hljs-built_in&#34;&gt;reverse&lt;/span&gt;(nums,p,nums.&lt;span class=&#34;hljs-built_in&#34;&gt;size&lt;/span&gt;()&lt;span class=&#34;hljs-number&#34;&gt;-1&lt;/span&gt;);&lt;br&gt;    &amp;#125;&lt;br&gt;&amp;#125;;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h2 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://leetcode.cn/problems/rotate-array/solution/xuan-zhuan-shu-zu-by-leetcode-solution-nipk/&#34;&gt;旋转数组 - 轮转数组 - 力扣（LeetCode）&lt;/a&gt;&lt;/p&gt;
+</content>
+        <category term="C++" />
+        <category term="LeetCode" />
+        <category term="数组翻转" />
+        <updated>2023-03-02T12:03:32.000Z</updated>
+    </entry>
     <entry>
         <id>https://xingyuanjie.top/2023/03/01/leetcode724/</id>
         <title>724.寻找数组的中心下标</title>

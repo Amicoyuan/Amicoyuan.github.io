@@ -1,0 +1,20 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Amicoyuan • All posts by \"数组翻转\" tag",
+    "description": "",
+    "home_page_url": "https://xingyuanjie.top",
+    "items": [
+        {
+            "id": "https://xingyuanjie.top/2023/03/02/leetcode189/",
+            "url": "https://xingyuanjie.top/2023/03/02/leetcode189/",
+            "title": "189.轮转数组",
+            "date_published": "2023-03-02T12:03:32.000Z",
+            "content_html": "<h2 id=\"189-轮转数组\"><a href=\"#189-轮转数组\" class=\"headerlink\" title=\"189.轮转数组\"></a>189.轮转数组</h2><h2 id=\"题目链接\"><a href=\"#题目链接\" class=\"headerlink\" title=\"题目链接\"></a>题目链接</h2><p><a href=\"https://leetcode.cn/problems/rotate-array/\">189. 轮转数组 - 力扣（LeetCode）</a></p>\n<h2 id=\"完整代码\"><a href=\"#完整代码\" class=\"headerlink\" title=\"完整代码\"></a>完整代码</h2><p><img src=\"/2023/03/02/leetcode189/image-20230302200538871.png\" alt=\"image-20230302200538871\"></p>\n<figure class=\"highlight c++\"><table><tr><td class=\"gutter hljs\"><div class=\"hljs code-wrapper\"><pre><span class=\"line\">1</span><br><span class=\"line\">2</span><br><span class=\"line\">3</span><br><span class=\"line\">4</span><br><span class=\"line\">5</span><br><span class=\"line\">6</span><br><span class=\"line\">7</span><br><span class=\"line\">8</span><br><span class=\"line\">9</span><br><span class=\"line\">10</span><br><span class=\"line\">11</span><br><span class=\"line\">12</span><br><span class=\"line\">13</span><br><span class=\"line\">14</span><br><span class=\"line\">15</span><br><span class=\"line\">16</span><br><span class=\"line\">17</span><br><span class=\"line\">18</span><br></pre></div></td><td class=\"code\"><div class=\"hljs code-wrapper\"><pre><code class=\"hljs c++\"><span class=\"hljs-class\"><span class=\"hljs-keyword\">class</span> <span class=\"hljs-title\">Solution</span> &#123;</span><br><span class=\"hljs-keyword\">public</span>:<br>    <span class=\"hljs-function\"><span class=\"hljs-keyword\">void</span> <span class=\"hljs-title\">reverse</span><span class=\"hljs-params\">(vector&lt;<span class=\"hljs-keyword\">int</span>&gt;&amp; nums,<span class=\"hljs-keyword\">int</span> begin,<span class=\"hljs-keyword\">int</span> end)</span></span><br><span class=\"hljs-function\">    </span>&#123;<br>        <span class=\"hljs-keyword\">while</span>(begin&lt;end)&#123;<br>            <span class=\"hljs-built_in\">swap</span>(nums[begin], nums[end]);<br>            begin++;<br>            end--;<br>        &#125;<br>    &#125;<br>    <span class=\"hljs-function\"><span class=\"hljs-keyword\">void</span> <span class=\"hljs-title\">rotate</span><span class=\"hljs-params\">(vector&lt;<span class=\"hljs-keyword\">int</span>&gt;&amp; nums, <span class=\"hljs-keyword\">int</span> k)</span> </span>&#123;<br>        <span class=\"hljs-comment\">//数组翻转</span><br>        <span class=\"hljs-keyword\">int</span> p = k%nums.<span class=\"hljs-built_in\">size</span>();<br>        <span class=\"hljs-built_in\">reverse</span>(nums,<span class=\"hljs-number\">0</span>,nums.<span class=\"hljs-built_in\">size</span>()<span class=\"hljs-number\">-1</span>);<br>        <span class=\"hljs-built_in\">reverse</span>(nums,<span class=\"hljs-number\">0</span>,p<span class=\"hljs-number\">-1</span>);<br>        <span class=\"hljs-built_in\">reverse</span>(nums,p,nums.<span class=\"hljs-built_in\">size</span>()<span class=\"hljs-number\">-1</span>);<br>    &#125;<br>&#125;;<br></code></pre></div></td></tr></table></figure>\n\n<h2 id=\"参考资料\"><a href=\"#参考资料\" class=\"headerlink\" title=\"参考资料\"></a>参考资料</h2><p><a href=\"https://leetcode.cn/problems/rotate-array/solution/xuan-zhuan-shu-zu-by-leetcode-solution-nipk/\">旋转数组 - 轮转数组 - 力扣（LeetCode）</a></p>\n",
+            "tags": [
+                "C++",
+                "LeetCode",
+                "数组翻转"
+            ]
+        }
+    ]
+}
