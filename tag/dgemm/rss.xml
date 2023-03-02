@@ -36,8 +36,8 @@
         <category>MPI</category>
         <category>Matrix</category>
         <category>GEMM</category>
-        <category>AVX2</category>
         <category>dgemm</category>
+        <category>AVX2</category>
         <category>Cache</category>
         <category>Blocking</category>
         <category>CUDA</category>
@@ -45,6 +45,7 @@
         <category>LeetCode</category>
         <category>双指针</category>
         <category>数组翻转</category>
+        <category>哈希表</category>
         <category>前缀和</category>
         <category>Mirror</category>
         <category>牛客</category>
@@ -52,9 +53,9 @@
         <category>OpenMP</category>
         <category>C/C++</category>
         <category>register</category>
-        <category>Slurm</category>
         <category>Tensorflow</category>
         <category>性能分析工具</category>
+        <category>Slurm</category>
         <category>gcov</category>
         <category>bool</category>
         <item>
