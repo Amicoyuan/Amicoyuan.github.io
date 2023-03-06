@@ -5,17 +5,17 @@
         <link>https://xingyuanjie.top</link>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Thu, 09 Dec 2021 14:59:11 +0800</pubDate>
-        <lastBuildDate>Thu, 09 Dec 2021 14:59:11 +0800</lastBuildDate>
+        <pubDate>Mon, 06 Mar 2023 19:00:34 +0800</pubDate>
+        <lastBuildDate>Mon, 06 Mar 2023 19:00:34 +0800</lastBuildDate>
         <category>AVX</category>
         <category>Data Structure</category>
-        <category>String</category>
-        <category>Find</category>
-        <category>STL</category>
-        <category>C++</category>
         <category>Set</category>
         <category>团体程序设计天梯赛</category>
+        <category>STL</category>
+        <category>C++</category>
         <category>Sort</category>
+        <category>String</category>
+        <category>Find</category>
         <category>LinkList</category>
         <category>双向链表</category>
         <category>Graph</category>
@@ -33,9 +33,11 @@
         <category>Map</category>
         <category>Pair</category>
         <category>Linux</category>
-        <category>MPI</category>
+        <category>Tensorflow</category>
+        <category>Machine Learning</category>
         <category>Matrix</category>
         <category>GEMM</category>
+        <category>MPI</category>
         <category>AVX2</category>
         <category>dgemm</category>
         <category>Cache</category>
@@ -54,10 +56,102 @@
         <category>C/C++</category>
         <category>register</category>
         <category>Slurm</category>
-        <category>Tensorflow</category>
         <category>性能分析工具</category>
-        <category>gcov</category>
         <category>bool</category>
+        <category>gcov</category>
+        <item>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/03/06/ML001/</guid>
+            <title>线性回归模型</title>
+            <link>https://xingyuanjie.top/2023/03/06/ML001/</link>
+            <category>Tensorflow</category>
+            <category>Machine Learning</category>
+            <pubDate>Mon, 06 Mar 2023 19:00:34 +0800</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;线性回归模型&#34;&gt;&lt;a href=&#34;#线性回归模型&#34; class=&#34;headerlink&#34; title=&#34;线性回归模型&#34;&gt;&lt;/a&gt;线性回归模型&lt;/h2&gt;&lt;h3 id=&#34;MOdel-Representation&#34;&gt;&lt;a href=&#34;#MOdel-Representation&#34; class=&#34;headerlink&#34; title=&#34;MOdel Representation&#34;&gt;&lt;/a&gt;MOdel Representation&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;/2023/03/06/ML001/image-20230306195956356.png&#34; alt=&#34;image-20230306195956356&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;Goals&#34;&gt;&lt;a href=&#34;#Goals&#34; class=&#34;headerlink&#34; title=&#34;Goals&#34;&gt;&lt;/a&gt;Goals&lt;/h3&gt;&lt;p&gt;In this lab you will:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;learn to implement the model f_{w,b} for linear regression with one variable&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;Notation&#34;&gt;&lt;a href=&#34;#Notation&#34; class=&#34;headerlink&#34; title=&#34;Notation&#34;&gt;&lt;/a&gt;Notation&lt;/h3&gt;&lt;p&gt;Here is a summary of some of the notation you will encounter.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/03/06/ML001/image-20230306200250050.png&#34; alt=&#34;image-20230306200250050&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;Tools&#34;&gt;&lt;a href=&#34;#Tools&#34; class=&#34;headerlink&#34; title=&#34;Tools&#34;&gt;&lt;/a&gt;Tools&lt;/h3&gt;&lt;p&gt;In this lab you will make use of:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;NumPy,a popular library for scientific computing&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Matplotlib,a popular library for plotting data&lt;/p&gt;
+&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs python&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;import&lt;/span&gt; numpy &lt;span class=&#34;hljs-keyword&#34;&gt;as&lt;/span&gt; np&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;import&lt;/span&gt; matplotlib.pyplot &lt;span class=&#34;hljs-keyword&#34;&gt;as&lt;/span&gt; plt&lt;br&gt;plt.style.use(&lt;span class=&#34;hljs-string&#34;&gt;&amp;#x27;./deeplearning.mpstyle&amp;#x27;&lt;/span&gt;)&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;Problem-Statement&#34;&gt;&lt;a href=&#34;#Problem-Statement&#34; class=&#34;headerlink&#34; title=&#34;Problem Statement&#34;&gt;&lt;/a&gt;Problem Statement&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;/2023/03/06/ML001/image-20230306200642937.png&#34; alt=&#34;image-20230306200642937&#34;&gt;&lt;/p&gt;
+&lt;p&gt;As in the lecture,you will use the motivating example of housing price prediction. This lab will use a simple data set with only two data points - a house with 1000 square feet(sqft) sold for $300,000 and a house with 2000 square feet sold for $500,000.These two points will constitute our data or training set. In this lab, the units of size are 1000 sqft and the units of price are 1000s of dollars.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Size (1000 sqft)&lt;/th&gt;
+&lt;th&gt;Price (1000s of dollars)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;300&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2.0&lt;/td&gt;
+&lt;td&gt;500&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;p&gt;You would like to fit a linear regression model(shown above as the blue straight line)through these two points, so you can then predict price for other houses - say, a house with 1200 sqft.&lt;/p&gt;
+&lt;p&gt;Please run the following code cell to create your x_train and y_train variables. The data is stored in one-dimensional NumPy arrays.&lt;/p&gt;
+&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs python&#34;&gt;&lt;span class=&#34;hljs-comment&#34;&gt;#x_train is the input variable (size in 1000 square feet)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;#y_train is the target (price in 1000s of dollars)&lt;/span&gt;&lt;br&gt;x_train = np.array([&lt;span class=&#34;hljs-number&#34;&gt;1.0&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;2.0&lt;/span&gt;])&lt;br&gt;y_train = np.array([&lt;span class=&#34;hljs-number&#34;&gt;300.0&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;500.0&lt;/span&gt;])&lt;br&gt;&lt;span class=&#34;hljs-built_in&#34;&gt;print&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;f&amp;quot;x_train = &lt;span class=&#34;hljs-subst&#34;&gt;&amp;#123;x_train&amp;#125;&lt;/span&gt;&amp;quot;&lt;/span&gt;)&lt;br&gt;&lt;span class=&#34;hljs-built_in&#34;&gt;print&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;f&amp;quot;y_train = &lt;span class=&#34;hljs-subst&#34;&gt;&amp;#123;y_train&amp;#125;&lt;/span&gt;&amp;quot;&lt;/span&gt;)&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h3 id=&#34;Number-of-training-examples-m&#34;&gt;&lt;a href=&#34;#Number-of-training-examples-m&#34; class=&#34;headerlink&#34; title=&#34;Number of training examples m&#34;&gt;&lt;/a&gt;Number of training examples m&lt;/h3&gt;&lt;p&gt;you will use m to denote the number of training examples. Numpy arrays have a .shape parameter. x_train.shape return a python tuple with an entry for each dimension. x_train.shape[0] is the length of the array and number of examples as shown below.&lt;/p&gt;
+&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs python&#34;&gt;&lt;span class=&#34;hljs-comment&#34;&gt;# m is the number of training examples&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-built_in&#34;&gt;print&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;f&amp;quot;x_train.shape: &lt;span class=&#34;hljs-subst&#34;&gt;&amp;#123;x_train.shape&amp;#125;&lt;/span&gt;&amp;quot;&lt;/span&gt;)&lt;br&gt;m = x_train.shape[&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;]&lt;br&gt;&lt;span class=&#34;hljs-built_in&#34;&gt;print&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;f&amp;quot;Number of training example is: &lt;span class=&#34;hljs-subst&#34;&gt;&amp;#123;m&amp;#125;&lt;/span&gt;&amp;quot;&lt;/span&gt;)&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;x.train.shape: (2,)&lt;/p&gt;
+&lt;p&gt;Number of training examples is: 2&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;One can also use the Python len() function as shown below.&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs python&#34;&gt;&lt;span class=&#34;hljs-comment&#34;&gt;# m is the number of training examples&lt;/span&gt;&lt;br&gt;m = &lt;span class=&#34;hljs-built_in&#34;&gt;len&lt;/span&gt;(x_train)&lt;br&gt;&lt;span class=&#34;hljs-built_in&#34;&gt;print&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;f&amp;quot;Number of training example is: &lt;span class=&#34;hljs-subst&#34;&gt;&amp;#123;m&amp;#125;&lt;/span&gt;&amp;quot;&lt;/span&gt;)&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;Number of training examples  is:	2&lt;/p&gt;
+&lt;h3 id=&#34;Training-example-x-i-y-i&#34;&gt;&lt;a href=&#34;#Training-example-x-i-y-i&#34; class=&#34;headerlink&#34; title=&#34;Training example x_i, y_i&#34;&gt;&lt;/a&gt;Training example x_i, y_i&lt;/h3&gt;&lt;p&gt;You will use (x(𝑖), y(𝑖)) to denote the 𝑖(th) training example. Since Python is zero indexed, (x(0), y(0) is (1.0, 300.0) and (x(1), y(1) is (2.0, 500.0).&lt;/p&gt;
+&lt;p&gt;To access a value in a Numpy array, one indexes the array with the desired offset. For example the syntax to access location zero of x_train is x_train[0]. Run the next code block below to get the i(th) training example.&lt;/p&gt;
+&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs python&#34;&gt;i = &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;hljs-comment&#34;&gt;#Change this to 1 to see (x^1,y^1)&lt;/span&gt;&lt;br&gt;&lt;br&gt;x_i = x_train[i]&lt;br&gt;y_i = y_train[i]&lt;br&gt;&lt;span class=&#34;hljs-built_in&#34;&gt;print&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;f&amp;quot;(x^(&lt;span class=&#34;hljs-subst&#34;&gt;&amp;#123;i&amp;#125;&lt;/span&gt;), y^(&lt;span class=&#34;hljs-subst&#34;&gt;&amp;#123;i&amp;#125;&lt;/span&gt;)) = (&lt;span class=&#34;hljs-subst&#34;&gt;&amp;#123;x_i&amp;#125;&lt;/span&gt;, &lt;span class=&#34;hljs-subst&#34;&gt;&amp;#123;y_i&amp;#125;&lt;/span&gt;)&amp;quot;&lt;/span&gt;)&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs python&#34;&gt;(x^(&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;), y^(&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;)) = (&lt;span class=&#34;hljs-number&#34;&gt;1.0&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;300.0&lt;/span&gt;)&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h3 id=&#34;Plotting-the-data&#34;&gt;&lt;a href=&#34;#Plotting-the-data&#34; class=&#34;headerlink&#34; title=&#34;Plotting the data&#34;&gt;&lt;/a&gt;Plotting the data&lt;/h3&gt;&lt;p&gt;You can plot these two points using the scatter() function is the matplotlib library,as shown in the cell below.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The function arguments marker and c show the points as red crosses(the default is blue dots.)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You can use other functions in the matplotlib library to set title and labels to display.&lt;/p&gt;
+&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs python&#34;&gt;&lt;span class=&#34;hljs-comment&#34;&gt;#Plot the data points&lt;/span&gt;&lt;br&gt;plt.scatter(x_train, y_train, marker=&lt;span class=&#34;hljs-string&#34;&gt;&amp;#x27;x&amp;#x27;&lt;/span&gt; c=&lt;span class=&#34;hljs-string&#34;&gt;&amp;#x27;r&amp;#x27;&lt;/span&gt;)&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;#Set the title&lt;/span&gt;&lt;br&gt;plt.title(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;Housing Prices&amp;quot;&lt;/span&gt;)&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;#Set the y-axis label&lt;/span&gt;&lt;br&gt;plt.ylabel(&lt;span class=&#34;hljs-string&#34;&gt;&amp;#x27;Price (in 1000s of dollars)&amp;#x27;&lt;/span&gt;)&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;#Set the x-axis lbel&lt;/span&gt;&lt;br&gt;plt.xlabel(&lt;span class=&#34;hljs-string&#34;&gt;&amp;#x27;Size (1000 sqft)&amp;#x27;&lt;/span&gt;)&lt;br&gt;plt.show()&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;img src=&#34;/2023/03/06/ML001/image-20230306204822102.png&#34; alt=&#34;image-20230306204822102&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;Model-function&#34;&gt;&lt;a href=&#34;#Model-function&#34; class=&#34;headerlink&#34; title=&#34;Model function&#34;&gt;&lt;/a&gt;Model function&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;/2023/03/06/ML001/image-20230306204918585.png&#34; alt=&#34;image-20230306204918585&#34;&gt;&lt;/p&gt;
+&lt;p&gt;As described in lecture, the model function for linear regression (which is a function that maps from x to y)is represented as&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/03/06/ML001/image-20230306205107527.png&#34; alt=&#34;image-20230306205107527&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The formula above is how you can represent straight lines - different values of w and b give you different straight lines on the plot.&lt;/p&gt;
+&lt;p&gt;Let’s try to get a better intuition for this through the code blocks below. Let’s start with w &amp;#x3D; 100 and b &amp;#x3D;100.&lt;/p&gt;
+&lt;p&gt;Note: You can come back to this cell to adjust the model’s w and b parameters.&lt;/p&gt;
+&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs python&#34;&gt;w = &lt;span class=&#34;hljs-number&#34;&gt;100&lt;/span&gt;&lt;br&gt;b = &lt;span class=&#34;hljs-number&#34;&gt;100&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-built_in&#34;&gt;print&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;f&amp;quot;w: &lt;span class=&#34;hljs-subst&#34;&gt;&amp;#123;w&amp;#125;&lt;/span&gt;&amp;quot;&lt;/span&gt;)&lt;br&gt;&lt;span class=&#34;hljs-built_in&#34;&gt;print&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;f&amp;quot;b: &lt;span class=&#34;hljs-subst&#34;&gt;&amp;#123;b&amp;#125;&lt;/span&gt;&amp;quot;&lt;/span&gt;)&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs python&#34;&gt;w:	&lt;span class=&#34;hljs-number&#34;&gt;100&lt;/span&gt;&lt;br&gt;b:	&lt;span class=&#34;hljs-number&#34;&gt;100&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;Now,let’s compute the value of f_{w,b}(x^i) for your two data points. You can explicitly write this out for each data poins as -&lt;/p&gt;
+&lt;p&gt;for x(0),f_wb &amp;#x3D; w * x[0] + b&lt;/p&gt;
+&lt;p&gt;for x(1),f_wb &amp;#x3D; w * x[1] + b&lt;/p&gt;
+&lt;p&gt;For a large number of data points, this can get unwieldy and repetitive. So instead, you can calculate the function output in a for loop as shown in the compute_model_output function below.&lt;/p&gt;
+&lt;p&gt;Note:The argument description (ndarray (m,)) describes a Numpy n-dimensional array of shape (m,). (scalar) describes an argument without dimensions, just a magnitude.&lt;/p&gt;
+&lt;p&gt;Note: np.zero(n) will return a one-dimensional numpy array with n entries&lt;/p&gt;
+&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs python&#34;&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;compute_model_output&lt;/span&gt;(&lt;span class=&#34;hljs-params&#34;&gt;x, w, b&lt;/span&gt;):&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-string&#34;&gt;    Computes the prediction of a linear model&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-string&#34;&gt;    Args:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-string&#34;&gt;    	x (ndarray (m,)):Data, m examples&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-string&#34;&gt;    	w,b (scalar)	:model parameters&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-string&#34;&gt;    Returns&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-string&#34;&gt;    	y (ndarray (m,)):target values&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-string&#34;&gt;    &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;br&gt;    &lt;br&gt;    m = x.shape[&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;]&lt;br&gt;    f_wb = np.zeros(m)&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; i &lt;span class=&#34;hljs-keyword&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;hljs-built_in&#34;&gt;range&lt;/span&gt;(m)&lt;br&gt;    	f_wb[i] = w * x[i] + b&lt;br&gt;    &lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; f_wb&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;Now let’s call the compute_model_output function and plot the output.&lt;/p&gt;
+&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs python&#34;&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+
+
+&lt;h2 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://www.bilibili.com/video/BV1Pa411X76s?p=5&amp;amp;vd_source=3ae32e36058f58c5b85935fca9b77797&#34;&gt;https://www.bilibili.com/video/BV1Pa411X76s?p=5&amp;amp;vd_source=3ae32e36058f58c5b85935fca9b77797&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/kaieye/2022-Machine-Learning-Specialization&#34;&gt;kaieye&amp;#x2F;2022-Machine-Learning-Specialization (github.com)&lt;/a&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">https://xingyuanjie.top/2021/12/09/tensorflow001/</guid>
             <title>Machine Learning(一) 一个神经元网络-线性函数</title>

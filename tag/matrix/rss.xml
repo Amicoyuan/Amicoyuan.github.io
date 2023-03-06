@@ -9,13 +9,13 @@
         <lastBuildDate>Sun, 19 Feb 2023 17:04:23 +0800</lastBuildDate>
         <category>AVX</category>
         <category>Data Structure</category>
-        <category>String</category>
-        <category>Find</category>
-        <category>STL</category>
-        <category>C++</category>
         <category>Set</category>
         <category>团体程序设计天梯赛</category>
+        <category>STL</category>
+        <category>C++</category>
         <category>Sort</category>
+        <category>String</category>
+        <category>Find</category>
         <category>LinkList</category>
         <category>双向链表</category>
         <category>Graph</category>
@@ -33,9 +33,11 @@
         <category>Map</category>
         <category>Pair</category>
         <category>Linux</category>
-        <category>MPI</category>
+        <category>Tensorflow</category>
+        <category>Machine Learning</category>
         <category>Matrix</category>
         <category>GEMM</category>
+        <category>MPI</category>
         <category>AVX2</category>
         <category>dgemm</category>
         <category>Cache</category>
@@ -54,10 +56,9 @@
         <category>C/C++</category>
         <category>register</category>
         <category>Slurm</category>
-        <category>Tensorflow</category>
         <category>性能分析工具</category>
-        <category>gcov</category>
         <category>bool</category>
+        <category>gcov</category>
         <item>
             <guid isPermalink="true">https://xingyuanjie.top/2023/02/19/Matrix002/</guid>
             <title>矩阵乘法计算拆分展示</title>

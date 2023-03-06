@@ -6,13 +6,13 @@
     <updated>2023-02-19T09:04:23.000Z</updated>
     <category term="AVX" />
     <category term="Data Structure" />
-    <category term="String" />
-    <category term="Find" />
-    <category term="STL" />
-    <category term="C++" />
     <category term="Set" />
     <category term="团体程序设计天梯赛" />
+    <category term="STL" />
+    <category term="C++" />
     <category term="Sort" />
+    <category term="String" />
+    <category term="Find" />
     <category term="LinkList" />
     <category term="双向链表" />
     <category term="Graph" />
@@ -30,9 +30,11 @@
     <category term="Map" />
     <category term="Pair" />
     <category term="Linux" />
-    <category term="MPI" />
+    <category term="Tensorflow" />
+    <category term="Machine Learning" />
     <category term="Matrix" />
     <category term="GEMM" />
+    <category term="MPI" />
     <category term="AVX2" />
     <category term="dgemm" />
     <category term="Cache" />
@@ -51,10 +53,9 @@
     <category term="C/C++" />
     <category term="register" />
     <category term="Slurm" />
-    <category term="Tensorflow" />
     <category term="性能分析工具" />
-    <category term="gcov" />
     <category term="bool" />
+    <category term="gcov" />
     <entry>
         <id>https://xingyuanjie.top/2023/02/19/Matrix002/</id>
         <title>矩阵乘法计算拆分展示</title>

@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>线性回归模型</title>
+    <link href="/2023/03/06/ML001/"/>
+    <url>/2023/03/06/ML001/</url>
+    
+    <content type="html"><![CDATA[<h2 id="线性回归模型"><a href="#线性回归模型" class="headerlink" title="线性回归模型"></a>线性回归模型</h2><h3 id="MOdel-Representation"><a href="#MOdel-Representation" class="headerlink" title="MOdel Representation"></a>MOdel Representation</h3><p><img src="/2023/03/06/ML001/image-20230306195956356.png" alt="image-20230306195956356"></p><h3 id="Goals"><a href="#Goals" class="headerlink" title="Goals"></a>Goals</h3><p>In this lab you will:</p><ul><li>learn to implement the model f_{w,b} for linear regression with one variable</li></ul><h3 id="Notation"><a href="#Notation" class="headerlink" title="Notation"></a>Notation</h3><p>Here is a summary of some of the notation you will encounter.</p><p><img src="/2023/03/06/ML001/image-20230306200250050.png" alt="image-20230306200250050"></p><h3 id="Tools"><a href="#Tools" class="headerlink" title="Tools"></a>Tools</h3><p>In this lab you will make use of:</p><ul><li><p>NumPy,a popular library for scientific computing</p></li><li><p>Matplotlib,a popular library for plotting data</p><figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt<br>plt.style.use(<span class="hljs-string">&#x27;./deeplearning.mpstyle&#x27;</span>)<br></code></pre></div></td></tr></table></figure></li></ul><h3 id="Problem-Statement"><a href="#Problem-Statement" class="headerlink" title="Problem Statement"></a>Problem Statement</h3><p><img src="/2023/03/06/ML001/image-20230306200642937.png" alt="image-20230306200642937"></p><p>As in the lecture,you will use the motivating example of housing price prediction. This lab will use a simple data set with only two data points - a house with 1000 square feet(sqft) sold for $300,000 and a house with 2000 square feet sold for $500,000.These two points will constitute our data or training set. In this lab, the units of size are 1000 sqft and the units of price are 1000s of dollars.</p><table><thead><tr><th>Size (1000 sqft)</th><th>Price (1000s of dollars)</th></tr></thead><tbody><tr><td>1.0</td><td>300</td></tr><tr><td>2.0</td><td>500</td></tr></tbody></table><p>You would like to fit a linear regression model(shown above as the blue straight line)through these two points, so you can then predict price for other houses - say, a house with 1200 sqft.</p><p>Please run the following code cell to create your x_train and y_train variables. The data is stored in one-dimensional NumPy arrays.</p><figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-comment">#x_train is the input variable (size in 1000 square feet)</span><br><span class="hljs-comment">#y_train is the target (price in 1000s of dollars)</span><br>x_train = np.array([<span class="hljs-number">1.0</span>,<span class="hljs-number">2.0</span>])<br>y_train = np.array([<span class="hljs-number">300.0</span>,<span class="hljs-number">500.0</span>])<br><span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;x_train = <span class="hljs-subst">&#123;x_train&#125;</span>&quot;</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;y_train = <span class="hljs-subst">&#123;y_train&#125;</span>&quot;</span>)<br></code></pre></div></td></tr></table></figure><h3 id="Number-of-training-examples-m"><a href="#Number-of-training-examples-m" class="headerlink" title="Number of training examples m"></a>Number of training examples m</h3><p>you will use m to denote the number of training examples. Numpy arrays have a .shape parameter. x_train.shape return a python tuple with an entry for each dimension. x_train.shape[0] is the length of the array and number of examples as shown below.</p><figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-comment"># m is the number of training examples</span><br><span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;x_train.shape: <span class="hljs-subst">&#123;x_train.shape&#125;</span>&quot;</span>)<br>m = x_train.shape[<span class="hljs-number">0</span>]<br><span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;Number of training example is: <span class="hljs-subst">&#123;m&#125;</span>&quot;</span>)<br></code></pre></div></td></tr></table></figure><p>x.train.shape: (2,)</p><p>Number of training examples is: 2</p><p><strong>One can also use the Python len() function as shown below.</strong></p><figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-comment"># m is the number of training examples</span><br>m = <span class="hljs-built_in">len</span>(x_train)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;Number of training example is: <span class="hljs-subst">&#123;m&#125;</span>&quot;</span>)<br></code></pre></div></td></tr></table></figure><p>Number of training examples  is:2</p><h3 id="Training-example-x-i-y-i"><a href="#Training-example-x-i-y-i" class="headerlink" title="Training example x_i, y_i"></a>Training example x_i, y_i</h3><p>You will use (x(𝑖), y(𝑖)) to denote the 𝑖(th) training example. Since Python is zero indexed, (x(0), y(0) is (1.0, 300.0) and (x(1), y(1) is (2.0, 500.0).</p><p>To access a value in a Numpy array, one indexes the array with the desired offset. For example the syntax to access location zero of x_train is x_train[0]. Run the next code block below to get the i(th) training example.</p><figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python">i = <span class="hljs-number">0</span> <span class="hljs-comment">#Change this to 1 to see (x^1,y^1)</span><br><br>x_i = x_train[i]<br>y_i = y_train[i]<br><span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;(x^(<span class="hljs-subst">&#123;i&#125;</span>), y^(<span class="hljs-subst">&#123;i&#125;</span>)) = (<span class="hljs-subst">&#123;x_i&#125;</span>, <span class="hljs-subst">&#123;y_i&#125;</span>)&quot;</span>)<br></code></pre></div></td></tr></table></figure><figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python">(x^(<span class="hljs-number">0</span>), y^(<span class="hljs-number">0</span>)) = (<span class="hljs-number">1.0</span>, <span class="hljs-number">300.0</span>)<br></code></pre></div></td></tr></table></figure><h3 id="Plotting-the-data"><a href="#Plotting-the-data" class="headerlink" title="Plotting the data"></a>Plotting the data</h3><p>You can plot these two points using the scatter() function is the matplotlib library,as shown in the cell below.</p><ul><li>The function arguments marker and c show the points as red crosses(the default is blue dots.)</li></ul><p>You can use other functions in the matplotlib library to set title and labels to display.</p><figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-comment">#Plot the data points</span><br>plt.scatter(x_train, y_train, marker=<span class="hljs-string">&#x27;x&#x27;</span> c=<span class="hljs-string">&#x27;r&#x27;</span>)<br><span class="hljs-comment">#Set the title</span><br>plt.title(<span class="hljs-string">&quot;Housing Prices&quot;</span>)<br><span class="hljs-comment">#Set the y-axis label</span><br>plt.ylabel(<span class="hljs-string">&#x27;Price (in 1000s of dollars)&#x27;</span>)<br><span class="hljs-comment">#Set the x-axis lbel</span><br>plt.xlabel(<span class="hljs-string">&#x27;Size (1000 sqft)&#x27;</span>)<br>plt.show()<br></code></pre></div></td></tr></table></figure><p><img src="/2023/03/06/ML001/image-20230306204822102.png" alt="image-20230306204822102"></p><h3 id="Model-function"><a href="#Model-function" class="headerlink" title="Model function"></a>Model function</h3><p><img src="/2023/03/06/ML001/image-20230306204918585.png" alt="image-20230306204918585"></p><p>As described in lecture, the model function for linear regression (which is a function that maps from x to y)is represented as</p><p><img src="/2023/03/06/ML001/image-20230306205107527.png" alt="image-20230306205107527"></p><p>The formula above is how you can represent straight lines - different values of w and b give you different straight lines on the plot.</p><p>Let’s try to get a better intuition for this through the code blocks below. Let’s start with w &#x3D; 100 and b &#x3D;100.</p><p>Note: You can come back to this cell to adjust the model’s w and b parameters.</p><figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python">w = <span class="hljs-number">100</span><br>b = <span class="hljs-number">100</span><br><span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;w: <span class="hljs-subst">&#123;w&#125;</span>&quot;</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;b: <span class="hljs-subst">&#123;b&#125;</span>&quot;</span>)<br></code></pre></div></td></tr></table></figure><figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python">w:<span class="hljs-number">100</span><br>b:<span class="hljs-number">100</span><br></code></pre></div></td></tr></table></figure><p>Now,let’s compute the value of f_{w,b}(x^i) for your two data points. You can explicitly write this out for each data poins as -</p><p>for x(0),f_wb &#x3D; w * x[0] + b</p><p>for x(1),f_wb &#x3D; w * x[1] + b</p><p>For a large number of data points, this can get unwieldy and repetitive. So instead, you can calculate the function output in a for loop as shown in the compute_model_output function below.</p><p>Note:The argument description (ndarray (m,)) describes a Numpy n-dimensional array of shape (m,). (scalar) describes an argument without dimensions, just a magnitude.</p><p>Note: np.zero(n) will return a one-dimensional numpy array with n entries</p><figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">compute_model_output</span>(<span class="hljs-params">x, w, b</span>):</span><br>    <span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">    Computes the prediction of a linear model</span><br><span class="hljs-string">    Args:</span><br><span class="hljs-string">    x (ndarray (m,)):Data, m examples</span><br><span class="hljs-string">    w,b (scalar):model parameters</span><br><span class="hljs-string">    Returns</span><br><span class="hljs-string">    y (ndarray (m,)):target values</span><br><span class="hljs-string">    &quot;&quot;&quot;</span><br>    <br>    m = x.shape[<span class="hljs-number">0</span>]<br>    f_wb = np.zeros(m)<br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(m)<br>    f_wb[i] = w * x[i] + b<br>    <br>    <span class="hljs-keyword">return</span> f_wb<br></code></pre></div></td></tr></table></figure><p>Now let’s call the compute_model_output function and plot the output.</p><figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><br></code></pre></div></td></tr></table></figure><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://www.bilibili.com/video/BV1Pa411X76s?p=5&amp;vd_source=3ae32e36058f58c5b85935fca9b77797">https://www.bilibili.com/video/BV1Pa411X76s?p=5&amp;vd_source=3ae32e36058f58c5b85935fca9b77797</a></p><p><a href="https://github.com/kaieye/2022-Machine-Learning-Specialization">kaieye&#x2F;2022-Machine-Learning-Specialization (github.com)</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Machine Learning</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Tensorflow</tag>
+      
+      <tag>Machine Learning</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>CUDA编译与执行</title>
     <link href="/2023/03/06/cuda011/"/>
     <url>/2023/03/06/cuda011/</url>
@@ -362,7 +389,7 @@
     <link href="/2023/02/24/Linux003/"/>
     <url>/2023/02/24/Linux003/</url>
     
-    <content type="html"><![CDATA[<h2 id="基于GDB的程序调试"><a href="#基于GDB的程序调试" class="headerlink" title="基于GDB的程序调试"></a>基于GDB的程序调试</h2><h3 id="程序调试工具GDB"><a href="#程序调试工具GDB" class="headerlink" title="程序调试工具GDB"></a>程序调试工具GDB</h3><p>编译器GCC，项目构建工具Make（又称gmake），以及GDB。</p><p><img src="/2023/02/24/Linux003/image-20230224165344672.png" alt="image-20230224165344672"></p><p><strong>GDB是什么？</strong></p><p>GDB：GNU symbolic debugger是Linux下常用的程序调试器</p><p><strong>GDB可以做什么？</strong></p><p><img src="/2023/02/24/Linux003/image-20230224165606636.png" alt="image-20230224165606636"></p><p><strong>GDB官网：</strong><a href="https://www.sourceware.org/gdb/">GDB: The GNU Project Debugger (sourceware.org)</a></p><h3 id="调试案例一"><a href="#调试案例一" class="headerlink" title="调试案例一"></a>调试案例一</h3><figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">int</span> n,sum;<br>    n = <span class="hljs-number">1</span>;<br>    sum = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">while</span>( n &lt;= <span class="hljs-number">100</span>)<br>    &#123;<br>        sum = sum + n;<br>        n = n + <span class="hljs-number">1</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure><p>在编译程序的时候，需要加调试选项： -g</p><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">gcc gdb001.c -g -o ex1<br></code></pre></div></td></tr></table></figure><p>使用gdb启动程序：</p><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">gdb ./ex1<br></code></pre></div></td></tr></table></figure><p><strong>进入gdb调试环境</strong>：</p><p><img src="/2023/02/24/Linux003/image-20230224170419171.png" alt="image-20230224170419171"></p><p><strong>在调试环境中：使用l选项会显示带行号的源代码</strong></p><p><img src="/2023/02/24/Linux003/image-20230224170620617.png" alt="image-20230224170620617"></p><p><strong>但是默认情况下，l选项只显示10行源代码，如果查看后续代码，在调试界面Enter回车即可</strong></p><p><img src="/2023/02/24/Linux003/image-20230224170804048.png" alt="image-20230224170804048"></p><p><strong>在第7行源代码处打断点：</strong></p><p><img src="/2023/02/24/Linux003/image-20230224171858691.png" alt="image-20230224171858691"></p><p><strong>运行程序，遇到断点停止：</strong></p><p><img src="/2023/02/24/Linux003/image-20230224172105514.png" alt="image-20230224172105514"></p><p><strong>查看代码中变量n的值</strong></p><p><img src="/2023/02/24/Linux003/image-20230224172200662.png" alt="image-20230224172200662"></p><p>当前n的值为1，$1表示该变量所在存储区的名称</p><p><strong>在程序第12行处打断点</strong></p><p><img src="/2023/02/24/Linux003/image-20230224172321002.png" alt="image-20230224172321002"></p><p><strong>继续执行程序</strong></p><p><img src="/2023/02/24/Linux003/image-20230224172356622.png" alt="image-20230224172356622"></p><p><strong>查看当前n变量的值</strong></p><p><img src="/2023/02/24/Linux003/image-20230224172422998.png" alt="image-20230224172422998"></p><p>当前n的值为101</p><p><strong>退出调试</strong></p><p><img src="/2023/02/24/Linux003/image-20230224172456626.png" alt="image-20230224172456626"></p><p><strong>查看调试环境所有断点：</strong></p><p><img src="/2023/02/24/Linux003/image-20230224172650422.png" alt="image-20230224172650422"></p><p><strong>删除第7行的断点：</strong></p><p><img src="/2023/02/24/Linux003/image-20230224172745323.png" alt="image-20230224172745323"></p><p><strong>禁用编号为2的断点：</strong></p><p><img src="/2023/02/24/Linux003/image-20230224172832507.png" alt="image-20230224172832507"></p><p>注意断点状态Enb(enable)由y变成n，代表禁用</p><p><strong>恢复编号为2的断点：</strong></p><p><img src="/2023/02/24/Linux003/image-20230224173006975.png" alt="image-20230224173006975"></p><h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>GDB有三种调试模式：</p><p><strong>调试执行程序：</strong>（前面的案例），注意编译加调试信息(-g)</p><p><strong>调试core文件   ：</strong>需要对系统设置的core文件大小作调整（ulimit - c unlimlited），否则可能无法  产生core文件</p><p><strong>调试正在执行的程序（gdb attach） ：</strong>Top找到进程编号pid，Gdb attach pid</p><p><strong>GDB结构组成：</strong></p><p><img src="/2023/02/24/Linux003/image-20230224173613247.png" alt="image-20230224173613247"></p><h3 id="常用调试指令："><a href="#常用调试指令：" class="headerlink" title="常用调试指令："></a>常用调试指令：</h3><h4 id="启动指令"><a href="#启动指令" class="headerlink" title="启动指令"></a>启动指令</h4><p>调试程序：gdb program</p><p>根据core文件调试程序：gdb program corefile</p><p>跟踪调试进程：gdb attach pid</p><h4 id="程序运行"><a href="#程序运行" class="headerlink" title="程序运行"></a>程序运行</h4><p>run，该命令会运行至程序结束，除非遇到断点或报错</p><h4 id="单步执行"><a href="#单步执行" class="headerlink" title="单步执行"></a>单步执行</h4><p>步进执行不进栈？next</p><p>步进执行，进栈step</p><h4 id="代码查看"><a href="#代码查看" class="headerlink" title="代码查看"></a>代码查看</h4><p>列出断点附近或程序所有代码list</p><p>设置现实代码的行数 set listsize &lt;n&gt;</p><h4 id="退出调试"><a href="#退出调试" class="headerlink" title="退出调试"></a>退出调试</h4><p>quit</p><h4 id="查看栈信息"><a href="#查看栈信息" class="headerlink" title="查看栈信息"></a>查看栈信息</h4><p>bt打印当前的函数调用栈的所有信息</p><p>bt &lt;n&gt;n是一个正整数，表示只打印栈顶上n层的栈信息</p><p>bt &lt;-n&gt;表示只打印栈底下n层的栈信息</p><h4 id="设置断点"><a href="#设置断点" class="headerlink" title="设置断点"></a>设置断点</h4><p><strong>代码断点：</strong></p><ul><li>break lineNumber | functionName</li><li>break lineNumber | functionName if condition</li><li>tbreak lineNumber | functionName  临时断点，仅能使用一次</li></ul><p><strong>内存断点（观察点）：</strong></p><ul><li>监控内存值改变 watch expr [if condition]</li><li>监控内存值被读取 rwatch expr [if condition]</li><li>监控内存值被读取和写入 awatch wxpr [if condition]</li></ul><p><strong>事件断点：</strong></p><ul><li>C++ exception，使用catch exception [name]</li><li>Ada exception，使用catch handlers [name]</li><li>exec事件，使用catch exec</li><li>fork事件，使用catch fork 或者 catch vfork</li><li>加载和卸载动态so事件，使用catch load|unload [regexp]</li><li>监听系统信号，使用catch signal [signal]</li><li>监听系统调用，使用catch syscall[name|number|group:groupname|g:groupname]…</li></ul><p><strong>打印变量：</strong></p><ul><li>Print [file | func]::variable 查看局部变量或全局变量</li><li>Print *array@len  数组首地址@查看长度</li><li>x&#x2F;[n | u] &lt;addr&gt;x命令查看内存地址钟的值，n：表示显示内存的长度，u：表示从当前地址往后请求的字节数</li></ul><p><strong>打印寄存器：</strong></p><p>info register查看寄存器（除了浮点寄存器）</p><p>all-registers查看所有寄存器</p><p>info registers &lt;reg_name …&gt;查看所指定寄存器</p><h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p><strong>来源培训PPT 作者：Relax  邮箱：<a href="mailto:&#x77;&#97;&#x6e;&#103;&#x77;&#49;&#49;&#x31;&#64;&#x69;&#x63;&#x6c;&#x6f;&#x75;&#x64;&#x2e;&#99;&#x6f;&#x6d;">&#x77;&#97;&#x6e;&#103;&#x77;&#49;&#49;&#x31;&#64;&#x69;&#x63;&#x6c;&#x6f;&#x75;&#x64;&#x2e;&#99;&#x6f;&#x6d;</a></strong></p>]]></content>
+    <content type="html"><![CDATA[<h2 id="基于GDB的程序调试"><a href="#基于GDB的程序调试" class="headerlink" title="基于GDB的程序调试"></a>基于GDB的程序调试</h2><h3 id="程序调试工具GDB"><a href="#程序调试工具GDB" class="headerlink" title="程序调试工具GDB"></a>程序调试工具GDB</h3><p>编译器GCC，项目构建工具Make（又称gmake），以及GDB。</p><p><img src="/2023/02/24/Linux003/image-20230224165344672.png" alt="image-20230224165344672"></p><p><strong>GDB是什么？</strong></p><p>GDB：GNU symbolic debugger是Linux下常用的程序调试器</p><p><strong>GDB可以做什么？</strong></p><p><img src="/2023/02/24/Linux003/image-20230224165606636.png" alt="image-20230224165606636"></p><p><strong>GDB官网：</strong><a href="https://www.sourceware.org/gdb/">GDB: The GNU Project Debugger (sourceware.org)</a></p><h3 id="调试案例一"><a href="#调试案例一" class="headerlink" title="调试案例一"></a>调试案例一</h3><figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">int</span> n,sum;<br>    n = <span class="hljs-number">1</span>;<br>    sum = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">while</span>( n &lt;= <span class="hljs-number">100</span>)<br>    &#123;<br>        sum = sum + n;<br>        n = n + <span class="hljs-number">1</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure><p>在编译程序的时候，需要加调试选项： -g</p><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">gcc gdb001.c -g -o ex1<br></code></pre></div></td></tr></table></figure><p>使用gdb启动程序：</p><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">gdb ./ex1<br></code></pre></div></td></tr></table></figure><p><strong>进入gdb调试环境</strong>：</p><p><img src="/2023/02/24/Linux003/image-20230224170419171.png" alt="image-20230224170419171"></p><p><strong>在调试环境中：使用l选项会显示带行号的源代码</strong></p><p><img src="/2023/02/24/Linux003/image-20230224170620617.png" alt="image-20230224170620617"></p><p><strong>但是默认情况下，l选项只显示10行源代码，如果查看后续代码，在调试界面Enter回车即可</strong></p><p><img src="/2023/02/24/Linux003/image-20230224170804048.png" alt="image-20230224170804048"></p><p><strong>在第7行源代码处打断点：</strong></p><p><img src="/2023/02/24/Linux003/image-20230224171858691.png" alt="image-20230224171858691"></p><p><strong>运行程序，遇到断点停止：</strong></p><p><img src="/2023/02/24/Linux003/image-20230224172105514.png" alt="image-20230224172105514"></p><p><strong>查看代码中变量n的值</strong></p><p><img src="/2023/02/24/Linux003/image-20230224172200662.png" alt="image-20230224172200662"></p><p>当前n的值为1，$1表示该变量所在存储区的名称</p><p><strong>在程序第12行处打断点</strong></p><p><img src="/2023/02/24/Linux003/image-20230224172321002.png" alt="image-20230224172321002"></p><p><strong>继续执行程序</strong></p><p><img src="/2023/02/24/Linux003/image-20230224172356622.png" alt="image-20230224172356622"></p><p><strong>查看当前n变量的值</strong></p><p><img src="/2023/02/24/Linux003/image-20230224172422998.png" alt="image-20230224172422998"></p><p>当前n的值为101</p><p><strong>退出调试</strong></p><p><img src="/2023/02/24/Linux003/image-20230224172456626.png" alt="image-20230224172456626"></p><p><strong>查看调试环境所有断点：</strong></p><p><img src="/2023/02/24/Linux003/image-20230224172650422.png" alt="image-20230224172650422"></p><p><strong>删除第7行的断点：</strong></p><p><img src="/2023/02/24/Linux003/image-20230224172745323.png" alt="image-20230224172745323"></p><p><strong>禁用编号为2的断点：</strong></p><p><img src="/2023/02/24/Linux003/image-20230224172832507.png" alt="image-20230224172832507"></p><p>注意断点状态Enb(enable)由y变成n，代表禁用</p><p><strong>恢复编号为2的断点：</strong></p><p><img src="/2023/02/24/Linux003/image-20230224173006975.png" alt="image-20230224173006975"></p><h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>GDB有三种调试模式：</p><p><strong>调试执行程序：</strong>（前面的案例），注意编译加调试信息(-g)</p><p><strong>调试core文件   ：</strong>需要对系统设置的core文件大小作调整（ulimit - c unlimlited），否则可能无法  产生core文件</p><p><strong>调试正在执行的程序（gdb attach） ：</strong>Top找到进程编号pid，Gdb attach pid</p><p><strong>GDB结构组成：</strong></p><p><img src="/2023/02/24/Linux003/image-20230224173613247.png" alt="image-20230224173613247"></p><h3 id="常用调试指令："><a href="#常用调试指令：" class="headerlink" title="常用调试指令："></a>常用调试指令：</h3><h4 id="启动指令"><a href="#启动指令" class="headerlink" title="启动指令"></a>启动指令</h4><p>调试程序：gdb program</p><p>根据core文件调试程序：gdb program corefile</p><p>跟踪调试进程：gdb attach pid</p><h4 id="程序运行"><a href="#程序运行" class="headerlink" title="程序运行"></a>程序运行</h4><p>run，该命令会运行至程序结束，除非遇到断点或报错</p><h4 id="单步执行"><a href="#单步执行" class="headerlink" title="单步执行"></a>单步执行</h4><p>步进执行不进栈？next</p><p>步进执行，进栈step</p><h4 id="代码查看"><a href="#代码查看" class="headerlink" title="代码查看"></a>代码查看</h4><p>列出断点附近或程序所有代码list</p><p>设置现实代码的行数 set listsize &lt;n&gt;</p><h4 id="退出调试"><a href="#退出调试" class="headerlink" title="退出调试"></a>退出调试</h4><p>quit</p><h4 id="查看栈信息"><a href="#查看栈信息" class="headerlink" title="查看栈信息"></a>查看栈信息</h4><p>bt打印当前的函数调用栈的所有信息</p><p>bt &lt;n&gt;n是一个正整数，表示只打印栈顶上n层的栈信息</p><p>bt &lt;-n&gt;表示只打印栈底下n层的栈信息</p><h4 id="设置断点"><a href="#设置断点" class="headerlink" title="设置断点"></a>设置断点</h4><p><strong>代码断点：</strong></p><ul><li>break lineNumber | functionName</li><li>break lineNumber | functionName if condition</li><li>tbreak lineNumber | functionName  临时断点，仅能使用一次</li></ul><p><strong>内存断点（观察点）：</strong></p><ul><li>监控内存值改变 watch expr [if condition]</li><li>监控内存值被读取 rwatch expr [if condition]</li><li>监控内存值被读取和写入 awatch wxpr [if condition]</li></ul><p><strong>事件断点：</strong></p><ul><li>C++ exception，使用catch exception [name]</li><li>Ada exception，使用catch handlers [name]</li><li>exec事件，使用catch exec</li><li>fork事件，使用catch fork 或者 catch vfork</li><li>加载和卸载动态so事件，使用catch load|unload [regexp]</li><li>监听系统信号，使用catch signal [signal]</li><li>监听系统调用，使用catch syscall[name|number|group:groupname|g:groupname]…</li></ul><p><strong>打印变量：</strong></p><ul><li>Print [file | func]::variable 查看局部变量或全局变量</li><li>Print *array@len  数组首地址@查看长度</li><li>x&#x2F;[n | u] &lt;addr&gt;x命令查看内存地址钟的值，n：表示显示内存的长度，u：表示从当前地址往后请求的字节数</li></ul><p><strong>打印寄存器：</strong></p><p>info register查看寄存器（除了浮点寄存器）</p><p>all-registers查看所有寄存器</p><p>info registers &lt;reg_name …&gt;查看所指定寄存器</p><h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p><strong>来源培训PPT 作者：Relax  邮箱：<a href="mailto:&#119;&#x61;&#x6e;&#x67;&#119;&#x31;&#49;&#x31;&#x40;&#105;&#x63;&#x6c;&#x6f;&#x75;&#100;&#46;&#x63;&#111;&#109;">&#119;&#x61;&#x6e;&#x67;&#119;&#x31;&#49;&#x31;&#x40;&#105;&#x63;&#x6c;&#x6f;&#x75;&#100;&#46;&#x63;&#111;&#109;</a></strong></p>]]></content>
     
     
     <categories>
@@ -1277,9 +1304,9 @@
       
       <tag>Data Structure</tag>
       
-      <tag>C++</tag>
-      
       <tag>团体程序设计天梯赛</tag>
+      
+      <tag>C++</tag>
       
       <tag>Graph</tag>
       
@@ -1310,9 +1337,9 @@
       
       <tag>Data Structure</tag>
       
-      <tag>C++</tag>
-      
       <tag>团体程序设计天梯赛</tag>
+      
+      <tag>C++</tag>
       
       <tag>Sort</tag>
       
@@ -1345,11 +1372,11 @@
     
     <tags>
       
-      <tag>C++</tag>
-      
       <tag>Set</tag>
       
       <tag>团体程序设计天梯赛</tag>
+      
+      <tag>C++</tag>
       
       <tag>模拟</tag>
       
@@ -1405,9 +1432,9 @@
       
       <tag>Data Structure</tag>
       
-      <tag>C++</tag>
-      
       <tag>团体程序设计天梯赛</tag>
+      
+      <tag>C++</tag>
       
       <tag>Graph</tag>
       
@@ -1438,9 +1465,9 @@
     
     <tags>
       
-      <tag>C++</tag>
-      
       <tag>团体程序设计天梯赛</tag>
+      
+      <tag>C++</tag>
       
       <tag>Sort</tag>
       
@@ -1471,9 +1498,9 @@
     
     <tags>
       
-      <tag>C++</tag>
-      
       <tag>团体程序设计天梯赛</tag>
+      
+      <tag>C++</tag>
       
       <tag>Sort</tag>
       
@@ -1506,9 +1533,9 @@
       
       <tag>Data Structure</tag>
       
-      <tag>C++</tag>
-      
       <tag>团体程序设计天梯赛</tag>
+      
+      <tag>C++</tag>
       
       <tag>Graph</tag>
       
@@ -1541,9 +1568,9 @@
       
       <tag>Data Structure</tag>
       
-      <tag>C++</tag>
-      
       <tag>团体程序设计天梯赛</tag>
+      
+      <tag>C++</tag>
       
       <tag>Binary tree</tag>
       
@@ -1574,9 +1601,9 @@
       
       <tag>Data Structure</tag>
       
-      <tag>C++</tag>
-      
       <tag>团体程序设计天梯赛</tag>
+      
+      <tag>C++</tag>
       
       <tag>Binary tree</tag>
       
@@ -1605,9 +1632,9 @@
       
       <tag>Data Structure</tag>
       
-      <tag>C++</tag>
-      
       <tag>团体程序设计天梯赛</tag>
+      
+      <tag>C++</tag>
       
       <tag>邻接表</tag>
       
@@ -1642,9 +1669,9 @@
       
       <tag>Data Structure</tag>
       
-      <tag>C++</tag>
-      
       <tag>团体程序设计天梯赛</tag>
+      
+      <tag>C++</tag>
       
       <tag>邻接表</tag>
       
@@ -1671,9 +1698,9 @@
       
       <tag>Data Structure</tag>
       
-      <tag>C++</tag>
-      
       <tag>团体程序设计天梯赛</tag>
+      
+      <tag>C++</tag>
       
       <tag>Sort</tag>
       
@@ -1702,9 +1729,9 @@
       
       <tag>Data Structure</tag>
       
-      <tag>C++</tag>
-      
       <tag>团体程序设计天梯赛</tag>
+      
+      <tag>C++</tag>
       
       <tag>邻接表</tag>
       
@@ -1739,11 +1766,11 @@
       
       <tag>Data Structure</tag>
       
-      <tag>C++</tag>
-      
       <tag>Set</tag>
       
       <tag>团体程序设计天梯赛</tag>
+      
+      <tag>C++</tag>
       
       <tag>Graph</tag>
       
@@ -1774,9 +1801,9 @@
     
     <tags>
       
-      <tag>C++</tag>
-      
       <tag>团体程序设计天梯赛</tag>
+      
+      <tag>C++</tag>
       
       <tag>LinkList</tag>
       
@@ -1805,13 +1832,13 @@
     
     <tags>
       
-      <tag>STL</tag>
-      
-      <tag>C++</tag>
-      
       <tag>Set</tag>
       
       <tag>团体程序设计天梯赛</tag>
+      
+      <tag>STL</tag>
+      
+      <tag>C++</tag>
       
       <tag>Sort</tag>
       
@@ -1838,13 +1865,13 @@
     
     <tags>
       
-      <tag>String</tag>
-      
-      <tag>Find</tag>
-      
       <tag>STL</tag>
       
       <tag>C++</tag>
+      
+      <tag>String</tag>
+      
+      <tag>Find</tag>
       
     </tags>
     
