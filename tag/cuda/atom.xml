@@ -3,18 +3,18 @@
     <id>https://xingyuanjie.top</id>
     <title>Amicoyuan • Posts by &#34;cuda&#34; tag</title>
     <link href="https://xingyuanjie.top" />
-    <updated>2023-03-06T07:46:00.000Z</updated>
+    <updated>2023-03-06T08:06:35.000Z</updated>
     <category term="AVX" />
     <category term="Data Structure" />
     <category term="String" />
     <category term="Find" />
     <category term="STL" />
     <category term="C++" />
-    <category term="Set" />
-    <category term="团体程序设计天梯赛" />
-    <category term="Sort" />
     <category term="LinkList" />
+    <category term="团体程序设计天梯赛" />
     <category term="双向链表" />
+    <category term="Set" />
+    <category term="Sort" />
     <category term="Graph" />
     <category term="邻接表" />
     <category term="Vector" />
@@ -40,8 +40,8 @@
     <category term="CUDA" />
     <category term="Intel" />
     <category term="LeetCode" />
-    <category term="数组翻转" />
     <category term="双指针" />
+    <category term="数组翻转" />
     <category term="哈希表" />
     <category term="前缀和" />
     <category term="Mirror" />
@@ -56,8 +56,23 @@
     <category term="gcov" />
     <category term="bool" />
     <entry>
+        <id>https://xingyuanjie.top/2023/03/06/cuda009/</id>
+        <title>CUDA验证核函数</title>
+        <link rel="alternate" href="https://xingyuanjie.top/2023/03/06/cuda009/"/>
+        <content type="html">&lt;h2 id=&#34;CUDA验证核函数&#34;&gt;&lt;a href=&#34;#CUDA验证核函数&#34; class=&#34;headerlink&#34; title=&#34;CUDA验证核函数&#34;&gt;&lt;/a&gt;CUDA验证核函数&lt;/h2&gt;&lt;p&gt;既然你已经编写了核函数，你如何能知道它是否正确运行？你需要一个主机函数来验证核函数的结果。&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;checkResult&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;float&lt;/span&gt; *hostRef, &lt;span class=&#34;hljs-keyword&#34;&gt;float&lt;/span&gt; *gpuRef, &lt;span class=&#34;hljs-keyword&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; N)&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;double&lt;/span&gt; epsilon = &lt;span class=&#34;hljs-number&#34;&gt;1.0E-8&lt;/span&gt;;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; match = &lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i = &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt; ;i &amp;lt; N; i++)&amp;#123;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(&lt;span class=&#34;hljs-built_in&#34;&gt;abs&lt;/span&gt;(hostRef[i] - gpuRef[i]) &amp;gt; epsilon)&amp;#123;&lt;br&gt;            match = &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;&lt;br&gt;            &lt;span class=&#34;hljs-built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;Arrays do not match!\n&amp;quot;&lt;/span&gt;);&lt;br&gt;            &lt;span class=&#34;hljs-built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;host %5.2f gpu %5.2f at current %d\n&amp;quot;&lt;/span&gt;,hostRef[i],gpuRef[i],i);&lt;br&gt;            &lt;span class=&#34;hljs-keyword&#34;&gt;break&lt;/span&gt;;&lt;br&gt;        &amp;#125;&lt;br&gt;    &amp;#125;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(match) &lt;span class=&#34;hljs-built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;Arrays match.\n\n&amp;quot;&lt;/span&gt;);&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt;;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h3 id=&#34;验证核函数代码&#34;&gt;&lt;a href=&#34;#验证核函数代码&#34; class=&#34;headerlink&#34; title=&#34;验证核函数代码&#34;&gt;&lt;/a&gt;验证核函数代码&lt;/h3&gt;&lt;p&gt;除了许多可用的调试工具外，还有两个非常简单实用的方法可以验证核函数。&lt;/p&gt;
+&lt;p&gt;首先，你可以在Fermi及更高版本的设备端的核函数中使用printf函数。&lt;/p&gt;
+&lt;p&gt;其次，可以将执行参数设置为&amp;lt;&amp;lt;&amp;lt;1,1&amp;gt;&amp;gt;&amp;gt;，因此强制用一个块和一个线程执行核函数，这模拟了串行执行程序。这对于调试和验证结果是否正确是非常有用的，而且，如果你遇到了运算次序的问题，这有助于你对比验证数值结果是否是按位精确的。&lt;/p&gt;
+&lt;h2 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;p&gt;CUDA C编程权威指南 程润伟，Max Grossman(美)，Ty Mckercher &lt;/p&gt;
+</content>
+        <category term="CUDA" />
+        <updated>2023-03-06T08:06:35.000Z</updated>
+    </entry>
+    <entry>
         <id>https://xingyuanjie.top/2023/03/06/cuda008/</id>
-        <title>编写核函数</title>
+        <title>CUDA编写核函数</title>
         <link rel="alternate" href="https://xingyuanjie.top/2023/03/06/cuda008/"/>
         <content type="html">&lt;h2 id=&#34;编写核函数&#34;&gt;&lt;a href=&#34;#编写核函数&#34; class=&#34;headerlink&#34; title=&#34;编写核函数&#34;&gt;&lt;/a&gt;编写核函数&lt;/h2&gt;&lt;p&gt;核函数是在设备端执行的代码。在核函数中，需要为一个线程规定要进行的计算以及要进行的数据访问。当核函数被调用时，许多不同的CUDA线程并行执行同一个计算任务。以下是用_&lt;em&gt;global&lt;/em&gt;_&lt;/p&gt;
 &lt;p&gt;声明定义核函数：&lt;/p&gt;

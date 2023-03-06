@@ -3,18 +3,18 @@
     <id>https://xingyuanjie.top</id>
     <title>Amicoyuan</title>
     <link href="https://xingyuanjie.top" />
-    <updated>2023-03-06T07:46:00.000Z</updated>
+    <updated>2023-03-06T08:06:35.000Z</updated>
     <category term="AVX" />
     <category term="Data Structure" />
     <category term="String" />
     <category term="Find" />
     <category term="STL" />
     <category term="C++" />
-    <category term="Set" />
-    <category term="团体程序设计天梯赛" />
-    <category term="Sort" />
     <category term="LinkList" />
+    <category term="团体程序设计天梯赛" />
     <category term="双向链表" />
+    <category term="Set" />
+    <category term="Sort" />
     <category term="Graph" />
     <category term="邻接表" />
     <category term="Vector" />
@@ -40,8 +40,8 @@
     <category term="CUDA" />
     <category term="Intel" />
     <category term="LeetCode" />
-    <category term="数组翻转" />
     <category term="双指针" />
+    <category term="数组翻转" />
     <category term="哈希表" />
     <category term="前缀和" />
     <category term="Mirror" />
@@ -56,8 +56,23 @@
     <category term="gcov" />
     <category term="bool" />
     <entry>
+        <id>https://xingyuanjie.top/2023/03/06/cuda009/</id>
+        <title>CUDA验证核函数</title>
+        <link rel="alternate" href="https://xingyuanjie.top/2023/03/06/cuda009/"/>
+        <content type="html">&lt;h2 id=&#34;CUDA验证核函数&#34;&gt;&lt;a href=&#34;#CUDA验证核函数&#34; class=&#34;headerlink&#34; title=&#34;CUDA验证核函数&#34;&gt;&lt;/a&gt;CUDA验证核函数&lt;/h2&gt;&lt;p&gt;既然你已经编写了核函数，你如何能知道它是否正确运行？你需要一个主机函数来验证核函数的结果。&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;checkResult&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;float&lt;/span&gt; *hostRef, &lt;span class=&#34;hljs-keyword&#34;&gt;float&lt;/span&gt; *gpuRef, &lt;span class=&#34;hljs-keyword&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; N)&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;double&lt;/span&gt; epsilon = &lt;span class=&#34;hljs-number&#34;&gt;1.0E-8&lt;/span&gt;;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; match = &lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i = &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt; ;i &amp;lt; N; i++)&amp;#123;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(&lt;span class=&#34;hljs-built_in&#34;&gt;abs&lt;/span&gt;(hostRef[i] - gpuRef[i]) &amp;gt; epsilon)&amp;#123;&lt;br&gt;            match = &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;&lt;br&gt;            &lt;span class=&#34;hljs-built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;Arrays do not match!\n&amp;quot;&lt;/span&gt;);&lt;br&gt;            &lt;span class=&#34;hljs-built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;host %5.2f gpu %5.2f at current %d\n&amp;quot;&lt;/span&gt;,hostRef[i],gpuRef[i],i);&lt;br&gt;            &lt;span class=&#34;hljs-keyword&#34;&gt;break&lt;/span&gt;;&lt;br&gt;        &amp;#125;&lt;br&gt;    &amp;#125;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(match) &lt;span class=&#34;hljs-built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;Arrays match.\n\n&amp;quot;&lt;/span&gt;);&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt;;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h3 id=&#34;验证核函数代码&#34;&gt;&lt;a href=&#34;#验证核函数代码&#34; class=&#34;headerlink&#34; title=&#34;验证核函数代码&#34;&gt;&lt;/a&gt;验证核函数代码&lt;/h3&gt;&lt;p&gt;除了许多可用的调试工具外，还有两个非常简单实用的方法可以验证核函数。&lt;/p&gt;
+&lt;p&gt;首先，你可以在Fermi及更高版本的设备端的核函数中使用printf函数。&lt;/p&gt;
+&lt;p&gt;其次，可以将执行参数设置为&amp;lt;&amp;lt;&amp;lt;1,1&amp;gt;&amp;gt;&amp;gt;，因此强制用一个块和一个线程执行核函数，这模拟了串行执行程序。这对于调试和验证结果是否正确是非常有用的，而且，如果你遇到了运算次序的问题，这有助于你对比验证数值结果是否是按位精确的。&lt;/p&gt;
+&lt;h2 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;p&gt;CUDA C编程权威指南 程润伟，Max Grossman(美)，Ty Mckercher &lt;/p&gt;
+</content>
+        <category term="CUDA" />
+        <updated>2023-03-06T08:06:35.000Z</updated>
+    </entry>
+    <entry>
         <id>https://xingyuanjie.top/2023/03/06/cuda008/</id>
-        <title>编写核函数</title>
+        <title>CUDA编写核函数</title>
         <link rel="alternate" href="https://xingyuanjie.top/2023/03/06/cuda008/"/>
         <content type="html">&lt;h2 id=&#34;编写核函数&#34;&gt;&lt;a href=&#34;#编写核函数&#34; class=&#34;headerlink&#34; title=&#34;编写核函数&#34;&gt;&lt;/a&gt;编写核函数&lt;/h2&gt;&lt;p&gt;核函数是在设备端执行的代码。在核函数中，需要为一个线程规定要进行的计算以及要进行的数据访问。当核函数被调用时，许多不同的CUDA线程并行执行同一个计算任务。以下是用_&lt;em&gt;global&lt;/em&gt;_&lt;/p&gt;
 &lt;p&gt;声明定义核函数：&lt;/p&gt;
@@ -437,7 +452,7 @@
 &lt;p&gt;info register	查看寄存器（除了浮点寄存器）&lt;/p&gt;
 &lt;p&gt;all-registers	查看所有寄存器&lt;/p&gt;
 &lt;p&gt;info registers &amp;lt;reg_name …&amp;gt;查看所指定寄存器&lt;/p&gt;
-&lt;h3 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;来源培训PPT 作者：Relax  邮箱：&lt;a href=&#34;mailto:&amp;#119;&amp;#x61;&amp;#110;&amp;#x67;&amp;#x77;&amp;#49;&amp;#x31;&amp;#49;&amp;#64;&amp;#105;&amp;#99;&amp;#108;&amp;#111;&amp;#117;&amp;#x64;&amp;#x2e;&amp;#99;&amp;#x6f;&amp;#109;&#34;&gt;&amp;#119;&amp;#x61;&amp;#110;&amp;#x67;&amp;#x77;&amp;#49;&amp;#x31;&amp;#49;&amp;#64;&amp;#105;&amp;#99;&amp;#108;&amp;#111;&amp;#117;&amp;#x64;&amp;#x2e;&amp;#99;&amp;#x6f;&amp;#109;&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;来源培训PPT 作者：Relax  邮箱：&lt;a href=&#34;mailto:&amp;#119;&amp;#x61;&amp;#x6e;&amp;#103;&amp;#x77;&amp;#49;&amp;#x31;&amp;#49;&amp;#x40;&amp;#105;&amp;#99;&amp;#108;&amp;#111;&amp;#x75;&amp;#x64;&amp;#x2e;&amp;#x63;&amp;#111;&amp;#109;&#34;&gt;&amp;#119;&amp;#x61;&amp;#x6e;&amp;#103;&amp;#x77;&amp;#49;&amp;#x31;&amp;#49;&amp;#x40;&amp;#105;&amp;#99;&amp;#108;&amp;#111;&amp;#x75;&amp;#x64;&amp;#x2e;&amp;#x63;&amp;#111;&amp;#109;&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 </content>
         <category term="Linux" />
         <updated>2023-02-24T08:50:20.000Z</updated>
@@ -738,24 +753,5 @@
         <category term="C++" />
         <category term="牛客" />
         <updated>2023-02-07T10:05:25.000Z</updated>
-    </entry>
-    <entry>
-        <id>https://xingyuanjie.top/2023/02/07/niuke001/</id>
-        <title>JZ3 数组中重复的数字</title>
-        <link rel="alternate" href="https://xingyuanjie.top/2023/02/07/niuke001/"/>
-        <content type="html">&lt;h2 id=&#34;JZ3-数组中重复的数字&#34;&gt;&lt;a href=&#34;#JZ3-数组中重复的数字&#34; class=&#34;headerlink&#34; title=&#34;JZ3 数组中重复的数字&#34;&gt;&lt;/a&gt;JZ3 数组中重复的数字&lt;/h2&gt;&lt;h2 id=&#34;题目链接：&#34;&gt;&lt;a href=&#34;#题目链接：&#34; class=&#34;headerlink&#34; title=&#34;题目链接：&#34;&gt;&lt;/a&gt;题目链接：&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://www.nowcoder.com/practice/6fe361ede7e54db1b84adc81d09d8524?tpId=265&amp;tqId=39207&amp;rp=1&amp;ru=/exam/oj/ta&amp;qru=/exam/oj/ta&amp;sourceUrl=/exam/oj/ta?tpId=13&amp;difficulty=undefined&amp;judgeStatus=undefined&amp;tags=&amp;title=&#34;&gt;数组中重复的数字_牛客题霸_牛客网 (nowcoder.com)&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;完整解答：&#34;&gt;&lt;a href=&#34;#完整解答：&#34; class=&#34;headerlink&#34; title=&#34;完整解答：&#34;&gt;&lt;/a&gt;完整解答：&lt;/h2&gt;&lt;p&gt;set::count()是C++ STL中的内置函数，它返回元素在集合中出现的次数。由于set容器仅包含唯一元素，因此只能返回1或0。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;用法：set_name.count(element)&lt;/li&gt;
-&lt;li&gt;参数：该函数接受一个强制性参数element，该元素指定要返回其计数的元素。&lt;/li&gt;
-&lt;li&gt;返回值：该函数返回1或0，因为该集合仅包含唯一元素。如果设置的容器中存在该值，则返回1。如果容器中不存在它，则返回0。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-class&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;Solution&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;public&lt;/span&gt;:&lt;br&gt;    &lt;span class=&#34;hljs-comment&#34;&gt;/**&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;     *&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;     * &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;     * @param numbers int整型vector &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;     * @return int整型&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;     */&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;duplicate&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(vector&amp;lt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;&amp;gt;&amp;amp; numbers)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;br&gt;        &lt;span class=&#34;hljs-comment&#34;&gt;// write code here&lt;/span&gt;&lt;br&gt;        set&amp;lt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;&amp;gt; s;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;i&amp;lt;numbers.&lt;span class=&#34;hljs-built_in&#34;&gt;size&lt;/span&gt;();i++)&amp;#123;&lt;br&gt;            &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(s.&lt;span class=&#34;hljs-built_in&#34;&gt;count&lt;/span&gt;(numbers[i])&amp;gt;&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;) 				&lt;span class=&#34;hljs-comment&#34;&gt;//此元素重复，则返回&lt;/span&gt;&lt;br&gt;                &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; numbers[i];&lt;br&gt;            &lt;span class=&#34;hljs-keyword&#34;&gt;else&lt;/span&gt;&lt;br&gt;                s.&lt;span class=&#34;hljs-built_in&#34;&gt;insert&lt;/span&gt;(numbers[i]);				&lt;span class=&#34;hljs-comment&#34;&gt;//不重复则加入集合&lt;/span&gt;&lt;br&gt;        &amp;#125;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;-1&lt;/span&gt;;&lt;br&gt;    &amp;#125;&lt;br&gt;&amp;#125;;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h2 id=&#34;参考资料：&#34;&gt;&lt;a href=&#34;#参考资料：&#34; class=&#34;headerlink&#34; title=&#34;参考资料：&#34;&gt;&lt;/a&gt;参考资料：&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/cmehppc/article/details/121712019&#34;&gt;(64条消息) 【c++】set.count()用法_杳杳捞到月亮了吗的博客-CSDN博客_c++set count&lt;/a&gt;&lt;/p&gt;
-</content>
-        <category term="C++" />
-        <category term="牛客" />
-        <updated>2023-02-07T08:58:01.000Z</updated>
     </entry>
 </feed>

@@ -5,19 +5,19 @@
         <link>https://xingyuanjie.top</link>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Mon, 06 Mar 2023 15:46:00 +0800</pubDate>
-        <lastBuildDate>Mon, 06 Mar 2023 15:46:00 +0800</lastBuildDate>
+        <pubDate>Mon, 06 Mar 2023 16:06:35 +0800</pubDate>
+        <lastBuildDate>Mon, 06 Mar 2023 16:06:35 +0800</lastBuildDate>
         <category>AVX</category>
         <category>Data Structure</category>
         <category>String</category>
         <category>Find</category>
         <category>STL</category>
         <category>C++</category>
-        <category>Set</category>
-        <category>团体程序设计天梯赛</category>
-        <category>Sort</category>
         <category>LinkList</category>
+        <category>团体程序设计天梯赛</category>
         <category>双向链表</category>
+        <category>Set</category>
+        <category>Sort</category>
         <category>Graph</category>
         <category>邻接表</category>
         <category>Vector</category>
@@ -43,8 +43,8 @@
         <category>CUDA</category>
         <category>Intel</category>
         <category>LeetCode</category>
-        <category>数组翻转</category>
         <category>双指针</category>
+        <category>数组翻转</category>
         <category>哈希表</category>
         <category>前缀和</category>
         <category>Mirror</category>
@@ -59,8 +59,23 @@
         <category>gcov</category>
         <category>bool</category>
         <item>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/03/06/cuda009/</guid>
+            <title>CUDA验证核函数</title>
+            <link>https://xingyuanjie.top/2023/03/06/cuda009/</link>
+            <category>CUDA</category>
+            <pubDate>Mon, 06 Mar 2023 16:06:35 +0800</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;CUDA验证核函数&#34;&gt;&lt;a href=&#34;#CUDA验证核函数&#34; class=&#34;headerlink&#34; title=&#34;CUDA验证核函数&#34;&gt;&lt;/a&gt;CUDA验证核函数&lt;/h2&gt;&lt;p&gt;既然你已经编写了核函数，你如何能知道它是否正确运行？你需要一个主机函数来验证核函数的结果。&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;checkResult&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;float&lt;/span&gt; *hostRef, &lt;span class=&#34;hljs-keyword&#34;&gt;float&lt;/span&gt; *gpuRef, &lt;span class=&#34;hljs-keyword&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; N)&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;double&lt;/span&gt; epsilon = &lt;span class=&#34;hljs-number&#34;&gt;1.0E-8&lt;/span&gt;;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; match = &lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i = &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt; ;i &amp;lt; N; i++)&amp;#123;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(&lt;span class=&#34;hljs-built_in&#34;&gt;abs&lt;/span&gt;(hostRef[i] - gpuRef[i]) &amp;gt; epsilon)&amp;#123;&lt;br&gt;            match = &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;&lt;br&gt;            &lt;span class=&#34;hljs-built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;Arrays do not match!\n&amp;quot;&lt;/span&gt;);&lt;br&gt;            &lt;span class=&#34;hljs-built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;host %5.2f gpu %5.2f at current %d\n&amp;quot;&lt;/span&gt;,hostRef[i],gpuRef[i],i);&lt;br&gt;            &lt;span class=&#34;hljs-keyword&#34;&gt;break&lt;/span&gt;;&lt;br&gt;        &amp;#125;&lt;br&gt;    &amp;#125;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(match) &lt;span class=&#34;hljs-built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;Arrays match.\n\n&amp;quot;&lt;/span&gt;);&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt;;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h3 id=&#34;验证核函数代码&#34;&gt;&lt;a href=&#34;#验证核函数代码&#34; class=&#34;headerlink&#34; title=&#34;验证核函数代码&#34;&gt;&lt;/a&gt;验证核函数代码&lt;/h3&gt;&lt;p&gt;除了许多可用的调试工具外，还有两个非常简单实用的方法可以验证核函数。&lt;/p&gt;
+&lt;p&gt;首先，你可以在Fermi及更高版本的设备端的核函数中使用printf函数。&lt;/p&gt;
+&lt;p&gt;其次，可以将执行参数设置为&amp;lt;&amp;lt;&amp;lt;1,1&amp;gt;&amp;gt;&amp;gt;，因此强制用一个块和一个线程执行核函数，这模拟了串行执行程序。这对于调试和验证结果是否正确是非常有用的，而且，如果你遇到了运算次序的问题，这有助于你对比验证数值结果是否是按位精确的。&lt;/p&gt;
+&lt;h2 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;p&gt;CUDA C编程权威指南 程润伟，Max Grossman(美)，Ty Mckercher &lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
             <guid isPermalink="true">https://xingyuanjie.top/2023/03/06/cuda008/</guid>
-            <title>编写核函数</title>
+            <title>CUDA编写核函数</title>
             <link>https://xingyuanjie.top/2023/03/06/cuda008/</link>
             <category>CUDA</category>
             <pubDate>Mon, 06 Mar 2023 15:46:00 +0800</pubDate>
