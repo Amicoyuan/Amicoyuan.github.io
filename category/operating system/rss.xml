@@ -27,8 +27,8 @@
         <category>邻接矩阵</category>
         <category>DFS</category>
         <category>结构体</category>
-        <category>贪心</category>
         <category>Double类型相等比较</category>
+        <category>贪心</category>
         <category>并查集</category>
         <category>Map</category>
         <category>Pair</category>
@@ -36,8 +36,8 @@
         <category>MPI</category>
         <category>Matrix</category>
         <category>GEMM</category>
-        <category>dgemm</category>
         <category>AVX2</category>
+        <category>dgemm</category>
         <category>Cache</category>
         <category>Blocking</category>
         <category>CUDA</category>
@@ -53,9 +53,9 @@
         <category>OpenMP</category>
         <category>C/C++</category>
         <category>register</category>
+        <category>Slurm</category>
         <category>Tensorflow</category>
         <category>性能分析工具</category>
-        <category>Slurm</category>
         <category>gcov</category>
         <category>bool</category>
         <item>
@@ -198,7 +198,7 @@
 &lt;p&gt;info register	查看寄存器（除了浮点寄存器）&lt;/p&gt;
 &lt;p&gt;all-registers	查看所有寄存器&lt;/p&gt;
 &lt;p&gt;info registers &amp;lt;reg_name …&amp;gt;查看所指定寄存器&lt;/p&gt;
-&lt;h3 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;来源培训PPT 作者：Relax  邮箱：&lt;a href=&#34;mailto:&amp;#119;&amp;#x61;&amp;#x6e;&amp;#x67;&amp;#119;&amp;#49;&amp;#49;&amp;#49;&amp;#64;&amp;#x69;&amp;#99;&amp;#x6c;&amp;#x6f;&amp;#117;&amp;#100;&amp;#x2e;&amp;#99;&amp;#x6f;&amp;#x6d;&#34;&gt;&amp;#119;&amp;#x61;&amp;#x6e;&amp;#x67;&amp;#119;&amp;#49;&amp;#49;&amp;#49;&amp;#64;&amp;#x69;&amp;#99;&amp;#x6c;&amp;#x6f;&amp;#117;&amp;#100;&amp;#x2e;&amp;#99;&amp;#x6f;&amp;#x6d;&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;来源培训PPT 作者：Relax  邮箱：&lt;a href=&#34;mailto:&amp;#119;&amp;#x61;&amp;#110;&amp;#103;&amp;#x77;&amp;#x31;&amp;#49;&amp;#49;&amp;#64;&amp;#x69;&amp;#x63;&amp;#108;&amp;#x6f;&amp;#x75;&amp;#x64;&amp;#x2e;&amp;#x63;&amp;#111;&amp;#x6d;&#34;&gt;&amp;#119;&amp;#x61;&amp;#110;&amp;#103;&amp;#x77;&amp;#x31;&amp;#49;&amp;#49;&amp;#64;&amp;#x69;&amp;#x63;&amp;#108;&amp;#x6f;&amp;#x75;&amp;#x64;&amp;#x2e;&amp;#x63;&amp;#111;&amp;#x6d;&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
  ]]></description>
         </item>
         <item>

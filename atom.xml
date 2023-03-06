@@ -3,7 +3,7 @@
     <id>https://xingyuanjie.top</id>
     <title>Amicoyuan</title>
     <link href="https://xingyuanjie.top" />
-    <updated>2023-03-02T12:44:27.000Z</updated>
+    <updated>2023-03-06T05:59:18.000Z</updated>
     <category term="AVX" />
     <category term="Data Structure" />
     <category term="String" />
@@ -24,8 +24,8 @@
     <category term="邻接矩阵" />
     <category term="DFS" />
     <category term="结构体" />
-    <category term="贪心" />
     <category term="Double类型相等比较" />
+    <category term="贪心" />
     <category term="并查集" />
     <category term="Map" />
     <category term="Pair" />
@@ -33,8 +33,8 @@
     <category term="MPI" />
     <category term="Matrix" />
     <category term="GEMM" />
-    <category term="dgemm" />
     <category term="AVX2" />
+    <category term="dgemm" />
     <category term="Cache" />
     <category term="Blocking" />
     <category term="CUDA" />
@@ -50,11 +50,54 @@
     <category term="OpenMP" />
     <category term="C/C++" />
     <category term="register" />
+    <category term="Slurm" />
     <category term="Tensorflow" />
     <category term="性能分析工具" />
-    <category term="Slurm" />
     <category term="gcov" />
     <category term="bool" />
+    <entry>
+        <id>https://xingyuanjie.top/2023/03/06/cuda007/</id>
+        <title>启动一个CUDA核函数</title>
+        <link rel="alternate" href="https://xingyuanjie.top/2023/03/06/cuda007/"/>
+        <content type="html">&lt;h2 id=&#34;启动一个CUDA核函数&#34;&gt;&lt;a href=&#34;#启动一个CUDA核函数&#34; class=&#34;headerlink&#34; title=&#34;启动一个CUDA核函数&#34;&gt;&lt;/a&gt;启动一个CUDA核函数&lt;/h2&gt;&lt;p&gt;你应该对下列C语言函数调用语句很熟悉：&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-built_in&#34;&gt;function_name&lt;/span&gt; (argument list);&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;CUDA内核调用是对C语言函数调用语句的延申，&amp;lt;&amp;lt;&amp;lt;&amp;gt;&amp;gt;&amp;gt;运算符内是核函数的执行配置。&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;kerbel_name&amp;lt;&amp;lt;&amp;lt;grid,block&amp;gt;&amp;gt;&amp;gt;(srgument list);&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;正如上一节所述，CUDA编程模型揭示了线程层次结构。利用执行配置可以指定线程在GPU上调度运行的方式。执行配置的第一个值是网格维度，也就是启动块的数目。第二个值是块维度，也就是每个块中线程的数目。通过指定网格和块的维度，你可以进行一下配置：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;内核中线程的数目&lt;/li&gt;
+&lt;li&gt;内核中使用的线程布局&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;同一个块中的线程之间可以相互协作，不同块内的线程不能协作。对于一个给定的问题，可以使用不同的网格和块布局来组织你的线程。例如，假设你有32个数据元素用于计算，每8个元素一个块，需要启动4个块：&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;kernel_name&amp;lt;&amp;lt;&amp;lt;&lt;span class=&#34;hljs-number&#34;&gt;4&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;8&lt;/span&gt;&amp;gt;&amp;gt;&amp;gt;(argument list);&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;img src=&#34;/2023/03/06/cuda007/image-20230306140924311.png&#34; alt=&#34;image-20230306140924311&#34;&gt;&lt;/p&gt;
+&lt;p&gt;由于数据在全局内存中是线性存储的，因此可以用变量blockIdx.x和threadIdx.x来进行以下操作。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在网格中标识一个唯一的线程&lt;/li&gt;
+&lt;li&gt;建立线程和数据元素之间的映射关系&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果把32个元素放到一个块里，那么只会得到一个块：&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;kernel_name&amp;lt;&amp;lt;&amp;lt;&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;32&lt;/span&gt;&amp;gt;&amp;gt;&amp;gt;(argument list);&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;如果每个块只含一个元素，那么会有32个块：&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;kernel_name&amp;lt;&amp;lt;&amp;lt;&lt;span class=&#34;hljs-number&#34;&gt;32&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;&amp;gt;&amp;gt;&amp;gt;(argument list);&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;核函数的调用与主机线程是异步的。核函数调用结束后，控制权立刻返回给主机端。你可以调用以下函数来强制主机端程序等待所有的核函数执行结束：&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-function&#34;&gt;cudaError_t &lt;span class=&#34;hljs-title&#34;&gt;cudaDeviceSynchronize&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;void&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;一些CUDA运行时API在主机和设备之间是隐式同步的。当使用cudaMemcpy函数在主机和设备之间拷贝数据时，主机端隐式同步，即主机端程序必须等待数据拷贝完成后才能继续执行程序。&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-function&#34;&gt;cudaError_t &lt;span class=&#34;hljs-title&#34;&gt;cudaMemcpy&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;void&lt;/span&gt;* dst, &lt;span class=&#34;hljs-keyword&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;hljs-keyword&#34;&gt;void&lt;/span&gt;* src, &lt;span class=&#34;hljs-keyword&#34;&gt;size_t&lt;/span&gt; count, cudaMemcpyKind kind)&lt;/span&gt;&lt;/span&gt;;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;之前所有的核函数调用完成后开始拷贝数据。当拷贝完成后，控制权立刻返回给主机端。&lt;/p&gt;
+&lt;h3 id=&#34;异步行为&#34;&gt;&lt;a href=&#34;#异步行为&#34; class=&#34;headerlink&#34; title=&#34;异步行为&#34;&gt;&lt;/a&gt;异步行为&lt;/h3&gt;&lt;p&gt;不同于C语言的函数调用，所有的CUDA核函数的启动都是异步的。CUDA内核调用完成后，控制权立刻返回给CPU。&lt;/p&gt;
+&lt;h2 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;p&gt;CUDA C编程权威指南 程润伟，Max Grossman(美)，Ty Mckercher &lt;/p&gt;
+</content>
+        <category term="CUDA" />
+        <updated>2023-03-06T05:59:18.000Z</updated>
+    </entry>
     <entry>
         <id>https://xingyuanjie.top/2023/03/02/leetcode205/</id>
         <title>205.同构字符串</title>
@@ -359,7 +402,7 @@
 &lt;p&gt;info register	查看寄存器（除了浮点寄存器）&lt;/p&gt;
 &lt;p&gt;all-registers	查看所有寄存器&lt;/p&gt;
 &lt;p&gt;info registers &amp;lt;reg_name …&amp;gt;查看所指定寄存器&lt;/p&gt;
-&lt;h3 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;来源培训PPT 作者：Relax  邮箱：&lt;a href=&#34;mailto:&amp;#119;&amp;#x61;&amp;#x6e;&amp;#x67;&amp;#119;&amp;#49;&amp;#49;&amp;#49;&amp;#64;&amp;#x69;&amp;#99;&amp;#x6c;&amp;#x6f;&amp;#117;&amp;#100;&amp;#x2e;&amp;#99;&amp;#x6f;&amp;#x6d;&#34;&gt;&amp;#119;&amp;#x61;&amp;#x6e;&amp;#x67;&amp;#119;&amp;#49;&amp;#49;&amp;#49;&amp;#64;&amp;#x69;&amp;#99;&amp;#x6c;&amp;#x6f;&amp;#117;&amp;#100;&amp;#x2e;&amp;#99;&amp;#x6f;&amp;#x6d;&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;来源培训PPT 作者：Relax  邮箱：&lt;a href=&#34;mailto:&amp;#119;&amp;#x61;&amp;#110;&amp;#103;&amp;#x77;&amp;#x31;&amp;#49;&amp;#49;&amp;#64;&amp;#x69;&amp;#x63;&amp;#108;&amp;#x6f;&amp;#x75;&amp;#x64;&amp;#x2e;&amp;#x63;&amp;#111;&amp;#x6d;&#34;&gt;&amp;#119;&amp;#x61;&amp;#110;&amp;#103;&amp;#x77;&amp;#x31;&amp;#49;&amp;#49;&amp;#64;&amp;#x69;&amp;#x63;&amp;#108;&amp;#x6f;&amp;#x75;&amp;#x64;&amp;#x2e;&amp;#x63;&amp;#111;&amp;#x6d;&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 </content>
         <category term="Linux" />
         <updated>2023-02-24T08:50:20.000Z</updated>
@@ -694,27 +737,5 @@
         <category term="Matrix" />
         <category term="GEMM" />
         <updated>2023-02-06T14:00:14.000Z</updated>
-    </entry>
-    <entry>
-        <id>https://xingyuanjie.top/2023/02/02/register/</id>
-        <title>register关键字</title>
-        <link rel="alternate" href="https://xingyuanjie.top/2023/02/02/register/"/>
-        <content type="html">&lt;h2 id=&#34;register关键字&#34;&gt;&lt;a href=&#34;#register关键字&#34; class=&#34;headerlink&#34; title=&#34;register关键字&#34;&gt;&lt;/a&gt;register关键字&lt;/h2&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;()&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;/span&gt;&amp;#123;&lt;br&gt;	&lt;span class=&#34;hljs-keyword&#34;&gt;register&lt;/span&gt; &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; val = &lt;span class=&#34;hljs-number&#34;&gt;100&lt;/span&gt;;&lt;br&gt;	&lt;span class=&#34;hljs-comment&#34;&gt;//寄存器变量没有地址，不能取地址&lt;/span&gt;&lt;br&gt;	val = &lt;span class=&#34;hljs-number&#34;&gt;200&lt;/span&gt;; &lt;span class=&#34;hljs-comment&#34;&gt;//可以被写入&lt;/span&gt;&lt;br&gt;	&lt;span class=&#34;hljs-built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;%d\n&amp;quot;&lt;/span&gt;, val);&lt;br&gt;	&lt;span class=&#34;hljs-comment&#34;&gt;// 在gcc编译器下 也不允许取地址&lt;/span&gt;&lt;br&gt;	&lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;//由于使用register关键字，直接将val存在寄存器内，因此val没有内存地址，因此不能进行取地址操作。&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;ol&gt;
-&lt;li&gt;我们通常采用局部变量采用 register 的，全局变量会导致 CPU 当中的寄存器被长时间占用。&lt;/li&gt;
-&lt;li&gt;一个变量被存放到寄存器当中，那么这个变量的效率就会大大的提高,因为不用访存读取&lt;/li&gt;
-&lt;li&gt;register关键字可以与指针变量一起使用。&lt;/li&gt;
-&lt;li&gt;寄存器是一个存储类，并且C不允许变量使用多个存储类说明符。因此，register不能与static一起使用。&lt;/li&gt;
-&lt;li&gt;寄存器只能在一个块内使用（局部），而不能在全局范围内（在主外部）使用&lt;/li&gt;
-&lt;li&gt;寄存器数量有限&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://xie.infoq.cn/article/f6093f4eebd3664c0a1514e26&#34;&gt;【C语言】register 关键字_11月月更_謓泽_InfoQ写作社区&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/263575137&#34;&gt;一步带您了解C语言中的“register”关键字 - 知乎 (zhihu.com)&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.ab62.cn/article/5406.html&#34;&gt;C语言关键字之auto register详解_C 语言_AB教程网 (ab62.cn)&lt;/a&gt;&lt;/p&gt;
-</content>
-        <category term="C/C++" />
-        <category term="register" />
-        <updated>2023-02-02T11:57:01.000Z</updated>
     </entry>
 </feed>
