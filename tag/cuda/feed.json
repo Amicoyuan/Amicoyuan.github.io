@@ -5,6 +5,26 @@
     "home_page_url": "https://xingyuanjie.top",
     "items": [
         {
+            "id": "https://xingyuanjie.top/2023/03/06/cuda011/",
+            "url": "https://xingyuanjie.top/2023/03/06/cuda011/",
+            "title": "cuda011",
+            "date_published": "2023-03-06T08:18:09.000Z",
+            "content_html": "<h2 id=\"参考资料\"><a href=\"#参考资料\" class=\"headerlink\" title=\"参考资料\"></a>参考资料</h2><p>CUDA C编程权威指南 程润伟，Max Grossman(美)，Ty Mckercher </p>\n",
+            "tags": [
+                "CUDA"
+            ]
+        },
+        {
+            "id": "https://xingyuanjie.top/2023/03/06/cuda010/",
+            "url": "https://xingyuanjie.top/2023/03/06/cuda010/",
+            "title": "CUDA处理错误",
+            "date_published": "2023-03-06T08:17:59.000Z",
+            "content_html": "<h2 id=\"CUDA处理错误\"><a href=\"#CUDA处理错误\" class=\"headerlink\" title=\"CUDA处理错误\"></a>CUDA处理错误</h2><p>由于许多CUDA调用是异步的，所以有时可能很难确定某个错误是由哪一步程序引起的。定义一个错误处理宏封装所有的CUDA API调用，这简化了错误检查过程：</p>\n<figure class=\"highlight c++\"><table><tr><td class=\"gutter hljs\"><div class=\"hljs code-wrapper\"><pre><span class=\"line\">1</span><br><span class=\"line\">2</span><br><span class=\"line\">3</span><br><span class=\"line\">4</span><br><span class=\"line\">5</span><br><span class=\"line\">6</span><br><span class=\"line\">7</span><br><span class=\"line\">8</span><br><span class=\"line\">9</span><br></pre></div></td><td class=\"code\"><div class=\"hljs code-wrapper\"><pre><code class=\"hljs c++\"><span class=\"hljs-meta\">#<span class=\"hljs-meta-keyword\">define</span> CHECK(call)</span><br>&#123;<br>    <span class=\"hljs-keyword\">const</span> cudaError_t error = call;<br>    <span class=\"hljs-keyword\">if</span>(error != cudaSuccess)<br>    &#123;<br>        <span class=\"hljs-built_in\">printf</span>(<span class=\"hljs-string\">&quot;Error:%s:%d, &quot;</span>, __FILE__, __LINE__);<br>        <span class=\"hljs-built_in\">printf</span>(<span class=\"hljs-string\">&quot;code:%d, reason: %s\\n&quot;</span>, error, <span class=\"hljs-built_in\">cudaGetErrorString</span>(error));<br>    &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>\n\n<p>例如，你可以在以下代码中使用宏：</p>\n<figure class=\"highlight reasonml\"><table><tr><td class=\"gutter hljs\"><div class=\"hljs code-wrapper\"><pre><span class=\"line\">1</span><br></pre></div></td><td class=\"code\"><div class=\"hljs code-wrapper\"><pre><code class=\"hljs reasonml\"><span class=\"hljs-constructor\">CHECK(<span class=\"hljs-params\">cudaMemcpy</span>(<span class=\"hljs-params\">d_C</span>, <span class=\"hljs-params\">gpuRef</span>, <span class=\"hljs-params\">nBytes</span>, <span class=\"hljs-params\">cudaMemcpyHostToDevice</span>)</span>);<br></code></pre></div></td></tr></table></figure>\n\n<p>如果内存拷贝或之前的异步操作产生了错误，这个宏会报告错误代码，并输出一个可读信息，然后停止程序。也可以用下述方法，在核函数调用后检查核函数错误：</p>\n<figure class=\"highlight c++\"><table><tr><td class=\"gutter hljs\"><div class=\"hljs code-wrapper\"><pre><span class=\"line\">1</span><br><span class=\"line\">2</span><br></pre></div></td><td class=\"code\"><div class=\"hljs code-wrapper\"><pre><code class=\"hljs c++\">kernel_function&lt;&lt;&lt;grid,block&gt;&gt;&gt;(argument list);<br><span class=\"hljs-built_in\">CHECK</span>(<span class=\"hljs-built_in\">cudaDeviceSynchronize</span>());<br></code></pre></div></td></tr></table></figure>\n\n<p>CHECK(cudaDeviceSynchronize())会阻塞主机端线程的运行直到设备端所有的请求任务都结束，并确保最后的核函数启动部分不会出错。以上仅是以调试为目的的，因为在核函数启动后添加这个检查点会阻塞主机端线程，使该检查点成为全局屏障。</p>\n<h2 id=\"参考资料\"><a href=\"#参考资料\" class=\"headerlink\" title=\"参考资料\"></a>参考资料</h2><p>CUDA C编程权威指南 程润伟，Max Grossman(美)，Ty Mckercher </p>\n",
+            "tags": [
+                "CUDA"
+            ]
+        },
+        {
             "id": "https://xingyuanjie.top/2023/03/06/cuda009/",
             "url": "https://xingyuanjie.top/2023/03/06/cuda009/",
             "title": "CUDA验证核函数",
