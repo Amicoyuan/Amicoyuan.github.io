@@ -3,7 +3,7 @@
     <id>https://xingyuanjie.top</id>
     <title>Amicoyuan</title>
     <link href="https://xingyuanjie.top" />
-    <updated>2023-03-06T05:59:18.000Z</updated>
+    <updated>2023-03-06T07:46:00.000Z</updated>
     <category term="AVX" />
     <category term="Data Structure" />
     <category term="String" />
@@ -24,8 +24,8 @@
     <category term="邻接矩阵" />
     <category term="DFS" />
     <category term="结构体" />
-    <category term="Double类型相等比较" />
     <category term="贪心" />
+    <category term="Double类型相等比较" />
     <category term="并查集" />
     <category term="Map" />
     <category term="Pair" />
@@ -40,8 +40,8 @@
     <category term="CUDA" />
     <category term="Intel" />
     <category term="LeetCode" />
-    <category term="双指针" />
     <category term="数组翻转" />
+    <category term="双指针" />
     <category term="哈希表" />
     <category term="前缀和" />
     <category term="Mirror" />
@@ -55,6 +55,41 @@
     <category term="性能分析工具" />
     <category term="gcov" />
     <category term="bool" />
+    <entry>
+        <id>https://xingyuanjie.top/2023/03/06/cuda008/</id>
+        <title>编写核函数</title>
+        <link rel="alternate" href="https://xingyuanjie.top/2023/03/06/cuda008/"/>
+        <content type="html">&lt;h2 id=&#34;编写核函数&#34;&gt;&lt;a href=&#34;#编写核函数&#34; class=&#34;headerlink&#34; title=&#34;编写核函数&#34;&gt;&lt;/a&gt;编写核函数&lt;/h2&gt;&lt;p&gt;核函数是在设备端执行的代码。在核函数中，需要为一个线程规定要进行的计算以及要进行的数据访问。当核函数被调用时，许多不同的CUDA线程并行执行同一个计算任务。以下是用_&lt;em&gt;global&lt;/em&gt;_&lt;/p&gt;
+&lt;p&gt;声明定义核函数：&lt;/p&gt;
+&lt;figure class=&#34;highlight reasonml&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs reasonml&#34;&gt;__global__  void kernel&lt;span class=&#34;hljs-constructor&#34;&gt;_name(&lt;span class=&#34;hljs-params&#34;&gt;argument&lt;/span&gt; &lt;span class=&#34;hljs-params&#34;&gt;list&lt;/span&gt;)&lt;/span&gt;;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;核函数必须有一个void返回类型。&lt;/p&gt;
+&lt;p&gt;表2-2总结了CUDA C程序中的函数类型限定符。函数类型限定符指定一个函数在主机上执行还是在设备上执行，以及可被主机调用还是被设备调用。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/03/06/cuda008/image-20230306155126122.png&#34; alt=&#34;image-20230306155126122&#34;&gt;&lt;/p&gt;
+&lt;p&gt;_&lt;em&gt;device&lt;/em&gt;_   和 __host__限定符可以一齐使用，这样函数可以同时在主机和设备端进行编译。&lt;/p&gt;
+&lt;h3 id=&#34;CUDA核函数的限制&#34;&gt;&lt;a href=&#34;#CUDA核函数的限制&#34; class=&#34;headerlink&#34; title=&#34;CUDA核函数的限制&#34;&gt;&lt;/a&gt;CUDA核函数的限制&lt;/h3&gt;&lt;p&gt;以下限制适用于所有核函数：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;只能访问设备内存&lt;/li&gt;
+&lt;li&gt;必须具有void返回类型&lt;/li&gt;
+&lt;li&gt;不支持可变数量的参数&lt;/li&gt;
+&lt;li&gt;不支持静态变量&lt;/li&gt;
+&lt;li&gt;显示异步行为&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;考虑一个简单的例子：将两个大小为N的向量A和B相加，主机端的向量加法C代码如下：&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;sumArrayOnHost&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;float&lt;/span&gt; *A, &lt;span class=&#34;hljs-keyword&#34;&gt;float&lt;/span&gt; *B, &lt;span class=&#34;hljs-keyword&#34;&gt;float&lt;/span&gt; *C, &lt;span class=&#34;hljs-keyword&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; N)&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i = &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;i &amp;lt; N; i++)&lt;br&gt;        C[i] = A[i] + B[i];&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;这是一个迭代N次的串行程序，循环结束后将产生以下核函数：&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-function&#34;&gt;__global__ &lt;span class=&#34;hljs-keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;sumArrayOnHost&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;float&lt;/span&gt; *A, &lt;span class=&#34;hljs-keyword&#34;&gt;float&lt;/span&gt; *B, &lt;span class=&#34;hljs-keyword&#34;&gt;float&lt;/span&gt; *C)&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;br&gt;    	&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i = threadIdx.x;&lt;br&gt;        C[i] = A[i] + B[i];&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;C函数和核函数之间有什么不同？你可能已经注意到循环体消失了，内置的线程坐标变量替换了数组索引，由于N是被隐式定义用来启动N个线程的，所以N没有什么参考价值。&lt;/p&gt;
+&lt;p&gt;假设有一个长度为32个元素的向量，你可以按以下方法用32个线程来调用核函数：&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;sumArraysOnGPU&amp;lt;&amp;lt;&amp;lt;&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;32&lt;/span&gt;&amp;gt;&amp;gt;&amp;gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;float&lt;/span&gt; *A, &lt;span class=&#34;hljs-keyword&#34;&gt;float&lt;/span&gt; *B, &lt;span class=&#34;hljs-keyword&#34;&gt;float&lt;/span&gt; *C);&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h2 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;p&gt;CUDA C编程权威指南 程润伟，Max Grossman(美)，Ty Mckercher &lt;/p&gt;
+</content>
+        <category term="CUDA" />
+        <updated>2023-03-06T07:46:00.000Z</updated>
+    </entry>
     <entry>
         <id>https://xingyuanjie.top/2023/03/06/cuda007/</id>
         <title>启动一个CUDA核函数</title>
@@ -402,7 +437,7 @@
 &lt;p&gt;info register	查看寄存器（除了浮点寄存器）&lt;/p&gt;
 &lt;p&gt;all-registers	查看所有寄存器&lt;/p&gt;
 &lt;p&gt;info registers &amp;lt;reg_name …&amp;gt;查看所指定寄存器&lt;/p&gt;
-&lt;h3 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;来源培训PPT 作者：Relax  邮箱：&lt;a href=&#34;mailto:&amp;#119;&amp;#x61;&amp;#110;&amp;#103;&amp;#x77;&amp;#x31;&amp;#49;&amp;#49;&amp;#64;&amp;#x69;&amp;#x63;&amp;#108;&amp;#x6f;&amp;#x75;&amp;#x64;&amp;#x2e;&amp;#x63;&amp;#111;&amp;#x6d;&#34;&gt;&amp;#119;&amp;#x61;&amp;#110;&amp;#103;&amp;#x77;&amp;#x31;&amp;#49;&amp;#49;&amp;#64;&amp;#x69;&amp;#x63;&amp;#108;&amp;#x6f;&amp;#x75;&amp;#x64;&amp;#x2e;&amp;#x63;&amp;#111;&amp;#x6d;&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;来源培训PPT 作者：Relax  邮箱：&lt;a href=&#34;mailto:&amp;#119;&amp;#x61;&amp;#110;&amp;#x67;&amp;#x77;&amp;#49;&amp;#x31;&amp;#49;&amp;#64;&amp;#105;&amp;#99;&amp;#108;&amp;#111;&amp;#117;&amp;#x64;&amp;#x2e;&amp;#99;&amp;#x6f;&amp;#109;&#34;&gt;&amp;#119;&amp;#x61;&amp;#110;&amp;#x67;&amp;#x77;&amp;#49;&amp;#x31;&amp;#49;&amp;#64;&amp;#105;&amp;#99;&amp;#108;&amp;#111;&amp;#117;&amp;#x64;&amp;#x2e;&amp;#99;&amp;#x6f;&amp;#109;&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 </content>
         <category term="Linux" />
         <updated>2023-02-24T08:50:20.000Z</updated>
@@ -722,20 +757,5 @@
         <category term="C++" />
         <category term="牛客" />
         <updated>2023-02-07T08:58:01.000Z</updated>
-    </entry>
-    <entry>
-        <id>https://xingyuanjie.top/2023/02/06/matrix001/</id>
-        <title>矩阵乘法最基础版本</title>
-        <link rel="alternate" href="https://xingyuanjie.top/2023/02/06/matrix001/"/>
-        <content type="html">&lt;h2 id=&#34;矩阵乘法最基础版本&#34;&gt;&lt;a href=&#34;#矩阵乘法最基础版本&#34; class=&#34;headerlink&#34; title=&#34;矩阵乘法最基础版本&#34;&gt;&lt;/a&gt;矩阵乘法最基础版本&lt;/h2&gt;&lt;h3 id=&#34;数学原理示例&#34;&gt;&lt;a href=&#34;#数学原理示例&#34; class=&#34;headerlink&#34; title=&#34;数学原理示例&#34;&gt;&lt;/a&gt;数学原理示例&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;/2023/02/06/matrix001/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25pYW5uaWFueGk=,size_16,color_FFFFFF,t_70.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;完整代码&#34;&gt;&lt;a href=&#34;#完整代码&#34; class=&#34;headerlink&#34; title=&#34;完整代码&#34;&gt;&lt;/a&gt;完整代码&lt;/h3&gt;&lt;p&gt;用A的第i行分别和B的第j列的各个元素相乘求和，求得C的第i行j列的元素，这种算法中，B的访问是按列进行访问的，代码如下：&lt;/p&gt;
-&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-comment&#34;&gt;//m是A矩阵的行,k是A矩阵的列,n是B矩阵的列&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;double&lt;/span&gt; temp=&lt;span class=&#34;hljs-number&#34;&gt;0.0&lt;/span&gt;;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i = &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;; i &amp;lt; m; i++)&amp;#123;				&lt;span class=&#34;hljs-comment&#34;&gt;//遍历C矩阵各行，其行数与A的行数相等 &lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; j = &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;; j &amp;lt; n; j++)&amp;#123;			&lt;span class=&#34;hljs-comment&#34;&gt;//遍历C矩阵i行j列&lt;/span&gt;&lt;br&gt;        temp = &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; p = &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;; p &amp;lt; k; p++)&amp;#123;		&lt;span class=&#34;hljs-comment&#34;&gt;//用p循环累加和计算C[i][j] &lt;/span&gt;&lt;br&gt;            &lt;span class=&#34;hljs-comment&#34;&gt;//计算区域&lt;/span&gt;&lt;br&gt;            temp += A[i][p] * B[p][j];		&lt;span class=&#34;hljs-comment&#34;&gt;//遍历A矩阵各行与B矩阵各列&lt;/span&gt;&lt;br&gt;        &amp;#125;&lt;br&gt;        C[i][j] = temp;&lt;br&gt;    &amp;#125;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;//结果C矩阵m行n列&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h3 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/niannianxi/article/details/104028215&#34;&gt;(64条消息) C语言实现矩阵的乘法_꧁年年曦꧂的博客-CSDN博客_c语言矩阵乘法&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.jb51.net/article/75750.htm&#34;&gt;C语言科学计算入门之矩阵乘法的相关计算_C 语言_脚本之家 (jb51.net)&lt;/a&gt;&lt;/p&gt;
-</content>
-        <category term="Matrix" />
-        <category term="GEMM" />
-        <updated>2023-02-06T14:00:14.000Z</updated>
     </entry>
 </feed>

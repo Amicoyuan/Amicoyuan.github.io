@@ -5,8 +5,8 @@
         <link>https://xingyuanjie.top</link>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Mon, 06 Mar 2023 13:59:18 +0800</pubDate>
-        <lastBuildDate>Mon, 06 Mar 2023 13:59:18 +0800</lastBuildDate>
+        <pubDate>Mon, 06 Mar 2023 15:46:00 +0800</pubDate>
+        <lastBuildDate>Mon, 06 Mar 2023 15:46:00 +0800</lastBuildDate>
         <category>AVX</category>
         <category>Data Structure</category>
         <category>String</category>
@@ -27,8 +27,8 @@
         <category>邻接矩阵</category>
         <category>DFS</category>
         <category>结构体</category>
-        <category>Double类型相等比较</category>
         <category>贪心</category>
+        <category>Double类型相等比较</category>
         <category>并查集</category>
         <category>Map</category>
         <category>Pair</category>
@@ -43,8 +43,8 @@
         <category>CUDA</category>
         <category>Intel</category>
         <category>LeetCode</category>
-        <category>双指针</category>
         <category>数组翻转</category>
+        <category>双指针</category>
         <category>哈希表</category>
         <category>前缀和</category>
         <category>Mirror</category>
@@ -58,6 +58,41 @@
         <category>性能分析工具</category>
         <category>gcov</category>
         <category>bool</category>
+        <item>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/03/06/cuda008/</guid>
+            <title>编写核函数</title>
+            <link>https://xingyuanjie.top/2023/03/06/cuda008/</link>
+            <category>CUDA</category>
+            <pubDate>Mon, 06 Mar 2023 15:46:00 +0800</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;编写核函数&#34;&gt;&lt;a href=&#34;#编写核函数&#34; class=&#34;headerlink&#34; title=&#34;编写核函数&#34;&gt;&lt;/a&gt;编写核函数&lt;/h2&gt;&lt;p&gt;核函数是在设备端执行的代码。在核函数中，需要为一个线程规定要进行的计算以及要进行的数据访问。当核函数被调用时，许多不同的CUDA线程并行执行同一个计算任务。以下是用_&lt;em&gt;global&lt;/em&gt;_&lt;/p&gt;
+&lt;p&gt;声明定义核函数：&lt;/p&gt;
+&lt;figure class=&#34;highlight reasonml&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs reasonml&#34;&gt;__global__  void kernel&lt;span class=&#34;hljs-constructor&#34;&gt;_name(&lt;span class=&#34;hljs-params&#34;&gt;argument&lt;/span&gt; &lt;span class=&#34;hljs-params&#34;&gt;list&lt;/span&gt;)&lt;/span&gt;;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;核函数必须有一个void返回类型。&lt;/p&gt;
+&lt;p&gt;表2-2总结了CUDA C程序中的函数类型限定符。函数类型限定符指定一个函数在主机上执行还是在设备上执行，以及可被主机调用还是被设备调用。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/03/06/cuda008/image-20230306155126122.png&#34; alt=&#34;image-20230306155126122&#34;&gt;&lt;/p&gt;
+&lt;p&gt;_&lt;em&gt;device&lt;/em&gt;_   和 __host__限定符可以一齐使用，这样函数可以同时在主机和设备端进行编译。&lt;/p&gt;
+&lt;h3 id=&#34;CUDA核函数的限制&#34;&gt;&lt;a href=&#34;#CUDA核函数的限制&#34; class=&#34;headerlink&#34; title=&#34;CUDA核函数的限制&#34;&gt;&lt;/a&gt;CUDA核函数的限制&lt;/h3&gt;&lt;p&gt;以下限制适用于所有核函数：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;只能访问设备内存&lt;/li&gt;
+&lt;li&gt;必须具有void返回类型&lt;/li&gt;
+&lt;li&gt;不支持可变数量的参数&lt;/li&gt;
+&lt;li&gt;不支持静态变量&lt;/li&gt;
+&lt;li&gt;显示异步行为&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;考虑一个简单的例子：将两个大小为N的向量A和B相加，主机端的向量加法C代码如下：&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;sumArrayOnHost&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;float&lt;/span&gt; *A, &lt;span class=&#34;hljs-keyword&#34;&gt;float&lt;/span&gt; *B, &lt;span class=&#34;hljs-keyword&#34;&gt;float&lt;/span&gt; *C, &lt;span class=&#34;hljs-keyword&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; N)&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i = &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;i &amp;lt; N; i++)&lt;br&gt;        C[i] = A[i] + B[i];&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;这是一个迭代N次的串行程序，循环结束后将产生以下核函数：&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-function&#34;&gt;__global__ &lt;span class=&#34;hljs-keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;sumArrayOnHost&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;float&lt;/span&gt; *A, &lt;span class=&#34;hljs-keyword&#34;&gt;float&lt;/span&gt; *B, &lt;span class=&#34;hljs-keyword&#34;&gt;float&lt;/span&gt; *C)&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;br&gt;    	&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i = threadIdx.x;&lt;br&gt;        C[i] = A[i] + B[i];&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;C函数和核函数之间有什么不同？你可能已经注意到循环体消失了，内置的线程坐标变量替换了数组索引，由于N是被隐式定义用来启动N个线程的，所以N没有什么参考价值。&lt;/p&gt;
+&lt;p&gt;假设有一个长度为32个元素的向量，你可以按以下方法用32个线程来调用核函数：&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;sumArraysOnGPU&amp;lt;&amp;lt;&amp;lt;&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;32&lt;/span&gt;&amp;gt;&amp;gt;&amp;gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;float&lt;/span&gt; *A, &lt;span class=&#34;hljs-keyword&#34;&gt;float&lt;/span&gt; *B, &lt;span class=&#34;hljs-keyword&#34;&gt;float&lt;/span&gt; *C);&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h2 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;p&gt;CUDA C编程权威指南 程润伟，Max Grossman(美)，Ty Mckercher &lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">https://xingyuanjie.top/2023/03/06/cuda007/</guid>
             <title>启动一个CUDA核函数</title>
