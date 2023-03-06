@@ -9,35 +9,35 @@
         <lastBuildDate>Tue, 28 Feb 2023 20:59:01 +0800</lastBuildDate>
         <category>AVX</category>
         <category>Data Structure</category>
-        <category>Set</category>
-        <category>团体程序设计天梯赛</category>
-        <category>STL</category>
-        <category>C++</category>
-        <category>Sort</category>
         <category>String</category>
         <category>Find</category>
-        <category>LinkList</category>
-        <category>双向链表</category>
+        <category>STL</category>
+        <category>C++</category>
+        <category>Set</category>
+        <category>团体程序设计天梯赛</category>
+        <category>Sort</category>
         <category>Graph</category>
         <category>邻接表</category>
         <category>Vector</category>
+        <category>LinkList</category>
+        <category>双向链表</category>
+        <category>模拟</category>
         <category>Binary tree</category>
         <category>BFS</category>
-        <category>模拟</category>
-        <category>邻接矩阵</category>
-        <category>DFS</category>
         <category>结构体</category>
         <category>贪心</category>
+        <category>邻接矩阵</category>
+        <category>DFS</category>
         <category>Double类型相等比较</category>
         <category>并查集</category>
         <category>Map</category>
         <category>Pair</category>
         <category>Linux</category>
+        <category>MPI</category>
         <category>Tensorflow</category>
         <category>Machine Learning</category>
         <category>Matrix</category>
         <category>GEMM</category>
-        <category>MPI</category>
         <category>AVX2</category>
         <category>dgemm</category>
         <category>Cache</category>
@@ -53,12 +53,12 @@
         <category>牛客</category>
         <category>Numactl</category>
         <category>OpenMP</category>
+        <category>Slurm</category>
         <category>C/C++</category>
         <category>register</category>
-        <category>Slurm</category>
         <category>性能分析工具</category>
-        <category>bool</category>
         <category>gcov</category>
+        <category>bool</category>
         <item>
             <guid isPermalink="true">https://xingyuanjie.top/2023/02/28/vectorbool/</guid>
             <title>vector&lt;bool&gt;与vector&lt;T&gt;</title>
@@ -179,8 +179,8 @@
             <title>L2-036 网红点打卡攻略 (25 分)</title>
             <link>https://xingyuanjie.top/2022/04/23/Algorithm032/</link>
             <category>Data Structure</category>
-            <category>团体程序设计天梯赛</category>
             <category>C++</category>
+            <category>团体程序设计天梯赛</category>
             <category>Graph</category>
             <category>邻接矩阵</category>
             <pubDate>Sat, 23 Apr 2022 21:50:27 +0800</pubDate>
@@ -210,8 +210,8 @@
             <title>L2-039 清点代码库 (25 分)</title>
             <link>https://xingyuanjie.top/2022/04/23/Algorithm031/</link>
             <category>Data Structure</category>
-            <category>团体程序设计天梯赛</category>
             <category>C++</category>
+            <category>团体程序设计天梯赛</category>
             <category>Sort</category>
             <category>Vector</category>
             <category>Map</category>
@@ -238,9 +238,9 @@
             <guid isPermalink="true">https://xingyuanjie.top/2022/04/23/Algorithm030/</guid>
             <title>L2-005 集合相似度 (25 分)</title>
             <link>https://xingyuanjie.top/2022/04/23/Algorithm030/</link>
+            <category>C++</category>
             <category>Set</category>
             <category>团体程序设计天梯赛</category>
-            <category>C++</category>
             <category>模拟</category>
             <pubDate>Sat, 23 Apr 2022 21:39:53 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;L2-005-集合相似度-25-分&#34;&gt;&lt;a href=&#34;#L2-005-集合相似度-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-005 集合相似度 (25 分)&#34;&gt;&lt;/a&gt;L2-005 集合相似度 (25 分)&lt;/h2&gt;&lt;p&gt;给定两个整数集合，它们的相似度定义为：Nc&amp;#x2F;Nt×100%。其中Nc是两个集合都有的不相等整数的个数，Nt是两个集合一共有的不相等整数的个数。你的任务就是计算任意一对给定集合的相似度。&lt;/p&gt;
@@ -290,8 +290,8 @@
             <title>L2-010 排座位 (25 分)</title>
             <link>https://xingyuanjie.top/2022/04/16/Algorithm028/</link>
             <category>Data Structure</category>
-            <category>团体程序设计天梯赛</category>
             <category>C++</category>
+            <category>团体程序设计天梯赛</category>
             <category>Graph</category>
             <category>邻接矩阵</category>
             <category>并查集</category>
@@ -317,8 +317,8 @@
             <guid isPermalink="true">https://xingyuanjie.top/2022/04/16/Algorithm027/</guid>
             <title>L2-009 抢红包 (25 分)</title>
             <link>https://xingyuanjie.top/2022/04/16/Algorithm027/</link>
-            <category>团体程序设计天梯赛</category>
             <category>C++</category>
+            <category>团体程序设计天梯赛</category>
             <category>Sort</category>
             <category>结构体</category>
             <category>Double类型相等比较</category>
@@ -346,8 +346,8 @@
             <guid isPermalink="true">https://xingyuanjie.top/2022/04/15/Algorithm026/</guid>
             <title>L2-003 月饼 (25 分)</title>
             <link>https://xingyuanjie.top/2022/04/15/Algorithm026/</link>
-            <category>团体程序设计天梯赛</category>
             <category>C++</category>
+            <category>团体程序设计天梯赛</category>
             <category>Sort</category>
             <category>结构体</category>
             <category>贪心</category>
@@ -371,8 +371,8 @@
             <title>L2-013 红色警报 (25 分)</title>
             <link>https://xingyuanjie.top/2022/04/15/Algorithm025/</link>
             <category>Data Structure</category>
-            <category>团体程序设计天梯赛</category>
             <category>C++</category>
+            <category>团体程序设计天梯赛</category>
             <category>Graph</category>
             <category>邻接矩阵</category>
             <category>DFS</category>
@@ -399,8 +399,8 @@
             <title>L2-011 玩转二叉树 (25 分)</title>
             <link>https://xingyuanjie.top/2022/04/14/Algorithm024/</link>
             <category>Data Structure</category>
-            <category>团体程序设计天梯赛</category>
             <category>C++</category>
+            <category>团体程序设计天梯赛</category>
             <category>Binary tree</category>
             <category>BFS</category>
             <pubDate>Thu, 14 Apr 2022 14:01:10 +0800</pubDate>
@@ -426,8 +426,8 @@
             <title>L2-035 完全二叉树的层序遍历 (25 分)</title>
             <link>https://xingyuanjie.top/2022/04/14/Algorithm023/</link>
             <category>Data Structure</category>
-            <category>团体程序设计天梯赛</category>
             <category>C++</category>
+            <category>团体程序设计天梯赛</category>
             <category>Binary tree</category>
             <pubDate>Thu, 14 Apr 2022 14:01:05 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;L2-035-完全二叉树的层序遍历-25-分&#34;&gt;&lt;a href=&#34;#L2-035-完全二叉树的层序遍历-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-035 完全二叉树的层序遍历 (25 分)&#34;&gt;&lt;/a&gt;L2-035 完全二叉树的层序遍历 (25 分)&lt;/h2&gt;&lt;p&gt;一个二叉树，如果每一个层的结点数都达到最大值，则这个二叉树就是&lt;strong&gt;完美二叉树&lt;/strong&gt;。对于深度为 &lt;em&gt;D&lt;/em&gt; 的，有 &lt;em&gt;N&lt;/em&gt; 个结点的二叉树，若其结点对应于相同深度完美二叉树的层序遍历的前 &lt;em&gt;N&lt;/em&gt; 个结点，这样的树就是&lt;strong&gt;完全二叉树&lt;/strong&gt;。&lt;/p&gt;
@@ -449,8 +449,8 @@
             <title>L2-031 深入虎穴 (25 分)</title>
             <link>https://xingyuanjie.top/2022/04/13/Algorithm022/</link>
             <category>Data Structure</category>
-            <category>团体程序设计天梯赛</category>
             <category>C++</category>
+            <category>团体程序设计天梯赛</category>
             <category>邻接表</category>
             <category>Vector</category>
             <category>Binary tree</category>
@@ -478,8 +478,8 @@
             <title>L2-040 哲哲打游戏 (25 分)</title>
             <link>https://xingyuanjie.top/2022/04/13/Algorithm021/</link>
             <category>Data Structure</category>
-            <category>团体程序设计天梯赛</category>
             <category>C++</category>
+            <category>团体程序设计天梯赛</category>
             <category>邻接表</category>
             <category>Vector</category>
             <category>模拟</category>
@@ -516,8 +516,8 @@
             <title>L2-026 小字辈 (25 分)</title>
             <link>https://xingyuanjie.top/2022/04/13/Algorithm019/</link>
             <category>Data Structure</category>
-            <category>团体程序设计天梯赛</category>
             <category>C++</category>
+            <category>团体程序设计天梯赛</category>
             <category>邻接表</category>
             <category>Vector</category>
             <category>Binary tree</category>

@@ -9,35 +9,35 @@
         <lastBuildDate>Fri, 08 Apr 2022 19:18:57 +0800</lastBuildDate>
         <category>AVX</category>
         <category>Data Structure</category>
-        <category>Set</category>
-        <category>团体程序设计天梯赛</category>
-        <category>STL</category>
-        <category>C++</category>
-        <category>Sort</category>
         <category>String</category>
         <category>Find</category>
-        <category>LinkList</category>
-        <category>双向链表</category>
+        <category>STL</category>
+        <category>C++</category>
+        <category>Set</category>
+        <category>团体程序设计天梯赛</category>
+        <category>Sort</category>
         <category>Graph</category>
         <category>邻接表</category>
         <category>Vector</category>
+        <category>LinkList</category>
+        <category>双向链表</category>
+        <category>模拟</category>
         <category>Binary tree</category>
         <category>BFS</category>
-        <category>模拟</category>
-        <category>邻接矩阵</category>
-        <category>DFS</category>
         <category>结构体</category>
         <category>贪心</category>
+        <category>邻接矩阵</category>
+        <category>DFS</category>
         <category>Double类型相等比较</category>
         <category>并查集</category>
         <category>Map</category>
         <category>Pair</category>
         <category>Linux</category>
+        <category>MPI</category>
         <category>Tensorflow</category>
         <category>Machine Learning</category>
         <category>Matrix</category>
         <category>GEMM</category>
-        <category>MPI</category>
         <category>AVX2</category>
         <category>dgemm</category>
         <category>Cache</category>
@@ -53,20 +53,20 @@
         <category>牛客</category>
         <category>Numactl</category>
         <category>OpenMP</category>
+        <category>Slurm</category>
         <category>C/C++</category>
         <category>register</category>
-        <category>Slurm</category>
         <category>性能分析工具</category>
-        <category>bool</category>
         <category>gcov</category>
+        <category>bool</category>
         <item>
             <guid isPermalink="true">https://xingyuanjie.top/2022/04/08/Algorithm015/</guid>
             <title>C++的STL中字符串string自带方法find查找</title>
             <link>https://xingyuanjie.top/2022/04/08/Algorithm015/</link>
-            <category>STL</category>
-            <category>C++</category>
             <category>String</category>
             <category>Find</category>
+            <category>STL</category>
+            <category>C++</category>
             <pubDate>Fri, 08 Apr 2022 19:18:57 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;C-的STL中字符串string自带方法find查找&#34;&gt;&lt;a href=&#34;#C-的STL中字符串string自带方法find查找&#34; class=&#34;headerlink&#34; title=&#34;C++的STL中字符串string自带方法find查找&#34;&gt;&lt;/a&gt;C++的STL中字符串string自带方法find查找&lt;/h1&gt;&lt;h2 id=&#34;用法&#34;&gt;&lt;a href=&#34;#用法&#34; class=&#34;headerlink&#34; title=&#34;用法&#34;&gt;&lt;/a&gt;用法&lt;/h2&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;string str = &lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;abcd&amp;quot;&lt;/span&gt;;&lt;br&gt;	cout &amp;lt;&amp;lt; str.&lt;span class=&#34;hljs-built_in&#34;&gt;find&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;#x27;a&amp;#x27;&lt;/span&gt;);&lt;br&gt;	&lt;span class=&#34;hljs-comment&#34;&gt;//返回的是下标的值而不是指针或是迭代器&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 

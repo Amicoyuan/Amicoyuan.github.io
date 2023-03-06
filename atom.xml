@@ -6,35 +6,35 @@
     <updated>2023-03-06T11:00:34.000Z</updated>
     <category term="AVX" />
     <category term="Data Structure" />
-    <category term="Set" />
-    <category term="团体程序设计天梯赛" />
-    <category term="STL" />
-    <category term="C++" />
-    <category term="Sort" />
     <category term="String" />
     <category term="Find" />
-    <category term="LinkList" />
-    <category term="双向链表" />
+    <category term="STL" />
+    <category term="C++" />
+    <category term="Set" />
+    <category term="团体程序设计天梯赛" />
+    <category term="Sort" />
     <category term="Graph" />
     <category term="邻接表" />
     <category term="Vector" />
+    <category term="LinkList" />
+    <category term="双向链表" />
+    <category term="模拟" />
     <category term="Binary tree" />
     <category term="BFS" />
-    <category term="模拟" />
-    <category term="邻接矩阵" />
-    <category term="DFS" />
     <category term="结构体" />
     <category term="贪心" />
+    <category term="邻接矩阵" />
+    <category term="DFS" />
     <category term="Double类型相等比较" />
     <category term="并查集" />
     <category term="Map" />
     <category term="Pair" />
     <category term="Linux" />
+    <category term="MPI" />
     <category term="Tensorflow" />
     <category term="Machine Learning" />
     <category term="Matrix" />
     <category term="GEMM" />
-    <category term="MPI" />
     <category term="AVX2" />
     <category term="dgemm" />
     <category term="Cache" />
@@ -50,12 +50,12 @@
     <category term="牛客" />
     <category term="Numactl" />
     <category term="OpenMP" />
+    <category term="Slurm" />
     <category term="C/C++" />
     <category term="register" />
-    <category term="Slurm" />
     <category term="性能分析工具" />
-    <category term="bool" />
     <category term="gcov" />
+    <category term="bool" />
     <entry>
         <id>https://xingyuanjie.top/2023/03/06/ML001/</id>
         <title>线性回归模型</title>
@@ -138,10 +138,26 @@
 &lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs python&#34;&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;compute_model_output&lt;/span&gt;(&lt;span class=&#34;hljs-params&#34;&gt;x, w, b&lt;/span&gt;):&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-string&#34;&gt;    Computes the prediction of a linear model&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-string&#34;&gt;    Args:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-string&#34;&gt;    	x (ndarray (m,)):Data, m examples&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-string&#34;&gt;    	w,b (scalar)	:model parameters&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-string&#34;&gt;    Returns&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-string&#34;&gt;    	y (ndarray (m,)):target values&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-string&#34;&gt;    &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;br&gt;    &lt;br&gt;    m = x.shape[&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;]&lt;br&gt;    f_wb = np.zeros(m)&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; i &lt;span class=&#34;hljs-keyword&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;hljs-built_in&#34;&gt;range&lt;/span&gt;(m)&lt;br&gt;    	f_wb[i] = w * x[i] + b&lt;br&gt;    &lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; f_wb&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;p&gt;Now let’s call the compute_model_output function and plot the output.&lt;/p&gt;
-&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs python&#34;&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs python&#34;&gt;tmp_f_wb = compute_model_output(x_train, w, b,)&lt;br&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;#Plot our model prediction&lt;/span&gt;&lt;br&gt;plt.plot(x_train, tmp_f_wb, c=&lt;span class=&#34;hljs-string&#34;&gt;&amp;#x27;b&amp;#x27;&lt;/span&gt;,label=&lt;span class=&#34;hljs-string&#34;&gt;&amp;#x27;Our Prediction&amp;#x27;&lt;/span&gt;)&lt;br&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;#Plot the data points&lt;/span&gt;&lt;br&gt;plt.scatter(x_train, y_train, marker=&lt;span class=&#34;hljs-string&#34;&gt;&amp;#x27;x&amp;#x27;&lt;/span&gt;, c=&lt;span class=&#34;hljs-string&#34;&gt;&amp;#x27;r&amp;#x27;&lt;/span&gt;,label=&lt;span class=&#34;hljs-string&#34;&gt;&amp;#x27;Actual Values&amp;#x27;&lt;/span&gt;)&lt;br&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;#Set the title&lt;/span&gt;&lt;br&gt;plt.title(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;Housing Prices&amp;quot;&lt;/span&gt;)&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;#Set the y-axis label&lt;/span&gt;&lt;br&gt;plt.ylabel(&lt;span class=&#34;hljs-string&#34;&gt;&amp;#x27;Price (in 1000s of dollars)&amp;#x27;&lt;/span&gt;)&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;#Set the x-axis label&lt;/span&gt;&lt;br&gt;plt.xlabel(&lt;span class=&#34;hljs-string&#34;&gt;&amp;#x27;Size (1000 sqft)&amp;#x27;&lt;/span&gt;)&lt;br&gt;plt.legend()&lt;br&gt;plt.show()&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
+&lt;p&gt;&lt;img src=&#34;/2023/03/06/ML001/image-20230306211337338.png&#34; alt=&#34;image-20230306211337338&#34;&gt;&lt;/p&gt;
+&lt;p&gt;As you can see, setting w &amp;#x3D; 100 and b &amp;#x3D; 100 does not result in a line that fits our data.&lt;/p&gt;
+&lt;h3 id=&#34;Challenge&#34;&gt;&lt;a href=&#34;#Challenge&#34; class=&#34;headerlink&#34; title=&#34;Challenge&#34;&gt;&lt;/a&gt;Challenge&lt;/h3&gt;&lt;p&gt;Try experimenting with different values of w and b. What should the values be for a line that fits our data?&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tips:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;You can use  your mouse to click on the triangle to the left of the green “Hints” below to reveal some hints for choosing b and w.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Hints&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;Prediction&#34;&gt;&lt;a href=&#34;#Prediction&#34; class=&#34;headerlink&#34; title=&#34;Prediction&#34;&gt;&lt;/a&gt;Prediction&lt;/h3&gt;&lt;p&gt;Now that we have a model, we can use it to make our original prediction. Let’s predict the price of a house with 1200 sqft. Since the units of x are in 1000’s of sqft, x is 1.2.&lt;/p&gt;
+&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs python&#34;&gt;w = &lt;span class=&#34;hljs-number&#34;&gt;200&lt;/span&gt;&lt;br&gt;b = &lt;span class=&#34;hljs-number&#34;&gt;100&lt;/span&gt;&lt;br&gt;x_i = &lt;span class=&#34;hljs-number&#34;&gt;1.2&lt;/span&gt;&lt;br&gt;cost_1200sqft = w * x_i + b&lt;br&gt;&lt;span class=&#34;hljs-built_in&#34;&gt;print&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;f&amp;quot;$&lt;span class=&#34;hljs-subst&#34;&gt;&amp;#123;cost_1200sqft:&lt;span class=&#34;hljs-number&#34;&gt;.0&lt;/span&gt;f&amp;#125;&lt;/span&gt; thousand dollars&amp;quot;&lt;/span&gt; )&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
+&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs python&#34;&gt;$&lt;span class=&#34;hljs-number&#34;&gt;340&lt;/span&gt; thousand dollars&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
+&lt;h3 id=&#34;Congratulations&#34;&gt;&lt;a href=&#34;#Congratulations&#34; class=&#34;headerlink&#34; title=&#34;Congratulations!&#34;&gt;&lt;/a&gt;Congratulations!&lt;/h3&gt;&lt;p&gt;In this lab you have learned:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Linear regression bulids a model which establishes a relationship between features and targets&lt;/li&gt;
+&lt;li&gt;In the example above, the feature was house size and the target was house price&lt;/li&gt;
+&lt;li&gt;for simple linear regression, the model has two parameters w and b whose calue are ‘fit’ using training data.&lt;/li&gt;
+&lt;li&gt;once a model’s parameters have been determined, the model can be used to make predictions on novel data.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://www.bilibili.com/video/BV1Pa411X76s?p=5&amp;amp;vd_source=3ae32e36058f58c5b85935fca9b77797&#34;&gt;https://www.bilibili.com/video/BV1Pa411X76s?p=5&amp;amp;vd_source=3ae32e36058f58c5b85935fca9b77797&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/kaieye/2022-Machine-Learning-Specialization&#34;&gt;kaieye&amp;#x2F;2022-Machine-Learning-Specialization (github.com)&lt;/a&gt;&lt;/p&gt;
 </content>
@@ -600,7 +616,7 @@
 &lt;p&gt;info register	查看寄存器（除了浮点寄存器）&lt;/p&gt;
 &lt;p&gt;all-registers	查看所有寄存器&lt;/p&gt;
 &lt;p&gt;info registers &amp;lt;reg_name …&amp;gt;查看所指定寄存器&lt;/p&gt;
-&lt;h3 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;来源培训PPT 作者：Relax  邮箱：&lt;a href=&#34;mailto:&amp;#119;&amp;#x61;&amp;#x6e;&amp;#x67;&amp;#119;&amp;#x31;&amp;#49;&amp;#x31;&amp;#x40;&amp;#105;&amp;#x63;&amp;#x6c;&amp;#x6f;&amp;#x75;&amp;#100;&amp;#46;&amp;#x63;&amp;#111;&amp;#109;&#34;&gt;&amp;#119;&amp;#x61;&amp;#x6e;&amp;#x67;&amp;#119;&amp;#x31;&amp;#49;&amp;#x31;&amp;#x40;&amp;#105;&amp;#x63;&amp;#x6c;&amp;#x6f;&amp;#x75;&amp;#100;&amp;#46;&amp;#x63;&amp;#111;&amp;#109;&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;来源培训PPT 作者：Relax  邮箱：&lt;a href=&#34;mailto:&amp;#119;&amp;#97;&amp;#x6e;&amp;#103;&amp;#119;&amp;#x31;&amp;#x31;&amp;#49;&amp;#x40;&amp;#x69;&amp;#x63;&amp;#x6c;&amp;#111;&amp;#x75;&amp;#x64;&amp;#46;&amp;#x63;&amp;#x6f;&amp;#109;&#34;&gt;&amp;#119;&amp;#97;&amp;#x6e;&amp;#103;&amp;#119;&amp;#x31;&amp;#x31;&amp;#49;&amp;#x40;&amp;#x69;&amp;#x63;&amp;#x6c;&amp;#111;&amp;#x75;&amp;#x64;&amp;#46;&amp;#x63;&amp;#x6f;&amp;#109;&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 </content>
         <category term="Linux" />
         <updated>2023-02-24T08:50:20.000Z</updated>

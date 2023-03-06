@@ -6,35 +6,35 @@
     <updated>2022-04-16T06:57:38.000Z</updated>
     <category term="AVX" />
     <category term="Data Structure" />
-    <category term="Set" />
-    <category term="团体程序设计天梯赛" />
-    <category term="STL" />
-    <category term="C++" />
-    <category term="Sort" />
     <category term="String" />
     <category term="Find" />
-    <category term="LinkList" />
-    <category term="双向链表" />
+    <category term="STL" />
+    <category term="C++" />
+    <category term="Set" />
+    <category term="团体程序设计天梯赛" />
+    <category term="Sort" />
     <category term="Graph" />
     <category term="邻接表" />
     <category term="Vector" />
+    <category term="LinkList" />
+    <category term="双向链表" />
+    <category term="模拟" />
     <category term="Binary tree" />
     <category term="BFS" />
-    <category term="模拟" />
-    <category term="邻接矩阵" />
-    <category term="DFS" />
     <category term="结构体" />
     <category term="贪心" />
+    <category term="邻接矩阵" />
+    <category term="DFS" />
     <category term="Double类型相等比较" />
     <category term="并查集" />
     <category term="Map" />
     <category term="Pair" />
     <category term="Linux" />
+    <category term="MPI" />
     <category term="Tensorflow" />
     <category term="Machine Learning" />
     <category term="Matrix" />
     <category term="GEMM" />
-    <category term="MPI" />
     <category term="AVX2" />
     <category term="dgemm" />
     <category term="Cache" />
@@ -50,12 +50,12 @@
     <category term="牛客" />
     <category term="Numactl" />
     <category term="OpenMP" />
+    <category term="Slurm" />
     <category term="C/C++" />
     <category term="register" />
-    <category term="Slurm" />
     <category term="性能分析工具" />
-    <category term="bool" />
     <category term="gcov" />
+    <category term="bool" />
     <entry>
         <id>https://xingyuanjie.top/2022/04/16/Algorithm027/</id>
         <title>L2-009 抢红包 (25 分)</title>
@@ -78,8 +78,8 @@
 &lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/patrick_star_cowboy/article/details/82083392&#34;&gt;(20条消息) 如何判断两个double类型的数是否相等？_Patrick-Star的博客-CSDN博客_两个double怎么判断相等&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://pintia.cn/problem-sets/994805046380707840/problems/994805066890854400&#34;&gt;题目详情 - L2-009 抢红包 (25 分) (pintia.cn)&lt;/a&gt;&lt;/p&gt;
 </content>
-        <category term="团体程序设计天梯赛" />
         <category term="C++" />
+        <category term="团体程序设计天梯赛" />
         <category term="Sort" />
         <category term="结构体" />
         <category term="Double类型相等比较" />
