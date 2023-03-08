@@ -5,17 +5,17 @@
         <link>https://xingyuanjie.top</link>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Tue, 07 Mar 2023 09:53:34 +0800</pubDate>
-        <lastBuildDate>Tue, 07 Mar 2023 09:53:34 +0800</lastBuildDate>
+        <pubDate>Wed, 08 Mar 2023 22:13:01 +0800</pubDate>
+        <lastBuildDate>Wed, 08 Mar 2023 22:13:01 +0800</lastBuildDate>
         <category>AVX</category>
         <category>Data Structure</category>
-        <category>Set</category>
-        <category>团体程序设计天梯赛</category>
-        <category>STL</category>
-        <category>C++</category>
-        <category>Sort</category>
         <category>String</category>
         <category>Find</category>
+        <category>STL</category>
+        <category>C++</category>
+        <category>Set</category>
+        <category>团体程序设计天梯赛</category>
+        <category>Sort</category>
         <category>LinkList</category>
         <category>双向链表</category>
         <category>Graph</category>
@@ -28,23 +28,23 @@
         <category>DFS</category>
         <category>结构体</category>
         <category>贪心</category>
-        <category>并查集</category>
         <category>Double类型相等比较</category>
+        <category>并查集</category>
         <category>Map</category>
         <category>Pair</category>
-        <category>Linux</category>
         <category>CUDA</category>
-        <category>Matrix</category>
-        <category>GEMM</category>
+        <category>Linux</category>
         <category>Tensorflow</category>
         <category>Machine Learning</category>
         <category>MPI</category>
+        <category>Matrix</category>
+        <category>GEMM</category>
         <category>AVX2</category>
         <category>dgemm</category>
         <category>Cache</category>
         <category>Blocking</category>
-        <category>LeetCode</category>
         <category>Intel</category>
+        <category>LeetCode</category>
         <category>双指针</category>
         <category>数组翻转</category>
         <category>哈希表</category>
@@ -57,8 +57,24 @@
         <category>register</category>
         <category>Slurm</category>
         <category>性能分析工具</category>
-        <category>bool</category>
         <category>gcov</category>
+        <category>bool</category>
+        <item>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/03/08/cuda013/</guid>
+            <title>组织并行编程</title>
+            <link>https://xingyuanjie.top/2023/03/08/cuda013/</link>
+            <category>CUDA</category>
+            <pubDate>Wed, 08 Mar 2023 22:13:01 +0800</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;组织并行编程&#34;&gt;&lt;a href=&#34;#组织并行编程&#34; class=&#34;headerlink&#34; title=&#34;组织并行编程&#34;&gt;&lt;/a&gt;组织并行编程&lt;/h2&gt;&lt;p&gt;从前面的例子可以看出，如果使用了合适的网格和块大小来正确地组织线程，那么可以对内核性能产生很大的影响。在向量加法的例子中，为了实现最佳性能我们调整了块的大小，并基于块大小和向量数据大小计算出了网格大小。&lt;/p&gt;
+&lt;p&gt;现在通过一个矩阵加法的例子说明这一点。对于矩阵运算，传统的方法是在内核中使用一个包含二维网格与二位块的布局来组织线程。但是，这种传统的方法无法获得最佳性能。在矩阵加法中使用以下布局将有助于了解更多关于网格和块的启发性的用法：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;有二维线程块构成的二维网格&lt;/li&gt;
+&lt;li&gt;由一维线程块构成的一维网格&lt;/li&gt;
+&lt;li&gt;由一维线程块构成的二维网格&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;p&gt;CUDA C编程权威指南 程润伟，Max Grossman(美)，Ty Mckercher &lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">https://xingyuanjie.top/2023/03/07/CUDA012/</guid>
             <title>CUDA给核函数计时</title>

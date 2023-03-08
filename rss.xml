@@ -5,17 +5,17 @@
         <link>https://xingyuanjie.top</link>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Tue, 07 Mar 2023 09:53:34 +0800</pubDate>
-        <lastBuildDate>Tue, 07 Mar 2023 09:53:34 +0800</lastBuildDate>
+        <pubDate>Wed, 08 Mar 2023 22:13:01 +0800</pubDate>
+        <lastBuildDate>Wed, 08 Mar 2023 22:13:01 +0800</lastBuildDate>
         <category>AVX</category>
         <category>Data Structure</category>
-        <category>Set</category>
-        <category>团体程序设计天梯赛</category>
-        <category>STL</category>
-        <category>C++</category>
-        <category>Sort</category>
         <category>String</category>
         <category>Find</category>
+        <category>STL</category>
+        <category>C++</category>
+        <category>Set</category>
+        <category>团体程序设计天梯赛</category>
+        <category>Sort</category>
         <category>LinkList</category>
         <category>双向链表</category>
         <category>Graph</category>
@@ -28,23 +28,23 @@
         <category>DFS</category>
         <category>结构体</category>
         <category>贪心</category>
-        <category>并查集</category>
         <category>Double类型相等比较</category>
+        <category>并查集</category>
         <category>Map</category>
         <category>Pair</category>
-        <category>Linux</category>
         <category>CUDA</category>
-        <category>Matrix</category>
-        <category>GEMM</category>
+        <category>Linux</category>
         <category>Tensorflow</category>
         <category>Machine Learning</category>
         <category>MPI</category>
+        <category>Matrix</category>
+        <category>GEMM</category>
         <category>AVX2</category>
         <category>dgemm</category>
         <category>Cache</category>
         <category>Blocking</category>
-        <category>LeetCode</category>
         <category>Intel</category>
+        <category>LeetCode</category>
         <category>双指针</category>
         <category>数组翻转</category>
         <category>哈希表</category>
@@ -57,8 +57,24 @@
         <category>register</category>
         <category>Slurm</category>
         <category>性能分析工具</category>
-        <category>bool</category>
         <category>gcov</category>
+        <category>bool</category>
+        <item>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/03/08/cuda013/</guid>
+            <title>组织并行编程</title>
+            <link>https://xingyuanjie.top/2023/03/08/cuda013/</link>
+            <category>CUDA</category>
+            <pubDate>Wed, 08 Mar 2023 22:13:01 +0800</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;组织并行编程&#34;&gt;&lt;a href=&#34;#组织并行编程&#34; class=&#34;headerlink&#34; title=&#34;组织并行编程&#34;&gt;&lt;/a&gt;组织并行编程&lt;/h2&gt;&lt;p&gt;从前面的例子可以看出，如果使用了合适的网格和块大小来正确地组织线程，那么可以对内核性能产生很大的影响。在向量加法的例子中，为了实现最佳性能我们调整了块的大小，并基于块大小和向量数据大小计算出了网格大小。&lt;/p&gt;
+&lt;p&gt;现在通过一个矩阵加法的例子说明这一点。对于矩阵运算，传统的方法是在内核中使用一个包含二维网格与二位块的布局来组织线程。但是，这种传统的方法无法获得最佳性能。在矩阵加法中使用以下布局将有助于了解更多关于网格和块的启发性的用法：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;有二维线程块构成的二维网格&lt;/li&gt;
+&lt;li&gt;由一维线程块构成的一维网格&lt;/li&gt;
+&lt;li&gt;由一维线程块构成的二维网格&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;p&gt;CUDA C编程权威指南 程润伟，Max Grossman(美)，Ty Mckercher &lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">https://xingyuanjie.top/2023/03/07/CUDA012/</guid>
             <title>CUDA给核函数计时</title>
@@ -688,7 +704,7 @@
 &lt;p&gt;info register	查看寄存器（除了浮点寄存器）&lt;/p&gt;
 &lt;p&gt;all-registers	查看所有寄存器&lt;/p&gt;
 &lt;p&gt;info registers &amp;lt;reg_name …&amp;gt;查看所指定寄存器&lt;/p&gt;
-&lt;h3 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;来源培训PPT 作者：Relax  邮箱：&lt;a href=&#34;mailto:&amp;#x77;&amp;#x61;&amp;#110;&amp;#x67;&amp;#119;&amp;#x31;&amp;#49;&amp;#49;&amp;#64;&amp;#x69;&amp;#99;&amp;#x6c;&amp;#111;&amp;#x75;&amp;#100;&amp;#46;&amp;#99;&amp;#111;&amp;#109;&#34;&gt;&amp;#x77;&amp;#x61;&amp;#110;&amp;#x67;&amp;#119;&amp;#x31;&amp;#49;&amp;#49;&amp;#64;&amp;#x69;&amp;#99;&amp;#x6c;&amp;#111;&amp;#x75;&amp;#100;&amp;#46;&amp;#99;&amp;#111;&amp;#109;&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;来源培训PPT 作者：Relax  邮箱：&lt;a href=&#34;mailto:&amp;#x77;&amp;#x61;&amp;#110;&amp;#x67;&amp;#x77;&amp;#49;&amp;#49;&amp;#x31;&amp;#x40;&amp;#x69;&amp;#x63;&amp;#108;&amp;#x6f;&amp;#117;&amp;#x64;&amp;#46;&amp;#99;&amp;#x6f;&amp;#x6d;&#34;&gt;&amp;#x77;&amp;#x61;&amp;#110;&amp;#x67;&amp;#x77;&amp;#49;&amp;#49;&amp;#x31;&amp;#x40;&amp;#x69;&amp;#x63;&amp;#108;&amp;#x6f;&amp;#117;&amp;#x64;&amp;#46;&amp;#99;&amp;#x6f;&amp;#x6d;&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
  ]]></description>
         </item>
         <item>
@@ -736,19 +752,6 @@
             <description><![CDATA[ &lt;h2 id=&#34;11-盛最多水的容器&#34;&gt;&lt;a href=&#34;#11-盛最多水的容器&#34; class=&#34;headerlink&#34; title=&#34;11.盛最多水的容器&#34;&gt;&lt;/a&gt;11.盛最多水的容器&lt;/h2&gt;&lt;h2 id=&#34;题目链接&#34;&gt;&lt;a href=&#34;#题目链接&#34; class=&#34;headerlink&#34; title=&#34;题目链接&#34;&gt;&lt;/a&gt;题目链接&lt;/h2&gt;&lt;h4 id=&#34;11-盛最多水的容器-1&#34;&gt;&lt;a href=&#34;#11-盛最多水的容器-1&#34; class=&#34;headerlink&#34; title=&#34;11. 盛最多水的容器&#34;&gt;&lt;/a&gt;&lt;a href=&#34;https://leetcode.cn/problems/container-with-most-water/&#34;&gt;11. 盛最多水的容器&lt;/a&gt;&lt;/h4&gt;&lt;h2 id=&#34;完整代码&#34;&gt;&lt;a href=&#34;#完整代码&#34; class=&#34;headerlink&#34; title=&#34;完整代码&#34;&gt;&lt;/a&gt;完整代码&lt;/h2&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-class&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;Solution&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;public&lt;/span&gt;:&lt;br&gt;    &lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;maxArea&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(vector&amp;lt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;&amp;gt;&amp;amp; height)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;br&gt;        &lt;span class=&#34;hljs-comment&#34;&gt;//双指针；&lt;/span&gt;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; ans =&lt;span class=&#34;hljs-number&#34;&gt;-1&lt;/span&gt;;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; left=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; right=height.&lt;span class=&#34;hljs-built_in&#34;&gt;size&lt;/span&gt;()&lt;span class=&#34;hljs-number&#34;&gt;-1&lt;/span&gt;;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;while&lt;/span&gt;(left&amp;lt;right)&amp;#123;&lt;br&gt;            &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; temp=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;&lt;br&gt;            &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(height[left]&amp;lt;=height[right])&amp;#123;&lt;br&gt;                temp = height[left]*(right-left);&lt;br&gt;                ans = std::&lt;span class=&#34;hljs-built_in&#34;&gt;max&lt;/span&gt;(ans,temp);&lt;br&gt;                left++;&lt;br&gt;            &amp;#125;&lt;span class=&#34;hljs-keyword&#34;&gt;else&lt;/span&gt;&amp;#123;&lt;br&gt;                temp = height[right]*(right-left);&lt;br&gt;                ans = std::&lt;span class=&#34;hljs-built_in&#34;&gt;max&lt;/span&gt;(ans,temp);&lt;br&gt;                right--;&lt;br&gt;            &amp;#125;&lt;br&gt;            &lt;br&gt;        &amp;#125;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; ans;&lt;br&gt;        &lt;br&gt;    &amp;#125;&lt;br&gt;&amp;#125;;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;h2 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://leetcode.cn/problems/container-with-most-water/solution/sheng-zui-duo-shui-de-rong-qi-by-leetcode-solution/&#34;&gt;盛最多水的容器 - 盛最多水的容器 - 力扣（LeetCode）&lt;/a&gt;&lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">https://xingyuanjie.top/2023/02/17/leetcode001/</guid>
-            <title>146.LRU cache</title>
-            <link>https://xingyuanjie.top/2023/02/17/leetcode001/</link>
-            <category>C++</category>
-            <category>LeetCode</category>
-            <pubDate>Fri, 17 Feb 2023 14:31:45 +0800</pubDate>
-            <description><![CDATA[ &lt;h2 id=&#34;146-LRU-cache&#34;&gt;&lt;a href=&#34;#146-LRU-cache&#34; class=&#34;headerlink&#34; title=&#34;146.LRU cache&#34;&gt;&lt;/a&gt;146.LRU cache&lt;/h2&gt;&lt;h2 id=&#34;题目链接&#34;&gt;&lt;a href=&#34;#题目链接&#34; class=&#34;headerlink&#34; title=&#34;题目链接&#34;&gt;&lt;/a&gt;题目链接&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://leetcode.cn/problems/lru-cache/&#34;&gt;146. LRU 缓存 - 力扣（LeetCode）&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;完整代码&#34;&gt;&lt;a href=&#34;#完整代码&#34; class=&#34;headerlink&#34; title=&#34;完整代码&#34;&gt;&lt;/a&gt;完整代码&lt;/h2&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;41&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-class&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;LRUCache&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;private&lt;/span&gt;:&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; cap=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;&lt;br&gt;    list&amp;lt;pair&amp;lt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;,&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;&amp;gt;&amp;gt; lru;   &lt;span class=&#34;hljs-comment&#34;&gt;//真正的cache&lt;/span&gt;&lt;br&gt;    unordered_map&amp;lt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;,list&amp;lt;pair&amp;lt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;,&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;&amp;gt;&amp;gt;::iterator&amp;gt; mp;   &lt;span class=&#34;hljs-comment&#34;&gt;//主要用处就是查找&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;public&lt;/span&gt;:&lt;br&gt;    &lt;span class=&#34;hljs-built_in&#34;&gt;LRUCache&lt;/span&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; capacity) &amp;#123;&lt;br&gt;        cap = capacity;						&lt;span class=&#34;hljs-comment&#34;&gt;//容量&lt;/span&gt;&lt;br&gt;    &amp;#125;&lt;br&gt;    &lt;br&gt;    &lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;get&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; key)&lt;/span&gt; &lt;/span&gt;&amp;#123;						&lt;span class=&#34;hljs-comment&#34;&gt;//作为就是把最近访问的放在表头&lt;/span&gt;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(mp.&lt;span class=&#34;hljs-built_in&#34;&gt;find&lt;/span&gt;(key)!=mp.&lt;span class=&#34;hljs-built_in&#34;&gt;end&lt;/span&gt;())&amp;#123;							&lt;span class=&#34;hljs-comment&#34;&gt;//有这个元素&lt;/span&gt;&lt;br&gt;            lru.&lt;span class=&#34;hljs-built_in&#34;&gt;splice&lt;/span&gt;(lru.&lt;span class=&#34;hljs-built_in&#34;&gt;begin&lt;/span&gt;(),lru,mp[key]);			&lt;span class=&#34;hljs-comment&#34;&gt;//将一个 list 容器中的元素插入到另一个容器的指定位置&lt;/span&gt;&lt;br&gt;            &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; lru.&lt;span class=&#34;hljs-built_in&#34;&gt;begin&lt;/span&gt;()-&amp;gt;second;				&lt;span class=&#34;hljs-comment&#34;&gt;//返回元素&lt;/span&gt;&lt;br&gt;        &amp;#125;&lt;span class=&#34;hljs-keyword&#34;&gt;else&lt;/span&gt;&amp;#123;&lt;br&gt;            &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;-1&lt;/span&gt;;								&lt;span class=&#34;hljs-comment&#34;&gt;//没有这个元素&lt;/span&gt;&lt;br&gt;        &amp;#125;&lt;br&gt;    &amp;#125;&lt;br&gt;&lt;br&gt;    &lt;br&gt;    &lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;put&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; key, &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; value)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(&lt;span class=&#34;hljs-built_in&#34;&gt;get&lt;/span&gt;(key)!=&lt;span class=&#34;hljs-number&#34;&gt;-1&lt;/span&gt;)&amp;#123;				&lt;span class=&#34;hljs-comment&#34;&gt;//cache中有key，调用get后自动插入到表头【key存在】&lt;/span&gt;&lt;br&gt;            lru.&lt;span class=&#34;hljs-built_in&#34;&gt;begin&lt;/span&gt;()-&amp;gt;second = value;&lt;br&gt;        &amp;#125;&lt;span class=&#34;hljs-keyword&#34;&gt;else&lt;/span&gt;&amp;#123;			&lt;span class=&#34;hljs-comment&#34;&gt;//【key不存在】&lt;/span&gt;&lt;br&gt;            &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(lru.&lt;span class=&#34;hljs-built_in&#34;&gt;size&lt;/span&gt;()==cap)&amp;#123;			&lt;span class=&#34;hljs-comment&#34;&gt;//如果容量满了&lt;/span&gt;&lt;br&gt;                &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; delkey = lru.&lt;span class=&#34;hljs-built_in&#34;&gt;back&lt;/span&gt;().first;		 &lt;span class=&#34;hljs-comment&#34;&gt;//记录最久未访问的key&lt;/span&gt;&lt;br&gt;                lru.&lt;span class=&#34;hljs-built_in&#34;&gt;pop_back&lt;/span&gt;();						 &lt;span class=&#34;hljs-comment&#34;&gt;//pop掉，置换&lt;/span&gt;&lt;br&gt;                mp.&lt;span class=&#34;hljs-built_in&#34;&gt;erase&lt;/span&gt;(delkey);					 &lt;span class=&#34;hljs-comment&#34;&gt;//查找表中也删除	&lt;/span&gt;&lt;br&gt;            &amp;#125;&lt;br&gt;            lru.&lt;span class=&#34;hljs-built_in&#34;&gt;emplace_front&lt;/span&gt;(key,value);			&lt;span class=&#34;hljs-comment&#34;&gt;//头部生成一个元素&lt;/span&gt;&lt;br&gt;            mp[key]=lru.&lt;span class=&#34;hljs-built_in&#34;&gt;begin&lt;/span&gt;();					&lt;span class=&#34;hljs-comment&#34;&gt;//加入查找表&lt;/span&gt;&lt;br&gt;        &amp;#125;&lt;br&gt;    &amp;#125;&lt;br&gt;&amp;#125;;&lt;br&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;/**&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt; * Your LRUCache object will be instantiated and called as such:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt; * LRUCache* obj = new LRUCache(capacity);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt; * int param_1 = obj-&amp;gt;get(key);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt; * obj-&amp;gt;put(key,value);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt; */&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h2 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://www.jianshu.com/p/bbea4b2410e6&#34;&gt;C++实现LRU缓存——LeetCode146 - 简书 (jianshu.com)&lt;/a&gt;&lt;/p&gt;
  ]]></description>
         </item>
     </channel>

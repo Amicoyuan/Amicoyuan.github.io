@@ -3,16 +3,16 @@
     <id>https://xingyuanjie.top</id>
     <title>Amicoyuan • Posts by &#34;cuda&#34; tag</title>
     <link href="https://xingyuanjie.top" />
-    <updated>2023-03-07T01:53:34.000Z</updated>
+    <updated>2023-03-08T14:13:01.000Z</updated>
     <category term="AVX" />
     <category term="Data Structure" />
-    <category term="Set" />
-    <category term="团体程序设计天梯赛" />
-    <category term="STL" />
-    <category term="C++" />
-    <category term="Sort" />
     <category term="String" />
     <category term="Find" />
+    <category term="STL" />
+    <category term="C++" />
+    <category term="Set" />
+    <category term="团体程序设计天梯赛" />
+    <category term="Sort" />
     <category term="LinkList" />
     <category term="双向链表" />
     <category term="Graph" />
@@ -25,23 +25,23 @@
     <category term="DFS" />
     <category term="结构体" />
     <category term="贪心" />
-    <category term="并查集" />
     <category term="Double类型相等比较" />
+    <category term="并查集" />
     <category term="Map" />
     <category term="Pair" />
-    <category term="Linux" />
     <category term="CUDA" />
-    <category term="Matrix" />
-    <category term="GEMM" />
+    <category term="Linux" />
     <category term="Tensorflow" />
     <category term="Machine Learning" />
     <category term="MPI" />
+    <category term="Matrix" />
+    <category term="GEMM" />
     <category term="AVX2" />
     <category term="dgemm" />
     <category term="Cache" />
     <category term="Blocking" />
-    <category term="LeetCode" />
     <category term="Intel" />
+    <category term="LeetCode" />
     <category term="双指针" />
     <category term="数组翻转" />
     <category term="哈希表" />
@@ -54,8 +54,24 @@
     <category term="register" />
     <category term="Slurm" />
     <category term="性能分析工具" />
-    <category term="bool" />
     <category term="gcov" />
+    <category term="bool" />
+    <entry>
+        <id>https://xingyuanjie.top/2023/03/08/cuda013/</id>
+        <title>组织并行编程</title>
+        <link rel="alternate" href="https://xingyuanjie.top/2023/03/08/cuda013/"/>
+        <content type="html">&lt;h2 id=&#34;组织并行编程&#34;&gt;&lt;a href=&#34;#组织并行编程&#34; class=&#34;headerlink&#34; title=&#34;组织并行编程&#34;&gt;&lt;/a&gt;组织并行编程&lt;/h2&gt;&lt;p&gt;从前面的例子可以看出，如果使用了合适的网格和块大小来正确地组织线程，那么可以对内核性能产生很大的影响。在向量加法的例子中，为了实现最佳性能我们调整了块的大小，并基于块大小和向量数据大小计算出了网格大小。&lt;/p&gt;
+&lt;p&gt;现在通过一个矩阵加法的例子说明这一点。对于矩阵运算，传统的方法是在内核中使用一个包含二维网格与二位块的布局来组织线程。但是，这种传统的方法无法获得最佳性能。在矩阵加法中使用以下布局将有助于了解更多关于网格和块的启发性的用法：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;有二维线程块构成的二维网格&lt;/li&gt;
+&lt;li&gt;由一维线程块构成的一维网格&lt;/li&gt;
+&lt;li&gt;由一维线程块构成的二维网格&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;p&gt;CUDA C编程权威指南 程润伟，Max Grossman(美)，Ty Mckercher &lt;/p&gt;
+</content>
+        <category term="CUDA" />
+        <updated>2023-03-08T14:13:01.000Z</updated>
+    </entry>
     <entry>
         <id>https://xingyuanjie.top/2023/03/07/CUDA012/</id>
         <title>CUDA给核函数计时</title>
