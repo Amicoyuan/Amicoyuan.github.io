@@ -10,11 +10,11 @@
     <category term="Find" />
     <category term="STL" />
     <category term="C++" />
-    <category term="Set" />
-    <category term="团体程序设计天梯赛" />
-    <category term="Sort" />
     <category term="LinkList" />
+    <category term="团体程序设计天梯赛" />
     <category term="双向链表" />
+    <category term="Set" />
+    <category term="Sort" />
     <category term="Graph" />
     <category term="邻接表" />
     <category term="Vector" />
@@ -28,14 +28,14 @@
     <category term="Double类型相等比较" />
     <category term="并查集" />
     <category term="Map" />
-    <category term="CUDA" />
     <category term="Pair" />
+    <category term="CUDA" />
     <category term="Linux" />
     <category term="Tensorflow" />
     <category term="Machine Learning" />
+    <category term="MPI" />
     <category term="Matrix" />
     <category term="GEMM" />
-    <category term="MPI" />
     <category term="AVX2" />
     <category term="dgemm" />
     <category term="Cache" />
@@ -54,8 +54,8 @@
     <category term="register" />
     <category term="Slurm" />
     <category term="性能分析工具" />
-    <category term="bool" />
     <category term="gcov" />
+    <category term="bool" />
     <entry>
         <id>https://xingyuanjie.top/2022/04/16/Algorithm027/</id>
         <title>L2-009 抢红包 (25 分)</title>

@@ -13,11 +13,11 @@
         <category>Find</category>
         <category>STL</category>
         <category>C++</category>
-        <category>Set</category>
-        <category>团体程序设计天梯赛</category>
-        <category>Sort</category>
         <category>LinkList</category>
+        <category>团体程序设计天梯赛</category>
         <category>双向链表</category>
+        <category>Set</category>
+        <category>Sort</category>
         <category>Graph</category>
         <category>邻接表</category>
         <category>Vector</category>
@@ -31,14 +31,14 @@
         <category>Double类型相等比较</category>
         <category>并查集</category>
         <category>Map</category>
-        <category>CUDA</category>
         <category>Pair</category>
+        <category>CUDA</category>
         <category>Linux</category>
         <category>Tensorflow</category>
         <category>Machine Learning</category>
+        <category>MPI</category>
         <category>Matrix</category>
         <category>GEMM</category>
-        <category>MPI</category>
         <category>AVX2</category>
         <category>dgemm</category>
         <category>Cache</category>
@@ -57,8 +57,8 @@
         <category>register</category>
         <category>Slurm</category>
         <category>性能分析工具</category>
-        <category>bool</category>
         <category>gcov</category>
+        <category>bool</category>
         <item>
             <guid isPermalink="true">https://xingyuanjie.top/2022/05/08/tool004/</guid>
             <title>gcov代码覆盖率测试-完整样例-SLIC</title>
