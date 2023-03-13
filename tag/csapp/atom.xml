@@ -10,11 +10,11 @@
     <category term="Find" />
     <category term="STL" />
     <category term="C++" />
-    <category term="LinkList" />
-    <category term="团体程序设计天梯赛" />
-    <category term="双向链表" />
     <category term="Set" />
+    <category term="团体程序设计天梯赛" />
     <category term="Sort" />
+    <category term="LinkList" />
+    <category term="双向链表" />
     <category term="Graph" />
     <category term="邻接表" />
     <category term="Vector" />
@@ -24,15 +24,15 @@
     <category term="邻接矩阵" />
     <category term="DFS" />
     <category term="结构体" />
-    <category term="Double类型相等比较" />
     <category term="贪心" />
+    <category term="Double类型相等比较" />
     <category term="并查集" />
     <category term="Map" />
     <category term="Pair" />
     <category term="CMU" />
     <category term="CSAPP" />
-    <category term="Linux" />
     <category term="CUDA" />
+    <category term="Linux" />
     <category term="Tensorflow" />
     <category term="Machine Learning" />
     <category term="MPI" />
@@ -46,8 +46,8 @@
     <category term="LeetCode" />
     <category term="双指针" />
     <category term="数组翻转" />
-    <category term="前缀和" />
     <category term="哈希表" />
+    <category term="前缀和" />
     <category term="Mirror" />
     <category term="牛客" />
     <category term="Numactl" />
@@ -69,7 +69,7 @@
 &lt;p&gt;&lt;img src=&#34;/2023/03/13/CMU15-213001/image-20230313201550219.png&#34; alt=&#34;image-20230313201550219&#34;&gt;&lt;/p&gt;
 &lt;p&gt;【图中假设memory line大小为4B】根据结构体可知我们拥有一个int型的数组大小为2，一个double型的变量。因为int数组的大小为2，当fun(0),fun(1)时，s.a[i]访问是正确的，所以fun(0),fun(1)返回正确值s.d及3.14。而当fun(i):i&amp;gt;1时，就会返回奇怪的结果，这是因为数组大小为2，我们越界了，实际上s.a[i]写的是double的内存空间，如图中的2，3。而6代表程序状态，我们去修改它就会造成程序状态的改变，导致Segmentation fault。这里提醒我们在写C代码的时候一定要注意边界处理。【这里需要清楚C语言中堆区和栈区存的是什么】&lt;/p&gt;
 &lt;h3 id=&#34;例子二：&#34;&gt;&lt;a href=&#34;#例子二：&#34; class=&#34;headerlink&#34; title=&#34;例子二：&#34;&gt;&lt;/a&gt;例子二：&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;/2023/03/13/CMU15-213001/image-20230313202535864.png&#34; alt=&#34;image-20230313202535864&#34;&gt;&lt;/p&gt;
-&lt;p&gt;【src和dst是大小2048*2048的二维数组】上面的图片，我们可以十分清楚代码的逻辑。他想把src数组的值拷贝到dst。而左右代码的功能完全一样，仅仅是for循环顺序不一样，但是却会有这么大的性能差距，这是什么原因呢？总的来说就是左边代码cache命中率高，右边cache命中率的。cache命中和cache miss的速度差距很大甚至是数量级别的差距，这是导致两者差距巨大的原因。&lt;/p&gt;
+&lt;p&gt;【src和dst是大小2048*2048的二维数组】上面的图片，我们可以十分清楚代码的逻辑。他想把src数组的值拷贝到dst。而左右代码的功能完全一样，仅仅是for循环顺序不一样，但是却会有这么大的性能差距，这是什么原因呢？总的来说就是左边代码cache命中率高，右边cache命中率的。cache命中和cache miss的速度差距很大甚至是数量级别的差距，这是导致两者差距巨大的原因。【注意这里还可以更细致的分析，但是会有很多其他因素会影响】&lt;/p&gt;
 &lt;h2 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;http://www.cs.cmu.edu/afs/cs/academic/class/15213-f15/www/index.html&#34;&gt;15-213: Introduction to Computer Systems (cmu.edu)&lt;/a&gt;&lt;/p&gt;
 </content>
         <category term="CMU" />
