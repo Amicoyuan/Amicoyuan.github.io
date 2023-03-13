@@ -41,12 +41,12 @@
         <category>MPI</category>
         <category>Matrix</category>
         <category>GEMM</category>
-        <category>dgemm</category>
         <category>AVX2</category>
+        <category>dgemm</category>
         <category>Cache</category>
         <category>Blocking</category>
-        <category>LeetCode</category>
         <category>Intel</category>
+        <category>LeetCode</category>
         <category>双指针</category>
         <category>数组翻转</category>
         <category>哈希表</category>
@@ -59,8 +59,8 @@
         <category>register</category>
         <category>Slurm</category>
         <category>性能分析工具</category>
-        <category>gcov</category>
         <category>bool</category>
+        <category>gcov</category>
         <item>
             <guid isPermalink="true">https://xingyuanjie.top/2023/03/13/ML003/</guid>
             <title>线性回归的梯度下降</title>

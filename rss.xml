@@ -5,8 +5,8 @@
         <link>https://xingyuanjie.top</link>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Mon, 13 Mar 2023 18:29:35 +0800</pubDate>
-        <lastBuildDate>Mon, 13 Mar 2023 18:29:35 +0800</lastBuildDate>
+        <pubDate>Mon, 13 Mar 2023 20:09:44 +0800</pubDate>
+        <lastBuildDate>Mon, 13 Mar 2023 20:09:44 +0800</lastBuildDate>
         <category>AVX</category>
         <category>Data Structure</category>
         <category>String</category>
@@ -41,12 +41,12 @@
         <category>MPI</category>
         <category>Matrix</category>
         <category>GEMM</category>
-        <category>dgemm</category>
         <category>AVX2</category>
+        <category>dgemm</category>
         <category>Cache</category>
         <category>Blocking</category>
-        <category>LeetCode</category>
         <category>Intel</category>
+        <category>LeetCode</category>
         <category>双指针</category>
         <category>数组翻转</category>
         <category>哈希表</category>
@@ -59,8 +59,26 @@
         <category>register</category>
         <category>Slurm</category>
         <category>性能分析工具</category>
-        <category>gcov</category>
         <category>bool</category>
+        <category>gcov</category>
+        <item>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/03/13/CMU15-213001/</guid>
+            <title></title>
+            <link>https://xingyuanjie.top/2023/03/13/CMU15-213001/</link>
+            <category>CMU</category>
+            <category>CSAPP</category>
+            <pubDate>Mon, 13 Mar 2023 20:09:44 +0800</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;2015-CMU-15-213-CSAPP-深入理解计算机系统-Lecture-01-Course-Overview&#34;&gt;&lt;a href=&#34;#2015-CMU-15-213-CSAPP-深入理解计算机系统-Lecture-01-Course-Overview&#34; class=&#34;headerlink&#34; title=&#34;2015 CMU 15-213 CSAPP 深入理解计算机系统 Lecture 01: Course Overview&#34;&gt;&lt;/a&gt;2015 CMU 15-213 CSAPP 深入理解计算机系统 Lecture 01: Course Overview&lt;/h2&gt;&lt;h3 id=&#34;例子一：&#34;&gt;&lt;a href=&#34;#例子一：&#34; class=&#34;headerlink&#34; title=&#34;例子一：&#34;&gt;&lt;/a&gt;例子一：&lt;/h3&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;hljs-class&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;struct&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; a[&lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt;];&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;double&lt;/span&gt; d;&lt;br&gt;&amp;#125;&lt;span class=&#34;hljs-keyword&#34;&gt;struct_t&lt;/span&gt;;&lt;br&gt;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;double&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;fun&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i)&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;volatile&lt;/span&gt; &lt;span class=&#34;hljs-keyword&#34;&gt;struct_t&lt;/span&gt; s;   &lt;span class=&#34;hljs-comment&#34;&gt;//volatile关键字&lt;/span&gt;&lt;br&gt;    s.d = &lt;span class=&#34;hljs-number&#34;&gt;3.14&lt;/span&gt;;&lt;br&gt;    s.a[i] = &lt;span class=&#34;hljs-number&#34;&gt;1073741824&lt;/span&gt;;   &lt;span class=&#34;hljs-comment&#34;&gt;/*Possibly out of bounds*/&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; s.d;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs shell&#34;&gt;fun(0)   -&amp;gt;   3.14&lt;br&gt;fun(1)   -&amp;gt;   3.14&lt;br&gt;fun(2)   -&amp;gt;   3.1399998664856&lt;br&gt;fun(3)   -&amp;gt;   2.00000061035156&lt;br&gt;fun(4)   -&amp;gt;   3.14&lt;br&gt;fun(6)   -&amp;gt;   Segmentation falut&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;img src=&#34;/2023/03/13/CMU15-213001/image-20230313201550219.png&#34; alt=&#34;image-20230313201550219&#34;&gt;&lt;/p&gt;
+&lt;p&gt;【图中假设memory line大小为4B】根据结构体可知我们拥有一个int型的数组大小为2，一个double型的变量。因为int数组的大小为2，当fun(0),fun(1)时，s.a[i]访问是正确的，所以fun(0),fun(1)返回正确值s.d及3.14。而当fun(i):i&amp;gt;1时，就会返回奇怪的结果，这是因为数组大小为2，我们越界了，实际上s.a[i]写的是double的内存空间，如图中的2，3。而6代表程序状态，我们去修改它就会造成程序状态的改变，导致Segmentation fault。这里提醒我们在写C代码的时候一定要注意边界处理。【这里需要清楚C语言中堆区和栈区存的是什么】&lt;/p&gt;
+&lt;h3 id=&#34;例子二：&#34;&gt;&lt;a href=&#34;#例子二：&#34; class=&#34;headerlink&#34; title=&#34;例子二：&#34;&gt;&lt;/a&gt;例子二：&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;/2023/03/13/CMU15-213001/image-20230313202535864.png&#34; alt=&#34;image-20230313202535864&#34;&gt;&lt;/p&gt;
+&lt;p&gt;【src和dst是大小2048*2048的二维数组】上面的图片，我们可以十分清楚代码的逻辑。他想把src数组的值拷贝到dst。而左右代码的功能完全一样，仅仅是for循环顺序不一样，但是却会有这么大的性能差距，这是什么原因呢？总的来说就是左边代码cache命中率高，右边cache命中率的。cache命中和cache miss的速度差距很大甚至是数量级别的差距，这是导致两者差距巨大的原因。&lt;/p&gt;
+&lt;h2 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;http://www.cs.cmu.edu/afs/cs/academic/class/15213-f15/www/index.html&#34;&gt;15-213: Introduction to Computer Systems (cmu.edu)&lt;/a&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">https://xingyuanjie.top/2023/03/13/CMU15-213/</guid>
             <title>2015 CMU 15-213 CSAPP 深入理解计算机系统</title>
@@ -1382,29 +1400,6 @@
 &lt;p&gt;&lt;a href=&#34;https://www.zhihu.com/question/41653775/answer/2535730128&#34;&gt;如何理解C语言关键字restrict？ - 知乎 (zhihu.com)&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/qq_41822235/article/details/83479562&#34;&gt;(65条消息) 关键字_restrict___restrict_楚楚可薇的博客-CSDN博客&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/qq_41950508/article/details/126619881?spm=1001.2101.3001.6661.1&amp;utm_medium=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~Rate-1-126619881-blog-102577325.pc_relevant_3mothn_strategy_recovery&amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~Rate-1-126619881-blog-102577325.pc_relevant_3mothn_strategy_recovery&amp;utm_relevant_index=1&#34;&gt;(65条消息) 【C++】关键字restrict的作用_restrict关键字的作用_不知所措的渣渣辉的博客-CSDN博客&lt;/a&gt;&lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">https://xingyuanjie.top/2023/02/26/intel001/</guid>
-            <title>unroll_and_jam/nounroll_and_jam</title>
-            <link>https://xingyuanjie.top/2023/02/26/intel001/</link>
-            <category>C++</category>
-            <category>Intel</category>
-            <pubDate>Sun, 26 Feb 2023 19:12:51 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;unroll-and-jam-x2F-nounroll-and-jam&#34;&gt;&lt;a href=&#34;#unroll-and-jam-x2F-nounroll-and-jam&#34; class=&#34;headerlink&#34; title=&#34;unroll_and_jam&amp;#x2F;nounroll_and_jam&#34;&gt;&lt;/a&gt;unroll_and_jam&amp;#x2F;nounroll_and_jam&lt;/h1&gt;&lt;p&gt;启用或禁用循环展开和阻塞。这些指令只能应用于迭代for循环。&lt;/p&gt;
-&lt;h2 id=&#34;Syntax&#34;&gt;&lt;a href=&#34;#Syntax&#34; class=&#34;headerlink&#34; title=&#34;Syntax&#34;&gt;&lt;/a&gt;Syntax&lt;/h2&gt;&lt;p&gt;#pragma unroll_and_jam	#pragma unroll_and_jam (n)	#pragma nounroll_and_jam&lt;/p&gt;
-&lt;h2 id=&#34;Arguments&#34;&gt;&lt;a href=&#34;#Arguments&#34; class=&#34;headerlink&#34; title=&#34;Arguments&#34;&gt;&lt;/a&gt;Arguments&lt;/h2&gt;&lt;p&gt;展开因子，表示展开循环的次数;必须是0到255之间的整数常数&lt;/p&gt;
-&lt;h2 id=&#34;Description&#34;&gt;&lt;a href=&#34;#Description&#34; class=&#34;headerlink&#34; title=&#34;Description&#34;&gt;&lt;/a&gt;Description&lt;/h2&gt;&lt;p&gt;unroll_and_jam指令部分展开套中比最内层循环更高的一个或多个循环，并将结果循环融合&amp;#x2F;阻塞回一起。这种转换允许在循环中进行更多的重用。&lt;/p&gt;
-&lt;p&gt;此pragma对最内层循环无效。确保紧随其后的循环不是编译器发起的交换完成后的最内层循环。&lt;/p&gt;
-&lt;p&gt;指定此pragma是向编译器提示展开和阻塞序列是合法且有利可图的。编译器会在任何可能的情况下启用这种转换。&lt;/p&gt;
-&lt;p&gt;对于它影响的每个for循环，unroll_and_jam指令必须在for语句之前。如果指定了n，优化器将展开循环n次。如果n被省略或超出允许的范围，优化器将分配展开循环的次数。编译器通过比较n和循环计数生成正确的代码。&lt;/p&gt;
-&lt;p&gt;只有在设置了编译器选项O3时，才支持此pragma。unroll_and_jam指令将覆盖从命令行展开循环的任何设置。&lt;/p&gt;
-&lt;p&gt;当展开循环会增加寄存器压力和代码大小时，可能需要防止展开嵌套循环或不完美的嵌套循环。在这种情况下，使用nounroll_and_jam编译指令。nounroll_and_jam pragma提示编译器不要展开指定的循环。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Examples&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Use the unroll_and_jam pragma:&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; a[&lt;span class=&#34;hljs-number&#34;&gt;10&lt;/span&gt;][&lt;span class=&#34;hljs-number&#34;&gt;10&lt;/span&gt;]; &lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; b[&lt;span class=&#34;hljs-number&#34;&gt;10&lt;/span&gt;][&lt;span class=&#34;hljs-number&#34;&gt;10&lt;/span&gt;]; &lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; c[&lt;span class=&#34;hljs-number&#34;&gt;10&lt;/span&gt;][&lt;span class=&#34;hljs-number&#34;&gt;10&lt;/span&gt;]; &lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; d[&lt;span class=&#34;hljs-number&#34;&gt;10&lt;/span&gt;][&lt;span class=&#34;hljs-number&#34;&gt;10&lt;/span&gt;]; &lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;unroll&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; n)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i,j,k;&lt;br&gt;    &lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;pragma&lt;/span&gt; unroll_and_jam (6)&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; (i = &lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;; i &amp;lt; n; i++) &amp;#123;&lt;br&gt;       &lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;pragma&lt;/span&gt; unroll_and_jam (6)&lt;/span&gt;&lt;br&gt;       &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; (j = &lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;; j &amp;lt; n; j++) &amp;#123;&lt;br&gt;          &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; (k = &lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;; k &amp;lt; n; k++)&amp;#123;&lt;br&gt;            a[i][j] += b[i][k]*c[k][j];&lt;br&gt;            &amp;#125;&lt;br&gt;       &amp;#125;&lt;br&gt;    &amp;#125; &lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h2 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://www.intel.com/content/www/us/en/develop/documentation/cpp-compiler-developer-guide-and-reference/top/compiler-reference/pragmas/intel-specific-pragma-reference/unroll-and-jam-nounroll-and-jam.html&#34;&gt;unroll_and_jam nounroll_and_jam (intel.com)&lt;/a&gt;&lt;/p&gt;
  ]]></description>
         </item>
     </channel>

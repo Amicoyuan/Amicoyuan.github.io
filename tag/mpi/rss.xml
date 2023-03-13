@@ -41,12 +41,12 @@
         <category>MPI</category>
         <category>Matrix</category>
         <category>GEMM</category>
-        <category>dgemm</category>
         <category>AVX2</category>
+        <category>dgemm</category>
         <category>Cache</category>
         <category>Blocking</category>
-        <category>LeetCode</category>
         <category>Intel</category>
+        <category>LeetCode</category>
         <category>双指针</category>
         <category>数组翻转</category>
         <category>哈希表</category>
@@ -59,8 +59,8 @@
         <category>register</category>
         <category>Slurm</category>
         <category>性能分析工具</category>
-        <category>gcov</category>
         <category>bool</category>
+        <category>gcov</category>
         <item>
             <guid isPermalink="true">https://xingyuanjie.top/2022/06/12/MPI%E5%AD%A6%E4%B9%A0(%E4%B8%80)-%E7%AE%80%E5%8D%95%E7%9A%84%E5%8F%91%E9%80%81%E6%8E%A5%E6%94%B6/</guid>
             <title>MPI学习(一)-简单的发送接收</title>

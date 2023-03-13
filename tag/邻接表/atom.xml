@@ -38,12 +38,12 @@
     <category term="MPI" />
     <category term="Matrix" />
     <category term="GEMM" />
-    <category term="dgemm" />
     <category term="AVX2" />
+    <category term="dgemm" />
     <category term="Cache" />
     <category term="Blocking" />
-    <category term="LeetCode" />
     <category term="Intel" />
+    <category term="LeetCode" />
     <category term="双指针" />
     <category term="数组翻转" />
     <category term="哈希表" />
@@ -56,8 +56,8 @@
     <category term="register" />
     <category term="Slurm" />
     <category term="性能分析工具" />
-    <category term="gcov" />
     <category term="bool" />
+    <category term="gcov" />
     <entry>
         <id>https://xingyuanjie.top/2022/04/13/Algorithm022/</id>
         <title>L2-031 深入虎穴 (25 分)</title>
