@@ -25,8 +25,8 @@
     <category term="DFS" />
     <category term="结构体" />
     <category term="贪心" />
-    <category term="Double类型相等比较" />
     <category term="并查集" />
+    <category term="Double类型相等比较" />
     <category term="Map" />
     <category term="Pair" />
     <category term="CUDA" />
@@ -54,8 +54,8 @@
     <category term="register" />
     <category term="Slurm" />
     <category term="性能分析工具" />
-    <category term="bool" />
     <category term="gcov" />
+    <category term="bool" />
     <entry>
         <id>https://xingyuanjie.top/2022/06/12/%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90/</id>
         <title>内存对齐</title>

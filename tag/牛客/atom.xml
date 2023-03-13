@@ -25,8 +25,8 @@
     <category term="DFS" />
     <category term="结构体" />
     <category term="贪心" />
-    <category term="Double类型相等比较" />
     <category term="并查集" />
+    <category term="Double类型相等比较" />
     <category term="Map" />
     <category term="Pair" />
     <category term="CUDA" />
@@ -54,8 +54,8 @@
     <category term="register" />
     <category term="Slurm" />
     <category term="性能分析工具" />
-    <category term="bool" />
     <category term="gcov" />
+    <category term="bool" />
     <entry>
         <id>https://xingyuanjie.top/2023/02/07/niuke003/</id>
         <title>JZ6 从尾到头打印链表</title>
