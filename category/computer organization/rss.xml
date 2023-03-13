@@ -33,6 +33,7 @@
         <category>Map</category>
         <category>Pair</category>
         <category>CMU</category>
+        <category>CSAPP</category>
         <category>CUDA</category>
         <category>Linux</category>
         <category>Tensorflow</category>
@@ -44,8 +45,8 @@
         <category>AVX2</category>
         <category>Cache</category>
         <category>Blocking</category>
-        <category>Intel</category>
         <category>LeetCode</category>
+        <category>Intel</category>
         <category>双指针</category>
         <category>数组翻转</category>
         <category>哈希表</category>
@@ -65,6 +66,7 @@
             <title>2015 CMU 15-213 CSAPP 深入理解计算机系统</title>
             <link>https://xingyuanjie.top/2023/03/13/CMU15-213/</link>
             <category>CMU</category>
+            <category>CSAPP</category>
             <pubDate>Mon, 13 Mar 2023 18:29:35 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;2015-CMU-15-213-CSAPP-深入理解计算机系统&#34;&gt;&lt;a href=&#34;#2015-CMU-15-213-CSAPP-深入理解计算机系统&#34; class=&#34;headerlink&#34; title=&#34;2015 CMU 15-213 CSAPP 深入理解计算机系统&#34;&gt;&lt;/a&gt;2015 CMU 15-213 CSAPP 深入理解计算机系统&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;项目地址：&lt;/strong&gt;&lt;a href=&#34;https://github.com/EugeneLiu/translationCSAPP&#34;&gt;EugeneLiu&amp;#x2F;translationCSAPP: 为 CSAPP 视频课程提供字幕，翻译 PPT，Lab。 (github.com)&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;bilibili翻译：&lt;/strong&gt;&lt;a href=&#34;https://www.bilibili.com/video/av31289365/&#34;&gt;【精校中英字幕】2015 CMU 15-213 CSAPP 深入理解计算机系统 课程视频_哔哩哔哩_bilibili&lt;/a&gt;&lt;/p&gt;

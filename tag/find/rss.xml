@@ -33,6 +33,7 @@
         <category>Map</category>
         <category>Pair</category>
         <category>CMU</category>
+        <category>CSAPP</category>
         <category>CUDA</category>
         <category>Linux</category>
         <category>Tensorflow</category>
@@ -44,8 +45,8 @@
         <category>AVX2</category>
         <category>Cache</category>
         <category>Blocking</category>
-        <category>Intel</category>
         <category>LeetCode</category>
+        <category>Intel</category>
         <category>双指针</category>
         <category>数组翻转</category>
         <category>哈希表</category>
