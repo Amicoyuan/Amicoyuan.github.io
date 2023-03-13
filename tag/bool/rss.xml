@@ -28,10 +28,11 @@
         <category>DFS</category>
         <category>结构体</category>
         <category>贪心</category>
-        <category>并查集</category>
         <category>Double类型相等比较</category>
+        <category>并查集</category>
         <category>Map</category>
         <category>Pair</category>
+        <category>CMU</category>
         <category>CUDA</category>
         <category>Linux</category>
         <category>Tensorflow</category>
@@ -39,8 +40,8 @@
         <category>MPI</category>
         <category>Matrix</category>
         <category>GEMM</category>
-        <category>AVX2</category>
         <category>dgemm</category>
+        <category>AVX2</category>
         <category>Cache</category>
         <category>Blocking</category>
         <category>Intel</category>

@@ -5,8 +5,8 @@
         <link>https://xingyuanjie.top</link>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Sun, 12 Jun 2022 15:11:29 +0800</pubDate>
-        <lastBuildDate>Sun, 12 Jun 2022 15:11:29 +0800</lastBuildDate>
+        <pubDate>Mon, 13 Mar 2023 18:29:35 +0800</pubDate>
+        <lastBuildDate>Mon, 13 Mar 2023 18:29:35 +0800</lastBuildDate>
         <category>AVX</category>
         <category>Data Structure</category>
         <category>String</category>
@@ -28,10 +28,11 @@
         <category>DFS</category>
         <category>结构体</category>
         <category>贪心</category>
-        <category>并查集</category>
         <category>Double类型相等比较</category>
+        <category>并查集</category>
         <category>Map</category>
         <category>Pair</category>
+        <category>CMU</category>
         <category>CUDA</category>
         <category>Linux</category>
         <category>Tensorflow</category>
@@ -39,8 +40,8 @@
         <category>MPI</category>
         <category>Matrix</category>
         <category>GEMM</category>
-        <category>AVX2</category>
         <category>dgemm</category>
+        <category>AVX2</category>
         <category>Cache</category>
         <category>Blocking</category>
         <category>Intel</category>
@@ -59,6 +60,22 @@
         <category>性能分析工具</category>
         <category>gcov</category>
         <category>bool</category>
+        <item>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/03/13/CMU15-213/</guid>
+            <title>2015 CMU 15-213 CSAPP 深入理解计算机系统</title>
+            <link>https://xingyuanjie.top/2023/03/13/CMU15-213/</link>
+            <category>CMU</category>
+            <pubDate>Mon, 13 Mar 2023 18:29:35 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;2015-CMU-15-213-CSAPP-深入理解计算机系统&#34;&gt;&lt;a href=&#34;#2015-CMU-15-213-CSAPP-深入理解计算机系统&#34; class=&#34;headerlink&#34; title=&#34;2015 CMU 15-213 CSAPP 深入理解计算机系统&#34;&gt;&lt;/a&gt;2015 CMU 15-213 CSAPP 深入理解计算机系统&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;项目地址：&lt;/strong&gt;&lt;a href=&#34;https://github.com/EugeneLiu/translationCSAPP&#34;&gt;EugeneLiu&amp;#x2F;translationCSAPP: 为 CSAPP 视频课程提供字幕，翻译 PPT，Lab。 (github.com)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;bilibili翻译：&lt;/strong&gt;&lt;a href=&#34;https://www.bilibili.com/video/av31289365/&#34;&gt;【精校中英字幕】2015 CMU 15-213 CSAPP 深入理解计算机系统 课程视频_哔哩哔哩_bilibili&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;CSAPP-3e-官方链接&#34;&gt;&lt;a href=&#34;#CSAPP-3e-官方链接&#34; class=&#34;headerlink&#34; title=&#34;CSAPP:3e 官方链接&#34;&gt;&lt;/a&gt;CSAPP:3e 官方链接&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://csapp.cs.cmu.edu/&#34;&gt;课程主页&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.cs.cmu.edu/afs/cs/academic/class/15213-f15/www/schedule.html&#34;&gt;课件下载链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://csapp.cs.cmu.edu/3e/labs.html&#34;&gt;课程 Lab 页面&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://scs.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx#folderID=%22b96d90ae-9871-4fae-91e2-b1627b43e25e%22&amp;sortColumn=0&amp;sortAscending=true&#34;&gt;课程视频地址&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">https://xingyuanjie.top/2022/06/12/%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90/</guid>
             <title>内存对齐</title>
