@@ -3,18 +3,18 @@
     <id>https://xingyuanjie.top</id>
     <title>Amicoyuan</title>
     <link href="https://xingyuanjie.top" />
-    <updated>2023-03-13T12:09:44.000Z</updated>
+    <updated>2023-03-13T12:29:35.000Z</updated>
     <category term="AVX" />
     <category term="Data Structure" />
     <category term="String" />
     <category term="Find" />
     <category term="STL" />
     <category term="C++" />
-    <category term="Set" />
-    <category term="团体程序设计天梯赛" />
-    <category term="Sort" />
     <category term="LinkList" />
+    <category term="团体程序设计天梯赛" />
     <category term="双向链表" />
+    <category term="Set" />
+    <category term="Sort" />
     <category term="Graph" />
     <category term="邻接表" />
     <category term="Vector" />
@@ -25,8 +25,8 @@
     <category term="DFS" />
     <category term="结构体" />
     <category term="贪心" />
-    <category term="Double类型相等比较" />
     <category term="并查集" />
+    <category term="Double类型相等比较" />
     <category term="Map" />
     <category term="Pair" />
     <category term="CMU" />
@@ -42,9 +42,9 @@
     <category term="dgemm" />
     <category term="Cache" />
     <category term="Blocking" />
-    <category term="Intel" />
     <category term="LeetCode" />
     <category term="双指针" />
+    <category term="Intel" />
     <category term="数组翻转" />
     <category term="哈希表" />
     <category term="前缀和" />
@@ -60,7 +60,7 @@
     <category term="bool" />
     <entry>
         <id>https://xingyuanjie.top/2023/03/13/CMU15-213001/</id>
-        <title></title>
+        <title>CMU 15-213 Lecture 01:Course Overview</title>
         <link rel="alternate" href="https://xingyuanjie.top/2023/03/13/CMU15-213001/"/>
         <content type="html">&lt;h2 id=&#34;2015-CMU-15-213-CSAPP-深入理解计算机系统-Lecture-01-Course-Overview&#34;&gt;&lt;a href=&#34;#2015-CMU-15-213-CSAPP-深入理解计算机系统-Lecture-01-Course-Overview&#34; class=&#34;headerlink&#34; title=&#34;2015 CMU 15-213 CSAPP 深入理解计算机系统 Lecture 01: Course Overview&#34;&gt;&lt;/a&gt;2015 CMU 15-213 CSAPP 深入理解计算机系统 Lecture 01: Course Overview&lt;/h2&gt;&lt;h3 id=&#34;例子一：&#34;&gt;&lt;a href=&#34;#例子一：&#34; class=&#34;headerlink&#34; title=&#34;例子一：&#34;&gt;&lt;/a&gt;例子一：&lt;/h3&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;hljs-class&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;struct&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; a[&lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt;];&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;double&lt;/span&gt; d;&lt;br&gt;&amp;#125;&lt;span class=&#34;hljs-keyword&#34;&gt;struct_t&lt;/span&gt;;&lt;br&gt;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;double&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;fun&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i)&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;volatile&lt;/span&gt; &lt;span class=&#34;hljs-keyword&#34;&gt;struct_t&lt;/span&gt; s;   &lt;span class=&#34;hljs-comment&#34;&gt;//volatile关键字&lt;/span&gt;&lt;br&gt;    s.d = &lt;span class=&#34;hljs-number&#34;&gt;3.14&lt;/span&gt;;&lt;br&gt;    s.a[i] = &lt;span class=&#34;hljs-number&#34;&gt;1073741824&lt;/span&gt;;   &lt;span class=&#34;hljs-comment&#34;&gt;/*Possibly out of bounds*/&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; s.d;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
@@ -74,7 +74,7 @@
 </content>
         <category term="CMU" />
         <category term="CSAPP" />
-        <updated>2023-03-13T12:09:44.000Z</updated>
+        <updated>2023-03-13T12:29:35.000Z</updated>
     </entry>
     <entry>
         <id>https://xingyuanjie.top/2023/03/13/CMU15-213/</id>
