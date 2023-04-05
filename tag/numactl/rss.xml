@@ -41,8 +41,8 @@
         <category>MPI</category>
         <category>Matrix</category>
         <category>GEMM</category>
-        <category>AVX2</category>
         <category>dgemm</category>
+        <category>AVX2</category>
         <category>Cache</category>
         <category>Blocking</category>
         <category>Intel</category>
@@ -50,8 +50,8 @@
         <category>双指针</category>
         <category>数组翻转</category>
         <category>哈希表</category>
-        <category>Travel</category>
         <category>前缀和</category>
+        <category>Travel</category>
         <category>Mirror</category>
         <category>牛客</category>
         <category>Numactl</category>
