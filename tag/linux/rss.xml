@@ -13,11 +13,11 @@
         <category>Find</category>
         <category>STL</category>
         <category>C++</category>
-        <category>LinkList</category>
-        <category>团体程序设计天梯赛</category>
-        <category>双向链表</category>
         <category>Set</category>
+        <category>团体程序设计天梯赛</category>
         <category>Sort</category>
+        <category>LinkList</category>
+        <category>双向链表</category>
         <category>Graph</category>
         <category>邻接表</category>
         <category>Vector</category>
@@ -28,8 +28,8 @@
         <category>DFS</category>
         <category>结构体</category>
         <category>贪心</category>
-        <category>并查集</category>
         <category>Double类型相等比较</category>
+        <category>并查集</category>
         <category>Map</category>
         <category>Pair</category>
         <category>CMU</category>
@@ -45,11 +45,12 @@
         <category>dgemm</category>
         <category>Cache</category>
         <category>Blocking</category>
+        <category>Intel</category>
         <category>LeetCode</category>
         <category>双指针</category>
-        <category>Intel</category>
         <category>数组翻转</category>
         <category>哈希表</category>
+        <category>Travel</category>
         <category>前缀和</category>
         <category>Mirror</category>
         <category>牛客</category>
@@ -201,7 +202,7 @@
 &lt;p&gt;info register	查看寄存器（除了浮点寄存器）&lt;/p&gt;
 &lt;p&gt;all-registers	查看所有寄存器&lt;/p&gt;
 &lt;p&gt;info registers &amp;lt;reg_name …&amp;gt;查看所指定寄存器&lt;/p&gt;
-&lt;h3 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;来源培训PPT 作者：Relax  邮箱：&lt;a href=&#34;mailto:&amp;#119;&amp;#x61;&amp;#110;&amp;#103;&amp;#x77;&amp;#x31;&amp;#49;&amp;#x31;&amp;#64;&amp;#105;&amp;#x63;&amp;#x6c;&amp;#111;&amp;#117;&amp;#x64;&amp;#46;&amp;#99;&amp;#x6f;&amp;#109;&#34;&gt;&amp;#119;&amp;#x61;&amp;#110;&amp;#103;&amp;#x77;&amp;#x31;&amp;#49;&amp;#x31;&amp;#64;&amp;#105;&amp;#x63;&amp;#x6c;&amp;#111;&amp;#117;&amp;#x64;&amp;#46;&amp;#99;&amp;#x6f;&amp;#109;&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;来源培训PPT 作者：Relax  邮箱：&lt;a href=&#34;mailto:&amp;#119;&amp;#97;&amp;#x6e;&amp;#103;&amp;#x77;&amp;#x31;&amp;#49;&amp;#x31;&amp;#64;&amp;#x69;&amp;#99;&amp;#108;&amp;#111;&amp;#117;&amp;#100;&amp;#x2e;&amp;#99;&amp;#x6f;&amp;#x6d;&#34;&gt;&amp;#119;&amp;#97;&amp;#x6e;&amp;#103;&amp;#x77;&amp;#x31;&amp;#49;&amp;#x31;&amp;#64;&amp;#x69;&amp;#99;&amp;#108;&amp;#111;&amp;#117;&amp;#100;&amp;#x2e;&amp;#99;&amp;#x6f;&amp;#x6d;&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
  ]]></description>
         </item>
         <item>

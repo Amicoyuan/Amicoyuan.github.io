@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://xingyuanjie.top</id>
+    <title>Amicoyuan • Posts by &#34;life&#34; category</title>
+    <link href="https://xingyuanjie.top" />
+    <updated>2023-04-05T12:20:25.000Z</updated>
+    <category term="AVX" />
+    <category term="Data Structure" />
+    <category term="String" />
+    <category term="Find" />
+    <category term="STL" />
+    <category term="C++" />
+    <category term="Set" />
+    <category term="团体程序设计天梯赛" />
+    <category term="Sort" />
+    <category term="LinkList" />
+    <category term="双向链表" />
+    <category term="Graph" />
+    <category term="邻接表" />
+    <category term="Vector" />
+    <category term="Binary tree" />
+    <category term="BFS" />
+    <category term="模拟" />
+    <category term="邻接矩阵" />
+    <category term="DFS" />
+    <category term="结构体" />
+    <category term="贪心" />
+    <category term="Double类型相等比较" />
+    <category term="并查集" />
+    <category term="Map" />
+    <category term="Pair" />
+    <category term="CMU" />
+    <category term="CSAPP" />
+    <category term="CUDA" />
+    <category term="Linux" />
+    <category term="Tensorflow" />
+    <category term="Machine Learning" />
+    <category term="MPI" />
+    <category term="Matrix" />
+    <category term="GEMM" />
+    <category term="AVX2" />
+    <category term="dgemm" />
+    <category term="Cache" />
+    <category term="Blocking" />
+    <category term="Intel" />
+    <category term="LeetCode" />
+    <category term="双指针" />
+    <category term="数组翻转" />
+    <category term="哈希表" />
+    <category term="Travel" />
+    <category term="前缀和" />
+    <category term="Mirror" />
+    <category term="牛客" />
+    <category term="Numactl" />
+    <category term="OpenMP" />
+    <category term="C/C++" />
+    <category term="register" />
+    <category term="Slurm" />
+    <category term="性能分析工具" />
+    <category term="gcov" />
+    <category term="bool" />
+    <entry>
+        <id>https://xingyuanjie.top/2023/04/05/life001/</id>
+        <title>厦门</title>
+        <link rel="alternate" href="https://xingyuanjie.top/2023/04/05/life001/"/>
+        <content type="html">&lt;h1 id=&#34;厦门&#34;&gt;&lt;a href=&#34;#厦门&#34; class=&#34;headerlink&#34; title=&#34;厦门&#34;&gt;&lt;/a&gt;厦门&lt;/h1&gt;&lt;h2 id=&#34;前言：&#34;&gt;&lt;a href=&#34;#前言：&#34; class=&#34;headerlink&#34; title=&#34;前言：&#34;&gt;&lt;/a&gt;前言：&lt;/h2&gt;&lt;p&gt;记得大三的时候就一直想去海边，因为封校+疫情也没怎么去成。考完后，自己也是一直想出去走走，春节看了很多的旅游地方，挑了好久(制定旅游计划)后终于决定出发了，结果天气预报下一周的雨，只有被迫取消了。后面就是学校毕业设计开题答辩和春招忙了一段时间，最后解决后也是顺利出发，哈哈哈哈哈哈！&lt;/p&gt;
+&lt;h2 id=&#34;第一天：&#34;&gt;&lt;a href=&#34;#第一天：&#34; class=&#34;headerlink&#34; title=&#34;第一天：&#34;&gt;&lt;/a&gt;第一天：&lt;/h2&gt;&lt;p&gt;大早上收拾行李，出门吃了小学就喜欢吃的米粉(味道真的好)，随后就坐上了摆渡车去新都的华桂路地铁站，天府机场真的好远，地铁做了2个多小时，人都麻了(途中因为担心赶不上飞机还忐忑了一会)。还有到了机场我左问西问快速解决(天府机场也好大，但是感觉配套还不是很完善)。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/04/05/life001/image-20230405203721650.png&#34; alt=&#34;image-20230405203721650&#34;&gt;&lt;/p&gt;
+</content>
+        <category term="Travel" />
+        <updated>2023-04-05T12:20:25.000Z</updated>
+    </entry>
+</feed>
