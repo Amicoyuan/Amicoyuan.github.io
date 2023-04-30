@@ -5,22 +5,22 @@
         <link>https://xingyuanjie.top</link>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Sun, 30 Apr 2023 15:30:24 +0800</pubDate>
-        <lastBuildDate>Sun, 30 Apr 2023 15:30:24 +0800</lastBuildDate>
+        <pubDate>Sat, 23 Apr 2022 21:50:27 +0800</pubDate>
+        <lastBuildDate>Sat, 23 Apr 2022 21:50:27 +0800</lastBuildDate>
         <category>AVX</category>
         <category>Data Structure</category>
-        <category>Set</category>
-        <category>团体程序设计天梯赛</category>
-        <category>STL</category>
-        <category>C++</category>
-        <category>Sort</category>
         <category>String</category>
         <category>Find</category>
-        <category>LinkList</category>
-        <category>双向链表</category>
+        <category>STL</category>
+        <category>C++</category>
+        <category>Set</category>
+        <category>团体程序设计天梯赛</category>
+        <category>Sort</category>
         <category>Graph</category>
         <category>邻接表</category>
         <category>Vector</category>
+        <category>LinkList</category>
+        <category>双向链表</category>
         <category>Binary tree</category>
         <category>BFS</category>
         <category>模拟</category>
@@ -38,56 +38,37 @@
         <category>Linux</category>
         <category>Tensorflow</category>
         <category>Machine Learning</category>
-        <category>MPI</category>
         <category>Matrix</category>
         <category>GEMM</category>
+        <category>MPI</category>
         <category>AVX2</category>
         <category>dgemm</category>
         <category>Cache</category>
         <category>Blocking</category>
+        <category>C/C++</category>
         <category>Intel</category>
         <category>LeetCode</category>
         <category>双指针</category>
         <category>数组翻转</category>
-        <category>前缀和</category>
         <category>哈希表</category>
+        <category>前缀和</category>
         <category>Travel</category>
         <category>Mirror</category>
         <category>牛客</category>
         <category>Numactl</category>
         <category>OpenMP</category>
-        <category>C/C++</category>
         <category>register</category>
         <category>Slurm</category>
         <category>性能分析工具</category>
         <category>gcov</category>
         <category>bool</category>
         <item>
-            <guid isPermalink="true">https://xingyuanjie.top/2023/04/30/violate/</guid>
-            <title>C/C++ volatile关键字</title>
-            <link>https://xingyuanjie.top/2023/04/30/violate/</link>
-            <category>Data Structure</category>
-            <category>C/C++</category>
-            <pubDate>Sun, 30 Apr 2023 15:30:24 +0800</pubDate>
-            <description><![CDATA[ &lt;h2 id=&#34;C-x2F-C-volatile关键字&#34;&gt;&lt;a href=&#34;#C-x2F-C-volatile关键字&#34; class=&#34;headerlink&#34; title=&#34;C&amp;#x2F;C++ volatile关键字&#34;&gt;&lt;/a&gt;C&amp;#x2F;C++ volatile关键字&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;volatile后面的变量，是常变量，会直接访问地址，如果没有这个关键字，就可能会暂时使用寄存器的值，而不是读取地址。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;C&amp;#x2F;C++ 中的 volatile 关键字和 const 对应，用来修饰变量。volatile 关键字是一种类型修饰符，用它声明的类型变量表示可以被某些编译器未知的因素更改，比如：操作系统、硬件或者其它线程等。遇到这个关键字声明的变量，编译器对访问该变量的代码就不再进行优化，从而可以提供对特殊地址的稳定访问。声明时语法：&lt;/p&gt;
-&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;volatile&lt;/span&gt; &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i=&lt;span class=&#34;hljs-number&#34;&gt;10&lt;/span&gt;;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;当要求使用 volatile 声明的变量的值的时候，系统总是重新从它所在的内存读取数据，即使它前面的指令刚刚从该处读取过数据。而且读取的数据立刻被保存。&lt;/p&gt;
-&lt;p&gt;volatile 指出 i 是随时可能发生变化的，每次使用它的时候必须从 i的地址中读取，因而编译器生成的汇编代码会重新从i的地址读取数据放在 b 中。而优化做法是，由于编译器发现两次从 i读数据的代码之间的代码没有对 i 进行过操作，它会自动把上次读的数据放在 b 中。而不是重新从 i 里面读。这样以来，如果 i是一个寄存器变量或者表示一个端口数据就容易出错，所以说 volatile 可以保证对特殊地址的稳定访问。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;volatile关键字的实现：如在并行环境下，进行同步操作，用volatile修饰回答字地址，即可实现并行环境下的同步。这种方法一般使用在非阻塞通信中。&lt;/strong&gt;&lt;/p&gt;
-&lt;h2 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/ijn842/article/details/81273232&#34;&gt;浅谈C语言的volatile关键字_琼琼的博客的博客-CSDN博客&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/GreatTang/article/details/90454011&#34;&gt;C++ volatile_c++ violate_来日梦多长的博客-CSDN博客&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/jerry_wuhao/article/details/113247800&#34;&gt;C&amp;#x2F;C++ 中 volatile 关键字_c++ violate关键字_王俊洁、�的博客-CSDN博客&lt;/a&gt;&lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
             <guid isPermalink="true">https://xingyuanjie.top/2022/04/23/Algorithm032/</guid>
             <title>L2-036 网红点打卡攻略 (25 分)</title>
             <link>https://xingyuanjie.top/2022/04/23/Algorithm032/</link>
             <category>Data Structure</category>
-            <category>团体程序设计天梯赛</category>
             <category>C++</category>
+            <category>团体程序设计天梯赛</category>
             <category>Graph</category>
             <category>邻接矩阵</category>
             <pubDate>Sat, 23 Apr 2022 21:50:27 +0800</pubDate>
@@ -117,8 +98,8 @@
             <title>L2-039 清点代码库 (25 分)</title>
             <link>https://xingyuanjie.top/2022/04/23/Algorithm031/</link>
             <category>Data Structure</category>
-            <category>团体程序设计天梯赛</category>
             <category>C++</category>
+            <category>团体程序设计天梯赛</category>
             <category>Sort</category>
             <category>Vector</category>
             <category>Map</category>
@@ -146,8 +127,8 @@
             <title>L2-010 排座位 (25 分)</title>
             <link>https://xingyuanjie.top/2022/04/16/Algorithm028/</link>
             <category>Data Structure</category>
-            <category>团体程序设计天梯赛</category>
             <category>C++</category>
+            <category>团体程序设计天梯赛</category>
             <category>Graph</category>
             <category>邻接矩阵</category>
             <category>并查集</category>
@@ -174,8 +155,8 @@
             <title>L2-013 红色警报 (25 分)</title>
             <link>https://xingyuanjie.top/2022/04/15/Algorithm025/</link>
             <category>Data Structure</category>
-            <category>团体程序设计天梯赛</category>
             <category>C++</category>
+            <category>团体程序设计天梯赛</category>
             <category>Graph</category>
             <category>邻接矩阵</category>
             <category>DFS</category>
@@ -202,8 +183,8 @@
             <title>L2-011 玩转二叉树 (25 分)</title>
             <link>https://xingyuanjie.top/2022/04/14/Algorithm024/</link>
             <category>Data Structure</category>
-            <category>团体程序设计天梯赛</category>
             <category>C++</category>
+            <category>团体程序设计天梯赛</category>
             <category>Binary tree</category>
             <category>BFS</category>
             <pubDate>Thu, 14 Apr 2022 14:01:10 +0800</pubDate>
@@ -229,8 +210,8 @@
             <title>L2-035 完全二叉树的层序遍历 (25 分)</title>
             <link>https://xingyuanjie.top/2022/04/14/Algorithm023/</link>
             <category>Data Structure</category>
-            <category>团体程序设计天梯赛</category>
             <category>C++</category>
+            <category>团体程序设计天梯赛</category>
             <category>Binary tree</category>
             <pubDate>Thu, 14 Apr 2022 14:01:05 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;L2-035-完全二叉树的层序遍历-25-分&#34;&gt;&lt;a href=&#34;#L2-035-完全二叉树的层序遍历-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-035 完全二叉树的层序遍历 (25 分)&#34;&gt;&lt;/a&gt;L2-035 完全二叉树的层序遍历 (25 分)&lt;/h2&gt;&lt;p&gt;一个二叉树，如果每一个层的结点数都达到最大值，则这个二叉树就是&lt;strong&gt;完美二叉树&lt;/strong&gt;。对于深度为 &lt;em&gt;D&lt;/em&gt; 的，有 &lt;em&gt;N&lt;/em&gt; 个结点的二叉树，若其结点对应于相同深度完美二叉树的层序遍历的前 &lt;em&gt;N&lt;/em&gt; 个结点，这样的树就是&lt;strong&gt;完全二叉树&lt;/strong&gt;。&lt;/p&gt;
@@ -252,8 +233,8 @@
             <title>L2-031 深入虎穴 (25 分)</title>
             <link>https://xingyuanjie.top/2022/04/13/Algorithm022/</link>
             <category>Data Structure</category>
-            <category>团体程序设计天梯赛</category>
             <category>C++</category>
+            <category>团体程序设计天梯赛</category>
             <category>邻接表</category>
             <category>Vector</category>
             <category>Binary tree</category>
@@ -281,8 +262,8 @@
             <title>L2-040 哲哲打游戏 (25 分)</title>
             <link>https://xingyuanjie.top/2022/04/13/Algorithm021/</link>
             <category>Data Structure</category>
-            <category>团体程序设计天梯赛</category>
             <category>C++</category>
+            <category>团体程序设计天梯赛</category>
             <category>邻接表</category>
             <category>Vector</category>
             <category>模拟</category>
@@ -319,8 +300,8 @@
             <title>L2-027 名人堂与代金券 (25 分)</title>
             <link>https://xingyuanjie.top/2022/04/13/Algorithm020/</link>
             <category>Data Structure</category>
-            <category>团体程序设计天梯赛</category>
             <category>C++</category>
+            <category>团体程序设计天梯赛</category>
             <category>Sort</category>
             <pubDate>Wed, 13 Apr 2022 09:45:55 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;L2-027-名人堂与代金券-25-分&#34;&gt;&lt;a href=&#34;#L2-027-名人堂与代金券-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-027 名人堂与代金券 (25 分)&#34;&gt;&lt;/a&gt;L2-027 名人堂与代金券 (25 分)&lt;/h2&gt;&lt;p&gt;对于在中国大学MOOC（&lt;a href=&#34;http://www.icourse163.org/&#34;&gt;http://www.icourse163.org/&lt;/a&gt; ）学习“数据结构”课程的学生，想要获得一张合格证书，总评成绩必须达到 60 分及以上，并且有另加福利：总评分在 [G, 100] 区间内者，可以得到 50 元 PAT 代金券；在 [60, G) 区间内者，可以得到 20 元PAT代金券。全国考点通用，一年有效。同时任课老师还会把总评成绩前 K 名的学生列入课程“名人堂”。本题就请你编写程序，帮助老师列出名人堂的学生，并统计一共发出了面值多少元的 PAT 代金券。&lt;/p&gt;
@@ -341,8 +322,8 @@
             <title>L2-026 小字辈 (25 分)</title>
             <link>https://xingyuanjie.top/2022/04/13/Algorithm019/</link>
             <category>Data Structure</category>
-            <category>团体程序设计天梯赛</category>
             <category>C++</category>
+            <category>团体程序设计天梯赛</category>
             <category>邻接表</category>
             <category>Vector</category>
             <category>Binary tree</category>
@@ -366,9 +347,9 @@
             <title>L2-023 图着色问题 (25 分)</title>
             <link>https://xingyuanjie.top/2022/04/12/Algorithm018/</link>
             <category>Data Structure</category>
+            <category>C++</category>
             <category>Set</category>
             <category>团体程序设计天梯赛</category>
-            <category>C++</category>
             <category>Graph</category>
             <category>邻接表</category>
             <category>Vector</category>
@@ -578,6 +559,34 @@
 &lt;h2 id=&#34;样例代码&#34;&gt;&lt;a href=&#34;#样例代码&#34; class=&#34;headerlink&#34; title=&#34;样例代码&#34;&gt;&lt;/a&gt;样例代码&lt;/h2&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;LNode *L；&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;//和：&lt;/span&gt;&lt;br&gt;LinkList L;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;//两者的区别就是强调不同&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;p&gt;&lt;img src=&#34;/2022/03/28/Algorithm006/%E6%BC%94%E7%A4%BA.png&#34;&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://xingyuanjie.top/2022/03/11/Algorithm005/</guid>
+            <title>优先队列</title>
+            <link>https://xingyuanjie.top/2022/03/11/Algorithm005/</link>
+            <category>Data Structure</category>
+            <pubDate>Fri, 11 Mar 2022 11:54:21 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;优先队列&#34;&gt;&lt;a href=&#34;#优先队列&#34; class=&#34;headerlink&#34; title=&#34;优先队列&#34;&gt;&lt;/a&gt;优先队列&lt;/h1&gt;&lt;h2 id=&#34;定义：&#34;&gt;&lt;a href=&#34;#定义：&#34; class=&#34;headerlink&#34; title=&#34;定义：&#34;&gt;&lt;/a&gt;定义：&lt;/h2&gt;&lt;p&gt;定义：priority_queue&amp;lt;Type, Container, Functional&amp;gt;&lt;/p&gt;
+&lt;p&gt;Type 就是数据类型，Container 就是容器类型（Container必须是用数组实现的容器，比如vector,deque等等，但不能用 list。STL里面默认用的是vector），Functional 就是比较的方式。&lt;/p&gt;
+&lt;p&gt;当需要用自定义的数据类型时才需要传入这三个参数，使用基本数据类型时，只需要传入数据类型，默认是大顶堆。&lt;br&gt;一般是：&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-comment&#34;&gt;//升序队列，小顶堆&lt;/span&gt;&lt;br&gt;priority_queue &amp;lt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;,vector&amp;lt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;&amp;gt;,greater&amp;lt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;&amp;gt; &amp;gt; q;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;//降序队列，大顶堆&lt;/span&gt;&lt;br&gt;priority_queue &amp;lt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;,vector&amp;lt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;&amp;gt;,less&amp;lt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;&amp;gt; &amp;gt;q;&lt;br&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;//greater和less是std实现的两个仿函数（就是使一个类的使用看上去像一个函数。其实现就是类中实现一个operator()，这个类就有了类似函数的行为，就是一个仿函数类了）&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h2 id=&#34;样例一P1090-NOIP2004-提高组-合并果子-x2F-USACO06NOV-Fence-Repair-G&#34;&gt;&lt;a href=&#34;#样例一P1090-NOIP2004-提高组-合并果子-x2F-USACO06NOV-Fence-Repair-G&#34; class=&#34;headerlink&#34; title=&#34;样例一P1090 [NOIP2004 提高组] 合并果子 &amp;#x2F; [USACO06NOV] Fence Repair G&#34;&gt;&lt;/a&gt;样例一P1090 [NOIP2004 提高组] 合并果子 &amp;#x2F; [USACO06NOV] Fence Repair G&lt;/h2&gt;&lt;h3 id=&#34;题目描述&#34;&gt;&lt;a href=&#34;#题目描述&#34; class=&#34;headerlink&#34; title=&#34;题目描述&#34;&gt;&lt;/a&gt;题目描述&lt;/h3&gt;&lt;p&gt;在一个果园里，多多已经将所有的果子打了下来，而且按果子的不同种类分成了不同的堆。多多决定把所有的果子合成一堆。&lt;/p&gt;
+&lt;p&gt;每一次合并，多多可以把两堆果子合并到一起，消耗的体力等于两堆果子的重量之和。可以看出，所有的果子经过 n-1次合并之后， 就只剩下一堆了。多多在合并果子时总共消耗的体力等于每次合并所耗体力之和。&lt;/p&gt;
+&lt;p&gt;因为还要花大力气把这些果子搬回家，所以多多在合并果子时要尽可能地节省体力。假定每个果子重量都为 1 ，并且已知果子的种类 数和每种果子的数目，你的任务是设计出合并的次序方案，使多多耗费的体力最少，并输出这个最小的体力耗费值。&lt;/p&gt;
+&lt;p&gt;例如有 33种果子，数目依次为 1 ， 2 ， 9 。可以先将 1 、 2 堆合并，新堆数目为 3 ，耗费体力为 3 。接着，将新堆与原先的第三堆合并，又得到新的堆，数目为 12 ，耗费体力为 12 。所以多多总共耗费体力 &amp;#x3D;3+12&amp;#x3D;15 。可以证明 15为最小的体力耗费值。&lt;/p&gt;
+&lt;h3 id=&#34;输入格式&#34;&gt;&lt;a href=&#34;#输入格式&#34; class=&#34;headerlink&#34; title=&#34;输入格式&#34;&gt;&lt;/a&gt;输入格式&lt;/h3&gt;&lt;p&gt;共两行。&lt;br&gt;第一行是一个整数 n*(1≤&lt;em&gt;n&lt;/em&gt;≤10000) ，表示果子的种类数。&lt;/p&gt;
+&lt;p&gt;第二行包含 &lt;em&gt;n&lt;/em&gt; 个整数，用空格分隔，第 &lt;em&gt;i&lt;/em&gt; 个整数 a&lt;strong&gt;i*(1≤*a&lt;/strong&gt;i&lt;em&gt;≤20000) 是第 i&lt;/em&gt; 种果子的数目。&lt;/p&gt;
+&lt;h3 id=&#34;输出格式&#34;&gt;&lt;a href=&#34;#输出格式&#34; class=&#34;headerlink&#34; title=&#34;输出格式&#34;&gt;&lt;/a&gt;输出格式&lt;/h3&gt;&lt;p&gt;一个整数，也就是最小的体力耗费值。输入数据保证这个值小于 2^{31} 。&lt;/p&gt;
+&lt;h3 id=&#34;输入输出样例&#34;&gt;&lt;a href=&#34;#输入输出样例&#34; class=&#34;headerlink&#34; title=&#34;输入输出样例&#34;&gt;&lt;/a&gt;输入输出样例&lt;/h3&gt;&lt;h4 id=&#34;输入-1&#34;&gt;&lt;a href=&#34;#输入-1&#34; class=&#34;headerlink&#34; title=&#34;输入 #1&#34;&gt;&lt;/a&gt;&lt;strong&gt;输入 #1&lt;/strong&gt;&lt;/h4&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-number&#34;&gt;3&lt;/span&gt; &lt;br&gt;&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;9&lt;/span&gt; &lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h4 id=&#34;输出-1&#34;&gt;&lt;a href=&#34;#输出-1&#34; class=&#34;headerlink&#34; title=&#34;输出 #1&#34;&gt;&lt;/a&gt;&lt;strong&gt;输出 #1&lt;/strong&gt;&lt;/h4&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-number&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h3 id=&#34;程序源代码&#34;&gt;&lt;a href=&#34;#程序源代码&#34; class=&#34;headerlink&#34; title=&#34;程序源代码&#34;&gt;&lt;/a&gt;程序源代码&lt;/h3&gt;&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;hljs-meta-string&#34;&gt;&amp;lt;bits/stdc++.h&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;using&lt;/span&gt; &lt;span class=&#34;hljs-keyword&#34;&gt;namespace&lt;/span&gt; std;&lt;br&gt;priority_queue&amp;lt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;,vector&amp;lt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;&amp;gt;,greater&amp;lt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;&amp;gt; &amp;gt; q;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;()&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;/span&gt;&amp;#123;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; n;&lt;br&gt;    cin&amp;gt;&amp;gt;n;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; ans;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; (&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i = &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;; i &amp;lt;n ; ++i) &amp;#123;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; num;&lt;br&gt;        cin&amp;gt;&amp;gt;num;&lt;br&gt;        q.&lt;span class=&#34;hljs-built_in&#34;&gt;push&lt;/span&gt;(num);&lt;br&gt;    &amp;#125;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; (&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; j = &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;; j &amp;lt;n&lt;span class=&#34;hljs-number&#34;&gt;-1&lt;/span&gt; ; ++j) &amp;#123;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; a=q.&lt;span class=&#34;hljs-built_in&#34;&gt;top&lt;/span&gt;();&lt;br&gt;        q.&lt;span class=&#34;hljs-built_in&#34;&gt;pop&lt;/span&gt;();&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; b=q.&lt;span class=&#34;hljs-built_in&#34;&gt;top&lt;/span&gt;();&lt;br&gt;        q.&lt;span class=&#34;hljs-built_in&#34;&gt;pop&lt;/span&gt;();&lt;br&gt;        ans+=a+b;&lt;br&gt;        q.&lt;span class=&#34;hljs-built_in&#34;&gt;push&lt;/span&gt;(a+b);&lt;br&gt;    &amp;#125;&lt;br&gt;    cout&amp;lt;&amp;lt;ans&amp;lt;&amp;lt;endl;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h2 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/huashanqingzhu/p/11040390.html&#34;&gt;c++优先队列(priority_queue)用法详解 - 华山青竹 - 博客园 (cnblogs.com)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[P1090 &lt;a href=&#34;https://www.luogu.com.cn/problem/P1090&#34;&gt;NOIP2004 提高组] 合并果子 &amp;#x2F; [USACO06NOV] Fence Repair G - 洛谷 | 计算机科学教育新生态 (luogu.com.cn)&lt;/a&gt;&lt;/p&gt;
  ]]></description>
         </item>
     </channel>

@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>C/C++枚举类型 enum</title>
+    <link href="/2023/04/30/enum/"/>
+    <url>/2023/04/30/enum/</url>
+    
+    <content type="html"><![CDATA[<h2 id="C-x2F-C-枚举类型-enum"><a href="#C-x2F-C-枚举类型-enum" class="headerlink" title="C&#x2F;C++枚举类型 enum"></a>C&#x2F;C++枚举类型 enum</h2><p><strong>枚举类型的定义：</strong>枚举类型(enumeration)是 C++ 中的一种派生数据类型，它是由用户定义的若干枚举常量的集合。</p><p>定义格式：枚举类型的定义格式为：</p><figure class="highlight bnf"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bnf">enum <span class="hljs-attribute">&lt;类型名&gt;</span> &#123;<span class="hljs-attribute">&lt;枚举常量表&gt;</span>&#125;;<br></code></pre></div></td></tr></table></figure><p><strong>格式说明：</strong></p><ul><li>关键字enum——指明其后的标识符是一个枚举类型的名字。</li><li>枚举常量表——由枚举常量构成。”枚举常量”或称”枚举成员”，是以标识符形式表示的整型量，表示枚举类型的取值。枚举常量表列出枚举类型的所有取值，各枚举常量之间以”，”间隔，且必须各不相同。取值类型与条件表达式相同。</li></ul><p><strong>应用举例：</strong></p><figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">color_set1</span> &#123;</span>RED, BLUE, WHITE, BLACK&#125;; <span class="hljs-comment">// 定义枚举类型color_set1</span><br><span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">week</span> &#123;</span>Sun, Mon, Tue, Wed, Thu, Fri, Sat&#125;; <span class="hljs-comment">// 定义枚举类型week</span><br></code></pre></div></td></tr></table></figure><p><strong>重要提示：</strong></p><p>枚举常量代表该枚举类型的变量可能取的值，编译系统为每个枚举常量指定一个整数值，默认状态下，这个整数就是所列举元素的序号，序号从0开始。 可以在定义枚举类型时为部分或全部枚举常量指定整数值，在指定值之前的枚举常量仍按默认方式取值，而指定值之后的枚举常量按依次加1的原则取值。 各枚举常量的值可以重复。例如：</p><figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">fruit_set</span> &#123;</span>apple, orange, banana=<span class="hljs-number">1</span>, peach, grape&#125;<br><span class="hljs-comment">//枚举常量apple=0,orange=1, banana=1,peach=2,grape=3。</span><br><span class="hljs-keyword">enum</span> week &#123;Sun=<span class="hljs-number">7</span>, Mon=<span class="hljs-number">1</span>, Tue, Wed, Thu, Fri, Sat&#125;;<br><span class="hljs-comment">//枚举常量Sun,Mon,Tue,Wed,Thu,Fri,Sat的值分别为7、1、2、3、4、5、6。</span><br></code></pre></div></td></tr></table></figure><p>枚举常量只能以标识符形式表示，而不能是整型、字符型等文字常量。例如，以下定义非法：</p><figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">letter_set</span> &#123;</span><span class="hljs-string">&#x27;a&#x27;</span>,<span class="hljs-string">&#x27;d&#x27;</span>,<span class="hljs-string">&#x27;F&#x27;</span>,<span class="hljs-string">&#x27;s&#x27;</span>,<span class="hljs-string">&#x27;T&#x27;</span>&#125;; <span class="hljs-comment">//枚举常量不能是字符常量</span><br><span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">year_set</span>&#123;</span><span class="hljs-number">2000</span>,<span class="hljs-number">2001</span>,<span class="hljs-number">2002</span>,<span class="hljs-number">2003</span>,<span class="hljs-number">2004</span>,<span class="hljs-number">2005</span>&#125;; <span class="hljs-comment">//枚举常量不能是整型常量</span><br></code></pre></div></td></tr></table></figure><p>可改为以下形式则定义合法：</p><figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">letter_set</span> &#123;</span>a, d, F, s, T&#125;;<br><span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">year_set</span>&#123;</span>y2000, y2001, y2002, y2003, y2004, y2005&#125;;<br></code></pre></div></td></tr></table></figure><hr><h2 id="枚举变量的使用"><a href="#枚举变量的使用" class="headerlink" title="枚举变量的使用"></a>枚举变量的使用</h2><p>定义枚举类型的主要目的是：增加程序的可读性。枚举类型最常见也最有意义的用处之一就是用来描述状态量，这点将在第9章 输入输出流类看到。</p><p>定义格式：定义枚举类型之后，就可以定义该枚举类型的变量，如：</p><figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++">color_set1 color1, color2;<br></code></pre></div></td></tr></table></figure><p>亦可类型与变量同时定义（甚至类型名可省），格式如下：</p><figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-class"><span class="hljs-keyword">enum</span> &#123;</span>Sun,Mon,Tue,Wed,Thu,Fri,Sat&#125; weekday1, weekday2;<br></code></pre></div></td></tr></table></figure><h3 id="相关操作"><a href="#相关操作" class="headerlink" title="相关操作"></a>相关操作</h3><p>枚举变量的值只能取枚举常量表中所列的值，就是整型数的一个子集。</p><p>枚举变量占用内存的大小与整型数相同。</p><p>枚举变量只能参与赋值和关系运算以及输出操作，参与运算时用其本身的整数值。例如，设有定义：</p><figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">color_set1</span> &#123;</span>RED, BLUE, WHITE, BLACK&#125; color1, color2;<br><span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">color_set2</span> &#123;</span> GREEN, RED, YELLOW, WHITE&#125; color3, color4;<br></code></pre></div></td></tr></table></figure><p>则允许的赋值操作如下：</p><figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++">color3=RED;           <span class="hljs-comment">//将枚举常量值赋给枚举变量</span><br>color4=color3;        <span class="hljs-comment">//相同类型的枚举变量赋值，color4的值为RED</span><br><span class="hljs-keyword">int</span>  i=color3;        <span class="hljs-comment">//将枚举变量赋给整型变量，i的值为1</span><br><span class="hljs-keyword">int</span>  j=GREEN;         <span class="hljs-comment">//将枚举常量赋给整型变量，j的值为0</span><br></code></pre></div></td></tr></table></figure><p>允许的关系运算有：&#x3D;&#x3D;、&lt;、&gt;、&lt;&#x3D;、&gt;&#x3D;、!&#x3D;等，例如：</p><figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-comment">//比较同类型枚举变量color3，color4是否相等</span><br><span class="hljs-keyword">if</span> (color3==color4) cout&lt;&lt;<span class="hljs-string">&quot;相等&quot;</span>；<br><span class="hljs-comment">//输出的是变量color3与WHITE的比较结果，结果为1</span><br>cout&lt;&lt; color3&lt;WHITE;<br></code></pre></div></td></tr></table></figure><p>枚举变量可以直接输出，输出的是变量的整数值。例如：</p><figure class="highlight apache"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs apache"><span class="hljs-attribute">cout</span>&lt;&lt; color<span class="hljs-number">3</span>;         //输出的是color<span class="hljs-number">3</span>的整数值，即RED的整数值<span class="hljs-number">1</span><br></code></pre></div></td></tr></table></figure><h3 id="重要提示"><a href="#重要提示" class="headerlink" title="重要提示"></a>重要提示</h3><ul><li>枚举变量可以直接输出，但不能直接输入。如：cout &gt;&gt; color3;  &#x2F;&#x2F;非法</li><li>不能直接将常量赋给枚举变量。如： color1&#x3D;1; &#x2F;&#x2F;非法</li><li>不同类型的枚举变量之间不能相互赋值。如： color1&#x3D;color3; &#x2F;&#x2F;非法</li><li>枚举变量的输入输出一般都采用switch语句将其转换为字符或字符串；枚举类型数据的其他处理也往往应用switch语句，以保证程序的合法性和可读性。</li></ul><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://www.runoob.com/w3cnote/cpp-enum-intro.html">C++ 枚举类型详解 | 菜鸟教程 (runoob.com)</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Algorithm</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>C/C++</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>C/C++ volatile关键字</title>
     <link href="/2023/04/30/violate/"/>
     <url>/2023/04/30/violate/</url>
@@ -19,8 +44,6 @@
     
     
     <tags>
-      
-      <tag>Data Structure</tag>
       
       <tag>C/C++</tag>
       
@@ -676,7 +699,7 @@
     <link href="/2023/02/24/Linux003/"/>
     <url>/2023/02/24/Linux003/</url>
     
-    <content type="html"><![CDATA[<h2 id="基于GDB的程序调试"><a href="#基于GDB的程序调试" class="headerlink" title="基于GDB的程序调试"></a>基于GDB的程序调试</h2><h3 id="程序调试工具GDB"><a href="#程序调试工具GDB" class="headerlink" title="程序调试工具GDB"></a>程序调试工具GDB</h3><p>编译器GCC，项目构建工具Make（又称gmake），以及GDB。</p><p><img src="/2023/02/24/Linux003/image-20230224165344672.png" alt="image-20230224165344672"></p><p><strong>GDB是什么？</strong></p><p>GDB：GNU symbolic debugger是Linux下常用的程序调试器</p><p><strong>GDB可以做什么？</strong></p><p><img src="/2023/02/24/Linux003/image-20230224165606636.png" alt="image-20230224165606636"></p><p><strong>GDB官网：</strong><a href="https://www.sourceware.org/gdb/">GDB: The GNU Project Debugger (sourceware.org)</a></p><h3 id="调试案例一"><a href="#调试案例一" class="headerlink" title="调试案例一"></a>调试案例一</h3><figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">int</span> n,sum;<br>    n = <span class="hljs-number">1</span>;<br>    sum = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">while</span>( n &lt;= <span class="hljs-number">100</span>)<br>    &#123;<br>        sum = sum + n;<br>        n = n + <span class="hljs-number">1</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure><p>在编译程序的时候，需要加调试选项： -g</p><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">gcc gdb001.c -g -o ex1<br></code></pre></div></td></tr></table></figure><p>使用gdb启动程序：</p><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">gdb ./ex1<br></code></pre></div></td></tr></table></figure><p><strong>进入gdb调试环境</strong>：</p><p><img src="/2023/02/24/Linux003/image-20230224170419171.png" alt="image-20230224170419171"></p><p><strong>在调试环境中：使用l选项会显示带行号的源代码</strong></p><p><img src="/2023/02/24/Linux003/image-20230224170620617.png" alt="image-20230224170620617"></p><p><strong>但是默认情况下，l选项只显示10行源代码，如果查看后续代码，在调试界面Enter回车即可</strong></p><p><img src="/2023/02/24/Linux003/image-20230224170804048.png" alt="image-20230224170804048"></p><p><strong>在第7行源代码处打断点：</strong></p><p><img src="/2023/02/24/Linux003/image-20230224171858691.png" alt="image-20230224171858691"></p><p><strong>运行程序，遇到断点停止：</strong></p><p><img src="/2023/02/24/Linux003/image-20230224172105514.png" alt="image-20230224172105514"></p><p><strong>查看代码中变量n的值</strong></p><p><img src="/2023/02/24/Linux003/image-20230224172200662.png" alt="image-20230224172200662"></p><p>当前n的值为1，$1表示该变量所在存储区的名称</p><p><strong>在程序第12行处打断点</strong></p><p><img src="/2023/02/24/Linux003/image-20230224172321002.png" alt="image-20230224172321002"></p><p><strong>继续执行程序</strong></p><p><img src="/2023/02/24/Linux003/image-20230224172356622.png" alt="image-20230224172356622"></p><p><strong>查看当前n变量的值</strong></p><p><img src="/2023/02/24/Linux003/image-20230224172422998.png" alt="image-20230224172422998"></p><p>当前n的值为101</p><p><strong>退出调试</strong></p><p><img src="/2023/02/24/Linux003/image-20230224172456626.png" alt="image-20230224172456626"></p><p><strong>查看调试环境所有断点：</strong></p><p><img src="/2023/02/24/Linux003/image-20230224172650422.png" alt="image-20230224172650422"></p><p><strong>删除第7行的断点：</strong></p><p><img src="/2023/02/24/Linux003/image-20230224172745323.png" alt="image-20230224172745323"></p><p><strong>禁用编号为2的断点：</strong></p><p><img src="/2023/02/24/Linux003/image-20230224172832507.png" alt="image-20230224172832507"></p><p>注意断点状态Enb(enable)由y变成n，代表禁用</p><p><strong>恢复编号为2的断点：</strong></p><p><img src="/2023/02/24/Linux003/image-20230224173006975.png" alt="image-20230224173006975"></p><h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>GDB有三种调试模式：</p><p><strong>调试执行程序：</strong>（前面的案例），注意编译加调试信息(-g)</p><p><strong>调试core文件   ：</strong>需要对系统设置的core文件大小作调整（ulimit - c unlimlited），否则可能无法  产生core文件</p><p><strong>调试正在执行的程序（gdb attach） ：</strong>Top找到进程编号pid，Gdb attach pid</p><p><strong>GDB结构组成：</strong></p><p><img src="/2023/02/24/Linux003/image-20230224173613247.png" alt="image-20230224173613247"></p><h3 id="常用调试指令："><a href="#常用调试指令：" class="headerlink" title="常用调试指令："></a>常用调试指令：</h3><h4 id="启动指令"><a href="#启动指令" class="headerlink" title="启动指令"></a>启动指令</h4><p>调试程序：gdb program</p><p>根据core文件调试程序：gdb program corefile</p><p>跟踪调试进程：gdb attach pid</p><h4 id="程序运行"><a href="#程序运行" class="headerlink" title="程序运行"></a>程序运行</h4><p>run，该命令会运行至程序结束，除非遇到断点或报错</p><h4 id="单步执行"><a href="#单步执行" class="headerlink" title="单步执行"></a>单步执行</h4><p>步进执行不进栈？next</p><p>步进执行，进栈step</p><h4 id="代码查看"><a href="#代码查看" class="headerlink" title="代码查看"></a>代码查看</h4><p>列出断点附近或程序所有代码list</p><p>设置现实代码的行数 set listsize &lt;n&gt;</p><h4 id="退出调试"><a href="#退出调试" class="headerlink" title="退出调试"></a>退出调试</h4><p>quit</p><h4 id="查看栈信息"><a href="#查看栈信息" class="headerlink" title="查看栈信息"></a>查看栈信息</h4><p>bt打印当前的函数调用栈的所有信息</p><p>bt &lt;n&gt;n是一个正整数，表示只打印栈顶上n层的栈信息</p><p>bt &lt;-n&gt;表示只打印栈底下n层的栈信息</p><h4 id="设置断点"><a href="#设置断点" class="headerlink" title="设置断点"></a>设置断点</h4><p><strong>代码断点：</strong></p><ul><li>break lineNumber | functionName</li><li>break lineNumber | functionName if condition</li><li>tbreak lineNumber | functionName  临时断点，仅能使用一次</li></ul><p><strong>内存断点（观察点）：</strong></p><ul><li>监控内存值改变 watch expr [if condition]</li><li>监控内存值被读取 rwatch expr [if condition]</li><li>监控内存值被读取和写入 awatch wxpr [if condition]</li></ul><p><strong>事件断点：</strong></p><ul><li>C++ exception，使用catch exception [name]</li><li>Ada exception，使用catch handlers [name]</li><li>exec事件，使用catch exec</li><li>fork事件，使用catch fork 或者 catch vfork</li><li>加载和卸载动态so事件，使用catch load|unload [regexp]</li><li>监听系统信号，使用catch signal [signal]</li><li>监听系统调用，使用catch syscall[name|number|group:groupname|g:groupname]…</li></ul><p><strong>打印变量：</strong></p><ul><li>Print [file | func]::variable 查看局部变量或全局变量</li><li>Print *array@len  数组首地址@查看长度</li><li>x&#x2F;[n | u] &lt;addr&gt;x命令查看内存地址钟的值，n：表示显示内存的长度，u：表示从当前地址往后请求的字节数</li></ul><p><strong>打印寄存器：</strong></p><p>info register查看寄存器（除了浮点寄存器）</p><p>all-registers查看所有寄存器</p><p>info registers &lt;reg_name …&gt;查看所指定寄存器</p><h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p><strong>来源培训PPT 作者：Relax  邮箱：<a href="mailto:&#119;&#x61;&#x6e;&#103;&#x77;&#x31;&#x31;&#49;&#64;&#x69;&#x63;&#108;&#111;&#x75;&#x64;&#x2e;&#99;&#x6f;&#x6d;">&#119;&#x61;&#x6e;&#103;&#x77;&#x31;&#x31;&#49;&#64;&#x69;&#x63;&#108;&#111;&#x75;&#x64;&#x2e;&#99;&#x6f;&#x6d;</a></strong></p>]]></content>
+    <content type="html"><![CDATA[<h2 id="基于GDB的程序调试"><a href="#基于GDB的程序调试" class="headerlink" title="基于GDB的程序调试"></a>基于GDB的程序调试</h2><h3 id="程序调试工具GDB"><a href="#程序调试工具GDB" class="headerlink" title="程序调试工具GDB"></a>程序调试工具GDB</h3><p>编译器GCC，项目构建工具Make（又称gmake），以及GDB。</p><p><img src="/2023/02/24/Linux003/image-20230224165344672.png" alt="image-20230224165344672"></p><p><strong>GDB是什么？</strong></p><p>GDB：GNU symbolic debugger是Linux下常用的程序调试器</p><p><strong>GDB可以做什么？</strong></p><p><img src="/2023/02/24/Linux003/image-20230224165606636.png" alt="image-20230224165606636"></p><p><strong>GDB官网：</strong><a href="https://www.sourceware.org/gdb/">GDB: The GNU Project Debugger (sourceware.org)</a></p><h3 id="调试案例一"><a href="#调试案例一" class="headerlink" title="调试案例一"></a>调试案例一</h3><figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">int</span> n,sum;<br>    n = <span class="hljs-number">1</span>;<br>    sum = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">while</span>( n &lt;= <span class="hljs-number">100</span>)<br>    &#123;<br>        sum = sum + n;<br>        n = n + <span class="hljs-number">1</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure><p>在编译程序的时候，需要加调试选项： -g</p><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">gcc gdb001.c -g -o ex1<br></code></pre></div></td></tr></table></figure><p>使用gdb启动程序：</p><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">gdb ./ex1<br></code></pre></div></td></tr></table></figure><p><strong>进入gdb调试环境</strong>：</p><p><img src="/2023/02/24/Linux003/image-20230224170419171.png" alt="image-20230224170419171"></p><p><strong>在调试环境中：使用l选项会显示带行号的源代码</strong></p><p><img src="/2023/02/24/Linux003/image-20230224170620617.png" alt="image-20230224170620617"></p><p><strong>但是默认情况下，l选项只显示10行源代码，如果查看后续代码，在调试界面Enter回车即可</strong></p><p><img src="/2023/02/24/Linux003/image-20230224170804048.png" alt="image-20230224170804048"></p><p><strong>在第7行源代码处打断点：</strong></p><p><img src="/2023/02/24/Linux003/image-20230224171858691.png" alt="image-20230224171858691"></p><p><strong>运行程序，遇到断点停止：</strong></p><p><img src="/2023/02/24/Linux003/image-20230224172105514.png" alt="image-20230224172105514"></p><p><strong>查看代码中变量n的值</strong></p><p><img src="/2023/02/24/Linux003/image-20230224172200662.png" alt="image-20230224172200662"></p><p>当前n的值为1，$1表示该变量所在存储区的名称</p><p><strong>在程序第12行处打断点</strong></p><p><img src="/2023/02/24/Linux003/image-20230224172321002.png" alt="image-20230224172321002"></p><p><strong>继续执行程序</strong></p><p><img src="/2023/02/24/Linux003/image-20230224172356622.png" alt="image-20230224172356622"></p><p><strong>查看当前n变量的值</strong></p><p><img src="/2023/02/24/Linux003/image-20230224172422998.png" alt="image-20230224172422998"></p><p>当前n的值为101</p><p><strong>退出调试</strong></p><p><img src="/2023/02/24/Linux003/image-20230224172456626.png" alt="image-20230224172456626"></p><p><strong>查看调试环境所有断点：</strong></p><p><img src="/2023/02/24/Linux003/image-20230224172650422.png" alt="image-20230224172650422"></p><p><strong>删除第7行的断点：</strong></p><p><img src="/2023/02/24/Linux003/image-20230224172745323.png" alt="image-20230224172745323"></p><p><strong>禁用编号为2的断点：</strong></p><p><img src="/2023/02/24/Linux003/image-20230224172832507.png" alt="image-20230224172832507"></p><p>注意断点状态Enb(enable)由y变成n，代表禁用</p><p><strong>恢复编号为2的断点：</strong></p><p><img src="/2023/02/24/Linux003/image-20230224173006975.png" alt="image-20230224173006975"></p><h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>GDB有三种调试模式：</p><p><strong>调试执行程序：</strong>（前面的案例），注意编译加调试信息(-g)</p><p><strong>调试core文件   ：</strong>需要对系统设置的core文件大小作调整（ulimit - c unlimlited），否则可能无法  产生core文件</p><p><strong>调试正在执行的程序（gdb attach） ：</strong>Top找到进程编号pid，Gdb attach pid</p><p><strong>GDB结构组成：</strong></p><p><img src="/2023/02/24/Linux003/image-20230224173613247.png" alt="image-20230224173613247"></p><h3 id="常用调试指令："><a href="#常用调试指令：" class="headerlink" title="常用调试指令："></a>常用调试指令：</h3><h4 id="启动指令"><a href="#启动指令" class="headerlink" title="启动指令"></a>启动指令</h4><p>调试程序：gdb program</p><p>根据core文件调试程序：gdb program corefile</p><p>跟踪调试进程：gdb attach pid</p><h4 id="程序运行"><a href="#程序运行" class="headerlink" title="程序运行"></a>程序运行</h4><p>run，该命令会运行至程序结束，除非遇到断点或报错</p><h4 id="单步执行"><a href="#单步执行" class="headerlink" title="单步执行"></a>单步执行</h4><p>步进执行不进栈？next</p><p>步进执行，进栈step</p><h4 id="代码查看"><a href="#代码查看" class="headerlink" title="代码查看"></a>代码查看</h4><p>列出断点附近或程序所有代码list</p><p>设置现实代码的行数 set listsize &lt;n&gt;</p><h4 id="退出调试"><a href="#退出调试" class="headerlink" title="退出调试"></a>退出调试</h4><p>quit</p><h4 id="查看栈信息"><a href="#查看栈信息" class="headerlink" title="查看栈信息"></a>查看栈信息</h4><p>bt打印当前的函数调用栈的所有信息</p><p>bt &lt;n&gt;n是一个正整数，表示只打印栈顶上n层的栈信息</p><p>bt &lt;-n&gt;表示只打印栈底下n层的栈信息</p><h4 id="设置断点"><a href="#设置断点" class="headerlink" title="设置断点"></a>设置断点</h4><p><strong>代码断点：</strong></p><ul><li>break lineNumber | functionName</li><li>break lineNumber | functionName if condition</li><li>tbreak lineNumber | functionName  临时断点，仅能使用一次</li></ul><p><strong>内存断点（观察点）：</strong></p><ul><li>监控内存值改变 watch expr [if condition]</li><li>监控内存值被读取 rwatch expr [if condition]</li><li>监控内存值被读取和写入 awatch wxpr [if condition]</li></ul><p><strong>事件断点：</strong></p><ul><li>C++ exception，使用catch exception [name]</li><li>Ada exception，使用catch handlers [name]</li><li>exec事件，使用catch exec</li><li>fork事件，使用catch fork 或者 catch vfork</li><li>加载和卸载动态so事件，使用catch load|unload [regexp]</li><li>监听系统信号，使用catch signal [signal]</li><li>监听系统调用，使用catch syscall[name|number|group:groupname|g:groupname]…</li></ul><p><strong>打印变量：</strong></p><ul><li>Print [file | func]::variable 查看局部变量或全局变量</li><li>Print *array@len  数组首地址@查看长度</li><li>x&#x2F;[n | u] &lt;addr&gt;x命令查看内存地址钟的值，n：表示显示内存的长度，u：表示从当前地址往后请求的字节数</li></ul><p><strong>打印寄存器：</strong></p><p>info register查看寄存器（除了浮点寄存器）</p><p>all-registers查看所有寄存器</p><p>info registers &lt;reg_name …&gt;查看所指定寄存器</p><h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p><strong>来源培训PPT 作者：Relax  邮箱：<a href="mailto:&#119;&#97;&#110;&#x67;&#119;&#x31;&#x31;&#49;&#64;&#x69;&#99;&#108;&#x6f;&#117;&#x64;&#x2e;&#99;&#111;&#109;">&#119;&#97;&#110;&#x67;&#119;&#x31;&#x31;&#49;&#64;&#x69;&#99;&#108;&#x6f;&#117;&#x64;&#x2e;&#99;&#111;&#109;</a></strong></p>]]></content>
     
     
     <categories>
@@ -1564,9 +1587,9 @@
       
       <tag>Data Structure</tag>
       
-      <tag>团体程序设计天梯赛</tag>
-      
       <tag>C++</tag>
+      
+      <tag>团体程序设计天梯赛</tag>
       
       <tag>Graph</tag>
       
@@ -1597,9 +1620,9 @@
       
       <tag>Data Structure</tag>
       
-      <tag>团体程序设计天梯赛</tag>
-      
       <tag>C++</tag>
+      
+      <tag>团体程序设计天梯赛</tag>
       
       <tag>Sort</tag>
       
@@ -1632,11 +1655,11 @@
     
     <tags>
       
+      <tag>C++</tag>
+      
       <tag>Set</tag>
       
       <tag>团体程序设计天梯赛</tag>
-      
-      <tag>C++</tag>
       
       <tag>模拟</tag>
       
@@ -1692,9 +1715,9 @@
       
       <tag>Data Structure</tag>
       
-      <tag>团体程序设计天梯赛</tag>
-      
       <tag>C++</tag>
+      
+      <tag>团体程序设计天梯赛</tag>
       
       <tag>Graph</tag>
       
@@ -1725,9 +1748,9 @@
     
     <tags>
       
-      <tag>团体程序设计天梯赛</tag>
-      
       <tag>C++</tag>
+      
+      <tag>团体程序设计天梯赛</tag>
       
       <tag>Sort</tag>
       
@@ -1758,9 +1781,9 @@
     
     <tags>
       
-      <tag>团体程序设计天梯赛</tag>
-      
       <tag>C++</tag>
+      
+      <tag>团体程序设计天梯赛</tag>
       
       <tag>Sort</tag>
       
@@ -1793,9 +1816,9 @@
       
       <tag>Data Structure</tag>
       
-      <tag>团体程序设计天梯赛</tag>
-      
       <tag>C++</tag>
+      
+      <tag>团体程序设计天梯赛</tag>
       
       <tag>Graph</tag>
       
@@ -1828,9 +1851,9 @@
       
       <tag>Data Structure</tag>
       
-      <tag>团体程序设计天梯赛</tag>
-      
       <tag>C++</tag>
+      
+      <tag>团体程序设计天梯赛</tag>
       
       <tag>Binary tree</tag>
       
@@ -1861,9 +1884,9 @@
       
       <tag>Data Structure</tag>
       
-      <tag>团体程序设计天梯赛</tag>
-      
       <tag>C++</tag>
+      
+      <tag>团体程序设计天梯赛</tag>
       
       <tag>Binary tree</tag>
       
@@ -1892,9 +1915,9 @@
       
       <tag>Data Structure</tag>
       
-      <tag>团体程序设计天梯赛</tag>
-      
       <tag>C++</tag>
+      
+      <tag>团体程序设计天梯赛</tag>
       
       <tag>邻接表</tag>
       
@@ -1929,9 +1952,9 @@
       
       <tag>Data Structure</tag>
       
-      <tag>团体程序设计天梯赛</tag>
-      
       <tag>C++</tag>
+      
+      <tag>团体程序设计天梯赛</tag>
       
       <tag>邻接表</tag>
       
@@ -1958,9 +1981,9 @@
       
       <tag>Data Structure</tag>
       
-      <tag>团体程序设计天梯赛</tag>
-      
       <tag>C++</tag>
+      
+      <tag>团体程序设计天梯赛</tag>
       
       <tag>Sort</tag>
       
@@ -1989,9 +2012,9 @@
       
       <tag>Data Structure</tag>
       
-      <tag>团体程序设计天梯赛</tag>
-      
       <tag>C++</tag>
+      
+      <tag>团体程序设计天梯赛</tag>
       
       <tag>邻接表</tag>
       
@@ -2026,11 +2049,11 @@
       
       <tag>Data Structure</tag>
       
+      <tag>C++</tag>
+      
       <tag>Set</tag>
       
       <tag>团体程序设计天梯赛</tag>
-      
-      <tag>C++</tag>
       
       <tag>Graph</tag>
       
@@ -2061,9 +2084,9 @@
     
     <tags>
       
-      <tag>团体程序设计天梯赛</tag>
-      
       <tag>C++</tag>
+      
+      <tag>团体程序设计天梯赛</tag>
       
       <tag>LinkList</tag>
       
@@ -2092,13 +2115,13 @@
     
     <tags>
       
-      <tag>Set</tag>
-      
-      <tag>团体程序设计天梯赛</tag>
-      
       <tag>STL</tag>
       
       <tag>C++</tag>
+      
+      <tag>Set</tag>
+      
+      <tag>团体程序设计天梯赛</tag>
       
       <tag>Sort</tag>
       
@@ -2125,13 +2148,13 @@
     
     <tags>
       
-      <tag>STL</tag>
-      
-      <tag>C++</tag>
-      
       <tag>String</tag>
       
       <tag>Find</tag>
+      
+      <tag>STL</tag>
+      
+      <tag>C++</tag>
       
     </tags>
     

@@ -5,22 +5,22 @@
         <link>https://xingyuanjie.top</link>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Sun, 30 Apr 2023 15:30:24 +0800</pubDate>
-        <lastBuildDate>Sun, 30 Apr 2023 15:30:24 +0800</lastBuildDate>
+        <pubDate>Sun, 30 Apr 2023 15:44:23 +0800</pubDate>
+        <lastBuildDate>Sun, 30 Apr 2023 15:44:23 +0800</lastBuildDate>
         <category>AVX</category>
         <category>Data Structure</category>
-        <category>Set</category>
-        <category>团体程序设计天梯赛</category>
-        <category>STL</category>
-        <category>C++</category>
-        <category>Sort</category>
         <category>String</category>
         <category>Find</category>
-        <category>LinkList</category>
-        <category>双向链表</category>
+        <category>STL</category>
+        <category>C++</category>
+        <category>Set</category>
+        <category>团体程序设计天梯赛</category>
+        <category>Sort</category>
         <category>Graph</category>
         <category>邻接表</category>
         <category>Vector</category>
+        <category>LinkList</category>
+        <category>双向链表</category>
         <category>Binary tree</category>
         <category>BFS</category>
         <category>模拟</category>
@@ -38,35 +38,93 @@
         <category>Linux</category>
         <category>Tensorflow</category>
         <category>Machine Learning</category>
-        <category>MPI</category>
         <category>Matrix</category>
         <category>GEMM</category>
+        <category>MPI</category>
         <category>AVX2</category>
         <category>dgemm</category>
         <category>Cache</category>
         <category>Blocking</category>
+        <category>C/C++</category>
         <category>Intel</category>
         <category>LeetCode</category>
         <category>双指针</category>
         <category>数组翻转</category>
-        <category>前缀和</category>
         <category>哈希表</category>
+        <category>前缀和</category>
         <category>Travel</category>
         <category>Mirror</category>
         <category>牛客</category>
         <category>Numactl</category>
         <category>OpenMP</category>
-        <category>C/C++</category>
         <category>register</category>
         <category>Slurm</category>
         <category>性能分析工具</category>
         <category>gcov</category>
         <category>bool</category>
         <item>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/04/30/enum/</guid>
+            <title>C/C++枚举类型 enum</title>
+            <link>https://xingyuanjie.top/2023/04/30/enum/</link>
+            <category>C/C++</category>
+            <pubDate>Sun, 30 Apr 2023 15:44:23 +0800</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;C-x2F-C-枚举类型-enum&#34;&gt;&lt;a href=&#34;#C-x2F-C-枚举类型-enum&#34; class=&#34;headerlink&#34; title=&#34;C&amp;#x2F;C++枚举类型 enum&#34;&gt;&lt;/a&gt;C&amp;#x2F;C++枚举类型 enum&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;枚举类型的定义：&lt;/strong&gt;枚举类型(enumeration)是 C++ 中的一种派生数据类型，它是由用户定义的若干枚举常量的集合。&lt;/p&gt;
+&lt;p&gt;定义格式：枚举类型的定义格式为：&lt;/p&gt;
+&lt;figure class=&#34;highlight bnf&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs bnf&#34;&gt;enum &lt;span class=&#34;hljs-attribute&#34;&gt;&amp;lt;类型名&amp;gt;&lt;/span&gt; &amp;#123;&lt;span class=&#34;hljs-attribute&#34;&gt;&amp;lt;枚举常量表&amp;gt;&lt;/span&gt;&amp;#125;;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;格式说明：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;关键字enum——指明其后的标识符是一个枚举类型的名字。&lt;/li&gt;
+&lt;li&gt;枚举常量表——由枚举常量构成。”枚举常量”或称”枚举成员”，是以标识符形式表示的整型量，表示枚举类型的取值。枚举常量表列出枚举类型的所有取值，各枚举常量之间以”，”间隔，且必须各不相同。取值类型与条件表达式相同。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;应用举例：&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-class&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;enum&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;color_set1&lt;/span&gt; &amp;#123;&lt;/span&gt;RED, BLUE, WHITE, BLACK&amp;#125;; &lt;span class=&#34;hljs-comment&#34;&gt;// 定义枚举类型color_set1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-class&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;enum&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;week&lt;/span&gt; &amp;#123;&lt;/span&gt;Sun, Mon, Tue, Wed, Thu, Fri, Sat&amp;#125;; &lt;span class=&#34;hljs-comment&#34;&gt;// 定义枚举类型week&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;重要提示：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;枚举常量代表该枚举类型的变量可能取的值，编译系统为每个枚举常量指定一个整数值，默认状态下，这个整数就是所列举元素的序号，序号从0开始。 可以在定义枚举类型时为部分或全部枚举常量指定整数值，在指定值之前的枚举常量仍按默认方式取值，而指定值之后的枚举常量按依次加1的原则取值。 各枚举常量的值可以重复。例如：&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-class&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;enum&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;fruit_set&lt;/span&gt; &amp;#123;&lt;/span&gt;apple, orange, banana=&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;, peach, grape&amp;#125;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;//枚举常量apple=0,orange=1, banana=1,peach=2,grape=3。&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;enum&lt;/span&gt; week &amp;#123;Sun=&lt;span class=&#34;hljs-number&#34;&gt;7&lt;/span&gt;, Mon=&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;, Tue, Wed, Thu, Fri, Sat&amp;#125;;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;//枚举常量Sun,Mon,Tue,Wed,Thu,Fri,Sat的值分别为7、1、2、3、4、5、6。&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;枚举常量只能以标识符形式表示，而不能是整型、字符型等文字常量。例如，以下定义非法：&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-class&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;enum&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;letter_set&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;span class=&#34;hljs-string&#34;&gt;&amp;#x27;a&amp;#x27;&lt;/span&gt;,&lt;span class=&#34;hljs-string&#34;&gt;&amp;#x27;d&amp;#x27;&lt;/span&gt;,&lt;span class=&#34;hljs-string&#34;&gt;&amp;#x27;F&amp;#x27;&lt;/span&gt;,&lt;span class=&#34;hljs-string&#34;&gt;&amp;#x27;s&amp;#x27;&lt;/span&gt;,&lt;span class=&#34;hljs-string&#34;&gt;&amp;#x27;T&amp;#x27;&lt;/span&gt;&amp;#125;; &lt;span class=&#34;hljs-comment&#34;&gt;//枚举常量不能是字符常量&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-class&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;enum&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;year_set&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;span class=&#34;hljs-number&#34;&gt;2000&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;2001&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;2002&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;2003&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;2004&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;2005&lt;/span&gt;&amp;#125;; &lt;span class=&#34;hljs-comment&#34;&gt;//枚举常量不能是整型常量&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;可改为以下形式则定义合法：&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-class&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;enum&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;letter_set&lt;/span&gt; &amp;#123;&lt;/span&gt;a, d, F, s, T&amp;#125;;&lt;br&gt;&lt;span class=&#34;hljs-class&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;enum&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;year_set&lt;/span&gt;&amp;#123;&lt;/span&gt;y2000, y2001, y2002, y2003, y2004, y2005&amp;#125;;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;hr&gt;
+&lt;h2 id=&#34;枚举变量的使用&#34;&gt;&lt;a href=&#34;#枚举变量的使用&#34; class=&#34;headerlink&#34; title=&#34;枚举变量的使用&#34;&gt;&lt;/a&gt;枚举变量的使用&lt;/h2&gt;&lt;p&gt;定义枚举类型的主要目的是：增加程序的可读性。枚举类型最常见也最有意义的用处之一就是用来描述状态量，这点将在第9章 输入输出流类看到。&lt;/p&gt;
+&lt;p&gt;定义格式：定义枚举类型之后，就可以定义该枚举类型的变量，如：&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;color_set1 color1, color2;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;亦可类型与变量同时定义（甚至类型名可省），格式如下：&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-class&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;enum&lt;/span&gt; &amp;#123;&lt;/span&gt;Sun,Mon,Tue,Wed,Thu,Fri,Sat&amp;#125; weekday1, weekday2;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h3 id=&#34;相关操作&#34;&gt;&lt;a href=&#34;#相关操作&#34; class=&#34;headerlink&#34; title=&#34;相关操作&#34;&gt;&lt;/a&gt;相关操作&lt;/h3&gt;&lt;p&gt;枚举变量的值只能取枚举常量表中所列的值，就是整型数的一个子集。&lt;/p&gt;
+&lt;p&gt;枚举变量占用内存的大小与整型数相同。&lt;/p&gt;
+&lt;p&gt;枚举变量只能参与赋值和关系运算以及输出操作，参与运算时用其本身的整数值。例如，设有定义：&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-class&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;enum&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;color_set1&lt;/span&gt; &amp;#123;&lt;/span&gt;RED, BLUE, WHITE, BLACK&amp;#125; color1, color2;&lt;br&gt;&lt;span class=&#34;hljs-class&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;enum&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;color_set2&lt;/span&gt; &amp;#123;&lt;/span&gt; GREEN, RED, YELLOW, WHITE&amp;#125; color3, color4;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;则允许的赋值操作如下：&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;color3=RED;           &lt;span class=&#34;hljs-comment&#34;&gt;//将枚举常量值赋给枚举变量&lt;/span&gt;&lt;br&gt;color4=color3;        &lt;span class=&#34;hljs-comment&#34;&gt;//相同类型的枚举变量赋值，color4的值为RED&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;  i=color3;        &lt;span class=&#34;hljs-comment&#34;&gt;//将枚举变量赋给整型变量，i的值为1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;  j=GREEN;         &lt;span class=&#34;hljs-comment&#34;&gt;//将枚举常量赋给整型变量，j的值为0&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;允许的关系运算有：&amp;#x3D;&amp;#x3D;、&amp;lt;、&amp;gt;、&amp;lt;&amp;#x3D;、&amp;gt;&amp;#x3D;、!&amp;#x3D;等，例如：&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-comment&#34;&gt;//比较同类型枚举变量color3，color4是否相等&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt; (color3==color4) cout&amp;lt;&amp;lt;&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;相等&amp;quot;&lt;/span&gt;；&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;//输出的是变量color3与WHITE的比较结果，结果为1&lt;/span&gt;&lt;br&gt;cout&amp;lt;&amp;lt; color3&amp;lt;WHITE;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;枚举变量可以直接输出，输出的是变量的整数值。例如：&lt;/p&gt;
+&lt;figure class=&#34;highlight apache&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs apache&#34;&gt;&lt;span class=&#34;hljs-attribute&#34;&gt;cout&lt;/span&gt;&amp;lt;&amp;lt; color&lt;span class=&#34;hljs-number&#34;&gt;3&lt;/span&gt;;         //输出的是color&lt;span class=&#34;hljs-number&#34;&gt;3&lt;/span&gt;的整数值，即RED的整数值&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h3 id=&#34;重要提示&#34;&gt;&lt;a href=&#34;#重要提示&#34; class=&#34;headerlink&#34; title=&#34;重要提示&#34;&gt;&lt;/a&gt;重要提示&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;枚举变量可以直接输出，但不能直接输入。如：cout &amp;gt;&amp;gt; color3;  &amp;#x2F;&amp;#x2F;非法&lt;/li&gt;
+&lt;li&gt;不能直接将常量赋给枚举变量。如： color1&amp;#x3D;1; &amp;#x2F;&amp;#x2F;非法&lt;/li&gt;
+&lt;li&gt;不同类型的枚举变量之间不能相互赋值。如： color1&amp;#x3D;color3; &amp;#x2F;&amp;#x2F;非法&lt;/li&gt;
+&lt;li&gt;枚举变量的输入输出一般都采用switch语句将其转换为字符或字符串；枚举类型数据的其他处理也往往应用switch语句，以保证程序的合法性和可读性。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://www.runoob.com/w3cnote/cpp-enum-intro.html&#34;&gt;C++ 枚举类型详解 | 菜鸟教程 (runoob.com)&lt;/a&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
             <guid isPermalink="true">https://xingyuanjie.top/2023/04/30/violate/</guid>
             <title>C/C++ volatile关键字</title>
             <link>https://xingyuanjie.top/2023/04/30/violate/</link>
-            <category>Data Structure</category>
             <category>C/C++</category>
             <pubDate>Sun, 30 Apr 2023 15:30:24 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;C-x2F-C-volatile关键字&#34;&gt;&lt;a href=&#34;#C-x2F-C-volatile关键字&#34; class=&#34;headerlink&#34; title=&#34;C&amp;#x2F;C++ volatile关键字&#34;&gt;&lt;/a&gt;C&amp;#x2F;C++ volatile关键字&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;volatile后面的变量，是常变量，会直接访问地址，如果没有这个关键字，就可能会暂时使用寄存器的值，而不是读取地址。&lt;/strong&gt;&lt;/p&gt;
@@ -201,8 +259,8 @@
             <title>L2-036 网红点打卡攻略 (25 分)</title>
             <link>https://xingyuanjie.top/2022/04/23/Algorithm032/</link>
             <category>Data Structure</category>
-            <category>团体程序设计天梯赛</category>
             <category>C++</category>
+            <category>团体程序设计天梯赛</category>
             <category>Graph</category>
             <category>邻接矩阵</category>
             <pubDate>Sat, 23 Apr 2022 21:50:27 +0800</pubDate>
@@ -232,8 +290,8 @@
             <title>L2-039 清点代码库 (25 分)</title>
             <link>https://xingyuanjie.top/2022/04/23/Algorithm031/</link>
             <category>Data Structure</category>
-            <category>团体程序设计天梯赛</category>
             <category>C++</category>
+            <category>团体程序设计天梯赛</category>
             <category>Sort</category>
             <category>Vector</category>
             <category>Map</category>
@@ -260,9 +318,9 @@
             <guid isPermalink="true">https://xingyuanjie.top/2022/04/23/Algorithm030/</guid>
             <title>L2-005 集合相似度 (25 分)</title>
             <link>https://xingyuanjie.top/2022/04/23/Algorithm030/</link>
+            <category>C++</category>
             <category>Set</category>
             <category>团体程序设计天梯赛</category>
-            <category>C++</category>
             <category>模拟</category>
             <pubDate>Sat, 23 Apr 2022 21:39:53 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;L2-005-集合相似度-25-分&#34;&gt;&lt;a href=&#34;#L2-005-集合相似度-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-005 集合相似度 (25 分)&#34;&gt;&lt;/a&gt;L2-005 集合相似度 (25 分)&lt;/h2&gt;&lt;p&gt;给定两个整数集合，它们的相似度定义为：Nc&amp;#x2F;Nt×100%。其中Nc是两个集合都有的不相等整数的个数，Nt是两个集合一共有的不相等整数的个数。你的任务就是计算任意一对给定集合的相似度。&lt;/p&gt;
@@ -312,8 +370,8 @@
             <title>L2-010 排座位 (25 分)</title>
             <link>https://xingyuanjie.top/2022/04/16/Algorithm028/</link>
             <category>Data Structure</category>
-            <category>团体程序设计天梯赛</category>
             <category>C++</category>
+            <category>团体程序设计天梯赛</category>
             <category>Graph</category>
             <category>邻接矩阵</category>
             <category>并查集</category>
@@ -339,8 +397,8 @@
             <guid isPermalink="true">https://xingyuanjie.top/2022/04/16/Algorithm027/</guid>
             <title>L2-009 抢红包 (25 分)</title>
             <link>https://xingyuanjie.top/2022/04/16/Algorithm027/</link>
-            <category>团体程序设计天梯赛</category>
             <category>C++</category>
+            <category>团体程序设计天梯赛</category>
             <category>Sort</category>
             <category>结构体</category>
             <category>Double类型相等比较</category>
@@ -368,8 +426,8 @@
             <guid isPermalink="true">https://xingyuanjie.top/2022/04/15/Algorithm026/</guid>
             <title>L2-003 月饼 (25 分)</title>
             <link>https://xingyuanjie.top/2022/04/15/Algorithm026/</link>
-            <category>团体程序设计天梯赛</category>
             <category>C++</category>
+            <category>团体程序设计天梯赛</category>
             <category>Sort</category>
             <category>结构体</category>
             <category>贪心</category>
@@ -393,8 +451,8 @@
             <title>L2-013 红色警报 (25 分)</title>
             <link>https://xingyuanjie.top/2022/04/15/Algorithm025/</link>
             <category>Data Structure</category>
-            <category>团体程序设计天梯赛</category>
             <category>C++</category>
+            <category>团体程序设计天梯赛</category>
             <category>Graph</category>
             <category>邻接矩阵</category>
             <category>DFS</category>
@@ -421,8 +479,8 @@
             <title>L2-011 玩转二叉树 (25 分)</title>
             <link>https://xingyuanjie.top/2022/04/14/Algorithm024/</link>
             <category>Data Structure</category>
-            <category>团体程序设计天梯赛</category>
             <category>C++</category>
+            <category>团体程序设计天梯赛</category>
             <category>Binary tree</category>
             <category>BFS</category>
             <pubDate>Thu, 14 Apr 2022 14:01:10 +0800</pubDate>
@@ -448,8 +506,8 @@
             <title>L2-035 完全二叉树的层序遍历 (25 分)</title>
             <link>https://xingyuanjie.top/2022/04/14/Algorithm023/</link>
             <category>Data Structure</category>
-            <category>团体程序设计天梯赛</category>
             <category>C++</category>
+            <category>团体程序设计天梯赛</category>
             <category>Binary tree</category>
             <pubDate>Thu, 14 Apr 2022 14:01:05 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;L2-035-完全二叉树的层序遍历-25-分&#34;&gt;&lt;a href=&#34;#L2-035-完全二叉树的层序遍历-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-035 完全二叉树的层序遍历 (25 分)&#34;&gt;&lt;/a&gt;L2-035 完全二叉树的层序遍历 (25 分)&lt;/h2&gt;&lt;p&gt;一个二叉树，如果每一个层的结点数都达到最大值，则这个二叉树就是&lt;strong&gt;完美二叉树&lt;/strong&gt;。对于深度为 &lt;em&gt;D&lt;/em&gt; 的，有 &lt;em&gt;N&lt;/em&gt; 个结点的二叉树，若其结点对应于相同深度完美二叉树的层序遍历的前 &lt;em&gt;N&lt;/em&gt; 个结点，这样的树就是&lt;strong&gt;完全二叉树&lt;/strong&gt;。&lt;/p&gt;
@@ -471,8 +529,8 @@
             <title>L2-031 深入虎穴 (25 分)</title>
             <link>https://xingyuanjie.top/2022/04/13/Algorithm022/</link>
             <category>Data Structure</category>
-            <category>团体程序设计天梯赛</category>
             <category>C++</category>
+            <category>团体程序设计天梯赛</category>
             <category>邻接表</category>
             <category>Vector</category>
             <category>Binary tree</category>
@@ -493,44 +551,6 @@
 &lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;40&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;hljs-meta-string&#34;&gt;&amp;lt;bits/stdc++.h&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;using&lt;/span&gt; &lt;span class=&#34;hljs-keyword&#34;&gt;namespace&lt;/span&gt; std;&lt;br&gt;vector&amp;lt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;&amp;gt; v[&lt;span class=&#34;hljs-number&#34;&gt;100005&lt;/span&gt;];&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; book[&lt;span class=&#34;hljs-number&#34;&gt;100005&lt;/span&gt;];&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; start=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;bfs&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;()&lt;/span&gt;&lt;/span&gt;&amp;#123;								&lt;span class=&#34;hljs-comment&#34;&gt;//BFS&lt;/span&gt;&lt;br&gt;    queue&amp;lt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;&amp;gt; q;&lt;br&gt;    q.&lt;span class=&#34;hljs-built_in&#34;&gt;push&lt;/span&gt;(start);						&lt;span class=&#34;hljs-comment&#34;&gt;//根节点入队&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; x;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;while&lt;/span&gt;(!q.&lt;span class=&#34;hljs-built_in&#34;&gt;empty&lt;/span&gt;())&amp;#123;&lt;br&gt;        x=q.&lt;span class=&#34;hljs-built_in&#34;&gt;front&lt;/span&gt;();&lt;br&gt;        q.&lt;span class=&#34;hljs-built_in&#34;&gt;pop&lt;/span&gt;();&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; (&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i = &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;; i &amp;lt;v[x].&lt;span class=&#34;hljs-built_in&#34;&gt;size&lt;/span&gt;() ; ++i) &amp;#123;				&lt;br&gt;            q.&lt;span class=&#34;hljs-built_in&#34;&gt;push&lt;/span&gt;(v[x][i]);&lt;br&gt;        &amp;#125;&lt;br&gt;    &amp;#125;									&lt;span class=&#34;hljs-comment&#34;&gt;//在一行中输出距离入口最远的那扇门的编号。题目保证这样的结果是唯一的。&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; x;							&lt;span class=&#34;hljs-comment&#34;&gt;//所以最后一层只有一个结点，所以BFS最后一个元素，即为最远的门&lt;/span&gt;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;()&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;/span&gt;&amp;#123;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; n;&lt;br&gt;    cin&amp;gt;&amp;gt;n;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; (&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i = &lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;; i &amp;lt;=n ; ++i) &amp;#123;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; time;&lt;br&gt;        cin&amp;gt;&amp;gt;time;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; (&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; j = &lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;; j &amp;lt;=time ; ++j) &amp;#123;&lt;br&gt;            &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; num;&lt;br&gt;            cin&amp;gt;&amp;gt;num;&lt;br&gt;            book[num]=&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;;&lt;br&gt;            v[i].&lt;span class=&#34;hljs-built_in&#34;&gt;push_back&lt;/span&gt;(num);&lt;br&gt;&lt;br&gt;        &amp;#125;&lt;br&gt;    &amp;#125;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; (&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; k = &lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;; k &amp;lt;=n ; ++k) &amp;#123;			&lt;span class=&#34;hljs-comment&#34;&gt;//找入口&lt;/span&gt;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(book[k]==&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;) start=k;				&lt;span class=&#34;hljs-comment&#34;&gt;//没有门通向的门，即为入口&lt;/span&gt;&lt;br&gt;    &amp;#125;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; ans=&lt;span class=&#34;hljs-built_in&#34;&gt;bfs&lt;/span&gt;();&lt;br&gt;    cout&amp;lt;&amp;lt;ans&amp;lt;&amp;lt;endl;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;h3 id=&#34;参考资料：&#34;&gt;&lt;a href=&#34;#参考资料：&#34; class=&#34;headerlink&#34; title=&#34;参考资料：&#34;&gt;&lt;/a&gt;参考资料：&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://pintia.cn/problem-sets/994805046380707840/problems/1111914599412858888&#34;&gt;题目详情 - L2-031 深入虎穴 (25 分) (pintia.cn)&lt;/a&gt;&lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">https://xingyuanjie.top/2022/04/13/Algorithm021/</guid>
-            <title>L2-040 哲哲打游戏 (25 分)</title>
-            <link>https://xingyuanjie.top/2022/04/13/Algorithm021/</link>
-            <category>Data Structure</category>
-            <category>团体程序设计天梯赛</category>
-            <category>C++</category>
-            <category>邻接表</category>
-            <category>Vector</category>
-            <category>模拟</category>
-            <pubDate>Wed, 13 Apr 2022 19:09:41 +0800</pubDate>
-            <description><![CDATA[ &lt;h2 id=&#34;L2-040-哲哲打游戏-25-分&#34;&gt;&lt;a href=&#34;#L2-040-哲哲打游戏-25-分&#34; class=&#34;headerlink&#34; title=&#34;L2-040 哲哲打游戏 (25 分)&#34;&gt;&lt;/a&gt;&lt;strong&gt;L2-040 哲哲打游戏 (25 分)&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;哲哲是一位硬核游戏玩家。最近一款名叫《达诺达诺》的新游戏刚刚上市，哲哲自然要快速攻略游戏，守护硬核游戏玩家的一切！&lt;/p&gt;
-&lt;p&gt;为简化模型，我们不妨假设游戏有 &lt;em&gt;N&lt;/em&gt; 个剧情点，通过游戏里不同的操作或选择可以从某个剧情点去往另外一个剧情点。此外，游戏还设置了一些&lt;strong&gt;存档&lt;/strong&gt;，在某个剧情点可以将玩家的游戏进度保存在一个档位上，读取存档后可以回到剧情点，重新进行操作或者选择，到达不同的剧情点。&lt;/p&gt;
-&lt;p&gt;为了追踪硬核游戏玩家哲哲的攻略进度，你打算写一个程序来完成这个工作。假设你已经知道了游戏的全部剧情点和流程，以及哲哲的游戏操作，请你输出哲哲的游戏进度。&lt;/p&gt;
-&lt;h3 id=&#34;输入格式：&#34;&gt;&lt;a href=&#34;#输入格式：&#34; class=&#34;headerlink&#34; title=&#34;输入格式：&#34;&gt;&lt;/a&gt;输入格式：&lt;/h3&gt;&lt;p&gt;输入第一行是两个正整数 &lt;em&gt;N&lt;/em&gt; 和 &lt;em&gt;M&lt;/em&gt; (1≤&lt;em&gt;N&lt;/em&gt;,&lt;em&gt;M&lt;/em&gt;≤105)，表示总共有 &lt;em&gt;N&lt;/em&gt; 个剧情点，哲哲有 &lt;em&gt;M&lt;/em&gt; 个游戏操作。&lt;/p&gt;
-&lt;p&gt;接下来的 &lt;em&gt;N&lt;/em&gt; 行，每行对应一个剧情点的发展设定。第 &lt;em&gt;i&lt;/em&gt; 行的第一个数字是 &lt;em&gt;K**i&lt;/em&gt;，表示剧情点 &lt;em&gt;i&lt;/em&gt; 通过一些操作或选择能去往下面 &lt;em&gt;K**i&lt;/em&gt; 个剧情点；接下来有 &lt;em&gt;K**i&lt;/em&gt; 个数字，第 &lt;em&gt;k&lt;/em&gt; 个数字表示做第 &lt;em&gt;k&lt;/em&gt; 个操作或选择可以去往的剧情点编号。&lt;/p&gt;
-&lt;p&gt;最后有 &lt;em&gt;M&lt;/em&gt; 行，每行第一个数字是 0、1 或 2，分别表示：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;0 表示哲哲做出了某个操作或选择，后面紧接着一个数字 &lt;em&gt;j&lt;/em&gt;，表示哲哲在当前剧情点做出了第 &lt;em&gt;j&lt;/em&gt; 个选择。我们保证哲哲的选择永远是合法的。&lt;/li&gt;
-&lt;li&gt;1 表示哲哲进行了一次存档，后面紧接着是一个数字 &lt;em&gt;j&lt;/em&gt;，表示存档放在了第 &lt;em&gt;j&lt;/em&gt; 个档位上。&lt;/li&gt;
-&lt;li&gt;2 表示哲哲进行了一次读取存档的操作，后面紧接着是一个数字 &lt;em&gt;j&lt;/em&gt;，表示读取了放在第 &lt;em&gt;j&lt;/em&gt; 个位置的存档。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;约定：所有操作或选择以及剧情点编号都从 1 号开始。存档的档位不超过 100 个，编号也从 1 开始。游戏默认从 1 号剧情点开始。总的选项数（即 ∑&lt;em&gt;K**i&lt;/em&gt;）不超过 106。&lt;/p&gt;
-&lt;h3 id=&#34;输出格式：&#34;&gt;&lt;a href=&#34;#输出格式：&#34; class=&#34;headerlink&#34; title=&#34;输出格式：&#34;&gt;&lt;/a&gt;输出格式：&lt;/h3&gt;&lt;p&gt;对于每个 1（即存档）操作，在一行中输出存档的剧情点编号。&lt;/p&gt;
-&lt;p&gt;最后一行输出哲哲最后到达的剧情点编号。&lt;/p&gt;
-&lt;h3 id=&#34;输入样例：&#34;&gt;&lt;a href=&#34;#输入样例：&#34; class=&#34;headerlink&#34; title=&#34;输入样例：&#34;&gt;&lt;/a&gt;输入样例：&lt;/h3&gt;&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs in&#34;&gt;10 11&lt;br&gt;3 2 3 4&lt;br&gt;1 6&lt;br&gt;3 4 7 5&lt;br&gt;1 3&lt;br&gt;1 9&lt;br&gt;2 3 5&lt;br&gt;3 1 8 5&lt;br&gt;1 9&lt;br&gt;2 8 10&lt;br&gt;0&lt;br&gt;1 1&lt;br&gt;0 3&lt;br&gt;0 1&lt;br&gt;1 2&lt;br&gt;0 2&lt;br&gt;0 2&lt;br&gt;2 2&lt;br&gt;0 3&lt;br&gt;0 1&lt;br&gt;1 1&lt;br&gt;0 2&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h3 id=&#34;输出样例：&#34;&gt;&lt;a href=&#34;#输出样例：&#34; class=&#34;headerlink&#34; title=&#34;输出样例：&#34;&gt;&lt;/a&gt;输出样例：&lt;/h3&gt;&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs out&#34;&gt;1&lt;br&gt;3&lt;br&gt;9&lt;br&gt;10&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h3 id=&#34;样例解释：&#34;&gt;&lt;a href=&#34;#样例解释：&#34; class=&#34;headerlink&#34; title=&#34;样例解释：&#34;&gt;&lt;/a&gt;样例解释：&lt;/h3&gt;&lt;p&gt;简单给出样例中经过的剧情点顺序：&lt;/p&gt;
-&lt;p&gt;1 -&amp;gt; 4 -&amp;gt; 3 -&amp;gt; 7 -&amp;gt; 8 -&amp;gt; 3 -&amp;gt; 5 -&amp;gt; 9 -&amp;gt; 10。&lt;/p&gt;
-&lt;p&gt;档位 1 开始存的是 1 号剧情点；档位 2 存的是 3 号剧情点；档位 1 后来又存了 9 号剧情点。&lt;/p&gt;
-&lt;h3 id=&#34;程序源代码：&#34;&gt;&lt;a href=&#34;#程序源代码：&#34; class=&#34;headerlink&#34; title=&#34;程序源代码：&#34;&gt;&lt;/a&gt;程序源代码：&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;邻接表 + 模拟，主要是理解题意&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;35&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;hljs-meta-string&#34;&gt;&amp;lt;bits/stdc++.h&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;using&lt;/span&gt; &lt;span class=&#34;hljs-keyword&#34;&gt;namespace&lt;/span&gt; std;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;()&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;/span&gt;&amp;#123;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; n,k;&lt;br&gt;    cin&amp;gt;&amp;gt;n&amp;gt;&amp;gt;k;&lt;br&gt;    vector&amp;lt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;&amp;gt; v[n+&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;];&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; save[&lt;span class=&#34;hljs-number&#34;&gt;105&lt;/span&gt;];							&lt;span class=&#34;hljs-comment&#34;&gt;//存档点&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; now=&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;;								&lt;span class=&#34;hljs-comment&#34;&gt;//当前剧情点&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; (&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i = &lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;; i &amp;lt;=n ; ++i) &amp;#123;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; num;&lt;br&gt;        cin&amp;gt;&amp;gt;num;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; (&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; j = &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;; j &amp;lt;num ; ++j) &amp;#123;&lt;br&gt;            &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; x;&lt;br&gt;            cin&amp;gt;&amp;gt;x;&lt;br&gt;            v[i].&lt;span class=&#34;hljs-built_in&#34;&gt;push_back&lt;/span&gt;(x);				&lt;span class=&#34;hljs-comment&#34;&gt;//邻接表存操作数&lt;/span&gt;&lt;br&gt;        &amp;#125;&lt;br&gt;    &amp;#125;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; (&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; l = &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;; l &amp;lt;k ; ++l) &amp;#123;			&lt;span class=&#34;hljs-comment&#34;&gt;//模拟过程&lt;/span&gt;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; a,b;&lt;br&gt;        cin&amp;gt;&amp;gt;a&amp;gt;&amp;gt;b;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(a==&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;)&amp;#123;&lt;br&gt;            save[b]=now;&lt;br&gt;            cout&amp;lt;&amp;lt;now&amp;lt;&amp;lt;endl;&lt;br&gt;        &amp;#125;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(a==&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;)&amp;#123;&lt;br&gt;            now=v[now][b&lt;span class=&#34;hljs-number&#34;&gt;-1&lt;/span&gt;];&lt;br&gt;        &amp;#125;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(a==&lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt;)&amp;#123;&lt;br&gt;            now=save[b];&lt;br&gt;        &amp;#125;&lt;br&gt;    &amp;#125;&lt;br&gt;    cout&amp;lt;&amp;lt;now&amp;lt;&amp;lt;endl;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h3 id=&#34;参考资料：&#34;&gt;&lt;a href=&#34;#参考资料：&#34; class=&#34;headerlink&#34; title=&#34;参考资料：&#34;&gt;&lt;/a&gt;参考资料：&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://pintia.cn/problem-sets/994805046380707840/problems/1386335159927652363&#34;&gt;题目详情 - L2-040 哲哲打游戏 (25 分) (pintia.cn)&lt;/a&gt;&lt;/p&gt;
  ]]></description>
         </item>
     </channel>
