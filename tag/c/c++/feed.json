@@ -5,6 +5,17 @@
     "home_page_url": "https://xingyuanjie.top",
     "items": [
         {
+            "id": "https://xingyuanjie.top/2023/04/30/violate/",
+            "url": "https://xingyuanjie.top/2023/04/30/violate/",
+            "title": "C/C++ volatile关键字",
+            "date_published": "2023-04-30T07:30:24.000Z",
+            "content_html": "<h2 id=\"C-x2F-C-volatile关键字\"><a href=\"#C-x2F-C-volatile关键字\" class=\"headerlink\" title=\"C&#x2F;C++ volatile关键字\"></a>C&#x2F;C++ volatile关键字</h2><p><strong>volatile后面的变量，是常变量，会直接访问地址，如果没有这个关键字，就可能会暂时使用寄存器的值，而不是读取地址。</strong></p>\n<p>C&#x2F;C++ 中的 volatile 关键字和 const 对应，用来修饰变量。volatile 关键字是一种类型修饰符，用它声明的类型变量表示可以被某些编译器未知的因素更改，比如：操作系统、硬件或者其它线程等。遇到这个关键字声明的变量，编译器对访问该变量的代码就不再进行优化，从而可以提供对特殊地址的稳定访问。声明时语法：</p>\n<figure class=\"highlight c++\"><table><tr><td class=\"gutter hljs\"><div class=\"hljs code-wrapper\"><pre><span class=\"line\">1</span><br></pre></div></td><td class=\"code\"><div class=\"hljs code-wrapper\"><pre><code class=\"hljs c++\"><span class=\"hljs-keyword\">volatile</span> <span class=\"hljs-keyword\">int</span> i=<span class=\"hljs-number\">10</span>;<br></code></pre></div></td></tr></table></figure>\n\n<p>当要求使用 volatile 声明的变量的值的时候，系统总是重新从它所在的内存读取数据，即使它前面的指令刚刚从该处读取过数据。而且读取的数据立刻被保存。</p>\n<p>volatile 指出 i 是随时可能发生变化的，每次使用它的时候必须从 i的地址中读取，因而编译器生成的汇编代码会重新从i的地址读取数据放在 b 中。而优化做法是，由于编译器发现两次从 i读数据的代码之间的代码没有对 i 进行过操作，它会自动把上次读的数据放在 b 中。而不是重新从 i 里面读。这样以来，如果 i是一个寄存器变量或者表示一个端口数据就容易出错，所以说 volatile 可以保证对特殊地址的稳定访问。</p>\n<p><strong>volatile关键字的实现：如在并行环境下，进行同步操作，用volatile修饰回答字地址，即可实现并行环境下的同步。这种方法一般使用在非阻塞通信中。</strong></p>\n<h2 id=\"参考资料\"><a href=\"#参考资料\" class=\"headerlink\" title=\"参考资料\"></a>参考资料</h2><p><a href=\"https://blog.csdn.net/ijn842/article/details/81273232\">浅谈C语言的volatile关键字_琼琼的博客的博客-CSDN博客</a></p>\n<p><a href=\"https://blog.csdn.net/GreatTang/article/details/90454011\">C++ volatile_c++ violate_来日梦多长的博客-CSDN博客</a></p>\n<p><a href=\"https://blog.csdn.net/jerry_wuhao/article/details/113247800\">C&#x2F;C++ 中 volatile 关键字_c++ violate关键字_王俊洁、�的博客-CSDN博客</a></p>\n",
+            "tags": [
+                "Data Structure",
+                "C/C++"
+            ]
+        },
+        {
             "id": "https://xingyuanjie.top/2023/02/28/vectorbool/",
             "url": "https://xingyuanjie.top/2023/02/28/vectorbool/",
             "title": "vector<bool>与vector<T>",

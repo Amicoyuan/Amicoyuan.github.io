@@ -5,29 +5,29 @@
         <link>https://xingyuanjie.top</link>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Wed, 05 Apr 2023 20:20:25 +0800</pubDate>
-        <lastBuildDate>Wed, 05 Apr 2023 20:20:25 +0800</lastBuildDate>
+        <pubDate>Sun, 30 Apr 2023 15:30:24 +0800</pubDate>
+        <lastBuildDate>Sun, 30 Apr 2023 15:30:24 +0800</lastBuildDate>
         <category>AVX</category>
         <category>Data Structure</category>
-        <category>String</category>
-        <category>Find</category>
-        <category>STL</category>
-        <category>C++</category>
         <category>Set</category>
         <category>团体程序设计天梯赛</category>
+        <category>STL</category>
+        <category>C++</category>
         <category>Sort</category>
+        <category>String</category>
+        <category>Find</category>
+        <category>LinkList</category>
+        <category>双向链表</category>
         <category>Graph</category>
         <category>邻接表</category>
         <category>Vector</category>
         <category>Binary tree</category>
         <category>BFS</category>
-        <category>LinkList</category>
-        <category>双向链表</category>
         <category>模拟</category>
-        <category>结构体</category>
-        <category>贪心</category>
         <category>邻接矩阵</category>
         <category>DFS</category>
+        <category>结构体</category>
+        <category>贪心</category>
         <category>Double类型相等比较</category>
         <category>并查集</category>
         <category>Map</category>
@@ -49,8 +49,8 @@
         <category>LeetCode</category>
         <category>双指针</category>
         <category>数组翻转</category>
-        <category>哈希表</category>
         <category>前缀和</category>
+        <category>哈希表</category>
         <category>Travel</category>
         <category>Mirror</category>
         <category>牛客</category>
@@ -62,6 +62,25 @@
         <category>性能分析工具</category>
         <category>gcov</category>
         <category>bool</category>
+        <item>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/04/30/violate/</guid>
+            <title>C/C++ volatile关键字</title>
+            <link>https://xingyuanjie.top/2023/04/30/violate/</link>
+            <category>Data Structure</category>
+            <category>C/C++</category>
+            <pubDate>Sun, 30 Apr 2023 15:30:24 +0800</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;C-x2F-C-volatile关键字&#34;&gt;&lt;a href=&#34;#C-x2F-C-volatile关键字&#34; class=&#34;headerlink&#34; title=&#34;C&amp;#x2F;C++ volatile关键字&#34;&gt;&lt;/a&gt;C&amp;#x2F;C++ volatile关键字&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;volatile后面的变量，是常变量，会直接访问地址，如果没有这个关键字，就可能会暂时使用寄存器的值，而不是读取地址。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;C&amp;#x2F;C++ 中的 volatile 关键字和 const 对应，用来修饰变量。volatile 关键字是一种类型修饰符，用它声明的类型变量表示可以被某些编译器未知的因素更改，比如：操作系统、硬件或者其它线程等。遇到这个关键字声明的变量，编译器对访问该变量的代码就不再进行优化，从而可以提供对特殊地址的稳定访问。声明时语法：&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;volatile&lt;/span&gt; &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i=&lt;span class=&#34;hljs-number&#34;&gt;10&lt;/span&gt;;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;当要求使用 volatile 声明的变量的值的时候，系统总是重新从它所在的内存读取数据，即使它前面的指令刚刚从该处读取过数据。而且读取的数据立刻被保存。&lt;/p&gt;
+&lt;p&gt;volatile 指出 i 是随时可能发生变化的，每次使用它的时候必须从 i的地址中读取，因而编译器生成的汇编代码会重新从i的地址读取数据放在 b 中。而优化做法是，由于编译器发现两次从 i读数据的代码之间的代码没有对 i 进行过操作，它会自动把上次读的数据放在 b 中。而不是重新从 i 里面读。这样以来，如果 i是一个寄存器变量或者表示一个端口数据就容易出错，所以说 volatile 可以保证对特殊地址的稳定访问。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;volatile关键字的实现：如在并行环境下，进行同步操作，用volatile修饰回答字地址，即可实现并行环境下的同步。这种方法一般使用在非阻塞通信中。&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/ijn842/article/details/81273232&#34;&gt;浅谈C语言的volatile关键字_琼琼的博客的博客-CSDN博客&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/GreatTang/article/details/90454011&#34;&gt;C++ volatile_c++ violate_来日梦多长的博客-CSDN博客&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/jerry_wuhao/article/details/113247800&#34;&gt;C&amp;#x2F;C++ 中 volatile 关键字_c++ violate关键字_王俊洁、�的博客-CSDN博客&lt;/a&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">https://xingyuanjie.top/2023/04/05/life001/</guid>
             <title>厦门</title>
@@ -1364,30 +1383,6 @@
 &lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-class&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;Solution&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;public&lt;/span&gt;:&lt;br&gt;    &lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;pivotIndex&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(vector&amp;lt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;&amp;gt;&amp;amp; nums)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; total=&lt;span class=&#34;hljs-built_in&#34;&gt;accumulate&lt;/span&gt;(nums.&lt;span class=&#34;hljs-built_in&#34;&gt;begin&lt;/span&gt;(), nums.&lt;span class=&#34;hljs-built_in&#34;&gt;end&lt;/span&gt;(),&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;);	&lt;span class=&#34;hljs-comment&#34;&gt;//第三个形参是累加的初始值&lt;/span&gt;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; sum=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i=&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;i&amp;lt;nums.&lt;span class=&#34;hljs-built_in&#34;&gt;size&lt;/span&gt;();i++)&lt;br&gt;        &amp;#123;&lt;br&gt;            &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt;(&lt;span class=&#34;hljs-number&#34;&gt;2&lt;/span&gt;*sum+nums[i] == total)&amp;#123;&lt;br&gt;                &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; i;&lt;br&gt;            &amp;#125;&lt;br&gt;            sum+=nums[i];&lt;br&gt;        &amp;#125;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;-1&lt;/span&gt;;&lt;br&gt;    &amp;#125;&lt;br&gt;&amp;#125;;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;h2 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://leetcode.cn/problems/find-pivot-index/solution/xun-zhao-shu-zu-de-zhong-xin-suo-yin-by-gzjle/&#34;&gt;寻找数组的中心索引 - 寻找数组的中心下标 - 力扣（LeetCode）&lt;/a&gt;&lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">https://xingyuanjie.top/2023/02/28/vectorbool/</guid>
-            <title>vector&lt;bool&gt;与vector&lt;T&gt;</title>
-            <link>https://xingyuanjie.top/2023/02/28/vectorbool/</link>
-            <category>STL</category>
-            <category>Vector</category>
-            <category>C/C++</category>
-            <category>bool</category>
-            <pubDate>Tue, 28 Feb 2023 20:59:01 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;vector-lt-bool-gt-与vector-lt-T-gt&#34;&gt;&lt;a href=&#34;#vector-lt-bool-gt-与vector-lt-T-gt&#34; class=&#34;headerlink&#34; title=&#34;vector&amp;lt;bool&amp;gt;与vector&amp;lt;T&amp;gt;&#34;&gt;&lt;/a&gt;vector&amp;lt;bool&amp;gt;与vector&amp;lt;T&amp;gt;&lt;/h1&gt;&lt;p&gt;vector&amp;lt;bool&amp;gt; 不像其他容器一样按Byte存储的，它是按bit存储的，也就是说一个正常的bool类型的空间可以存放vector&amp;lt;bool&amp;gt;中的8个，空间上确实优化了很多，然而，c++是不能直接取对bit操作的（因为C++的最小可寻址值通常以byte为单位），对其使用operator[]其实返回的不是bool的引用而是一个”proxy reference”是”std::vector&amp;lt; bool&amp;gt;:reference”类型的对象。&lt;/p&gt;
-&lt;p&gt;正因为如此，vector&amp;lt;bool&amp;gt;通过代理对象进行存取访问时需要执行逐位处理，访问通常比int之类的普通类型操作要慢很多。&lt;/p&gt;
-&lt;p&gt;因此，对vecotr&amp;lt;bool&amp;gt;的使用需慎重考虑以下几点：&lt;br&gt;(1)是否需要牺牲速度来获取空间上的优化&lt;br&gt;(2)算法中会否有对vecotr地址进行解引用操作的可能。&lt;/p&gt;
-&lt;p&gt;如果不满足以上条件，建议使用deque&amp;lt;bool&amp;gt;来取代vector&amp;lt;bool&amp;gt;，功能基本相同，但deque&amp;lt;bool&amp;gt;未对其进行特殊处理。&lt;/p&gt;
-&lt;p&gt;下面是vector&amp;lt;bool&amp;gt;与vector&amp;lt;T&amp;gt;简单的对比例子：&lt;/p&gt;
-&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;32&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;()&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;br&gt;	vector&amp;lt;&lt;span class=&#34;hljs-keyword&#34;&gt;char&lt;/span&gt;&amp;gt; ch;&lt;br&gt;	vector&amp;lt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;&amp;gt; in;&lt;br&gt;	vector&amp;lt;&lt;span class=&#34;hljs-keyword&#34;&gt;bool&lt;/span&gt;&amp;gt; bo;&lt;br&gt; &lt;br&gt;	&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; m = &lt;span class=&#34;hljs-number&#34;&gt;1e6&lt;/span&gt;;&lt;br&gt;	&lt;span class=&#34;hljs-keyword&#34;&gt;clock_t&lt;/span&gt; t1, t2, t3;&lt;br&gt; &lt;br&gt;	t1 = &lt;span class=&#34;hljs-built_in&#34;&gt;clock&lt;/span&gt;();&lt;br&gt;	&lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; (&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i = &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;; i &amp;lt; m; i++)&amp;#123;&lt;br&gt;		ch.&lt;span class=&#34;hljs-built_in&#34;&gt;push_back&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;#x27;0&amp;#x27;&lt;/span&gt;);&lt;br&gt;	&amp;#125;&lt;br&gt;	t1 = &lt;span class=&#34;hljs-built_in&#34;&gt;clock&lt;/span&gt;() - t1;&lt;br&gt; &lt;br&gt;	t2 = &lt;span class=&#34;hljs-built_in&#34;&gt;clock&lt;/span&gt;();&lt;br&gt;	&lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; (&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i = &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;; i &amp;lt; m; i++)&amp;#123;&lt;br&gt;		in.&lt;span class=&#34;hljs-built_in&#34;&gt;push_back&lt;/span&gt;(&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;);&lt;br&gt;	&amp;#125;&lt;br&gt;	t2 = &lt;span class=&#34;hljs-built_in&#34;&gt;clock&lt;/span&gt;() - t2;&lt;br&gt; &lt;br&gt;	t3 = &lt;span class=&#34;hljs-built_in&#34;&gt;clock&lt;/span&gt;();&lt;br&gt;	&lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; (&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i = &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;; i &amp;lt; m; i++)&amp;#123;&lt;br&gt;		bo.&lt;span class=&#34;hljs-built_in&#34;&gt;push_back&lt;/span&gt;(&lt;span class=&#34;hljs-literal&#34;&gt;true&lt;/span&gt;);&lt;br&gt;	&amp;#125;&lt;br&gt;	t3 = &lt;span class=&#34;hljs-built_in&#34;&gt;clock&lt;/span&gt;() - t3;&lt;br&gt; &lt;br&gt;	cout &amp;lt;&amp;lt;&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;vector&amp;lt;char&amp;gt; &amp;quot;&lt;/span&gt;&amp;lt;&amp;lt; t1 &amp;lt;&amp;lt; &lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;\n vector&amp;lt;int&amp;gt; &amp;quot;&lt;/span&gt; &amp;lt;&amp;lt; t2 &amp;lt;&amp;lt; &lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;\nvector&amp;lt;bool&amp;gt; &amp;quot;&lt;/span&gt; &amp;lt;&amp;lt; t3 &amp;lt;&amp;lt; endl;&lt;br&gt;	cout &amp;lt;&amp;lt; endl;&lt;br&gt; &lt;br&gt;	&lt;span class=&#34;hljs-built_in&#34;&gt;system&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;pause&amp;quot;&lt;/span&gt;);&lt;br&gt;	&lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;运行结果：&lt;/p&gt;
-&lt;figure class=&#34;highlight cpp&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs cpp&#34;&gt;vector&amp;lt;&lt;span class=&#34;hljs-keyword&#34;&gt;char&lt;/span&gt;&amp;gt; &lt;span class=&#34;hljs-number&#34;&gt;216&lt;/span&gt;&lt;br&gt;vextor&amp;lt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;&amp;gt; &lt;span class=&#34;hljs-number&#34;&gt;229&lt;/span&gt;&lt;br&gt;vector&amp;lt;&lt;span class=&#34;hljs-keyword&#34;&gt;bool&lt;/span&gt;&amp;gt; &lt;span class=&#34;hljs-number&#34;&gt;16535&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;这里发现vector&amp;lt;bool&amp;gt;相较于其他vector&amp;lt;T&amp;gt;速度要慢的多！&lt;/p&gt;
-&lt;h2 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/qq_52134928/article/details/121066304?spm=1001.2101.3001.6661.1&amp;utm_medium=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~Rate-1-121066304-blog-86603050.pc_relevant_3mothn_strategy_and_data_recovery&amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~Rate-1-121066304-blog-86603050.pc_relevant_3mothn_strategy_and_data_recovery&amp;utm_relevant_index=1&#34;&gt;(65条消息) 【C++】vector＜bool＞的特别之处_小陶同学_的博客-CSDN博客&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/u013249689/article/details/25297657&#34;&gt;(65条消息) 不使用vector的原因和替代方法_jackycmu的博客-CSDN博客&lt;/a&gt;&lt;/p&gt;
  ]]></description>
         </item>
     </channel>

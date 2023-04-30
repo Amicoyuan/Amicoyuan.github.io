@@ -5,29 +5,29 @@
         <link>https://xingyuanjie.top</link>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Tue, 28 Feb 2023 20:59:01 +0800</pubDate>
-        <lastBuildDate>Tue, 28 Feb 2023 20:59:01 +0800</lastBuildDate>
+        <pubDate>Sun, 30 Apr 2023 15:30:24 +0800</pubDate>
+        <lastBuildDate>Sun, 30 Apr 2023 15:30:24 +0800</lastBuildDate>
         <category>AVX</category>
         <category>Data Structure</category>
-        <category>String</category>
-        <category>Find</category>
-        <category>STL</category>
-        <category>C++</category>
         <category>Set</category>
         <category>团体程序设计天梯赛</category>
+        <category>STL</category>
+        <category>C++</category>
         <category>Sort</category>
+        <category>String</category>
+        <category>Find</category>
+        <category>LinkList</category>
+        <category>双向链表</category>
         <category>Graph</category>
         <category>邻接表</category>
         <category>Vector</category>
         <category>Binary tree</category>
         <category>BFS</category>
-        <category>LinkList</category>
-        <category>双向链表</category>
         <category>模拟</category>
-        <category>结构体</category>
-        <category>贪心</category>
         <category>邻接矩阵</category>
         <category>DFS</category>
+        <category>结构体</category>
+        <category>贪心</category>
         <category>Double类型相等比较</category>
         <category>并查集</category>
         <category>Map</category>
@@ -49,8 +49,8 @@
         <category>LeetCode</category>
         <category>双指针</category>
         <category>数组翻转</category>
-        <category>哈希表</category>
         <category>前缀和</category>
+        <category>哈希表</category>
         <category>Travel</category>
         <category>Mirror</category>
         <category>牛客</category>
@@ -62,6 +62,25 @@
         <category>性能分析工具</category>
         <category>gcov</category>
         <category>bool</category>
+        <item>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/04/30/violate/</guid>
+            <title>C/C++ volatile关键字</title>
+            <link>https://xingyuanjie.top/2023/04/30/violate/</link>
+            <category>Data Structure</category>
+            <category>C/C++</category>
+            <pubDate>Sun, 30 Apr 2023 15:30:24 +0800</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;C-x2F-C-volatile关键字&#34;&gt;&lt;a href=&#34;#C-x2F-C-volatile关键字&#34; class=&#34;headerlink&#34; title=&#34;C&amp;#x2F;C++ volatile关键字&#34;&gt;&lt;/a&gt;C&amp;#x2F;C++ volatile关键字&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;volatile后面的变量，是常变量，会直接访问地址，如果没有这个关键字，就可能会暂时使用寄存器的值，而不是读取地址。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;C&amp;#x2F;C++ 中的 volatile 关键字和 const 对应，用来修饰变量。volatile 关键字是一种类型修饰符，用它声明的类型变量表示可以被某些编译器未知的因素更改，比如：操作系统、硬件或者其它线程等。遇到这个关键字声明的变量，编译器对访问该变量的代码就不再进行优化，从而可以提供对特殊地址的稳定访问。声明时语法：&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;volatile&lt;/span&gt; &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i=&lt;span class=&#34;hljs-number&#34;&gt;10&lt;/span&gt;;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;当要求使用 volatile 声明的变量的值的时候，系统总是重新从它所在的内存读取数据，即使它前面的指令刚刚从该处读取过数据。而且读取的数据立刻被保存。&lt;/p&gt;
+&lt;p&gt;volatile 指出 i 是随时可能发生变化的，每次使用它的时候必须从 i的地址中读取，因而编译器生成的汇编代码会重新从i的地址读取数据放在 b 中。而优化做法是，由于编译器发现两次从 i读数据的代码之间的代码没有对 i 进行过操作，它会自动把上次读的数据放在 b 中。而不是重新从 i 里面读。这样以来，如果 i是一个寄存器变量或者表示一个端口数据就容易出错，所以说 volatile 可以保证对特殊地址的稳定访问。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;volatile关键字的实现：如在并行环境下，进行同步操作，用volatile修饰回答字地址，即可实现并行环境下的同步。这种方法一般使用在非阻塞通信中。&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/ijn842/article/details/81273232&#34;&gt;浅谈C语言的volatile关键字_琼琼的博客的博客-CSDN博客&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/GreatTang/article/details/90454011&#34;&gt;C++ volatile_c++ violate_来日梦多长的博客-CSDN博客&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/jerry_wuhao/article/details/113247800&#34;&gt;C&amp;#x2F;C++ 中 volatile 关键字_c++ violate关键字_王俊洁、�的博客-CSDN博客&lt;/a&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">https://xingyuanjie.top/2023/02/28/vectorbool/</guid>
             <title>vector&lt;bool&gt;与vector&lt;T&gt;</title>
