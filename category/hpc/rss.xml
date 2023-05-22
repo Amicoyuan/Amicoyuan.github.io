@@ -5,8 +5,8 @@
         <link>https://xingyuanjie.top</link>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Fri, 10 Mar 2023 14:51:44 +0800</pubDate>
-        <lastBuildDate>Fri, 10 Mar 2023 14:51:44 +0800</lastBuildDate>
+        <pubDate>Mon, 22 May 2023 20:35:17 +0800</pubDate>
+        <lastBuildDate>Mon, 22 May 2023 20:35:17 +0800</lastBuildDate>
         <category>AVX</category>
         <category>Data Structure</category>
         <category>String</category>
@@ -16,19 +16,19 @@
         <category>Set</category>
         <category>团体程序设计天梯赛</category>
         <category>Sort</category>
+        <category>LinkList</category>
+        <category>双向链表</category>
         <category>Graph</category>
         <category>邻接表</category>
         <category>Vector</category>
-        <category>LinkList</category>
-        <category>双向链表</category>
         <category>Binary tree</category>
         <category>BFS</category>
         <category>模拟</category>
         <category>邻接矩阵</category>
         <category>DFS</category>
         <category>结构体</category>
-        <category>贪心</category>
         <category>Double类型相等比较</category>
+        <category>贪心</category>
         <category>并查集</category>
         <category>Map</category>
         <category>Pair</category>
@@ -38,10 +38,13 @@
         <category>Linux</category>
         <category>Tensorflow</category>
         <category>Machine Learning</category>
+        <category>MPI</category>
         <category>Matrix</category>
         <category>GEMM</category>
-        <category>MPI</category>
         <category>AVX2</category>
+        <category>blas</category>
+        <category>gemm</category>
+        <category>gemv</category>
         <category>dgemm</category>
         <category>Cache</category>
         <category>Blocking</category>
@@ -49,8 +52,8 @@
         <category>Intel</category>
         <category>LeetCode</category>
         <category>双指针</category>
-        <category>数组翻转</category>
         <category>哈希表</category>
+        <category>数组翻转</category>
         <category>前缀和</category>
         <category>Travel</category>
         <category>Mirror</category>
@@ -62,6 +65,55 @@
         <category>性能分析工具</category>
         <category>gcov</category>
         <category>bool</category>
+        <item>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/05/22/blas/</guid>
+            <title>BLAS（Basic Linear Algebra Subprograms）-基础线性代数子程序库</title>
+            <link>https://xingyuanjie.top/2023/05/22/blas/</link>
+            <category>blas</category>
+            <category>gemm</category>
+            <category>gemv</category>
+            <pubDate>Mon, 22 May 2023 20:35:17 +0800</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;h3 id=&#34;博客&#34;&gt;&lt;a href=&#34;#博客&#34; class=&#34;headerlink&#34; title=&#34;博客:&#34;&gt;&lt;/a&gt;博客:&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://www.jianshu.com/p/e01024892afb&#34;&gt;矩阵相乘在GPU上的终极优化：深度解析Maxas汇编器工作原理 - 简书 (jianshu.com)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.leiphone.com/category/yanxishe/Puevv3ZWxn0heoEv.html&#34;&gt;OpenBLAS项目与矩阵乘法优化 | AI 研习社 | 雷峰网 (leiphone.com)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://jcf94.com/2021/08/28/2021-08-28-simd/&#34;&gt;矩阵乘法与 SIMD | Chenfan Blog (jcf94.com)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://zhenhuaw.me/blog/2019/gemm-optimization.html&#34;&gt;通用矩阵乘（GEMM）优化算法 | 黎明灰烬 博客 (zhenhuaw.me)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/383115932&#34;&gt;大佬是怎么优雅实现矩阵乘法的？ - 知乎 (zhihu.com)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/65436463&#34;&gt;OpenBLAS gemm从零入门 - 知乎 (zhihu.com)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://harleyszhang.github.io/cv_note/&#34;&gt;Introduction · cv算法工程师成长之路 (harleyszhang.github.io)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/435908830&#34;&gt;深入浅出GPU优化系列：GEMM优化（一） - 知乎 (zhihu.com)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/410278370&#34;&gt;CUDA 矩阵乘法终极优化指南 - 知乎 (zhihu.com)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/368870275&#34;&gt;矩阵乘法的并行优化（1）：OPENMP、CUDA实现 - 知乎 (zhihu.com)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/617296073&#34;&gt;并行计算入门 UIUC ECE408 Lecture 7&amp;amp;8 - 知乎 (zhihu.com)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/143328317&#34;&gt;移动端arm cpu优化学习笔记第4弹–内联汇编入门 - 知乎 (zhihu.com)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/348372132&#34;&gt;C语言的内嵌汇编 - 知乎 (zhihu.com)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/105616727&#34;&gt;内嵌汇编学习 - 知乎 (zhihu.com)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/unbutun/article/details/6123472&#34;&gt;(88条消息) #define barrier() &lt;strong&gt;asm&lt;/strong&gt; &lt;strong&gt;volatile&lt;/strong&gt;(“”: : :”memory”) 中的memory是gcc的东西_unbutun的博客-CSDN博客&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/weixin_38669561/article/details/105192200?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-3.control&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-3.control&#34;&gt;(88条消息) MIPS指令集：内嵌汇编asm语法介绍_daddu指令_无色云的博客-CSDN博客&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;论文：&#34;&gt;&lt;a href=&#34;#论文：&#34; class=&#34;headerlink&#34; title=&#34;论文：&#34;&gt;&lt;/a&gt;论文：&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://www.cs.utexas.edu/users/flame/FLAMEPublications.html&#34;&gt;Publications Related to the FLAME Project (utexas.edu)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://dl.acm.org/doi/10.1145/1356052.1356053&#34;&gt;Anatomy of high-performance matrix multiplication | ACM Transactions on Mathematical Software&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://dl.acm.org/doi/10.1145/3018743.3018755&#34;&gt;Understanding the GPU Microarchitecture to Achieve Bare-Metal Performance Tuning | Proceedings of the 22nd ACM SIGPLAN Symposium on Principles and Practice of Parallel Programming&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[&lt;a href=&#34;https://arxiv.org/abs/1804.06826&#34;&gt;1804.06826] Dissecting the NVIDIA Volta GPU Architecture via Microbenchmarking (arxiv.org)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://ieeexplore.ieee.org/document/6114452&#34;&gt;Fast implementation of DGEMM on Fermi GPU | IEEE Conference Publication | IEEE Xplore&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://dl.acm.org/doi/abs/10.1145/3369583.3393611&#34;&gt;High Performance is All about Minimizing Data Movement | Proceedings of the 29th International Symposium on High-Performance Parallel and Distributed Computing (acm.org)&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;社区-x2F-论坛&#34;&gt;&lt;a href=&#34;#社区-x2F-论坛&#34; class=&#34;headerlink&#34; title=&#34;社区&amp;#x2F;论坛:&#34;&gt;&lt;/a&gt;社区&amp;#x2F;论坛:&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;http://tvm.d2l.ai/chapter_gpu_schedules/vector_add.html#cuda-programming&#34;&gt;2. Vector Add — Dive into Deep Learning Compiler 0.1 documentation (d2l.ai)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html&#34;&gt;Intel® Intrinsics Guide&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/pytorch/QNNPACK&#34;&gt;https://github.com/pytorch/QNNPACK&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/flame/blis&#34;&gt;https://github.com/flame/blis&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.mathematik.uni-ulm.de/~lehn/apfel/ulmBLAS/&#34;&gt;ulmBLAS (index) (uni-ulm.de)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.mathematik.uni-ulm.de/~lehn/apfel/sghpc/gemm/index.html&#34;&gt;work&amp;#x2F;sghpc (index) (uni-ulm.de)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://shpc.oden.utexas.edu/&#34;&gt;The Science of High-Performance Computing Group (utexas.edu)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/BBuf/how-to-optimize-gemm&#34;&gt;GitHub - BBuf&amp;#x2F;how-to-optimize-gemm&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/Liu-xiandong/How_to_optimize_in_GPU&#34;&gt;GitHub - Liu-xiandong&amp;#x2F;How_to_optimize_in_GPU: This is a series of GPU optimization topics. Here we will introduce how to optimize the CUDA kernel in detail. I will introduce several basic kernel optimizations, including: elementwise, reduce, sgemv, sgemm, etc. The performance of these kernels is basically at or near the theoretical limit.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.nvidia.com/cuda/cuda-c-programming-guide/#&#34;&gt;CUDA C++ Programming Guide (nvidia.com)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/NervanaSystems/maxas/wiki/SGEMM&#34;&gt;SGEMM · NervanaSystems&amp;#x2F;maxas Wiki · GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/Cjkkkk/CUDA_gemm&#34;&gt;GitHub - Cjkkkk&amp;#x2F;CUDA_gemm: A simple high performance CUDA GEMM implementation.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/yzhaiustc/Optimizing-SGEMM-on-NVIDIA-Turing-GPUs&#34;&gt;GitHub - yzhaiustc&amp;#x2F;Optimizing-SGEMM-on-NVIDIA-Turing-GPUs: Optimizing SGEMM kernel functions on NVIDIA GPUs to a close-to-cuBLAS performance.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.nvidia.com/blog/cutlass-linear-algebra-cuda/&#34;&gt;https://developer.nvidia.com/blog/cutlass-linear-algebra-cuda/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://wiki.illinois.edu/wiki/display/ECE408/Class+Schedule&#34;&gt;Class Schedule - ECE408 - Illinois Wiki&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.ibiblio.org/gferg/ldp/GCC-Inline-Assembly-HOWTO.html#toc2&#34;&gt;GCC-Inline-Assembly-HOWTO (ibiblio.org)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://missing-semester-cn.github.io/&#34;&gt;计算机教育中缺失的一课 · the missing semester of your cs education (missing-semester-cn.github.io)&lt;/a&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">https://xingyuanjie.top/2023/03/10/avx006/</guid>
             <title>如何使用AVX和AVX2处理数据(个人翻译)</title>
@@ -1391,83 +1443,6 @@
 &lt;h3 id=&#34;8-Gemm汇总&#34;&gt;&lt;a href=&#34;#8-Gemm汇总&#34; class=&#34;headerlink&#34; title=&#34;8.Gemm汇总&#34;&gt;&lt;/a&gt;8.Gemm汇总&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;/2023/02/02/blislab/image-20230206172351890.png&#34; alt=&#34;image-20230206172351890&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;9-拓展&#34;&gt;&lt;a href=&#34;#9-拓展&#34; class=&#34;headerlink&#34; title=&#34;9.拓展&#34;&gt;&lt;/a&gt;9.拓展&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;/2023/02/02/blislab/image-20230206172425329.png&#34; alt=&#34;image-20230206172425329&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;10-双缓冲优化&#34;&gt;&lt;a href=&#34;#10-双缓冲优化&#34; class=&#34;headerlink&#34; title=&#34;10.双缓冲优化&#34;&gt;&lt;/a&gt;10.双缓冲优化&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;/2023/02/02/blislab/image-20230206172846408.png&#34; alt=&#34;image-20230206172846408&#34;&gt;&lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">https://xingyuanjie.top/2023/01/28/cuda006/</guid>
-            <title>CUDA线程管理</title>
-            <link>https://xingyuanjie.top/2023/01/28/cuda006/</link>
-            <category>CUDA</category>
-            <pubDate>Sat, 28 Jan 2023 15:41:55 +0800</pubDate>
-            <description><![CDATA[ &lt;h3 id=&#34;1-线程管理&#34;&gt;&lt;a href=&#34;#1-线程管理&#34; class=&#34;headerlink&#34; title=&#34;1.线程管理&#34;&gt;&lt;/a&gt;1.线程管理&lt;/h3&gt;&lt;p&gt;当核函数在主机端启动时，它的执行会移动到设备上，此时设备中会产生大量的线程并且每个线程都执行由核函数指定的语句。了解如何组织线程是CUDA编程的一个关键部分。CUDA明确了线程层次抽象的概念以便于你组织线程。这是一个两层的线程层次结构，由线程块和线程块网格构成，如图2-5所示。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/2023/01/28/cuda006/image-20230128160011560.png&#34; alt=&#34;image-20230128160011560&#34;&gt;&lt;/p&gt;
-&lt;p&gt;由一个内核启动所产生的所有线程统称为一个网格。同一网格中的所有线程共享相同的全局内存空间。一个网格由多个线程块构成，一个线程块包含一组线程，同一线程块内的线程协作可以通过以下方式来实现。&lt;/p&gt;
-&lt;p&gt;​	-同步&lt;/p&gt;
-&lt;p&gt;​	-共享内存&lt;/p&gt;
-&lt;p&gt;不同块内的线程不能协作。&lt;/p&gt;
-&lt;p&gt;线程依靠以下两个坐标变量来区分彼此。&lt;/p&gt;
-&lt;p&gt;​	-blockIdx(线程块在线程格内的索引)&lt;/p&gt;
-&lt;p&gt;​	-threadIdx(块内的线程索引)&lt;/p&gt;
-&lt;p&gt;这些变量是核函数中需要预初始化的内置变量。当执行一个核函数时，CUDA运行时为每个线程分配坐标变量blockIdx和threadIdx。基于这些坐标，你可以将部分数据分配给不同的线程。&lt;/p&gt;
-&lt;p&gt;该坐标变量是基于uint3定义的CUDA内置的向量类型，是一个包含3个无符号整数的结构，可以通过x,y,z三个字段来指定。&lt;/p&gt;
-&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;blockIdx.x&lt;br&gt;blockIdx.y&lt;br&gt;blockIdx.z&lt;br&gt;threadIdx.x&lt;br&gt;threadIdx.y&lt;br&gt;threadIdx.z&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;CUDA可以组织三维的网格和块。图2-5展示了一个线程层次结构的示例，其结构是一个包含二维块的二维网格。网格和块的维度由下列两个内置变量指定。&lt;/p&gt;
-&lt;p&gt;​	-blockDim(线程块的维度，用每个线程块中的线程数来表示)&lt;/p&gt;
-&lt;p&gt;​	-gridDim(线程格的维度，用每个线程格中的线程数来表示)&lt;/p&gt;
-&lt;p&gt;它们是dim3类型的变量，是基于uint3定义的整数型向量，用来表示维度。当定义一个dim3类型的变量时，所有未指定的元素都被初始化为1。dim3类型变量中的每个组件可以通过它的x,y,z字段获得。如下所示。&lt;/p&gt;
-&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;blockDim.x&lt;br&gt;blockDim.y&lt;br&gt;blockDim.z&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h3 id=&#34;2-网格和线程块的维度&#34;&gt;&lt;a href=&#34;#2-网格和线程块的维度&#34; class=&#34;headerlink&#34; title=&#34;2.网格和线程块的维度&#34;&gt;&lt;/a&gt;2.网格和线程块的维度&lt;/h3&gt;&lt;p&gt;通常，一个线程格会被组织成线程块的二维数组形式，一个线程块会被组织成线程的三维数组形式。&lt;/p&gt;
-&lt;p&gt;线程格和线程块均使用3个dim3类型的无符号整型字段，而未使用的字段将被初始化为1且忽略不计。&lt;/p&gt;
-&lt;p&gt;在CUDA程序中有两组不同的网格和块变量：手动定义的dim3数据类型和预定义的uint3数据类型。在主机端，作为内核调用的一部分，你可以使用dim3数据类型定义一个网格和块的维度。当执行核函数时，CUDA运行时会生成相应的内置预初始化的网格，块和线程变量，它们在核函数内均可被访问到且为unit3类型。手动定义的dim3类型的网络和块变量仅在主机端可见，而unit3类型的内置预初始化的网格和块变量仅在设备端可见。&lt;/p&gt;
-&lt;p&gt;你可以通过代码清单2-2来验证这些变量如何使用。首先，定义程序所用的数据大小，为了对此进行说明，我们定义一个较小的数据。&lt;/p&gt;
-&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; nElem = &lt;span class=&#34;hljs-number&#34;&gt;6&lt;/span&gt;;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;接下来，定义块的尺寸并基于块和数据的大小计算网格尺寸。在下面例子中，定义了一个包含3个线程的一维线程块，以及一个基于块和数据大小定义的一定数量线程块的一维线程网格。&lt;/p&gt;
-&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-function&#34;&gt;dim3 &lt;span class=&#34;hljs-title&#34;&gt;block&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(&lt;span class=&#34;hljs-number&#34;&gt;3&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;dim3 &lt;span class=&#34;hljs-title&#34;&gt;grid&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;((nElem+block.x&lt;span class=&#34;hljs-number&#34;&gt;-1&lt;/span&gt;)/block.x)&lt;/span&gt;&lt;/span&gt;;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;你会发现网格大小是块大小的倍数。以下主机端上的程序段用来检查网格和块维度。&lt;/p&gt;
-&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;grid.x %d grid.y %d grid.z %d\n&amp;quot;&lt;/span&gt;,grid.x,grid.y,grid.z);&lt;br&gt;&lt;span class=&#34;hljs-built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;block.x %d block.y %d block.z %d\n&amp;quot;&lt;/span&gt;,block.x,block.y,block.z);&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;在核函数中，每个线程都输出自己的线程索引，块索引，块维度和网格维度。&lt;/p&gt;
-&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;threadIdx:(%d, %d, %d) blockIdx:(%d, %d, %d) blockDim:(%d, %d, %d) &amp;quot;&lt;/span&gt; &lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;gridDim:(%d, %d, %d)\n&amp;quot;&lt;/span&gt;, threadIdx.x, threadIdx,y, threadIdz.z,blockIdx.x, blockIdx.y, blockIdx.z, blockDim.x, blockDim.y, blockDim.z, gridDim.x,gridDim.y,gridDim.z);&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;把代码合并保存成名为checkDimension.cu的文件，如代码清单2-2所示。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;代码清单2-2     检查网络和块的索引和维度（checkDimension.cu）&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;26&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;hljs-meta-string&#34;&gt;&amp;lt;cuda_runtime.h&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;hljs-meta-string&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;__global__ &lt;span class=&#34;hljs-keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;checkIndex&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;void&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;br&gt;    &lt;span class=&#34;hljs-built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;threadIdx:(%d, %d, %d) blockIdx:(%d, %d, %d) blockDim:(%d, %d, %d) &amp;quot;&lt;/span&gt; &lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;gridDim:(%d, %d, %d)\n&amp;quot;&lt;/span&gt;, 		threadIdx.x, threadIdx,y, threadIdz.z, blockIdx.x, blockIdx.y, blockIdx.z, blockDim.x, blockDim.y, 			blockDim.z, gridDim.x,gridDim.y,gridDim.z);&lt;br&gt;&amp;#125;&lt;br&gt;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; argc, &lt;span class=&#34;hljs-keyword&#34;&gt;char&lt;/span&gt; **argv)&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;br&gt;    &lt;span class=&#34;hljs-comment&#34;&gt;//define total data element&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; nElem = &lt;span class=&#34;hljs-number&#34;&gt;6&lt;/span&gt;;&lt;br&gt;    &lt;span class=&#34;hljs-comment&#34;&gt;//define grid and block structure&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-function&#34;&gt;dim3 &lt;span class=&#34;hljs-title&#34;&gt;block&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(&lt;span class=&#34;hljs-number&#34;&gt;3&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;;&lt;br&gt;	&lt;span class=&#34;hljs-function&#34;&gt;dim3 &lt;span class=&#34;hljs-title&#34;&gt;grid&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;((nElem+block.x&lt;span class=&#34;hljs-number&#34;&gt;-1&lt;/span&gt;)/block.x)&lt;/span&gt;&lt;/span&gt;;&lt;br&gt;    &lt;br&gt;    &lt;span class=&#34;hljs-comment&#34;&gt;//check grid and block dimension from host side&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;grid.x %d grid.y %d grid.z %d\n&amp;quot;&lt;/span&gt;,grid.x,grid.y,grid.z);&lt;br&gt;	&lt;span class=&#34;hljs-built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;block.x %d block.y %d block.z %d\n&amp;quot;&lt;/span&gt;,block.x,block.y,block.z);&lt;br&gt;	&lt;br&gt;    &lt;span class=&#34;hljs-comment&#34;&gt;//check grid and block dimension from device side&lt;/span&gt;&lt;br&gt;    checkIndex&amp;lt;&amp;lt;&amp;lt;grid, block&amp;gt;&amp;gt;&amp;gt;();&lt;br&gt;    &lt;br&gt;    &lt;span class=&#34;hljs-comment&#34;&gt;//reset device before you leave&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-built_in&#34;&gt;cudaDeviceReset&lt;/span&gt;();&lt;br&gt;    &lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;现在开始编译和运行这段程序：&lt;/p&gt;
-&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs shell&#34;&gt;nvcc -arch=sm_20 checkDimension.cu -o check&lt;br&gt;./check&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;因为printf函数只支持Fermi及以上版本的GPU架构，所以必须添加-arch&amp;#x3D;sm_20编译器选项。默认情况下，nvcc会产生支持最低版本GPU架构的代码。这个应用程序的运行结果如下。可以看到，每个线程都有自己的坐标，所有的线程都有相同的块维度和网格维度。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/2023/01/28/cuda006/image-20230129172501750.png&#34; alt=&#34;image-20230129172501750&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;3-从主机端和设备端访问网格-x2F-块变量&#34;&gt;&lt;a href=&#34;#3-从主机端和设备端访问网格-x2F-块变量&#34; class=&#34;headerlink&#34; title=&#34;3.从主机端和设备端访问网格&amp;#x2F;块变量&#34;&gt;&lt;/a&gt;3.从主机端和设备端访问网格&amp;#x2F;块变量&lt;/h3&gt;&lt;p&gt;区别主机端和设备端的网格和块变量的访问是很重要的。例如，声明一个主机端的块变量，你按如下定义它的坐标并对其进行访问：&lt;/p&gt;
-&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;block.x,block.y,block.z&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;在设备端，你已经预定义了内置块变量的大小：&lt;/p&gt;
-&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;blockDim.x,blockDim.y,blockDim.z&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;总之，在启动内核之前就定义了主机端的网格和块变量，并从主机端通过由x,y,z三个字段决定的矢量结构来访问它们。当内核启动时，可以使用内核中预初始化的内置变量。&lt;/p&gt;
-&lt;p&gt;对于一个给定的数据大小，确定网格和块尺寸的一般步骤为：&lt;/p&gt;
-&lt;p&gt;​	-确定块的大小&lt;/p&gt;
-&lt;p&gt;​	-在已知数据大小和块大小的基础上计算网格维度&lt;/p&gt;
-&lt;p&gt;要确定块尺寸，通常需要考虑：&lt;/p&gt;
-&lt;p&gt;​	-内核的性能特性&lt;/p&gt;
-&lt;p&gt;​	-GPU资源的限制&lt;/p&gt;
-&lt;p&gt;代码清单2-3使用了一个一维网格和一个一维块来说明当块的大小改变时，网格的尺寸也会随之改变。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;代码清单2-3 在主机上定义网格和块的大小（defineGridBlock.cu）&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;31&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;hljs-meta-string&#34;&gt;&amp;lt;cuda_runtime.h&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;hljs-meta-string&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; argc, &lt;span class=&#34;hljs-keyword&#34;&gt;char&lt;/span&gt; **argv)&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;br&gt;    &lt;span class=&#34;hljs-comment&#34;&gt;//define total data element&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; nElem = &lt;span class=&#34;hljs-number&#34;&gt;1024&lt;/span&gt;;&lt;br&gt;    &lt;br&gt;    &lt;span class=&#34;hljs-comment&#34;&gt;//define grid and block structure&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-function&#34;&gt;dim3 &lt;span class=&#34;hljs-title&#34;&gt;block&lt;/span&gt;	&lt;span class=&#34;hljs-params&#34;&gt;(&lt;span class=&#34;hljs-number&#34;&gt;1024&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;;&lt;br&gt;    &lt;span class=&#34;hljs-function&#34;&gt;dim3 &lt;span class=&#34;hljs-title&#34;&gt;grid&lt;/span&gt; &lt;span class=&#34;hljs-params&#34;&gt;((nElem+block.x&lt;span class=&#34;hljs-number&#34;&gt;-1&lt;/span&gt;)/block.x)&lt;/span&gt;&lt;/span&gt;;&lt;br&gt;    &lt;span class=&#34;hljs-built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;grid.x %d block.x %d \n&amp;quot;&lt;/span&gt;,grid.x, block.x);&lt;br&gt;    &lt;br&gt;    &lt;span class=&#34;hljs-comment&#34;&gt;//reset block&lt;/span&gt;&lt;br&gt;    block.x = &lt;span class=&#34;hljs-number&#34;&gt;512&lt;/span&gt;;&lt;br&gt;    grid.x = (nElem+block.x&lt;span class=&#34;hljs-number&#34;&gt;-1&lt;/span&gt;)/block.x;&lt;br&gt;    &lt;span class=&#34;hljs-built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;grid.x %d block.x %d \n&amp;quot;&lt;/span&gt;,grid.x, block.x);&lt;br&gt;    &lt;br&gt;    &lt;span class=&#34;hljs-comment&#34;&gt;//reset block&lt;/span&gt;&lt;br&gt;    block.x = &lt;span class=&#34;hljs-number&#34;&gt;256&lt;/span&gt;;&lt;br&gt;    grid.x = (nElem+block.x&lt;span class=&#34;hljs-number&#34;&gt;-1&lt;/span&gt;)/block.x;&lt;br&gt;    &lt;span class=&#34;hljs-built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;grid.x %d block.x %d \n&amp;quot;&lt;/span&gt;,grid.x, block.x);&lt;br&gt;    &lt;br&gt;    &lt;span class=&#34;hljs-comment&#34;&gt;//reset block&lt;/span&gt;&lt;br&gt;    block.x = &lt;span class=&#34;hljs-number&#34;&gt;128&lt;/span&gt;;&lt;br&gt;    grid.x = (nElem+block.x&lt;span class=&#34;hljs-number&#34;&gt;-1&lt;/span&gt;)/block.x;&lt;br&gt;    &lt;span class=&#34;hljs-built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;grid.x %d block.x %d \n&amp;quot;&lt;/span&gt;,grid.x, block.x);&lt;br&gt;    &lt;br&gt;    &lt;span class=&#34;hljs-comment&#34;&gt;//reset device before you leave&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-built_in&#34;&gt;cudaDeviceReset&lt;/span&gt;();&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;用下列命令编译和运行这段程序：&lt;/p&gt;
-&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs shell&#34;&gt;nvcc defineGridBlock.cu	-o block&lt;br&gt;./block&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;下面是一个输出示例。由于应用程序中的数据大小是固定的，因此当块的大小发生改变时，相应的网格尺寸也会发生改变。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/2023/01/28/cuda006/image-20230129174300533.png&#34; alt=&#34;image-20230129174300533&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;4-线程层次结构&#34;&gt;&lt;a href=&#34;#4-线程层次结构&#34; class=&#34;headerlink&#34; title=&#34;4.线程层次结构&#34;&gt;&lt;/a&gt;4.线程层次结构&lt;/h3&gt;&lt;p&gt;CUDA的特点之一就是通过编程模型揭示了一个两层的线程层次结构。由于一个内核启动的网格和块的维数会影响性能，这一结构为程序员优化程序提供了一个额外的途径。&lt;/p&gt;
-&lt;p&gt;网格和块的维度存在几个限制因素，对于块大小的一个主要限制因素就是可利用的计算资源，如寄存器，共享内存等。某些限制可以通过查询GPU设备撤回。&lt;/p&gt;
-&lt;p&gt;网格和块从逻辑上代表了一个核函数的线程层次结构。&lt;/p&gt;
-&lt;h3 id=&#34;5-参考资料&#34;&gt;&lt;a href=&#34;#5-参考资料&#34; class=&#34;headerlink&#34; title=&#34;5.参考资料&#34;&gt;&lt;/a&gt;5.参考资料&lt;/h3&gt;&lt;p&gt;CUDA C编程权威指南 程润伟，Max Grossman(美)，Ty Mckercher &lt;/p&gt;
  ]]></description>
         </item>
     </channel>

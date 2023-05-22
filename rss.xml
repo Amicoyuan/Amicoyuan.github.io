@@ -5,8 +5,8 @@
         <link>https://xingyuanjie.top</link>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Sun, 30 Apr 2023 15:44:23 +0800</pubDate>
-        <lastBuildDate>Sun, 30 Apr 2023 15:44:23 +0800</lastBuildDate>
+        <pubDate>Mon, 22 May 2023 20:35:17 +0800</pubDate>
+        <lastBuildDate>Mon, 22 May 2023 20:35:17 +0800</lastBuildDate>
         <category>AVX</category>
         <category>Data Structure</category>
         <category>String</category>
@@ -16,19 +16,19 @@
         <category>Set</category>
         <category>团体程序设计天梯赛</category>
         <category>Sort</category>
+        <category>LinkList</category>
+        <category>双向链表</category>
         <category>Graph</category>
         <category>邻接表</category>
         <category>Vector</category>
-        <category>LinkList</category>
-        <category>双向链表</category>
         <category>Binary tree</category>
         <category>BFS</category>
         <category>模拟</category>
         <category>邻接矩阵</category>
         <category>DFS</category>
         <category>结构体</category>
-        <category>贪心</category>
         <category>Double类型相等比较</category>
+        <category>贪心</category>
         <category>并查集</category>
         <category>Map</category>
         <category>Pair</category>
@@ -38,10 +38,13 @@
         <category>Linux</category>
         <category>Tensorflow</category>
         <category>Machine Learning</category>
+        <category>MPI</category>
         <category>Matrix</category>
         <category>GEMM</category>
-        <category>MPI</category>
         <category>AVX2</category>
+        <category>blas</category>
+        <category>gemm</category>
+        <category>gemv</category>
         <category>dgemm</category>
         <category>Cache</category>
         <category>Blocking</category>
@@ -49,8 +52,8 @@
         <category>Intel</category>
         <category>LeetCode</category>
         <category>双指针</category>
-        <category>数组翻转</category>
         <category>哈希表</category>
+        <category>数组翻转</category>
         <category>前缀和</category>
         <category>Travel</category>
         <category>Mirror</category>
@@ -62,6 +65,55 @@
         <category>性能分析工具</category>
         <category>gcov</category>
         <category>bool</category>
+        <item>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/05/22/blas/</guid>
+            <title>BLAS（Basic Linear Algebra Subprograms）-基础线性代数子程序库</title>
+            <link>https://xingyuanjie.top/2023/05/22/blas/</link>
+            <category>blas</category>
+            <category>gemm</category>
+            <category>gemv</category>
+            <pubDate>Mon, 22 May 2023 20:35:17 +0800</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;h3 id=&#34;博客&#34;&gt;&lt;a href=&#34;#博客&#34; class=&#34;headerlink&#34; title=&#34;博客:&#34;&gt;&lt;/a&gt;博客:&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://www.jianshu.com/p/e01024892afb&#34;&gt;矩阵相乘在GPU上的终极优化：深度解析Maxas汇编器工作原理 - 简书 (jianshu.com)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.leiphone.com/category/yanxishe/Puevv3ZWxn0heoEv.html&#34;&gt;OpenBLAS项目与矩阵乘法优化 | AI 研习社 | 雷峰网 (leiphone.com)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://jcf94.com/2021/08/28/2021-08-28-simd/&#34;&gt;矩阵乘法与 SIMD | Chenfan Blog (jcf94.com)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://zhenhuaw.me/blog/2019/gemm-optimization.html&#34;&gt;通用矩阵乘（GEMM）优化算法 | 黎明灰烬 博客 (zhenhuaw.me)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/383115932&#34;&gt;大佬是怎么优雅实现矩阵乘法的？ - 知乎 (zhihu.com)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/65436463&#34;&gt;OpenBLAS gemm从零入门 - 知乎 (zhihu.com)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://harleyszhang.github.io/cv_note/&#34;&gt;Introduction · cv算法工程师成长之路 (harleyszhang.github.io)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/435908830&#34;&gt;深入浅出GPU优化系列：GEMM优化（一） - 知乎 (zhihu.com)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/410278370&#34;&gt;CUDA 矩阵乘法终极优化指南 - 知乎 (zhihu.com)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/368870275&#34;&gt;矩阵乘法的并行优化（1）：OPENMP、CUDA实现 - 知乎 (zhihu.com)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/617296073&#34;&gt;并行计算入门 UIUC ECE408 Lecture 7&amp;amp;8 - 知乎 (zhihu.com)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/143328317&#34;&gt;移动端arm cpu优化学习笔记第4弹–内联汇编入门 - 知乎 (zhihu.com)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/348372132&#34;&gt;C语言的内嵌汇编 - 知乎 (zhihu.com)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/105616727&#34;&gt;内嵌汇编学习 - 知乎 (zhihu.com)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/unbutun/article/details/6123472&#34;&gt;(88条消息) #define barrier() &lt;strong&gt;asm&lt;/strong&gt; &lt;strong&gt;volatile&lt;/strong&gt;(“”: : :”memory”) 中的memory是gcc的东西_unbutun的博客-CSDN博客&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/weixin_38669561/article/details/105192200?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-3.control&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-3.control&#34;&gt;(88条消息) MIPS指令集：内嵌汇编asm语法介绍_daddu指令_无色云的博客-CSDN博客&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;论文：&#34;&gt;&lt;a href=&#34;#论文：&#34; class=&#34;headerlink&#34; title=&#34;论文：&#34;&gt;&lt;/a&gt;论文：&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://www.cs.utexas.edu/users/flame/FLAMEPublications.html&#34;&gt;Publications Related to the FLAME Project (utexas.edu)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://dl.acm.org/doi/10.1145/1356052.1356053&#34;&gt;Anatomy of high-performance matrix multiplication | ACM Transactions on Mathematical Software&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://dl.acm.org/doi/10.1145/3018743.3018755&#34;&gt;Understanding the GPU Microarchitecture to Achieve Bare-Metal Performance Tuning | Proceedings of the 22nd ACM SIGPLAN Symposium on Principles and Practice of Parallel Programming&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[&lt;a href=&#34;https://arxiv.org/abs/1804.06826&#34;&gt;1804.06826] Dissecting the NVIDIA Volta GPU Architecture via Microbenchmarking (arxiv.org)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://ieeexplore.ieee.org/document/6114452&#34;&gt;Fast implementation of DGEMM on Fermi GPU | IEEE Conference Publication | IEEE Xplore&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://dl.acm.org/doi/abs/10.1145/3369583.3393611&#34;&gt;High Performance is All about Minimizing Data Movement | Proceedings of the 29th International Symposium on High-Performance Parallel and Distributed Computing (acm.org)&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;社区-x2F-论坛&#34;&gt;&lt;a href=&#34;#社区-x2F-论坛&#34; class=&#34;headerlink&#34; title=&#34;社区&amp;#x2F;论坛:&#34;&gt;&lt;/a&gt;社区&amp;#x2F;论坛:&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;http://tvm.d2l.ai/chapter_gpu_schedules/vector_add.html#cuda-programming&#34;&gt;2. Vector Add — Dive into Deep Learning Compiler 0.1 documentation (d2l.ai)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html&#34;&gt;Intel® Intrinsics Guide&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/pytorch/QNNPACK&#34;&gt;https://github.com/pytorch/QNNPACK&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/flame/blis&#34;&gt;https://github.com/flame/blis&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.mathematik.uni-ulm.de/~lehn/apfel/ulmBLAS/&#34;&gt;ulmBLAS (index) (uni-ulm.de)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.mathematik.uni-ulm.de/~lehn/apfel/sghpc/gemm/index.html&#34;&gt;work&amp;#x2F;sghpc (index) (uni-ulm.de)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://shpc.oden.utexas.edu/&#34;&gt;The Science of High-Performance Computing Group (utexas.edu)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/BBuf/how-to-optimize-gemm&#34;&gt;GitHub - BBuf&amp;#x2F;how-to-optimize-gemm&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/Liu-xiandong/How_to_optimize_in_GPU&#34;&gt;GitHub - Liu-xiandong&amp;#x2F;How_to_optimize_in_GPU: This is a series of GPU optimization topics. Here we will introduce how to optimize the CUDA kernel in detail. I will introduce several basic kernel optimizations, including: elementwise, reduce, sgemv, sgemm, etc. The performance of these kernels is basically at or near the theoretical limit.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.nvidia.com/cuda/cuda-c-programming-guide/#&#34;&gt;CUDA C++ Programming Guide (nvidia.com)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/NervanaSystems/maxas/wiki/SGEMM&#34;&gt;SGEMM · NervanaSystems&amp;#x2F;maxas Wiki · GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/Cjkkkk/CUDA_gemm&#34;&gt;GitHub - Cjkkkk&amp;#x2F;CUDA_gemm: A simple high performance CUDA GEMM implementation.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/yzhaiustc/Optimizing-SGEMM-on-NVIDIA-Turing-GPUs&#34;&gt;GitHub - yzhaiustc&amp;#x2F;Optimizing-SGEMM-on-NVIDIA-Turing-GPUs: Optimizing SGEMM kernel functions on NVIDIA GPUs to a close-to-cuBLAS performance.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.nvidia.com/blog/cutlass-linear-algebra-cuda/&#34;&gt;https://developer.nvidia.com/blog/cutlass-linear-algebra-cuda/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://wiki.illinois.edu/wiki/display/ECE408/Class+Schedule&#34;&gt;Class Schedule - ECE408 - Illinois Wiki&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.ibiblio.org/gferg/ldp/GCC-Inline-Assembly-HOWTO.html#toc2&#34;&gt;GCC-Inline-Assembly-HOWTO (ibiblio.org)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://missing-semester-cn.github.io/&#34;&gt;计算机教育中缺失的一课 · the missing semester of your cs education (missing-semester-cn.github.io)&lt;/a&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">https://xingyuanjie.top/2023/04/30/enum/</guid>
             <title>C/C++枚举类型 enum</title>
@@ -1411,21 +1463,6 @@
 &lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-class&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;Solution&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;public&lt;/span&gt;:&lt;br&gt;    &lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;bool&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;isIsomorphic&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(string s, string t)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;br&gt;        unordered_map&amp;lt;&lt;span class=&#34;hljs-keyword&#34;&gt;char&lt;/span&gt;, &lt;span class=&#34;hljs-keyword&#34;&gt;char&lt;/span&gt;&amp;gt; s2t;&lt;br&gt;        unordered_map&amp;lt;&lt;span class=&#34;hljs-keyword&#34;&gt;char&lt;/span&gt;, &lt;span class=&#34;hljs-keyword&#34;&gt;char&lt;/span&gt;&amp;gt; t2s;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; len = s.&lt;span class=&#34;hljs-built_in&#34;&gt;length&lt;/span&gt;();&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; (&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i = &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;; i &amp;lt; len; ++i) &amp;#123;&lt;br&gt;            &lt;span class=&#34;hljs-keyword&#34;&gt;char&lt;/span&gt; x = s[i], y = t[i];&lt;br&gt;            &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt; ((s2t.&lt;span class=&#34;hljs-built_in&#34;&gt;count&lt;/span&gt;(x) &amp;amp;&amp;amp; s2t[x] != y) || (t2s.&lt;span class=&#34;hljs-built_in&#34;&gt;count&lt;/span&gt;(y) &amp;amp;&amp;amp; t2s[y] != x)) &amp;#123;&lt;br&gt;                &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;hljs-literal&#34;&gt;false&lt;/span&gt;;&lt;br&gt;            &amp;#125;&lt;br&gt;            s2t[x] = y;&lt;br&gt;            t2s[y] = x;&lt;br&gt;        &amp;#125;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;hljs-literal&#34;&gt;true&lt;/span&gt;;&lt;br&gt;    &amp;#125;&lt;br&gt;&amp;#125;;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;h2 id=&#34;参考链接&#34;&gt;&lt;a href=&#34;#参考链接&#34; class=&#34;headerlink&#34; title=&#34;参考链接&#34;&gt;&lt;/a&gt;参考链接&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://leetcode.cn/problems/isomorphic-strings/solution/tong-gou-zi-fu-chuan-by-leetcode-solutio-s6fd/&#34;&gt;同构字符串 - 同构字符串 - 力扣（LeetCode）&lt;/a&gt;&lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">https://xingyuanjie.top/2023/03/02/leetcode189/</guid>
-            <title>189.轮转数组</title>
-            <link>https://xingyuanjie.top/2023/03/02/leetcode189/</link>
-            <category>C++</category>
-            <category>LeetCode</category>
-            <category>数组翻转</category>
-            <pubDate>Thu, 02 Mar 2023 20:03:32 +0800</pubDate>
-            <description><![CDATA[ &lt;h2 id=&#34;189-轮转数组&#34;&gt;&lt;a href=&#34;#189-轮转数组&#34; class=&#34;headerlink&#34; title=&#34;189.轮转数组&#34;&gt;&lt;/a&gt;189.轮转数组&lt;/h2&gt;&lt;h2 id=&#34;题目链接&#34;&gt;&lt;a href=&#34;#题目链接&#34; class=&#34;headerlink&#34; title=&#34;题目链接&#34;&gt;&lt;/a&gt;题目链接&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://leetcode.cn/problems/rotate-array/&#34;&gt;189. 轮转数组 - 力扣（LeetCode）&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;完整代码&#34;&gt;&lt;a href=&#34;#完整代码&#34; class=&#34;headerlink&#34; title=&#34;完整代码&#34;&gt;&lt;/a&gt;完整代码&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;/2023/03/02/leetcode189/image-20230302200538871.png&#34; alt=&#34;image-20230302200538871&#34;&gt;&lt;/p&gt;
-&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-class&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;Solution&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;public&lt;/span&gt;:&lt;br&gt;    &lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;reverse&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(vector&amp;lt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;&amp;gt;&amp;amp; nums,&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; begin,&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; end)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;    &lt;/span&gt;&amp;#123;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;while&lt;/span&gt;(begin&amp;lt;end)&amp;#123;&lt;br&gt;            &lt;span class=&#34;hljs-built_in&#34;&gt;swap&lt;/span&gt;(nums[begin], nums[end]);&lt;br&gt;            begin++;&lt;br&gt;            end--;&lt;br&gt;        &amp;#125;&lt;br&gt;    &amp;#125;&lt;br&gt;    &lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;rotate&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(vector&amp;lt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt;&amp;gt;&amp;amp; nums, &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; k)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;br&gt;        &lt;span class=&#34;hljs-comment&#34;&gt;//数组翻转&lt;/span&gt;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; p = k%nums.&lt;span class=&#34;hljs-built_in&#34;&gt;size&lt;/span&gt;();&lt;br&gt;        &lt;span class=&#34;hljs-built_in&#34;&gt;reverse&lt;/span&gt;(nums,&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;,nums.&lt;span class=&#34;hljs-built_in&#34;&gt;size&lt;/span&gt;()&lt;span class=&#34;hljs-number&#34;&gt;-1&lt;/span&gt;);&lt;br&gt;        &lt;span class=&#34;hljs-built_in&#34;&gt;reverse&lt;/span&gt;(nums,&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;,p&lt;span class=&#34;hljs-number&#34;&gt;-1&lt;/span&gt;);&lt;br&gt;        &lt;span class=&#34;hljs-built_in&#34;&gt;reverse&lt;/span&gt;(nums,p,nums.&lt;span class=&#34;hljs-built_in&#34;&gt;size&lt;/span&gt;()&lt;span class=&#34;hljs-number&#34;&gt;-1&lt;/span&gt;);&lt;br&gt;    &amp;#125;&lt;br&gt;&amp;#125;;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h2 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://leetcode.cn/problems/rotate-array/solution/xuan-zhuan-shu-zu-by-leetcode-solution-nipk/&#34;&gt;旋转数组 - 轮转数组 - 力扣（LeetCode）&lt;/a&gt;&lt;/p&gt;
  ]]></description>
         </item>
     </channel>
