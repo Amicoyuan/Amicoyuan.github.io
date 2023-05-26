@@ -18,11 +18,11 @@
         <category>Sort</category>
         <category>LinkList</category>
         <category>双向链表</category>
-        <category>Binary tree</category>
+        <category>Graph</category>
         <category>邻接表</category>
         <category>Vector</category>
+        <category>Binary tree</category>
         <category>BFS</category>
-        <category>Graph</category>
         <category>模拟</category>
         <category>邻接矩阵</category>
         <category>DFS</category>
@@ -41,10 +41,10 @@
         <category>MPI</category>
         <category>Matrix</category>
         <category>GEMM</category>
-        <category>AVX2</category>
         <category>blas</category>
         <category>gemm</category>
         <category>gemv</category>
+        <category>AVX2</category>
         <category>dgemm</category>
         <category>Cache</category>
         <category>Blocking</category>
@@ -53,8 +53,8 @@
         <category>LeetCode</category>
         <category>双指针</category>
         <category>数组翻转</category>
-        <category>哈希表</category>
         <category>前缀和</category>
+        <category>哈希表</category>
         <category>Travel</category>
         <category>Mirror</category>
         <category>牛客</category>
