@@ -54,15 +54,15 @@
         <category>双指针</category>
         <category>数组翻转</category>
         <category>哈希表</category>
-        <category>Travel</category>
         <category>前缀和</category>
+        <category>Travel</category>
         <category>Mirror</category>
         <category>牛客</category>
         <category>Numactl</category>
         <category>OpenMP</category>
         <category>register</category>
-        <category>性能分析工具</category>
         <category>Slurm</category>
+        <category>性能分析工具</category>
         <category>gcov</category>
         <category>bool</category>
         <item>
@@ -169,10 +169,11 @@
             <category>gemm</category>
             <category>gemv</category>
             <pubDate>Mon, 22 May 2023 20:35:17 +0800</pubDate>
-            <description><![CDATA[ &lt;h2 id=&#34;how-to-optimize-gemm&#34;&gt;&lt;a href=&#34;#how-to-optimize-gemm&#34; class=&#34;headerlink&#34; title=&#34;how-to-optimize-gemm&#34;&gt;&lt;/a&gt;how-to-optimize-gemm&lt;/h2&gt;&lt;h3 id=&#34;Computing-four-elements-of-C-at-a-time&#34;&gt;&lt;a href=&#34;#Computing-four-elements-of-C-at-a-time&#34; class=&#34;headerlink&#34; title=&#34;Computing four elements of C at a time&#34;&gt;&lt;/a&gt;Computing four elements of C at a time&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://xingyuanjie.top/2023/05/26/gemm0001/&#34;&gt;Hiding computation in a subroutine - Amicoyuan (xingyuanjie.top)&lt;/a&gt;&lt;/p&gt;
+            <description><![CDATA[ &lt;h2 id=&#34;how-to-optimize-gemm&#34;&gt;&lt;a href=&#34;#how-to-optimize-gemm&#34; class=&#34;headerlink&#34; title=&#34;how-to-optimize-gemm&#34;&gt;&lt;/a&gt;how-to-optimize-gemm&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;项目地址：&lt;/strong&gt;&lt;a href=&#34;https://github.com/flame/how-to-optimize-gemm&#34;&gt;flame&amp;#x2F;how-to-optimize-gemm (github.com)&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;Computing-four-elements-of-C-at-a-time&#34;&gt;&lt;a href=&#34;#Computing-four-elements-of-C-at-a-time&#34; class=&#34;headerlink&#34; title=&#34;Computing four elements of C at a time&#34;&gt;&lt;/a&gt;Computing four elements of C at a time&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://xingyuanjie.top/2023/05/26/gemm0001/&#34;&gt;Hiding computation in a subroutine - Amicoyuan (xingyuanjie.top)&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://xingyuanjie.top/2023/05/26/gemm0002/&#34;&gt;Computing four elements at a time - Amicoyuan (xingyuanjie.top)&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://xingyuanjie.top/2023/05/26/gemm0003/&#34;&gt;gemm0003 - Amicoyuan (xingyuanjie.top)&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;h3 id=&#34;博客&#34;&gt;&lt;a href=&#34;#博客&#34; class=&#34;headerlink&#34; title=&#34;博客:&#34;&gt;&lt;/a&gt;博客:&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://www.jianshu.com/p/e01024892afb&#34;&gt;矩阵相乘在GPU上的终极优化：深度解析Maxas汇编器工作原理 - 简书 (jianshu.com)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://xingyuanjie.top/2023/05/26/gemm0003/&#34;&gt;Further optimizing - Amicoyuan (xingyuanjie.top)&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;Computing-a-4-x-4-block-of-C-at-a-time&#34;&gt;&lt;a href=&#34;#Computing-a-4-x-4-block-of-C-at-a-time&#34; class=&#34;headerlink&#34; title=&#34;Computing a 4 x 4 block of C at a time&#34;&gt;&lt;/a&gt;Computing a 4 x 4 block of C at a time&lt;/h3&gt;&lt;h2 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;h3 id=&#34;博客&#34;&gt;&lt;a href=&#34;#博客&#34; class=&#34;headerlink&#34; title=&#34;博客:&#34;&gt;&lt;/a&gt;博客:&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://www.jianshu.com/p/e01024892afb&#34;&gt;矩阵相乘在GPU上的终极优化：深度解析Maxas汇编器工作原理 - 简书 (jianshu.com)&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.leiphone.com/category/yanxishe/Puevv3ZWxn0heoEv.html&#34;&gt;OpenBLAS项目与矩阵乘法优化 | AI 研习社 | 雷峰网 (leiphone.com)&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://jcf94.com/2021/08/28/2021-08-28-simd/&#34;&gt;矩阵乘法与 SIMD | Chenfan Blog (jcf94.com)&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://zhenhuaw.me/blog/2019/gemm-optimization.html&#34;&gt;通用矩阵乘（GEMM）优化算法 | 黎明灰烬 博客 (zhenhuaw.me)&lt;/a&gt;&lt;/p&gt;

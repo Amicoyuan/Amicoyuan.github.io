@@ -51,15 +51,15 @@
     <category term="双指针" />
     <category term="数组翻转" />
     <category term="哈希表" />
-    <category term="Travel" />
     <category term="前缀和" />
+    <category term="Travel" />
     <category term="Mirror" />
     <category term="牛客" />
     <category term="Numactl" />
     <category term="OpenMP" />
     <category term="register" />
-    <category term="性能分析工具" />
     <category term="Slurm" />
+    <category term="性能分析工具" />
     <category term="gcov" />
     <category term="bool" />
     <entry>
