@@ -42,18 +42,18 @@
         <category>Matrix</category>
         <category>GEMM</category>
         <category>AVX2</category>
+        <category>dgemm</category>
         <category>blas</category>
         <category>gemm</category>
         <category>gemv</category>
-        <category>dgemm</category>
         <category>Cache</category>
         <category>Blocking</category>
         <category>C/C++</category>
         <category>Intel</category>
         <category>LeetCode</category>
         <category>双指针</category>
-        <category>哈希表</category>
         <category>数组翻转</category>
+        <category>哈希表</category>
         <category>前缀和</category>
         <category>Travel</category>
         <category>Mirror</category>
