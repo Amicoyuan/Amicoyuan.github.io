@@ -24,8 +24,8 @@
     <category term="邻接矩阵" />
     <category term="DFS" />
     <category term="结构体" />
-    <category term="Double类型相等比较" />
     <category term="贪心" />
+    <category term="Double类型相等比较" />
     <category term="并查集" />
     <category term="Map" />
     <category term="Pair" />
@@ -49,8 +49,8 @@
     <category term="Intel" />
     <category term="LeetCode" />
     <category term="双指针" />
-    <category term="哈希表" />
     <category term="数组翻转" />
+    <category term="哈希表" />
     <category term="前缀和" />
     <category term="Travel" />
     <category term="Mirror" />
