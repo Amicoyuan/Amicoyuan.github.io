@@ -3,7 +3,7 @@
     <id>https://xingyuanjie.top</id>
     <title>Amicoyuan • Posts by &#34;gemm&#34; tag</title>
     <link href="https://xingyuanjie.top" />
-    <updated>2023-05-26T07:06:49.000Z</updated>
+    <updated>2023-05-26T08:37:45.000Z</updated>
     <category term="AVX" />
     <category term="Data Structure" />
     <category term="String" />
@@ -15,11 +15,11 @@
     <category term="Sort" />
     <category term="LinkList" />
     <category term="双向链表" />
-    <category term="Graph" />
+    <category term="Binary tree" />
     <category term="邻接表" />
     <category term="Vector" />
-    <category term="Binary tree" />
     <category term="BFS" />
+    <category term="Graph" />
     <category term="模拟" />
     <category term="邻接矩阵" />
     <category term="DFS" />
@@ -63,10 +63,20 @@
     <category term="gcov" />
     <category term="bool" />
     <entry>
+        <id>https://xingyuanjie.top/2023/05/26/gemm0002/</id>
+        <title>Computing four elements at a time</title>
+        <link rel="alternate" href="https://xingyuanjie.top/2023/05/26/gemm0002/"/>
+        <content type="html"></content>
+        <category term="blas" />
+        <category term="gemm" />
+        <category term="gemv" />
+        <updated>2023-05-26T08:37:45.000Z</updated>
+    </entry>
+    <entry>
         <id>https://xingyuanjie.top/2023/05/26/gemm0001/</id>
-        <title>Computing four elements of C at a time</title>
+        <title>Hiding computation in a subroutine</title>
         <link rel="alternate" href="https://xingyuanjie.top/2023/05/26/gemm0001/"/>
-        <content type="html">&lt;h2 id=&#34;Computing-four-elements-of-C-at-a-time&#34;&gt;&lt;a href=&#34;#Computing-four-elements-of-C-at-a-time&#34; class=&#34;headerlink&#34; title=&#34;Computing four elements of C at a time&#34;&gt;&lt;/a&gt;Computing four elements of C at a time&lt;/h2&gt;&lt;ul&gt;
+        <content type="html">&lt;h2 id=&#34;Hiding-computation-in-a-subroutine&#34;&gt;&lt;a href=&#34;#Hiding-computation-in-a-subroutine&#34; class=&#34;headerlink&#34; title=&#34;Hiding computation in a subroutine&#34;&gt;&lt;/a&gt;Hiding computation in a subroutine&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;我们首先重写基本实现，将内部循环隐藏在子程序AddDot中:&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/flame/how-to-optimize-gemm/wiki/Optimization1&#34;&gt;Optimization1 · flame&amp;#x2F;how-to-optimize-gemm Wiki (github.com)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/flame/how-to-optimize-gemm/wiki/Optimization2&#34;&gt;Optimization2 · flame&amp;#x2F;how-to-optimize-gemm Wiki (github.com)&lt;/a&gt;&lt;/li&gt;
@@ -92,7 +102,7 @@
         <id>https://xingyuanjie.top/2023/05/22/blas/</id>
         <title>BLAS（Basic Linear Algebra Subprograms）-基础线性代数子程序库</title>
         <link rel="alternate" href="https://xingyuanjie.top/2023/05/22/blas/"/>
-        <content type="html">&lt;h2 id=&#34;how-to-optimize-gemm&#34;&gt;&lt;a href=&#34;#how-to-optimize-gemm&#34; class=&#34;headerlink&#34; title=&#34;how-to-optimize-gemm&#34;&gt;&lt;/a&gt;how-to-optimize-gemm&lt;/h2&gt;&lt;h2 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;h3 id=&#34;博客&#34;&gt;&lt;a href=&#34;#博客&#34; class=&#34;headerlink&#34; title=&#34;博客:&#34;&gt;&lt;/a&gt;博客:&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://www.jianshu.com/p/e01024892afb&#34;&gt;矩阵相乘在GPU上的终极优化：深度解析Maxas汇编器工作原理 - 简书 (jianshu.com)&lt;/a&gt;&lt;/p&gt;
+        <content type="html">&lt;h2 id=&#34;how-to-optimize-gemm&#34;&gt;&lt;a href=&#34;#how-to-optimize-gemm&#34; class=&#34;headerlink&#34; title=&#34;how-to-optimize-gemm&#34;&gt;&lt;/a&gt;how-to-optimize-gemm&lt;/h2&gt;&lt;h3 id=&#34;Computing-four-elements-of-C-at-a-time&#34;&gt;&lt;a href=&#34;#Computing-four-elements-of-C-at-a-time&#34; class=&#34;headerlink&#34; title=&#34;Computing four elements of C at a time&#34;&gt;&lt;/a&gt;Computing four elements of C at a time&lt;/h3&gt;&lt;h2 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;h3 id=&#34;博客&#34;&gt;&lt;a href=&#34;#博客&#34; class=&#34;headerlink&#34; title=&#34;博客:&#34;&gt;&lt;/a&gt;博客:&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://www.jianshu.com/p/e01024892afb&#34;&gt;矩阵相乘在GPU上的终极优化：深度解析Maxas汇编器工作原理 - 简书 (jianshu.com)&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.leiphone.com/category/yanxishe/Puevv3ZWxn0heoEv.html&#34;&gt;OpenBLAS项目与矩阵乘法优化 | AI 研习社 | 雷峰网 (leiphone.com)&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://jcf94.com/2021/08/28/2021-08-28-simd/&#34;&gt;矩阵乘法与 SIMD | Chenfan Blog (jcf94.com)&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://zhenhuaw.me/blog/2019/gemm-optimization.html&#34;&gt;通用矩阵乘（GEMM）优化算法 | 黎明灰烬 博客 (zhenhuaw.me)&lt;/a&gt;&lt;/p&gt;

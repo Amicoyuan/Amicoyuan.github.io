@@ -15,11 +15,11 @@
     <category term="Sort" />
     <category term="LinkList" />
     <category term="双向链表" />
-    <category term="Graph" />
+    <category term="Binary tree" />
     <category term="邻接表" />
     <category term="Vector" />
-    <category term="Binary tree" />
     <category term="BFS" />
+    <category term="Graph" />
     <category term="模拟" />
     <category term="邻接矩阵" />
     <category term="DFS" />
@@ -138,9 +138,9 @@
         <category term="Data Structure" />
         <category term="C++" />
         <category term="团体程序设计天梯赛" />
+        <category term="Binary tree" />
         <category term="邻接表" />
         <category term="Vector" />
-        <category term="Binary tree" />
         <category term="BFS" />
         <updated>2022-04-13T11:09:46.000Z</updated>
     </entry>
@@ -201,9 +201,9 @@
         <category term="Data Structure" />
         <category term="C++" />
         <category term="团体程序设计天梯赛" />
+        <category term="Binary tree" />
         <category term="邻接表" />
         <category term="Vector" />
-        <category term="Binary tree" />
         <category term="BFS" />
         <updated>2022-04-13T01:45:49.000Z</updated>
     </entry>
@@ -230,9 +230,9 @@
         <category term="C++" />
         <category term="Set" />
         <category term="团体程序设计天梯赛" />
-        <category term="Graph" />
         <category term="邻接表" />
         <category term="Vector" />
+        <category term="Graph" />
         <updated>2022-04-12T10:59:52.000Z</updated>
     </entry>
 </feed>
