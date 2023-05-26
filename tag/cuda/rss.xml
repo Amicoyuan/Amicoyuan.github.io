@@ -28,19 +28,19 @@
         <category>DFS</category>
         <category>结构体</category>
         <category>贪心</category>
-        <category>并查集</category>
         <category>Double类型相等比较</category>
+        <category>并查集</category>
         <category>Map</category>
         <category>Pair</category>
         <category>CMU</category>
         <category>CSAPP</category>
-        <category>Linux</category>
         <category>CUDA</category>
+        <category>Linux</category>
         <category>Tensorflow</category>
         <category>Machine Learning</category>
+        <category>MPI</category>
         <category>Matrix</category>
         <category>GEMM</category>
-        <category>MPI</category>
         <category>AVX2</category>
         <category>blas</category>
         <category>gemm</category>
@@ -54,15 +54,15 @@
         <category>双指针</category>
         <category>数组翻转</category>
         <category>哈希表</category>
-        <category>前缀和</category>
         <category>Travel</category>
+        <category>前缀和</category>
         <category>Mirror</category>
         <category>牛客</category>
         <category>Numactl</category>
         <category>OpenMP</category>
         <category>register</category>
-        <category>Slurm</category>
         <category>性能分析工具</category>
+        <category>Slurm</category>
         <category>gcov</category>
         <category>bool</category>
         <item>
