@@ -18,18 +18,18 @@
         <category>Sort</category>
         <category>LinkList</category>
         <category>双向链表</category>
-        <category>Graph</category>
+        <category>Binary tree</category>
         <category>邻接表</category>
         <category>Vector</category>
-        <category>Binary tree</category>
         <category>BFS</category>
+        <category>Graph</category>
         <category>模拟</category>
         <category>邻接矩阵</category>
         <category>DFS</category>
-        <category>结构体</category>
-        <category>贪心</category>
         <category>并查集</category>
+        <category>结构体</category>
         <category>Double类型相等比较</category>
+        <category>贪心</category>
         <category>Map</category>
         <category>Pair</category>
         <category>CMU</category>
@@ -218,6 +218,7 @@
 &lt;p&gt;&lt;a href=&#34;https://xingyuanjie.top/2023/05/26/gemm0002/&#34;&gt;Computing four elements at a time - Amicoyuan (xingyuanjie.top)&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://xingyuanjie.top/2023/05/26/gemm0003/&#34;&gt;Further optimizing - Amicoyuan (xingyuanjie.top)&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;Computing-a-4-x-4-block-of-C-at-a-time&#34;&gt;&lt;a href=&#34;#Computing-a-4-x-4-block-of-C-at-a-time&#34; class=&#34;headerlink&#34; title=&#34;Computing a 4 x 4 block of C at a time&#34;&gt;&lt;/a&gt;Computing a 4 x 4 block of C at a time&lt;/h3&gt;&lt;p&gt;为了有效地使用向量指令和向量寄存器，我们现在一次计算一个4 x 4的C代码块。其思想如下:作为SSE3指令集的一部分，有一些特殊的指令允许每个时钟周期执行两次“乘法累加”操作(两次乘法和两次加法)，每个时钟周期总共执行四个浮点操作。要使用这些，必须将数据放入“向量寄存器”中。有16个这样的向量寄存器，每个向量寄存器可以容纳两个双精度数。因此，我们可以在寄存器中保存32个双精度数。我们将使用其中的16个来保存C的元素，一个4 x 4的块。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://xingyuanjie.top/2023/05/31/gemm0004/&#34;&gt;Repeating the same optimizations - Amicoyuan (xingyuanjie.top)&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;h3 id=&#34;博客&#34;&gt;&lt;a href=&#34;#博客&#34; class=&#34;headerlink&#34; title=&#34;博客:&#34;&gt;&lt;/a&gt;博客:&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://www.jianshu.com/p/e01024892afb&#34;&gt;矩阵相乘在GPU上的终极优化：深度解析Maxas汇编器工作原理 - 简书 (jianshu.com)&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.leiphone.com/category/yanxishe/Puevv3ZWxn0heoEv.html&#34;&gt;OpenBLAS项目与矩阵乘法优化 | AI 研习社 | 雷峰网 (leiphone.com)&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://jcf94.com/2021/08/28/2021-08-28-simd/&#34;&gt;矩阵乘法与 SIMD | Chenfan Blog (jcf94.com)&lt;/a&gt;&lt;/p&gt;
