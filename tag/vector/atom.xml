@@ -10,11 +10,11 @@
     <category term="Find" />
     <category term="STL" />
     <category term="C++" />
-    <category term="LinkList" />
-    <category term="团体程序设计天梯赛" />
-    <category term="双向链表" />
     <category term="Set" />
+    <category term="团体程序设计天梯赛" />
     <category term="Sort" />
+    <category term="LinkList" />
+    <category term="双向链表" />
     <category term="Graph" />
     <category term="邻接表" />
     <category term="Vector" />
@@ -25,8 +25,8 @@
     <category term="DFS" />
     <category term="结构体" />
     <category term="贪心" />
-    <category term="Double类型相等比较" />
     <category term="并查集" />
+    <category term="Double类型相等比较" />
     <category term="Map" />
     <category term="Pair" />
     <category term="CMU" />
@@ -228,8 +228,8 @@
 </content>
         <category term="Data Structure" />
         <category term="C++" />
-        <category term="团体程序设计天梯赛" />
         <category term="Set" />
+        <category term="团体程序设计天梯赛" />
         <category term="Graph" />
         <category term="邻接表" />
         <category term="Vector" />
