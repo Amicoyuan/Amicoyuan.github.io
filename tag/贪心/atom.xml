@@ -25,9 +25,9 @@
     <category term="DFS" />
     <category term="结构体" />
     <category term="贪心" />
-    <category term="Map" />
     <category term="Double类型相等比较" />
     <category term="并查集" />
+    <category term="Map" />
     <category term="Pair" />
     <category term="CMU" />
     <category term="CSAPP" />
@@ -35,9 +35,9 @@
     <category term="Linux" />
     <category term="Tensorflow" />
     <category term="Machine Learning" />
+    <category term="MPI" />
     <category term="Matrix" />
     <category term="GEMM" />
-    <category term="MPI" />
     <category term="AVX2" />
     <category term="blas" />
     <category term="gemm" />
@@ -48,8 +48,8 @@
     <category term="C/C++" />
     <category term="Intel" />
     <category term="LeetCode" />
-    <category term="数组翻转" />
     <category term="双指针" />
+    <category term="数组翻转" />
     <category term="哈希表" />
     <category term="前缀和" />
     <category term="Travel" />
