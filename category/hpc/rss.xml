@@ -5,8 +5,8 @@
         <link>https://xingyuanjie.top</link>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Wed, 07 Jun 2023 13:18:10 +0800</pubDate>
-        <lastBuildDate>Wed, 07 Jun 2023 13:18:10 +0800</lastBuildDate>
+        <pubDate>Wed, 07 Jun 2023 13:41:06 +0800</pubDate>
+        <lastBuildDate>Wed, 07 Jun 2023 13:41:06 +0800</lastBuildDate>
         <category>AVX</category>
         <category>Data Structure</category>
         <category>String</category>
@@ -52,19 +52,30 @@
         <category>Intel</category>
         <category>LeetCode</category>
         <category>双指针</category>
-        <category>前缀和</category>
-        <category>哈希表</category>
-        <category>Travel</category>
         <category>数组翻转</category>
+        <category>哈希表</category>
+        <category>前缀和</category>
+        <category>Travel</category>
         <category>Mirror</category>
         <category>牛客</category>
         <category>Numactl</category>
         <category>OpenMP</category>
-        <category>Slurm</category>
         <category>register</category>
+        <category>Slurm</category>
         <category>性能分析工具</category>
         <category>gcov</category>
         <category>bool</category>
+        <item>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/06/07/gemm0006/</guid>
+            <title>Blocking to maintain performance</title>
+            <link>https://xingyuanjie.top/2023/06/07/gemm0006/</link>
+            <category>blas</category>
+            <category>gemm</category>
+            <category>gemv</category>
+            <pubDate>Wed, 07 Jun 2023 13:41:06 +0800</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;Blocking-to-maintain-performance&#34;&gt;&lt;a href=&#34;#Blocking-to-maintain-performance&#34; class=&#34;headerlink&#34; title=&#34;Blocking to maintain performance&#34;&gt;&lt;/a&gt;Blocking to maintain performance&lt;/h2&gt;&lt;p&gt;为了保持较小问题规模的性能，我们分块矩阵C(以及相应的A和B):&lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">https://xingyuanjie.top/2023/06/07/gemm0005/</guid>
             <title>Further optimizing</title>
@@ -1239,26 +1250,6 @@
 &lt;p&gt;​		 2.5.4.1 &lt;a href=&#34;https://www.openmp.org/spec-html/5.0/openmpsu33.html#x52-760002.5.4.1&#34;&gt;How the Per-Data Environment ICVs Work&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;2.5.5 &lt;a href=&#34;https://www.openmp.org/spec-html/5.0/openmpsu34.html#x53-770002.5.5&#34;&gt;ICV Override Relationships&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://www.openmp.org/spec-html/5.0/openmpse13.html#x48-660002.5&#34;&gt;Internal Control Variables (openmp.org)&lt;/a&gt;&lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">https://xingyuanjie.top/2023/02/26/openmp007/</guid>
-            <title>OpenMP线程绑定【未完结】</title>
-            <link>https://xingyuanjie.top/2023/02/26/openmp007/</link>
-            <category>OpenMP</category>
-            <pubDate>Sun, 26 Feb 2023 17:06:59 +0800</pubDate>
-            <description><![CDATA[ &lt;h2 id=&#34;OpenMP线程绑定&#34;&gt;&lt;a href=&#34;#OpenMP线程绑定&#34; class=&#34;headerlink&#34; title=&#34;OpenMP线程绑定&#34;&gt;&lt;/a&gt;OpenMP线程绑定&lt;/h2&gt;&lt;h3 id=&#34;OpenMP相关环境变量与指令&#34;&gt;&lt;a href=&#34;#OpenMP相关环境变量与指令&#34; class=&#34;headerlink&#34; title=&#34;OpenMP相关环境变量与指令&#34;&gt;&lt;/a&gt;OpenMP相关环境变量与指令&lt;/h3&gt;&lt;h4 id=&#34;OMP-PROC-BIND&#34;&gt;&lt;a href=&#34;#OMP-PROC-BIND&#34; class=&#34;headerlink&#34; title=&#34;OMP_PROC_BIND&#34;&gt;&lt;/a&gt;OMP_PROC_BIND&lt;/h4&gt;&lt;p&gt;OMP_PROC_BIND环境变量设置bind-var ICV的初始值。这个环境变量的值可以是true、false，或者用逗号分隔的master、close或spread列表。列表的值设置了对应嵌套级别的并行区域要使用的线程亲和策略。&lt;/p&gt;
-&lt;p&gt;如果环境变量设置为false，则执行环境可能会在OpenMP位置之间移动OpenMP线程，线程相关性将被禁用，并行构造上的proc_bind子句将被忽略。&lt;/p&gt;
-&lt;p&gt;否则，执行环境不应该在OpenMP位置之间移动OpenMP线程，线程亲和性被启用，并且初始线程被绑定到OpenMP位置列表中的第一个位置，先于第一个活动并行区域。&lt;/p&gt;
-&lt;p&gt;如果OMP_PROC_BIND环境变量中的值不是true、false或master、close或spread的逗号分隔列表，则程序的行为是实现定义的。如果初始线程不能绑定到OpenMP位置列表中的第一个位置，则该行为也是实现定义的。&lt;/p&gt;
-&lt;p&gt;例子：&lt;/p&gt;
-&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs shell&#34;&gt;setenv OMP_PROC_BIND false&lt;br&gt;setenv OMP_PROC_BIND &amp;quot;spread,	spread, close&amp;quot;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h3 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://harrychen.xyz/2022/05/08/numa-processor-and-cpu-binding/&#34;&gt;NUMA 处理器与进程绑定 - Harry Chen’s Blog&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.openmp.org/spec-html/5.0/openmpse52.html&#34;&gt;OMP_PROC_BIND (openmp.org)&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.openmp.org/spec-html/5.0/openmpsu36.html#x56-900002.6.2&#34;&gt;Controlling OpenMP Thread Affinity&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.openmp.org/spec-html/5.0/openmpse53.html&#34;&gt;OMP_PLACES (openmp.org)&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.intel.com/content/www/us/en/develop/documentation/cpp-compiler-developer-guide-and-reference/top/optimization-and-programming/openmp-support/openmp-library-support/thread-affinity-interface.html&#34;&gt;Thread Affinity Interface (intel.com)&lt;/a&gt;&lt;/p&gt;
  ]]></description>
         </item>
     </channel>

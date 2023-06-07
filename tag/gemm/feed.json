@@ -5,6 +5,18 @@
     "home_page_url": "https://xingyuanjie.top",
     "items": [
         {
+            "id": "https://xingyuanjie.top/2023/06/07/gemm0006/",
+            "url": "https://xingyuanjie.top/2023/06/07/gemm0006/",
+            "title": "Blocking to maintain performance",
+            "date_published": "2023-06-07T05:41:06.000Z",
+            "content_html": "<h2 id=\"Blocking-to-maintain-performance\"><a href=\"#Blocking-to-maintain-performance\" class=\"headerlink\" title=\"Blocking to maintain performance\"></a>Blocking to maintain performance</h2><p>为了保持较小问题规模的性能，我们分块矩阵C(以及相应的A和B):</p>\n",
+            "tags": [
+                "blas",
+                "gemm",
+                "gemv"
+            ]
+        },
+        {
             "id": "https://xingyuanjie.top/2023/06/07/gemm0005/",
             "url": "https://xingyuanjie.top/2023/06/07/gemm0005/",
             "title": "Further optimizing",
