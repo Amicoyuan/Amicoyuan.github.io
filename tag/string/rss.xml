@@ -21,9 +21,9 @@
         <category>Graph</category>
         <category>邻接表</category>
         <category>Vector</category>
-        <category>模拟</category>
         <category>Binary tree</category>
         <category>BFS</category>
+        <category>模拟</category>
         <category>邻接矩阵</category>
         <category>DFS</category>
         <category>结构体</category>
@@ -60,8 +60,8 @@
         <category>牛客</category>
         <category>Numactl</category>
         <category>OpenMP</category>
-        <category>Slurm</category>
         <category>register</category>
+        <category>Slurm</category>
         <category>性能分析工具</category>
         <category>gcov</category>
         <category>bool</category>

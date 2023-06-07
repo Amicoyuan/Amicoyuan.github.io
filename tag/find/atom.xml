@@ -18,9 +18,9 @@
     <category term="Graph" />
     <category term="邻接表" />
     <category term="Vector" />
-    <category term="模拟" />
     <category term="Binary tree" />
     <category term="BFS" />
+    <category term="模拟" />
     <category term="邻接矩阵" />
     <category term="DFS" />
     <category term="结构体" />
@@ -57,8 +57,8 @@
     <category term="牛客" />
     <category term="Numactl" />
     <category term="OpenMP" />
-    <category term="Slurm" />
     <category term="register" />
+    <category term="Slurm" />
     <category term="性能分析工具" />
     <category term="gcov" />
     <category term="bool" />
