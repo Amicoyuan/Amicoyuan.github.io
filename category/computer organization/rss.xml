@@ -16,11 +16,11 @@
         <category>Set</category>
         <category>团体程序设计天梯赛</category>
         <category>Sort</category>
+        <category>LinkList</category>
+        <category>双向链表</category>
         <category>Graph</category>
         <category>邻接表</category>
         <category>Vector</category>
-        <category>LinkList</category>
-        <category>双向链表</category>
         <category>Binary tree</category>
         <category>BFS</category>
         <category>模拟</category>
@@ -38,13 +38,13 @@
         <category>Linux</category>
         <category>Tensorflow</category>
         <category>Machine Learning</category>
-        <category>MPI</category>
         <category>Matrix</category>
         <category>GEMM</category>
-        <category>AVX2</category>
+        <category>MPI</category>
         <category>blas</category>
         <category>gemm</category>
         <category>gemv</category>
+        <category>AVX2</category>
         <category>dgemm</category>
         <category>Cache</category>
         <category>Blocking</category>
