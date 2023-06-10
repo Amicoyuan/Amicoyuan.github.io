@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://xingyuanjie.top</id>
+    <title>Amicoyuan • Posts by &#34;spmv&#34; tag</title>
+    <link href="https://xingyuanjie.top" />
+    <updated>2023-06-08T16:20:37.000Z</updated>
+    <category term="AVX" />
+    <category term="Data Structure" />
+    <category term="String" />
+    <category term="Find" />
+    <category term="STL" />
+    <category term="C++" />
+    <category term="Set" />
+    <category term="团体程序设计天梯赛" />
+    <category term="Sort" />
+    <category term="LinkList" />
+    <category term="双向链表" />
+    <category term="Graph" />
+    <category term="邻接表" />
+    <category term="Vector" />
+    <category term="Binary tree" />
+    <category term="BFS" />
+    <category term="模拟" />
+    <category term="邻接矩阵" />
+    <category term="DFS" />
+    <category term="结构体" />
+    <category term="贪心" />
+    <category term="Double类型相等比较" />
+    <category term="并查集" />
+    <category term="Map" />
+    <category term="Pair" />
+    <category term="CMU" />
+    <category term="CSAPP" />
+    <category term="CUDA" />
+    <category term="Linux" />
+    <category term="Tensorflow" />
+    <category term="Machine Learning" />
+    <category term="MPI" />
+    <category term="Matrix" />
+    <category term="GEMM" />
+    <category term="AVX2" />
+    <category term="blas" />
+    <category term="gemm" />
+    <category term="gemv" />
+    <category term="dgemm" />
+    <category term="Cache" />
+    <category term="Blocking" />
+    <category term="C/C++" />
+    <category term="spmv" />
+    <category term="Intel" />
+    <category term="LeetCode" />
+    <category term="双指针" />
+    <category term="数组翻转" />
+    <category term="哈希表" />
+    <category term="前缀和" />
+    <category term="Travel" />
+    <category term="Mirror" />
+    <category term="牛客" />
+    <category term="Numactl" />
+    <category term="OpenMP" />
+    <category term="register" />
+    <category term="Slurm" />
+    <category term="性能分析工具" />
+    <category term="gcov" />
+    <category term="bool" />
+    <entry>
+        <id>https://xingyuanjie.top/2023/06/09/gemm0008/</id>
+        <title>论文阅读：面向国产申威 26010 众核处理器的 SpMV 实现与优化</title>
+        <link rel="alternate" href="https://xingyuanjie.top/2023/06/09/gemm0008/"/>
+        <content type="html">&lt;h2 id=&#34;面向国产申威-26010-众核处理器的-SpMV-实现与优化&#34;&gt;&lt;a href=&#34;#面向国产申威-26010-众核处理器的-SpMV-实现与优化&#34; class=&#34;headerlink&#34; title=&#34;面向国产申威 26010 众核处理器的 SpMV 实现与优化&#34;&gt;&lt;/a&gt;面向国产申威 26010 众核处理器的 SpMV 实现与优化&lt;/h2&gt;&lt;h2 id=&#34;文章链接：&#34;&gt;&lt;a href=&#34;#文章链接：&#34; class=&#34;headerlink&#34; title=&#34;文章链接：&#34;&gt;&lt;/a&gt;文章链接：&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://kns.cnki.net/kcms2/article/abstract?v=3uoqIhG8C44YLTlOAiTRKibYlV5Vjs7iLik5jEcCI09uHa3oBxtWoDjpNvZMhBwTwYhU5_aacU5_o2Scyx5dsHMxE0wqndQa&amp;uniplatform=NZKPT&#34;&gt;面向国产申威26010众核处理器的SpMV实现与优化 - 中国知网 (cnki.net)&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;文章总结&#34;&gt;&lt;a href=&#34;#文章总结&#34; class=&#34;headerlink&#34; title=&#34;文章总结&#34;&gt;&lt;/a&gt;文章总结&lt;/h2&gt;&lt;p&gt;存储格式：CSR&lt;/p&gt;
+&lt;p&gt;数据名称定义：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;col:非零元的列号&lt;/li&gt;
+&lt;li&gt;data:非零元数值，连续存放&lt;/li&gt;
+&lt;li&gt;row_off:x数组，每行第一个元素前面的非零元素，最后一个rowoff代表总的非零元素&lt;/li&gt;
+&lt;li&gt;vec:计算向量&lt;/li&gt;
+&lt;li&gt;y:结果向量&lt;/li&gt;
+&lt;li&gt;rows:行号&lt;/li&gt;
+&lt;li&gt;srow:为当前申威处理器一个从核的 LDM 可以容纳的最多稀疏行大小&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;X动静态buffer&#34;&gt;&lt;a href=&#34;#X动静态buffer&#34; class=&#34;headerlink&#34; title=&#34;X动静态buffer&#34;&gt;&lt;/a&gt;X动静态buffer&lt;/h3&gt;&lt;p&gt;x静态buffer，初始化后一直不改变。(论文中有两种初始化方法)&lt;/p&gt;
+&lt;p&gt;x动态buffer，未命中，则用dma更新x动态buffer&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-comment&#34;&gt;//slave.c&lt;/span&gt;&lt;br&gt;LDM-&amp;gt;malloc   x_sbuffer   &lt;span class=&#34;hljs-comment&#34;&gt;//x静态buffer&lt;/span&gt;&lt;br&gt;LDM-&amp;gt;malloc   x_dbuffer   &lt;span class=&#34;hljs-comment&#34;&gt;//x动态buffer&lt;/span&gt;&lt;br&gt;sstart,send,dstart,&lt;span class=&#34;hljs-function&#34;&gt;dend&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-title&#34;&gt;dma&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(vec-&amp;gt;x_sbuffer,sstart,send)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-title&#34;&gt;dma&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(vec-&amp;gt;x_dbuffer,dstart,dend)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; srow&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; row&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;        &lt;span class=&#34;hljs-title&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(in x_sbuffer)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;            cal&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;else&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(in x_dbuffer)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;            cal&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;else&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;            &lt;span class=&#34;hljs-title&#34;&gt;update_dma&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(vec-&amp;gt;x_dbuffer,dstart,dend)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;            cal&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;     store&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h3 id=&#34;负载均衡&#34;&gt;&lt;a href=&#34;#负载均衡&#34; class=&#34;headerlink&#34; title=&#34;负载均衡&#34;&gt;&lt;/a&gt;负载均衡&lt;/h3&gt;&lt;p&gt;动静态划分&lt;/p&gt;
+&lt;p&gt;第一轮静态：每个从核分配相同的任务量即srow&lt;/p&gt;
+&lt;p&gt;后续采用动态：哪个从核先计算完，就先从任务池里面拿新的任务&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-comment&#34;&gt;//slave.c&lt;/span&gt;&lt;br&gt;eg:&lt;span class=&#34;hljs-number&#34;&gt;64&lt;/span&gt;个从核&lt;br&gt;task_num &lt;span class=&#34;hljs-comment&#34;&gt;//任务数&lt;/span&gt;&lt;br&gt;now_addr &lt;span class=&#34;hljs-comment&#34;&gt;//当前任务计算到哪里了&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;//第一轮  每个从核执行相同的任务量即srow&lt;/span&gt;&lt;br&gt;    &lt;br&gt;cal srow&lt;br&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;//其余任务保存到任务池，用锁保护，实现互斥操作&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;//任务池，当task_num为0时计算完毕&lt;/span&gt;&lt;br&gt;mutex = &lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-built_in&#34;&gt;P&lt;/span&gt;(mutex)&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;//互斥区&lt;/span&gt;&lt;br&gt;task_num&lt;br&gt;now_addr&lt;br&gt;&lt;span class=&#34;hljs-built_in&#34;&gt;V&lt;/span&gt;(mutex)&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;//取now_addr&lt;/span&gt;&lt;br&gt;cal  srow&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;//随后 继续loop，直到task_num为0&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+</content>
+        <category term="blas" />
+        <category term="spmv" />
+        <updated>2023-06-08T16:20:37.000Z</updated>
+    </entry>
+</feed>

@@ -49,6 +49,7 @@
         <category>Cache</category>
         <category>Blocking</category>
         <category>C/C++</category>
+        <category>spmv</category>
         <category>Intel</category>
         <category>LeetCode</category>
         <category>双指针</category>

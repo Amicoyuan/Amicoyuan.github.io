@@ -46,6 +46,7 @@
     <category term="Cache" />
     <category term="Blocking" />
     <category term="C/C++" />
+    <category term="spmv" />
     <category term="Intel" />
     <category term="LeetCode" />
     <category term="双指针" />
