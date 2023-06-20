@@ -9,13 +9,13 @@
         <lastBuildDate>Mon, 13 Mar 2023 14:37:12 +0800</lastBuildDate>
         <category>AVX</category>
         <category>Data Structure</category>
-        <category>String</category>
-        <category>Find</category>
-        <category>STL</category>
-        <category>C++</category>
         <category>Set</category>
         <category>团体程序设计天梯赛</category>
+        <category>STL</category>
+        <category>C++</category>
         <category>Sort</category>
+        <category>String</category>
+        <category>Find</category>
         <category>LinkList</category>
         <category>双向链表</category>
         <category>Graph</category>
@@ -56,7 +56,6 @@
         <category>数组翻转</category>
         <category>哈希表</category>
         <category>前缀和</category>
-        <category>Travel</category>
         <category>Mirror</category>
         <category>牛客</category>
         <category>Numactl</category>
@@ -64,8 +63,8 @@
         <category>register</category>
         <category>Slurm</category>
         <category>性能分析工具</category>
-        <category>gcov</category>
         <category>bool</category>
+        <category>gcov</category>
         <item>
             <guid isPermalink="true">https://xingyuanjie.top/2023/03/13/ML003/</guid>
             <title>线性回归的梯度下降</title>

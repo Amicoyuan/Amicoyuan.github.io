@@ -9,13 +9,13 @@
         <lastBuildDate>Sun, 12 Jun 2022 15:11:29 +0800</lastBuildDate>
         <category>AVX</category>
         <category>Data Structure</category>
-        <category>String</category>
-        <category>Find</category>
-        <category>STL</category>
-        <category>C++</category>
         <category>Set</category>
         <category>团体程序设计天梯赛</category>
+        <category>STL</category>
+        <category>C++</category>
         <category>Sort</category>
+        <category>String</category>
+        <category>Find</category>
         <category>LinkList</category>
         <category>双向链表</category>
         <category>Graph</category>
@@ -56,7 +56,6 @@
         <category>数组翻转</category>
         <category>哈希表</category>
         <category>前缀和</category>
-        <category>Travel</category>
         <category>Mirror</category>
         <category>牛客</category>
         <category>Numactl</category>
@@ -64,8 +63,8 @@
         <category>register</category>
         <category>Slurm</category>
         <category>性能分析工具</category>
-        <category>gcov</category>
         <category>bool</category>
+        <category>gcov</category>
         <item>
             <guid isPermalink="true">https://xingyuanjie.top/2022/06/12/MPI%E5%AD%A6%E4%B9%A0(%E4%B8%80)-%E7%AE%80%E5%8D%95%E7%9A%84%E5%8F%91%E9%80%81%E6%8E%A5%E6%94%B6/</guid>
             <title>MPI学习(一)-简单的发送接收</title>

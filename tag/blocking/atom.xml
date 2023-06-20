@@ -6,13 +6,13 @@
     <updated>2023-02-26T10:02:29.000Z</updated>
     <category term="AVX" />
     <category term="Data Structure" />
-    <category term="String" />
-    <category term="Find" />
-    <category term="STL" />
-    <category term="C++" />
     <category term="Set" />
     <category term="团体程序设计天梯赛" />
+    <category term="STL" />
+    <category term="C++" />
     <category term="Sort" />
+    <category term="String" />
+    <category term="Find" />
     <category term="LinkList" />
     <category term="双向链表" />
     <category term="Graph" />
@@ -53,7 +53,6 @@
     <category term="数组翻转" />
     <category term="哈希表" />
     <category term="前缀和" />
-    <category term="Travel" />
     <category term="Mirror" />
     <category term="牛客" />
     <category term="Numactl" />
@@ -61,8 +60,8 @@
     <category term="register" />
     <category term="Slurm" />
     <category term="性能分析工具" />
-    <category term="gcov" />
     <category term="bool" />
+    <category term="gcov" />
     <entry>
         <id>https://xingyuanjie.top/2023/02/26/cache001/</id>
         <title>Cache Blocking Techniques【个人翻译】</title>
