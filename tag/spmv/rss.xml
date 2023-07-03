@@ -5,22 +5,22 @@
         <link>https://xingyuanjie.top</link>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Fri, 09 Jun 2023 00:20:37 +0800</pubDate>
-        <lastBuildDate>Fri, 09 Jun 2023 00:20:37 +0800</lastBuildDate>
+        <pubDate>Mon, 03 Jul 2023 21:56:03 +0800</pubDate>
+        <lastBuildDate>Mon, 03 Jul 2023 21:56:03 +0800</lastBuildDate>
         <category>AVX</category>
         <category>Data Structure</category>
-        <category>Set</category>
-        <category>团体程序设计天梯赛</category>
-        <category>STL</category>
-        <category>C++</category>
-        <category>Sort</category>
         <category>String</category>
         <category>Find</category>
+        <category>STL</category>
+        <category>C++</category>
+        <category>Set</category>
+        <category>团体程序设计天梯赛</category>
+        <category>Sort</category>
+        <category>LinkList</category>
+        <category>双向链表</category>
         <category>Graph</category>
         <category>邻接表</category>
         <category>Vector</category>
-        <category>LinkList</category>
-        <category>双向链表</category>
         <category>Binary tree</category>
         <category>BFS</category>
         <category>模拟</category>
@@ -28,8 +28,8 @@
         <category>DFS</category>
         <category>结构体</category>
         <category>贪心</category>
-        <category>Double类型相等比较</category>
         <category>并查集</category>
+        <category>Double类型相等比较</category>
         <category>Map</category>
         <category>Pair</category>
         <category>CMU</category>
@@ -38,14 +38,14 @@
         <category>Linux</category>
         <category>Tensorflow</category>
         <category>Machine Learning</category>
+        <category>MPI</category>
         <category>Matrix</category>
         <category>GEMM</category>
-        <category>MPI</category>
         <category>AVX2</category>
-        <category>dgemm</category>
         <category>blas</category>
         <category>gemm</category>
         <category>gemv</category>
+        <category>dgemm</category>
         <category>Cache</category>
         <category>Blocking</category>
         <category>C/C++</category>
@@ -58,13 +58,48 @@
         <category>前缀和</category>
         <category>Mirror</category>
         <category>牛客</category>
-        <category>Numactl</category>
         <category>OpenMP</category>
+        <category>Numactl</category>
         <category>register</category>
         <category>Slurm</category>
         <category>性能分析工具</category>
         <category>gcov</category>
         <category>bool</category>
+        <item>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/07/03/gemm0009/</guid>
+            <title>论文阅读：稀疏矩阵向量乘法在申威众核架构上的性能优化</title>
+            <link>https://xingyuanjie.top/2023/07/03/gemm0009/</link>
+            <category>blas</category>
+            <category>spmv</category>
+            <pubDate>Mon, 03 Jul 2023 21:56:03 +0800</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;稀疏矩阵向量乘法在申威众核架构上的性能优化&#34;&gt;&lt;a href=&#34;#稀疏矩阵向量乘法在申威众核架构上的性能优化&#34; class=&#34;headerlink&#34; title=&#34;稀疏矩阵向量乘法在申威众核架构上的性能优化&#34;&gt;&lt;/a&gt;稀疏矩阵向量乘法在申威众核架构上的性能优化&lt;/h2&gt;&lt;h2 id=&#34;文章链接：&#34;&gt;&lt;a href=&#34;#文章链接：&#34; class=&#34;headerlink&#34; title=&#34;文章链接：&#34;&gt;&lt;/a&gt;文章链接：&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://kns.cnki.net/kcms2/article/abstract?v=3uoqIhG8C44YLTlOAiTRKibYlV5Vjs7i8oRR1PAr7RxjuAJk4dHXos_BuYfGFXVp2oi-VeHUWWPMdimPFvuCr6UTXzh1QasE&amp;uniplatform=NZKPT&#34;&gt;稀疏矩阵向量乘法在申威众核架构上的性能优化 - 中国知网 (cnki.net)&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;文章总结&#34;&gt;&lt;a href=&#34;#文章总结&#34; class=&#34;headerlink&#34; title=&#34;文章总结&#34;&gt;&lt;/a&gt;文章总结&lt;/h2&gt;&lt;h3 id=&#34;固定划分方法&#34;&gt;&lt;a href=&#34;#固定划分方法&#34; class=&#34;headerlink&#34; title=&#34;固定划分方法&#34;&gt;&lt;/a&gt;固定划分方法&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;所有计算完再写回&lt;/li&gt;
+&lt;li&gt;子矩阵(任务)-&amp;gt;子矩阵小块(核心计算)&lt;/li&gt;
+&lt;li&gt;将子矩阵小块中的非零元存储在一起，以适应申威处理器上的DMA操作。(Packing)&lt;/li&gt;
+&lt;li&gt;核心：寄存器通信-&amp;gt;RMA&lt;/li&gt;
+&lt;li&gt;根据LDM大小提前计算，充分利用LDM空间，换句话说就是保证计算所需都在LDM中&lt;/li&gt;
+&lt;li&gt;加载冗余X，避免DMA隔断&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;一维负载均衡划分方法&#34;&gt;&lt;a href=&#34;#一维负载均衡划分方法&#34; class=&#34;headerlink&#34; title=&#34;一维负载均衡划分方法&#34;&gt;&lt;/a&gt;一维负载均衡划分方法&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;尽量使从核处理非零元数量相当&lt;/li&gt;
+&lt;li&gt;4个层次：原矩阵-&amp;gt;矩阵带-&amp;gt;子矩阵-&amp;gt;小块&lt;/li&gt;
+&lt;li&gt;交替分配矩阵带给从核行&lt;/li&gt;
+&lt;li&gt;核心计算依然是子矩阵小块，同固定划分方法&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;二维负载均衡划分方法&#34;&gt;&lt;a href=&#34;#二维负载均衡划分方法&#34; class=&#34;headerlink&#34; title=&#34;二维负载均衡划分方法&#34;&gt;&lt;/a&gt;二维负载均衡划分方法&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;矩阵带分配采取贪心的方法，尽可能保证不同行之间的负载均衡&lt;/li&gt;
+&lt;li&gt;解决一维负载均衡方法带来的细粒度同步问题&lt;/li&gt;
+&lt;li&gt;非零元过少的矩阵带，交给一个从核完成，而不再均分给同行上的几个从核&lt;/li&gt;
+&lt;li&gt;一维和二维主要解决预处理，计算还是固定划分中的子矩阵小块&lt;/li&gt;
+&lt;li&gt;排序-&amp;gt;根据矩阵带非零元数量从大到小排序(逻辑排序)&lt;/li&gt;
+&lt;li&gt;Select函数会在所有ROWS行的从核中，选择出目前非零元数量最少的一行，并将当前的矩阵带i分配给它&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;输入：tiles,nnz_tile，ROWS&lt;br&gt;输出：set&lt;br&gt;nnz_set&amp;lt;&lt;span class=&#34;hljs-number&#34;&gt;-0&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; i = &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt; to tiles - &lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;hljs-keyword&#34;&gt;do&lt;/span&gt;&lt;br&gt;    Select id &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt; nnz_set[id] is minimal   &lt;span class=&#34;hljs-comment&#34;&gt;//注意：这里是选从核行，不是矩阵带&lt;/span&gt;&lt;br&gt;    nnz_set[id] += nnz_tiles[i]&lt;br&gt;    set[id] =  set[id]U&amp;#123;i&amp;#125;   &lt;span class=&#34;hljs-comment&#34;&gt;//任务分配&lt;/span&gt;&lt;br&gt;end &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; &lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;这里注意，我们再固定划分那里解决了数据局部性差等问题，之后的一二维划分，都是在做任务分配，核心计算子矩阵小块一直未改变&lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">https://xingyuanjie.top/2023/06/09/gemm0008/</guid>
             <title>论文阅读：面向国产申威 26010 众核处理器的 SpMV 实现与优化</title>

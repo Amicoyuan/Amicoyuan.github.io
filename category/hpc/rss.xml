@@ -5,22 +5,22 @@
         <link>https://xingyuanjie.top</link>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Fri, 09 Jun 2023 00:20:37 +0800</pubDate>
-        <lastBuildDate>Fri, 09 Jun 2023 00:20:37 +0800</lastBuildDate>
+        <pubDate>Mon, 03 Jul 2023 21:56:03 +0800</pubDate>
+        <lastBuildDate>Mon, 03 Jul 2023 21:56:03 +0800</lastBuildDate>
         <category>AVX</category>
         <category>Data Structure</category>
-        <category>Set</category>
-        <category>团体程序设计天梯赛</category>
-        <category>STL</category>
-        <category>C++</category>
-        <category>Sort</category>
         <category>String</category>
         <category>Find</category>
+        <category>STL</category>
+        <category>C++</category>
+        <category>Set</category>
+        <category>团体程序设计天梯赛</category>
+        <category>Sort</category>
+        <category>LinkList</category>
+        <category>双向链表</category>
         <category>Graph</category>
         <category>邻接表</category>
         <category>Vector</category>
-        <category>LinkList</category>
-        <category>双向链表</category>
         <category>Binary tree</category>
         <category>BFS</category>
         <category>模拟</category>
@@ -28,8 +28,8 @@
         <category>DFS</category>
         <category>结构体</category>
         <category>贪心</category>
-        <category>Double类型相等比较</category>
         <category>并查集</category>
+        <category>Double类型相等比较</category>
         <category>Map</category>
         <category>Pair</category>
         <category>CMU</category>
@@ -38,14 +38,14 @@
         <category>Linux</category>
         <category>Tensorflow</category>
         <category>Machine Learning</category>
+        <category>MPI</category>
         <category>Matrix</category>
         <category>GEMM</category>
-        <category>MPI</category>
         <category>AVX2</category>
-        <category>dgemm</category>
         <category>blas</category>
         <category>gemm</category>
         <category>gemv</category>
+        <category>dgemm</category>
         <category>Cache</category>
         <category>Blocking</category>
         <category>C/C++</category>
@@ -58,13 +58,48 @@
         <category>前缀和</category>
         <category>Mirror</category>
         <category>牛客</category>
-        <category>Numactl</category>
         <category>OpenMP</category>
+        <category>Numactl</category>
         <category>register</category>
         <category>Slurm</category>
         <category>性能分析工具</category>
         <category>gcov</category>
         <category>bool</category>
+        <item>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/07/03/gemm0009/</guid>
+            <title>论文阅读：稀疏矩阵向量乘法在申威众核架构上的性能优化</title>
+            <link>https://xingyuanjie.top/2023/07/03/gemm0009/</link>
+            <category>blas</category>
+            <category>spmv</category>
+            <pubDate>Mon, 03 Jul 2023 21:56:03 +0800</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;稀疏矩阵向量乘法在申威众核架构上的性能优化&#34;&gt;&lt;a href=&#34;#稀疏矩阵向量乘法在申威众核架构上的性能优化&#34; class=&#34;headerlink&#34; title=&#34;稀疏矩阵向量乘法在申威众核架构上的性能优化&#34;&gt;&lt;/a&gt;稀疏矩阵向量乘法在申威众核架构上的性能优化&lt;/h2&gt;&lt;h2 id=&#34;文章链接：&#34;&gt;&lt;a href=&#34;#文章链接：&#34; class=&#34;headerlink&#34; title=&#34;文章链接：&#34;&gt;&lt;/a&gt;文章链接：&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://kns.cnki.net/kcms2/article/abstract?v=3uoqIhG8C44YLTlOAiTRKibYlV5Vjs7i8oRR1PAr7RxjuAJk4dHXos_BuYfGFXVp2oi-VeHUWWPMdimPFvuCr6UTXzh1QasE&amp;uniplatform=NZKPT&#34;&gt;稀疏矩阵向量乘法在申威众核架构上的性能优化 - 中国知网 (cnki.net)&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;文章总结&#34;&gt;&lt;a href=&#34;#文章总结&#34; class=&#34;headerlink&#34; title=&#34;文章总结&#34;&gt;&lt;/a&gt;文章总结&lt;/h2&gt;&lt;h3 id=&#34;固定划分方法&#34;&gt;&lt;a href=&#34;#固定划分方法&#34; class=&#34;headerlink&#34; title=&#34;固定划分方法&#34;&gt;&lt;/a&gt;固定划分方法&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;所有计算完再写回&lt;/li&gt;
+&lt;li&gt;子矩阵(任务)-&amp;gt;子矩阵小块(核心计算)&lt;/li&gt;
+&lt;li&gt;将子矩阵小块中的非零元存储在一起，以适应申威处理器上的DMA操作。(Packing)&lt;/li&gt;
+&lt;li&gt;核心：寄存器通信-&amp;gt;RMA&lt;/li&gt;
+&lt;li&gt;根据LDM大小提前计算，充分利用LDM空间，换句话说就是保证计算所需都在LDM中&lt;/li&gt;
+&lt;li&gt;加载冗余X，避免DMA隔断&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;一维负载均衡划分方法&#34;&gt;&lt;a href=&#34;#一维负载均衡划分方法&#34; class=&#34;headerlink&#34; title=&#34;一维负载均衡划分方法&#34;&gt;&lt;/a&gt;一维负载均衡划分方法&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;尽量使从核处理非零元数量相当&lt;/li&gt;
+&lt;li&gt;4个层次：原矩阵-&amp;gt;矩阵带-&amp;gt;子矩阵-&amp;gt;小块&lt;/li&gt;
+&lt;li&gt;交替分配矩阵带给从核行&lt;/li&gt;
+&lt;li&gt;核心计算依然是子矩阵小块，同固定划分方法&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;二维负载均衡划分方法&#34;&gt;&lt;a href=&#34;#二维负载均衡划分方法&#34; class=&#34;headerlink&#34; title=&#34;二维负载均衡划分方法&#34;&gt;&lt;/a&gt;二维负载均衡划分方法&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;矩阵带分配采取贪心的方法，尽可能保证不同行之间的负载均衡&lt;/li&gt;
+&lt;li&gt;解决一维负载均衡方法带来的细粒度同步问题&lt;/li&gt;
+&lt;li&gt;非零元过少的矩阵带，交给一个从核完成，而不再均分给同行上的几个从核&lt;/li&gt;
+&lt;li&gt;一维和二维主要解决预处理，计算还是固定划分中的子矩阵小块&lt;/li&gt;
+&lt;li&gt;排序-&amp;gt;根据矩阵带非零元数量从大到小排序(逻辑排序)&lt;/li&gt;
+&lt;li&gt;Select函数会在所有ROWS行的从核中，选择出目前非零元数量最少的一行，并将当前的矩阵带i分配给它&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;输入：tiles,nnz_tile，ROWS&lt;br&gt;输出：set&lt;br&gt;nnz_set&amp;lt;&lt;span class=&#34;hljs-number&#34;&gt;-0&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; i = &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt; to tiles - &lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;hljs-keyword&#34;&gt;do&lt;/span&gt;&lt;br&gt;    Select id &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt; nnz_set[id] is minimal   &lt;span class=&#34;hljs-comment&#34;&gt;//注意：这里是选从核行，不是矩阵带&lt;/span&gt;&lt;br&gt;    nnz_set[id] += nnz_tiles[i]&lt;br&gt;    set[id] =  set[id]U&amp;#123;i&amp;#125;   &lt;span class=&#34;hljs-comment&#34;&gt;//任务分配&lt;/span&gt;&lt;br&gt;end &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; &lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;这里注意，我们再固定划分那里解决了数据局部性差等问题，之后的一二维划分，都是在做任务分配，核心计算子矩阵小块一直未改变&lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">https://xingyuanjie.top/2023/06/09/gemm0008/</guid>
             <title>论文阅读：面向国产申威 26010 众核处理器的 SpMV 实现与优化</title>
@@ -1259,29 +1294,6 @@
 &lt;p&gt;之前所有的核函数调用完成后开始拷贝数据。当拷贝完成后，控制权立刻返回给主机端。&lt;/p&gt;
 &lt;h3 id=&#34;异步行为&#34;&gt;&lt;a href=&#34;#异步行为&#34; class=&#34;headerlink&#34; title=&#34;异步行为&#34;&gt;&lt;/a&gt;异步行为&lt;/h3&gt;&lt;p&gt;不同于C语言的函数调用，所有的CUDA核函数的启动都是异步的。CUDA内核调用完成后，控制权立刻返回给CPU。&lt;/p&gt;
 &lt;h2 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;p&gt;CUDA C编程权威指南 程润伟，Max Grossman(美)，Ty Mckercher &lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">https://xingyuanjie.top/2023/02/26/intel001/</guid>
-            <title>unroll_and_jam/nounroll_and_jam</title>
-            <link>https://xingyuanjie.top/2023/02/26/intel001/</link>
-            <category>C++</category>
-            <category>Intel</category>
-            <pubDate>Sun, 26 Feb 2023 19:12:51 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;unroll-and-jam-x2F-nounroll-and-jam&#34;&gt;&lt;a href=&#34;#unroll-and-jam-x2F-nounroll-and-jam&#34; class=&#34;headerlink&#34; title=&#34;unroll_and_jam&amp;#x2F;nounroll_and_jam&#34;&gt;&lt;/a&gt;unroll_and_jam&amp;#x2F;nounroll_and_jam&lt;/h1&gt;&lt;p&gt;启用或禁用循环展开和阻塞。这些指令只能应用于迭代for循环。&lt;/p&gt;
-&lt;h2 id=&#34;Syntax&#34;&gt;&lt;a href=&#34;#Syntax&#34; class=&#34;headerlink&#34; title=&#34;Syntax&#34;&gt;&lt;/a&gt;Syntax&lt;/h2&gt;&lt;p&gt;#pragma unroll_and_jam	#pragma unroll_and_jam (n)	#pragma nounroll_and_jam&lt;/p&gt;
-&lt;h2 id=&#34;Arguments&#34;&gt;&lt;a href=&#34;#Arguments&#34; class=&#34;headerlink&#34; title=&#34;Arguments&#34;&gt;&lt;/a&gt;Arguments&lt;/h2&gt;&lt;p&gt;展开因子，表示展开循环的次数;必须是0到255之间的整数常数&lt;/p&gt;
-&lt;h2 id=&#34;Description&#34;&gt;&lt;a href=&#34;#Description&#34; class=&#34;headerlink&#34; title=&#34;Description&#34;&gt;&lt;/a&gt;Description&lt;/h2&gt;&lt;p&gt;unroll_and_jam指令部分展开套中比最内层循环更高的一个或多个循环，并将结果循环融合&amp;#x2F;阻塞回一起。这种转换允许在循环中进行更多的重用。&lt;/p&gt;
-&lt;p&gt;此pragma对最内层循环无效。确保紧随其后的循环不是编译器发起的交换完成后的最内层循环。&lt;/p&gt;
-&lt;p&gt;指定此pragma是向编译器提示展开和阻塞序列是合法且有利可图的。编译器会在任何可能的情况下启用这种转换。&lt;/p&gt;
-&lt;p&gt;对于它影响的每个for循环，unroll_and_jam指令必须在for语句之前。如果指定了n，优化器将展开循环n次。如果n被省略或超出允许的范围，优化器将分配展开循环的次数。编译器通过比较n和循环计数生成正确的代码。&lt;/p&gt;
-&lt;p&gt;只有在设置了编译器选项O3时，才支持此pragma。unroll_and_jam指令将覆盖从命令行展开循环的任何设置。&lt;/p&gt;
-&lt;p&gt;当展开循环会增加寄存器压力和代码大小时，可能需要防止展开嵌套循环或不完美的嵌套循环。在这种情况下，使用nounroll_and_jam编译指令。nounroll_and_jam pragma提示编译器不要展开指定的循环。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Examples&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Use the unroll_and_jam pragma:&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; a[&lt;span class=&#34;hljs-number&#34;&gt;10&lt;/span&gt;][&lt;span class=&#34;hljs-number&#34;&gt;10&lt;/span&gt;]; &lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; b[&lt;span class=&#34;hljs-number&#34;&gt;10&lt;/span&gt;][&lt;span class=&#34;hljs-number&#34;&gt;10&lt;/span&gt;]; &lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; c[&lt;span class=&#34;hljs-number&#34;&gt;10&lt;/span&gt;][&lt;span class=&#34;hljs-number&#34;&gt;10&lt;/span&gt;]; &lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; d[&lt;span class=&#34;hljs-number&#34;&gt;10&lt;/span&gt;][&lt;span class=&#34;hljs-number&#34;&gt;10&lt;/span&gt;]; &lt;br&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;unroll&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; n)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i,j,k;&lt;br&gt;    &lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;pragma&lt;/span&gt; unroll_and_jam (6)&lt;/span&gt;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; (i = &lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;; i &amp;lt; n; i++) &amp;#123;&lt;br&gt;       &lt;span class=&#34;hljs-meta&#34;&gt;#&lt;span class=&#34;hljs-meta-keyword&#34;&gt;pragma&lt;/span&gt; unroll_and_jam (6)&lt;/span&gt;&lt;br&gt;       &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; (j = &lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;; j &amp;lt; n; j++) &amp;#123;&lt;br&gt;          &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; (k = &lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;; k &amp;lt; n; k++)&amp;#123;&lt;br&gt;            a[i][j] += b[i][k]*c[k][j];&lt;br&gt;            &amp;#125;&lt;br&gt;       &amp;#125;&lt;br&gt;    &amp;#125; &lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h2 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://www.intel.com/content/www/us/en/develop/documentation/cpp-compiler-developer-guide-and-reference/top/compiler-reference/pragmas/intel-specific-pragma-reference/unroll-and-jam-nounroll-and-jam.html&#34;&gt;unroll_and_jam nounroll_and_jam (intel.com)&lt;/a&gt;&lt;/p&gt;
  ]]></description>
         </item>
     </channel>

@@ -5,6 +5,17 @@
     "home_page_url": "https://xingyuanjie.top",
     "items": [
         {
+            "id": "https://xingyuanjie.top/2023/07/03/gemm0009/",
+            "url": "https://xingyuanjie.top/2023/07/03/gemm0009/",
+            "title": "论文阅读：稀疏矩阵向量乘法在申威众核架构上的性能优化",
+            "date_published": "2023-07-03T13:56:03.000Z",
+            "content_html": "<h2 id=\"稀疏矩阵向量乘法在申威众核架构上的性能优化\"><a href=\"#稀疏矩阵向量乘法在申威众核架构上的性能优化\" class=\"headerlink\" title=\"稀疏矩阵向量乘法在申威众核架构上的性能优化\"></a>稀疏矩阵向量乘法在申威众核架构上的性能优化</h2><h2 id=\"文章链接：\"><a href=\"#文章链接：\" class=\"headerlink\" title=\"文章链接：\"></a>文章链接：</h2><p><a href=\"https://kns.cnki.net/kcms2/article/abstract?v=3uoqIhG8C44YLTlOAiTRKibYlV5Vjs7i8oRR1PAr7RxjuAJk4dHXos_BuYfGFXVp2oi-VeHUWWPMdimPFvuCr6UTXzh1QasE&uniplatform=NZKPT\">稀疏矩阵向量乘法在申威众核架构上的性能优化 - 中国知网 (cnki.net)</a></p>\n<h2 id=\"文章总结\"><a href=\"#文章总结\" class=\"headerlink\" title=\"文章总结\"></a>文章总结</h2><h3 id=\"固定划分方法\"><a href=\"#固定划分方法\" class=\"headerlink\" title=\"固定划分方法\"></a>固定划分方法</h3><ol>\n<li>所有计算完再写回</li>\n<li>子矩阵(任务)-&gt;子矩阵小块(核心计算)</li>\n<li>将子矩阵小块中的非零元存储在一起，以适应申威处理器上的DMA操作。(Packing)</li>\n<li>核心：寄存器通信-&gt;RMA</li>\n<li>根据LDM大小提前计算，充分利用LDM空间，换句话说就是保证计算所需都在LDM中</li>\n<li>加载冗余X，避免DMA隔断</li>\n</ol>\n<h3 id=\"一维负载均衡划分方法\"><a href=\"#一维负载均衡划分方法\" class=\"headerlink\" title=\"一维负载均衡划分方法\"></a>一维负载均衡划分方法</h3><ol>\n<li>尽量使从核处理非零元数量相当</li>\n<li>4个层次：原矩阵-&gt;矩阵带-&gt;子矩阵-&gt;小块</li>\n<li>交替分配矩阵带给从核行</li>\n<li>核心计算依然是子矩阵小块，同固定划分方法</li>\n</ol>\n<h3 id=\"二维负载均衡划分方法\"><a href=\"#二维负载均衡划分方法\" class=\"headerlink\" title=\"二维负载均衡划分方法\"></a>二维负载均衡划分方法</h3><ol>\n<li>矩阵带分配采取贪心的方法，尽可能保证不同行之间的负载均衡</li>\n<li>解决一维负载均衡方法带来的细粒度同步问题</li>\n<li>非零元过少的矩阵带，交给一个从核完成，而不再均分给同行上的几个从核</li>\n<li>一维和二维主要解决预处理，计算还是固定划分中的子矩阵小块</li>\n<li>排序-&gt;根据矩阵带非零元数量从大到小排序(逻辑排序)</li>\n<li>Select函数会在所有ROWS行的从核中，选择出目前非零元数量最少的一行，并将当前的矩阵带i分配给它</li>\n</ol>\n<figure class=\"highlight c++\"><table><tr><td class=\"gutter hljs\"><div class=\"hljs code-wrapper\"><pre><span class=\"line\">1</span><br><span class=\"line\">2</span><br><span class=\"line\">3</span><br><span class=\"line\">4</span><br><span class=\"line\">5</span><br><span class=\"line\">6</span><br><span class=\"line\">7</span><br><span class=\"line\">8</span><br></pre></div></td><td class=\"code\"><div class=\"hljs code-wrapper\"><pre><code class=\"hljs c++\">输入：tiles,nnz_tile，ROWS<br>输出：set<br>nnz_set&lt;<span class=\"hljs-number\">-0</span><br><span class=\"hljs-keyword\">for</span> i = <span class=\"hljs-number\">0</span> to tiles - <span class=\"hljs-number\">1</span> <span class=\"hljs-keyword\">do</span><br>    Select id <span class=\"hljs-keyword\">if</span> nnz_set[id] is minimal   <span class=\"hljs-comment\">//注意：这里是选从核行，不是矩阵带</span><br>    nnz_set[id] += nnz_tiles[i]<br>    set[id] =  set[id]U&#123;i&#125;   <span class=\"hljs-comment\">//任务分配</span><br>end <span class=\"hljs-keyword\">for</span> <br></code></pre></div></td></tr></table></figure>\n\n<p>这里注意，我们再固定划分那里解决了数据局部性差等问题，之后的一二维划分，都是在做任务分配，核心计算子矩阵小块一直未改变</p>\n",
+            "tags": [
+                "blas",
+                "spmv"
+            ]
+        },
+        {
             "id": "https://xingyuanjie.top/2023/06/09/gemm0008/",
             "url": "https://xingyuanjie.top/2023/06/09/gemm0008/",
             "title": "论文阅读：面向国产申威 26010 众核处理器的 SpMV 实现与优化",
