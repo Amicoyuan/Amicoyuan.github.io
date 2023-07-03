@@ -9,13 +9,13 @@
         <lastBuildDate>Wed, 07 Jun 2023 13:47:39 +0800</lastBuildDate>
         <category>AVX</category>
         <category>Data Structure</category>
-        <category>Set</category>
-        <category>团体程序设计天梯赛</category>
-        <category>STL</category>
-        <category>C++</category>
-        <category>Sort</category>
         <category>String</category>
         <category>Find</category>
+        <category>STL</category>
+        <category>C++</category>
+        <category>Set</category>
+        <category>团体程序设计天梯赛</category>
+        <category>Sort</category>
         <category>LinkList</category>
         <category>双向链表</category>
         <category>Graph</category>
@@ -28,8 +28,8 @@
         <category>DFS</category>
         <category>结构体</category>
         <category>贪心</category>
-        <category>Double类型相等比较</category>
         <category>并查集</category>
+        <category>Double类型相等比较</category>
         <category>Map</category>
         <category>Pair</category>
         <category>CMU</category>
@@ -50,12 +50,12 @@
         <category>Blocking</category>
         <category>C/C++</category>
         <category>spmv</category>
+        <category>Intel</category>
         <category>LeetCode</category>
         <category>双指针</category>
-        <category>Intel</category>
-        <category>数组翻转</category>
-        <category>前缀和</category>
         <category>哈希表</category>
+        <category>前缀和</category>
+        <category>数组翻转</category>
         <category>Mirror</category>
         <category>牛客</category>
         <category>Numactl</category>
@@ -319,6 +319,7 @@
 &lt;h3 id=&#34;Acknowledgement&#34;&gt;&lt;a href=&#34;#Acknowledgement&#34; class=&#34;headerlink&#34; title=&#34;Acknowledgement&#34;&gt;&lt;/a&gt;Acknowledgement&lt;/h3&gt;&lt;p&gt;This material was partially sponsored by grants from the National Science Foundation (Awards ACI-1148125&amp;#x2F;1340293).&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Any opinions, findings and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation (NSF).&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id=&#34;论文阅读&#34;&gt;&lt;a href=&#34;#论文阅读&#34; class=&#34;headerlink&#34; title=&#34;论文阅读&#34;&gt;&lt;/a&gt;论文阅读&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://xingyuanjie.top/2023/06/09/gemm0008/&#34;&gt;论文阅读：面向国产申威 26010 众核处理器的 SpMV 实现与优化 - Amicoyuan (xingyuanjie.top)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://xingyuanjie.top/2023/07/03/gemm0009/&#34;&gt;论文阅读：稀疏矩阵向量乘法在申威众核架构上的性能优化 - Amicoyuan (xingyuanjie.top)&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;h3 id=&#34;博客&#34;&gt;&lt;a href=&#34;#博客&#34; class=&#34;headerlink&#34; title=&#34;博客:&#34;&gt;&lt;/a&gt;博客:&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://www.jianshu.com/p/e01024892afb&#34;&gt;矩阵相乘在GPU上的终极优化：深度解析Maxas汇编器工作原理 - 简书 (jianshu.com)&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.leiphone.com/category/yanxishe/Puevv3ZWxn0heoEv.html&#34;&gt;OpenBLAS项目与矩阵乘法优化 | AI 研习社 | 雷峰网 (leiphone.com)&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://jcf94.com/2021/08/28/2021-08-28-simd/&#34;&gt;矩阵乘法与 SIMD | Chenfan Blog (jcf94.com)&lt;/a&gt;&lt;/p&gt;

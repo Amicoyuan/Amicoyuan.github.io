@@ -6,13 +6,13 @@
     <updated>2023-07-03T13:56:03.000Z</updated>
     <category term="AVX" />
     <category term="Data Structure" />
-    <category term="Set" />
-    <category term="团体程序设计天梯赛" />
-    <category term="STL" />
-    <category term="C++" />
-    <category term="Sort" />
     <category term="String" />
     <category term="Find" />
+    <category term="STL" />
+    <category term="C++" />
+    <category term="Set" />
+    <category term="团体程序设计天梯赛" />
+    <category term="Sort" />
     <category term="LinkList" />
     <category term="双向链表" />
     <category term="Graph" />
@@ -25,8 +25,8 @@
     <category term="DFS" />
     <category term="结构体" />
     <category term="贪心" />
-    <category term="Double类型相等比较" />
     <category term="并查集" />
+    <category term="Double类型相等比较" />
     <category term="Map" />
     <category term="Pair" />
     <category term="CMU" />
@@ -47,12 +47,12 @@
     <category term="Blocking" />
     <category term="C/C++" />
     <category term="spmv" />
+    <category term="Intel" />
     <category term="LeetCode" />
     <category term="双指针" />
-    <category term="Intel" />
-    <category term="数组翻转" />
-    <category term="前缀和" />
     <category term="哈希表" />
+    <category term="前缀和" />
+    <category term="数组翻转" />
     <category term="Mirror" />
     <category term="牛客" />
     <category term="Numactl" />
@@ -91,7 +91,7 @@
 &lt;/ol&gt;
 &lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;输入：tiles,nnz_tile，ROWS&lt;br&gt;输出：set&lt;br&gt;nnz_set&amp;lt;&lt;span class=&#34;hljs-number&#34;&gt;-0&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; i = &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt; to tiles - &lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;hljs-keyword&#34;&gt;do&lt;/span&gt;&lt;br&gt;    Select id &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt; nnz_set[id] is minimal   &lt;span class=&#34;hljs-comment&#34;&gt;//注意：这里是选从核行，不是矩阵带&lt;/span&gt;&lt;br&gt;    nnz_set[id] += nnz_tiles[i]&lt;br&gt;    set[id] =  set[id]U&amp;#123;i&amp;#125;   &lt;span class=&#34;hljs-comment&#34;&gt;//任务分配&lt;/span&gt;&lt;br&gt;end &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; &lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
-&lt;p&gt;这里注意，我们再固定划分那里解决了数据局部性差等问题，之后的一二维划分，都是在做任务分配，核心计算子矩阵小块一直未改变&lt;/p&gt;
+&lt;p&gt;这里注意，我们在固定划分那里解决了数据局部性差等问题，之后的一二维划分，都是在做任务分配，核心计算子矩阵小块一直未改变&lt;/p&gt;
 </content>
         <category term="blas" />
         <category term="spmv" />
@@ -377,6 +377,7 @@
 &lt;h3 id=&#34;Acknowledgement&#34;&gt;&lt;a href=&#34;#Acknowledgement&#34; class=&#34;headerlink&#34; title=&#34;Acknowledgement&#34;&gt;&lt;/a&gt;Acknowledgement&lt;/h3&gt;&lt;p&gt;This material was partially sponsored by grants from the National Science Foundation (Awards ACI-1148125&amp;#x2F;1340293).&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Any opinions, findings and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation (NSF).&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id=&#34;论文阅读&#34;&gt;&lt;a href=&#34;#论文阅读&#34; class=&#34;headerlink&#34; title=&#34;论文阅读&#34;&gt;&lt;/a&gt;论文阅读&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://xingyuanjie.top/2023/06/09/gemm0008/&#34;&gt;论文阅读：面向国产申威 26010 众核处理器的 SpMV 实现与优化 - Amicoyuan (xingyuanjie.top)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://xingyuanjie.top/2023/07/03/gemm0009/&#34;&gt;论文阅读：稀疏矩阵向量乘法在申威众核架构上的性能优化 - Amicoyuan (xingyuanjie.top)&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;h3 id=&#34;博客&#34;&gt;&lt;a href=&#34;#博客&#34; class=&#34;headerlink&#34; title=&#34;博客:&#34;&gt;&lt;/a&gt;博客:&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://www.jianshu.com/p/e01024892afb&#34;&gt;矩阵相乘在GPU上的终极优化：深度解析Maxas汇编器工作原理 - 简书 (jianshu.com)&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.leiphone.com/category/yanxishe/Puevv3ZWxn0heoEv.html&#34;&gt;OpenBLAS项目与矩阵乘法优化 | AI 研习社 | 雷峰网 (leiphone.com)&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://jcf94.com/2021/08/28/2021-08-28-simd/&#34;&gt;矩阵乘法与 SIMD | Chenfan Blog (jcf94.com)&lt;/a&gt;&lt;/p&gt;

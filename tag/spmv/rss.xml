@@ -9,13 +9,13 @@
         <lastBuildDate>Mon, 03 Jul 2023 21:56:03 +0800</lastBuildDate>
         <category>AVX</category>
         <category>Data Structure</category>
-        <category>Set</category>
-        <category>团体程序设计天梯赛</category>
-        <category>STL</category>
-        <category>C++</category>
-        <category>Sort</category>
         <category>String</category>
         <category>Find</category>
+        <category>STL</category>
+        <category>C++</category>
+        <category>Set</category>
+        <category>团体程序设计天梯赛</category>
+        <category>Sort</category>
         <category>LinkList</category>
         <category>双向链表</category>
         <category>Graph</category>
@@ -28,8 +28,8 @@
         <category>DFS</category>
         <category>结构体</category>
         <category>贪心</category>
-        <category>Double类型相等比较</category>
         <category>并查集</category>
+        <category>Double类型相等比较</category>
         <category>Map</category>
         <category>Pair</category>
         <category>CMU</category>
@@ -50,12 +50,12 @@
         <category>Blocking</category>
         <category>C/C++</category>
         <category>spmv</category>
+        <category>Intel</category>
         <category>LeetCode</category>
         <category>双指针</category>
-        <category>Intel</category>
-        <category>数组翻转</category>
-        <category>前缀和</category>
         <category>哈希表</category>
+        <category>前缀和</category>
+        <category>数组翻转</category>
         <category>Mirror</category>
         <category>牛客</category>
         <category>Numactl</category>
@@ -97,7 +97,7 @@
 &lt;/ol&gt;
 &lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;输入：tiles,nnz_tile，ROWS&lt;br&gt;输出：set&lt;br&gt;nnz_set&amp;lt;&lt;span class=&#34;hljs-number&#34;&gt;-0&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; i = &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt; to tiles - &lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;hljs-keyword&#34;&gt;do&lt;/span&gt;&lt;br&gt;    Select id &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt; nnz_set[id] is minimal   &lt;span class=&#34;hljs-comment&#34;&gt;//注意：这里是选从核行，不是矩阵带&lt;/span&gt;&lt;br&gt;    nnz_set[id] += nnz_tiles[i]&lt;br&gt;    set[id] =  set[id]U&amp;#123;i&amp;#125;   &lt;span class=&#34;hljs-comment&#34;&gt;//任务分配&lt;/span&gt;&lt;br&gt;end &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; &lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
-&lt;p&gt;这里注意，我们再固定划分那里解决了数据局部性差等问题，之后的一二维划分，都是在做任务分配，核心计算子矩阵小块一直未改变&lt;/p&gt;
+&lt;p&gt;这里注意，我们在固定划分那里解决了数据局部性差等问题，之后的一二维划分，都是在做任务分配，核心计算子矩阵小块一直未改变&lt;/p&gt;
  ]]></description>
         </item>
         <item>
