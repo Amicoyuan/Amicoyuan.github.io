@@ -24,8 +24,8 @@
     <category term="邻接矩阵" />
     <category term="DFS" />
     <category term="结构体" />
-    <category term="贪心" />
     <category term="Double类型相等比较" />
+    <category term="贪心" />
     <category term="并查集" />
     <category term="Map" />
     <category term="Pair" />
@@ -57,11 +57,11 @@
     <category term="牛客" />
     <category term="Numactl" />
     <category term="OpenMP" />
-    <category term="register" />
     <category term="Slurm" />
+    <category term="register" />
     <category term="性能分析工具" />
-    <category term="gcov" />
     <category term="bool" />
+    <category term="gcov" />
     <entry>
         <id>https://xingyuanjie.top/2022/05/20/slurm001/</id>
         <title>Slurm</title>
