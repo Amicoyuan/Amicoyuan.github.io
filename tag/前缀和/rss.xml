@@ -18,18 +18,18 @@
         <category>Sort</category>
         <category>LinkList</category>
         <category>双向链表</category>
-        <category>Graph</category>
+        <category>Binary tree</category>
         <category>邻接表</category>
         <category>Vector</category>
-        <category>Binary tree</category>
         <category>BFS</category>
+        <category>Graph</category>
         <category>模拟</category>
+        <category>结构体</category>
+        <category>贪心</category>
         <category>邻接矩阵</category>
         <category>DFS</category>
-        <category>结构体</category>
-        <category>Double类型相等比较</category>
-        <category>贪心</category>
         <category>并查集</category>
+        <category>Double类型相等比较</category>
         <category>Map</category>
         <category>Pair</category>
         <category>CMU</category>
@@ -50,8 +50,8 @@
         <category>Blocking</category>
         <category>C/C++</category>
         <category>spmv</category>
-        <category>Intel</category>
         <category>LeetCode</category>
+        <category>Intel</category>
         <category>双指针</category>
         <category>数组翻转</category>
         <category>哈希表</category>
@@ -60,11 +60,11 @@
         <category>牛客</category>
         <category>Numactl</category>
         <category>OpenMP</category>
-        <category>Slurm</category>
         <category>register</category>
+        <category>Slurm</category>
         <category>性能分析工具</category>
-        <category>bool</category>
         <category>gcov</category>
+        <category>bool</category>
         <item>
             <guid isPermalink="true">https://xingyuanjie.top/2023/03/01/leetcode724/</guid>
             <title>724.寻找数组的中心下标</title>

@@ -15,18 +15,18 @@
     <category term="Sort" />
     <category term="LinkList" />
     <category term="双向链表" />
-    <category term="Graph" />
+    <category term="Binary tree" />
     <category term="邻接表" />
     <category term="Vector" />
-    <category term="Binary tree" />
     <category term="BFS" />
+    <category term="Graph" />
     <category term="模拟" />
+    <category term="结构体" />
+    <category term="贪心" />
     <category term="邻接矩阵" />
     <category term="DFS" />
-    <category term="结构体" />
-    <category term="Double类型相等比较" />
-    <category term="贪心" />
     <category term="并查集" />
+    <category term="Double类型相等比较" />
     <category term="Map" />
     <category term="Pair" />
     <category term="CMU" />
@@ -47,8 +47,8 @@
     <category term="Blocking" />
     <category term="C/C++" />
     <category term="spmv" />
-    <category term="Intel" />
     <category term="LeetCode" />
+    <category term="Intel" />
     <category term="双指针" />
     <category term="数组翻转" />
     <category term="哈希表" />
@@ -57,11 +57,11 @@
     <category term="牛客" />
     <category term="Numactl" />
     <category term="OpenMP" />
-    <category term="Slurm" />
     <category term="register" />
+    <category term="Slurm" />
     <category term="性能分析工具" />
-    <category term="bool" />
     <category term="gcov" />
+    <category term="bool" />
     <entry>
         <id>https://xingyuanjie.top/2022/04/23/Algorithm032/</id>
         <title>L2-036 网红点打卡攻略 (25 分)</title>
