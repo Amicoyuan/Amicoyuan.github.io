@@ -5,8 +5,8 @@
         <link>https://xingyuanjie.top</link>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Mon, 03 Jul 2023 21:56:03 +0800</pubDate>
-        <lastBuildDate>Mon, 03 Jul 2023 21:56:03 +0800</lastBuildDate>
+        <pubDate>Tue, 11 Jul 2023 21:47:35 +0800</pubDate>
+        <lastBuildDate>Tue, 11 Jul 2023 21:47:35 +0800</lastBuildDate>
         <category>AVX</category>
         <category>Data Structure</category>
         <category>String</category>
@@ -18,24 +18,24 @@
         <category>Sort</category>
         <category>LinkList</category>
         <category>双向链表</category>
-        <category>Binary tree</category>
+        <category>Graph</category>
         <category>邻接表</category>
         <category>Vector</category>
+        <category>Binary tree</category>
         <category>BFS</category>
-        <category>Graph</category>
         <category>模拟</category>
-        <category>结构体</category>
-        <category>贪心</category>
         <category>邻接矩阵</category>
         <category>DFS</category>
-        <category>并查集</category>
+        <category>结构体</category>
+        <category>贪心</category>
         <category>Double类型相等比较</category>
+        <category>并查集</category>
         <category>Map</category>
         <category>Pair</category>
         <category>CMU</category>
         <category>CSAPP</category>
-        <category>CUDA</category>
         <category>Linux</category>
+        <category>CUDA</category>
         <category>Tensorflow</category>
         <category>Machine Learning</category>
         <category>MPI</category>
@@ -50,8 +50,8 @@
         <category>Blocking</category>
         <category>C/C++</category>
         <category>spmv</category>
-        <category>LeetCode</category>
         <category>Intel</category>
+        <category>LeetCode</category>
         <category>双指针</category>
         <category>数组翻转</category>
         <category>哈希表</category>
@@ -65,6 +65,33 @@
         <category>性能分析工具</category>
         <category>gcov</category>
         <category>bool</category>
+        <item>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/07/11/gemm0010/</guid>
+            <title>论文阅读：Towards Efficient SpMV on Sunway Manycore Architectures</title>
+            <link>https://xingyuanjie.top/2023/07/11/gemm0010/</link>
+            <category>blas</category>
+            <category>spmv</category>
+            <pubDate>Tue, 11 Jul 2023 21:47:35 +0800</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;论文阅读：Towards-Efficient-SpMV-on-Sunway-Manycore-Architectures&#34;&gt;&lt;a href=&#34;#论文阅读：Towards-Efficient-SpMV-on-Sunway-Manycore-Architectures&#34; class=&#34;headerlink&#34; title=&#34;论文阅读：Towards Efficient SpMV on Sunway Manycore Architectures&#34;&gt;&lt;/a&gt;论文阅读：Towards Efficient SpMV on Sunway Manycore Architectures&lt;/h2&gt;&lt;h2 id=&#34;文章链接：&#34;&gt;&lt;a href=&#34;#文章链接：&#34; class=&#34;headerlink&#34; title=&#34;文章链接：&#34;&gt;&lt;/a&gt;文章链接：&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://dl.acm.org/doi/pdf/10.1145/3205289.3205313?accessTab=true&#34;&gt;Towards Efficient SpMV on Sunway Manycore Architectures | Proceedings of the 2018 International Conference on Supercomputing (acm.org)&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;文章总结&#34;&gt;&lt;a href=&#34;#文章总结&#34; class=&#34;headerlink&#34; title=&#34;文章总结&#34;&gt;&lt;/a&gt;文章总结&lt;/h2&gt;&lt;h3 id=&#34;dual-side-multi-level-partitioning-technique&#34;&gt;&lt;a href=&#34;#dual-side-multi-level-partitioning-technique&#34; class=&#34;headerlink&#34; title=&#34;dual-side multi-level partitioning technique&#34;&gt;&lt;/a&gt;dual-side multi-level partitioning technique&lt;/h3&gt;&lt;p&gt;三层分块：Block-&amp;gt;Tile-&amp;gt;Slice&lt;/p&gt;
+&lt;p&gt;其中在Tile这一层会有空Tile块，不需要计算&lt;/p&gt;
+&lt;p&gt;其中Slice这一层也会有空Slice切片，不需要计算&lt;/p&gt;
+&lt;p&gt;最底层Slice切片是我们的计算核心&lt;/p&gt;
+&lt;p&gt;多级队列：负载均衡—&amp;gt;The work sharing mechanism in the block and slice queuesguarantee the workload balance across fleets and cores.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/07/11/gemm0010/image-20230711215435026.png&#34; alt=&#34;image-20230711215435026&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;映射细节：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/07/11/gemm0010/image-20230711220304175.png&#34; alt=&#34;image-20230711220304175&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;计算核心处理逻辑&#34;&gt;&lt;a href=&#34;#计算核心处理逻辑&#34; class=&#34;headerlink&#34; title=&#34;计算核心处理逻辑&#34;&gt;&lt;/a&gt;计算核心处理逻辑&lt;/h3&gt;&lt;p&gt;一行8个核心：7个计算核心，1个I&amp;#x2F;O核心&lt;/p&gt;
+&lt;p&gt;计算核心负责SPMV计算&lt;/p&gt;
+&lt;p&gt;I&amp;#x2F;O核心负责将结果写回内存&lt;/p&gt;
+&lt;p&gt;多个slice组合—&amp;gt;batch，方便DMA，并进行数据预取(单位batch)，注意计算核心slice依然没有改变&lt;/p&gt;
+&lt;p&gt;利用向量寄存器，巧妙搭载msg&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/07/11/gemm0010/image-20230711221015472.png&#34; alt=&#34;image-20230711221015472&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;I-x2F-O核心的处理逻辑&#34;&gt;&lt;a href=&#34;#I-x2F-O核心的处理逻辑&#34; class=&#34;headerlink&#34; title=&#34;I&amp;#x2F;O核心的处理逻辑&#34;&gt;&lt;/a&gt;I&amp;#x2F;O核心的处理逻辑&lt;/h3&gt;&lt;p&gt;整个block计算完才写回，避免反复访存&lt;/p&gt;
+&lt;p&gt;向量计算器meg-&amp;gt;reduce&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;利用神威RMA&lt;/strong&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">https://xingyuanjie.top/2023/07/03/gemm0009/</guid>
             <title>论文阅读：稀疏矩阵向量乘法在申威众核架构上的性能优化</title>
@@ -1251,49 +1278,6 @@
 &lt;p&gt;假设有一个长度为32个元素的向量，你可以按以下方法用32个线程来调用核函数：&lt;/p&gt;
 &lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;sumArraysOnGPU&amp;lt;&amp;lt;&amp;lt;&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;32&lt;/span&gt;&amp;gt;&amp;gt;&amp;gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;float&lt;/span&gt; *A, &lt;span class=&#34;hljs-keyword&#34;&gt;float&lt;/span&gt; *B, &lt;span class=&#34;hljs-keyword&#34;&gt;float&lt;/span&gt; *C);&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
-&lt;h2 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;p&gt;CUDA C编程权威指南 程润伟，Max Grossman(美)，Ty Mckercher &lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">https://xingyuanjie.top/2023/03/06/cuda007/</guid>
-            <title>启动一个CUDA核函数</title>
-            <link>https://xingyuanjie.top/2023/03/06/cuda007/</link>
-            <category>CUDA</category>
-            <pubDate>Mon, 06 Mar 2023 13:59:18 +0800</pubDate>
-            <description><![CDATA[ &lt;h2 id=&#34;启动一个CUDA核函数&#34;&gt;&lt;a href=&#34;#启动一个CUDA核函数&#34; class=&#34;headerlink&#34; title=&#34;启动一个CUDA核函数&#34;&gt;&lt;/a&gt;启动一个CUDA核函数&lt;/h2&gt;&lt;p&gt;你应该对下列C语言函数调用语句很熟悉：&lt;/p&gt;
-&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-built_in&#34;&gt;function_name&lt;/span&gt; (argument list);&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;CUDA内核调用是对C语言函数调用语句的延申，&amp;lt;&amp;lt;&amp;lt;&amp;gt;&amp;gt;&amp;gt;运算符内是核函数的执行配置。&lt;/p&gt;
-&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;kerbel_name&amp;lt;&amp;lt;&amp;lt;grid,block&amp;gt;&amp;gt;&amp;gt;(srgument list);&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;正如上一节所述，CUDA编程模型揭示了线程层次结构。利用执行配置可以指定线程在GPU上调度运行的方式。执行配置的第一个值是网格维度，也就是启动块的数目。第二个值是块维度，也就是每个块中线程的数目。通过指定网格和块的维度，你可以进行一下配置：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;内核中线程的数目&lt;/li&gt;
-&lt;li&gt;内核中使用的线程布局&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;同一个块中的线程之间可以相互协作，不同块内的线程不能协作。对于一个给定的问题，可以使用不同的网格和块布局来组织你的线程。例如，假设你有32个数据元素用于计算，每8个元素一个块，需要启动4个块：&lt;/p&gt;
-&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;kernel_name&amp;lt;&amp;lt;&amp;lt;&lt;span class=&#34;hljs-number&#34;&gt;4&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;8&lt;/span&gt;&amp;gt;&amp;gt;&amp;gt;(argument list);&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;&lt;img src=&#34;/2023/03/06/cuda007/image-20230306140924311.png&#34; alt=&#34;image-20230306140924311&#34;&gt;&lt;/p&gt;
-&lt;p&gt;由于数据在全局内存中是线性存储的，因此可以用变量blockIdx.x和threadIdx.x来进行以下操作。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;在网格中标识一个唯一的线程&lt;/li&gt;
-&lt;li&gt;建立线程和数据元素之间的映射关系&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;如果把32个元素放到一个块里，那么只会得到一个块：&lt;/p&gt;
-&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;kernel_name&amp;lt;&amp;lt;&amp;lt;&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;32&lt;/span&gt;&amp;gt;&amp;gt;&amp;gt;(argument list);&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;如果每个块只含一个元素，那么会有32个块：&lt;/p&gt;
-&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;kernel_name&amp;lt;&amp;lt;&amp;lt;&lt;span class=&#34;hljs-number&#34;&gt;32&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;&amp;gt;&amp;gt;&amp;gt;(argument list);&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;核函数的调用与主机线程是异步的。核函数调用结束后，控制权立刻返回给主机端。你可以调用以下函数来强制主机端程序等待所有的核函数执行结束：&lt;/p&gt;
-&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-function&#34;&gt;cudaError_t &lt;span class=&#34;hljs-title&#34;&gt;cudaDeviceSynchronize&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;void&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;一些CUDA运行时API在主机和设备之间是隐式同步的。当使用cudaMemcpy函数在主机和设备之间拷贝数据时，主机端隐式同步，即主机端程序必须等待数据拷贝完成后才能继续执行程序。&lt;/p&gt;
-&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-function&#34;&gt;cudaError_t &lt;span class=&#34;hljs-title&#34;&gt;cudaMemcpy&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;void&lt;/span&gt;* dst, &lt;span class=&#34;hljs-keyword&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;hljs-keyword&#34;&gt;void&lt;/span&gt;* src, &lt;span class=&#34;hljs-keyword&#34;&gt;size_t&lt;/span&gt; count, cudaMemcpyKind kind)&lt;/span&gt;&lt;/span&gt;;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;之前所有的核函数调用完成后开始拷贝数据。当拷贝完成后，控制权立刻返回给主机端。&lt;/p&gt;
-&lt;h3 id=&#34;异步行为&#34;&gt;&lt;a href=&#34;#异步行为&#34; class=&#34;headerlink&#34; title=&#34;异步行为&#34;&gt;&lt;/a&gt;异步行为&lt;/h3&gt;&lt;p&gt;不同于C语言的函数调用，所有的CUDA核函数的启动都是异步的。CUDA内核调用完成后，控制权立刻返回给CPU。&lt;/p&gt;
 &lt;h2 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;p&gt;CUDA C编程权威指南 程润伟，Max Grossman(美)，Ty Mckercher &lt;/p&gt;
  ]]></description>
         </item>

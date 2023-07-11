@@ -5,6 +5,17 @@
     "home_page_url": "https://xingyuanjie.top",
     "items": [
         {
+            "id": "https://xingyuanjie.top/2023/07/11/gemm0010/",
+            "url": "https://xingyuanjie.top/2023/07/11/gemm0010/",
+            "title": "论文阅读：Towards Efficient SpMV on Sunway Manycore Architectures",
+            "date_published": "2023-07-11T13:47:35.000Z",
+            "content_html": "<h2 id=\"论文阅读：Towards-Efficient-SpMV-on-Sunway-Manycore-Architectures\"><a href=\"#论文阅读：Towards-Efficient-SpMV-on-Sunway-Manycore-Architectures\" class=\"headerlink\" title=\"论文阅读：Towards Efficient SpMV on Sunway Manycore Architectures\"></a>论文阅读：Towards Efficient SpMV on Sunway Manycore Architectures</h2><h2 id=\"文章链接：\"><a href=\"#文章链接：\" class=\"headerlink\" title=\"文章链接：\"></a>文章链接：</h2><p><a href=\"https://dl.acm.org/doi/pdf/10.1145/3205289.3205313?accessTab=true\">Towards Efficient SpMV on Sunway Manycore Architectures | Proceedings of the 2018 International Conference on Supercomputing (acm.org)</a></p>\n<h2 id=\"文章总结\"><a href=\"#文章总结\" class=\"headerlink\" title=\"文章总结\"></a>文章总结</h2><h3 id=\"dual-side-multi-level-partitioning-technique\"><a href=\"#dual-side-multi-level-partitioning-technique\" class=\"headerlink\" title=\"dual-side multi-level partitioning technique\"></a>dual-side multi-level partitioning technique</h3><p>三层分块：Block-&gt;Tile-&gt;Slice</p>\n<p>其中在Tile这一层会有空Tile块，不需要计算</p>\n<p>其中Slice这一层也会有空Slice切片，不需要计算</p>\n<p>最底层Slice切片是我们的计算核心</p>\n<p>多级队列：负载均衡—&gt;The work sharing mechanism in the block and slice queuesguarantee the workload balance across fleets and cores.</p>\n<p><img src=\"/2023/07/11/gemm0010/image-20230711215435026.png\" alt=\"image-20230711215435026\"></p>\n<p><strong>映射细节：</strong></p>\n<p><img src=\"/2023/07/11/gemm0010/image-20230711220304175.png\" alt=\"image-20230711220304175\"></p>\n<h3 id=\"计算核心处理逻辑\"><a href=\"#计算核心处理逻辑\" class=\"headerlink\" title=\"计算核心处理逻辑\"></a>计算核心处理逻辑</h3><p>一行8个核心：7个计算核心，1个I&#x2F;O核心</p>\n<p>计算核心负责SPMV计算</p>\n<p>I&#x2F;O核心负责将结果写回内存</p>\n<p>多个slice组合—&gt;batch，方便DMA，并进行数据预取(单位batch)，注意计算核心slice依然没有改变</p>\n<p>利用向量寄存器，巧妙搭载msg</p>\n<p><img src=\"/2023/07/11/gemm0010/image-20230711221015472.png\" alt=\"image-20230711221015472\"></p>\n<h3 id=\"I-x2F-O核心的处理逻辑\"><a href=\"#I-x2F-O核心的处理逻辑\" class=\"headerlink\" title=\"I&#x2F;O核心的处理逻辑\"></a>I&#x2F;O核心的处理逻辑</h3><p>整个block计算完才写回，避免反复访存</p>\n<p>向量计算器meg-&gt;reduce</p>\n<p><strong>利用神威RMA</strong></p>\n",
+            "tags": [
+                "blas",
+                "spmv"
+            ]
+        },
+        {
             "id": "https://xingyuanjie.top/2023/07/03/gemm0009/",
             "url": "https://xingyuanjie.top/2023/07/03/gemm0009/",
             "title": "论文阅读：稀疏矩阵向量乘法在申威众核架构上的性能优化",

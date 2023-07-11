@@ -3,7 +3,7 @@
     <id>https://xingyuanjie.top</id>
     <title>Amicoyuan • Posts by &#34;spmv&#34; tag</title>
     <link href="https://xingyuanjie.top" />
-    <updated>2023-07-03T13:56:03.000Z</updated>
+    <updated>2023-07-11T13:47:35.000Z</updated>
     <category term="AVX" />
     <category term="Data Structure" />
     <category term="String" />
@@ -15,24 +15,24 @@
     <category term="Sort" />
     <category term="LinkList" />
     <category term="双向链表" />
-    <category term="Binary tree" />
+    <category term="Graph" />
     <category term="邻接表" />
     <category term="Vector" />
+    <category term="Binary tree" />
     <category term="BFS" />
-    <category term="Graph" />
     <category term="模拟" />
-    <category term="结构体" />
-    <category term="贪心" />
     <category term="邻接矩阵" />
     <category term="DFS" />
-    <category term="并查集" />
+    <category term="结构体" />
+    <category term="贪心" />
     <category term="Double类型相等比较" />
+    <category term="并查集" />
     <category term="Map" />
     <category term="Pair" />
     <category term="CMU" />
     <category term="CSAPP" />
-    <category term="CUDA" />
     <category term="Linux" />
+    <category term="CUDA" />
     <category term="Tensorflow" />
     <category term="Machine Learning" />
     <category term="MPI" />
@@ -47,8 +47,8 @@
     <category term="Blocking" />
     <category term="C/C++" />
     <category term="spmv" />
-    <category term="LeetCode" />
     <category term="Intel" />
+    <category term="LeetCode" />
     <category term="双指针" />
     <category term="数组翻转" />
     <category term="哈希表" />
@@ -62,6 +62,33 @@
     <category term="性能分析工具" />
     <category term="gcov" />
     <category term="bool" />
+    <entry>
+        <id>https://xingyuanjie.top/2023/07/11/gemm0010/</id>
+        <title>论文阅读：Towards Efficient SpMV on Sunway Manycore Architectures</title>
+        <link rel="alternate" href="https://xingyuanjie.top/2023/07/11/gemm0010/"/>
+        <content type="html">&lt;h2 id=&#34;论文阅读：Towards-Efficient-SpMV-on-Sunway-Manycore-Architectures&#34;&gt;&lt;a href=&#34;#论文阅读：Towards-Efficient-SpMV-on-Sunway-Manycore-Architectures&#34; class=&#34;headerlink&#34; title=&#34;论文阅读：Towards Efficient SpMV on Sunway Manycore Architectures&#34;&gt;&lt;/a&gt;论文阅读：Towards Efficient SpMV on Sunway Manycore Architectures&lt;/h2&gt;&lt;h2 id=&#34;文章链接：&#34;&gt;&lt;a href=&#34;#文章链接：&#34; class=&#34;headerlink&#34; title=&#34;文章链接：&#34;&gt;&lt;/a&gt;文章链接：&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://dl.acm.org/doi/pdf/10.1145/3205289.3205313?accessTab=true&#34;&gt;Towards Efficient SpMV on Sunway Manycore Architectures | Proceedings of the 2018 International Conference on Supercomputing (acm.org)&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;文章总结&#34;&gt;&lt;a href=&#34;#文章总结&#34; class=&#34;headerlink&#34; title=&#34;文章总结&#34;&gt;&lt;/a&gt;文章总结&lt;/h2&gt;&lt;h3 id=&#34;dual-side-multi-level-partitioning-technique&#34;&gt;&lt;a href=&#34;#dual-side-multi-level-partitioning-technique&#34; class=&#34;headerlink&#34; title=&#34;dual-side multi-level partitioning technique&#34;&gt;&lt;/a&gt;dual-side multi-level partitioning technique&lt;/h3&gt;&lt;p&gt;三层分块：Block-&amp;gt;Tile-&amp;gt;Slice&lt;/p&gt;
+&lt;p&gt;其中在Tile这一层会有空Tile块，不需要计算&lt;/p&gt;
+&lt;p&gt;其中Slice这一层也会有空Slice切片，不需要计算&lt;/p&gt;
+&lt;p&gt;最底层Slice切片是我们的计算核心&lt;/p&gt;
+&lt;p&gt;多级队列：负载均衡—&amp;gt;The work sharing mechanism in the block and slice queuesguarantee the workload balance across fleets and cores.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/07/11/gemm0010/image-20230711215435026.png&#34; alt=&#34;image-20230711215435026&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;映射细节：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/07/11/gemm0010/image-20230711220304175.png&#34; alt=&#34;image-20230711220304175&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;计算核心处理逻辑&#34;&gt;&lt;a href=&#34;#计算核心处理逻辑&#34; class=&#34;headerlink&#34; title=&#34;计算核心处理逻辑&#34;&gt;&lt;/a&gt;计算核心处理逻辑&lt;/h3&gt;&lt;p&gt;一行8个核心：7个计算核心，1个I&amp;#x2F;O核心&lt;/p&gt;
+&lt;p&gt;计算核心负责SPMV计算&lt;/p&gt;
+&lt;p&gt;I&amp;#x2F;O核心负责将结果写回内存&lt;/p&gt;
+&lt;p&gt;多个slice组合—&amp;gt;batch，方便DMA，并进行数据预取(单位batch)，注意计算核心slice依然没有改变&lt;/p&gt;
+&lt;p&gt;利用向量寄存器，巧妙搭载msg&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/07/11/gemm0010/image-20230711221015472.png&#34; alt=&#34;image-20230711221015472&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;I-x2F-O核心的处理逻辑&#34;&gt;&lt;a href=&#34;#I-x2F-O核心的处理逻辑&#34; class=&#34;headerlink&#34; title=&#34;I&amp;#x2F;O核心的处理逻辑&#34;&gt;&lt;/a&gt;I&amp;#x2F;O核心的处理逻辑&lt;/h3&gt;&lt;p&gt;整个block计算完才写回，避免反复访存&lt;/p&gt;
+&lt;p&gt;向量计算器meg-&amp;gt;reduce&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;利用神威RMA&lt;/strong&gt;&lt;/p&gt;
+</content>
+        <category term="blas" />
+        <category term="spmv" />
+        <updated>2023-07-11T13:47:35.000Z</updated>
+    </entry>
     <entry>
         <id>https://xingyuanjie.top/2023/07/03/gemm0009/</id>
         <title>论文阅读：稀疏矩阵向量乘法在申威众核架构上的性能优化</title>
