@@ -5,19 +5,19 @@
         <link>https://xingyuanjie.top</link>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Tue, 11 Jul 2023 21:47:35 +0800</pubDate>
-        <lastBuildDate>Tue, 11 Jul 2023 21:47:35 +0800</lastBuildDate>
+        <pubDate>Sat, 15 Jul 2023 10:02:32 +0800</pubDate>
+        <lastBuildDate>Sat, 15 Jul 2023 10:02:32 +0800</lastBuildDate>
         <category>AVX</category>
         <category>Data Structure</category>
         <category>String</category>
         <category>Find</category>
         <category>STL</category>
         <category>C++</category>
-        <category>Set</category>
-        <category>团体程序设计天梯赛</category>
-        <category>Sort</category>
         <category>LinkList</category>
+        <category>团体程序设计天梯赛</category>
         <category>双向链表</category>
+        <category>Set</category>
+        <category>Sort</category>
         <category>Graph</category>
         <category>邻接表</category>
         <category>Vector</category>
@@ -34,28 +34,30 @@
         <category>Pair</category>
         <category>CMU</category>
         <category>CSAPP</category>
-        <category>Linux</category>
         <category>CUDA</category>
+        <category>Linux</category>
         <category>Tensorflow</category>
         <category>Machine Learning</category>
         <category>MPI</category>
         <category>Matrix</category>
         <category>GEMM</category>
-        <category>AVX2</category>
         <category>blas</category>
         <category>gemm</category>
         <category>gemv</category>
+        <category>AVX2</category>
         <category>dgemm</category>
         <category>Cache</category>
         <category>Blocking</category>
         <category>C/C++</category>
         <category>spmv</category>
+        <category>SUMMA</category>
         <category>Intel</category>
         <category>LeetCode</category>
         <category>双指针</category>
         <category>数组翻转</category>
         <category>哈希表</category>
         <category>前缀和</category>
+        <category>Seasons</category>
         <category>Mirror</category>
         <category>牛客</category>
         <category>Numactl</category>
@@ -63,8 +65,19 @@
         <category>register</category>
         <category>Slurm</category>
         <category>性能分析工具</category>
-        <category>gcov</category>
         <category>bool</category>
+        <category>gcov</category>
+        <item>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/07/15/gemm0011/</guid>
+            <title>SUMMA:Scalable Universal Matrix Multiplication Algorithm</title>
+            <link>https://xingyuanjie.top/2023/07/15/gemm0011/</link>
+            <category>blas</category>
+            <category>gemm</category>
+            <category>SUMMA</category>
+            <pubDate>Sat, 15 Jul 2023 10:02:32 +0800</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;论文阅读：SUMMA-Scalable-Universal-Matrix-Multiplication-Algorithm&#34;&gt;&lt;a href=&#34;#论文阅读：SUMMA-Scalable-Universal-Matrix-Multiplication-Algorithm&#34; class=&#34;headerlink&#34; title=&#34;论文阅读：SUMMA: Scalable Universal Matrix Multiplication Algorithm&#34;&gt;&lt;/a&gt;论文阅读：SUMMA: Scalable Universal Matrix Multiplication Algorithm&lt;/h2&gt;&lt;h2 id=&#34;论文链接&#34;&gt;&lt;a href=&#34;#论文链接&#34; class=&#34;headerlink&#34; title=&#34;论文链接&#34;&gt;&lt;/a&gt;论文链接&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://dl.acm.org/doi/book/10.5555/899248&#34;&gt;SUMMA: Scalable Universal Matrix Multiplication Algorithm | Guide books (acm.org)&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;文章总结&#34;&gt;&lt;a href=&#34;#文章总结&#34; class=&#34;headerlink&#34; title=&#34;文章总结&#34;&gt;&lt;/a&gt;文章总结&lt;/h2&gt; ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">https://xingyuanjie.top/2023/07/11/gemm0010/</guid>
             <title>论文阅读：Towards Efficient SpMV on Sunway Manycore Architectures</title>
@@ -1243,41 +1256,6 @@
 &lt;h3 id=&#34;验证核函数代码&#34;&gt;&lt;a href=&#34;#验证核函数代码&#34; class=&#34;headerlink&#34; title=&#34;验证核函数代码&#34;&gt;&lt;/a&gt;验证核函数代码&lt;/h3&gt;&lt;p&gt;除了许多可用的调试工具外，还有两个非常简单实用的方法可以验证核函数。&lt;/p&gt;
 &lt;p&gt;首先，你可以在Fermi及更高版本的设备端的核函数中使用printf函数。&lt;/p&gt;
 &lt;p&gt;其次，可以将执行参数设置为&amp;lt;&amp;lt;&amp;lt;1,1&amp;gt;&amp;gt;&amp;gt;，因此强制用一个块和一个线程执行核函数，这模拟了串行执行程序。这对于调试和验证结果是否正确是非常有用的，而且，如果你遇到了运算次序的问题，这有助于你对比验证数值结果是否是按位精确的。&lt;/p&gt;
-&lt;h2 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;p&gt;CUDA C编程权威指南 程润伟，Max Grossman(美)，Ty Mckercher &lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">https://xingyuanjie.top/2023/03/06/cuda008/</guid>
-            <title>CUDA编写核函数</title>
-            <link>https://xingyuanjie.top/2023/03/06/cuda008/</link>
-            <category>CUDA</category>
-            <pubDate>Mon, 06 Mar 2023 15:46:00 +0800</pubDate>
-            <description><![CDATA[ &lt;h2 id=&#34;编写核函数&#34;&gt;&lt;a href=&#34;#编写核函数&#34; class=&#34;headerlink&#34; title=&#34;编写核函数&#34;&gt;&lt;/a&gt;编写核函数&lt;/h2&gt;&lt;p&gt;核函数是在设备端执行的代码。在核函数中，需要为一个线程规定要进行的计算以及要进行的数据访问。当核函数被调用时，许多不同的CUDA线程并行执行同一个计算任务。以下是用_&lt;em&gt;global&lt;/em&gt;_&lt;/p&gt;
-&lt;p&gt;声明定义核函数：&lt;/p&gt;
-&lt;figure class=&#34;highlight reasonml&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs reasonml&#34;&gt;__global__  void kernel&lt;span class=&#34;hljs-constructor&#34;&gt;_name(&lt;span class=&#34;hljs-params&#34;&gt;argument&lt;/span&gt; &lt;span class=&#34;hljs-params&#34;&gt;list&lt;/span&gt;)&lt;/span&gt;;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;核函数必须有一个void返回类型。&lt;/p&gt;
-&lt;p&gt;表2-2总结了CUDA C程序中的函数类型限定符。函数类型限定符指定一个函数在主机上执行还是在设备上执行，以及可被主机调用还是被设备调用。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/2023/03/06/cuda008/image-20230306155126122.png&#34; alt=&#34;image-20230306155126122&#34;&gt;&lt;/p&gt;
-&lt;p&gt;_&lt;em&gt;device&lt;/em&gt;_   和 __host__限定符可以一齐使用，这样函数可以同时在主机和设备端进行编译。&lt;/p&gt;
-&lt;h3 id=&#34;CUDA核函数的限制&#34;&gt;&lt;a href=&#34;#CUDA核函数的限制&#34; class=&#34;headerlink&#34; title=&#34;CUDA核函数的限制&#34;&gt;&lt;/a&gt;CUDA核函数的限制&lt;/h3&gt;&lt;p&gt;以下限制适用于所有核函数：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;只能访问设备内存&lt;/li&gt;
-&lt;li&gt;必须具有void返回类型&lt;/li&gt;
-&lt;li&gt;不支持可变数量的参数&lt;/li&gt;
-&lt;li&gt;不支持静态变量&lt;/li&gt;
-&lt;li&gt;显示异步行为&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;考虑一个简单的例子：将两个大小为N的向量A和B相加，主机端的向量加法C代码如下：&lt;/p&gt;
-&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;sumArrayOnHost&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;float&lt;/span&gt; *A, &lt;span class=&#34;hljs-keyword&#34;&gt;float&lt;/span&gt; *B, &lt;span class=&#34;hljs-keyword&#34;&gt;float&lt;/span&gt; *C, &lt;span class=&#34;hljs-keyword&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; N)&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i = &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;;i &amp;lt; N; i++)&lt;br&gt;        C[i] = A[i] + B[i];&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;这是一个迭代N次的串行程序，循环结束后将产生以下核函数：&lt;/p&gt;
-&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-function&#34;&gt;__global__ &lt;span class=&#34;hljs-keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;hljs-title&#34;&gt;sumArrayOnHost&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;float&lt;/span&gt; *A, &lt;span class=&#34;hljs-keyword&#34;&gt;float&lt;/span&gt; *B, &lt;span class=&#34;hljs-keyword&#34;&gt;float&lt;/span&gt; *C)&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;br&gt;    	&lt;span class=&#34;hljs-keyword&#34;&gt;int&lt;/span&gt; i = threadIdx.x;&lt;br&gt;        C[i] = A[i] + B[i];&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;C函数和核函数之间有什么不同？你可能已经注意到循环体消失了，内置的线程坐标变量替换了数组索引，由于N是被隐式定义用来启动N个线程的，所以N没有什么参考价值。&lt;/p&gt;
-&lt;p&gt;假设有一个长度为32个元素的向量，你可以按以下方法用32个线程来调用核函数：&lt;/p&gt;
-&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter hljs&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;hljs code-wrapper&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;sumArraysOnGPU&amp;lt;&amp;lt;&amp;lt;&lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;,&lt;span class=&#34;hljs-number&#34;&gt;32&lt;/span&gt;&amp;gt;&amp;gt;&amp;gt;(&lt;span class=&#34;hljs-keyword&#34;&gt;float&lt;/span&gt; *A, &lt;span class=&#34;hljs-keyword&#34;&gt;float&lt;/span&gt; *B, &lt;span class=&#34;hljs-keyword&#34;&gt;float&lt;/span&gt; *C);&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
 &lt;h2 id=&#34;参考资料&#34;&gt;&lt;a href=&#34;#参考资料&#34; class=&#34;headerlink&#34; title=&#34;参考资料&#34;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;p&gt;CUDA C编程权威指南 程润伟，Max Grossman(美)，Ty Mckercher &lt;/p&gt;
  ]]></description>
         </item>

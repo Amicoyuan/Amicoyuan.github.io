@@ -10,11 +10,11 @@
     <category term="Find" />
     <category term="STL" />
     <category term="C++" />
-    <category term="Set" />
-    <category term="团体程序设计天梯赛" />
-    <category term="Sort" />
     <category term="LinkList" />
+    <category term="团体程序设计天梯赛" />
     <category term="双向链表" />
+    <category term="Set" />
+    <category term="Sort" />
     <category term="Graph" />
     <category term="邻接表" />
     <category term="Vector" />
@@ -31,28 +31,30 @@
     <category term="Pair" />
     <category term="CMU" />
     <category term="CSAPP" />
-    <category term="Linux" />
     <category term="CUDA" />
+    <category term="Linux" />
     <category term="Tensorflow" />
     <category term="Machine Learning" />
     <category term="MPI" />
     <category term="Matrix" />
     <category term="GEMM" />
-    <category term="AVX2" />
     <category term="blas" />
     <category term="gemm" />
     <category term="gemv" />
+    <category term="AVX2" />
     <category term="dgemm" />
     <category term="Cache" />
     <category term="Blocking" />
     <category term="C/C++" />
     <category term="spmv" />
+    <category term="SUMMA" />
     <category term="Intel" />
     <category term="LeetCode" />
     <category term="双指针" />
     <category term="数组翻转" />
     <category term="哈希表" />
     <category term="前缀和" />
+    <category term="Seasons" />
     <category term="Mirror" />
     <category term="牛客" />
     <category term="Numactl" />
@@ -60,8 +62,8 @@
     <category term="register" />
     <category term="Slurm" />
     <category term="性能分析工具" />
-    <category term="gcov" />
     <category term="bool" />
+    <category term="gcov" />
     <entry>
         <id>https://xingyuanjie.top/2022/06/12/MPI%E5%AD%A6%E4%B9%A0(%E4%B8%80)-%E7%AE%80%E5%8D%95%E7%9A%84%E5%8F%91%E9%80%81%E6%8E%A5%E6%94%B6/</id>
         <title>MPI学习(一)-简单的发送接收</title>

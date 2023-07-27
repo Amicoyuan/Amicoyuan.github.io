@@ -5,6 +5,18 @@
     "home_page_url": "https://xingyuanjie.top",
     "items": [
         {
+            "id": "https://xingyuanjie.top/2023/07/15/gemm0011/",
+            "url": "https://xingyuanjie.top/2023/07/15/gemm0011/",
+            "title": "SUMMA:Scalable Universal Matrix Multiplication Algorithm",
+            "date_published": "2023-07-15T02:02:32.000Z",
+            "content_html": "<h2 id=\"论文阅读：SUMMA-Scalable-Universal-Matrix-Multiplication-Algorithm\"><a href=\"#论文阅读：SUMMA-Scalable-Universal-Matrix-Multiplication-Algorithm\" class=\"headerlink\" title=\"论文阅读：SUMMA: Scalable Universal Matrix Multiplication Algorithm\"></a>论文阅读：SUMMA: Scalable Universal Matrix Multiplication Algorithm</h2><h2 id=\"论文链接\"><a href=\"#论文链接\" class=\"headerlink\" title=\"论文链接\"></a>论文链接</h2><p><a href=\"https://dl.acm.org/doi/book/10.5555/899248\">SUMMA: Scalable Universal Matrix Multiplication Algorithm | Guide books (acm.org)</a></p>\n<h2 id=\"文章总结\"><a href=\"#文章总结\" class=\"headerlink\" title=\"文章总结\"></a>文章总结</h2>",
+            "tags": [
+                "blas",
+                "gemm",
+                "SUMMA"
+            ]
+        },
+        {
             "id": "https://xingyuanjie.top/2023/06/07/gemm0007/",
             "url": "https://xingyuanjie.top/2023/06/07/gemm0007/",
             "title": "Packing into contiguous memory",

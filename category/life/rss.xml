@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>Amicoyuan • Posts by &#34;life&#34; category</title>
+        <link>https://xingyuanjie.top</link>
+        <description></description>
+        <language>zh-CN</language>
+        <pubDate>Fri, 28 Jul 2023 00:06:04 +0800</pubDate>
+        <lastBuildDate>Fri, 28 Jul 2023 00:06:04 +0800</lastBuildDate>
+        <category>AVX</category>
+        <category>Data Structure</category>
+        <category>String</category>
+        <category>Find</category>
+        <category>STL</category>
+        <category>C++</category>
+        <category>LinkList</category>
+        <category>团体程序设计天梯赛</category>
+        <category>双向链表</category>
+        <category>Set</category>
+        <category>Sort</category>
+        <category>Graph</category>
+        <category>邻接表</category>
+        <category>Vector</category>
+        <category>Binary tree</category>
+        <category>BFS</category>
+        <category>模拟</category>
+        <category>邻接矩阵</category>
+        <category>DFS</category>
+        <category>结构体</category>
+        <category>贪心</category>
+        <category>Double类型相等比较</category>
+        <category>并查集</category>
+        <category>Map</category>
+        <category>Pair</category>
+        <category>CMU</category>
+        <category>CSAPP</category>
+        <category>CUDA</category>
+        <category>Linux</category>
+        <category>Tensorflow</category>
+        <category>Machine Learning</category>
+        <category>MPI</category>
+        <category>Matrix</category>
+        <category>GEMM</category>
+        <category>blas</category>
+        <category>gemm</category>
+        <category>gemv</category>
+        <category>AVX2</category>
+        <category>dgemm</category>
+        <category>Cache</category>
+        <category>Blocking</category>
+        <category>C/C++</category>
+        <category>spmv</category>
+        <category>SUMMA</category>
+        <category>Intel</category>
+        <category>LeetCode</category>
+        <category>双指针</category>
+        <category>数组翻转</category>
+        <category>哈希表</category>
+        <category>前缀和</category>
+        <category>Seasons</category>
+        <category>Mirror</category>
+        <category>牛客</category>
+        <category>Numactl</category>
+        <category>OpenMP</category>
+        <category>register</category>
+        <category>Slurm</category>
+        <category>性能分析工具</category>
+        <category>bool</category>
+        <category>gcov</category>
+        <item>
+            <guid isPermalink="true">https://xingyuanjie.top/2023/07/28/life001/</guid>
+            <title>重启Life分类-Seasons</title>
+            <link>https://xingyuanjie.top/2023/07/28/life001/</link>
+            <category>Seasons</category>
+            <pubDate>Fri, 28 Jul 2023 00:06:04 +0800</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;重启Life分类-Seasons&#34;&gt;&lt;a href=&#34;#重启Life分类-Seasons&#34; class=&#34;headerlink&#34; title=&#34;重启Life分类-Seasons&#34;&gt;&lt;/a&gt;重启Life分类-Seasons&lt;/h2&gt;&lt;p&gt;在听完GC北京场后，感触颇深，再次启动Life分类还是有必要哈哈哈！&lt;/p&gt;
+&lt;p&gt;今天写这篇博客好像也脱了很久。&lt;/p&gt;
+&lt;p&gt;【上次因为糟糕的排版删除了23年的厦门篇，Sorry，后期会补上】&lt;/p&gt;
+&lt;p&gt;同时恭喜队伍成功进入CPC2023决赛，这波是青岛见了，哈哈哈！手动撒花！&lt;/p&gt;
+&lt;p&gt;我发现有些瞬间还是必须照片或者文字记下来，不然后面真的会忘记。&lt;/p&gt;
+&lt;p&gt;立个FLAG今年在Life分类更新完23年的旅行以及这次的GC北京场。&lt;/p&gt;
+&lt;p&gt;后续的计划大概是，博客里面写文字内容，同时贴上云盘的视频和照片。因为这样就可以避免糟糕的排版了，主要还是对前端不太熟。&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>
