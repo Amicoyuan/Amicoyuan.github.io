@@ -38,23 +38,23 @@
     <category term="MPI" />
     <category term="Matrix" />
     <category term="GEMM" />
+    <category term="AVX2" />
     <category term="blas" />
     <category term="gemm" />
     <category term="gemv" />
-    <category term="AVX2" />
     <category term="dgemm" />
     <category term="Cache" />
     <category term="Blocking" />
     <category term="C/C++" />
     <category term="spmv" />
     <category term="SUMMA" />
-    <category term="Intel" />
     <category term="LeetCode" />
+    <category term="Intel" />
     <category term="双指针" />
     <category term="数组翻转" />
     <category term="哈希表" />
-    <category term="前缀和" />
     <category term="Seasons" />
+    <category term="前缀和" />
     <category term="Mirror" />
     <category term="牛客" />
     <category term="Numactl" />
@@ -62,8 +62,8 @@
     <category term="register" />
     <category term="Slurm" />
     <category term="性能分析工具" />
-    <category term="bool" />
     <category term="gcov" />
+    <category term="bool" />
     <entry>
         <id>https://xingyuanjie.top/2022/04/23/Algorithm030/</id>
         <title>L2-005 集合相似度 (25 分)</title>
